@@ -333,3 +333,7 @@ Exact next action: D2 source-route accounting and comprehensive parity/remote-se
 ## D2 checkpoint: parity contract frozen
 
 Read investigation/D2-PARITY-CONTRACT.md and source-route-accounting.json. Exact 834-route mapping and 52-state baseline matrix are frozen; inherited semantic defects and remote search transport boundaries are explicit. No migration renderer implemented yet. Next: D3 bounded standalone renderer and raw Nift composition on representative families; proceed through D9 under user authorization without routine approval.
+
+## D3 checkpoint: representative architecture proven
+
+13 full pages match frozen HTML exactly after raw Nift composition; both distinct source models pass content/shared-template edits, literal syntax, route CRUD/stale HTML and incremental-vs-forced composition. Read investigation/D3-ARCHITECTURE-PROOF.md. Prepared reference JSON/types are committed generated inputs, with ownership and acquisition boundary disclosed. Next: D4 authored corpus and D5 all generated/special/publication artifacts, then whole-site parity and complete pipeline benchmarking. No Nift change.

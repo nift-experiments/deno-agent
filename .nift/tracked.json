@@ -1,8 +1,68 @@
 {
   "tracked": [
     {
-      "name": "/",
-      "title": "index",
+      "name": "runtime/reference/cli/run/index",
+      "title": "/runtime/reference/cli/run/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/index",
+      "title": "/runtime/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/index",
+      "title": "/sandbox/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/components/index",
+      "title": "/styleguide/components/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/typography/index",
+      "title": "/styleguide/typography/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "subhosting/manual/index",
+      "title": "/subhosting/manual/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "404/index",
+      "title": "/404/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/api/runtime-fs/index",
+      "title": "/deploy/classic/api/runtime-fs/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/ban-ts-comment/index",
+      "title": "/lint/rules/ban-ts-comment/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hello_world/index",
+      "title": "/examples/hello_world/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/http-server/index",
+      "title": "/api/deno/http-server/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/fetch/index",
+      "title": "/api/web/fetch/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/assert/index",
+      "title": "/api/node/assert/",
       "template": "templates/template.html"
     }
   ]

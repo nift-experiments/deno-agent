@@ -1,1 +1,9 @@
 .nift/.lock
+
+.generated/
+.cache/
+
+public/
+.nift/public/
+
+__pycache__/

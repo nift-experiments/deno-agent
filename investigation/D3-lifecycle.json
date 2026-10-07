@@ -1,0 +1,74 @@
+[
+  {
+    "model": "deno",
+    "case": "initial",
+    "html": 13,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno",
+    "case": "body edit and literal Nift/template syntax",
+    "html": 13,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno",
+    "case": "shared Nift template edit",
+    "html": 13,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno",
+    "case": "route add",
+    "html": 14,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno",
+    "case": "route rename and stale HTML retirement",
+    "html": 14,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno",
+    "case": "route delete and stale HTML retirement",
+    "html": 13,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno-agent",
+    "case": "initial",
+    "html": 13,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno-agent",
+    "case": "body edit and literal Nift/template syntax",
+    "html": 13,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno-agent",
+    "case": "shared Nift template edit",
+    "html": 13,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno-agent",
+    "case": "route add",
+    "html": 14,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno-agent",
+    "case": "route rename and stale HTML retirement",
+    "html": 14,
+    "incremental_equals_forced_full": true
+  },
+  {
+    "model": "deno-agent",
+    "case": "route delete and stale HTML retirement",
+    "html": 13,
+    "incremental_equals_forced_full": true
+  }
+]

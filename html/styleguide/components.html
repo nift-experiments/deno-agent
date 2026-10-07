@@ -1,0 +1,93 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0"><a href="/styleguide/" class="text-inherit no-underline hover:underline">Style Guide</a></li></ol></nav></header><h1 class="leading-none md:text-4xl text-balance">Components</h1></div><h2>Search input</h2>
+<p>Form element for searching the deno domain with google search</p>
+<pre><code class="language-tsx">&lt;comp.SearchInput /&gt;
+</code></pre>
+<div class="md:relative w-full"><div class="relative"><input type="search" placeholder="Search" id="orama-search-input" class="w-full min-w-24 rounded-lg placeholder:text-sm text-base leading-normal p-1 pl-8 border transition-all duration-150 text-foreground-primary border-foreground-tertiary hover:bg-background-secondary focus:bg-background-secondary focus:outline-offset-1" style="background: url(/img/search.svg) no-repeat 0.5em 50%; background-size: 1.25em; background-color: var(--color-background-raw);"><kbd id="search-key" class="hidden xs:flex pointer-events-none absolute font-sans rounded-sm top-1 right-1 bottom-1 w-auto border-1 border-foreground-tertiary border-b-2 border-r-2 bg-background-primary text-foreground-secondary text-center text-xs font-bold p-2 items-center justify-center dark:bg-background-secondary dark:border-gray-700">⌘K</kbd><div id="orama-search-loading" class="absolute left-2 top-1/2 transform -translate-y-1/2 hidden bg-background-raw"><div class="animate-spin rounded-full h-4 w-4 border-2 border-transparent border-r-foreground-primary bg-background-raw"></div></div><div class="sr-only" aria-live="polite" id="orama-results-announcer"></div></div><div id="orama-search-results" class="absolute inset-2 left-2 right-2 h-[calc(100vh-8rem)] top-10 md:top-full md:left-auto md:right-0 mt-2 bg-background-raw border border-foreground-tertiary rounded-xl shadow-2xl z-50 md:max-h-128 overflow-hidden hidden md:min-w-160 max-w-2xl"><div id="orama-search-results-content" class="overflow-y-auto h-full"></div><div class="border-t border-foreground-tertiary bg-background-secondary px-4 py-2 sticky bottom-0"><div class="flex items-center gap-6 text-xs text-foreground-secondary"><span><kbd class="px-1.5 py-0.5 text-xs font-semibold text-foreground-secondary bg-background-primary border-r-2 border-b-2 border border-foreground-tertiary rounded mr-1"><span aria-hidden="true">↑↓</span><span class="sr-only">Up or down to</span></kbd>navigate</span><span><kbd class="px-1.5 py-0.5 text-xs font-semibold text-foreground-secondary bg-background-primary border-r-2 border-b-2 border border-foreground-tertiary rounded mr-1"><span aria-hidden="true">↵</span><span class="sr-only">Enter to</span></kbd>select</span><span><kbd class="px-1.5 py-0.5 text-xs font-semibold text-foreground-secondary bg-background-primary border-r-2 border-b-2 border border-foreground-tertiary rounded mr-1"><span aria-hidden="true">ESC</span><span class="sr-only">Escape to</span></kbd>close</span></div></div></div></div>
+<h2>Hero</h2>
+<p>A hero section for the top of a page</p>
+<pre><code class="language-tsx">&lt;comp.Hero bgImage="deno-looking-up.svg"&gt;
+    &lt;h1&gt;Title text&lt;/h1&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+&lt;/comp.Hero&gt;
+</code></pre>
+<div class="w-full grid grid-cols-1 gap-4 items-center md:grid-cols-[minmax(0,1fr)_16rem] md:[&amp;_img]:order-2 lg:grid-cols-[minmax(0,1fr)_24rem]" data-component="hero"><h1>Title text</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div>
+<h2>Banner</h2>
+<p>A banner style component for highlighting important information with different colors based on their <code>type</code> prop</p>
+<pre><code class="language-tsx">
+&lt;comp.Banner type="runtime"&gt;
+&lt;p class="text-lg"&gt;&lt;strong&gt;Strong Text&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod&lt;/p&gt;
+&lt;/comp.Banner&gt;
+</code></pre>
+<div class="flex flex-col gap-4 p-4 sm:p-6 md:p-8 border-l-4 text-runtime-foreground dark:bg-background-secondary w-full my-16 mx-0 border-runtime-500 bg-runtime-background"><p class="text-lg"><strong>Strong Text</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod</p></div>
+<h2>Heading</h2>
+<p>Headings with a coloured underline based on the <code>type</code> prop. Heading level set with  <code>level</code> prop</p>
+<pre><code class="language-tsx">&lt;comp.Heading level="2" type="runtime"&gt;A secondary heading&lt;/comp.Heading&gt;
+&lt;comp.Heading level="3" type="runtime"&gt;A secondary heading&lt;/comp.Heading&gt;
+&lt;comp.Heading level="3" type="deploy"&gt;A secondary heading&lt;/comp.Heading&gt;
+&lt;comp.Heading level="3" type="purple"&gt;A secondary heading&lt;/comp.Heading&gt;
+</code></pre>
+<h2 class="text-3xl md:text-4xl font-semibold mt-8 mb-4 leading-none">A secondary heading</h2>
+<h3 class="text-2xl md:text-3xl font-semibold mb-4 leading-none">A tertiary heading</h3>
+<h3 class="text-2xl md:text-3xl font-semibold mb-4 leading-none">A tertiary heading</h3>
+<h3 class="text-2xl md:text-3xl font-semibold mb-4 leading-none">A tertiary heading</h3>
+<h2>Theme toggle</h2>
+<p>Toggle control for flipping the theme</p>
+<pre><code class="language-tsx">&lt;comp.ThemeToggle /&gt;
+</code></pre>
+<button type="button" aria-label="toggle theme" class="shrink-0 h-9 aspect-square p-1 cursor-pointer rounded border border-transparent transition-colors duration-200 ease-in-out text-foreground-secondary hover:decoration-none hover:bg-background-secondary hover:border-background-tertiary flex flex-col items-center justify-start overflow-hidden" id="theme-toggle"><img src="/img/light.svg" class="w-full block -translate-y-full dark:translate-y-0 transition-transform duration-200 easing-[0.86,0,0.07,1]" alt=""><img src="/img/dark.svg" class="w-full block -translate-y-full dark:translate-y-0 transition-transform duration-200 easing-[0.86,0,0.07,1]" alt=""><span class="sr-only">Toggle Theme</span></button>
+<h2>CTA</h2>
+<p>Call to action button with different colors based on their <code>type</code> prop</p>
+<pre><code class="language-tsx">&lt;comp.CTA href="https://deno.com" type="runtime"&gt;Explore Deno&lt;/comp.CTA&gt;
+
+&lt;comp.CTA href="https://deno.com" type="jsr"&gt;See all packages on JSR&lt;/comp.CTA&gt;
+
+&lt;comp.CTA href="https://deno.com" type="deploy"&gt;Get started&lt;/comp.CTA&gt;
+</code></pre>
+<a href="https://deno.com" class="docs-cta runtime-cta">Explore Deno</a>
+<br>
+<a href="https://deno.com" class="docs-cta jsr-cta">See all packages on JSR</a>
+<br>
+<a href="https://deno.com" class="docs-cta deploy-cta">Get started</a>
+<br>
+<h2>Deploy on Deploy</h2>
+<p>Call to action button with the Deno Deploy logo. Should be used with additional copy.</p>
+<pre><code class="language-tsx">&lt;comp.DeployCTA /&gt;
+</code></pre>
+<p>Deploy your application to the edge: <a href="https://console.deno.com/" class="docs-cta deploy-cta deploy-button">Deno Deploy</a></p>
+<h2>Admonition</h2>
+<p>A box to highlight information. Must be of type</p>
+<ul>
+<li>"caution"</li>
+<li>"tip"</li>
+<li>"info"</li>
+</ul>
+<pre><code class="language-tsx">&lt;comp.Admonition type="info"&gt;
+  &lt;strong&gt;This is an info admonition&lt;/strong&gt;.
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+&lt;/comp.Admonition&gt;
+</code></pre>
+<div class="admonition info"><div class="title">info</div><p></p><p><strong>This is an info admonition</strong>.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+<div class="admonition caution"><div class="title">caution</div><p></p><p><strong>This is a caution admonition</strong>.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+<div class="admonition tip"><div class="title">tip</div><p></p><p><strong>This is a tip admonition</strong>.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+<h2>Columns</h2>
+<p>A component for displaying content in equal width columns</p>
+<pre><code class="language-tsx">&lt;comp.Columns&gt;
+    &lt;div&gt;
+        &lt;h4 class="text-lg font-semibold mb-1"&gt;Column 1&lt;/h4&gt;
+        &lt;p class="mb-3"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+        &lt;a class="homepage-link deploy-link" href="/deploy/kv/manual/"&gt;KV docs&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h4 class="text-lg font-semibold mb-1"&gt;Column 2&lt;/h4&gt;
+        &lt;p class="mb-3"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+        &lt;a class="homepage-link deploy-link" href="/deploy/kv/manual/cron"&gt;Cron docs&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h4 class="text-lg font-semibold mb-1"&gt;Column 3&lt;/h4&gt;
+        &lt;p class="mb-3"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;
+        &lt;a class="homepage-link deploy-link" href="/deploy/classic/queues/"&gt;Queues docs&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/comp.Columns&gt;
+</code></pre>
+<section class="columns"><div><h4 class="text-lg font-semibold mb-1">Column 1</h4><p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="homepage-link deploy-link" href="/deploy/kv/manual/">KV docs</a></div><div><h4 class="text-lg font-semibold mb-1">Column 2</h4><p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="homepage-link deploy-link" href="/deploy/kv/manual/cron">Cron docs</a></div><div><h4 class="text-lg font-semibold mb-1">Column 3</h4><p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><a class="homepage-link deploy-link" href="/deploy/classic/queues/">Queues docs</a></div></section></div><div class="mt-24"><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/styleguide/typography/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Typography</span></a><a href="/styleguide/og/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">OG images →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/styleguide/components.mdx">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>
