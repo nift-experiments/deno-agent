@@ -1,0 +1,722 @@
+[
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "warm-full",
+    "sample": 1,
+    "whole_pipeline_s": 147.25744772003964,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 120.65144455502741,
+        "maximum_measured_process_rss_mib": 1021.37890625
+      },
+      "search": {
+        "wall_s": 1.5176409319974482,
+        "maximum_measured_process_rss_mib": 559.9140625
+      },
+      "lume_publication": {
+        "wall_s": 25.087609406094998,
+        "maximum_measured_process_rss_mib": 3189.0234375
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3189.0234375,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "warm-full",
+    "sample": 2,
+    "whole_pipeline_s": 153.76281895302236,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 126.67096341098659,
+        "maximum_measured_process_rss_mib": 1023.015625
+      },
+      "search": {
+        "wall_s": 1.6498949779197574,
+        "maximum_measured_process_rss_mib": 558.078125
+      },
+      "lume_publication": {
+        "wall_s": 25.44106613798067,
+        "maximum_measured_process_rss_mib": 3219.5859375
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3219.5859375,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "warm-full",
+    "sample": 3,
+    "whole_pipeline_s": 145.98513732291758,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 120.10858391690999,
+        "maximum_measured_process_rss_mib": 868.0234375
+      },
+      "search": {
+        "wall_s": 1.388711230829358,
+        "maximum_measured_process_rss_mib": 559.6640625
+      },
+      "lume_publication": {
+        "wall_s": 24.48717513703741,
+        "maximum_measured_process_rss_mib": 3186.72265625
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3186.72265625,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "warm-full",
+    "sample": 4,
+    "whole_pipeline_s": 171.3571386539843,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 143.77465744293295,
+        "maximum_measured_process_rss_mib": 860.94140625
+      },
+      "search": {
+        "wall_s": 1.502473103115335,
+        "maximum_measured_process_rss_mib": 559.390625
+      },
+      "lume_publication": {
+        "wall_s": 26.07916899304837,
+        "maximum_measured_process_rss_mib": 3168.79296875
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3168.79296875,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "warm-full",
+    "sample": 5,
+    "whole_pipeline_s": 165.09561547101475,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 136.02300723013468,
+        "maximum_measured_process_rss_mib": 833.296875
+      },
+      "search": {
+        "wall_s": 1.7211475300136954,
+        "maximum_measured_process_rss_mib": 559.546875
+      },
+      "lume_publication": {
+        "wall_s": 27.350842353189364,
+        "maximum_measured_process_rss_mib": 3090.33203125
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3090.33203125,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "application-cold",
+    "sample": 1,
+    "whole_pipeline_s": 326.2711390950717,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 140.9267429469619,
+        "maximum_measured_process_rss_mib": 1754.453125
+      },
+      "search": {
+        "wall_s": 1.5458865500986576,
+        "maximum_measured_process_rss_mib": 560.48828125
+      },
+      "lume_publication": {
+        "wall_s": 183.79788260511123,
+        "maximum_measured_process_rss_mib": 3124.12109375
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3124.12109375,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "application-cold",
+    "sample": 2,
+    "whole_pipeline_s": 364.75569395604543,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 194.70660448097624,
+        "maximum_measured_process_rss_mib": 841.83203125
+      },
+      "search": {
+        "wall_s": 1.5455137249082327,
+        "maximum_measured_process_rss_mib": 559.19140625
+      },
+      "lume_publication": {
+        "wall_s": 168.5029059650842,
+        "maximum_measured_process_rss_mib": 3184.78515625
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3184.78515625,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "application-cold",
+    "sample": 3,
+    "whole_pipeline_s": 313.9406400669832,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 135.65713316295296,
+        "maximum_measured_process_rss_mib": 1023.58984375
+      },
+      "search": {
+        "wall_s": 1.518662836868316,
+        "maximum_measured_process_rss_mib": 560.890625
+      },
+      "lume_publication": {
+        "wall_s": 176.764073361177,
+        "maximum_measured_process_rss_mib": 3201.9765625
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3201.9765625,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "application-cold",
+    "sample": 4,
+    "whole_pipeline_s": 314.6855922299437,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 138.73780980193987,
+        "maximum_measured_process_rss_mib": 848.13671875
+      },
+      "search": {
+        "wall_s": 1.404657496837899,
+        "maximum_measured_process_rss_mib": 561.10546875
+      },
+      "lume_publication": {
+        "wall_s": 174.54248673608527,
+        "maximum_measured_process_rss_mib": 3089.76953125
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3089.76953125,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "application-cold",
+    "sample": 5,
+    "whole_pipeline_s": 305.30026681511663,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 136.84422066202387,
+        "maximum_measured_process_rss_mib": 1756.1796875
+      },
+      "search": {
+        "wall_s": 1.691202430985868,
+        "maximum_measured_process_rss_mib": 558.8359375
+      },
+      "lume_publication": {
+        "wall_s": 166.76408487698063,
+        "maximum_measured_process_rss_mib": 3277.11328125
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3277.11328125,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "prepared-input-warm-publication",
+    "sample": 1,
+    "whole_pipeline_s": 25.571988278999925,
+    "components": {
+      "search": {
+        "wall_s": 1.497112408047542,
+        "maximum_measured_process_rss_mib": 559.36328125
+      },
+      "lume_publication": {
+        "wall_s": 24.074438092997298,
+        "maximum_measured_process_rss_mib": 3142.58984375
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3142.58984375,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "prepared-input-warm-publication",
+    "sample": 2,
+    "whole_pipeline_s": 26.324272403027862,
+    "components": {
+      "search": {
+        "wall_s": 1.34219433600083,
+        "maximum_measured_process_rss_mib": 561.37890625
+      },
+      "lume_publication": {
+        "wall_s": 24.98167273681611,
+        "maximum_measured_process_rss_mib": 3224.06640625
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3224.06640625,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "prepared-input-warm-publication",
+    "sample": 3,
+    "whole_pipeline_s": 25.074835759820417,
+    "components": {
+      "search": {
+        "wall_s": 1.4417259248439223,
+        "maximum_measured_process_rss_mib": 558.05859375
+      },
+      "lume_publication": {
+        "wall_s": 23.632707447977737,
+        "maximum_measured_process_rss_mib": 3210.01171875
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3210.01171875,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "prepared-input-warm-publication",
+    "sample": 4,
+    "whole_pipeline_s": 27.470306321047246,
+    "components": {
+      "search": {
+        "wall_s": 1.7789779871236533,
+        "maximum_measured_process_rss_mib": 558.140625
+      },
+      "lume_publication": {
+        "wall_s": 25.690740158082917,
+        "maximum_measured_process_rss_mib": 3103.05078125
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3103.05078125,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "prepared-input-warm-publication",
+    "sample": 5,
+    "whole_pipeline_s": 24.376365482108667,
+    "components": {
+      "search": {
+        "wall_s": 1.4852924910373986,
+        "maximum_measured_process_rss_mib": 560.875
+      },
+      "lume_publication": {
+        "wall_s": 22.890623999061063,
+        "maximum_measured_process_rss_mib": 3142.9609375
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3142.9609375,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "prepared-input-application-cold",
+    "sample": 1,
+    "whole_pipeline_s": 154.52827446581796,
+    "components": {
+      "search": {
+        "wall_s": 1.4863829049281776,
+        "maximum_measured_process_rss_mib": 559.95703125
+      },
+      "lume_publication": {
+        "wall_s": 153.04152068402618,
+        "maximum_measured_process_rss_mib": 3084.14453125
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3084.14453125,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "prepared-input-application-cold",
+    "sample": 2,
+    "whole_pipeline_s": 165.09011296113022,
+    "components": {
+      "search": {
+        "wall_s": 1.3643450860399753,
+        "maximum_measured_process_rss_mib": 559.1796875
+      },
+      "lume_publication": {
+        "wall_s": 163.7253944328986,
+        "maximum_measured_process_rss_mib": 3178.96875
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3178.96875,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "prepared-input-application-cold",
+    "sample": 3,
+    "whole_pipeline_s": 173.12589477282017,
+    "components": {
+      "search": {
+        "wall_s": 1.488046799087897,
+        "maximum_measured_process_rss_mib": 559.94140625
+      },
+      "lume_publication": {
+        "wall_s": 171.6373445079662,
+        "maximum_measured_process_rss_mib": 3137.72265625
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3137.72265625,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "prepared-input-application-cold",
+    "sample": 4,
+    "whole_pipeline_s": 159.57699865684845,
+    "components": {
+      "search": {
+        "wall_s": 1.838561134878546,
+        "maximum_measured_process_rss_mib": 562.8515625
+      },
+      "lume_publication": {
+        "wall_s": 157.73795601911843,
+        "maximum_measured_process_rss_mib": 3058.4375
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3058.4375,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "prepared-input-application-cold",
+    "sample": 5,
+    "whole_pipeline_s": 155.5691029529553,
+    "components": {
+      "search": {
+        "wall_s": 1.5139395939186215,
+        "maximum_measured_process_rss_mib": 560.09765625
+      },
+      "lume_publication": {
+        "wall_s": 154.05468518822454,
+        "maximum_measured_process_rss_mib": 3148.5390625
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3148.5390625,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "js/search.js",
+      "src-6YRVFFYS.js",
+      "orama-index-summary.json",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "sitemap.xml",
+      "llms.json"
+    ],
+    "tracked_source_clean": true,
+    "dependency_delivery": "Exact pinned resvg/esbuild WASM bytes from local Blob delivery; original compile count/worker lifecycle and initialization inside timing; direct CLI observations separate.",
+    "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "model": "upstream",
+  "case": "one-body-production-publication",
+  "whole_pipeline_s": 135.08334716199897,
+  "components": {
+    "reference_types_and_doc": {
+      "wall_s": 111.72601906815544,
+      "maximum_measured_process_rss_mib": 853.84765625
+    },
+    "search": {
+      "wall_s": 1.3609221370425075,
+      "maximum_measured_process_rss_mib": 559.05078125
+    },
+    "lume_publication": {
+      "wall_s": 21.995862456038594,
+      "maximum_measured_process_rss_mib": 3117.73828125
+    }
+  },
+  "html_routes": 834,
+  "behavior": "Same production phase chain, including reference type/doc generation, local search and full Lume publication; not development-server hot reload."
+}

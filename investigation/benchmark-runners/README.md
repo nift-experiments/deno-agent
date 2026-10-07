@@ -1,0 +1,5 @@
+# External runner archive
+
+These scripts run from a separate `deno-baseline/` directory alongside disposable/experiment `deno/`, `deno-agent/` and pinned `deno-upstream/` checkouts. Copy them there; do not run them from this archive directory. Prepare `site/` as the frozen complete reference, `tools/deno`, dependency `cache/`, `logs/`, `evidence/`, generated-inputs and native benchmark clone as described in the comparison/baseline ledgers. Native WASM delivery uses the separately archived bootstrap and pinned assets. Use a new evidence directory and preserve previous samples. Heavy campaigns are serialized. Source editing in the lifecycle runner is outside timed builds.
+
+The migration runner archive corrects only its pre-existing-output guard to name the actual output file; all measured commands, loops and counters are unchanged from collection. These scripts record benchmark boundaries, not an automatic upstream acquisition/setup installer. The fresh-checkout runner verifies committed maintained inputs with prepared dependencies; it is not a benchmark.

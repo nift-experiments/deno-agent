@@ -373,3 +373,7 @@ Five normal/forced/fresh samples per model preserve all reference bytes; all twe
 ## Source-removal correction and native dependency boundary
 
 See investigation/D9-SOURCE-REMOVAL-AND-DEPENDENCIES.md. Actual MDX layout removal now matches native behavior; all reference bytes restore. Native repeated timing freezes two WASM deliveries while measuring compilation/startup; direct CLI observations/failures remain separate. Refresh final migration samples, finish disclosed native samples, then D9 report/init/fresh-closeout. Labs stays on hold.
+
+## Final native/migration measurement checkpoint
+
+All final five-sample modes and the native production changed-input observation completed. Read investigation/D9-FINAL-MEASUREMENTS.md, qualified raw samples and retained prior campaigns. D9 report/init review and final fresh-checkout closeout follow; Labs remains on hold.
