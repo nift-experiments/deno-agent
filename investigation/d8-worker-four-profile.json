@@ -1,0 +1,88 @@
+{
+  "files": 2573,
+  "bytes_equal": true,
+  "metrics": {
+    "model": "maintained Markdown/MDX/structured references -> standalone renderer -> transient HTML -> Nift -> publication/search",
+    "render_s": 10.109265486942604,
+    "cache": {
+      "source_discovery_s": 0.020064241951331496,
+      "input_hashing_and_validation_s": 0.3641731720417738,
+      "cache_preparation_s": 0.3870746959000826
+    },
+    "exports_reused": false,
+    "render_components": {
+      "render_s": 9.206729300000001,
+      "pages": 834,
+      "reused_pages": 0,
+      "normalization_workers": 4,
+      "normalization_backpressure_s": 1.251621709000015,
+      "normalization_drain_s": 0.1388570120000004,
+      "output_io_work_s": 3.393312312999988,
+      "frontmatter_s": 0.06251496099999931,
+      "metadata_s": 0.100745661,
+      "page_metadata_s": 0.2681235379999995,
+      "redirect_generation_subset_s": 0.007453826000000077,
+      "generators": {
+        "examples/index.examples.page.tsx": 0.04688482799999997,
+        "examples/index.page.tsx": 0.013066960999999992,
+        "lint/lint_rule.page.tsx": 0.08183333999999996,
+        "reference/reference.page.ts": 1.2755183310000002
+      },
+      "generator_s": 1.4177916679999998,
+      "component_binding_s": 0.08127605599999209,
+      "body_s": 1.126977117000002,
+      "mdx_s": 0.06471009699999968,
+      "layout_s": 4.509624538000007,
+      "dom_s": 13.24338627700002,
+      "markdown_inclusive_s": 1.0569751709999842,
+      "prism_subset_s": 0.27464052500003233,
+      "markdown_parse_subset_s": 0.7198447479999897,
+      "render_calls": 2205,
+      "jsx_expansion_inclusive_s": 4.429886232000029,
+      "jsx_render_calls": 89430,
+      "counter_boundaries": "Frontmatter is a subset of initial/per-page metadata. Generator-family and redirect counters are subsets of generation. Markdown parsing and Prism are subsets of inclusive Markdown, whose helpers also occur in layouts/generators. MDX is a subset of body; JSX expansion is a subset of body/layout work, with nested render calls excluded. DOM and output I/O are summed job work, overlapping producer work with parser workers. Backpressure/drain describe waiting, not additional transformation costs. Do not add overlapping counters."
+    },
+    "phases": {
+      "render": {
+        "wall_s": 9.59061152790673,
+        "maximum_measured_process_rss_mib": 1485.78125
+      },
+      "search_generation": {
+        "wall_s": 1.5889721361454576,
+        "maximum_measured_process_rss_mib": 554.85546875
+      },
+      "search_clock": {
+        "wall_s": 0.2568951309658587,
+        "maximum_measured_process_rss_mib": 158.41796875
+      },
+      "llms": {
+        "wall_s": 0.25575472600758076,
+        "maximum_measured_process_rss_mib": 132.09765625
+      }
+    },
+    "nift_process": {
+      "wall_s": 0.42398167587816715,
+      "maximum_measured_process_rss_mib": 132.1640625
+    },
+    "nift_preparation_and_composition_s": 0.9776560130994767,
+    "search_s": 1.8466116169001907,
+    "llms_s": 0.25623624585568905,
+    "og_generation_s": 0,
+    "og_model": "maintained static publication assets; explicit updates outside routine builds",
+    "publication_s": 0.28324239421635866,
+    "non_html_outputs": 1739,
+    "copy_subset_s": 0.1770438114181161,
+    "copy_categories_subset_s": {
+      "static_assets": 0.05998041620478034,
+      "og_assets": 0.0717747239395976,
+      "markdown_downloads": 0.03153429040685296,
+      "redirects": 0.0008319828193634748,
+      "search": 0.00760221597738564,
+      "llms": 0.00532018207013607
+    },
+    "copied_bytes": 100523968,
+    "content_negotiation_generation_s": 0,
+    "content_negotiation_model": "maintained runtime middleware; copied Markdown download artifacts",
+    "complete_s": 13.510714463889599
+  }
+}

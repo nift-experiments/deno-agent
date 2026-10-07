@@ -1,0 +1,36 @@
+[
+  {
+    "model": "deno",
+    "case": "explicit changed-title one-image maintenance",
+    "whole_operation_s": 12.514509670203552,
+    "maximum_measured_process_rss_mib": 1501.734375,
+    "changed_images": [
+      "runtime/run/index.png"
+    ],
+    "other_833_images_unchanged": true,
+    "accepted_manifest_updated": true,
+    "routine_build_cost": false,
+    "metrics": {
+      "explicit_update_s": 12.37929624505341,
+      "images": 1,
+      "included_in_normal_publication": false
+    }
+  },
+  {
+    "model": "deno-agent",
+    "case": "explicit changed-title one-image maintenance",
+    "whole_operation_s": 0.9028929711785167,
+    "maximum_measured_process_rss_mib": 148.9765625,
+    "changed_images": [
+      "runtime/run/index.png"
+    ],
+    "other_833_images_unchanged": true,
+    "accepted_manifest_updated": true,
+    "routine_build_cost": false,
+    "metrics": {
+      "explicit_update_s": 0.66540820710361,
+      "images": 1,
+      "included_in_normal_publication": false
+    }
+  }
+]

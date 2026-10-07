@@ -1,0 +1,6 @@
+{
+  "case": "authoritative frontmatter field removal",
+  "deleted_description_not_retained_from_bootstrap": true,
+  "incremental_equals_forced": true,
+  "restoration_all_2573_bytes_equal": true
+}

@@ -357,3 +357,7 @@ User-directed interruption stopped the OG-heavy D7 lifecycle campaign and queued
 ## Focused profiling checkpoint
 
 Read investigation/D8-PROFILING.md. Repeated component discovery and shared metadata expansion were removed. Human derived pages and search/LLM exports have input/output-verified transient caches; forced and fresh builds recompute. Twenty lifecycle cases and seven focused cache/source-alias checks pass. Initial corrected 23.35s/1.54s observations and original OG-heavy results are retained. Finish the browser rerun and serialized normal/forced/fresh benchmarks, then D9 comparison/init review. Keep Labs unpublished during this campaign.
+
+## DOM/source-ownership checkpoint
+
+Four persistent DOM-only workers reduce uncached publication while preserving all reference bytes; serial/two/four-worker resource evidence is retained. Maintained human source fields have deletion provenance. Repeated cache correctness and explicit one-image OG maintenance pass. Browser parity rerun and final serialized benchmark/report remain required. Labs is on hold.
