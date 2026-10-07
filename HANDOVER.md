@@ -361,3 +361,7 @@ Read investigation/D8-PROFILING.md. Repeated component discovery and shared meta
 ## DOM/source-ownership checkpoint
 
 Four persistent DOM-only workers reduce uncached publication while preserving all reference bytes; serial/two/four-worker resource evidence is retained. Maintained human source fields have deletion provenance. Repeated cache correctness and explicit one-image OG maintenance pass. Browser parity rerun and final serialized benchmark/report remain required. Labs is on hold.
+
+## Optimized whole-site gate
+
+Read investigation/D8-OPTIMIZED-PARITY.md. All-route HTTP, 104 browser captures and 20 interactions pass with documented control-state pixel differences. Next: repeat 20 lifecycle cases on committed worker defaults, run serialized normal/forced/fresh and native/prepared-input benchmarks, finish D9/init review, verify clean fresh clones. Keep Labs unpublished.

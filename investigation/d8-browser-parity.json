@@ -1,0 +1,3451 @@
+{
+  "states": 104,
+  "comparison": "Optimized models against corresponding D6 captures; inherited D6 baseline differences remain separately recorded.",
+  "records": [
+    {
+      "model": "deno",
+      "route": "/404/",
+      "key": "_404_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "660e103029acfcf3cb61de011b73e286dc28d993da1b3481c3fbb05901c7685a",
+      "ax_sha256": "6d0e23c02bf9d571d3cd1cdb1704280cfa734be3bb9e0cd76df797a1cba96026",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/deno/http-server/",
+      "key": "_api_deno_http-server_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "6f64f98a2cd21cc6873d42f16b03d39b4d91f9ab1a21cf24eb899bb630a74a7b",
+      "ax_sha256": "230dbc3be61f0cad9e1bd1c5b3995ea3da4155b04cc7ab089f650c52940db371",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/node/assert/",
+      "key": "_api_node_assert_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "f1dd39399be434ce8c3d424d9655cb5e1dd533294a5caddd0888f40c1c0b22f3",
+      "ax_sha256": "fb0daedbcb5ada4bd86beb0fdeeea0e573ba5893b6cffa256c6754fc70d5c70c",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/web/fetch/",
+      "key": "_api_web_fetch_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "0f902f7ff03c33c5e05cf5b229577cbfd5267a0a8164961cb47cc5b770220394",
+      "ax_sha256": "d61a7adfc889db1eaeee25afe632b25d9e5716478da89837498dddc10e3ea862",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/deploy/classic/api/runtime-fs/",
+      "key": "_deploy_classic_api_runtime-fs_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.14087465790914067,
+      "jpeg_sha256": "4945a84ab24be05ea3e5d5edc4d76a0a471c569079e3df1cc2eef122ce0f6172",
+      "ax_sha256": "64c195ba7a330cafdfb949d50e6fd5d9e7141ea8f400dce22c5fda5f3df54e4b",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/examples/hello_world/",
+      "key": "_examples_hello_world_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.14033059660645866,
+      "jpeg_sha256": "a9be610df9c999899a312eccb1ca276df9b366f10bad90a242245a695fd4604e",
+      "ax_sha256": "86d8e16cd01088049d346270016d46bb4e14b97373a72eea1b1c3782fc6ab35f",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/lint/rules/ban-ts-comment/",
+      "key": "_lint_rules_ban-ts-comment_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "6c5e3f4ab68d2a1ab1bc57901205474db7b01cd20c3f5f82c1db481267864603",
+      "ax_sha256": "db165091866e7569f4711dc7c8751ed5c44df15d91fe3a32f07c1fb5758d180a",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/runtime/",
+      "key": "_runtime_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "261cfc23ad28da0d600983d134f345fa108e4d520204b40ad4770e250ebb1ffd",
+      "ax_sha256": "5a0bf79c7e616d76029ac1ded8aa16cf2205e288ae6d73aee09a4113df05afab",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/runtime/reference/cli/run/",
+      "key": "_runtime_reference_cli_run_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "54c6f7f483a636121c15b5ba2c7dc0f0a7edb14136ba65416eca81a4882ccad9",
+      "ax_sha256": "3382c99dda1eede34179cae52cf50c3f9ac5f33ff160ba9a70c6efe5204b8c0f",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/sandbox/",
+      "key": "_sandbox_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.14087465790914067,
+      "jpeg_sha256": "ff0c6494e4ba864649568874d61769753adf40969a912075a5bda39cf920c4c0",
+      "ax_sha256": "0fc2c2432a6f6b280a487a730914d01ddd5c16149109717463653b54cf31aeb3",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/styleguide/components/",
+      "key": "_styleguide_components_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "90fc512c56060579c2585793285f6c354ac9dd7f2b21bb361d9c74144a71324a",
+      "ax_sha256": "6deb7648ac64caf97d573dd78a1560e0e59d1422120ad5205675c382ef40d895",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/styleguide/typography/",
+      "key": "_styleguide_typography_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "065c5238b28b06eafc4226d3330753c36170bc573ace486a8d3d0ba4e71bdfd1",
+      "ax_sha256": "b5d8483a62a1f83257f2b3799d010f82a48d9ce9bd539a66d08c0fb8486d9399",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/subhosting/manual/",
+      "key": "_subhosting_manual_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.14087465790914067,
+      "jpeg_sha256": "93744bda52bf8a5278b47f0c26a6d15721c9d8772db910836227046234347688",
+      "ax_sha256": "72b57ab206a9d4a82245f2b16102176ed41fdc190aab2212c5d95797730c48f8",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/404/",
+      "key": "_404_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1440,
+        1000
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1112,
+        16,
+        1424,
+        56
+      ],
+      "mean_channel_difference": 0.03296805555555555,
+      "jpeg_sha256": "4605dd727fcda24f1278314e6868b7d8ad610b6d8065124d0c157f67ab15bb0a",
+      "ax_sha256": "580997974a54dcf4a661b865fa8b7860cfb15e31f9578eed903a97f36e53f576",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/deno/http-server/",
+      "key": "_api_deno_http-server_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "63403352affe6eccd7ea814d00aaad2521f9bdb75c3760ba6a26f09ed99c9bbc",
+      "ax_sha256": "449376638edb60c5f0f0c842b88c11fdd40e1de01339f51089ca053476bc15c9",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/node/assert/",
+      "key": "_api_node_assert_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "6744844971f34001fe9893a16da3c5cc0af1fa1fe05d70e437ba0be84d7a18cb",
+      "ax_sha256": "bf36a005656941bed7b63bba662bf0972170c3778ae2940d23f92b1bd876b6c9",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/web/fetch/",
+      "key": "_api_web_fetch_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "9216d430c6487e52ffc6c0f43b51cc47343ced8c8cf7de400f1631e524752436",
+      "ax_sha256": "13995118f13bca0e0647c00bbf6b466f6c9af1af710389ce397700da644c4fee",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/deploy/classic/api/runtime-fs/",
+      "key": "_deploy_classic_api_runtime-fs_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "a4048107496dbc93b850f0feae82dfc387bbd466351b71f5689c2af43aff52f7",
+      "ax_sha256": "195b9af56aaccd3a2e970b715cb2ee39b25852c0c859d9185177641065b7d84b",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/examples/hello_world/",
+      "key": "_examples_hello_world_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "2c96e17774dc14d366858ed336bf2dbc72deb807c2e187edc7bce233b68b5c6c",
+      "ax_sha256": "4d4a251cf5470624b68aab1f8d42994b2a19b11179ba0ff04c3a1cfdc76cf309",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/lint/rules/ban-ts-comment/",
+      "key": "_lint_rules_ban-ts-comment_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "5e039f67392c1bd35fbc949d21a538b72d48142b2f9710b725926870ab5e3a0f",
+      "ax_sha256": "65eddda54ed45fcbfdf219a67cf7e4d8e0b7c564f2ff4332556a3291ded91e8b",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/runtime/",
+      "key": "_runtime_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1424,
+        240
+      ],
+      "mean_channel_difference": 0.032153818890661,
+      "jpeg_sha256": "02e7751bec4746829429fd687c391b4740808ee7f1a3bc2aa5e68aa904136989",
+      "ax_sha256": "c83b5814df594f3535885426a053006f8e0fcfe014e299ce2dcea1fe7bd71698",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ],
+        [
+          1400,
+          216,
+          1430,
+          248
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/runtime/reference/cli/run/",
+      "key": "_runtime_reference_cli_run_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "6d3bc2a7fda610fa3ffc9b333c434369046a65caf118aa7ef9c9dbf60e4bca2d",
+      "ax_sha256": "a6317fab97fb6a4e42d4d1cd5dd1ede0eb31ff146d8a568078d81e69394eba9a",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/sandbox/",
+      "key": "_sandbox_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "88aaa0099bd7abf218c382c444ba34d48c1c4a532933bd16f0267be1c866adff",
+      "ax_sha256": "e58623e38d93131231ac4a877e0d2888ac395228a64b698b3f7cb60ad6a14dcb",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/styleguide/components/",
+      "key": "_styleguide_components_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "abecb29b0d929b5d53f5fe381af7a5e9ab7543c99fb2025ae92cbfdf33589c5c",
+      "ax_sha256": "663eec0839bc04c4f05d0c4611000963ba517abcb5afb51b7520f34d59121e2e",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/styleguide/typography/",
+      "key": "_styleguide_typography_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "b9942edb0e83a672c3a70ea33fcd395b0da10b52c4aed39107a61defb879933a",
+      "ax_sha256": "537d6185be69131adc07424369473e4dd008dd25d76e3b2e5105a35d87ba8f91",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/subhosting/manual/",
+      "key": "_subhosting_manual_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "f88a07bc14e74e9fefcff0748a31ddad9b7fe1991f27617af4fd4f59e98ce807",
+      "ax_sha256": "b50851a504281e56c0e8687e54cb3697c4abb5248faa07f564665b0f797bfc22",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/404/",
+      "key": "_404_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": true,
+      "difference_bbox": null,
+      "mean_channel_difference": 0.0,
+      "jpeg_sha256": "081bf154f3175c1bdf2734659fb463cde08c7effb74f4f9493a66e6d765f5130",
+      "ax_sha256": "bc24198ecf771e39c0db9519aee0412c515fd90740ad68fe9c3f8cd045328bbc",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/deno/http-server/",
+      "key": "_api_deno_http-server_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        48
+      ],
+      "mean_channel_difference": 0.08198029556650246,
+      "jpeg_sha256": "0c5c79d6345ea06eafb828eee0e87bf407e1f530333ce38f45f98c9d59d5fadc",
+      "ax_sha256": "230dbc3be61f0cad9e1bd1c5b3995ea3da4155b04cc7ab089f650c52940db371",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/node/assert/",
+      "key": "_api_node_assert_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        48
+      ],
+      "mean_channel_difference": 0.08198029556650246,
+      "jpeg_sha256": "49d396b26577dc6234b0170ccd0dc1b43755cb800034facecfabdf2a6f4fb3eb",
+      "ax_sha256": "fb0daedbcb5ada4bd86beb0fdeeea0e573ba5893b6cffa256c6754fc70d5c70c",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/web/fetch/",
+      "key": "_api_web_fetch_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        48
+      ],
+      "mean_channel_difference": 0.08198029556650246,
+      "jpeg_sha256": "11921c3207c36564b583a2a8ee02b4685fccd2aff6c9b4dfb9f761e39e048fd5",
+      "ax_sha256": "d61a7adfc889db1eaeee25afe632b25d9e5716478da89837498dddc10e3ea862",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/deploy/classic/api/runtime-fs/",
+      "key": "_deploy_classic_api_runtime-fs_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08216748768472908,
+      "jpeg_sha256": "6388877228597487be10481dd3acbe186cf1440d9dead6013b6be3bfc5e8a161",
+      "ax_sha256": "64c195ba7a330cafdfb949d50e6fd5d9e7141ea8f400dce22c5fda5f3df54e4b",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/examples/hello_world/",
+      "key": "_examples_hello_world_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        271,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08169239189928845,
+      "jpeg_sha256": "c929d08840bb1c79f35214cd15babd92e0dd533d487d53f228e06515a2befcbd",
+      "ax_sha256": "86d8e16cd01088049d346270016d46bb4e14b97373a72eea1b1c3782fc6ab35f",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/lint/rules/ban-ts-comment/",
+      "key": "_lint_rules_ban-ts-comment_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        271,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08198248494800218,
+      "jpeg_sha256": "6464c9c3c7a8318570d795f4b703f7681e500c3479387bd7f88b6e229f78fadc",
+      "ax_sha256": "db165091866e7569f4711dc7c8751ed5c44df15d91fe3a32f07c1fb5758d180a",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/runtime/",
+      "key": "_runtime_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        48
+      ],
+      "mean_channel_difference": 0.08198029556650246,
+      "jpeg_sha256": "f357649ca4455a70d3411376cfba3b0d8d5ead0c27ab33dd5afacea54a0a31f1",
+      "ax_sha256": "5a0bf79c7e616d76029ac1ded8aa16cf2205e288ae6d73aee09a4113df05afab",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/runtime/reference/cli/run/",
+      "key": "_runtime_reference_cli_run_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        48
+      ],
+      "mean_channel_difference": 0.08198029556650246,
+      "jpeg_sha256": "afd249a626d54cc774c1418241c6091f649b734fd9cbeb91dfecf931046e3464",
+      "ax_sha256": "6ba4d06a2f714c9424a09258fbb4c16da4e21faa9b65e3301979c9bb4558df3c",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/sandbox/",
+      "key": "_sandbox_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08216748768472908,
+      "jpeg_sha256": "2bae45f9103670676da97ef8a50c5c6507118038f723bb44c1fd3e91a8311a15",
+      "ax_sha256": "0fc2c2432a6f6b280a487a730914d01ddd5c16149109717463653b54cf31aeb3",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/styleguide/components/",
+      "key": "_styleguide_components_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        271,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08198248494800218,
+      "jpeg_sha256": "89905c08992499516b6d3b8ced819052062483282ca848700cd2008dd0daadff",
+      "ax_sha256": "6deb7648ac64caf97d573dd78a1560e0e59d1422120ad5205675c382ef40d895",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/styleguide/typography/",
+      "key": "_styleguide_typography_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        271,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08198248494800218,
+      "jpeg_sha256": "99033caf2d739e13db7c11f30ac11a3a27aa350ceebbdadb89b62976b0dff6f7",
+      "ax_sha256": "b5d8483a62a1f83257f2b3799d010f82a48d9ce9bd539a66d08c0fb8486d9399",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/subhosting/manual/",
+      "key": "_subhosting_manual_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08216748768472908,
+      "jpeg_sha256": "b2f040c81f83ac78e5ad6962055ae69446c6455cccfe7422d034aad5d49c8b0e",
+      "ax_sha256": "72b57ab206a9d4a82245f2b16102176ed41fdc190aab2212c5d95797730c48f8",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/404/",
+      "key": "_404_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1112,
+        15,
+        1425,
+        56
+      ],
+      "mean_channel_difference": 0.019143518518518518,
+      "jpeg_sha256": "28291ca7cebdcf93a94270536e90d1948ecb24978f9d9acb7cc17069b5ff6a9e",
+      "ax_sha256": "580997974a54dcf4a661b865fa8b7860cfb15e31f9578eed903a97f36e53f576",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/deno/http-server/",
+      "key": "_api_deno_http-server_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "51f1d3c21d193e82659350fa3b7be34b02f63b0d01bff66ac33ee0cc2dceedcf",
+      "ax_sha256": "449376638edb60c5f0f0c842b88c11fdd40e1de01339f51089ca053476bc15c9",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/node/assert/",
+      "key": "_api_node_assert_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "2e2b4e6e38a18611f0282dcd96bc15b463675798211d88bb4d9be3029a052c16",
+      "ax_sha256": "bf36a005656941bed7b63bba662bf0972170c3778ae2940d23f92b1bd876b6c9",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/api/web/fetch/",
+      "key": "_api_web_fetch_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "59ce0066085b4985c2efaeb0dd4c5592af0dd119f3cab907ae830c7a0c1180bc",
+      "ax_sha256": "13995118f13bca0e0647c00bbf6b466f6c9af1af710389ce397700da644c4fee",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/deploy/classic/api/runtime-fs/",
+      "key": "_deploy_classic_api_runtime-fs_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "ba654e95b9c4bdb93fb1da10f56c55139532a4a27991666f7de41d7455931d2e",
+      "ax_sha256": "195b9af56aaccd3a2e970b715cb2ee39b25852c0c859d9185177641065b7d84b",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/examples/hello_world/",
+      "key": "_examples_hello_world_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "8c8165b953c94bb41160d256fa37148a87308b7ec7646dd0fca8932965616e8b",
+      "ax_sha256": "4d4a251cf5470624b68aab1f8d42994b2a19b11179ba0ff04c3a1cfdc76cf309",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/lint/rules/ban-ts-comment/",
+      "key": "_lint_rules_ban-ts-comment_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "26cb08d86b58a81dd49ca911405b7b6540eea8ad10261282eb3ab54928ffd0e7",
+      "ax_sha256": "19a043398d772d5b7896e97375b5d3e4c8c098cafcb4565b320484a2c261e309",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/runtime/",
+      "key": "_runtime_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1424,
+        240
+      ],
+      "mean_channel_difference": 0.019179160021265282,
+      "jpeg_sha256": "c4a8f8d8a0976e090355a124cbb53bb0ab3c3d3acbcbabeb9170e3b02191f2dc",
+      "ax_sha256": "c83b5814df594f3535885426a053006f8e0fcfe014e299ce2dcea1fe7bd71698",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ],
+        [
+          1400,
+          216,
+          1430,
+          248
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/runtime/reference/cli/run/",
+      "key": "_runtime_reference_cli_run_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "ee5e536b7b51f93b902acab68c4646aab22a45de90dcb32d46d816a369bd63c8",
+      "ax_sha256": "a6317fab97fb6a4e42d4d1cd5dd1ede0eb31ff146d8a568078d81e69394eba9a",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/sandbox/",
+      "key": "_sandbox_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "f146174d27660fe84eef43edbd308f4605c36ad206cd21cf2c1a0acb68c69cb7",
+      "ax_sha256": "e58623e38d93131231ac4a877e0d2888ac395228a64b698b3f7cb60ad6a14dcb",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/styleguide/components/",
+      "key": "_styleguide_components_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "6be6e00df33fd410a15c26eff7a2ec0d17ee1b6ff2d70d8da236731c57581beb",
+      "ax_sha256": "663eec0839bc04c4f05d0c4611000963ba517abcb5afb51b7520f34d59121e2e",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/styleguide/typography/",
+      "key": "_styleguide_typography_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "1b97d6f31cd40532fa039a4a4858008fe4dd3461417d725c22992b84aa2e19af",
+      "ax_sha256": "537d6185be69131adc07424369473e4dd008dd25d76e3b2e5105a35d87ba8f91",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno",
+      "route": "/subhosting/manual/",
+      "key": "_subhosting_manual_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "563de6a0d427bce1304650fb2d2f2885f0480d19047fede645b090bb110ab7be",
+      "ax_sha256": "b50851a504281e56c0e8687e54cb3697c4abb5248faa07f564665b0f797bfc22",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/404/",
+      "key": "_404_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "660e103029acfcf3cb61de011b73e286dc28d993da1b3481c3fbb05901c7685a",
+      "ax_sha256": "85e35b5fcad4824f0c0819d3baac94c6ab36eb49957610aa4427db57e194f256",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/deno/http-server/",
+      "key": "_api_deno_http-server_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "6f64f98a2cd21cc6873d42f16b03d39b4d91f9ab1a21cf24eb899bb630a74a7b",
+      "ax_sha256": "6707b6a52570c247cf4f62c1b08f47ec7122c6b4a9d44f469fd37167df7f3f23",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/node/assert/",
+      "key": "_api_node_assert_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "f1dd39399be434ce8c3d424d9655cb5e1dd533294a5caddd0888f40c1c0b22f3",
+      "ax_sha256": "bd50bb9fa0264ef5d1c1bb4c2382859f4ea23c72d2320655085326beab74b067",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/web/fetch/",
+      "key": "_api_web_fetch_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "0f902f7ff03c33c5e05cf5b229577cbfd5267a0a8164961cb47cc5b770220394",
+      "ax_sha256": "b4b2817cac22d5db92754aa0ee5d563b17332aa6be6d67e76faad87adc2c3387",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/deploy/classic/api/runtime-fs/",
+      "key": "_deploy_classic_api_runtime-fs_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.14087465790914067,
+      "jpeg_sha256": "4945a84ab24be05ea3e5d5edc4d76a0a471c569079e3df1cc2eef122ce0f6172",
+      "ax_sha256": "87778d15f03d336c632fbd3f0e34abbfeeabfb3e6421d8fdf17234c6f1b8e404",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/examples/hello_world/",
+      "key": "_examples_hello_world_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.14033059660645866,
+      "jpeg_sha256": "a9be610df9c999899a312eccb1ca276df9b366f10bad90a242245a695fd4604e",
+      "ax_sha256": "59e6c72895ed904d72f905ba5dd44c0658a5224eb25ac21c27ee31a0cb33a2bf",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/lint/rules/ban-ts-comment/",
+      "key": "_lint_rules_ban-ts-comment_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "6c5e3f4ab68d2a1ab1bc57901205474db7b01cd20c3f5f82c1db481267864603",
+      "ax_sha256": "87a9209c2c5a4ff241a9a772c89bba8cb39abe9202be7f89f8ee2447f43e2901",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/runtime/",
+      "key": "_runtime_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "261cfc23ad28da0d600983d134f345fa108e4d520204b40ad4770e250ebb1ffd",
+      "ax_sha256": "04958aa2278e2827dc72ab737836b035e70120ed85e0827f38b710d303ebd09e",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/runtime/reference/cli/run/",
+      "key": "_runtime_reference_cli_run_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "54c6f7f483a636121c15b5ba2c7dc0f0a7edb14136ba65416eca81a4882ccad9",
+      "ax_sha256": "1876cd1883c17513fcb1409266a5a5d0268104a3492a23161d82defc4c666a18",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/sandbox/",
+      "key": "_sandbox_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.14087465790914067,
+      "jpeg_sha256": "ff0c6494e4ba864649568874d61769753adf40969a912075a5bda39cf920c4c0",
+      "ax_sha256": "3a59f44fef633587095c4c17888b3abbc876c7797d3194e2b937f0a6cefce77a",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/styleguide/components/",
+      "key": "_styleguide_components_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "90fc512c56060579c2585793285f6c354ac9dd7f2b21bb361d9c74144a71324a",
+      "ax_sha256": "58772a978c0b46b219e730860eedbf7e4a3d610fecd7c5efd42817fb1198e1a6",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/styleguide/typography/",
+      "key": "_styleguide_typography_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.13981390257252324,
+      "jpeg_sha256": "065c5238b28b06eafc4226d3330753c36170bc573ace486a8d3d0ba4e71bdfd1",
+      "ax_sha256": "6823f6792638345ed153f04fc8ef10a7fb1f260246b1eea4561dbbe403616bef",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/subhosting/manual/",
+      "key": "_subhosting_manual_-390-dark",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        320,
+        48
+      ],
+      "mean_channel_difference": 0.14087465790914067,
+      "jpeg_sha256": "93744bda52bf8a5278b47f0c26a6d15721c9d8772db910836227046234347688",
+      "ax_sha256": "305342a6d4b7bc6208dab108d6648112deb8c6047a3390e4d021bf4556dc4a31",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/404/",
+      "key": "_404_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1440,
+        1000
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1112,
+        16,
+        1424,
+        56
+      ],
+      "mean_channel_difference": 0.03296805555555555,
+      "jpeg_sha256": "4605dd727fcda24f1278314e6868b7d8ad610b6d8065124d0c157f67ab15bb0a",
+      "ax_sha256": "be54eef998f1a2b684bce5f589325a3814ae0e6e60f3318876e50de5fcbe4748",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/deno/http-server/",
+      "key": "_api_deno_http-server_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "63403352affe6eccd7ea814d00aaad2521f9bdb75c3760ba6a26f09ed99c9bbc",
+      "ax_sha256": "9777273ed5fb991d84d2cd0abc7752894ed0c17a49091a2c0e4a11785bd0f84f",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/node/assert/",
+      "key": "_api_node_assert_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "6744844971f34001fe9893a16da3c5cc0af1fa1fe05d70e437ba0be84d7a18cb",
+      "ax_sha256": "c9fa225990250f4f503cabe07c9499eb041906c702b36b19032f1018dc373d05",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/web/fetch/",
+      "key": "_api_web_fetch_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "9216d430c6487e52ffc6c0f43b51cc47343ced8c8cf7de400f1631e524752436",
+      "ax_sha256": "a868f5a92aa27fe23e12eeb6f917968d3653bea13a93a9f4baa73dc5c06112d7",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/deploy/classic/api/runtime-fs/",
+      "key": "_deploy_classic_api_runtime-fs_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "a4048107496dbc93b850f0feae82dfc387bbd466351b71f5689c2af43aff52f7",
+      "ax_sha256": "9f0d8d5e351d25842934d9b8f04637202b2f66c962828e6e0e948ca5a000f36d",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/examples/hello_world/",
+      "key": "_examples_hello_world_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "2c96e17774dc14d366858ed336bf2dbc72deb807c2e187edc7bce233b68b5c6c",
+      "ax_sha256": "5c25b46acfeec2f8e08be62104b2d9282f9a09c4eb8aab1eb8b48e97dc109626",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/lint/rules/ban-ts-comment/",
+      "key": "_lint_rules_ban-ts-comment_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "5e039f67392c1bd35fbc949d21a538b72d48142b2f9710b725926870ab5e3a0f",
+      "ax_sha256": "c3fda177d274558a598842e27b2a41f38ac2415469fa4e4f67048695fe002f06",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/runtime/",
+      "key": "_runtime_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1424,
+        240
+      ],
+      "mean_channel_difference": 0.032153818890661,
+      "jpeg_sha256": "02e7751bec4746829429fd687c391b4740808ee7f1a3bc2aa5e68aa904136989",
+      "ax_sha256": "58ee25785257bade3f745a375a316d3ba2e33287b7dc5be26cb13099b82834c7",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ],
+        [
+          1400,
+          216,
+          1430,
+          248
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/runtime/reference/cli/run/",
+      "key": "_runtime_reference_cli_run_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": true,
+      "difference_bbox": null,
+      "mean_channel_difference": 0.0,
+      "jpeg_sha256": "6d3bc2a7fda610fa3ffc9b333c434369046a65caf118aa7ef9c9dbf60e4bca2d",
+      "ax_sha256": "3d412f005d2f59bbaf66e3b9268e89f05a5ac1eefba81a4b03d6e837aa0492de",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/sandbox/",
+      "key": "_sandbox_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "88aaa0099bd7abf218c382c444ba34d48c1c4a532933bd16f0267be1c866adff",
+      "ax_sha256": "9cb6c17f049ea5a66e69330903b2045a613ecdf07f88668438fee6981d92b0d5",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/styleguide/components/",
+      "key": "_styleguide_components_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "abecb29b0d929b5d53f5fe381af7a5e9ab7543c99fb2025ae92cbfdf33589c5c",
+      "ax_sha256": "35b9ffd642512cae20c272da0de79ba0cb1d01667abcb268b78d4fab14aeaec5",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/styleguide/typography/",
+      "key": "_styleguide_typography_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "b9942edb0e83a672c3a70ea33fcd395b0da10b52c4aed39107a61defb879933a",
+      "ax_sha256": "9a0982449495a23d533073667f821e6c174f316789d102ed9948f0502c1882b7",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/subhosting/manual/",
+      "key": "_subhosting_manual_-1440-dark",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "dark",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        16,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.03155555555555556,
+      "jpeg_sha256": "f88a07bc14e74e9fefcff0748a31ddad9b7fe1991f27617af4fd4f59e98ce807",
+      "ax_sha256": "2d19390b64e47718a30f82b4c1b573e33667e7b1aa4932a740ac458677e47b2e",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/404/",
+      "key": "_404_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": true,
+      "difference_bbox": null,
+      "mean_channel_difference": 0.0,
+      "jpeg_sha256": "081bf154f3175c1bdf2734659fb463cde08c7effb74f4f9493a66e6d765f5130",
+      "ax_sha256": "f46de75b1053bde395679dc9b9f0550000bd26b616dae7e53363686adca35877",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/deno/http-server/",
+      "key": "_api_deno_http-server_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        48
+      ],
+      "mean_channel_difference": 0.08198029556650246,
+      "jpeg_sha256": "0c5c79d6345ea06eafb828eee0e87bf407e1f530333ce38f45f98c9d59d5fadc",
+      "ax_sha256": "6707b6a52570c247cf4f62c1b08f47ec7122c6b4a9d44f469fd37167df7f3f23",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/node/assert/",
+      "key": "_api_node_assert_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        48
+      ],
+      "mean_channel_difference": 0.08198029556650246,
+      "jpeg_sha256": "49d396b26577dc6234b0170ccd0dc1b43755cb800034facecfabdf2a6f4fb3eb",
+      "ax_sha256": "bd50bb9fa0264ef5d1c1bb4c2382859f4ea23c72d2320655085326beab74b067",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/web/fetch/",
+      "key": "_api_web_fetch_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        48
+      ],
+      "mean_channel_difference": 0.08198029556650246,
+      "jpeg_sha256": "11921c3207c36564b583a2a8ee02b4685fccd2aff6c9b4dfb9f761e39e048fd5",
+      "ax_sha256": "b4b2817cac22d5db92754aa0ee5d563b17332aa6be6d67e76faad87adc2c3387",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/deploy/classic/api/runtime-fs/",
+      "key": "_deploy_classic_api_runtime-fs_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08216748768472908,
+      "jpeg_sha256": "6388877228597487be10481dd3acbe186cf1440d9dead6013b6be3bfc5e8a161",
+      "ax_sha256": "87778d15f03d336c632fbd3f0e34abbfeeabfb3e6421d8fdf17234c6f1b8e404",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/examples/hello_world/",
+      "key": "_examples_hello_world_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        271,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08169239189928845,
+      "jpeg_sha256": "c929d08840bb1c79f35214cd15babd92e0dd533d487d53f228e06515a2befcbd",
+      "ax_sha256": "59e6c72895ed904d72f905ba5dd44c0658a5224eb25ac21c27ee31a0cb33a2bf",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/lint/rules/ban-ts-comment/",
+      "key": "_lint_rules_ban-ts-comment_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        271,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08198248494800218,
+      "jpeg_sha256": "6464c9c3c7a8318570d795f4b703f7681e500c3479387bd7f88b6e229f78fadc",
+      "ax_sha256": "87a9209c2c5a4ff241a9a772c89bba8cb39abe9202be7f89f8ee2447f43e2901",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/runtime/",
+      "key": "_runtime_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        48
+      ],
+      "mean_channel_difference": 0.08198029556650246,
+      "jpeg_sha256": "f357649ca4455a70d3411376cfba3b0d8d5ead0c27ab33dd5afacea54a0a31f1",
+      "ax_sha256": "04958aa2278e2827dc72ab737836b035e70120ed85e0827f38b710d303ebd09e",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/runtime/reference/cli/run/",
+      "key": "_runtime_reference_cli_run_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        48
+      ],
+      "mean_channel_difference": 0.08198029556650246,
+      "jpeg_sha256": "afd249a626d54cc774c1418241c6091f649b734fd9cbeb91dfecf931046e3464",
+      "ax_sha256": "1876cd1883c17513fcb1409266a5a5d0268104a3492a23161d82defc4c666a18",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/sandbox/",
+      "key": "_sandbox_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08216748768472908,
+      "jpeg_sha256": "2bae45f9103670676da97ef8a50c5c6507118038f723bb44c1fd3e91a8311a15",
+      "ax_sha256": "3a59f44fef633587095c4c17888b3abbc876c7797d3194e2b937f0a6cefce77a",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/styleguide/components/",
+      "key": "_styleguide_components_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        271,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08198248494800218,
+      "jpeg_sha256": "89905c08992499516b6d3b8ced819052062483282ca848700cd2008dd0daadff",
+      "ax_sha256": "58772a978c0b46b219e730860eedbf7e4a3d610fecd7c5efd42817fb1198e1a6",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/styleguide/typography/",
+      "key": "_styleguide_typography_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        271,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08198248494800218,
+      "jpeg_sha256": "99033caf2d739e13db7c11f30ac11a3a27aa350ceebbdadb89b62976b0dff6f7",
+      "ax_sha256": "6823f6792638345ed153f04fc8ef10a7fb1f260246b1eea4561dbbe403616bef",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/subhosting/manual/",
+      "key": "_subhosting_manual_-390-light",
+      "requested_css_viewport": [
+        390,
+        844
+      ],
+      "captured_bitmap_dimensions": [
+        375,
+        812
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        272,
+        0,
+        321,
+        49
+      ],
+      "mean_channel_difference": 0.08216748768472908,
+      "jpeg_sha256": "b2f040c81f83ac78e5ad6962055ae69446c6455cccfe7422d034aad5d49c8b0e",
+      "ax_sha256": "305342a6d4b7bc6208dab108d6648112deb8c6047a3390e4d021bf4556dc4a31",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          268,
+          0,
+          328,
+          56
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/404/",
+      "key": "_404_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1112,
+        15,
+        1425,
+        56
+      ],
+      "mean_channel_difference": 0.019143518518518518,
+      "jpeg_sha256": "28291ca7cebdcf93a94270536e90d1948ecb24978f9d9acb7cc17069b5ff6a9e",
+      "ax_sha256": "be54eef998f1a2b684bce5f589325a3814ae0e6e60f3318876e50de5fcbe4748",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/deno/http-server/",
+      "key": "_api_deno_http-server_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "51f1d3c21d193e82659350fa3b7be34b02f63b0d01bff66ac33ee0cc2dceedcf",
+      "ax_sha256": "9777273ed5fb991d84d2cd0abc7752894ed0c17a49091a2c0e4a11785bd0f84f",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/node/assert/",
+      "key": "_api_node_assert_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "2e2b4e6e38a18611f0282dcd96bc15b463675798211d88bb4d9be3029a052c16",
+      "ax_sha256": "c9fa225990250f4f503cabe07c9499eb041906c702b36b19032f1018dc373d05",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/api/web/fetch/",
+      "key": "_api_web_fetch_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "59ce0066085b4985c2efaeb0dd4c5592af0dd119f3cab907ae830c7a0c1180bc",
+      "ax_sha256": "a868f5a92aa27fe23e12eeb6f917968d3653bea13a93a9f4baa73dc5c06112d7",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/deploy/classic/api/runtime-fs/",
+      "key": "_deploy_classic_api_runtime-fs_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "ba654e95b9c4bdb93fb1da10f56c55139532a4a27991666f7de41d7455931d2e",
+      "ax_sha256": "9f0d8d5e351d25842934d9b8f04637202b2f66c962828e6e0e948ca5a000f36d",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/examples/hello_world/",
+      "key": "_examples_hello_world_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "8c8165b953c94bb41160d256fa37148a87308b7ec7646dd0fca8932965616e8b",
+      "ax_sha256": "5c25b46acfeec2f8e08be62104b2d9282f9a09c4eb8aab1eb8b48e97dc109626",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/lint/rules/ban-ts-comment/",
+      "key": "_lint_rules_ban-ts-comment_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "26cb08d86b58a81dd49ca911405b7b6540eea8ad10261282eb3ab54928ffd0e7",
+      "ax_sha256": "c3fda177d274558a598842e27b2a41f38ac2415469fa4e4f67048695fe002f06",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/runtime/",
+      "key": "_runtime_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1408,
+        224,
+        1424,
+        240
+      ],
+      "mean_channel_difference": 0.0006426841514560813,
+      "jpeg_sha256": "c4a8f8d8a0976e090355a124cbb53bb0ab3c3d3acbcbabeb9170e3b02191f2dc",
+      "ax_sha256": "58ee25785257bade3f745a375a316d3ba2e33287b7dc5be26cb13099b82834c7",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ],
+        [
+          1400,
+          216,
+          1430,
+          248
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/runtime/reference/cli/run/",
+      "key": "_runtime_reference_cli_run_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "ee5e536b7b51f93b902acab68c4646aab22a45de90dcb32d46d816a369bd63c8",
+      "ax_sha256": "da319e7c9404027608ff65871906ad0c3a131c979597429d56a5329023815dd7",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/sandbox/",
+      "key": "_sandbox_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "f146174d27660fe84eef43edbd308f4605c36ad206cd21cf2c1a0acb68c69cb7",
+      "ax_sha256": "9cb6c17f049ea5a66e69330903b2045a613ecdf07f88668438fee6981d92b0d5",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/styleguide/components/",
+      "key": "_styleguide_components_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "6be6e00df33fd410a15c26eff7a2ec0d17ee1b6ff2d70d8da236731c57581beb",
+      "ax_sha256": "35b9ffd642512cae20c272da0de79ba0cb1d01667abcb268b78d4fab14aeaec5",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/styleguide/typography/",
+      "key": "_styleguide_typography_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "1b97d6f31cd40532fa039a4a4858008fe4dd3461417d725c22992b84aa2e19af",
+      "ax_sha256": "9a0982449495a23d533073667f821e6c174f316789d102ed9948f0502c1882b7",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    },
+    {
+      "model": "deno-agent",
+      "route": "/subhosting/manual/",
+      "key": "_subhosting_manual_-1440-light",
+      "requested_css_viewport": [
+        1440,
+        1000
+      ],
+      "captured_bitmap_dimensions": [
+        1425,
+        990
+      ],
+      "theme": "light",
+      "pixel_identical_to_D6": false,
+      "difference_bbox": [
+        1352,
+        15,
+        1400,
+        56
+      ],
+      "mean_channel_difference": 0.018536475869809204,
+      "jpeg_sha256": "563de6a0d427bce1304650fb2d2f2885f0480d19047fede645b090bb110ab7be",
+      "ax_sha256": "2d19390b64e47718a30f82b4c1b573e33667e7b1aa4932a740ac458677e47b2e",
+      "outside_observed_control_regions_pixel_identical": true,
+      "observed_control_regions": [
+        [
+          1100,
+          0,
+          1440,
+          64
+        ]
+      ]
+    }
+  ],
+  "pixel_identical_states": 3,
+  "control_region_only_differences": 101,
+  "outside_control_differences": [],
+  "screenshot_boundary": "CSS viewport read from live DOM; captured bitmap dimensions match corresponding D6 images and can differ from CSS dimensions."
+}
