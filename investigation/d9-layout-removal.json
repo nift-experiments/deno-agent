@@ -1,0 +1,10 @@
+{
+  "case": "Real 404 MDX explicit layout removal",
+  "old_adapter_retained_captured_layout": true,
+  "fixed_adapter_matches_unchanged_native_control_bytes": true,
+  "incremental_equals_forced_full": true,
+  "restoration_all_2573_bytes_equal": true,
+  "native_tracked_source_restored": true,
+  "native_publication_restored_834_html_equal": true,
+  "native_restore_dependency_delivery": "Two pinned WASM assets delivered from Blob URLs; original engines/compilation/worker lifetime preserved; initialization inside CLI timing."
+}

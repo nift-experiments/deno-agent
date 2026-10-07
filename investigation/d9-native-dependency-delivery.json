@@ -1,0 +1,27 @@
+{
+  "bootstrap_sha256": "553ba46c479bf79dbf98f32ecab09c03457f194a76bc077bb7bb61a7e5aa1240",
+  "source_sha": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+  "pinned_inputs": [
+    {
+      "file": "resvg-2.6.2.wasm",
+      "url": "https://cdn.jsdelivr.net/npm/@resvg/resvg-wasm@2.6.2/index_bg.wasm",
+      "sha256": "22bf6e9f9a100d972da0411a69c5ba504367fc1fa87b3b64e3f35e53926d2d70",
+      "bytes": 2478606,
+      "acquisition_outside_publication_timing": true
+    },
+    {
+      "file": "esbuild-0.27.0.wasm",
+      "url": "https://cdn.jsdelivr.net/gh/esbuild/deno-esbuild@0.27.0/esbuild.wasm",
+      "sha256": "83f3244a0772e0b0d9a514b3cc023cc7bdcd1d66fa649c6ed70d8e2ce41a0af9",
+      "bytes": 13488385,
+      "acquisition_outside_publication_timing": true
+    }
+  ],
+  "source_tracked_clean": true,
+  "verification_html_equal": 834,
+  "compilation_and_worker_startup_inside_timing": true,
+  "worker_lifetime_and_compile_count_preserved": true,
+  "only_dependency_delivery_changed": true,
+  "previous_direct_cli_samples_preserved_separately": 3,
+  "preinitialized_esbuild_trial_not_used_for_benchmarks": true
+}

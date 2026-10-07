@@ -1,0 +1,110 @@
+[
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "warm-full",
+    "sample": 1,
+    "whole_pipeline_s": 181.6148296308238,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 147.1115192049183,
+        "maximum_measured_process_rss_mib": 1737.8828125
+      },
+      "search": {
+        "wall_s": 1.9821229469962418,
+        "maximum_measured_process_rss_mib": 560.7890625
+      },
+      "lume_publication": {
+        "wall_s": 32.52026724303141,
+        "maximum_measured_process_rss_mib": 3074.6953125
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3074.6953125,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "llms.json",
+      "src-6YRVFFYS.js",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "js/search.js",
+      "sitemap.xml",
+      "orama-index-summary.json"
+    ],
+    "tracked_source_clean": true,
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "warm-full",
+    "sample": 2,
+    "whole_pipeline_s": 172.41174200503156,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 140.8123725601472,
+        "maximum_measured_process_rss_mib": 1753.7578125
+      },
+      "search": {
+        "wall_s": 1.747803851030767,
+        "maximum_measured_process_rss_mib": 559.16796875
+      },
+      "lume_publication": {
+        "wall_s": 29.850973567925394,
+        "maximum_measured_process_rss_mib": 3116.2734375
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3116.2734375,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "llms.json",
+      "src-6YRVFFYS.js",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "js/search.js",
+      "sitemap.xml",
+      "orama-index-summary.json"
+    ],
+    "tracked_source_clean": true,
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  },
+  {
+    "model": "upstream",
+    "revision": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+    "case": "warm-full",
+    "sample": 3,
+    "whole_pipeline_s": 160.28761502285488,
+    "components": {
+      "reference_types_and_doc": {
+        "wall_s": 127.81510683312081,
+        "maximum_measured_process_rss_mib": 855.0
+      },
+      "search": {
+        "wall_s": 1.9455509991385043,
+        "maximum_measured_process_rss_mib": 559.171875
+      },
+      "lume_publication": {
+        "wall_s": 30.52619941905141,
+        "maximum_measured_process_rss_mib": 3100.83203125
+      }
+    },
+    "maximum_measured_process_or_phase_rss_mib": 3100.83203125,
+    "files": 2573,
+    "bytes": 213556032,
+    "html_reference_equal": true,
+    "reference_differing_files": [
+      "llms.json",
+      "src-6YRVFFYS.js",
+      "orama-index-full.json",
+      "src-ZNYDCHR4.js",
+      "js/search.js",
+      "sitemap.xml",
+      "orama-index-summary.json"
+    ],
+    "tracked_source_clean": true,
+    "boundary": "Frozen acquired std docs in place. Official reference/search/Lume task phases; live std acquisition is excluded and disclosed. Dependency installations/cache prepared outside timing. Prepared-input publication additionally omits reference generation for the same generated-input ownership boundary as deno."
+  }
+]

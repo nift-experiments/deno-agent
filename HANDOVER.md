@@ -369,3 +369,7 @@ Read investigation/D8-OPTIMIZED-PARITY.md. All-route HTTP, 104 browser captures 
 ## Final migration measurements
 
 Five normal/forced/fresh samples per model preserve all reference bytes; all twenty production-default lifecycle cases pass. See investigation/D8-FINAL-MEASUREMENTS.md and raw samples. Native upstream measurements and D9 report/init/fresh-checkout closeout remain. Do not publish Labs.
+
+## Source-removal correction and native dependency boundary
+
+See investigation/D9-SOURCE-REMOVAL-AND-DEPENDENCIES.md. Actual MDX layout removal now matches native behavior; all reference bytes restore. Native repeated timing freezes two WASM deliveries while measuring compilation/startup; direct CLI observations/failures remain separate. Refresh final migration samples, finish disclosed native samples, then D9 report/init/fresh-closeout. Labs stays on hold.

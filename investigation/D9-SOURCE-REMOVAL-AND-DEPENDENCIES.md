@@ -1,0 +1,9 @@
+# Late source-removal and dependency-delivery verification
+
+Removing the actual `layout: raw.tsx` field from the real 404 MDX source demonstrated that the adapter's captured route layout could hide the deletion. The correction uses the pinned default (`doc.tsx`) when a source-owned layout is absent. The corrected page matches an unchanged native Lume control byte-for-byte, incremental equals forced output, and source restoration reproduces all 2,573 files. Native tracked source is restored and its 834 HTML outputs match the reference again. This is a migration adapter fix; Nift is unchanged.
+
+The native benchmark encountered real TLS failures fetching resvg and esbuild WASM. Failed/partial attempts and three successful direct-CLI warm observations are preserved separately. Repeated final native measurements use exact hash-pinned bytes for those two dependencies, acquired outside timing. A small external CLI bootstrap maps only their delivery to local Blob URLs. It does not change the site config, templates, engines, compilation count or worker lifetime; loading, compilation, initialization and publication remain measured. This removes unpredictable dependency delivery from renderer timing and is labelled explicitly rather than called the original unmodified `deno task build` elapsed result.
+
+A preinitialization diagnostic was rejected for final measurements because it could alter esbuild worker reuse. The accepted bootstrap changes delivery only and again verifies all 834 native HTML documents. Local dependency symlinks also change emitted SDK module paths/chunk names; normalized SDK code is identical. Sitemap/search/LLM clock drift is classified separately. Migration compiled assets and publication clocks retain their accepted bytes.
+
+Final migration measurements will be refreshed after this source correction, and the native five-sample campaign will use the disclosed frozen-delivery mode. No Labs publication is made.

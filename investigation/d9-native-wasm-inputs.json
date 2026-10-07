@@ -1,0 +1,16 @@
+[
+  {
+    "file": "resvg-2.6.2.wasm",
+    "url": "https://cdn.jsdelivr.net/npm/@resvg/resvg-wasm@2.6.2/index_bg.wasm",
+    "sha256": "22bf6e9f9a100d972da0411a69c5ba504367fc1fa87b3b64e3f35e53926d2d70",
+    "bytes": 2478606,
+    "acquisition_outside_publication_timing": true
+  },
+  {
+    "file": "esbuild-0.27.0.wasm",
+    "url": "https://cdn.jsdelivr.net/gh/esbuild/deno-esbuild@0.27.0/esbuild.wasm",
+    "sha256": "83f3244a0772e0b0d9a514b3cc023cc7bdcd1d66fa649c6ed70d8e2ce41a0af9",
+    "bytes": 13488385,
+    "acquisition_outside_publication_timing": true
+  }
+]
