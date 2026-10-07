@@ -1,0 +1,102 @@
+[
+  {
+    "model": "deno",
+    "test": "Windows tab",
+    "pass": true
+  },
+  {
+    "model": "deno",
+    "test": "copy menu",
+    "pass": true
+  },
+  {
+    "model": "deno",
+    "test": "mock search results",
+    "pass": true
+  },
+  {
+    "model": "deno",
+    "test": "empty search",
+    "pass": true
+  },
+  {
+    "model": "deno",
+    "test": "error search",
+    "pass": true
+  },
+  {
+    "model": "deno",
+    "test": "mobile navigation",
+    "pass": true
+  },
+  {
+    "model": "deno",
+    "test": "mobile TOC",
+    "pass": true
+  },
+  {
+    "model": "deno-agent",
+    "test": "Windows tab",
+    "pass": true
+  },
+  {
+    "model": "deno-agent",
+    "test": "copy menu",
+    "pass": true
+  },
+  {
+    "model": "deno-agent",
+    "test": "mock search results",
+    "pass": true
+  },
+  {
+    "model": "deno-agent",
+    "test": "search ArrowDown selects first result",
+    "pass": true
+  },
+  {
+    "model": "deno-agent",
+    "test": "empty search",
+    "pass": true
+  },
+  {
+    "model": "deno-agent",
+    "test": "error search",
+    "pass": true
+  },
+  {
+    "model": "deno-agent",
+    "test": "mobile navigation",
+    "pass": true
+  },
+  {
+    "model": "deno-agent",
+    "test": "mobile TOC",
+    "pass": true
+  },
+  {
+    "model": "deno-agent",
+    "test": "tablet API content",
+    "pass": true
+  },
+  {
+    "model": "deno",
+    "test": "tablet API content",
+    "pass": true
+  },
+  {
+    "model": "deno",
+    "test": "search ArrowDown selects first result",
+    "pass": true
+  },
+  {
+    "model": "deno",
+    "test": "code copy",
+    "pass": true
+  },
+  {
+    "model": "deno-agent",
+    "test": "code copy",
+    "pass": true
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "model": "deno",
+    "head": "1722f2a92a57360792cb3920899754e9dc5b8c61",
+    "files": 2573,
+    "complete_frozen_manifest_equal": true,
+    "working_tree_clean": true,
+    "dependency_cache": "pre-acquired pinned tool dependencies only; no copied application/output cache"
+  },
+  {
+    "model": "deno-agent",
+    "head": "51aa4135990971507b9ec63e1426d0bf6d9cb271",
+    "files": 2573,
+    "complete_frozen_manifest_equal": true,
+    "working_tree_clean": true,
+    "dependency_cache": "pre-acquired pinned tool dependencies only; no copied application/output cache"
+  }
+]

@@ -345,3 +345,7 @@ Read investigation/D2-PARITY-CONTRACT.md and source-route-accounting.json. Exact
 ## D5 checkpoint: complete frozen publication
 
 Both models reproduce all 2,573 files / 213,555,032 bytes exactly, including 834 generated PNGs. Read investigation/D5-COMPLETE-PUBLICATION.md for source/compiled-asset ownership and clock boundaries. Nine original HTTP states match both servers, including headers/body hashes. Browser fixtures are being rechecked for D6. Formal serialized benchmarking and complete changed-input/ancillary lifecycle remain D7; initial diagnostic uncached OG cost is retained as a profiling target. No Nift change.
+
+## D6 checkpoint: whole-site parity verified
+
+Read investigation/D6-WHOLE-SITE-PARITY.md. All 834 routes and both fresh committed publications match the reference; 104 responsive/theme states and 20 interaction checks are recorded, with five small pixel differences retained honestly. Fresh builds leave Git clean. Next D7: full pipeline lifecycle (including download/search/navigation retirement), serialized initial measurements and component/RSS boundaries; then D8 profiling/optimization and D9 final comparison. No Nift change.

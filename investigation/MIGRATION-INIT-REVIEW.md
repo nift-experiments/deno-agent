@@ -51,3 +51,7 @@ Proposed wording: "Keep filesystem inventory paths distinct from renderer runtim
 ## D5 findings
 
 Proposed generated external-input inventory fields: owner, refresh command, maintained/generated status, content hash, network boundary, clock/order normalization, and normal-build inclusion. Include compiled frontend assets and WASM alongside content/API inputs. Proposed wording: "A complete publication may include Markdown downloads, source examples, search indexes, llms files, sitemap, redirects and generated social images; verify their ownership and lifecycle, not just HTML routes." Add a standalone HTTP contract template recording status, Location, MIME, Vary, Cache-Control and body hashes. No-credentials local testing can retain real middleware while using deterministic browser transport mocks. Do not conflate avoiding Markdown/MDX rendering with removing all runtime/tool dependencies. Preserve inherited code-block whitespace when byte fidelity requires it; keep checks on migration-authored code.
+
+## D6: verification evidence must name its boundaries
+
+Proposed MIGRATION.md wording: "Record clean-checkout revisions, complete output manifests and post-build Git status. Distinguish byte equality, semantic/browser behavior, pixel differences, remote service mocks and inherited source defects. Verification runs that overlap other work must not become benchmark samples." A source-generated server can own negotiation/redirect semantics outside Nift; the generated playbook should require these HTTP contracts explicitly.
