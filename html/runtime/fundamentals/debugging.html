@@ -1,0 +1,721 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#--inspect" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">--inspect </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#--inspect-publish-uid" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">--inspect-publish-uid </a></li></ul></li><li class="leading-tight text-balance"><a href="#--inspect-wait" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">--inspect-wait </a></li><li class="leading-tight text-balance"><a href="#--inspect-brk" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">--inspect-brk </a></li><li class="leading-tight text-balance"><a href="#activating-the-inspector-at-runtime" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Activating the inspector at runtime </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#starting-inspector-with-a-signal" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Starting inspector with a signal </a></li></ul></li><li class="leading-tight text-balance"><a href="#example-with-chrome-devtools" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Example with Chrome DevTools </a></li><li class="leading-tight text-balance"><a href="#inspecting-network-traffic" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Inspecting network traffic </a></li><li class="leading-tight text-balance"><a href="#vscode" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">VSCode </a></li><li class="leading-tight text-balance"><a href="#jetbrains-ides" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">JetBrains IDEs </a></li><li class="leading-tight text-balance"><a href="#--log-level%3Ddebug" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">--log-level=debug </a></li><li class="leading-tight text-balance"><a href="#--strace-ops" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">--strace-ops </a></li><li class="leading-tight text-balance"><a href="#cpu-profiling" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">CPU profiling </a></li><li class="leading-tight text-balance"><a href="#opentelemetry-integration" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">OpenTelemetry integration </a></li><li class="leading-tight text-balance"><a href="#debugging-web-workers" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Debugging Web Workers </a></li><li class="leading-tight text-balance"><a href="#tls-session-debugging" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">TLS session debugging </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Diagnostics</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/fundamentals/debugging.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Ffundamentals%2Fdebugging.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Debugging</h1></div><p>Deno supports the <a href="https://v8.dev/docs/inspector">V8 Inspector Protocol</a> used by
+Chrome, Edge and Node.js. This makes it possible to debug Deno programs using
+Chrome DevTools or other clients that support the protocol (for example VSCode).</p>
+<p>To activate debugging capabilities run Deno with one of the following flags:</p>
+<ul>
+<li><code>--inspect</code></li>
+<li><code>--inspect-wait</code></li>
+<li><code>--inspect-brk</code></li>
+</ul>
+<h2 id="--inspect" tabindex="-1">--inspect <a class="header-anchor" href="#--inspect"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Using the <code>--inspect</code> flag will start your program with an inspector server
+which allows client connections from tools that support the V8 Inspector
+Protocol, for example Chrome DevTools.</p>
+<p>Visit <code>chrome://inspect</code> in a Chromium derived browser to connect Deno to the
+inspector server. This allows you to inspect your code, add breakpoints, and
+step through your code.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run <span class="token parameter variable">--inspect</span> your_script.ts
+</code></pre>
+
+      <button id="copy-button-32" class="copyButton" data-copy="deno run --inspect your_script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You can optionally specify a host and port for the inspector server. Both the
+full address and a bare port number are accepted:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Default: listen on 127.0.0.1:9229</span>
+deno run <span class="token parameter variable">--inspect</span> your_script.ts
+
+<span class="token comment"># Custom port</span>
+deno run <span class="token parameter variable">--inspect</span><span class="token operator">=</span><span class="token number">9230</span> your_script.ts
+
+<span class="token comment"># Custom host and port</span>
+deno run <span class="token parameter variable">--inspect</span><span class="token operator">=</span><span class="token number">0.0</span>.0.0:9229 your_script.ts
+</code></pre>
+
+      <button id="copy-button-36" class="copyButton" data-copy="# Default: listen on 127.0.0.1:9229
+deno run --inspect your_script.ts
+
+# Custom port
+deno run --inspect=9230 your_script.ts
+
+# Custom host and port
+deno run --inspect=0.0.0.0:9229 your_script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="--inspect-publish-uid" tabindex="-1">--inspect-publish-uid <a class="header-anchor" href="#--inspect-publish-uid"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>By default, Deno prints the inspector WebSocket URL to stderr when it starts
+listening. You can control this with <code>--inspect-publish-uid</code>:</p>
+<ul>
+<li><code>stderr</code> (default) — prints the URL to stderr on startup</li>
+<li><code>http</code> — exposes the URL via the <code>/json/list</code> HTTP endpoint on the inspector
+port, instead of printing it; useful for programmatic tooling that polls for
+available targets</li>
+</ul>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run <span class="token parameter variable">--inspect</span> --inspect-publish-uid<span class="token operator">=</span>http your_script.ts
+</code></pre>
+
+      <button id="copy-button-55" class="copyButton" data-copy="deno run --inspect --inspect-publish-uid=http your_script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>If you use the <code>--inspect</code> flag, the code will start executing immediately. If
+your program is short, you might not have enough time to connect the debugger
+before the program finishes execution.</p>
+<p>In such cases, try running with <code>--inspect-wait</code> or <code>--inspect-brk</code> flag
+instead, or add a timeout at the end of your code.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="--inspect-wait" tabindex="-1">--inspect-wait <a class="header-anchor" href="#--inspect-wait"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>--inspect-wait</code> flag will wait for a debugger to connect before executing
+your code.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --inspect-wait your_script.ts
+</code></pre>
+
+      <button id="copy-button-74" class="copyButton" data-copy="deno run --inspect-wait your_script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="--inspect-brk" tabindex="-1">--inspect-brk <a class="header-anchor" href="#--inspect-brk"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>--inspect-brk</code> flag will wait for a debugger to connect before executing
+your code and then put a breakpoint in your program as soon as you connect,
+allowing you to add additional breakpoints or evaluate expressions before
+resuming execution.</p>
+<p><strong>This is the most commonly used inspect flag</strong>. JetBrains and VSCode IDEs use
+this flag by default.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --inspect-brk your_script.ts
+</code></pre>
+
+      <button id="copy-button-84" class="copyButton" data-copy="deno run --inspect-brk your_script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="activating-the-inspector-at-runtime" tabindex="-1">Activating the inspector at runtime <a class="header-anchor" href="#activating-the-inspector-at-runtime"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>--inspect</code> flags start the inspector server when the process launches. If
+you instead want to open it on demand in an already running program, you can do
+so from inside the program with the
+<a href="https://nodejs.org/api/inspector.html"><code>node:inspector</code></a> module, or from
+outside it by sending the process a
+<a href="#starting-inspector-with-a-signal"><code>SIGUSR1</code> signal</a>. This is handy for
+long-running processes such as servers, where you only want a debugger listening
+after some condition is met rather than for the whole lifetime of the process.</p>
+<p><code>inspector.open([port][, host][, wait])</code> starts the inspector server. The port
+defaults to <code>9229</code> and the host to <code>127.0.0.1</code>. Because it binds a network
+socket, the program needs the <code>--allow-net</code> permission (or run with <code>-A</code>).</p>
+<div><div class="markdownBlockTitle">server.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> inspector <span class="token keyword">from</span> <span class="token string">"node:inspector"</span><span class="token punctuation">;</span>
+
+Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span><span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name"><span class="token constant">URL</span></span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>pathname <span class="token operator">===</span> <span class="token string">"/debug"</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>inspector<span class="token punctuation">.</span><span class="token function">url</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    inspector<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token number">9229</span><span class="token punctuation">,</span> <span class="token string">"127.0.0.1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Inspector listening on"</span><span class="token punctuation">,</span> inspector<span class="token punctuation">.</span><span class="token function">url</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-94" class="copyButton" data-copy="import inspector from &quot;node:inspector&quot;;
+
+Deno.serve((req) => {
+  if (new URL(req.url).pathname === &quot;/debug&quot; &amp;&amp; !inspector.url()) {
+    inspector.open(9229, &quot;127.0.0.1&quot;);
+    console.log(&quot;Inspector listening on&quot;, inspector.url());
+  }
+  return new Response(&quot;hello&quot;);
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --allow-net server.ts
+</code></pre>
+
+      <button id="copy-button-95" class="copyButton" data-copy="deno run --allow-net server.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Send a request to <code>/debug</code> and the inspector server starts; open
+<code>chrome://inspect</code> in a Chromium derived browser to connect. The module exposes
+a few related functions:</p>
+<ul>
+<li><code>inspector.open(port, host, true)</code> — passing <code>true</code> as the third argument
+blocks until a client connects, the same as <code>inspector.waitForDebugger()</code>.</li>
+<li><code>inspector.url()</code> — returns the inspector WebSocket URL, or <code>undefined</code> when
+the inspector is not active.</li>
+<li><code>inspector.close()</code> — stops the inspector server.</li>
+</ul>
+<p>A <code>Session</code> is also available for issuing
+<a href="https://chromedevtools.github.io/devtools-protocol/">Chrome DevTools Protocol</a>
+commands programmatically without an external client.</p>
+<p>
+</p><div class="admonition caution">
+  <div class="title">Caution</div>
+
+<p></p>
+<p>Binding the inspector to a public IP with an open port is insecure: it lets any
+host that can reach the port connect to the inspector and execute arbitrary
+code. Keep the host at <code>127.0.0.1</code> unless you fully control the network.</p>
+<p>
+</p></div>
+<p></p>
+<h3 id="starting-inspector-with-a-signal" tabindex="-1">Starting inspector with a signal <a class="header-anchor" href="#starting-inspector-with-a-signal"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Starting with Deno 2.9.2, on Linux and macOS you can also activate the inspector
+from outside the process by sending it the <code>SIGUSR1</code> signal, the same way it
+works in Node.js. The inspector server starts on the default <code>127.0.0.1:9229</code>
+without pausing execution and prints the usual banner to stderr:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">$ deno run server.ts <span class="token operator">&amp;</span>
+$ <span class="token function">kill</span> <span class="token parameter variable">-USR1</span> <span class="token operator">&lt;</span>pid<span class="token operator">&gt;</span>
+Debugger listening on ws://127.0.0.1:9229/ws/<span class="token punctuation">..</span>.
+Visit chrome://inspect to connect to the debugger.
+</code></pre>
+
+      <button id="copy-button-134" class="copyButton" data-copy="$ deno run server.ts &amp;
+$ kill -USR1 <pid>
+Debugger listening on ws://127.0.0.1:9229/ws/...
+Visit chrome://inspect to connect to the debugger.
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This is useful for debugging a long-running process, such as a server, that was
+started without an <code>--inspect</code> flag and cannot easily be restarted. Unlike
+<code>inspector.open()</code>, it requires no permissions and no cooperation from the
+program's code.</p>
+<p>A few details to be aware of:</p>
+<ul>
+<li>If the inspector server is already running (an <code>--inspect*</code> flag,
+<code>inspector.open()</code>, or a previous <code>SIGUSR1</code>), the signal has no effect.</li>
+<li>The signal handler is installed shortly after startup, so this is intended for
+programs that run for longer than about half a second.</li>
+<li>Signal listeners added with <code>Deno.addSignalListener("SIGUSR1")</code> keep working
+alongside this handler.</li>
+<li><code>SIGUSR1</code> does not exist on Windows, so this is not available there.</li>
+</ul>
+<h2 id="example-with-chrome-devtools" tabindex="-1">Example with Chrome DevTools <a class="header-anchor" href="#example-with-chrome-devtools"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Let's try debugging a program using Chrome Devtools. For this, we'll use
+<a href="/runtime/reference/std/http/"><code>@std/http/file-server</code></a>, a static file server.</p>
+<p>Use the <code>--inspect-brk</code> flag to break execution on the first line:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">$ deno run --inspect-brk <span class="token parameter variable">-RN</span> jsr:@std/http/file-server
+Debugger listening on ws://127.0.0.1:9229/ws/1e82c406-85a9-44ab-86b6-7341583480b1
+<span class="token punctuation">..</span>.
+</code></pre>
+
+      <button id="copy-button-172" class="copyButton" data-copy="$ deno run --inspect-brk -RN jsr:@std/http/file-server
+Debugger listening on ws://127.0.0.1:9229/ws/1e82c406-85a9-44ab-86b6-7341583480b1
+...
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>In a Chromium derived browser such as Google Chrome or Microsoft Edge, open
+<code>chrome://inspect</code> and click <code>Inspect</code> next to target:</p>
+<p><img src="/runtime/fundamentals/images/debugger1.png" alt="chrome://inspect"></p>
+<p>It might take a few seconds after opening the DevTools to load all modules.</p>
+<p><img src="/runtime/fundamentals/images/debugger2.jpg" alt="DevTools opened"></p>
+<p>You might notice that DevTools pauses execution on the first line of
+<code>_constants.ts</code> instead of <code>file_server.ts</code>. This is expected behavior caused by
+the way ES modules are evaluated in JavaScript (<code>_constants.ts</code> is left-most,
+bottom-most dependency of <code>file_server.ts</code> so it is evaluated first).</p>
+<p>At this point all source code is available in the DevTools, so let's open up
+<code>file_server.ts</code> and add a breakpoint there; go to "Sources" pane and expand the
+tree:</p>
+<p><img src="/runtime/fundamentals/images/debugger3.jpg" alt="Open file_server.ts"></p>
+<p><em>Looking closely you'll find duplicate entries for each file; one written
+regularly and one in italics. The former is compiled source file (so in the case
+of <code>.ts</code> files it will be emitted JavaScript source), while the latter is a
+source map for the file.</em></p>
+<p>Next, add a breakpoint in the <code>listenAndServe</code> method:</p>
+<p><img src="/runtime/fundamentals/images/debugger4.jpg" alt="Break in file_server.ts"></p>
+<p>As soon as we've added the breakpoint, DevTools automatically opens up the
+source map file, which allows us step through the actual source code that
+includes types.</p>
+<p>Now that we have our breakpoints set, we can resume the execution of our script
+so that we can inspect an incoming request. Hit the "Resume script execution"
+button to do so. You might even need to hit it twice!</p>
+<p>Once our script is running, try send a request and inspect it in Devtools:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token function">curl</span> http://0.0.0.0:4507/
+</code></pre>
+
+      <button id="copy-button-212" class="copyButton" data-copy="curl http://0.0.0.0:4507/
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><img src="/runtime/fundamentals/images/debugger5.jpg" alt="Break in request handling"></p>
+<p>At this point we can introspect the contents of the request and go step-by-step
+to debug the code.</p>
+<h2 id="inspecting-network-traffic" tabindex="-1">Inspecting network traffic <a class="header-anchor" href="#inspecting-network-traffic"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Starting with Deno 2.8, Chrome DevTools can inspect network traffic made by your
+program in the same way it inspects traffic in a browser tab. Run your program
+with <code>--inspect-wait</code> (or <code>--inspect</code> / <code>--inspect-brk</code>), open
+<code>chrome://inspect</code> in a Chromium derived browser, click <strong>Inspect</strong> on the Deno
+target, and switch to the <strong>Network</strong> tab.</p>
+<p>The following built-in APIs are wired into the Network tab:</p>
+<ul>
+<li><code>fetch()</code> — requests appear with <code>Type: fetch</code></li>
+<li><code>node:http</code> and <code>node:https</code> client requests (<code>http.request</code>, <code>http.get</code>,
+<code>https.request</code>, <code>https.get</code>) — the <strong>Type</strong> column reflects the response
+content-type (e.g. <code>json</code>, <code>document</code>), so any npm library that issues HTTP
+requests through <code>node:http</code> shows up alongside <code>fetch()</code> traffic</li>
+<li><code>WebSocket</code> — client connections appear alongside HTTP requests, with
+handshake status and headers from the upgrade response, message frames, and a
+close event when the socket is closed</li>
+<li><a href="/api/deno/~/Deno.upgradeWebSocket"><code>Deno.upgradeWebSocket()</code></a> — server-side
+WebSocket upgrades are instrumented too, so you can inspect both sides of a
+connection from a Deno-to-Deno handshake</li>
+</ul>
+<p>For each request you can see the URL, method, status code, request and response
+headers, request and response bodies, and timing information.</p>
+<p>Let's try it with a small program that uses <code>fetch()</code>:</p>
+<div><div class="markdownBlockTitle">net.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"https://api.github.com/repos/denoland/deno"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>status<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">await</span> res<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>stargazers_count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-256" class="copyButton" data-copy="const res = await fetch(&quot;https://api.github.com/repos/denoland/deno&quot;);
+console.log(res.status, (await res.json()).stargazers_count);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Run it with <code>--inspect-wait</code> so the program pauses until DevTools connects:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">$ deno run --inspect-wait --allow-net net.ts
+Debugger listening on ws://127.0.0.1:9229/<span class="token punctuation">..</span>.
+Visit chrome://inspect to connect to the debugger.
+Deno is waiting <span class="token keyword">for</span> debugger to connect.
+</code></pre>
+
+      <button id="copy-button-260" class="copyButton" data-copy="$ deno run --inspect-wait --allow-net net.ts
+Debugger listening on ws://127.0.0.1:9229/...
+Visit chrome://inspect to connect to the debugger.
+Deno is waiting for debugger to connect.
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Open <code>chrome://inspect</code>, click <strong>Inspect</strong> on the Deno target, and switch to the
+<strong>Network</strong> tab. The <code>fetch()</code> request shows up as a regular network entry, with
+the request and response panes populated:</p>
+<p><img src="/runtime/fundamentals/images/debugger-network-fetch.png" alt="fetch() request in the Network tab"></p>
+<p>Click a request to see its headers, payload, response body, and timing
+breakdown:</p>
+<p><img src="/runtime/fundamentals/images/debugger-network-response.png" alt="Inspecting response headers and body"></p>
+<p>The same applies to <code>node:http</code> and <code>node:https</code>, so npm libraries that issue
+HTTP requests through Node's built-in client (rather than <code>fetch()</code>) also show
+up in the Network tab. For example:</p>
+<div><div class="markdownBlockTitle">node-http.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> https <span class="token keyword">from</span> <span class="token string">"node:https"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+  hostname<span class="token operator">:</span> <span class="token string">"api.github.com"</span><span class="token punctuation">,</span>
+  path<span class="token operator">:</span> <span class="token string">"/repos/denoland/deno"</span><span class="token punctuation">,</span>
+  headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"User-Agent"</span><span class="token operator">:</span> <span class="token string">"deno-docs-example"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+https<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> body <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"data"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>chunk<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> body <span class="token operator">+=</span> chunk<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span>
+    <span class="token string">"end"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>statusCode<span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">.</span>stargazers_count<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-276" class="copyButton" data-copy="import https from &quot;node:https&quot;;
+
+const options = {
+  hostname: &quot;api.github.com&quot;,
+  path: &quot;/repos/denoland/deno&quot;,
+  headers: { &quot;User-Agent&quot;: &quot;deno-docs-example&quot; },
+};
+
+https.get(options, (res) => {
+  let body = &quot;&quot;;
+  res.on(&quot;data&quot;, (chunk) => body += chunk);
+  res.on(
+    &quot;end&quot;,
+    () => console.log(res.statusCode, JSON.parse(body).stargazers_count),
+  );
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">$ deno run --inspect-wait --allow-net node-http.ts
+</code></pre>
+
+      <button id="copy-button-277" class="copyButton" data-copy="$ deno run --inspect-wait --allow-net node-http.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The request appears in the Network tab with the same headers, body, and timing
+information as a <code>fetch()</code> request — the <strong>Type</strong> column reflects the response
+content-type (<code>json</code> for this example):</p>
+<p><img src="/runtime/fundamentals/images/debugger-network-node-http.png" alt="node:https request in the Network tab"></p>
+<p><code>WebSocket</code> connections appear in the same Network tab, with messages and the
+close event surfaced as the connection progresses:</p>
+<p><img src="/runtime/fundamentals/images/debugger-network-websocket.png" alt="WebSocket connection in the Network tab"></p>
+<p>Server-side WebSockets created with
+<a href="/api/deno/~/Deno.upgradeWebSocket"><code>Deno.upgradeWebSocket()</code></a> are also
+instrumented, so you can inspect both sides of a connection — the outgoing
+client <code>WebSocket</code> and the server upgrade that accepts it. For example, a small
+echo server:</p>
+<div><div class="markdownBlockTitle">ws-server.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts">Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span><span class="token punctuation">{</span> port<span class="token operator">:</span> <span class="token number">8000</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>headers<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"upgrade"</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token string">"websocket"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"send a WebSocket request"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> status<span class="token operator">:</span> <span class="token number">426</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> socket<span class="token punctuation">,</span> response <span class="token punctuation">}</span> <span class="token operator">=</span> Deno<span class="token punctuation">.</span><span class="token function">upgradeWebSocket</span><span class="token punctuation">(</span>req<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  socket<span class="token punctuation">.</span><span class="token function-variable function">onmessage</span> <span class="token operator">=</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> socket<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">echo: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>e<span class="token punctuation">.</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> response<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-293" class="copyButton" data-copy="Deno.serve({ port: 8000 }, (req) => {
+  if (req.headers.get(&quot;upgrade&quot;) !== &quot;websocket&quot;) {
+    return new Response(&quot;send a WebSocket request&quot;, { status: 426 });
+  }
+  const { socket, response } = Deno.upgradeWebSocket(req);
+  socket.onmessage = (e) => socket.send(`echo: ${e.data}`);
+  return response;
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">$ deno run --inspect-wait --allow-net ws-server.ts
+</code></pre>
+
+      <button id="copy-button-294" class="copyButton" data-copy="$ deno run --inspect-wait --allow-net ws-server.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>After connecting DevTools and resuming execution, connect to the server from
+another terminal (for example with <code>deno eval</code>):</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token builtin class-name">eval</span> <span class="token string">'const ws = new WebSocket("ws://localhost:8000");
+  ws.onopen = () =&gt; ws.send("hello");
+  ws.onmessage = (e) =&gt; { console.log(e.data); ws.close(); };'</span>
+</code></pre>
+
+      <button id="copy-button-298" class="copyButton" data-copy="deno eval 'const ws = new WebSocket(&quot;ws://localhost:8000&quot;);
+  ws.onopen = () => ws.send(&quot;hello&quot;);
+  ws.onmessage = (e) => { console.log(e.data); ws.close(); };'
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The upgrade and the message frames show up in the Network tab of the server's
+DevTools session:</p>
+<p><img src="/runtime/fundamentals/images/debugger-network-upgrade-websocket.png" alt="Deno.upgradeWebSocket() in the Network tab"></p>
+<p>The same events are also exposed through <code>node:inspector</code> for programmatic
+clients, so tooling that already speaks the Chrome DevTools Protocol against
+Node can attach to Deno and observe the same network traffic without any
+changes.</p>
+<p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>When no debugger is attached, the network instrumentation has effectively no
+overhead — the events are only emitted while a session has opted in via
+<code>Network.enable</code>.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="vscode" tabindex="-1">VSCode <a class="header-anchor" href="#vscode"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno can be debugged using VSCode. This is best done with help from the official
+<code>vscode_deno</code> extension. Documentation for this can be found
+<a href="/runtime/reference/vscode#using-the-debugger">here</a>.</p>
+<h2 id="jetbrains-ides" tabindex="-1">JetBrains IDEs <a class="header-anchor" href="#jetbrains-ides"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p><em><strong>Note</strong>: make sure you have
+<a href="https://plugins.jetbrains.com/plugin/14382-deno">this Deno plugin</a> installed
+and enabled in Preferences / Settings | Plugins. For more information, see
+<a href="https://blog.jetbrains.com/webstorm/2020/06/deno-support-in-jetbrains-ides/">this blog post</a>.</em></p>
+<p>You can debug Deno using your JetBrains IDE by right-clicking the file you want
+to debug and selecting the <code>Debug 'Deno: &lt;file name&gt;'</code> option.</p>
+<p><img src="/runtime/fundamentals/images/jb-ide-debug.png" alt="Debug file"></p>
+<p>This will create a run/debug configuration with no permission flags set. If you
+want to configure them, open your run/debug configuration and add the required
+flags to the <code>Command</code> field.</p>
+<h2 id="--log-level%3Ddebug" tabindex="-1">--log-level=debug <a class="header-anchor" href="#--log-level%3Ddebug"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>If you're having trouble connecting to the inspector, you can use the
+<code>--log-level=debug</code> flag to get more information about what's happening. This
+will show you information like module resolution, network requests, and other
+permission checks.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --inspect-brk --log-level<span class="token operator">=</span>debug your_script.ts
+</code></pre>
+
+      <button id="copy-button-344" class="copyButton" data-copy="deno run --inspect-brk --log-level=debug your_script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="--strace-ops" tabindex="-1">--strace-ops <a class="header-anchor" href="#--strace-ops"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno ops are an <a href="https://en.wikipedia.org/wiki/Remote_procedure_call">RPC</a>
+mechanism between JavaScript and Rust. They provide functionality like file I/O,
+networking, and timers to JavaScript. The <code>--strace-ops</code> flag will print out all
+ops that are being executed by Deno when a program is run along with their
+timings.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --strace-ops your_script.ts
+</code></pre>
+
+      <button id="copy-button-351" class="copyButton" data-copy="deno run --strace-ops your_script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Each op should have a <code>Dispatch</code> and a <code>Complete</code> event. The time between these
+two events is the time taken to execute the op. This flag can be useful for
+performance profiling, debugging hanging programs, or understanding how Deno
+works under the hood.</p>
+<h2 id="cpu-profiling" tabindex="-1">CPU profiling <a class="header-anchor" href="#cpu-profiling"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno has a built-in CPU profiler: collect a profile while your program runs,
+then read it as a Markdown report, an interactive flamegraph, or in Chrome
+DevTools. See <a href="/runtime/fundamentals/cpu_profiling/">CPU profiling</a> for the
+flags, report formats, and analysis tips.</p>
+<h2 id="opentelemetry-integration" tabindex="-1">OpenTelemetry integration <a class="header-anchor" href="#opentelemetry-integration"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>For production applications or complex systems, OpenTelemetry provides a more
+comprehensive approach to observability and debugging. Deno includes built-in
+support for OpenTelemetry, allowing you to:</p>
+<ul>
+<li>Trace requests through your application</li>
+<li>Monitor application performance metrics</li>
+<li>Collect structured logs</li>
+<li>Export telemetry data to monitoring systems</li>
+</ul>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">OTEL_DENO</span><span class="token operator">=</span>true deno run your_script.ts
+</code></pre>
+
+      <button id="copy-button-389" class="copyButton" data-copy="OTEL_DENO=true deno run your_script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This will automatically collect and export runtime observability data,
+including:</p>
+<ul>
+<li>HTTP request traces</li>
+<li>Runtime metrics</li>
+<li>Console logs and errors</li>
+</ul>
+<p>For full details on Deno's OpenTelemetry integration, including custom metrics,
+traces, and configuration options, see the
+<a href="/runtime/fundamentals/open_telemetry">OpenTelemetry documentation</a>.</p>
+<h2 id="debugging-web-workers" tabindex="-1">Debugging Web Workers <a class="header-anchor" href="#debugging-web-workers"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Starting with Deno 2.7, Web Workers can be debugged through Chrome DevTools and
+VS Code. When you run your program with any <code>--inspect</code> flag, each spawned
+worker appears as a separate target in <code>chrome://inspect</code> alongside the main
+thread.</p>
+<div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> worker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"./worker.ts"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  type<span class="token operator">:</span> <span class="token string">"module"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+worker<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span><span class="token string">"start"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-419" class="copyButton" data-copy="const worker = new Worker(import.meta.resolve(&quot;./worker.ts&quot;), {
+  type: &quot;module&quot;,
+});
+worker.postMessage(&quot;start&quot;);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">worker.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts">self<span class="token punctuation">.</span><span class="token function-variable function">onmessage</span> <span class="token operator">=</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Worker received:"</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// Set breakpoints here in DevTools</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-420" class="copyButton" data-copy="self.onmessage = (e) => {
+  console.log(&quot;Worker received:&quot;, e.data);
+  // Set breakpoints here in DevTools
+};
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --inspect-brk --allow-read main.ts
+</code></pre>
+
+      <button id="copy-button-421" class="copyButton" data-copy="deno run --inspect-brk --allow-read main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Open <code>chrome://inspect</code>, and you will see both <code>main.ts</code> and <code>worker.ts</code> listed
+as separate inspectable targets. Click <strong>Inspect</strong> on the worker target to open
+a dedicated DevTools panel for that worker where you can set breakpoints, step
+through code, and inspect variables independently of the main thread.</p>
+<p>In VS Code with the Deno extension, workers appear as separate threads in the
+<strong>Call Stack</strong> panel of the debugger.</p>
+<h2 id="tls-session-debugging" tabindex="-1">TLS session debugging <a class="header-anchor" href="#tls-session-debugging"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Set the <code>SSLKEYLOGFILE</code> environment variable to log TLS session keys to a file.
+This enables you to decrypt and inspect encrypted network traffic with tools
+like <a href="https://www.wireshark.org/">Wireshark</a>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">SSLKEYLOGFILE</span><span class="token operator">=</span>./keys.log deno run <span class="token parameter variable">-N</span> main.ts
+</code></pre>
+
+      <button id="copy-button-434" class="copyButton" data-copy="SSLKEYLOGFILE=./keys.log deno run -N main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Then load <code>keys.log</code> in Wireshark (Edit &gt; Preferences &gt; Protocols &gt; TLS &gt;
+(Pre)-Master-Secret log filename) to decrypt captured TLS traffic.</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-07-08T00:00:00.000Z">July 8, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/fundamentals/stability_and_releases/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Stability and releases</span></a><a href="/runtime/fundamentals/cpu_profiling/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">CPU profiling →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/fundamentals/debugging.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

@@ -1,0 +1,683 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#fully-supported-modules" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none"> Fully supported modules </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#node%3Aassert" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:assert </a></li><li class="leading-tight text-balance"><a href="#node%3Abuffer" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:buffer </a></li><li class="leading-tight text-balance"><a href="#node%3Achild_process" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:child_process </a></li><li class="leading-tight text-balance"><a href="#node%3Aconsole" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:console </a></li><li class="leading-tight text-balance"><a href="#node%3Acrypto" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:crypto </a></li><li class="leading-tight text-balance"><a href="#node%3Adiagnostics_channel" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:diagnostics_channel </a></li><li class="leading-tight text-balance"><a href="#node%3Aevents" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:events </a></li><li class="leading-tight text-balance"><a href="#node%3Afs" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:fs </a></li><li class="leading-tight text-balance"><a href="#node%3Afs%2Fpromises" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:fs/promises </a></li><li class="leading-tight text-balance"><a href="#node%3Amodule" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:module </a></li><li class="leading-tight text-balance"><a href="#node%3Aos" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:os </a></li><li class="leading-tight text-balance"><a href="#node%3Apath" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:path </a></li><li class="leading-tight text-balance"><a href="#node%3Apunycode" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:punycode </a></li><li class="leading-tight text-balance"><a href="#node%3Aquerystring" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:querystring </a></li><li class="leading-tight text-balance"><a href="#node%3Areadline" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:readline </a></li><li class="leading-tight text-balance"><a href="#node%3Asqlite" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:sqlite </a></li><li class="leading-tight text-balance"><a href="#node%3Astream" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:stream </a></li><li class="leading-tight text-balance"><a href="#node%3Astring_decoder" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:string_decoder </a></li><li class="leading-tight text-balance"><a href="#node%3Atest" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:test </a></li><li class="leading-tight text-balance"><a href="#node%3Atimers" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:timers </a></li><li class="leading-tight text-balance"><a href="#node%3Atty" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:tty </a></li><li class="leading-tight text-balance"><a href="#node%3Aurl" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:url </a></li></ul></li><li class="leading-tight text-balance"><a href="#partially-supported-modules" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none"> Partially supported modules </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#node%3Aasync_hooks" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:async_hooks </a></li><li class="leading-tight text-balance"><a href="#node%3Adgram" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:dgram </a></li><li class="leading-tight text-balance"><a href="#node%3Adns" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:dns </a></li><li class="leading-tight text-balance"><a href="#node%3Ahttp" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:http </a></li><li class="leading-tight text-balance"><a href="#node%3Ahttp2" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:http2 </a></li><li class="leading-tight text-balance"><a href="#node%3Ahttps" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:https </a></li><li class="leading-tight text-balance"><a href="#node%3Ainspector" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:inspector </a></li><li class="leading-tight text-balance"><a href="#node%3Anet" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:net </a></li><li class="leading-tight text-balance"><a href="#node%3Aperf_hooks" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:perf_hooks </a></li><li class="leading-tight text-balance"><a href="#node%3Aprocess" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:process </a></li><li class="leading-tight text-balance"><a href="#node%3Atls" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:tls </a></li><li class="leading-tight text-balance"><a href="#node%3Autil" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:util </a></li><li class="leading-tight text-balance"><a href="#node%3Av8" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:v8 </a></li><li class="leading-tight text-balance"><a href="#node%3Avm" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:vm </a></li><li class="leading-tight text-balance"><a href="#node%3Aworker_threads" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:worker_threads </a></li><li class="leading-tight text-balance"><a href="#node%3Azlib" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:zlib </a></li></ul></li><li class="leading-tight text-balance"><a href="#unsupported-modules" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none"> Unsupported modules </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#node%3Acluster" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:cluster </a></li><li class="leading-tight text-balance"><a href="#node%3Adomain" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:domain </a></li><li class="leading-tight text-balance"><a href="#node%3Arepl" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:repl </a></li><li class="leading-tight text-balance"><a href="#node%3Asea" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:sea </a></li><li class="leading-tight text-balance"><a href="#node%3Atrace_events" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:trace_events </a></li><li class="leading-tight text-balance"><a href="#node%3Awasi" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:wasi </a></li></ul></li><li class="leading-tight text-balance"><a href="#globals" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Globals </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#__dirname-and-__filename" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">__dirname and __filename </a></li></ul></li><li class="leading-tight text-balance"><a href="#module-notes" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Module notes </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#node%3Aworker_threads-1" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:worker_threads </a></li><li class="leading-tight text-balance"><a href="#node%3Achild_process-1" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:child_process </a></li><li class="leading-tight text-balance"><a href="#node%3Azlib-1" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:zlib </a></li><li class="leading-tight text-balance"><a href="#node%3Asqlite-1" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">node:sqlite </a></li></ul></li><li class="leading-tight text-balance"><a href="#node-test-results" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Node test results </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><span></span><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/node_apis.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Fnode_apis.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Node APIs</h1></div><p>Deno provides polyfills for a number of built-in Node.js modules and globals.</p>
+<p><a href="/api/node/" class="docs-cta runtime-cta">Explore built-in Node APIs</a></p>
+<p>Node compatibility is an ongoing project - help us identify gaps and let us know
+which modules you need by
+<a href="https://github.com/denoland/deno">opening an issue on GitHub</a>.</p>
+<div class="module-info">
+<h2 id="fully-supported-modules" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="#22c55e"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg> Fully supported modules (22/44) <a class="header-anchor" href="#fully-supported-modules"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="node%3Aassert" tabindex="-1"><a href="/api/node/assert">node:assert</a> <a class="header-anchor" href="#node%3Aassert"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Abuffer" tabindex="-1"><a href="/api/node/buffer">node:buffer</a> <a class="header-anchor" href="#node%3Abuffer"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Achild_process" tabindex="-1"><a href="/api/node/child_process">node:child_process</a> <a class="header-anchor" href="#node%3Achild_process"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Aconsole" tabindex="-1"><a href="/api/node/console">node:console</a> <a class="header-anchor" href="#node%3Aconsole"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Acrypto" tabindex="-1"><a href="/api/node/crypto">node:crypto</a> <a class="header-anchor" href="#node%3Acrypto"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>Certificate</strong>: The methods are non-functional stubs.</p>
+<p><strong>generateKeyPair</strong>: The <code>x448</code> option is not supported.</p>
+<p><strong>generatePrime</strong>: The <code>safe</code>, <code>add</code> and <code>rem</code> option is not supported.</p>
+<p><strong>KeyObject</strong>: The following are non-functional stubs:</p>
+<ul>
+<li>from</li>
+<li>symmetricKeySize</li>
+<li>equals</li>
+</ul>
+<p><strong>publicDecrypt</strong>: This symbol is a non-functional stub.</p>
+<p><strong>secureHeapUsed</strong>: This symbol is a non-functional stub.</p>
+<p><strong>setEngine</strong>: This symbol is a non-functional stub.</p>
+<p><strong>ECDH</strong>: The <code>convertKey</code> method is a non-functional sub.</p>
+<p><strong>Sign</strong>: The <code>sign</code> and <code>verify</code> methods are not supported with non BinaryLike input.</p>
+</div>
+<h3 id="node%3Adiagnostics_channel" tabindex="-1"><a href="/api/node/diagnostics_channel">node:diagnostics_channel</a> <a class="header-anchor" href="#node%3Adiagnostics_channel"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Aevents" tabindex="-1"><a href="/api/node/events">node:events</a> <a class="header-anchor" href="#node%3Aevents"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Afs" tabindex="-1"><a href="/api/node/fs">node:fs</a> <a class="header-anchor" href="#node%3Afs"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>writeFile</strong>: Missing <code>utf16le</code>, <code>latin1</code> and <code>ucs2</code> encoding.</p>
+<p><strong>writeFileSync</strong>: Missing <code>utf16le</code>, <code>latin1</code> and <code>ucs2</code> encoding.</p>
+</div>
+<h3 id="node%3Afs%2Fpromises" tabindex="-1"><a href="/api/node/fs/promises">node:fs/promises</a> <a class="header-anchor" href="#node%3Afs%2Fpromises"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>lchmod</strong>: The lchmod implementation is a not implemented.</p>
+</div>
+<h3 id="node%3Amodule" tabindex="-1"><a href="/api/node/module">node:module</a> <a class="header-anchor" href="#node%3Amodule"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>Module</strong>: The <code>register</code> method is a non-functional stub.</p>
+</div>
+<h3 id="node%3Aos" tabindex="-1"><a href="/api/node/os">node:os</a> <a class="header-anchor" href="#node%3Aos"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Apath" tabindex="-1"><a href="/api/node/path">node:path</a> <a class="header-anchor" href="#node%3Apath"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Apunycode" tabindex="-1"><a href="/api/node/punycode">node:punycode</a> <a class="header-anchor" href="#node%3Apunycode"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Aquerystring" tabindex="-1"><a href="/api/node/querystring">node:querystring</a> <a class="header-anchor" href="#node%3Aquerystring"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Areadline" tabindex="-1"><a href="/api/node/readline">node:readline</a> <a class="header-anchor" href="#node%3Areadline"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Asqlite" tabindex="-1"><a href="/api/node/sqlite">node:sqlite</a> <a class="header-anchor" href="#node%3Asqlite"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p>This module has been added in Deno v2.2.</p>
+</div>
+<h3 id="node%3Astream" tabindex="-1"><a href="/api/node/stream">node:stream</a> <a class="header-anchor" href="#node%3Astream"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Astring_decoder" tabindex="-1"><a href="/api/node/string_decoder">node:string_decoder</a> <a class="header-anchor" href="#node%3Astring_decoder"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Atest" tabindex="-1"><a href="/api/node/test">node:test</a> <a class="header-anchor" href="#node%3Atest"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Atimers" tabindex="-1"><a href="/api/node/timers">node:timers</a> <a class="header-anchor" href="#node%3Atimers"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Atty" tabindex="-1"><a href="/api/node/tty">node:tty</a> <a class="header-anchor" href="#node%3Atty"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<h3 id="node%3Aurl" tabindex="-1"><a href="/api/node/url">node:url</a> <a class="header-anchor" href="#node%3Aurl"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+</div>
+<div class="module-info">
+<h2 id="partially-supported-modules" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="#6366f1"><path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"></path></svg> Partially supported modules (16/44) <a class="header-anchor" href="#partially-supported-modules"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="node%3Aasync_hooks" tabindex="-1"><a href="/api/node/async_hooks">node:async_hooks</a> <a class="header-anchor" href="#node%3Aasync_hooks"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>AsyncResource</strong>: The AsyncResource implementation is a non-functional stub.</p>
+<p><strong>executionAsyncId</strong>: The executionAsyncId implementation is a non-functional stub.</p>
+<p><strong>createHook</strong>: The createHook implementation is a non-functional stub.</p>
+</div>
+<h3 id="node%3Adgram" tabindex="-1"><a href="/api/node/dgram">node:dgram</a> <a class="header-anchor" href="#node%3Adgram"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>Socket</strong>: The following methods are non-functional stubs:</p>
+<ul>
+<li>addMembership</li>
+<li>addSourceSpecificMembership</li>
+<li>dropMembership</li>
+<li>dropSourceSpecificMembership</li>
+<li>setBroadcast</li>
+<li>setMulticastInterface</li>
+<li>setMulticastLoopback</li>
+<li>setMulticastTtl</li>
+<li>setTtl</li>
+</ul>
+</div>
+<h3 id="node%3Adns" tabindex="-1"><a href="/api/node/dns">node:dns</a> <a class="header-anchor" href="#node%3Adns"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>resolve</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolve4</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolve6</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolveCname</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolveCaa</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolveMx</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolveNaptr</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolveNs</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolvePtr</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolveSoa</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolveSrv</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolveTxt</strong>: The <code>ttl</code> option is not supported.</p>
+<p><strong>resolveAny</strong>: The <code>ttl</code> option is not supported.</p>
+</div>
+<h3 id="node%3Ahttp" tabindex="-1"><a href="/api/node/http">node:http</a> <a class="header-anchor" href="#node%3Ahttp"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>RequestOptions</strong>: Option <code>createConnection</code> is not supported.</p>
+<p><strong>ClientRequestArgs</strong>: Option <code>createConnection</code> is not supported.</p>
+<p><strong>ClientRequest</strong>: Constructor option <code>createConnection</code> is not supported.</p>
+<p><strong>request</strong>: Constructor option <code>createConnection</code> is not supported.</p>
+<p><strong>get</strong>: Constructor option <code>createConnection</code> is not supported.</p>
+</div>
+<h3 id="node%3Ahttp2" tabindex="-1"><a href="/api/node/http2">node:http2</a> <a class="header-anchor" href="#node%3Ahttp2"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>Http2Session</strong>: The following methods are non-functional stubs:</p>
+<ul>
+<li>setLocalWindowSize</li>
+<li>ping</li>
+<li>localSettings</li>
+<li>remoteSettings</li>
+<li>settings</li>
+<li>ref</li>
+<li>unref</li>
+</ul>
+<p><strong>ServerHttp2Session</strong>: All methods are non-functional stubs.</p>
+<p><strong>Http2Stream</strong>: The following methods are non-functional stubs:</p>
+<ul>
+<li>aborted</li>
+<li>bufferSize</li>
+<li>endAfterHeaders</li>
+<li>id</li>
+<li>pending</li>
+<li>priority</li>
+<li>rstCode</li>
+<li>sentHeaders</li>
+<li>sentInfoHeaders</li>
+<li>sentTrailers</li>
+<li>state</li>
+</ul>
+<p><strong>ClientHttp2Stream</strong>: All methods are non-functional stubs.</p>
+<p><strong>getDefaultSettings</strong>: This function is a non-functional stub.</p>
+<p><strong>getPackedSettings</strong>: This function is a non-functional stub.</p>
+<p><strong>getUnpackedSettings</strong>: This function is a non-functional stub.</p>
+</div>
+<h3 id="node%3Ahttps" tabindex="-1"><a href="/api/node/https">node:https</a> <a class="header-anchor" href="#node%3Ahttps"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>Server</strong>: The <code>cert</code> and <code>key</code> options do not support an array input.</p>
+</div>
+<h3 id="node%3Ainspector" tabindex="-1"><a href="/api/node/inspector">node:inspector</a> <a class="header-anchor" href="#node%3Ainspector"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><code>console</code> is supported. Other APIs are non-functional stubs.</p>
+</div>
+<h3 id="node%3Anet" tabindex="-1"><a href="/api/node/net">node:net</a> <a class="header-anchor" href="#node%3Anet"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>Socket</strong>: The <code>fd</code> option is not supported.</p>
+</div>
+<h3 id="node%3Aperf_hooks" tabindex="-1"><a href="/api/node/perf_hooks">node:perf_hooks</a> <a class="header-anchor" href="#node%3Aperf_hooks"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>performance</strong>: The <code>eventLoopUtilization</code> method is a non-functional stub.
+The <code>timerify</code> method is not implemented.</p>
+<p><strong>monitorEventLoopDelay</strong>: This symbol is not implemented.</p>
+</div>
+<h3 id="node%3Aprocess" tabindex="-1"><a href="/api/node/process">node:process</a> <a class="header-anchor" href="#node%3Aprocess"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p>The <code>multipleResolves</code> and <code>worker</code> events are not supported.</p>
+</div>
+<h3 id="node%3Atls" tabindex="-1"><a href="/api/node/tls">node:tls</a> <a class="header-anchor" href="#node%3Atls"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>createSecurePair</strong>: This symbol is currently not supported.</p>
+</div>
+<h3 id="node%3Autil" tabindex="-1"><a href="/api/node/util">node:util</a> <a class="header-anchor" href="#node%3Autil"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>transferableAbortSignal</strong>: This symbol is currently not supported.</p>
+<p><strong>transferableAbortController</strong>: This symbol is currently not supported.</p>
+<p><strong>MIMEParams</strong>: This symbol is currently not supported.</p>
+<p><strong>MIMEType</strong>: This symbol is currently not supported.</p>
+<p><strong>getSystemErrorMap</strong>: This symbol is currently not supported.</p>
+</div>
+<h3 id="node%3Av8" tabindex="-1"><a href="/api/node/v8">node:v8</a> <a class="header-anchor" href="#node%3Av8"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><code>cachedDataVersionTag</code> and <code>getHeapStatistics</code>, <code>serialize</code> and <code>deserialize</code> are supported.
+<code>setFlagsFromStrings</code> is a noop.
+Other APIs are not supported and will throw and error.</p>
+<p><strong>setFlagsFromStrings</strong>: This function is a noop.</p>
+</div>
+<h3 id="node%3Avm" tabindex="-1"><a href="/api/node/vm">node:vm</a> <a class="header-anchor" href="#node%3Avm"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>measureMemory</strong>: This is a non-functional stub.</p>
+<p><strong>compile</strong>: The <code>importModuleDynamically</code> parameter is not supported.</p>
+<p><strong>createContext</strong>: The <code>importModuleDynamically</code> parameter is not supported.</p>
+<p><strong>Script</strong>: The <code>importModuleDynamically</code> parameter is not supported.
+The <code>runInContext</code> method does not support break on <code>SIGINT</code>.</p>
+</div>
+<h3 id="node%3Aworker_threads" tabindex="-1"><a href="/api/node/worker_threads">node:worker_threads</a> <a class="header-anchor" href="#node%3Aworker_threads"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>parentPort</strong>: The <code>emit</code> method is not supported.
+The <code>removeAllListeners</code> method is not supported.</p>
+<p><strong>markAsUntransferable</strong>: This symbol is not supported.</p>
+<p><strong>moveMessagePortToContext</strong>: This symbol is not supported.</p>
+<p><strong>receiveMessageOnPort</strong>: This symbol is not supported.</p>
+<p><strong>Worker</strong>: The <code>getHeapSnapshot</code> method is not supported.</p>
+</div>
+<h3 id="node%3Azlib" tabindex="-1"><a href="/api/node/zlib">node:zlib</a> <a class="header-anchor" href="#node%3Azlib"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p><strong>Options</strong>: This class is not supported.</p>
+<p><strong>BrotliOptions</strong>: This class is not supported.</p>
+<p><strong>BrotliCompress</strong>: This class is not supported.</p>
+<p><strong>BrotliDecompress</strong>: This class is not supported.</p>
+<p><strong>ZlibBase</strong>: This class is not supported.</p>
+</div>
+<div class="module-info">
+<h2 id="unsupported-modules" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="2" stroke="#ef4444"><path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg> Unsupported modules (6/44) <a class="header-anchor" href="#unsupported-modules"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="node%3Acluster" tabindex="-1"><a href="/api/node/cluster">node:cluster</a> <a class="header-anchor" href="#node%3Acluster"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p>All exports are non-functional stubs.</p>
+<p><strong>All symbols</strong>: This symbol is a non-functional stub.</p>
+</div>
+<h3 id="node%3Adomain" tabindex="-1"><a href="/api/node/domain">node:domain</a> <a class="header-anchor" href="#node%3Adomain"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p>All exports are non-functional stubs.
+This is a deprecated Node module.</p>
+<p><strong>All symbols</strong>: This symbol is a non-functional stub.</p>
+</div>
+<h3 id="node%3Arepl" tabindex="-1"><a href="/api/node/repl">node:repl</a> <a class="header-anchor" href="#node%3Arepl"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p>All symbols are not supported.</p>
+<p><strong>All symbols</strong>: This symbol is not supported.</p>
+</div>
+<h3 id="node%3Asea" tabindex="-1"><a href="/api/node/sea">node:sea</a> <a class="header-anchor" href="#node%3Asea"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p>All symbols are not supported.</p>
+<p><strong>All symbols</strong>: This symbol is not supported.</p>
+</div>
+<h3 id="node%3Atrace_events" tabindex="-1"><a href="/api/node/trace_events">node:trace_events</a> <a class="header-anchor" href="#node%3Atrace_events"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p>All exports are non-functional stubs.</p>
+<p><strong>All symbols</strong>: This symbol is a non-functional stub.</p>
+</div>
+<h3 id="node%3Awasi" tabindex="-1"><a href="/api/node/wasi">node:wasi</a> <a class="header-anchor" href="#node%3Awasi"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="item-content">
+<p>All exports are non-functional stubs.</p>
+<p><strong>All symbols</strong>: This symbol is a non-functional stub.</p>
+</div>
+<h2 id="globals" tabindex="-1">Globals <a class="header-anchor" href="#globals"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>This is the list of Node globals that Deno supports. These globals are only
+available in the <code>npm</code> package scope. In your own code you can use them by
+importing them from the relevant <code>node:</code> module.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Global name</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-abortcontroller"><code>AbortController</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-abortsignal"><code>AbortSignal</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-blob"><code>Blob</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-buffer"><code>Buffer</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-bytelengthqueuingstrategy"><code>ByteLengthQueuingStrategy</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#__dirname"><code>__dirname</code></a></td>
+<td>⚠️ <a href="#__dirname-and-__filename">Info</a></td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#__filename"><code>__filename</code></a></td>
+<td>⚠️ <a href="#__dirname-and-__filename">Info</a></td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#atobdata"><code>atob</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#broadcastchannel"><code>BroadcastChannel</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#btoadata"><code>btoa</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#clearimmediateimmediateobject"><code>clearImmediate</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#clearintervalintervalobject"><code>clearInterval</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#cleartimeouttimeoutobject"><code>clearTimeout</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-compressionstream"><code>CompressionStream</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#console"><code>console</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-countqueuingstrategy"><code>CountQueuingStrategy</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#crypto"><code>Crypto</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#cryptokey"><code>CryptoKey</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#customevent"><code>CustomEvent</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#customevent"><code>CustomEvent</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-decompressionstream"><code>DecompressionStream</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#event"><code>Event</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#eventtarget"><code>EventTarget</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#exports"><code>exports</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#fetch"><code>fetch</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-file"><code>File</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-formdata"><code>FormData</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#global"><code>global</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-headers"><code>Headers</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#messagechannel"><code>MessageChannel</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#messageevent"><code>MessageEvent</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#messageport"><code>MessagePort</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#module"><code>module</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#performanceentry"><code>PerformanceEntry</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#performancemark"><code>PerformanceMark</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#performancemeasure"><code>PerformanceMeasure</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#performanceobserver"><code>PerformanceObserver</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#performanceobserverentrylist"><code>PerformanceObserverEntryList</code></a></td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#performanceresourcetiming"><code>PerformanceResourceTiming</code></a></td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#performance"><code>performance</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#process"><code>process</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#queuemicrotaskcallback"><code>queueMicrotask</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-readablebytestreamcontroller"><code>ReadableByteStreamController</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-readablestream"><code>ReadableStream</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-readablestreambyobreader"><code>ReadableStreamBYOBReader</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-readablestreambyobrequest"><code>ReadableStreamBYOBRequest</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-readablestreamdefaultcontroller"><code>ReadableStreamDefaultController</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-readablestreamdefaultreader"><code>ReadableStreamDefaultReader</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#require"><code>require</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#response"><code>Response</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#request"><code>Request</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#setimmediatecallback-args"><code>setImmediate</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#setintervalcallback-delay-args"><code>setInterval</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#settimeoutcallback-delay-args"><code>setTimeout</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#structuredclonevalue-options"><code>structuredClone</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#structuredclonevalue-options"><code>structuredClone</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#subtlecrypto"><code>SubtleCrypto</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#domexception"><code>DOMException</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#textdecoder"><code>TextDecoder</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-textdecoderstream"><code>TextDecoderStream</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#textencoder"><code>TextEncoder</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-textencoderstream"><code>TextEncoderStream</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-transformstream"><code>TransformStream</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-transformstreamdefaultcontroller"><code>TransformStreamDefaultController</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#url"><code>URL</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#urlsearchparams"><code>URLSearchParams</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#urlsearchparams"><code>URLSearchParams</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#webassembly"><code>WebAssembly</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-writablestream"><code>WritableStream</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-writablestreamdefaultcontroller"><code>WritableStreamDefaultController</code></a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><a href="https://nodejs.org/api/globals.html#class-writablestreamdefaultwriter"><code>WritableStreamDefaultWriter</code></a></td>
+<td>✅</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="__dirname-and-__filename" tabindex="-1"><code>__dirname</code> and <code>__filename</code> <a class="header-anchor" href="#__dirname-and-__filename"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>__dirname</code> and <code>__filename</code> are CommonJS globals. They are available inside
+CommonJS modules in the <code>npm</code> package scope, but they are not defined in ES
+modules. In your own ES modules use <code>import.meta.dirname</code> and
+<code>import.meta.filename</code> instead, which provide the same values for the current
+module.</p>
+<h2 id="module-notes" tabindex="-1">Module notes <a class="header-anchor" href="#module-notes"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="node%3Aworker_threads-1" tabindex="-1">node:worker_threads <a class="header-anchor" href="#node%3Aworker_threads-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Deno 2.7 significantly improved <code>node:worker_threads</code> compatibility:</p>
+<ul>
+<li><code>stdout</code> and <code>stderr</code> streams are forwarded correctly from workers to the
+parent process.</li>
+<li><code>worker.terminate()</code> now resolves with the correct exit code.</li>
+<li><code>workerData</code>, <code>execArgv</code>, and <code>threadName</code> options are supported.</li>
+<li><code>worker.performance.eventLoopUtilization()</code> and <code>worker.cpuUsage()</code> are
+implemented.</li>
+<li><code>BroadcastChannel</code> from worker threads is properly ref'd/unref'd.</li>
+</ul>
+<h3 id="node%3Achild_process-1" tabindex="-1">node:child_process <a class="header-anchor" href="#node%3Achild_process-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Deno 2.7 improved <code>node:child_process</code> compatibility:</p>
+<ul>
+<li><code>stdio</code> streams (<code>stdin</code>, <code>stdout</code>, <code>stderr</code>) are exposed as <code>Socket</code>
+instances, matching Node.js behavior.</li>
+<li>Shell redirection (<code>&gt;</code>, <code>&lt;</code>, <code>&gt;&gt;</code>) works in <code>exec()</code> and <code>execSync()</code>.</li>
+<li><code>fork()</code> accepts a <code>URL</code> as the module path.</li>
+<li><code>timeout</code> and <code>killSignal</code> options are supported in <code>exec()</code> and <code>spawn()</code>.</li>
+<li><code>NODE_OPTIONS</code> environment variable is respected for <code>fork()</code>'d processes.</li>
+</ul>
+<h3 id="node%3Azlib-1" tabindex="-1">node:zlib <a class="header-anchor" href="#node%3Azlib-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Deno 2.7 added Zstd compression support to <code>node:zlib</code>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> zlib <span class="token keyword">from</span> <span class="token string">"node:zlib"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> promisify <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:util"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> compress <span class="token operator">=</span> <span class="token function">promisify</span><span class="token punctuation">(</span>zlib<span class="token punctuation">.</span>zstdCompress<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> decompress <span class="token operator">=</span> <span class="token function">promisify</span><span class="token punctuation">(</span>zlib<span class="token punctuation">.</span>zstdDecompress<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> compressed <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">compress</span><span class="token punctuation">(</span>Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token string">"Hello, Deno!"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">decompress</span><span class="token punctuation">(</span>compressed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "Hello, Deno!"</span>
+</code></pre>
+
+      <button id="copy-button-1317" class="copyButton" data-copy="import zlib from &quot;node:zlib&quot;;
+import { promisify } from &quot;node:util&quot;;
+
+const compress = promisify(zlib.zstdCompress);
+const decompress = promisify(zlib.zstdDecompress);
+
+const compressed = await compress(Buffer.from(&quot;Hello, Deno!&quot;));
+const result = await decompress(compressed);
+console.log(result.toString()); // &quot;Hello, Deno!&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The synchronous variants <code>zlib.zstdCompressSync()</code> and
+<code>zlib.zstdDecompressSync()</code> are also available.</p>
+<h3 id="node%3Asqlite-1" tabindex="-1">node:sqlite <a class="header-anchor" href="#node%3Asqlite-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Deno 2.7 added several new APIs to <code>node:sqlite</code>:</p>
+<ul>
+<li><code>DatabaseSync.setAuthorizer(callback)</code> — registers a callback invoked for
+every SQL operation, enabling fine-grained access control over which tables
+and operations are permitted:</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> constants<span class="token punctuation">,</span> DatabaseSync <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:sqlite"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> db <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DatabaseSync</span><span class="token punctuation">(</span><span class="token string">":memory:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+db<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token string">"CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Allow reads, deny everything else</span>
+db<span class="token punctuation">.</span><span class="token function">setAuthorizer</span><span class="token punctuation">(</span><span class="token punctuation">(</span>_action<span class="token punctuation">,</span> _table<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> constants<span class="token punctuation">.</span><span class="token constant">SQLITE_OK</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-1334" class="copyButton" data-copy="import { constants, DatabaseSync } from &quot;node:sqlite&quot;;
+
+const db = new DatabaseSync(&quot;:memory:&quot;);
+db.exec(&quot;CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT)&quot;);
+
+// Allow reads, deny everything else
+db.setAuthorizer((_action, _table) => {
+  return constants.SQLITE_OK;
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ul>
+<li>
+<p><code>DatabaseSync.enableDefensive(enabled)</code> — enables or disables defensive mode,
+which prevents potentially dangerous database operations such as schema
+modifications at runtime.</p>
+</li>
+<li>
+<p><code>DatabaseSync.createTagStore()</code> — creates a prepared-statement cache that maps
+SQL strings to compiled statements for efficient repeated execution.</p>
+</li>
+</ul>
+<h2 id="node-test-results" tabindex="-1">Node test results <a class="header-anchor" href="#node-test-results"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>If you're interested in a more detailed view of compatibility on a per-test-case
+basis, you can find a list of both passing and failing Node.js test cases on
+<a href="https://node-test-viewer.deno.deno.net/">this page</a>.</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-07-30T00:00:00.000Z">July 30, 2026</time></p></div></div></div></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/node_apis.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

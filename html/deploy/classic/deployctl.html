@@ -1,0 +1,1188 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Dependencies </a></li><li class="leading-tight text-balance"><a href="#install-deployctl" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Install deployctl </a></li><li class="leading-tight text-balance"><a href="#deploy" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deploy </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#project-and-entrypoint" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Project and Entrypoint </a></li><li class="leading-tight text-balance"><a href="#include-and-exclude-files" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Include and Exclude Files </a></li><li class="leading-tight text-balance"><a href="#environment-variables" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Environment variables </a></li><li class="leading-tight text-balance"><a href="#production-deployments" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Production Deployments </a></li></ul></li><li class="leading-tight text-balance"><a href="#deployments" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deployments </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#list" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">List </a></li><li class="leading-tight text-balance"><a href="#show" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Show </a></li><li class="leading-tight text-balance"><a href="#redeploy" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Redeploy </a></li><li class="leading-tight text-balance"><a href="#delete" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Delete </a></li></ul></li><li class="leading-tight text-balance"><a href="#projects" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Projects </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#list-1" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">List </a></li><li class="leading-tight text-balance"><a href="#show-1" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Show </a></li><li class="leading-tight text-balance"><a href="#rename" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Rename </a></li><li class="leading-tight text-balance"><a href="#create" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Create </a></li><li class="leading-tight text-balance"><a href="#delete-1" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Delete </a></li></ul></li><li class="leading-tight text-balance"><a href="#top" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Top </a></li><li class="leading-tight text-balance"><a href="#logs" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Logs </a></li><li class="leading-tight text-balance"><a href="#api" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">API </a></li><li class="leading-tight text-balance"><a href="#local-development" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Local Development </a></li><li class="leading-tight text-balance"><a href="#json-output" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">JSON output </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Getting started<span aria-hidden="true">›</span></li><li class="flex items-center gap-2 m-0">Deploy basics</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/deploy/classic/deployctl.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fdeploy%2Fclassic%2Fdeployctl.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Using deployctl on the command line</h1></div><p>
+</p><div class="admonition warning">
+  <div class="title">Sunsetting on July 20, 2026</div>
+
+<p></p>
+<p>Deno Deploy Classic will be shut down on July 20, 2026. We recommend migrating
+to the new <a href="/deploy/">Deno Deploy</a> platform. See the
+<a href="/deploy/migration_guide/">migration guide</a> for details.</p>
+<p>
+</p></div>
+<p></p>
+<p><code>deployctl</code> is a command line tool (CLI) that lets you operate the Deno Deploy
+platform without leaving your terminal. With it you can deploy your code, create
+and manage your projects and their deployments, and monitor their usage and
+logs.</p>
+<h2 id="dependencies" tabindex="-1">Dependencies <a class="header-anchor" href="#dependencies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The only dependency for <code>deployctl</code> is the Deno runtime. You can install it by
+running the following command:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://deno.land/install.sh <span class="token operator">|</span> <span class="token function">sh</span>
+</code></pre>
+
+      <button id="copy-button-18" class="copyButton" data-copy="curl -fsSL https://deno.land/install.sh | sh
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You don't need to setup a Deno Deploy Classic account beforehand. It will be
+created along the way when you deploy your first project.</p>
+<h2 id="install-deployctl" tabindex="-1">Install <code>deployctl</code> <a class="header-anchor" href="#install-deployctl"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>With the Deno runtime installed, you can install the <code>deployctl</code> utility with
+the following command:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">-gArf</span> jsr:@deno/deployctl
+</code></pre>
+
+      <button id="copy-button-28" class="copyButton" data-copy="deno install -gArf jsr:@deno/deployctl
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The <code>-A</code> option in the deno install command grants all permissions to the
+installed script. You can opt not to use it, in which case you will be prompted
+to grant the necessary permissions when needed during the execution of the tool.</p>
+<h2 id="deploy" tabindex="-1">Deploy <a class="header-anchor" href="#deploy"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>To perform a new deployment of your code, navigate to the root directory of your
+project and execute:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deploy
+</code></pre>
+
+      <button id="copy-button-38" class="copyButton" data-copy="deployctl deploy
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="project-and-entrypoint" tabindex="-1">Project and Entrypoint <a class="header-anchor" href="#project-and-entrypoint"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>If this is the first deployment of the project, <code>deployctl</code> will guess the
+project name based on the Git repo or directory it is in. Similarly, it will
+guess the entrypoint by looking for files with common entrypoint names (main.ts,
+src/main.ts, etc). After the first deployment, the settings used will be stored
+in a config file (by default deno.json).</p>
+<p>You can specify the project name and/or the entrypoint using the <code>--project</code> and
+<code>--entrypoint</code> arguments respectively. If the project does not exist, it will be
+created automatically. By default it is created in the personal organization of
+the user, but it can also be created in a custom organization by specifying the
+<code>--org</code> argument. If the organization does not exist yet, it will also be
+created automatically.</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deploy <span class="token parameter variable">--project</span><span class="token operator">=</span>helloworld <span class="token parameter variable">--entrypoint</span><span class="token operator">=</span>src/entrypoint.ts <span class="token parameter variable">--org</span><span class="token operator">=</span>my-team
+</code></pre>
+
+      <button id="copy-button-48" class="copyButton" data-copy="deployctl deploy --project=helloworld --entrypoint=src/entrypoint.ts --org=my-team
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="include-and-exclude-files" tabindex="-1">Include and Exclude Files <a class="header-anchor" href="#include-and-exclude-files"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>By default, deployctl deploys all the files in the current directory
+(recursively, except <code>node_modules</code> directories). You can customize this
+behavior using the <code>--include</code> and <code>--exclude</code> arguments (also supported in the
+config file). These arguments accept specific files, whole directories and
+globs. Here are some examples:</p>
+<ul>
+<li>
+<p>Include only source and static files:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deploy <span class="token parameter variable">--include</span><span class="token operator">=</span>./src <span class="token parameter variable">--include</span><span class="token operator">=</span>./static
+</code></pre>
+
+      <button id="copy-button-60" class="copyButton" data-copy="deployctl deploy --include=./src --include=./static
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></li>
+<li>
+<p>Include only Typescript files:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deploy <span class="token parameter variable">--include</span><span class="token operator">=</span>**/*.ts
+</code></pre>
+
+      <button id="copy-button-66" class="copyButton" data-copy="deployctl deploy --include=**/*.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></li>
+<li>
+<p>Exclude local tooling and artifacts</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deploy <span class="token parameter variable">--exclude</span><span class="token operator">=</span>./tools <span class="token parameter variable">--exclude</span><span class="token operator">=</span>./benches
+</code></pre>
+
+      <button id="copy-button-72" class="copyButton" data-copy="deployctl deploy --exclude=./tools --exclude=./benches
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></li>
+</ul>
+<p>A common pitfall is to not include the source code modules that need to be run
+(entrypoint and dependencies). The following example will fail because <code>main.ts</code>
+is not included:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deploy <span class="token parameter variable">--include</span><span class="token operator">=</span>./static <span class="token parameter variable">--entrypoint</span><span class="token operator">=</span>./main.ts
+</code></pre>
+
+      <button id="copy-button-78" class="copyButton" data-copy="deployctl deploy --include=./static --entrypoint=./main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The entrypoint can also be a remote script. A common use case for this is to
+deploy an static site using <code>std/http/file_server.ts</code>.</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deploy <span class="token parameter variable">--include</span><span class="token operator">=</span>dist <span class="token parameter variable">--entrypoint</span><span class="token operator">=</span>jsr:@std/http/file-server
+</code></pre>
+
+      <button id="copy-button-82" class="copyButton" data-copy="deployctl deploy --include=dist --entrypoint=jsr:@std/http/file-server
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="environment-variables" tabindex="-1">Environment variables <a class="header-anchor" href="#environment-variables"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can set env variables using <code>--env</code> (to set individual environment
+variables) or <code>--env-file</code> (to load one or more environment files). These
+options can be combined and used multiple times:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deploy --env-file --env-file<span class="token operator">=</span>.other-env <span class="token parameter variable">--env</span><span class="token operator">=</span>DEPLOYMENT_TS<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%s<span class="token variable">)</span></span>
+</code></pre>
+
+      <button id="copy-button-89" class="copyButton" data-copy="deployctl deploy --env-file --env-file=.other-env --env=DEPLOYMENT_TS=$(date +%s)
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The deployment will have access to these variables using <code>Deno.env.get()</code>. Be
+aware that the env variables set with <code>--env</code> and <code>--env-file</code> are specific for
+the deployment being created and are not added to the list of
+<a href="/deploy/classic/environment-variables/">env variables configured for the project</a>.</p>
+<h3 id="production-deployments" tabindex="-1">Production Deployments <a class="header-anchor" href="#production-deployments"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Each deployment you create have a unique URL. In addition, a project has a
+"production URL" and custom domains routing traffic to its "production"
+deployment. Deployments can be promoted to production at any time, or created
+directly as production using the <code>--prod</code> flag:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deploy <span class="token parameter variable">--prod</span>
+</code></pre>
+
+      <button id="copy-button-99" class="copyButton" data-copy="deployctl deploy --prod
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Learn more about production deployments in the <a href="/deploy/classic/deployments">Deployments</a>
+docs.</p>
+<h2 id="deployments" tabindex="-1">Deployments <a class="header-anchor" href="#deployments"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The deployments subcommand groups all the operations around deployments.</p>
+<h3 id="list" tabindex="-1">List <a class="header-anchor" href="#list"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can list the deployments of a project with:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments list
+</code></pre>
+
+      <button id="copy-button-115" class="copyButton" data-copy="deployctl deployments list
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Output:</p>
+<div class="relative"><pre><code>✔ Page 1 of the list of deployments of the project 'my-project' is ready
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│  Deployment  │               Date               │   Status   │  Database  │                       Domain                       │ Entrypoint │  Branch  │  Commit  │
+├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ kcbxc4xwe4mc │ 12/3/2024 13:21:40 CET (2 days)  │ Preview    │ Preview    │ https://my-project-kcbxc4xwe4mc.deno.dev │ main.ts    │ main     │ 4b6c506  │
+│ c0ph5xa9exb3 │ 12/3/2024 13:21:25 CET (2 days)  │ Production │ Production │ https://my-project-c0ph5xa9exb3.deno.dev │ main.ts    │ main     │ 4b6c506  │
+│ kwkbev9er4h2 │ 12/3/2024 13:21:12 CET (2 days)  │ Preview    │ Preview    │ https://my-project-kwkbev9er4h2.deno.dev │ main.ts    │ main     │ 4b6c506  │
+│ dxseq0jc8402 │ 6/3/2024 23:16:51 CET (8 days)   │ Preview    │ Production │ https://my-project-dxseq0jc8402.deno.dev │ main.ts    │ main     │ 099359b  │
+│ 7xr5thz8yjbz │ 6/3/2024 22:58:32 CET (8 days)   │ Preview    │ Preview    │ https://my-project-7xr5thz8yjbz.deno.dev │ main.ts    │ another  │ a4d2953  │
+│ 4qr4h5ac3rfn │ 6/3/2024 22:57:05 CET (8 days)   │ Failed     │ Preview    │ n/a                                                │ main.ts    │ another  │ 56d2c88  │
+│ 25wryhcqmb9q │ 6/3/2024 22:56:41 CET (8 days)   │ Preview    │ Preview    │ https://my-project-25wryhcqmb9q.deno.dev │ main.ts    │ another  │ 4b6c506  │
+│ 64tbrn8jre9n │ 6/3/2024 8:21:33 CET (8 days)    │ Preview    │ Production │ https://my-project-64tbrn8jre9n.deno.dev │ main.ts    │ main     │ 4b6c506  │
+│ hgqgccnmzg04 │ 6/3/2024 8:17:40 CET (8 days)    │ Failed     │ Production │ n/a                                                │ main.ts    │ main     │ 8071902  │
+│ rxkh1w3g74e8 │ 6/3/2024 8:17:28 CET (8 days)    │ Failed     │ Production │ n/a                                                │ main.ts    │ main     │ b142a59  │
+│ wx6cw9aya64c │ 6/3/2024 8:02:29 CET (8 days)    │ Preview    │ Production │ https://my-project-wx6cw9aya64c.deno.dev │ main.ts    │ main     │ b803784  │
+│ a1qh5fmew2yf │ 5/3/2024 16:25:29 CET (9 days)   │ Preview    │ Production │ https://my-project-a1qh5fmew2yf.deno.dev │ main.ts    │ main     │ 4bb1f0f  │
+│ w6pf4r0rrdkb │ 5/3/2024 16:07:35 CET (9 days)   │ Preview    │ Production │ https://my-project-w6pf4r0rrdkb.deno.dev │ main.ts    │ main     │ 6e487fc  │
+│ nn700gexgdzq │ 5/3/2024 13:37:11 CET (9 days)   │ Preview    │ Production │ https://my-project-nn700gexgdzq.deno.dev │ main.ts    │ main     │ c5b1d1f  │
+│ 98crfqxa6vvf │ 5/3/2024 13:33:52 CET (9 days)   │ Preview    │ Production │ https://my-project-98crfqxa6vvf.deno.dev │ main.ts    │ main     │ 090146e  │
+│ xcdcs014yc5p │ 5/3/2024 13:30:58 CET (9 days)   │ Preview    │ Production │ https://my-project-xcdcs014yc5p.deno.dev │ main.ts    │ main     │ 5b78c0f  │
+│ btw43kx89ws1 │ 5/3/2024 13:27:31 CET (9 days)   │ Preview    │ Production │ https://my-project-btw43kx89ws1.deno.dev │ main.ts    │ main     │ 663452a  │
+│ 62tg1ketkjx7 │ 5/3/2024 13:27:03 CET (9 days)   │ Preview    │ Production │ https://my-project-62tg1ketkjx7.deno.dev │ main.ts    │ main     │ 24d1618  │
+│ 07ag6pt6kjex │ 5/3/2024 13:19:11 CET (9 days)   │ Preview    │ Production │ https://my-project-07ag6pt6kjex.deno.dev │ main.ts    │ main     │ 4944545  │
+│ 4msyne1rvwj1 │ 5/3/2024 13:17:16 CET (9 days)   │ Preview    │ Production │ https://my-project-4msyne1rvwj1.deno.dev │ main.ts    │ main     │ dda85e1  │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+Press enter to fetch the next page [Enter]
+</code></pre>
+
+      <button id="copy-button-119" class="copyButton" data-copy="✔ Page 1 of the list of deployments of the project 'my-project' is ready
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│  Deployment  │               Date               │   Status   │  Database  │                       Domain                       │ Entrypoint │  Branch  │  Commit  │
+├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ kcbxc4xwe4mc │ 12/3/2024 13:21:40 CET (2 days)  │ Preview    │ Preview    │ https://my-project-kcbxc4xwe4mc.deno.dev │ main.ts    │ main     │ 4b6c506  │
+│ c0ph5xa9exb3 │ 12/3/2024 13:21:25 CET (2 days)  │ Production │ Production │ https://my-project-c0ph5xa9exb3.deno.dev │ main.ts    │ main     │ 4b6c506  │
+│ kwkbev9er4h2 │ 12/3/2024 13:21:12 CET (2 days)  │ Preview    │ Preview    │ https://my-project-kwkbev9er4h2.deno.dev │ main.ts    │ main     │ 4b6c506  │
+│ dxseq0jc8402 │ 6/3/2024 23:16:51 CET (8 days)   │ Preview    │ Production │ https://my-project-dxseq0jc8402.deno.dev │ main.ts    │ main     │ 099359b  │
+│ 7xr5thz8yjbz │ 6/3/2024 22:58:32 CET (8 days)   │ Preview    │ Preview    │ https://my-project-7xr5thz8yjbz.deno.dev │ main.ts    │ another  │ a4d2953  │
+│ 4qr4h5ac3rfn │ 6/3/2024 22:57:05 CET (8 days)   │ Failed     │ Preview    │ n/a                                                │ main.ts    │ another  │ 56d2c88  │
+│ 25wryhcqmb9q │ 6/3/2024 22:56:41 CET (8 days)   │ Preview    │ Preview    │ https://my-project-25wryhcqmb9q.deno.dev │ main.ts    │ another  │ 4b6c506  │
+│ 64tbrn8jre9n │ 6/3/2024 8:21:33 CET (8 days)    │ Preview    │ Production │ https://my-project-64tbrn8jre9n.deno.dev │ main.ts    │ main     │ 4b6c506  │
+│ hgqgccnmzg04 │ 6/3/2024 8:17:40 CET (8 days)    │ Failed     │ Production │ n/a                                                │ main.ts    │ main     │ 8071902  │
+│ rxkh1w3g74e8 │ 6/3/2024 8:17:28 CET (8 days)    │ Failed     │ Production │ n/a                                                │ main.ts    │ main     │ b142a59  │
+│ wx6cw9aya64c │ 6/3/2024 8:02:29 CET (8 days)    │ Preview    │ Production │ https://my-project-wx6cw9aya64c.deno.dev │ main.ts    │ main     │ b803784  │
+│ a1qh5fmew2yf │ 5/3/2024 16:25:29 CET (9 days)   │ Preview    │ Production │ https://my-project-a1qh5fmew2yf.deno.dev │ main.ts    │ main     │ 4bb1f0f  │
+│ w6pf4r0rrdkb │ 5/3/2024 16:07:35 CET (9 days)   │ Preview    │ Production │ https://my-project-w6pf4r0rrdkb.deno.dev │ main.ts    │ main     │ 6e487fc  │
+│ nn700gexgdzq │ 5/3/2024 13:37:11 CET (9 days)   │ Preview    │ Production │ https://my-project-nn700gexgdzq.deno.dev │ main.ts    │ main     │ c5b1d1f  │
+│ 98crfqxa6vvf │ 5/3/2024 13:33:52 CET (9 days)   │ Preview    │ Production │ https://my-project-98crfqxa6vvf.deno.dev │ main.ts    │ main     │ 090146e  │
+│ xcdcs014yc5p │ 5/3/2024 13:30:58 CET (9 days)   │ Preview    │ Production │ https://my-project-xcdcs014yc5p.deno.dev │ main.ts    │ main     │ 5b78c0f  │
+│ btw43kx89ws1 │ 5/3/2024 13:27:31 CET (9 days)   │ Preview    │ Production │ https://my-project-btw43kx89ws1.deno.dev │ main.ts    │ main     │ 663452a  │
+│ 62tg1ketkjx7 │ 5/3/2024 13:27:03 CET (9 days)   │ Preview    │ Production │ https://my-project-62tg1ketkjx7.deno.dev │ main.ts    │ main     │ 24d1618  │
+│ 07ag6pt6kjex │ 5/3/2024 13:19:11 CET (9 days)   │ Preview    │ Production │ https://my-project-07ag6pt6kjex.deno.dev │ main.ts    │ main     │ 4944545  │
+│ 4msyne1rvwj1 │ 5/3/2024 13:17:16 CET (9 days)   │ Preview    │ Production │ https://my-project-4msyne1rvwj1.deno.dev │ main.ts    │ main     │ dda85e1  │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+Press enter to fetch the next page [Enter]
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>This command outputs pages of 20 deployments by default. You can iterate over
+the pages with the enter key, and use the <code>--page</code> and <code>--limit</code> options to
+query a specific page and page size.</p>
+<p>Like with the rest of commands, you can use the <code>--project</code> option to specify
+the project of which to list deployments, if you are not in a project directory
+or want to list deployments from a different project.</p>
+<h3 id="show" tabindex="-1">Show <a class="header-anchor" href="#show"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Get all the details of a particular deployment using:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments show
+</code></pre>
+
+      <button id="copy-button-132" class="copyButton" data-copy="deployctl deployments show
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Output:</p>
+<div class="relative"><pre><code>✔ The production deployment of the project 'my-project' is 'c0ph5xa9exb3'
+✔ The details of the deployment 'c0ph5xa9exb3' are ready:
+
+c0ph5xa9exb3
+------------
+Status:       Production
+Date:         2 days, 12 hours, 29 minutes, 46 seconds ago (12/3/2024 13:21:25 CET)
+Project:      my-project (e54f23b5-828d-4b7f-af12-706d4591062b)
+Organization:	my-team (d97822ac-ee20-4ce9-b942-5389330b57ee)
+Domain(s):    https://my-project.deno.dev
+              https://my-project-c0ph5xa9exb3.deno.dev
+Database:     Production (0efa985f-3793-48bc-8c05-f740ffab4ca0)
+Entrypoint:   main.ts
+Env Vars:     HOME
+Git
+  Ref:        main [4b6c506]
+  Message:    change name
+  Author:     John Doe @johndoe [mailto:johndoe@deno.com]
+  Url:        https://github.com/arnauorriols/my-project/commit/4b6c50629ceeeb86601347732d01dc7ed63bf34f
+Crons:        another cron [*/10 * * * *] succeeded at 15/3/2024 1:50:00 CET after 2 seconds (next at 15/3/2024 2:00:00 CET)
+              newest cron [*/10 * * * *] n/a
+              yet another cron [*/10 * * * *] failed at 15/3/2024 1:40:00 CET after 2 seconds (next at 15/3/2024 1:51:54 CET)
+</code></pre>
+
+      <button id="copy-button-136" class="copyButton" data-copy="✔ The production deployment of the project 'my-project' is 'c0ph5xa9exb3'
+✔ The details of the deployment 'c0ph5xa9exb3' are ready:
+
+c0ph5xa9exb3
+------------
+Status:       Production
+Date:         2 days, 12 hours, 29 minutes, 46 seconds ago (12/3/2024 13:21:25 CET)
+Project:      my-project (e54f23b5-828d-4b7f-af12-706d4591062b)
+Organization:	my-team (d97822ac-ee20-4ce9-b942-5389330b57ee)
+Domain(s):    https://my-project.deno.dev
+              https://my-project-c0ph5xa9exb3.deno.dev
+Database:     Production (0efa985f-3793-48bc-8c05-f740ffab4ca0)
+Entrypoint:   main.ts
+Env Vars:     HOME
+Git
+  Ref:        main [4b6c506]
+  Message:    change name
+  Author:     John Doe @johndoe [mailto:johndoe@deno.com]
+  Url:        https://github.com/arnauorriols/my-project/commit/4b6c50629ceeeb86601347732d01dc7ed63bf34f
+Crons:        another cron [*/10 * * * *] succeeded at 15/3/2024 1:50:00 CET after 2 seconds (next at 15/3/2024 2:00:00 CET)
+              newest cron [*/10 * * * *] n/a
+              yet another cron [*/10 * * * *] failed at 15/3/2024 1:40:00 CET after 2 seconds (next at 15/3/2024 1:51:54 CET)
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>If no deployment is specified, the command shows the details of the current
+production deployment of the project. To see the details of the last deployment,
+use <code>--last</code>, and to see the details of a particular deployment, use <code>--id</code> (or
+positional argument). You can also use <code>--next</code> or <code>--prev</code> to navigate the
+deployments chronologically.</p>
+<p>For example, to see the details of the second to last deployment, you can do:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments show <span class="token parameter variable">--last</span> <span class="token parameter variable">--prev</span>
+</code></pre>
+
+      <button id="copy-button-143" class="copyButton" data-copy="deployctl deployments show --last --prev
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>And to see the details of 2 deployments after a specific deployment:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments show 64tbrn8jre9n <span class="token parameter variable">--next</span><span class="token operator">=</span><span class="token number">2</span>
+</code></pre>
+
+      <button id="copy-button-147" class="copyButton" data-copy="deployctl deployments show 64tbrn8jre9n --next=2
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="redeploy" tabindex="-1">Redeploy <a class="header-anchor" href="#redeploy"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The redeploy command creates a new deployment reusing the build of an existing
+deployment, for the purpose of changing the resources associated with it. This
+includes production domains, environment variables and KV databases.</p>
+<p>
+</p><div class="admonition info">
+  <div class="title">Info</div>
+
+<p></p>
+<p>The semantics of selecting the deployment to redeploy are the same as those of
+the <a href="#show">show subcommand</a>, including <code>--last</code>, <code>--id</code>, <code>--next</code> and <code>--prev</code>.</p>
+<p>
+</p></div>
+<p></p>
+<h4 id="production-domains" tabindex="-1">Production Domains <a class="header-anchor" href="#production-domains"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>If you want to change the routing of the production domains of the project to a
+particular deployment, you can redeploy it with the <code>--prod</code> option:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments redeploy <span class="token parameter variable">--prod</span> 64tbrn8jre9n
+</code></pre>
+
+      <button id="copy-button-169" class="copyButton" data-copy="deployctl deployments redeploy --prod 64tbrn8jre9n
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>This will create a new deployment with the same code and environment variables
+as the specified deployment, but with the production domains of the project
+pointing to it. For those projects with preview/prod databases (ie projects
+linked to GitHub), this will also set the production database for the new
+deployment.</p>
+<p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>This feature is similar to the "promote to production" button found in the Deno
+Deploy Classic web application with the exception that the "promote to
+production" button does not create a new deployment. Instead, the "promote to
+production" button changes the domain routing in-place, however it's restricted
+to deployments already using the production database.</p>
+<p>
+</p></div>
+<p></p>
+<h4 id="kv-database" tabindex="-1">KV Database <a class="header-anchor" href="#kv-database"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>If this is a GitHub deployment, it will have 2 databases, one for prod
+deployments and one for preview deployments. You can change the database of a
+deployment by redeploying it with the <code>--db</code> option:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments redeploy <span class="token parameter variable">--db</span><span class="token operator">=</span>prod <span class="token parameter variable">--id</span><span class="token operator">=</span>64tbrn8jre9n
+</code></pre>
+
+      <button id="copy-button-188" class="copyButton" data-copy="deployctl deployments redeploy --db=prod --id=64tbrn8jre9n
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>When redeploying a deployment to prod, by default it will automatically
+configure it to use the prod database. You can combine both <code>--prod</code> and <code>--db</code>
+options to opt out of this behavior. For example, the following command will
+redeploy the current production deployment (given the lack of positional
+argument, <code>--id</code> or <code>--last</code>). The new deployment will become the new production
+deployment, but it will use the preview database instead of the production
+database:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments redeploy <span class="token parameter variable">--prod</span> <span class="token parameter variable">--db</span><span class="token operator">=</span>preview
+</code></pre>
+
+      <button id="copy-button-195" class="copyButton" data-copy="deployctl deployments redeploy --prod --db=preview
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>
+</p></div>
+<p></p>
+<p>If your organization has custom databases, you can also set them by UUID:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments redeploy <span class="token parameter variable">--last</span> <span class="token parameter variable">--db</span><span class="token operator">=</span>5261e096-f9aa-4b72-8440-1c2b5b553def
+</code></pre>
+
+      <button id="copy-button-202" class="copyButton" data-copy="deployctl deployments redeploy --last --db=5261e096-f9aa-4b72-8440-1c2b5b553def
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="environment-variables-1" tabindex="-1">Environment Variables <a class="header-anchor" href="#environment-variables-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>When a deployment is created, it inherits the environment variables of the
+project. Given that the deployments are immutable, their environment variables
+can never be changed. To set new environment variables in a deployment, you need
+to redeploy it using <code>--env</code> (to set individual variables) and <code>--env-file</code> (to
+load one or more environment files).</p>
+<p>The following command redeploys the current production deployment with the env
+variables defined in the <code>.env</code> and <code>.other-env</code> files, plus the <code>DEPLOYMENT_TS</code>
+variable set to the current timestamp. The resulting deployment will be a
+preview deployment (ie the production domains won't route traffic to it, given
+the lack of <code>--prod</code>).</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments redeploy --env-file --env-file<span class="token operator">=</span>.other-env <span class="token parameter variable">--env</span><span class="token operator">=</span>DEPLOYMENT_TS<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%s<span class="token variable">)</span></span>
+</code></pre>
+
+      <button id="copy-button-212" class="copyButton" data-copy="deployctl deployments redeploy --env-file --env-file=.other-env --env=DEPLOYMENT_TS=$(date +%s)
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>Be aware that when changing env variables, only the env variables set in the
+redeploy command will be used by the new deployment. The project env variables
+and the env variables of the deployment being redeployed are ignored. If this
+does not suit your needs, please report your feedback at
+<a href="https://github.com/denoland/deploy_feedback/issues/">https://github.com/denoland/deploy_feedback/issues/</a></p>
+<p>
+</p></div>
+<p></p>
+<p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>When you change the project environment variables in the Deno Deploy Classic web
+application, the current production deployment is redeployed with the new
+environment variables, and the new deployment becomes the new production
+deployment.</p>
+<p>
+</p></div>
+<p></p>
+<h3 id="delete" tabindex="-1">Delete <a class="header-anchor" href="#delete"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can delete a deployment using the <code>delete</code> subcommand:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments delete 64tbrn8jre9n
+</code></pre>
+
+      <button id="copy-button-237" class="copyButton" data-copy="deployctl deployments delete 64tbrn8jre9n
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Like <code>show</code> and <code>redeploy</code>, <code>delete</code> can also use <code>--last</code>, <code>--next</code> and
+<code>--prev</code> to select the deployment to delete. Here's an example command that
+deletes all the deployments of a project except the last (use with caution!):</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell"><span class="token keyword">while</span> deployctl deployments delete <span class="token parameter variable">--project</span><span class="token operator">=</span>my-project <span class="token parameter variable">--last</span> --prev<span class="token punctuation">;</span> <span class="token keyword">do</span> <span class="token builtin class-name">:</span><span class="token punctuation">;</span> <span class="token keyword">done</span>
+</code></pre>
+
+      <button id="copy-button-241" class="copyButton" data-copy="while deployctl deployments delete --project=my-project --last --prev; do :; done
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="projects" tabindex="-1">Projects <a class="header-anchor" href="#projects"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>projects</code> subcommand groups all the operations against projects as a whole.
+this includes <code>list</code>, <code>show</code>, <code>rename</code>, <code>create</code> and <code>delete</code>.</p>
+<h3 id="list-1" tabindex="-1">List <a class="header-anchor" href="#list-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deployctl projects list</code> outputs all the projects your user has access to,
+grouped by organization:</p>
+<div class="relative"><pre><code>Personal org:
+    blog
+    url-shortener
+
+'my-team' org:
+    admin-site
+    main-site
+    analytics
+</code></pre>
+
+      <button id="copy-button-254" class="copyButton" data-copy="Personal org:
+    blog
+    url-shortener
+
+'my-team' org:
+    admin-site
+    main-site
+    analytics
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>You can filter by organization using <code>--org</code>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl projects list <span class="token parameter variable">--org</span><span class="token operator">=</span>my-team
+</code></pre>
+
+      <button id="copy-button-258" class="copyButton" data-copy="deployctl projects list --org=my-team
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="show-1" tabindex="-1">Show <a class="header-anchor" href="#show-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>To see the details of a particular project, use <code>projects show</code>. If you are
+inside a project, it will pick up the project id from the config file. You can
+also specify the project using <code>--project</code> or the positional argument:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl projects show main-site
+</code></pre>
+
+      <button id="copy-button-265" class="copyButton" data-copy="deployctl projects show main-site
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Output:</p>
+<div class="relative"><pre><code>main-site
+---------
+Organization:	my-team (5261e096-f9aa-4b72-8440-1c2b5b553def)
+Domain(s):  	https://my-team.com
+		          https://main-site.deno.dev
+Dash URL:	    https://dash.deno.com/projects/8422c515-f68f-49b2-89f3-157f4b144611
+Repository:	  https://github.com/my-team/main-site
+Databases:  	[main] dd28e63e-f495-416b-909a-183380e3a232
+		          [*] e061c76e-4445-409a-bc36-a1a9040c83b3
+Crons:		    another cron [*/10 * * * *] succeeded at 12/3/2024 14:40:00 CET after 2 seconds (next at 12/3/2024 14:50:00 CET)
+		          newest cron [*/10 * * * *] n/a
+		          yet another cron [*/10 * * * *] failed at 12/3/2024 14:40:00 CET after 2 seconds (next at 12/3/2024 14:50:00 CET)
+Deployments:	kcbxc4xwe4mc	c0ph5xa9exb3*	kwkbev9er4h2	dxseq0jc8402	7xr5thz8yjbz
+		          4qr4h5ac3rfn	25wryhcqmb9q	64tbrn8jre9n	hgqgccnmzg04	rxkh1w3g74e8
+		          wx6cw9aya64c	a1qh5fmew2yf	w6pf4r0rrdkb	nn700gexgdzq	98crfqxa6vvf
+		          xcdcs014yc5p	btw43kx89ws1	62tg1ketkjx7	07ag6pt6kjex	4msyne1rvwj1
+</code></pre>
+
+      <button id="copy-button-269" class="copyButton" data-copy="main-site
+---------
+Organization:	my-team (5261e096-f9aa-4b72-8440-1c2b5b553def)
+Domain(s):  	https://my-team.com
+		          https://main-site.deno.dev
+Dash URL:	    https://dash.deno.com/projects/8422c515-f68f-49b2-89f3-157f4b144611
+Repository:	  https://github.com/my-team/main-site
+Databases:  	[main] dd28e63e-f495-416b-909a-183380e3a232
+		          [*] e061c76e-4445-409a-bc36-a1a9040c83b3
+Crons:		    another cron [*/10 * * * *] succeeded at 12/3/2024 14:40:00 CET after 2 seconds (next at 12/3/2024 14:50:00 CET)
+		          newest cron [*/10 * * * *] n/a
+		          yet another cron [*/10 * * * *] failed at 12/3/2024 14:40:00 CET after 2 seconds (next at 12/3/2024 14:50:00 CET)
+Deployments:	kcbxc4xwe4mc	c0ph5xa9exb3*	kwkbev9er4h2	dxseq0jc8402	7xr5thz8yjbz
+		          4qr4h5ac3rfn	25wryhcqmb9q	64tbrn8jre9n	hgqgccnmzg04	rxkh1w3g74e8
+		          wx6cw9aya64c	a1qh5fmew2yf	w6pf4r0rrdkb	nn700gexgdzq	98crfqxa6vvf
+		          xcdcs014yc5p	btw43kx89ws1	62tg1ketkjx7	07ag6pt6kjex	4msyne1rvwj1
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="rename" tabindex="-1">Rename <a class="header-anchor" href="#rename"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Projects can be renamed easily with the <code>rename</code> subcommand. Similarly to the
+other commands, if you run the command from within a project's directory, you
+don't need to specify the current name of the project:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl projects <span class="token function">rename</span> my-personal-blog
+</code></pre>
+
+      <button id="copy-button-276" class="copyButton" data-copy="deployctl projects rename my-personal-blog
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Output:</p>
+<div class="relative"><pre><code>ℹ Using config file '/private/tmp/blog/deno.json'
+✔ Project 'blog' (8422c515-f68f-49b2-89f3-157f4b144611) found
+✔ Project 'blog' renamed to 'my-personal-blog'
+</code></pre>
+
+      <button id="copy-button-280" class="copyButton" data-copy="ℹ Using config file '/private/tmp/blog/deno.json'
+✔ Project 'blog' (8422c515-f68f-49b2-89f3-157f4b144611) found
+✔ Project 'blog' renamed to 'my-personal-blog'
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>Keep in mind that the name of the project is part of the preview domains
+(<a href="https://my-personal-blog-kcbxc4xwe4mc.deno.dev">https://my-personal-blog-kcbxc4xwe4mc.deno.dev</a>) and the default production
+domain (<a href="https://my-personal-blog.deno.dev">https://my-personal-blog.deno.dev</a>). Therefore, when changing the project
+name, the URLs with the previous name will no longer route to the project's
+corresponding deployments.</p>
+<p>
+</p></div>
+<p></p>
+<h3 id="create" tabindex="-1">Create <a class="header-anchor" href="#create"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can create an empty project with:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl projects create my-new-project
+</code></pre>
+
+      <button id="copy-button-296" class="copyButton" data-copy="deployctl projects create my-new-project
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="delete-1" tabindex="-1">Delete <a class="header-anchor" href="#delete-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can delete a project with:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl projects delete my-new-project
+</code></pre>
+
+      <button id="copy-button-303" class="copyButton" data-copy="deployctl projects delete my-new-project
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="top" tabindex="-1">Top <a class="header-anchor" href="#top"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>top</code> subcommand is used to monitor the resource usage of a project in
+real-time:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl <span class="token function">top</span>
+</code></pre>
+
+      <button id="copy-button-310" class="copyButton" data-copy="deployctl top
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Output:</p>
+<div class="relative"><pre><code>┌────────┬────────────────┬────────────────────────┬─────────┬───────┬─────────┬──────────┬─────────────┬────────────┬─────────┬─────────┬───────────┬───────────┐
+│ (idx)  │ deployment     │ region                 │ Req/min │ CPU%  │ CPU/req │ RSS/5min │ Ingress/min │ Egress/min │ KVr/min │ KVw/min │ QSenq/min │ QSdeq/min │
+├────────┼────────────────┼────────────────────────┼─────────┼───────┼─────────┼──────────┼─────────────┼────────────┼─────────┼─────────┼───────────┼───────────┤
+│ 6b80e8 │ "kcbxc4xwe4mc" │ "asia-northeast1"      │      80 │ 0.61  │ 4.56    │ 165.908  │ 11.657      │ 490.847    │       0 │       0 │         0 │         0 │
+│ 08312f │ "kcbxc4xwe4mc" │ "asia-northeast1"      │      76 │ 3.49  │ 27.58   │ 186.278  │ 19.041      │ 3195.288   │       0 │       0 │         0 │         0 │
+│ 77c10b │ "kcbxc4xwe4mc" │ "asia-south1"          │      28 │ 0.13  │ 2.86    │ 166.806  │ 7.354       │ 111.478    │       0 │       0 │         0 │         0 │
+│ 15e356 │ "kcbxc4xwe4mc" │ "asia-south1"          │      66 │ 0.97  │ 8.93    │ 162.288  │ 17.56       │ 4538.371   │       0 │       0 │         0 │         0 │
+│ a06817 │ "kcbxc4xwe4mc" │ "asia-southeast1"      │     126 │ 0.44  │ 2.11    │ 140.087  │ 16.504      │ 968.794    │       0 │       0 │         0 │         0 │
+│ d012b6 │ "kcbxc4xwe4mc" │ "asia-southeast1"      │     119 │ 2.32  │ 11.72   │ 193.704  │ 23.44       │ 8359.829   │       0 │       0 │         0 │         0 │
+│ 7d9a3d │ "kcbxc4xwe4mc" │ "australia-southeast1" │       8 │ 0.97  │ 75      │ 158.872  │ 10.538      │ 3.027      │       0 │       0 │         0 │         0 │
+│ 3c21be │ "kcbxc4xwe4mc" │ "australia-southeast1" │       1 │ 0.04  │ 90      │ 105.292  │ 0.08        │ 1.642      │       0 │       0 │         0 │         0 │
+│ b75dc7 │ "kcbxc4xwe4mc" │ "europe-west2"         │     461 │ 5.43  │ 7.08    │ 200.573  │ 63.842      │ 9832.936   │       0 │       0 │         0 │         0 │
+│ 33607e │ "kcbxc4xwe4mc" │ "europe-west2"         │      35 │ 0.21  │ 3.69    │ 141.98   │ 9.438       │ 275.788    │       0 │       0 │         0 │         0 │
+│ 9be3d2 │ "kcbxc4xwe4mc" │ "europe-west2"         │     132 │ 0.92  │ 4.19    │ 180.654  │ 15.959      │ 820.513    │       0 │       0 │         0 │         0 │
+│ 33a859 │ "kcbxc4xwe4mc" │ "europe-west3"         │    1335 │ 7.57  │ 3.4     │ 172.032  │ 178.064     │ 10967.918  │       0 │       0 │         0 │         0 │
+│ 3f54ce │ "kcbxc4xwe4mc" │ "europe-west4"         │     683 │ 4.76  │ 4.19    │ 187.802  │ 74.696      │ 7565.017   │       0 │       0 │         0 │         0 │
+│ cf881c │ "kcbxc4xwe4mc" │ "europe-west4"         │     743 │ 3.95  │ 3.19    │ 177.213  │ 86.974      │ 6087.454   │       0 │       0 │         0 │         0 │
+│ b4565b │ "kcbxc4xwe4mc" │ "me-west1"             │       3 │ 0.21  │ 55      │ 155.46   │ 2.181       │ 0.622      │       0 │       0 │         0 │         0 │
+│ b97970 │ "kcbxc4xwe4mc" │ "southamerica-east1"   │       3 │ 0.08  │ 25      │ 186.049  │ 1.938       │ 0.555      │       0 │       0 │         0 │         0 │
+│ fd7a08 │ "kcbxc4xwe4mc" │ "us-east4"             │       3 │ 0.32  │ 80      │ 201.101  │ 0.975       │ 58.495     │       0 │       0 │         0 │         0 │
+│ 95d68a │ "kcbxc4xwe4mc" │ "us-east4"             │     133 │ 1.05  │ 4.77    │ 166.052  │ 28.107      │ 651.737    │       0 │       0 │         0 │         0 │
+│ c473e7 │ "kcbxc4xwe4mc" │ "us-east4"             │       0 │ 0     │ 0       │ 174.154  │ 0.021       │ 0          │       0 │       0 │         0 │         0 │
+│ ebabfb │ "kcbxc4xwe4mc" │ "us-east4"             │      19 │ 0.15  │ 4.78    │ 115.732  │ 7.764       │ 67.054     │       0 │       0 │         0 │         0 │
+│ eac700 │ "kcbxc4xwe4mc" │ "us-south1"            │     114 │ 2.37  │ 12.54   │ 183.001  │ 18.401      │ 22417.397  │       0 │       0 │         0 │         0 │
+│ cd2194 │ "kcbxc4xwe4mc" │ "us-south1"            │      35 │ 0.33  │ 5.68    │ 145.871  │ 8.142       │ 91.236     │       0 │       0 │         0 │         0 │
+│ 140fec │ "kcbxc4xwe4mc" │ "us-west2"             │     110 │ 1.43  │ 7.84    │ 115.298  │ 18.093      │ 977.993    │       0 │       0 │         0 │         0 │
+│ 51689f │ "kcbxc4xwe4mc" │ "us-west2"             │    1105 │ 7.66  │ 4.16    │ 187.277  │ 154.876     │ 14648.383  │       0 │       0 │         0 │         0 │
+│ c5806e │ "kcbxc4xwe4mc" │ "us-west2"             │     620 │ 4.38  │ 4.24    │ 192.291  │ 109.086     │ 9685.688   │       0 │       0 │         0 │         0 │
+└────────┴────────────────┴────────────────────────┴─────────┴───────┴─────────┴──────────┴─────────────┴────────────┴─────────┴─────────┴───────────┴───────────┘
+⠼ Streaming...
+</code></pre>
+
+      <button id="copy-button-314" class="copyButton" data-copy="┌────────┬────────────────┬────────────────────────┬─────────┬───────┬─────────┬──────────┬─────────────┬────────────┬─────────┬─────────┬───────────┬───────────┐
+│ (idx)  │ deployment     │ region                 │ Req/min │ CPU%  │ CPU/req │ RSS/5min │ Ingress/min │ Egress/min │ KVr/min │ KVw/min │ QSenq/min │ QSdeq/min │
+├────────┼────────────────┼────────────────────────┼─────────┼───────┼─────────┼──────────┼─────────────┼────────────┼─────────┼─────────┼───────────┼───────────┤
+│ 6b80e8 │ &quot;kcbxc4xwe4mc&quot; │ &quot;asia-northeast1&quot;      │      80 │ 0.61  │ 4.56    │ 165.908  │ 11.657      │ 490.847    │       0 │       0 │         0 │         0 │
+│ 08312f │ &quot;kcbxc4xwe4mc&quot; │ &quot;asia-northeast1&quot;      │      76 │ 3.49  │ 27.58   │ 186.278  │ 19.041      │ 3195.288   │       0 │       0 │         0 │         0 │
+│ 77c10b │ &quot;kcbxc4xwe4mc&quot; │ &quot;asia-south1&quot;          │      28 │ 0.13  │ 2.86    │ 166.806  │ 7.354       │ 111.478    │       0 │       0 │         0 │         0 │
+│ 15e356 │ &quot;kcbxc4xwe4mc&quot; │ &quot;asia-south1&quot;          │      66 │ 0.97  │ 8.93    │ 162.288  │ 17.56       │ 4538.371   │       0 │       0 │         0 │         0 │
+│ a06817 │ &quot;kcbxc4xwe4mc&quot; │ &quot;asia-southeast1&quot;      │     126 │ 0.44  │ 2.11    │ 140.087  │ 16.504      │ 968.794    │       0 │       0 │         0 │         0 │
+│ d012b6 │ &quot;kcbxc4xwe4mc&quot; │ &quot;asia-southeast1&quot;      │     119 │ 2.32  │ 11.72   │ 193.704  │ 23.44       │ 8359.829   │       0 │       0 │         0 │         0 │
+│ 7d9a3d │ &quot;kcbxc4xwe4mc&quot; │ &quot;australia-southeast1&quot; │       8 │ 0.97  │ 75      │ 158.872  │ 10.538      │ 3.027      │       0 │       0 │         0 │         0 │
+│ 3c21be │ &quot;kcbxc4xwe4mc&quot; │ &quot;australia-southeast1&quot; │       1 │ 0.04  │ 90      │ 105.292  │ 0.08        │ 1.642      │       0 │       0 │         0 │         0 │
+│ b75dc7 │ &quot;kcbxc4xwe4mc&quot; │ &quot;europe-west2&quot;         │     461 │ 5.43  │ 7.08    │ 200.573  │ 63.842      │ 9832.936   │       0 │       0 │         0 │         0 │
+│ 33607e │ &quot;kcbxc4xwe4mc&quot; │ &quot;europe-west2&quot;         │      35 │ 0.21  │ 3.69    │ 141.98   │ 9.438       │ 275.788    │       0 │       0 │         0 │         0 │
+│ 9be3d2 │ &quot;kcbxc4xwe4mc&quot; │ &quot;europe-west2&quot;         │     132 │ 0.92  │ 4.19    │ 180.654  │ 15.959      │ 820.513    │       0 │       0 │         0 │         0 │
+│ 33a859 │ &quot;kcbxc4xwe4mc&quot; │ &quot;europe-west3&quot;         │    1335 │ 7.57  │ 3.4     │ 172.032  │ 178.064     │ 10967.918  │       0 │       0 │         0 │         0 │
+│ 3f54ce │ &quot;kcbxc4xwe4mc&quot; │ &quot;europe-west4&quot;         │     683 │ 4.76  │ 4.19    │ 187.802  │ 74.696      │ 7565.017   │       0 │       0 │         0 │         0 │
+│ cf881c │ &quot;kcbxc4xwe4mc&quot; │ &quot;europe-west4&quot;         │     743 │ 3.95  │ 3.19    │ 177.213  │ 86.974      │ 6087.454   │       0 │       0 │         0 │         0 │
+│ b4565b │ &quot;kcbxc4xwe4mc&quot; │ &quot;me-west1&quot;             │       3 │ 0.21  │ 55      │ 155.46   │ 2.181       │ 0.622      │       0 │       0 │         0 │         0 │
+│ b97970 │ &quot;kcbxc4xwe4mc&quot; │ &quot;southamerica-east1&quot;   │       3 │ 0.08  │ 25      │ 186.049  │ 1.938       │ 0.555      │       0 │       0 │         0 │         0 │
+│ fd7a08 │ &quot;kcbxc4xwe4mc&quot; │ &quot;us-east4&quot;             │       3 │ 0.32  │ 80      │ 201.101  │ 0.975       │ 58.495     │       0 │       0 │         0 │         0 │
+│ 95d68a │ &quot;kcbxc4xwe4mc&quot; │ &quot;us-east4&quot;             │     133 │ 1.05  │ 4.77    │ 166.052  │ 28.107      │ 651.737    │       0 │       0 │         0 │         0 │
+│ c473e7 │ &quot;kcbxc4xwe4mc&quot; │ &quot;us-east4&quot;             │       0 │ 0     │ 0       │ 174.154  │ 0.021       │ 0          │       0 │       0 │         0 │         0 │
+│ ebabfb │ &quot;kcbxc4xwe4mc&quot; │ &quot;us-east4&quot;             │      19 │ 0.15  │ 4.78    │ 115.732  │ 7.764       │ 67.054     │       0 │       0 │         0 │         0 │
+│ eac700 │ &quot;kcbxc4xwe4mc&quot; │ &quot;us-south1&quot;            │     114 │ 2.37  │ 12.54   │ 183.001  │ 18.401      │ 22417.397  │       0 │       0 │         0 │         0 │
+│ cd2194 │ &quot;kcbxc4xwe4mc&quot; │ &quot;us-south1&quot;            │      35 │ 0.33  │ 5.68    │ 145.871  │ 8.142       │ 91.236     │       0 │       0 │         0 │         0 │
+│ 140fec │ &quot;kcbxc4xwe4mc&quot; │ &quot;us-west2&quot;             │     110 │ 1.43  │ 7.84    │ 115.298  │ 18.093      │ 977.993    │       0 │       0 │         0 │         0 │
+│ 51689f │ &quot;kcbxc4xwe4mc&quot; │ &quot;us-west2&quot;             │    1105 │ 7.66  │ 4.16    │ 187.277  │ 154.876     │ 14648.383  │       0 │       0 │         0 │         0 │
+│ c5806e │ &quot;kcbxc4xwe4mc&quot; │ &quot;us-west2&quot;             │     620 │ 4.38  │ 4.24    │ 192.291  │ 109.086     │ 9685.688   │       0 │       0 │         0 │         0 │
+└────────┴────────────────┴────────────────────────┴─────────┴───────┴─────────┴──────────┴─────────────┴────────────┴─────────┴─────────┴───────────┴───────────┘
+⠼ Streaming...
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The columns are defined as follows:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idx</td>
+<td>Instance discriminator. Opaque id to discriminate different executions running in the same region.</td>
+</tr>
+<tr>
+<td>deployment</td>
+<td>The id of the deployment running in the executing instance.</td>
+</tr>
+<tr>
+<td>Req/min</td>
+<td>Requests per minute received by the project.</td>
+</tr>
+<tr>
+<td>CPU%</td>
+<td>Percentage of CPU used by the project.</td>
+</tr>
+<tr>
+<td>CPU/req</td>
+<td>CPU time per request, in milliseconds.</td>
+</tr>
+<tr>
+<td>RSS/5min</td>
+<td>Max RSS used by the project during the last 5 minutes, in MB.</td>
+</tr>
+<tr>
+<td>Ingress/min</td>
+<td>Data received by the project per minute, in KB.</td>
+</tr>
+<tr>
+<td>Egress/min</td>
+<td>Data output by the project per minute, in KB.</td>
+</tr>
+<tr>
+<td>KVr/min</td>
+<td>KV reads performed by the project per minute.</td>
+</tr>
+<tr>
+<td>KVw/min</td>
+<td>KV writes performed by the project per minute.</td>
+</tr>
+<tr>
+<td>QSenq/min</td>
+<td>Queues enqueues performed by the project per minute.</td>
+</tr>
+<tr>
+<td>QSdeq/min</td>
+<td>Queues dequeues performed by the project per minute.</td>
+</tr>
+</tbody>
+</table></div>
+<p>You can filter by region using <code>--region</code>, which accepts substrings and can be
+used multiple times:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl <span class="token function">top</span> <span class="token parameter variable">--region</span><span class="token operator">=</span>asia <span class="token parameter variable">--region</span><span class="token operator">=</span>southamerica
+</code></pre>
+
+      <button id="copy-button-431" class="copyButton" data-copy="deployctl top --region=asia --region=southamerica
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="logs" tabindex="-1">Logs <a class="header-anchor" href="#logs"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>You can fetch the logs of your deployments with <code>deployctl logs</code>. It supports
+both live logs where the logs are streamed to the console as they are generated,
+and query persisted logs where the logs generated in the past are fetched.</p>
+<p>To show the live logs of the current production deployment of a project:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl logs
+</code></pre>
+
+      <button id="copy-button-441" class="copyButton" data-copy="deployctl logs
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>Unlike in the Deno Deploy Classic web application, at the moment the logs
+subcommand does not automatically switch to the new production deployment when
+it changes.</p>
+<p>
+</p></div>
+<p></p>
+<p>To show the live logs of a particular deployment:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl logs <span class="token parameter variable">--deployment</span><span class="token operator">=</span>1234567890ab
+</code></pre>
+
+      <button id="copy-button-454" class="copyButton" data-copy="deployctl logs --deployment=1234567890ab
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Logs can be filtered by level, region and text using <code>--levels</code> <code>--regions</code> and
+<code>--grep</code> options:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl logs <span class="token parameter variable">--levels</span><span class="token operator">=</span>error,info <span class="token parameter variable">--regions</span><span class="token operator">=</span>region1,region2 <span class="token parameter variable">--grep</span><span class="token operator">=</span><span class="token string">'unexpected'</span>
+</code></pre>
+
+      <button id="copy-button-458" class="copyButton" data-copy="deployctl logs --levels=error,info --regions=region1,region2 --grep='unexpected'
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>To show the persisted logs, use the <code>--since</code> and/or <code>--until</code> options:</p>
+<deno-tabs groupid="operating-systems">
+  <deno-tab value="mac" label="macOS" default="">
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deployctl logs <span class="token parameter variable">--since</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> <span class="token parameter variable">-Iseconds</span> -v-2H<span class="token variable">)</span></span> <span class="token parameter variable">--until</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> <span class="token parameter variable">-Iseconds</span> -v-30M<span class="token variable">)</span></span>
+</code></pre>
+
+      <button id="copy-button-463" class="copyButton" data-copy="deployctl logs --since=$(date -Iseconds -v-2H) --until=$(date -Iseconds -v-30M)
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></deno-tab>
+<deno-tab value="linux" label="Linux">
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deployctl logs <span class="token parameter variable">--since</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> <span class="token parameter variable">-Iseconds</span> <span class="token parameter variable">--date</span><span class="token operator">=</span><span class="token string">'2 hours ago'</span><span class="token variable">)</span></span> <span class="token parameter variable">--until</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> <span class="token parameter variable">-Iseconds</span> <span class="token parameter variable">--date</span><span class="token operator">=</span><span class="token string">'30 minutes ago'</span><span class="token variable">)</span></span>
+</code></pre>
+
+      <button id="copy-button-465" class="copyButton" data-copy="deployctl logs --since=$(date -Iseconds --date='2 hours ago') --until=$(date -Iseconds --date='30 minutes ago')
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></deno-tab>
+</deno-tabs>
+<h2 id="api" tabindex="-1">API <a class="header-anchor" href="#api"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>If you use the <a href="/subhosting/manual/">subhosting API</a>,
+<code>deployctl api</code> will help you interact with the API by handling the
+authentication and headers for you:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl api /projects/my-personal-blog/deployments
+</code></pre>
+
+      <button id="copy-button-473" class="copyButton" data-copy="deployctl api /projects/my-personal-blog/deployments
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Use <code>--method</code> and <code>--body</code> to specify the HTTP method and the request body:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl api <span class="token parameter variable">--method</span><span class="token operator">=</span>POST <span class="token parameter variable">--body</span><span class="token operator">=</span><span class="token string">'{"name": "main-site"}'</span> organizations/5261e096-f9aa-4b72-8440-1c2b5b553def/projects
+</code></pre>
+
+      <button id="copy-button-477" class="copyButton" data-copy="deployctl api --method=POST --body='{&quot;name&quot;: &quot;main-site&quot;}' organizations/5261e096-f9aa-4b72-8440-1c2b5b553def/projects
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="local-development" tabindex="-1">Local Development <a class="header-anchor" href="#local-development"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>For local development you can use the <code>deno</code> CLI. To install <code>deno</code>, follow the
+instructions in the
+<a href="https://deno.land/manual/getting_started/installation">Deno manual</a>.</p>
+<p>After installation, you can run your scripts locally:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">$ deno run --allow-net<span class="token operator">=</span>:8000 ./main.ts
+Listening on http://localhost:8000
+</code></pre>
+
+      <button id="copy-button-487" class="copyButton" data-copy="$ deno run --allow-net=:8000 ./main.ts
+Listening on http://localhost:8000
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>To watch for file changes add the <code>--watch</code> flag:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">$ deno run --allow-net<span class="token operator">=</span>:8000 <span class="token parameter variable">--watch</span> ./main.ts
+Listening on http://localhost:8000
+</code></pre>
+
+      <button id="copy-button-491" class="copyButton" data-copy="$ deno run --allow-net=:8000 --watch ./main.ts
+Listening on http://localhost:8000
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>For more information about the Deno CLI, and how to configure your development
+environment and IDE, visit the Deno Manual's <a href="https://deno.land/manual/getting_started">Getting Started</a>
+section.</p>
+<h2 id="json-output" tabindex="-1">JSON output <a class="header-anchor" href="#json-output"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>All the commands that output data have a <code>--format=json</code> option that outputs the
+data in JSON objects. This output mode is the default when stdout is not a TTY,
+notably when piping to another command. Together with <code>jq</code>, this mode enables
+the programmatic use of all the data provided by <code>deployctl</code>:</p>
+<p>Get the id of the current production deployment:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl deployments show <span class="token operator">|</span> jq .build.deploymentId
+</code></pre>
+
+      <button id="copy-button-504" class="copyButton" data-copy="deployctl deployments show | jq .build.deploymentId
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Get a csv stream of the CPU time per request on each isolate of each region:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell">deployctl <span class="token function">top</span> <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">'[.id,.region,.cpuTimePerRequest] | @csv'</span>
+</code></pre>
+
+      <button id="copy-button-508" class="copyButton" data-copy="deployctl top | jq -r '[.id,.region,.cpuTimePerRequest] | @csv'
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-06-20T00:00:00.000Z">June 20, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/deploy/classic/ci_github/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← GitHub CI</span></a><a href="/deploy/classic/regions/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Regions →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/deploy/classic/deployctl.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

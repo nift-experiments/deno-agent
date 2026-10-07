@@ -1,0 +1,187 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#key-features" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Key Features </a></li><li class="leading-tight text-balance"><a href="#core-modules" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Core Modules </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#file-system" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">File System </a></li><li class="leading-tight text-balance"><a href="#network-%26-http" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Network &amp; HTTP </a></li><li class="leading-tight text-balance"><a href="#process-%26-system" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Process &amp; System </a></li><li class="leading-tight text-balance"><a href="#crypto-%26-security" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Crypto &amp; Security </a></li><li class="leading-tight text-balance"><a href="#data-%26-streams" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Data &amp; Streams </a></li><li class="leading-tight text-balance"><a href="#utilities" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Utilities </a></li><li class="leading-tight text-balance"><a href="#development-%26-testing" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Development &amp; Testing </a></li></ul></li><li class="leading-tight text-balance"><a href="#global-objects" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Global Objects </a></li><li class="leading-tight text-balance"><a href="#usage-examples" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Usage Examples </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#basic-module-import" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Basic Module Import </a></li><li class="leading-tight text-balance"><a href="#http-server" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">HTTP Server </a></li><li class="leading-tight text-balance"><a href="#crypto-operations" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Crypto Operations </a></li></ul></li><li class="leading-tight text-balance"><a href="#compatibility" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Compatibility </a></li><li class="leading-tight text-balance"><a href="#migration-from-node.js" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Migration from Node.js </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><p>Deno provides comprehensive support for Node.js built-in modules and globals,
+enabling seamless migration of Node.js applications and libraries. These APIs
+follow Node.js specifications and provide familiar functionality for developers
+transitioning from Node.js.</p>
+<h2 id="key-features" tabindex="-1">Key Features <a class="header-anchor" href="#key-features"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<ul>
+<li><strong>Built-in Module Support</strong>: Access Node.js modules using <code>node:</code> prefix
+(e.g., <code>import fs from "node:fs"</code>)</li>
+<li><strong>Global Objects</strong>: Node.js global objects available in npm package scope</li>
+<li><strong>Compatibility Layer</strong>: Seamless interoperability with existing Node.js code</li>
+<li><strong>Performance</strong>: Native implementations optimized for Deno runtime</li>
+</ul>
+<h2 id="core-modules" tabindex="-1">Core Modules <a class="header-anchor" href="#core-modules"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="file-system" tabindex="-1">File System <a class="header-anchor" href="#file-system"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<ul>
+<li><strong><code>node:fs</code></strong> - File system operations (read, write, watch, stats)</li>
+<li><strong><code>node:fs/promises</code></strong> - Promise-based file system API</li>
+<li><strong><code>node:path</code></strong> - Cross-platform path utilities</li>
+</ul>
+<h3 id="network-%26-http" tabindex="-1">Network &amp; HTTP <a class="header-anchor" href="#network-%26-http"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<ul>
+<li><strong><code>node:http</code></strong> - HTTP server and client functionality</li>
+<li><strong><code>node:https</code></strong> - HTTPS server and client with TLS support</li>
+<li><strong><code>node:http2</code></strong> - HTTP/2 server and client implementation</li>
+<li><strong><code>node:net</code></strong> - TCP networking utilities</li>
+<li><strong><code>node:dns</code></strong> - DNS resolution and lookup functions</li>
+</ul>
+<h3 id="process-%26-system" tabindex="-1">Process &amp; System <a class="header-anchor" href="#process-%26-system"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<ul>
+<li><strong><code>node:process</code></strong> - Process information and control</li>
+<li><strong><code>node:os</code></strong> - Operating system utilities and information</li>
+<li><strong><code>node:child_process</code></strong> - Spawn and manage child processes</li>
+<li><strong><code>node:cluster</code></strong> - Multi-process clustering support</li>
+</ul>
+<h3 id="crypto-%26-security" tabindex="-1">Crypto &amp; Security <a class="header-anchor" href="#crypto-%26-security"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<ul>
+<li><strong><code>node:crypto</code></strong> - Cryptographic functionality (hashing, encryption,
+certificates)</li>
+<li><strong><code>node:tls</code></strong> - TLS/SSL secure communication layer</li>
+</ul>
+<h3 id="data-%26-streams" tabindex="-1">Data &amp; Streams <a class="header-anchor" href="#data-%26-streams"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<ul>
+<li><strong><code>node:stream</code></strong> - Stream interfaces (readable, writable, transform)</li>
+<li><strong><code>node:buffer</code></strong> - Binary data handling with Buffer class</li>
+<li><strong><code>node:zlib</code></strong> - Data compression and decompression</li>
+<li><strong><code>node:string_decoder</code></strong> - Decode buffers to strings</li>
+</ul>
+<h3 id="utilities" tabindex="-1">Utilities <a class="header-anchor" href="#utilities"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<ul>
+<li><strong><code>node:util</code></strong> - Utility functions (promisify, inspect, types)</li>
+<li><strong><code>node:events</code></strong> - Event emitter pattern implementation</li>
+<li><strong><code>node:url</code></strong> - URL parsing and formatting utilities</li>
+<li><strong><code>node:querystring</code></strong> - Query string utilities</li>
+<li><strong><code>node:assert</code></strong> - Assertion testing support</li>
+</ul>
+<h3 id="development-%26-testing" tabindex="-1">Development &amp; Testing <a class="header-anchor" href="#development-%26-testing"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<ul>
+<li><strong><code>node:vm</code></strong> - Virtual machine contexts for code execution</li>
+<li><strong><code>node:repl</code></strong> - Read-Eval-Print Loop functionality</li>
+<li><strong><code>node:inspector</code></strong> - V8 inspector integration for debugging</li>
+</ul>
+<h2 id="global-objects" tabindex="-1">Global Objects <a class="header-anchor" href="#global-objects"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Node.js global objects are available in the npm package scope and can be
+imported from relevant <code>node:</code> modules:</p>
+<ul>
+<li><strong><code>Buffer</code></strong> - Binary data manipulation</li>
+<li><strong><code>process</code></strong> - Process information and environment</li>
+<li><strong><code>global</code></strong> - Global namespace object</li>
+<li><strong><code>__dirname</code></strong> / <strong><code>__filename</code></strong> - Module path information</li>
+<li><strong>Web Standards</strong> - <code>fetch</code>, <code>URL</code>, <code>TextEncoder</code>, <code>crypto</code>, and more</li>
+</ul>
+<h2 id="usage-examples" tabindex="-1">Usage Examples <a class="header-anchor" href="#usage-examples"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="basic-module-import" tabindex="-1">Basic Module Import <a class="header-anchor" href="#basic-module-import"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="relative"><pre><code class="highlight notranslate language-javascript"><span class="token keyword">import</span> fs <span class="token keyword">from</span> <span class="token string">"node:fs"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> readFile <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:fs/promises"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">"node:path"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Synchronous file reading</span>
+<span class="token keyword">const</span> data <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span><span class="token string">"file.txt"</span><span class="token punctuation">,</span> <span class="token string">"utf8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Asynchronous file reading</span>
+<span class="token keyword">const</span> content <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">readFile</span><span class="token punctuation">(</span><span class="token string">"file.txt"</span><span class="token punctuation">,</span> <span class="token string">"utf8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Path manipulation</span>
+<span class="token keyword">const</span> fullPath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">"/users"</span><span class="token punctuation">,</span> <span class="token string">"documents"</span><span class="token punctuation">,</span> <span class="token string">"file.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-235" class="copyButton" data-copy="import fs from &quot;node:fs&quot;;
+import { readFile } from &quot;node:fs/promises&quot;;
+import path from &quot;node:path&quot;;
+
+// Synchronous file reading
+const data = fs.readFileSync(&quot;file.txt&quot;, &quot;utf8&quot;);
+
+// Asynchronous file reading
+const content = await readFile(&quot;file.txt&quot;, &quot;utf8&quot;);
+
+// Path manipulation
+const fullPath = path.join(&quot;/users&quot;, &quot;documents&quot;, &quot;file.txt&quot;);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="http-server" tabindex="-1">HTTP Server <a class="header-anchor" href="#http-server"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="relative"><pre><code class="highlight notranslate language-javascript"><span class="token keyword">import</span> http <span class="token keyword">from</span> <span class="token string">"node:http"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string-property property">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"text/plain"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">"Hello from Node.js API in Deno!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Server running on port 3000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-239" class="copyButton" data-copy="import http from &quot;node:http&quot;;
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { &quot;Content-Type&quot;: &quot;text/plain&quot; });
+  res.end(&quot;Hello from Node.js API in Deno!&quot;);
+});
+
+server.listen(3000, () => {
+  console.log(&quot;Server running on port 3000&quot;);
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="crypto-operations" tabindex="-1">Crypto Operations <a class="header-anchor" href="#crypto-operations"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="relative"><pre><code class="highlight notranslate language-javascript"><span class="token keyword">import</span> crypto <span class="token keyword">from</span> <span class="token string">"node:crypto"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Generate hash</span>
+<span class="token keyword">const</span> hash <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">createHash</span><span class="token punctuation">(</span><span class="token string">"sha256"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+hash<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> digest <span class="token operator">=</span> hash<span class="token punctuation">.</span><span class="token function">digest</span><span class="token punctuation">(</span><span class="token string">"hex"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Generate random bytes</span>
+<span class="token keyword">const</span> randomBytes <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">randomBytes</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-243" class="copyButton" data-copy="import crypto from &quot;node:crypto&quot;;
+
+// Generate hash
+const hash = crypto.createHash(&quot;sha256&quot;);
+hash.update(&quot;Hello World&quot;);
+const digest = hash.digest(&quot;hex&quot;);
+
+// Generate random bytes
+const randomBytes = crypto.randomBytes(16);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="compatibility" tabindex="-1">Compatibility <a class="header-anchor" href="#compatibility"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Node compatibility is an ongoing project. Most core Node.js APIs are supported
+with high fidelity. For detailed compatibility information:</p>
+<ul>
+<li>View our <a href="/runtime/reference/node_apis/">Node.js compatibility guide</a></li>
+<li>Check <a href="https://node-test-viewer.deno.deno.net/">Node.js test results</a> for
+specific test coverage</li>
+<li><a href="https://github.com/denoland/deno/issues">Report compatibility issues</a> on
+GitHub</li>
+</ul>
+<h2 id="migration-from-node.js" tabindex="-1">Migration from Node.js <a class="header-anchor" href="#migration-from-node.js"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>For a step-by-step guide to moving a Node.js project to Deno, see the
+<a href="/runtime/reference/migration_guide/">migration guide</a>.</p>
+</div><div class="mt-24"></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/api/node/index.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

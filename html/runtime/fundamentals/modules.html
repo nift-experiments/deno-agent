@@ -1,0 +1,694 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#importing-modules" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Importing modules </a></li><li class="leading-tight text-balance"><a href="#dynamic-imports" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Dynamic imports </a></li><li class="leading-tight text-balance"><a href="#import-metadata" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Import metadata </a></li><li class="leading-tight text-balance"><a href="#import-attributes" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Import attributes </a></li><li class="leading-tight text-balance"><a href="#deferred-module-evaluation" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deferred module evaluation </a></li><li class="leading-tight text-balance"><a href="#webassembly-modules" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">WebAssembly modules </a></li><li class="leading-tight text-balance"><a href="#data-url-imports" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Data URL imports </a></li><li class="leading-tight text-balance"><a href="#importing-third-party-modules-and-libraries" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Importing third party modules and libraries </a></li><li class="leading-tight text-balance"><a href="#managing-third-party-modules-and-libraries" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Managing third party modules and libraries </a></li><li class="leading-tight text-balance"><a href="#differentiating-between-imports-or-importmap-in-deno.json-and---import-map-option" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Differentiating between imports or importMap in deno.json and --import-map option </a></li><li class="leading-tight text-balance"><a href="#managing-dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Managing dependencies </a></li><li class="leading-tight text-balance"><a href="#updating-versions-from-the-command-line" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Updating versions from the command line </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Concepts</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/fundamentals/modules.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Ffundamentals%2Fmodules.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Modules</h1></div><p>Deno uses
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">ECMAScript modules</a>
+as its primary module system, the official standard for JavaScript. You share
+code between files with standard <code>import</code> and <code>export</code> statements and run it
+directly, with no bundler or build step. This is the same module system browsers
+use, so the code you write stays portable across environments.</p>
+<p>Deno also runs Node's older CommonJS modules (<code>require</code> and <code>module.exports</code>),
+so existing npm packages and Node projects work without conversion. The two
+systems are fully supported and interoperate, but ECMAScript modules are
+recommended for new code; reach for CommonJS mainly when a dependency or an
+existing project still uses it.</p>
+<p>Deno decides which system a file uses from its extension and the nearest
+<code>package.json</code>: a <code>.mjs</code> file is always an ES module, a <code>.cjs</code> file is always
+CommonJS, and <code>.js</code> and <code>.ts</code> files are treated as ES modules unless a
+<code>package.json</code> sets <code>"type": "commonjs"</code>. The rest of this page covers ES
+modules; see <a href="/runtime/fundamentals/node/#commonjs-support">CommonJS support</a>
+for how <code>require</code>, module resolution, and ESM/CommonJS interop work.</p>
+<h2 id="importing-modules" tabindex="-1">Importing modules <a class="header-anchor" href="#importing-modules"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>In this example the <code>add</code> function is imported from a local <code>calc.ts</code> module.</p>
+<div><div class="markdownBlockTitle">calc.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-15" class="copyButton" data-copy="export function add(a: number, b: number): number {
+  return a + b;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token comment">// imports the `calc.ts` module next to this file</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> add <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./calc.ts"</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
+</code></pre>
+
+      <button id="copy-button-16" class="copyButton" data-copy="// imports the `calc.ts` module next to this file
+import { add } from &quot;./calc.ts&quot;;
+
+console.log(add(1, 2)); // 3
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You can run this example by calling <code>deno run main.ts</code> in the directory that
+contains both <code>main.ts</code> and <code>calc.ts</code>.</p>
+<p>With ECMAScript modules, local import specifiers must always include the full
+file extension. It cannot be omitted.</p>
+<div><div class="markdownBlockTitle">example.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token comment">// WRONG: missing file extension</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> add <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./calc"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// CORRECT: includes file extension</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> add <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./calc.ts"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-23" class="copyButton" data-copy="// WRONG: missing file extension
+import { add } from &quot;./calc&quot;;
+
+// CORRECT: includes file extension
+import { add } from &quot;./calc.ts&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="dynamic-imports" tabindex="-1">Dynamic imports <a class="header-anchor" href="#dynamic-imports"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>import</code> statements above are static: the specifier is a string literal and
+the module loads before your code runs. You can also load a module on demand
+with the <code>import()</code> function, which returns a promise for the module's
+namespace:</p>
+<div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> <span class="token punctuation">{</span> add <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"./calc.ts"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
+</code></pre>
+
+      <button id="copy-button-30" class="copyButton" data-copy="const { add } = await import(&quot;./calc.ts&quot;);
+
+console.log(add(1, 2)); // 3
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Because <code>import()</code> runs at runtime, the specifier can be computed and the module
+is only fetched and evaluated when the call executes. This is useful for loading
+code conditionally or keeping a rarely used feature out of the startup path:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">if</span> <span class="token punctuation">(</span>Deno<span class="token punctuation">.</span>args<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">"--greet"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> greet <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"./greet.ts"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-34" class="copyButton" data-copy="if (Deno.args.includes(&quot;--greet&quot;)) {
+  const { greet } = await import(&quot;./greet.ts&quot;);
+  greet();
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>A dynamic <code>import()</code> whose specifier is a string literal is part of the static
+module graph and loads without extra permissions. One whose specifier is
+computed at runtime is checked against the permission system when it runs: local
+paths need <code>--allow-read</code> and remote URLs need <code>--allow-import</code>. See
+<a href="/runtime/fundamentals/security/">Security</a> for details.</p>
+<h2 id="import-metadata" tabindex="-1">Import metadata <a class="header-anchor" href="#import-metadata"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Inside any module, <code>import.meta</code> exposes information about the current module
+and helpers for resolving paths relative to it:</p>
+<div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// file:///path/to/main.ts</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>main<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true if this is the entry module</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>filename<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// /path/to/main.ts (local modules only)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>dirname<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// /path/to (local modules only)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"./data.json"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// resolves a specifier to a URL</span>
+</code></pre>
+
+      <button id="copy-button-44" class="copyButton" data-copy="console.log(import.meta.url); // file:///path/to/main.ts
+console.log(import.meta.main); // true if this is the entry module
+console.log(import.meta.filename); // /path/to/main.ts (local modules only)
+console.log(import.meta.dirname); // /path/to (local modules only)
+console.log(import.meta.resolve(&quot;./data.json&quot;)); // resolves a specifier to a URL
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><code>import.meta.main</code> is a common way to make a file work both as an entry point
+and as an importable library:</p>
+<div><div class="markdownBlockTitle">server.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">/* ... */</span><span class="token punctuation">}</span>
+
+<span class="token comment">// Only start the server when run directly, not when imported.</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>main<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-48" class="copyButton" data-copy="export function createServer() {/* ... */}
+
+// Only start the server when run directly, not when imported.
+if (import.meta.main) {
+  createServer();
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><code>filename</code> and <code>dirname</code> are <code>undefined</code> for remote modules. For a full
+walkthrough, see the
+<a href="/examples/module_metadata_tutorial/">module metadata tutorial</a>.</p>
+<h2 id="import-attributes" tabindex="-1">Import attributes <a class="header-anchor" href="#import-attributes"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno supports the <code>with { type: "json" }</code> import attribute syntax for importing
+JSON files:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> data <span class="token keyword">from</span> <span class="token string">"./data.json"</span> <span class="token keyword">with</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"json"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>property<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Access JSON data as an object</span>
+</code></pre>
+
+      <button id="copy-button-58" class="copyButton" data-copy="import data from &quot;./data.json&quot; with { type: &quot;json&quot; };
+
+console.log(data.property); // Access JSON data as an object
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Starting with Deno 2.4 it's possible to import <code>text</code> and <code>bytes</code> modules too.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> text <span class="token keyword">from</span> <span class="token string">"./log.txt"</span> <span class="token keyword">with</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"text"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> text <span class="token operator">===</span> <span class="token string">"string"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// true</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Hello from a text file</span>
+</code></pre>
+
+      <button id="copy-button-62" class="copyButton" data-copy="import text from &quot;./log.txt&quot; with { type: &quot;text&quot; };
+
+console.log(typeof text === &quot;string&quot;);
+// true
+console.log(text);
+// Hello from a text file
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>
+</p><div class="admonition info">
+  <div class="title"><code>text</code> imports</div>
+
+<p></p>
+<p>Stable in Deno 2.8 and no longer require a flag.</p>
+<p>
+</p></div>
+<p></p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> bytes <span class="token keyword">from</span> <span class="token string">"./image.png"</span> <span class="token keyword">with</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"bytes"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bytes <span class="token keyword">instanceof</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// true</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Uint8Array(12) [</span>
+<span class="token comment">//    72, 101, 108, 108, 111,</span>
+<span class="token comment">//    44,  32,  68, 101, 110,</span>
+<span class="token comment">//   111,  33</span>
+<span class="token comment">// ]</span>
+</code></pre>
+
+      <button id="copy-button-72" class="copyButton" data-copy="import bytes from &quot;./image.png&quot; with { type: &quot;bytes&quot; };
+
+console.log(bytes instanceof Uint8Array);
+// true
+console.log(bytes);
+// Uint8Array(12) [
+//    72, 101, 108, 108, 111,
+//    44,  32,  68, 101, 110,
+//   111,  33
+// ]
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>
+</p><div class="admonition info">
+  <div class="title"><code>bytes</code> imports</div>
+
+<p></p>
+<p>Still experimental. Enable with the <code>--unstable-raw-imports</code> CLI flag or the
+<code>unstable.raw-import</code> option in
+<a href="/runtime/fundamentals/configuration/"><code>deno.json</code></a>.</p>
+<p>
+</p></div>
+<p></p>
+<p>A stylesheet can be imported with <code>with { type: "css" }</code>. The import evaluates
+to a
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleSheet"><code>CSSStyleSheet</code></a>,
+matching what browsers ship. This is mainly useful for running unmodified
+browser module graphs in Deno, such as server-side rendering or testing web
+components, where a CSS import would otherwise stop the module graph from
+loading:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> sheet <span class="token keyword">from</span> <span class="token string">"./styles.css"</span> <span class="token keyword">with</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"css"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>sheet <span class="token keyword">instanceof</span> <span class="token class-name">CSSStyleSheet</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// true</span>
+</code></pre>
+
+      <button id="copy-button-85" class="copyButton" data-copy="import sheet from &quot;./styles.css&quot; with { type: &quot;css&quot; };
+
+console.log(sheet instanceof CSSStyleSheet);
+// true
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Dynamic imports work the same way:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token keyword">default</span><span class="token operator">:</span> sheet <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"./styles.css"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token keyword">with</span><span class="token operator">:</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"css"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-89" class="copyButton" data-copy="const { default: sheet } = await import(&quot;./styles.css&quot;, {
+  with: { type: &quot;css&quot; },
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Static imports and dynamic imports with a statically analyzable specifier are
+loaded as part of the module graph and need no permission. Only a dynamic import
+whose specifier can't be analyzed, such as <code>import(base + "styles.css")</code>, reads
+the file at runtime and therefore requires read permission (<code>--allow-read</code>).</p>
+<p>Deno implements the small slice of the <code>CSSStyleSheet</code> interface that browser
+module graphs rely on:</p>
+<ul>
+<li><code>cssRules</code> returns the sheet's top-level rules. Unlike the browser, this is a
+<strong>frozen array</strong> of <code>CSSRule</code> (not a live <code>CSSRuleList</code>), and a fresh array is
+created on each access.</li>
+<li><code>CSSRule.cssText</code> is the verbatim text of one top-level rule.</li>
+<li><code>replace(text)</code> and <code>replaceSync(text)</code> swap the sheet's contents. As with
+constructed stylesheets in the browser, top-level <code>@import</code> rules are dropped.</li>
+<li>The <code>new CSSStyleSheet()</code> constructor is available, but its <code>options</code> argument
+(<code>media</code>, <code>disabled</code>, <code>baseURL</code>) is not supported.</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> sheet <span class="token keyword">from</span> <span class="token string">"./styles.css"</span> <span class="token keyword">with</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"css"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> rule <span class="token keyword">of</span> sheet<span class="token punctuation">.</span>cssRules<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rule<span class="token punctuation">.</span>cssText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+sheet<span class="token punctuation">.</span><span class="token function">replaceSync</span><span class="token punctuation">(</span><span class="token string">"body { color: red; }"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-118" class="copyButton" data-copy="import sheet from &quot;./styles.css&quot; with { type: &quot;css&quot; };
+
+for (const rule of sheet.cssRules) {
+  console.log(rule.cssText);
+}
+
+sheet.replaceSync(&quot;body { color: red; }&quot;);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Because Deno has no DOM, a sheet can't be adopted anywhere; the implementation
+is backed by the raw CSS text rather than a full CSS object model. <code>cssRules</code>
+uses a naive top-level rule split, so the live mutation methods <code>insertRule</code> and
+<code>deleteRule</code> are not implemented.</p>
+<p>
+</p><div class="admonition info">
+  <div class="title"><code>css</code> imports</div>
+
+<p></p>
+<p>Still experimental. Enable with the <code>--unstable-raw-imports</code> CLI flag or the
+<code>unstable.raw-import</code> option in
+<a href="/runtime/fundamentals/configuration/"><code>deno.json</code></a>.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="deferred-module-evaluation" tabindex="-1">Deferred module evaluation <a class="header-anchor" href="#deferred-module-evaluation"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Starting in Deno 2.8, the
+<a href="https://github.com/tc39/proposal-defer-import-eval">TC39 Deferred Module Evaluation proposal</a>
+is supported. The <code>import defer</code> syntax loads a module (including its
+dependencies) but does <strong>not</strong> execute its top-level code until you first read a
+property from the namespace:</p>
+<div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> defer <span class="token operator">*</span> <span class="token keyword">as</span> expensive <span class="token keyword">from</span> <span class="token string">"./expensive.ts"</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"startup is fast: expensive.ts has not run yet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Touching any property triggers synchronous evaluation</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>expensive<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-137" class="copyButton" data-copy="import defer * as expensive from &quot;./expensive.ts&quot;;
+
+console.log(&quot;startup is fast: expensive.ts has not run yet&quot;);
+
+// Touching any property triggers synchronous evaluation
+console.log(expensive.value);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Use it to defer the cost of modules that are only needed conditionally; for
+example, error-path code in a CLI tool or feature flags whose implementation is
+heavy to initialize.</p>
+<p>The proposal is still at TC39 Stage 3, so the syntax is considered experimental
+and may change. Standard <code>import</code> remains the right default.</p>
+<h2 id="webassembly-modules" tabindex="-1">WebAssembly modules <a class="header-anchor" href="#webassembly-modules"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno supports importing Wasm modules directly:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> add <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./add.wasm"</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-150" class="copyButton" data-copy="import { add } from &quot;./add.wasm&quot;;
+
+console.log(add(1, 2));
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The named exports mirror the Wasm module's exports: functions, memories, and
+tables come through as their JavaScript objects, and a <code>global</code> export resolves
+to the value it holds rather than the <code>WebAssembly.Global</code> wrapper, matching the
+WebAssembly ES module integration.</p>
+<p>To learn more, visit
+<a href="/runtime/reference/wasm/#wasm-modules">WebAssembly section</a></p>
+<h2 id="data-url-imports" tabindex="-1">Data URL imports <a class="header-anchor" href="#data-url-imports"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno supports importing of data URLs, which allows you to import content that
+isn't in a separate file. This is useful for testing, prototyping, or when you
+need to programmatically generate modules.</p>
+<p>You can create modules on the fly using the <code>data:</code> URL scheme:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token comment">// Import a simple JavaScript module from a data URL</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> <span class="token keyword">module</span> <span class="token keyword">from</span> <span class="token string">"data:application/javascript;base64,ZXhwb3J0IGNvbnN0IG1lc3NhZ2UgPSAiSGVsbG8gZnJvbSBkYXRhIFVSTCI7"</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>module<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Outputs: Hello from data URL</span>
+
+<span class="token comment">// You can also use the non-base64 format</span>
+<span class="token keyword">const</span> plainModule <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">import</span><span class="token punctuation">(</span>
+  <span class="token string">"data:application/javascript,export function greet() { return 'Hi there!'; }"</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>plainModule<span class="token punctuation">.</span><span class="token function">greet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Outputs: Hi there!</span>
+
+<span class="token comment">// A simpler example with text content</span>
+<span class="token keyword">const</span> textModule <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">import</span><span class="token punctuation">(</span>
+  <span class="token string">"data:text/plain,export default 'This is plain text'"</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>textModule<span class="token punctuation">.</span>default<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Outputs: This is plain text</span>
+</code></pre>
+
+      <button id="copy-button-166" class="copyButton" data-copy="// Import a simple JavaScript module from a data URL
+import * as module from &quot;data:application/javascript;base64,ZXhwb3J0IGNvbnN0IG1lc3NhZ2UgPSAiSGVsbG8gZnJvbSBkYXRhIFVSTCI7&quot;;
+console.log(module.message); // Outputs: Hello from data URL
+
+// You can also use the non-base64 format
+const plainModule = await import(
+  &quot;data:application/javascript,export function greet() { return 'Hi there!'; }&quot;
+);
+console.log(plainModule.greet()); // Outputs: Hi there!
+
+// A simpler example with text content
+const textModule = await import(
+  &quot;data:text/plain,export default 'This is plain text'&quot;
+);
+console.log(textModule.default); // Outputs: This is plain text
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The data URL format follows this pattern:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">data:<span class="token punctuation">[</span><span class="token operator">&lt;</span>media type<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">;</span>base64<span class="token punctuation">]</span>,<span class="token operator">&lt;</span>data<span class="token operator">&gt;</span>
+</code></pre>
+
+      <button id="copy-button-170" class="copyButton" data-copy="data:[<media type>][;base64],<data>
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>For JavaScript modules, use <code>application/javascript</code> as the media type.
+TypeScript is also supported with <code>application/typescript</code>. This feature is
+particularly useful for testing modules in isolation and creating mock modules
+during tests.</p>
+<h2 id="importing-third-party-modules-and-libraries" tabindex="-1">Importing third party modules and libraries <a class="header-anchor" href="#importing-third-party-modules-and-libraries"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>When working with third-party modules in Deno, use the same <code>import</code> syntax as
+you do for local code. Third party modules are typically imported from a remote
+registry and start with <code>jsr:</code> or <code>npm:</code>.</p>
+<div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> camelCase <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"jsr:@luca/cases@1.0.0"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> say <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"npm:cowsay@1.6.0"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-180" class="copyButton" data-copy="import { camelCase } from &quot;jsr:@luca/cases@1.0.0&quot;;
+import { say } from &quot;npm:cowsay@1.6.0&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Deno recommends <a href="https://jsr.io">JSR</a>, the modern JavaScript registry, for third
+party modules. There, you'll find plenty of well documented ES modules for your
+projects, including the <a href="/runtime/reference/std/">Deno Standard Library</a>.</p>
+<p>You can
+<a href="/runtime/fundamentals/node/#using-npm-modules">read more about Deno's support for npm packages here</a>.</p>
+<h2 id="managing-third-party-modules-and-libraries" tabindex="-1">Managing third party modules and libraries <a class="header-anchor" href="#managing-third-party-modules-and-libraries"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Typing out the module name with the full version specifier can become tedious
+when importing them in multiple files. You can centralize management of remote
+modules with an <code>imports</code> field in your <code>deno.json</code> file. We call this <code>imports</code>
+field the <strong>import map</strong>, which is based on the <a href="https://html.spec.whatwg.org/multipage/webappapis.html#import-maps">Import Maps Standard</a>.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@luca/cases"</span><span class="token operator">:</span> <span class="token string">"jsr:@luca/cases@^1.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"cowsay"</span><span class="token operator">:</span> <span class="token string">"npm:cowsay@^1.6.0"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-193" class="copyButton" data-copy="{
+  &quot;imports&quot;: {
+    &quot;@luca/cases&quot;: &quot;jsr:@luca/cases@^1.0.0&quot;,
+    &quot;cowsay&quot;: &quot;npm:cowsay@^1.6.0&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>With remapped specifiers, the code looks cleaner:</p>
+<div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> camelCase <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@luca/cases"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> say <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"cowsay"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-197" class="copyButton" data-copy="import { camelCase } from &quot;@luca/cases&quot;;
+import { say } from &quot;cowsay&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The remapped name can be any valid specifier. It's a very powerful feature in
+Deno that can remap anything. Learn more in the
+<a href="/runtime/reference/deno_json/#dependencies">configuration dependencies section</a>.</p>
+<h2 id="differentiating-between-imports-or-importmap-in-deno.json-and---import-map-option" tabindex="-1">Differentiating between <code>imports</code> or <code>importMap</code> in <code>deno.json</code> and <code>--import-map</code> option <a class="header-anchor" href="#differentiating-between-imports-or-importmap-in-deno.json-and---import-map-option"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <a href="https://html.spec.whatwg.org/multipage/webappapis.html#import-maps">Import Maps Standard</a> requires two entries for each module: one for the
+module specifier and another for the specifier with a trailing <code>/</code>. This is
+because the standard allows only one entry per module specifier, and the
+trailing <code>/</code> indicates that the specifier refers to a directory. For example,
+when using the <code>--import-map import_map.json</code> option, the <code>import_map.json</code> file
+must include both entries for each module (note the use of <code>jsr:/@std/async</code>
+instead of <code>jsr:@std/async</code>):</p>
+<div><div class="markdownBlockTitle">import_map.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@std/async"</span><span class="token operator">:</span> <span class="token string">"jsr:@std/async@^1.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"@std/async/"</span><span class="token operator">:</span> <span class="token string">"jsr:/@std/async@^1.0.0/"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-207" class="copyButton" data-copy="{
+  &quot;imports&quot;: {
+    &quot;@std/async&quot;: &quot;jsr:@std/async@^1.0.0&quot;,
+    &quot;@std/async/&quot;: &quot;jsr:/@std/async@^1.0.0/&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>An <code>import_map.json</code> file referenced by the <code>importMap</code> field in <code>deno.json</code>
+behaves exactly the same as using the <code>--import-map</code> option, with the same
+requirements for including both entries for each module as shown above.</p>
+<p>In contrast, <code>deno.json</code> extends the import maps standard. When you use the
+imports field in <code>deno.json</code>, you only need to specify the module specifier
+without the trailing <code>/</code>:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@std/async"</span><span class="token operator">:</span> <span class="token string">"jsr:@std/async@^1.0.0"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-214" class="copyButton" data-copy="{
+  &quot;imports&quot;: {
+    &quot;@std/async&quot;: &quot;jsr:@std/async@^1.0.0&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="managing-dependencies" tabindex="-1">Managing dependencies <a class="header-anchor" href="#managing-dependencies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Now that you understand how Deno resolves and imports modules, see the
+<a href="/runtime/packages/">Dependency management guide</a> for the day-to-day tasks:
+adding and removing packages with <code>deno add</code> / <code>deno remove</code>, pinning versions,
+overriding and vendoring dependencies, lockfiles and integrity checking, supply
+chain management, publishing your own modules, and using private registries.</p>
+<h2 id="updating-versions-from-the-command-line" tabindex="-1">Updating versions from the command line <a class="header-anchor" href="#updating-versions-from-the-command-line"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>You don't have to edit version numbers in <code>deno.json</code> by hand. To move
+dependencies to newer versions, run
+<a href="/runtime/reference/cli/outdated/"><code>deno outdated</code></a> to see what's behind, then
+<code>deno outdated --update</code> to bump them:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno outdated            <span class="token comment"># list dependencies with newer versions available</span>
+deno outdated <span class="token parameter variable">--update</span>   <span class="token comment"># update them in deno.json</span>
+</code></pre>
+
+      <button id="copy-button-227" class="copyButton" data-copy="deno outdated            # list dependencies with newer versions available
+deno outdated --update   # update them in deno.json
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>To increment your own package's <code>version</code> field between releases, use
+<a href="/runtime/reference/cli/bump_version/"><code>deno bump-version</code></a>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno bump-version patch  <span class="token comment"># 1.4.6 -&gt; 1.4.7 (also: minor, major, or a prerelease)</span>
+</code></pre>
+
+      <button id="copy-button-231" class="copyButton" data-copy="deno bump-version patch  # 1.4.6 -> 1.4.7 (also: minor, major, or a prerelease)
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-06-30T00:00:00.000Z">June 30, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/fundamentals/security/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Security</span></a><a href="/runtime/fundamentals/configuration/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Config files →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/fundamentals/modules.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

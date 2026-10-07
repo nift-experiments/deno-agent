@@ -1,0 +1,1132 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#quick-start" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Quick start </a></li><li class="leading-tight text-balance"><a href="#auto-instrumentation" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Auto instrumentation </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#traces" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Traces </a></li><li class="leading-tight text-balance"><a href="#metrics" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Metrics </a></li><li class="leading-tight text-balance"><a href="#logs" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Logs </a></li><li class="leading-tight text-balance"><a href="#permission-audit" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Permission audit </a></li></ul></li><li class="leading-tight text-balance"><a href="#user-metrics" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">User metrics </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#traces-1" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Traces </a></li><li class="leading-tight text-balance"><a href="#metrics-1" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Metrics </a></li><li class="leading-tight text-balance"><a href="#practical-examples" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Practical Examples </a></li></ul></li><li class="leading-tight text-balance"><a href="#context-propagation" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Context propagation </a></li><li class="leading-tight text-balance"><a href="#configuration" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Configuration </a></li><li class="leading-tight text-balance"><a href="#propagators" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Propagators </a></li><li class="leading-tight text-balance"><a href="#limitations" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Limitations </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Diagnostics</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/fundamentals/open_telemetry.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Ffundamentals%2Fopen_telemetry.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">OpenTelemetry</h1></div><p>Deno has built in support for <a href="https://opentelemetry.io/">OpenTelemetry</a>.</p>
+<blockquote>
+<p>OpenTelemetry is a collection of APIs, SDKs, and tools. Use it to instrument,
+generate, collect, and export telemetry data (metrics, logs, and traces) to
+help you analyze your software’s performance and behavior.</p>
+<p><i>- <a href="https://opentelemetry.io/">https://opentelemetry.io/</a></i></p>
+</blockquote>
+<p>This integration enables you to monitor your Deno applications using
+OpenTelemetry observability tooling with instruments like logs, metrics, and
+traces.</p>
+<p>Deno provides the following features:</p>
+<ul>
+<li>Exporting of collected metrics, traces, and logs to a server using the
+OpenTelemetry protocol.</li>
+<li><a href="#auto-instrumentation">Automatic instrumentation</a> of the Deno runtime with
+OpenTelemetry metrics, traces, and logs.</li>
+<li><a href="#user-metrics">Collection of user defined metrics, traces, and logs</a> created
+with the <code>npm:@opentelemetry/api</code> package.</li>
+</ul>
+<h2 id="quick-start" tabindex="-1">Quick start <a class="header-anchor" href="#quick-start"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>To enable the OpenTelemetry integration set the environment variable
+<code>OTEL_DENO=true</code>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">OTEL_DENO</span><span class="token operator">=</span>true deno run my_script.ts
+</code></pre>
+
+      <button id="copy-button-40" class="copyButton" data-copy="OTEL_DENO=true deno run my_script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This will automatically collect and export runtime observability data to an
+OpenTelemetry endpoint at <code>localhost:4318</code> using Protobuf over HTTP
+(<code>http/protobuf</code>).</p>
+<p>
+</p><div class="admonition tip">
+  <div class="title">Tip</div>
+
+<p></p>
+<p>If you want to quickly see OpenTelemetry output without setting up a collector,
+you can use the built-in console exporter to print spans, logs, and metrics
+directly to stderr in a human-readable format:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">OTEL_DENO</span><span class="token operator">=</span>true <span class="token assign-left variable">OTEL_EXPORTER_OTLP_PROTOCOL</span><span class="token operator">=</span>console deno run my_script.ts
+</code></pre>
+
+      <button id="copy-button-50" class="copyButton" data-copy="OTEL_DENO=true OTEL_EXPORTER_OTLP_PROTOCOL=console deno run my_script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Example output:</p>
+<div class="relative"><pre><code>SPAN inner span [00000000000000000000000000000001/0000000000000002] Internal 0.495ms
+  parent: 0000000000000001
+  scope: example-tracer
+  key: value
+LOG [INFO] 2025-03-14T13:47:07.235Z "hello from inner"
+  scope: deno@2.7.5
+  trace: 00000000000000000000000000000001/0000000000000002
+</code></pre>
+
+      <button id="copy-button-54" class="copyButton" data-copy="SPAN inner span [00000000000000000000000000000001/0000000000000002] Internal 0.495ms
+  parent: 0000000000000001
+  scope: example-tracer
+  key: value
+LOG [INFO] 2025-03-14T13:47:07.235Z &quot;hello from inner&quot;
+  scope: deno@2.7.5
+  trace: 00000000000000000000000000000001/0000000000000002
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>
+</p></div>
+<p></p>
+<p>
+</p><div class="admonition tip">
+  <div class="title">Tip</div>
+
+<p></p>
+<p>If you want to visualize telemetry data in a dashboard, you can get started with
+a
+<a href="https://github.com/grafana/docker-otel-lgtm/tree/main?tab=readme-ov-file">local LGTM stack in Docker</a>
+(Loki (logs), Grafana (dashboard), Tempo (traces), and Prometheus (metrics)) by
+running the following command:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token function">docker</span> run <span class="token parameter variable">--name</span> lgtm <span class="token parameter variable">-p</span> <span class="token number">3000</span>:3000 <span class="token parameter variable">-p</span> <span class="token number">4317</span>:4317 <span class="token parameter variable">-p</span> <span class="token number">4318</span>:4318 <span class="token parameter variable">--rm</span> <span class="token parameter variable">-ti</span> <span class="token punctuation">\</span>
+	<span class="token parameter variable">-v</span> <span class="token string">"<span class="token environment constant">$PWD</span>"</span>/lgtm/grafana:/data/grafana <span class="token punctuation">\</span>
+	<span class="token parameter variable">-v</span> <span class="token string">"<span class="token environment constant">$PWD</span>"</span>/lgtm/prometheus:/data/prometheus <span class="token punctuation">\</span>
+	<span class="token parameter variable">-v</span> <span class="token string">"<span class="token environment constant">$PWD</span>"</span>/lgtm/loki:/data/loki <span class="token punctuation">\</span>
+	<span class="token parameter variable">-e</span> <span class="token assign-left variable">GF_PATHS_DATA</span><span class="token operator">=</span>/data/grafana <span class="token punctuation">\</span>
+	docker.io/grafana/otel-lgtm:0.8.1
+</code></pre>
+
+      <button id="copy-button-64" class="copyButton" data-copy="docker run --name lgtm -p 3000:3000 -p 4317:4317 -p 4318:4318 --rm -ti \
+	-v &quot;$PWD&quot;/lgtm/grafana:/data/grafana \
+	-v &quot;$PWD&quot;/lgtm/prometheus:/data/prometheus \
+	-v &quot;$PWD&quot;/lgtm/loki:/data/loki \
+	-e GF_PATHS_DATA=/data/grafana \
+	docker.io/grafana/otel-lgtm:0.8.1
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You can then access the Grafana dashboard at <code>http://localhost:3000</code> with the
+username <code>admin</code> and password <code>admin</code>.</p>
+<p>
+</p></div>
+<p></p>
+<p>This will automatically collect and export runtime observability data like
+<code>console.log</code>, traces for HTTP requests, and metrics for the Deno runtime.
+<a href="#auto-instrumentation">Learn more about auto instrumentation</a>.</p>
+<p>You can also create your own metrics, traces, and logs using the
+<code>npm:@opentelemetry/api</code> package.
+<a href="#user-metrics">Learn more about user defined metrics</a>.</p>
+<h2 id="auto-instrumentation" tabindex="-1">Auto instrumentation <a class="header-anchor" href="#auto-instrumentation"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno automatically collects and exports some observability data to the OTLP
+endpoint.</p>
+<p>This data is exported in the built-in instrumentation scope of the Deno runtime.
+This scope has the name <code>deno</code>. The version of the Deno runtime is the version
+of the <code>deno</code> instrumentation scope. (e.g. <code>deno:2.1.4</code>).</p>
+<h3 id="traces" tabindex="-1">Traces <a class="header-anchor" href="#traces"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Deno automatically creates spans for various operations, such as:</p>
+<ul>
+<li>Incoming HTTP requests served with <a href="/api/deno/~/Deno.serve"><code>Deno.serve</code></a>.</li>
+<li>Outgoing HTTP requests made with <a href="/api/web/~/fetch"><code>fetch</code></a>.</li>
+<li>HTTP/2 traffic over <code>node:http2</code>, both client requests and incoming server
+requests, with trace context propagated across services (added in Deno 2.9).</li>
+<li><a href="/api/deno/~/Deno.cron"><code>Deno.cron()</code></a> job invocations (added in Deno 2.7).</li>
+</ul>
+<h4 id="deno.serve" tabindex="-1"><a href="/api/deno/~/Deno.serve"><code>Deno.serve</code></a> <a class="header-anchor" href="#deno.serve"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>When you use <a href="/api/deno/~/Deno.serve"><code>Deno.serve</code></a> to create an HTTP server, a
+span is created for each incoming request. The span automatically ends when
+response headers are sent (not when the response body is done sending).</p>
+<p>The name of the created span is <code>${method}</code>. The span kind is <code>server</code>.</p>
+<p>The following attributes are automatically added to the span on creation:</p>
+<ul>
+<li><code>http.request.method</code>: The HTTP method of the request.</li>
+<li><code>url.full</code>: The full URL of the request (as would be reported by <code>req.url</code>).</li>
+<li><code>url.scheme</code>: The scheme of the request URL (e.g. <code>http</code> or <code>https</code>).</li>
+<li><code>url.path</code>: The path of the request URL.</li>
+<li><code>url.query</code>: The query string of the request URL.</li>
+</ul>
+<p>After the request is handled, the following attributes are added:</p>
+<ul>
+<li><code>http.response.status_code</code>: The status code of the response.</li>
+</ul>
+<p>Deno does not automatically add a <code>http.route</code> attribute to the span as the
+route is not known by the runtime, and instead is determined by the routing
+logic in a user's handler function. If you want to add a <code>http.route</code> attribute
+to the span, you can do so in your handler function using
+<code>npm:@opentelemetry/api</code>. In this case you should also update the span name to
+include the route.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> trace <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"npm:@opentelemetry/api@1"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token constant">INDEX_ROUTE</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URLPattern</span><span class="token punctuation">(</span><span class="token punctuation">{</span> pathname<span class="token operator">:</span> <span class="token string">"/"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token constant">BOOK_ROUTE</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URLPattern</span><span class="token punctuation">(</span><span class="token punctuation">{</span> pathname<span class="token operator">:</span> <span class="token string">"/book/:id"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> span <span class="token operator">=</span> trace<span class="token punctuation">.</span><span class="token function">getActiveSpan</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">INDEX_ROUTE</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    span<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"http.route"</span><span class="token punctuation">,</span> <span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    span<span class="token punctuation">.</span><span class="token function">updateName</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>req<span class="token punctuation">.</span>method<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> /</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// handle index route</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">BOOK_ROUTE</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    span<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"http.route"</span><span class="token punctuation">,</span> <span class="token string">"/book/:id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    span<span class="token punctuation">.</span><span class="token function">updateName</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>req<span class="token punctuation">.</span>method<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> /book/:id</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// handle book route</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"Not found"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> status<span class="token operator">:</span> <span class="token number">404</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-166" class="copyButton" data-copy="import { trace } from &quot;npm:@opentelemetry/api@1&quot;;
+
+const INDEX_ROUTE = new URLPattern({ pathname: &quot;/&quot; });
+const BOOK_ROUTE = new URLPattern({ pathname: &quot;/book/:id&quot; });
+
+Deno.serve(async (req) => {
+  const span = trace.getActiveSpan();
+  if (INDEX_ROUTE.test(req.url)) {
+    span.setAttribute(&quot;http.route&quot;, &quot;/&quot;);
+    span.updateName(`${req.method} /`);
+
+    // handle index route
+  } else if (BOOK_ROUTE.test(req.url)) {
+    span.setAttribute(&quot;http.route&quot;, &quot;/book/:id&quot;);
+    span.updateName(`${req.method} /book/:id`);
+
+    // handle book route
+  } else {
+    return new Response(&quot;Not found&quot;, { status: 404 });
+  }
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="fetch" tabindex="-1"><a href="/api/web/~/fetch"><code>fetch</code></a> <a class="header-anchor" href="#fetch"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>When you use <a href="/api/web/~/fetch"><code>fetch</code></a> to make an HTTP request, a span is
+created for the request. The span automatically ends when the response headers
+are received.</p>
+<p>The name of the created span is <code>${method}</code>. The span kind is <code>client</code>.</p>
+<p>The following attributes are automatically added to the span on creation:</p>
+<ul>
+<li><code>http.request.method</code>: The HTTP method of the request.</li>
+<li><code>url.full</code>: The full URL of the request.</li>
+<li><code>url.scheme</code>: The scheme of the request URL.</li>
+<li><code>url.path</code>: The path of the request URL.</li>
+<li><code>url.query</code>: The query string of the request URL.</li>
+</ul>
+<p>After the response is received, the following attributes are added:</p>
+<ul>
+<li><code>http.status_code</code>: The status code of the response.</li>
+</ul>
+<h3 id="metrics" tabindex="-1">Metrics <a class="header-anchor" href="#metrics"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The following metrics are automatically collected and exported:</p>
+<h4 id="deno.serve-%2F-deno.servehttp" tabindex="-1"><a href="/api/deno/~/Deno.serve"><code>Deno.serve</code></a> / <a href="/api/deno/~/Deno.serveHttp"><code>Deno.serveHttp</code></a> <a class="header-anchor" href="#deno.serve-%2F-deno.servehttp"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<h5 id="http.server.request.duration" tabindex="-1"><code>http.server.request.duration</code> <a class="header-anchor" href="#http.server.request.duration"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h5>
+<p>A histogram of the duration of incoming HTTP requests served with
+<a href="/api/deno/~/Deno.serve"><code>Deno.serve</code></a> or
+<a href="/api/deno/~/Deno.serveHttp"><code>Deno.serveHttp</code></a>. The time that is measured is
+from when the request is received to when the response headers are sent. This
+does not include the time to send the response body. The unit of this metric is
+seconds. The histogram buckets are
+<code>[0.005, 0.01, 0.025, 0.05, 0.075, 0.1, 0.25, 0.5, 0.75, 1.0, 2.5, 5.0, 7.5, 10.0]</code>.</p>
+<p>This metric is recorded with the following attributes:</p>
+<ul>
+<li><code>http.request.method</code>: The HTTP method of the request.</li>
+<li><code>url.scheme</code>: The scheme of the request URL.</li>
+<li><code>network.protocol.version</code>: The version of the HTTP protocol used for the
+request (e.g. <code>1.1</code> or <code>2</code>).</li>
+<li><code>server.address</code>: The address that the server is listening on.</li>
+<li><code>server.port</code>: The port that the server is listening on.</li>
+<li><code>http.response.status_code</code>: The status code of the response (if the request
+has been handled without a fatal error).</li>
+<li><code>error.type</code>: The type of error that occurred (if the request handling was
+subject to an error).</li>
+</ul>
+<h5 id="http.server.active_requests" tabindex="-1"><code>http.server.active_requests</code> <a class="header-anchor" href="#http.server.active_requests"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h5>
+<p>A gauge of the number of active requests being handled by
+<a href="/api/deno/~/Deno.serve"><code>Deno.serve</code></a> or
+<a href="/api/deno/~/Deno.serveHttp"><code>Deno.serveHttp</code></a> at any given time. This is the
+number of requests that have been received but not yet responded to (where the
+response headers have not yet been sent). This metric is recorded with the
+following attributes:</p>
+<ul>
+<li><code>http.request.method</code>: The HTTP method of the request.</li>
+<li><code>url.scheme</code>: The scheme of the request URL.</li>
+<li><code>server.address</code>: The address that the server is listening on.</li>
+<li><code>server.port</code>: The port that the server is listening on.</li>
+</ul>
+<h5 id="http.server.request.body.size" tabindex="-1"><code>http.server.request.body.size</code> <a class="header-anchor" href="#http.server.request.body.size"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h5>
+<p>A histogram of the size of the request body of incoming HTTP requests served
+with <a href="/api/deno/~/Deno.serve"><code>Deno.serve</code></a> or
+<a href="/api/deno/~/Deno.serveHttp"><code>Deno.serveHttp</code></a>. The unit of this metric is
+bytes. The histogram buckets are
+<code>[0, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]</code>.</p>
+<p>This metric is recorded with the following attributes:</p>
+<ul>
+<li><code>http.request.method</code>: The HTTP method of the request.</li>
+<li><code>url.scheme</code>: The scheme of the request URL.</li>
+<li><code>network.protocol.version</code>: The version of the HTTP protocol used for the
+request (e.g. <code>1.1</code> or <code>2</code>).</li>
+<li><code>server.address</code>: The address that the server is listening on.</li>
+<li><code>server.port</code>: The port that the server is listening on.</li>
+<li><code>http.response.status_code</code>: The status code of the response (if the request
+has been handled without a fatal error).</li>
+<li><code>error.type</code>: The type of error that occurred (if the request handling was
+subject to an error).</li>
+</ul>
+<h5 id="http.server.response.body.size" tabindex="-1"><code>http.server.response.body.size</code> <a class="header-anchor" href="#http.server.response.body.size"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h5>
+<p>A histogram of the size of the response body of incoming HTTP requests served
+with <a href="/api/deno/~/Deno.serve"><code>Deno.serve</code></a> or
+<a href="/api/deno/~/Deno.serveHttp"><code>Deno.serveHttp</code></a>. The unit of this metric is
+bytes. The histogram buckets are
+<code>[0, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]</code>.</p>
+<p>This metric is recorded with the following attributes:</p>
+<ul>
+<li><code>http.request.method</code>: The HTTP method of the request.</li>
+<li><code>url.scheme</code>: The scheme of the request URL.</li>
+<li><code>network.protocol.version</code>: The version of the HTTP protocol used for the
+request (e.g. <code>1.1</code> or <code>2</code>).</li>
+<li><code>server.address</code>: The address that the server is listening on.</li>
+<li><code>server.port</code>: The port that the server is listening on.</li>
+<li><code>http.response.status_code</code>: The status code of the response (if the request
+has been handled without a fatal error).</li>
+<li><code>error.type</code>: The type of error that occurred (if the request handling was
+subject to an error).</li>
+</ul>
+<h3 id="logs" tabindex="-1">Logs <a class="header-anchor" href="#logs"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The following logs are automatically collected and exported:</p>
+<ul>
+<li>Any logs created with <code>console.*</code> methods such as <code>console.log</code> and
+<code>console.error</code>.</li>
+<li>Any logs created by the Deno runtime, such as debug logs, <code>Downloading</code> logs,
+and similar.</li>
+<li>Any errors that cause the Deno runtime to exit (both from user code, and from
+the runtime itself).</li>
+</ul>
+<p>Logs raised from JavaScript code will be exported with the relevant span
+context, if the log occurred inside of an active span.</p>
+<p><code>console</code> auto instrumentation can be configured using the <code>OTEL_DENO_CONSOLE</code>
+environment variable:</p>
+<ul>
+<li><code>capture</code>: Logs are emitted to stdout/stderr and are also exported with
+OpenTelemetry. (default)</li>
+<li><code>replace</code>: Logs are only exported with OpenTelemetry, and not emitted to
+stdout/stderr.</li>
+<li><code>ignore</code>: Logs are emitted only to stdout/stderr, and will not be exported
+with OpenTelemetry.</li>
+</ul>
+<h3 id="permission-audit" tabindex="-1">Permission audit <a class="header-anchor" href="#permission-audit"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Deno can route the permission audit log into the OpenTelemetry exporter
+alongside the rest of your traces, metrics, and logs. Set
+<code>DENO_AUDIT_PERMISSIONS=otel</code> (instead of a file path) and each permission
+access — allowed or denied — is emitted as an OpenTelemetry log record with
+these attributes:</p>
+<ul>
+<li><code>deno.permission.type</code> — the permission name (<code>read</code>, <code>net</code>, <code>env</code>, …).</li>
+<li><code>deno.permission.value</code> — the specific value being checked (a path, host,
+variable name, etc.).</li>
+<li><code>deno.permission.stack</code> — the JavaScript stack frames at the access site, only
+present when <code>DENO_TRACE_PERMISSIONS</code> is also set.</li>
+</ul>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">OTEL_DENO</span><span class="token operator">=</span>true <span class="token assign-left variable">DENO_AUDIT_PERMISSIONS</span><span class="token operator">=</span>otel deno run <span class="token parameter variable">-A</span> main.ts
+</code></pre>
+
+      <button id="copy-button-460" class="copyButton" data-copy="OTEL_DENO=true DENO_AUDIT_PERMISSIONS=otel deno run -A main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This is useful when you already collect OpenTelemetry data: the audit lands in
+the same backend as your request traces, so you can correlate which request
+triggered which permission access. See
+<a href="/runtime/reference/permissions/">permission audit</a> for the full attribute set
+and the JSONL file-path mode.</p>
+<h2 id="user-metrics" tabindex="-1">User metrics <a class="header-anchor" href="#user-metrics"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>In addition to the automatically collected telemetry data, you can also create
+your own metrics and traces using the <code>npm:@opentelemetry/api</code> package.</p>
+<p>You do not need to configure the <code>npm:@opentelemetry/api</code> package to use it with
+Deno. Deno sets up the <code>npm:@opentelemetry/api</code> package automatically. There is
+no need to call <code>metrics.setGlobalMeterProvider()</code>,
+<code>trace.setGlobalTracerProvider()</code>, or <code>context.setGlobalContextManager()</code>. All
+configuration of resources, exporter settings, etc. is done via environment
+variables.</p>
+<p>Deno works with version <code>1.x</code> of the <code>npm:@opentelemetry/api</code> package. You can
+either import directly from <code>npm:@opentelemetry/api@1</code>, or you can install the
+package locally with <code>deno add</code> and import from <code>@opentelemetry/api</code>.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">add</span> npm:@opentelemetry/api@1
+</code></pre>
+
+      <button id="copy-button-476" class="copyButton" data-copy="deno add npm:@opentelemetry/api@1
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>For both traces and metrics, you need to define names for the tracer and meter
+respectively. If you are instrumenting a library, you should name the tracer or
+meter after the library (such as <code>my-awesome-lib</code>). If you are instrumenting an
+application, you should name the tracer or meter after the application (such as
+<code>my-app</code>). The version of the tracer or meter should be set to the version of
+the library or application.</p>
+<h3 id="traces-1" tabindex="-1">Traces <a class="header-anchor" href="#traces-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>To create a new span, first import the <code>trace</code> object from
+<code>npm:@opentelemetry/api</code> and create a new tracer:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> trace <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"npm:@opentelemetry/api@1"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> tracer <span class="token operator">=</span> trace<span class="token punctuation">.</span><span class="token function">getTracer</span><span class="token punctuation">(</span><span class="token string">"my-app"</span><span class="token punctuation">,</span> <span class="token string">"1.0.0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-486" class="copyButton" data-copy="import { trace } from &quot;npm:@opentelemetry/api@1&quot;;
+
+const tracer = trace.getTracer(&quot;my-app&quot;, &quot;1.0.0&quot;);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Then, create a new span using the <code>tracer.startActiveSpan</code> method and pass a
+callback function to it. You have to manually end the span by calling the <code>end</code>
+method on the span object returned by <code>startActiveSpan</code>.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> tracer<span class="token punctuation">.</span><span class="token function">startActiveSpan</span><span class="token punctuation">(</span><span class="token string">"myFunction"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>span<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">// do myFunction's work</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      span<span class="token punctuation">.</span><span class="token function">recordException</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      span<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        code<span class="token operator">:</span> trace<span class="token punctuation">.</span>SpanStatusCode<span class="token punctuation">.</span><span class="token constant">ERROR</span><span class="token punctuation">,</span>
+        message<span class="token operator">:</span> <span class="token punctuation">(</span>error <span class="token keyword">as</span> Error<span class="token punctuation">)</span><span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+      span<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-490" class="copyButton" data-copy="function myFunction() {
+  return tracer.startActiveSpan(&quot;myFunction&quot;, (span) => {
+    try {
+      // do myFunction's work
+    } catch (error) {
+      span.recordException(error);
+      span.setStatus({
+        code: trace.SpanStatusCode.ERROR,
+        message: (error as Error).message,
+      });
+      throw error;
+    } finally {
+      span.end();
+    }
+  });
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p><code>span.end()</code> should be called in a <code>finally</code> block to ensure that the span is
+ended even if an error occurs. <code>span.recordException</code> and <code>span.setStatus</code>
+should also be called in a <code>catch</code> block, to record any errors that occur.</p>
+<p>Inside of the callback function, the created span is the "active span". You can
+get the active span using <code>trace.getActiveSpan()</code>. The "active span" will be
+used as the parent span for any spans created (manually, or automatically by the
+runtime) inside of the callback function (or any functions that are called from
+the callback function).
+<a href="#context-propagation">Learn more about context propagation</a>.</p>
+<p>The <code>startActiveSpan</code> method returns the return value of the callback function.</p>
+<p>Spans can have attributes added to them during their lifetime. Attributes are
+key value pairs that represent structured metadata about the span. Attributes
+can be added using the <code>setAttribute</code> and <code>setAttributes</code> methods on the span
+object.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts">span<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"key"</span><span class="token punctuation">,</span> <span class="token string">"value"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+span<span class="token punctuation">.</span><span class="token function">setAttributes</span><span class="token punctuation">(</span><span class="token punctuation">{</span> success<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string-property property">"bar.count"</span><span class="token operator">:</span> <span class="token number">42n</span><span class="token punctuation">,</span> <span class="token string-property property">"foo.duration"</span><span class="token operator">:</span> <span class="token number">123.45</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-503" class="copyButton" data-copy="span.setAttribute(&quot;key&quot;, &quot;value&quot;);
+span.setAttributes({ success: true, &quot;bar.count&quot;: 42n, &quot;foo.duration&quot;: 123.45 });
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Values for attributes can be strings, numbers (floats), bigints (clamped to
+u64), booleans, or arrays of any of these types. If an attribute value is not
+one of these types, it will be ignored.</p>
+<p>The name of a span can be updated using the <code>updateName</code> method on the span
+object.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts">span<span class="token punctuation">.</span><span class="token function">updateName</span><span class="token punctuation">(</span><span class="token string">"new name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-510" class="copyButton" data-copy="span.updateName(&quot;new name&quot;);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The status of a span can be set using the <code>setStatus</code> method on the span object.
+The <code>recordException</code> method can be used to record an exception that occurred
+during the span's lifetime. <code>recordException</code> creates an event with the
+exception stack trace and name and attaches it to the span. <strong><code>recordException</code>
+does not set the span status to <code>ERROR</code>, you must do that manually.</strong></p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> SpanStatusCode <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"npm:@opentelemetry/api@1"</span><span class="token punctuation">;</span>
+
+span<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  code<span class="token operator">:</span> SpanStatusCode<span class="token punctuation">.</span><span class="token constant">ERROR</span><span class="token punctuation">,</span>
+  message<span class="token operator">:</span> <span class="token string">"An error occurred"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+span<span class="token punctuation">.</span><span class="token function">recordException</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"An error occurred"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// or</span>
+
+span<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  code<span class="token operator">:</span> SpanStatusCode<span class="token punctuation">.</span><span class="token constant">OK</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-514" class="copyButton" data-copy="import { SpanStatusCode } from &quot;npm:@opentelemetry/api@1&quot;;
+
+span.setStatus({
+  code: SpanStatusCode.ERROR,
+  message: &quot;An error occurred&quot;,
+});
+span.recordException(new Error(&quot;An error occurred&quot;));
+
+// or
+
+span.setStatus({
+  code: SpanStatusCode.OK,
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Spans can also have
+<a href="https://open-telemetry.github.io/opentelemetry-js/interfaces/_opentelemetry_api._opentelemetry_api.Span.html#addevent">events</a>
+and
+<a href="https://open-telemetry.github.io/opentelemetry-js/interfaces/_opentelemetry_api._opentelemetry_api.Span.html#addlink">links</a>
+added to them. Events are points in time that are associated with the span.
+Links are references to other spans.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token comment">// Add an event to the span</span>
+span<span class="token punctuation">.</span><span class="token function">addEvent</span><span class="token punctuation">(</span><span class="token string">"button_clicked"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token string">"submit-button"</span><span class="token punctuation">,</span>
+  action<span class="token operator">:</span> <span class="token string">"submit"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Add an event with a timestamp</span>
+span<span class="token punctuation">.</span><span class="token function">addEvent</span><span class="token punctuation">(</span><span class="token string">"process_completed"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> status<span class="token operator">:</span> <span class="token string">"success"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-518" class="copyButton" data-copy="// Add an event to the span
+span.addEvent(&quot;button_clicked&quot;, {
+  id: &quot;submit-button&quot;,
+  action: &quot;submit&quot;,
+});
+
+// Add an event with a timestamp
+span.addEvent(&quot;process_completed&quot;, { status: &quot;success&quot; }, Date.now());
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Events can include optional attributes similar to spans. They are useful for
+marking significant moments within the span's lifetime without creating separate
+spans.</p>
+<p>Spans can also be created manually with <code>tracer.startSpan</code> which returns a span
+object. This method does not set the created span as the active span, so it will
+not automatically be used as the parent span for any spans created later, or any
+<code>console.log</code> calls. A span can manually be set as the active span for a
+callback, by using the <a href="#context-propagation">context propagation API</a>.</p>
+<p>Both <code>tracer.startActiveSpan</code> and <code>tracer.startSpan</code> can take an optional
+options bag containing any of the following properties:</p>
+<ul>
+<li><code>kind</code>: The kind of the span. Can be <code>SpanKind.CLIENT</code>, <code>SpanKind.SERVER</code>,
+<code>SpanKind.PRODUCER</code>, <code>SpanKind.CONSUMER</code>, or <code>SpanKind.INTERNAL</code>. Defaults to
+<code>SpanKind.INTERNAL</code>.</li>
+<li><code>startTime</code> A <code>Date</code> object representing the start time of the span, or a
+number representing the start time in milliseconds since the Unix epoch. If
+not provided, the current time will be used.</li>
+<li><code>attributes</code>: An object containing attributes to add to the span.</li>
+<li><code>links</code>: An array of links to add to the span.</li>
+<li><code>root</code>: A boolean indicating whether the span should be a root span. If
+<code>true</code>, the span will not have a parent span (even if there is an active
+span).</li>
+</ul>
+<p>After the options bag, both <code>tracer.startActiveSpan</code> and <code>tracer.startSpan</code> can
+also take a <code>context</code> object from the
+<a href="#context-propagation">context propagation API</a>.</p>
+<p>Learn more about the full tracing API in the
+<a href="https://open-telemetry.github.io/opentelemetry-js/classes/_opentelemetry_api._opentelemetry_api.TraceAPI.html">OpenTelemetry JS API docs</a>.</p>
+<h3 id="metrics-1" tabindex="-1">Metrics <a class="header-anchor" href="#metrics-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>To create a metric, first import the <code>metrics</code> object from
+<code>npm:@opentelemetry/api</code> and create a new meter:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> metrics <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"npm:@opentelemetry/api@1"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> meter <span class="token operator">=</span> metrics<span class="token punctuation">.</span><span class="token function">getMeter</span><span class="token punctuation">(</span><span class="token string">"my-app"</span><span class="token punctuation">,</span> <span class="token string">"1.0.0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-567" class="copyButton" data-copy="import { metrics } from &quot;npm:@opentelemetry/api@1&quot;;
+
+const meter = metrics.getMeter(&quot;my-app&quot;, &quot;1.0.0&quot;);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Then, an instrument can be created from the meter, and used to record values:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> counter <span class="token operator">=</span> meter<span class="token punctuation">.</span><span class="token function">createCounter</span><span class="token punctuation">(</span><span class="token string">"my_counter"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  description<span class="token operator">:</span> <span class="token string">"A simple counter"</span><span class="token punctuation">,</span>
+  unit<span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+counter<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+counter<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-571" class="copyButton" data-copy="const counter = meter.createCounter(&quot;my_counter&quot;, {
+  description: &quot;A simple counter&quot;,
+  unit: &quot;1&quot;,
+});
+
+counter.add(1);
+counter.add(2);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Each recording can also have associated attributes:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts">counter<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> color<span class="token operator">:</span> <span class="token string">"red"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+counter<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> color<span class="token operator">:</span> <span class="token string">"blue"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-575" class="copyButton" data-copy="counter.add(1, { color: &quot;red&quot; });
+counter.add(2, { color: &quot;blue&quot; });
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>
+</p><div class="admonition tip">
+  <div class="title">Tip</div>
+
+<p></p>
+<p>In OpenTelemetry, metric attributes should generally have low cardinality. This
+means that there should not be too many unique combinations of attribute values.
+For example, it is probably fine to have an attribute for which continent a user
+is on, but it would be too high cardinality to have an attribute for the exact
+latitude and longitude of the user. High cardinality attributes can cause
+problems with metric storage and exporting, and should be avoided. Use spans and
+logs for high cardinality data.</p>
+<p>
+</p></div>
+<p></p>
+<p>There are several types of instruments that can be created with a meter:</p>
+<ul>
+<li>
+<p><strong>Counter</strong>: A counter is a monotonically increasing value. Counters can only
+be positive. They can be used for values that are always increasing, such as
+the number of requests handled.</p>
+</li>
+<li>
+<p><strong>UpDownCounter</strong>: An up-down counter is a value that can both increase and
+decrease. Up-down counters can be used for values that can increase and
+decrease, such as the number of active connections or requests in progress.</p>
+</li>
+<li>
+<p><strong>Gauge</strong>: A gauge is a value that can be set to any value. They are used for
+values that do not "accumulate" over time, but rather have a specific value at
+any given time, such as the current temperature.</p>
+</li>
+<li>
+<p><strong>Histogram</strong>: A histogram is a value that is recorded as a distribution of
+values. Histograms can be used for values that are not just a single number,
+but a distribution of numbers, such as the response time of a request in
+milliseconds. Histograms can be used to calculate percentiles, averages, and
+other statistics. They have a predefined set of boundaries that define the
+buckets that the values are placed into. By default, the boundaries are
+<code>[0.0, 5.0, 10.0, 25.0, 50.0, 75.0, 100.0, 250.0, 500.0, 750.0, 1000.0, 2500.0, 5000.0, 7500.0, 10000.0]</code>.</p>
+</li>
+</ul>
+<p>There are also several types of observable instruments. These instruments do not
+have a synchronous recording method, but instead return a callback that can be
+called to record a value. The callback will be called when the OpenTelemetry SDK
+is ready to record a value, for example just before exporting.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> counter <span class="token operator">=</span> meter<span class="token punctuation">.</span><span class="token function">createObservableCounter</span><span class="token punctuation">(</span><span class="token string">"my_counter"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  description<span class="token operator">:</span> <span class="token string">"A simple counter"</span><span class="token punctuation">,</span>
+  unit<span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+counter<span class="token punctuation">.</span><span class="token function">addCallback</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// or</span>
+  res<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> color<span class="token operator">:</span> <span class="token string">"red"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-613" class="copyButton" data-copy="const counter = meter.createObservableCounter(&quot;my_counter&quot;, {
+  description: &quot;A simple counter&quot;,
+  unit: &quot;1&quot;,
+});
+counter.addCallback((res) => {
+  res.observe(1);
+  // or
+  res.observe(1, { color: &quot;red&quot; });
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>There are three types of observable instruments:</p>
+<ul>
+<li><strong>ObservableCounter</strong>: An observable counter is a counter that can be observed
+asynchronously. It can be used for values that are always increasing, such as
+the number of requests handled.</li>
+<li><strong>ObservableUpDownCounter</strong>: An observable up-down counter is a value that can
+both increase and decrease, and can be observed asynchronously. Up-down
+counters can be used for values that can increase and decrease, such as the
+number of active connections or requests in progress.</li>
+<li><strong>ObservableGauge</strong>: An observable gauge is a value that can be set to any
+value, and can be observed asynchronously. They are used for values that do
+not "accumulate" over time, but rather have a specific value at any given
+time, such as the current temperature.</li>
+</ul>
+<p>Learn more about the full metrics API in the
+<a href="https://open-telemetry.github.io/opentelemetry-js/classes/_opentelemetry_api._opentelemetry_api.MetricsAPI.html">OpenTelemetry JS API docs</a>.</p>
+<h3 id="practical-examples" tabindex="-1">Practical Examples <a class="header-anchor" href="#practical-examples"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>For practical examples of implementing OpenTelemetry in Deno applications, see
+our tutorials:</p>
+<ul>
+<li><a href="/examples/basic_opentelemetry_tutorial/">Basic OpenTelemetry Tutorial</a> - A
+simple HTTP server with custom metrics and traces</li>
+<li><a href="/examples/otel_span_propagation_tutorial/">Distributed Tracing Tutorial</a> -
+Advanced techniques for tracing across service boundaries</li>
+</ul>
+<h2 id="context-propagation" tabindex="-1">Context propagation <a class="header-anchor" href="#context-propagation"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>In OpenTelemetry, context propagation is the process of passing some context
+information (such as the current span) from one part of an application to
+another, without having to pass it explicitly as an argument to every function.</p>
+<p>In Deno, context propagation is done using the rules of <code>AsyncContext</code>, the TC39
+proposal for async context propagation. The <code>AsyncContext</code> API is not yet
+exposed to users in Deno, but it is used internally to propagate the active span
+and other context information across asynchronous boundaries.</p>
+<p>A quick overview how AsyncContext propagation works:</p>
+<ul>
+<li>When a new asynchronous task is started (such as a promise, or a timer), the
+current context is saved.</li>
+<li>Then some other code can execute concurrently with the asynchronous task, in a
+different context.</li>
+<li>When the asynchronous task completes, the saved context is restored.</li>
+</ul>
+<p>This means that async context propagation essentially behaves like a global
+variable that is scoped to the current asynchronous task, and is automatically
+copied to any new asynchronous tasks that are started from this current task.</p>
+<p>The <code>context</code> API from <code>npm:@opentelemetry/api@1</code> exposes this functionality to
+users. It works as follows:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> context <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"npm:@opentelemetry/api@1"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Get the currently active context</span>
+<span class="token keyword">const</span> currentContext <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">active</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// You can add create a new context with a value added to it</span>
+<span class="token keyword">const</span> newContext <span class="token operator">=</span> currentContext<span class="token punctuation">.</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// The current context is not changed by calling setValue</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>currentContext<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+
+<span class="token comment">// You can run a function inside a new context</span>
+context<span class="token punctuation">.</span><span class="token function">with</span><span class="token punctuation">(</span>newContext<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Any code in this block will run with the new context</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">active</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+
+  <span class="token comment">// The context is also available in any functions called from this block</span>
+  <span class="token keyword">function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> context<span class="token punctuation">.</span><span class="token function">active</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+
+  <span class="token comment">// And it is also available in any asynchronous callbacks scheduled from here</span>
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">active</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Outside, the context is still the same</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">active</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span>
+</code></pre>
+
+      <button id="copy-button-690" class="copyButton" data-copy="import { context } from &quot;npm:@opentelemetry/api@1&quot;;
+
+// Get the currently active context
+const currentContext = context.active();
+
+// You can add create a new context with a value added to it
+const newContext = currentContext.setValue(&quot;id&quot;, 1);
+
+// The current context is not changed by calling setValue
+console.log(currentContext.getValue(&quot;id&quot;)); // undefined
+
+// You can run a function inside a new context
+context.with(newContext, () => {
+  // Any code in this block will run with the new context
+  console.log(context.active().getValue(&quot;id&quot;)); // 1
+
+  // The context is also available in any functions called from this block
+  function myFunction() {
+    return context.active().getValue(&quot;id&quot;);
+  }
+  console.log(myFunction()); // 1
+
+  // And it is also available in any asynchronous callbacks scheduled from here
+  setTimeout(() => {
+    console.log(context.active().getValue(&quot;id&quot;)); // 1
+  }, 10);
+});
+
+// Outside, the context is still the same
+console.log(context.active().getValue(&quot;id&quot;)); // undefined
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The context API integrates with spans too. For example, to run a function in the
+context of a specific span, the span can be added to a context, and then the
+function can be run in that context:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> context<span class="token punctuation">,</span> trace <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"npm:@opentelemetry/api@1"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> tracer <span class="token operator">=</span> trace<span class="token punctuation">.</span><span class="token function">getTracer</span><span class="token punctuation">(</span><span class="token string">"my-app"</span><span class="token punctuation">,</span> <span class="token string">"1.0.0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> span <span class="token operator">=</span> tracer<span class="token punctuation">.</span><span class="token function">startSpan</span><span class="token punctuation">(</span><span class="token string">"myFunction"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> contextWithSpan <span class="token operator">=</span> trace<span class="token punctuation">.</span><span class="token function">setSpan</span><span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">active</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> span<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+context<span class="token punctuation">.</span><span class="token function">with</span><span class="token punctuation">(</span>contextWithSpan<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> activeSpan <span class="token operator">=</span> trace<span class="token punctuation">.</span><span class="token function">getActiveSpan</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>activeSpan <span class="token operator">===</span> span<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Don't forget to end the span!</span>
+span<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-694" class="copyButton" data-copy="import { context, trace } from &quot;npm:@opentelemetry/api@1&quot;;
+
+const tracer = trace.getTracer(&quot;my-app&quot;, &quot;1.0.0&quot;);
+
+const span = tracer.startSpan(&quot;myFunction&quot;);
+const contextWithSpan = trace.setSpan(context.active(), span);
+
+context.with(contextWithSpan, () => {
+  const activeSpan = trace.getActiveSpan();
+  console.log(activeSpan === span); // true
+});
+
+// Don't forget to end the span!
+span.end();
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Learn more about the full context API in the
+<a href="https://open-telemetry.github.io/opentelemetry-js/classes/_opentelemetry_api._opentelemetry_api.ContextAPI.html">OpenTelemetry JS API docs</a>.</p>
+<h2 id="configuration" tabindex="-1">Configuration <a class="header-anchor" href="#configuration"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The OpenTelemetry integration can be enabled by setting the <code>OTEL_DENO=true</code>
+environment variable.</p>
+<p>The endpoint and protocol for the OTLP exporter can be configured using the
+<code>OTEL_EXPORTER_OTLP_ENDPOINT</code> and <code>OTEL_EXPORTER_OTLP_PROTOCOL</code> environment
+variables. Supported values for <code>OTEL_EXPORTER_OTLP_PROTOCOL</code> are:</p>
+<ul>
+<li><code>http/protobuf</code> (default): Export using Protobuf over HTTP to the configured
+endpoint.</li>
+<li><code>http/json</code>: Export using JSON over HTTP to the configured endpoint.</li>
+<li><code>grpc</code>: Export using gRPC (Protobuf over HTTP/2). Available in Deno 2.8+.
+Useful for collectors that only accept gRPC, such as Azure Container Apps'
+managed OpenTelemetry agent. The default OTLP gRPC port is <code>4317</code>, so you
+typically also set <code>OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317</code>.</li>
+<li><code>console</code>: Print spans, logs, and metrics to stderr in a human-readable text
+format. This is useful for debugging and testing instrumentation without
+running an OTLP collector. When using <code>console</code>, no endpoint configuration is
+needed.</li>
+</ul>
+<p>If the endpoint requires authentication, headers can be configured using the
+<code>OTEL_EXPORTER_OTLP_HEADERS</code> environment variable.</p>
+<p>Endpoint can all be overridden individually for metrics, traces, and logs by
+using specific environment variables, such as:</p>
+<ul>
+<li><code>OTEL_EXPORTER_OTLP_METRICS_ENDPOINT</code></li>
+<li><code>OTEL_EXPORTER_OTLP_TRACES_ENDPOINT</code></li>
+<li><code>OTEL_EXPORTER_OTLP_LOGS_ENDPOINT</code></li>
+</ul>
+<p>For more information on headers that can be used to configure the OTLP exporter,
+<a href="https://opentelemetry.io/docs/specs/otel/protocol/exporter/#configuration-options">see the OpenTelemetry website</a>.</p>
+<p>The resource that is associated with the telemetry data can be configured using
+the <code>OTEL_SERVICE_NAME</code> and <code>OTEL_RESOURCE_ATTRIBUTES</code> environment variables. In
+addition to attributes set via the <code>OTEL_RESOURCE_ATTRIBUTES</code> environment
+variable, the following attributes are automatically set:</p>
+<ul>
+<li><code>service.name</code>: If <code>OTEL_SERVICE_NAME</code> is not set, the value is set to
+<code>&lt;unknown_service&gt;</code>.</li>
+<li><code>process.runtime.name</code>: <code>deno</code></li>
+<li><code>process.runtime.version</code>: The version of the Deno runtime.</li>
+<li><code>telemetry.sdk.name</code>: <code>deno-opentelemetry</code></li>
+<li><code>telemetry.sdk.language</code>: <code>deno-rust</code></li>
+<li><code>telemetry.sdk.version</code>: The version of the Deno runtime, plus the version of
+the <code>opentelemetry</code> Rust crate being used by Deno, separated by a <code>-</code>.</li>
+</ul>
+<p>Propagators can be configured using the <code>OTEL_PROPAGATORS</code> environment variable.
+The default value is <code>tracecontext,baggage</code>. Multiple propagators can be
+specified by separating them with commas. Currently supported propagators are:</p>
+<ul>
+<li><code>tracecontext</code>: W3C Trace Context propagation format</li>
+<li><code>baggage</code>: W3C Baggage propagation format</li>
+</ul>
+<p>Trace sampling can be configured with the <code>OTEL_TRACES_SAMPLER</code> environment
+variable. The supported values are:</p>
+<ul>
+<li><code>always_on</code> (the default): sample every trace.</li>
+<li><code>always_off</code>: sample no traces.</li>
+<li><code>traceidratio</code>: sample a fraction of traces based on the trace ID.</li>
+<li><code>parentbased_always_on</code>, <code>parentbased_always_off</code>, <code>parentbased_traceidratio</code>:
+respect the parent span's sampling decision when there is one, and fall back
+to the matching root sampler otherwise.</li>
+</ul>
+<p>For the ratio-based samplers, <code>OTEL_TRACES_SAMPLER_ARG</code> sets the sampling
+probability as a number between <code>0</code> and <code>1</code>. It defaults to <code>1.0</code>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">OTEL_DENO</span><span class="token operator">=</span>true <span class="token assign-left variable">OTEL_TRACES_SAMPLER</span><span class="token operator">=</span>traceidratio <span class="token assign-left variable">OTEL_TRACES_SAMPLER_ARG</span><span class="token operator">=</span><span class="token number">0.1</span> deno run <span class="token parameter variable">-A</span> main.ts
+</code></pre>
+
+      <button id="copy-button-833" class="copyButton" data-copy="OTEL_DENO=true OTEL_TRACES_SAMPLER=traceidratio OTEL_TRACES_SAMPLER_ARG=0.1 deno run -A main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Metric collection frequency can be configured using the
+<code>OTEL_METRIC_EXPORT_INTERVAL</code> environment variable. The default value is <code>60000</code>
+milliseconds (60 seconds).</p>
+<p>Span exporter batching can be configured using the batch span processor
+environment variables described in the
+<a href="https://opentelemetry.io/docs/specs/otel/configuration/sdk-environment-variables/#batch-span-processor">OpenTelemetry specification</a>.</p>
+<p>Log exporter batching can be configured using the batch log record processor
+environment variables described in the
+<a href="https://opentelemetry.io/docs/specs/otel/configuration/sdk-environment-variables/#batch-log-record-processor">OpenTelemetry specification</a>.</p>
+<h2 id="propagators" tabindex="-1">Propagators <a class="header-anchor" href="#propagators"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno supports context propagators which enable automatic propagation of trace
+context across process boundaries for distributed tracing, allowing you to track
+requests as they flow through different services.</p>
+<p>Propagators are responsible for encoding and decoding context information (like
+trace and span IDs) into and from carrier formats (like HTTP headers). This
+enables the trace context to be maintained across service boundaries.</p>
+<p>By default, Deno supports the following propagators:</p>
+<ul>
+<li><code>tracecontext</code>: The W3C Trace Context propagation format, which is the
+standard way to propagate trace context via HTTP headers.</li>
+<li><code>baggage</code>: The W3C Baggage propagation format, which allows passing key-value
+pairs across service boundaries.</li>
+</ul>
+<p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>These propagators automatically work with Deno's <a href="/api/web/~/fetch"><code>fetch</code></a> API
+and <a href="/api/deno/~/Deno.serve"><code>Deno.serve</code></a>, enabling end-to-end tracing across
+HTTP requests without manual context management.</p>
+<p>
+</p></div>
+<p></p>
+<p>You can access the propagation API through the <code>@opentelemetry/api</code> package:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> context<span class="token punctuation">,</span> propagation<span class="token punctuation">,</span> trace <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"npm:@opentelemetry/api@1"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Extract context from incoming headers</span>
+<span class="token keyword">function</span> <span class="token function">extractContextFromHeaders</span><span class="token punctuation">(</span>headers<span class="token operator">:</span> Headers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> ctx <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">active</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> propagation<span class="token punctuation">.</span><span class="token function">extract</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> headers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Inject context into outgoing headers</span>
+<span class="token keyword">function</span> <span class="token function">injectContextIntoHeaders</span><span class="token punctuation">(</span>headers<span class="token operator">:</span> Headers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> ctx <span class="token operator">=</span> context<span class="token punctuation">.</span><span class="token function">active</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  propagation<span class="token punctuation">.</span><span class="token function">inject</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> headers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> headers<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Example: Making a fetch request that propagates trace context</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">tracedFetch</span><span class="token punctuation">(</span>url<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> headers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Headers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">injectContextIntoHeaders</span><span class="token punctuation">(</span>headers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">{</span> headers <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-879" class="copyButton" data-copy="import { context, propagation, trace } from &quot;npm:@opentelemetry/api@1&quot;;
+
+// Extract context from incoming headers
+function extractContextFromHeaders(headers: Headers) {
+  const ctx = context.active();
+  return propagation.extract(ctx, headers);
+}
+
+// Inject context into outgoing headers
+function injectContextIntoHeaders(headers: Headers) {
+  const ctx = context.active();
+  propagation.inject(ctx, headers);
+  return headers;
+}
+
+// Example: Making a fetch request that propagates trace context
+async function tracedFetch(url: string) {
+  const headers = new Headers();
+  injectContextIntoHeaders(headers);
+
+  return await fetch(url, { headers });
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="limitations" tabindex="-1">Limitations <a class="header-anchor" href="#limitations"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>While the OpenTelemetry integration for Deno is in development, there are some
+limitations to be aware of:</p>
+<ul>
+<li>Traces only support links with no attributes.</li>
+<li>Metric exemplars are not supported.</li>
+<li>Custom log streams (e.g. logs other than <code>console.log</code> and <code>console.error</code>)
+are not supported.</li>
+<li>The supported exporters are OTLP (<code>http/protobuf</code>, <code>http/json</code>, <code>grpc</code>) and
+<code>console</code>. Other exporter formats are not supported.</li>
+<li>Metrics from observable (asynchronous) meters are not collected on process
+exit/crash, so the last value of metrics may not be exported. Synchronous
+metrics are exported on process exit/crash.</li>
+<li>The limits specified in the <code>OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT</code>,
+<code>OTEL_SPAN_LINK_COUNT_LIMIT</code>, <code>OTEL_EVENT_ATTRIBUTE_COUNT_LIMIT</code>, and
+<code>OTEL_LINK_ATTRIBUTE_COUNT_LIMIT</code> environment variable are not respected for
+trace spans. The per-span attribute limit (<code>OTEL_SPAN_ATTRIBUTE_COUNT_LIMIT</code>,
+falling back to <code>OTEL_ATTRIBUTE_COUNT_LIMIT</code>) and the per-span event limit
+(<code>OTEL_SPAN_EVENT_COUNT_LIMIT</code>) are respected, each defaulting to 128.</li>
+<li>The <code>OTEL_METRIC_EXPORT_TIMEOUT</code> environment variable is not respected.</li>
+<li>HTTP methods are that are not known are not normalized to <code>_OTHER</code> in the
+<code>http.request.method</code> span attribute as per the OpenTelemetry semantic
+conventions.</li>
+<li>The HTTP server span for <a href="/api/deno/~/Deno.serve"><code>Deno.serve</code></a> does not have
+an OpenTelemetry status set, and if the handler throws (ie <code>onError</code> is
+invoked), the span will not have an error status set and the error will not be
+attached to the span via event.</li>
+<li>There is no mechanism to add a <code>http.route</code> attribute to the HTTP client span
+for <a href="/api/web/~/fetch"><code>fetch</code></a>, or to update the span name to include the
+route.</li>
+</ul>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-06-17T00:00:00.000Z">June 17, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/fundamentals/cpu_profiling/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← CPU profiling</span></a><a href="/runtime/fundamentals/ffi/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">FFI →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/fundamentals/open_telemetry.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

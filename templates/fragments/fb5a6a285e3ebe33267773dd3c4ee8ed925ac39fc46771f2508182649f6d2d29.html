@@ -1,0 +1,404 @@
+
+
+<footer class=&quot;my-4 flex flex-row justify-center gap-4&quot;>
+  <p class=&quot;font-bold&quot;>
+    <a href=&quot;https://svelte.dev/docs/kit&quot;>Sveltekit docs</a>
+  </p>
+  <p class=&quot;font-bold&quot;>
+    <a href=&quot;https://docs.deno.com/&quot;>Deno docs</a>
+  </p>
+</footer>
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>As you see, we are seeing <code>{@render children()}</code> for the first time. This just
+works as an "outlet" if you are coming from the React world to render whatever
+other child page may need to be output.</p>
+<p>Going back to your application you can see our heading <code>h1</code> has a link to go
+back to the home page.</p>
+<h3 id="advanced-routing%2C-search-parameters%2C-and-styling" tabindex="-1">Advanced routing, search parameters, and styling <a class="header-anchor" href="#advanced-routing%2C-search-parameters%2C-and-styling"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>We don't want to render all of the dinosaurs at a single time; as that is too
+much to scroll through. We want our users to be able to search and click through
+pages of dinosaurs, which will also showcase another awesome Svelte 5 feature,
+snippets!</p>
+<p>Lets open our main page and its server page to make a few changes.</p>
+<p>Previously we were returning an array version of our dinosaurs, lets allow users
+to search them and add some pagination logic.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> dinosaurs <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"$lib/server/dino.js"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">load</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> url <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">//  We can access the search params by using the `url` provided</span>
+  <span class="token comment">// by SvelteKit</span>
+  <span class="token keyword">const</span> queryParams <span class="token operator">=</span> url<span class="token punctuation">.</span>searchParams<span class="token punctuation">;</span>
+
+  <span class="token comment">// We will use `q` as our search string</span>
+  <span class="token keyword">const</span> q <span class="token operator">=</span> queryParams<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"q"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// We will use `page` to know which page we are on</span>
+  <span class="token keyword">const</span> pageParam <span class="token operator">=</span> queryParams<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"page"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> page <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token comment">// We should verify there is a page param, if there is verify it is a number</span>
+  <span class="token comment">// otherwise use our default of 1</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>pageParam<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> parsedPage <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>pageParam<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isNaN</span><span class="token punctuation">(</span>parsedPage<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      page <span class="token operator">=</span> parsedPage<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> limitParam <span class="token operator">=</span> queryParams<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"limit"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> limit <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span>
+  <span class="token comment">// We should verify there is a limit param, if there is verify it is a number</span>
+  <span class="token comment">// otherwise use our default of 1</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>limitParam<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> parsedLimit <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>limitParam<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isNaN</span><span class="token punctuation">(</span>parsedLimit<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      limit <span class="token operator">=</span> parsedLimit<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// We want to allow searching and if there is no `q` to search against</span>
+  <span class="token comment">// allow all dinosaurs, otherwise compare the names in lowercase against one</span>
+  <span class="token comment">// another.</span>
+  <span class="token keyword">const</span> filteredDinosaurs <span class="token operator">=</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>dinosaurs<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> d<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>q<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Here we calculate how we need to slice the array of filtered dinosaurs to return to the user</span>
+  <span class="token keyword">const</span> offset <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token punctuation">(</span>page <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> limit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> paginatedDinosaurs <span class="token operator">=</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>filteredDinosaurs<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>
+    offset<span class="token punctuation">,</span>
+    offset <span class="token operator">+</span> limit<span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> totalDinosaurs <span class="token operator">=</span> filteredDinosaurs<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> totalPages <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>totalDinosaurs <span class="token operator">/</span> limit<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Last we are returning a lot more data so it is easier to render</span>
+  <span class="token comment">// our pagination and dinosaurs on the page.</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    dinosaurs<span class="token operator">:</span> paginatedDinosaurs<span class="token punctuation">,</span>
+    q<span class="token punctuation">,</span>
+    page<span class="token punctuation">,</span>
+    limit<span class="token punctuation">,</span>
+    totalPages<span class="token punctuation">,</span>
+    totalDinosaurs<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-288" class="copyButton" data-copy="import { dinosaurs } from &quot;$lib/server/dino.js&quot;;
+
+export const load = async ({ url }) => {
+  //  We can access the search params by using the `url` provided
+  // by SvelteKit
+  const queryParams = url.searchParams;
+
+  // We will use `q` as our search string
+  const q = queryParams.get(&quot;q&quot;);
+  // We will use `page` to know which page we are on
+  const pageParam = queryParams.get(&quot;page&quot;);
+  let page = 1;
+  // We should verify there is a page param, if there is verify it is a number
+  // otherwise use our default of 1
+  if (pageParam) {
+    const parsedPage = parseInt(pageParam);
+    if (!isNaN(parsedPage)) {
+      page = parsedPage;
+    }
+  }
+  const limitParam = queryParams.get(&quot;limit&quot;);
+  let limit = 25;
+  // We should verify there is a limit param, if there is verify it is a number
+  // otherwise use our default of 1
+  if (limitParam) {
+    const parsedLimit = parseInt(limitParam);
+    if (!isNaN(parsedLimit)) {
+      limit = parsedLimit;
+    }
+  }
+
+  // We want to allow searching and if there is no `q` to search against
+  // allow all dinosaurs, otherwise compare the names in lowercase against one
+  // another.
+  const filteredDinosaurs = Array.from(dinosaurs.values()).filter((d) => {
+    if (!q) {
+      return true;
+    }
+
+    return d.name.toLowerCase().includes(q.toLowerCase());
+  });
+
+  // Here we calculate how we need to slice the array of filtered dinosaurs to return to the user
+  const offset = Math.abs((page - 1) * limit);
+  const paginatedDinosaurs = Array.from(filteredDinosaurs).slice(
+    offset,
+    offset + limit,
+  );
+  const totalDinosaurs = filteredDinosaurs.length;
+  const totalPages = Math.ceil(totalDinosaurs / limit);
+
+  // Last we are returning a lot more data so it is easier to render
+  // our pagination and dinosaurs on the page.
+  return {
+    dinosaurs: paginatedDinosaurs,
+    q,
+    page,
+    limit,
+    totalPages,
+    totalDinosaurs,
+  };
+};
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Wuuf, that was a lot of work, and with it out of the way lets get some
+pagination and search inputs added to the UI!</p>
+<div class="relative"><pre><code class="highlight notranslate language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ts<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">import</span> <span class="token punctuation">{</span> goto<span class="token punctuation">,</span> invalidate<span class="token punctuation">,</span> replaceState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"$app/navigation"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> page <span class="token keyword">as</span> sveltePage <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"$app/state"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> <span class="token punctuation">{</span> data <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">$props</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// We have added a function to change the page number</span>
+<span class="token comment">// based on the search params and the value passed in.</span>
+<span class="token keyword">function</span> <span class="token function">handlePageChange</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">page</span><span class="token operator">:</span> number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span>sveltePage<span class="token punctuation">.</span>url<span class="token punctuation">.</span>searchParams<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  params<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"page"</span><span class="token punctuation">,</span> page<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">goto</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">?</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>params<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">keepFocus</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// This function checks if there is a q in the form below</span>
+<span class="token comment">// and if so search by it or remove the search params</span>
+<span class="token comment">// and either way reset the current page.</span>
+<span class="token keyword">function</span> <span class="token function">handleQueryChange</span><span class="token punctuation">(</span>
+  <span class="token parameter"><span class="token literal-property property">event</span><span class="token operator">:</span> SubmitEvent <span class="token operator">&amp;</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">currentTarget</span><span class="token operator">:</span> EventTarget <span class="token operator">&amp;</span> HTMLFormElement<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span></span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> q <span class="token operator">=</span> event<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>q<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span>sveltePage<span class="token punctuation">.</span>url<span class="token punctuation">.</span>searchParams<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>q<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    params<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"q"</span><span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    params<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"page"</span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">goto</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">?</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>params<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">keepFocus</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    params<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"q"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    params<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token string">"page"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">goto</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">?</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>params<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">keepFocus</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token special-attr"><span class="token attr-name">onsubmit</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token value javascript language-javascript"><span class="token punctuation">{</span>handleQueryChange<span class="token punctuation">}</span></span></span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-2 block text-sm font-bold<span class="token punctuation">"</span></span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>q<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Search<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+    <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>focus:shadow-outline w-ful form-input appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none<span class="token punctuation">"</span></span>
+    <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span>
+    <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>q<span class="token punctuation">"</span></span>
+    <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>q<span class="token punctuation">"</span></span>
+    <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Search<span class="token punctuation">"</span></span>
+    <span class="token attr-name">defaultValue</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>{data.q</span> <span class="token attr-name">??</span> <span class="token attr-name">''}</span>
+  <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-4 grid max-h-96 grid-cols-2 gap-4 overflow-y-auto<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+	{#each data.dinosaurs as item}
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rounded border p-4<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/{item.name}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>{item.name}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+	{/each}
+
+	{#if data.dinosaurs.length === 0}
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>No dinosaurs found<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+	{/if}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- pagination --&gt;</span>
+{#if data.totalPages &gt; 0}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-4 flex justify-center<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid w-1/2 grid-flow-col gap-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+			{@render pageButton(data.page - 1, data.page === 1, false, '←')}
+
+			{#each { length: data.totalPages }, page}
+				{#if page &gt;= data.page - 2 &amp;&amp; page &lt;= data.page + 2}
+					{@render pageButton(page + 1, data.page === page + 1, data.page === page + 1, page + 1)}
+				{:else if (page === 0 || page === 1) &amp;&amp; page !== data.page - 1}
+					{@render pageButton(page + 1, data.page === page + 1, data.page === page + 1, page + 1)}
+				{:else if page &gt;= data.totalPages - 2 &amp;&amp; page !== data.page - 1}
+					{@render pageButton(page + 1, data.page === page + 1, data.page === page + 1, page + 1)}
+				{/if}
+			{/each}
+
+			{@render pageButton(data.page + 1, data.page === data.totalPages, false, '→')}
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+{/if}
+
+{#snippet pageButton(page: number, disabled: boolean, active: boolean, child: string | number)}
+	&lt;button
+  class="rounded border p-4"
+  class:disabled
+  {disabled}
+  class:active
+  type="button"
+  onclick={() =&gt; handlePageChange(page)}
+&gt;
+		{child}
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+{/snippet}
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>postcss<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+	<span class="token selector">.active</span> <span class="token punctuation">{</span>
+		<span class="token atrule"><span class="token rule">@apply</span> bg-emerald-400 text-white<span class="token punctuation">;</span></span>
+	<span class="token punctuation">}</span>
+
+	<span class="token selector">.disabled</span> <span class="token punctuation">{</span>
+		<span class="token atrule"><span class="token rule">@apply</span> cursor-not-allowed opacity-50<span class="token punctuation">;</span></span>
+	<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+      <button id="copy-button-292" class="copyButton" data-copy="<script lang=&quot;ts&quot;>
+import { goto, invalidate, replaceState } from &quot;$app/navigation&quot;;
+import { page as sveltePage } from &quot;$app/state&quot;;
+
+let { data } = $props();
+
+// We have added a function to change the page number
+// based on the search params and the value passed in.
+function handlePageChange(page: number) {
+  const params = new URLSearchParams(sveltePage.url.searchParams);
+
+  params.set(&quot;page&quot;, page.toString());
+  goto(`?${params.toString()}`, { keepFocus: true });
+}
+
+// This function checks if there is a q in the form below
+// and if so search by it or remove the search params
+// and either way reset the current page.
+function handleQueryChange(
+  event: SubmitEvent &amp; {
+    currentTarget: EventTarget &amp; HTMLFormElement;
+  },
+) {
+  event.preventDefault();
+  const q = event.currentTarget.q.value;
+  const params = new URLSearchParams(sveltePage.url.searchParams);
+
+  if (q) {
+    params.set(&quot;q&quot;, q);
+    params.set(&quot;page&quot;, &quot;1&quot;);
+    goto(`?${params.toString()}`, { keepFocus: true });
+  } else {
+    params.delete(&quot;q&quot;);
+    params.delete(&quot;page&quot;);
+    goto(`?${params.toString()}`, { keepFocus: true });
+  }
+}
+</script>
+
+<form onsubmit={handleQueryChange} class=&quot;mb-4&quot;>
+  <label class=&quot;mb-2 block text-sm font-bold&quot; for=&quot;q&quot;>Search</label>
+  <input
+    class=&quot;focus:shadow-outline w-ful form-input appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none&quot;
+    type=&quot;text&quot;
+    id=&quot;q&quot;
+    name=&quot;q&quot;
+    placeholder=&quot;Search&quot;
+    defaultValue={data.q ?? ''}
+  />
+</form>
+
+<section class=&quot;mb-4 grid max-h-96 grid-cols-2 gap-4 overflow-y-auto&quot;>
+	{#each data.dinosaurs as item}
+		<a class=&quot;rounded border p-4&quot; href=&quot;/{item.name}&quot;>{item.name}</a>
+	{/each}
+
+	{#if data.dinosaurs.length === 0}
+		<p>No dinosaurs found</p>
+	{/if}
+</section>
+
+<!-- pagination -->
+{#if data.totalPages > 0}
+	<div class=&quot;mb-4 flex justify-center&quot;>
+  <div class=&quot;grid w-1/2 grid-flow-col gap-2&quot;>
+			{@render pageButton(data.page - 1, data.page === 1, false, '←')}
+
+			{#each { length: data.totalPages }, page}
+				{#if page >= data.page - 2 &amp;&amp; page <= data.page + 2}
+					{@render pageButton(page + 1, data.page === page + 1, data.page === page + 1, page + 1)}
+				{:else if (page === 0 || page === 1) &amp;&amp; page !== data.page - 1}
+					{@render pageButton(page + 1, data.page === page + 1, data.page === page + 1, page + 1)}
+				{:else if page >= data.totalPages - 2 &amp;&amp; page !== data.page - 1}
+					{@render pageButton(page + 1, data.page === page + 1, data.page === page + 1, page + 1)}
+				{/if}
+			{/each}
+
+			{@render pageButton(data.page + 1, data.page === data.totalPages, false, '→')}
+		</div>
+</div>
+{/if}
+
+{#snippet pageButton(page: number, disabled: boolean, active: boolean, child: string | number)}
+	<button
+  class=&quot;rounded border p-4&quot;
+  class:disabled
+  {disabled}
+  class:active
+  type=&quot;button&quot;
+  onclick={() => handlePageChange(page)}
+>
+		{child}
+	</button>
+{/snippet}
+
+<style lang=&quot;postcss&quot;>
+	.active {
+		@apply bg-emerald-400 text-white;
+	}
+
+	.disabled {
+		@apply cursor-not-allowed opacity-50;
+	}
+</style>
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Notice for the input we use <code>defaultValue={data.q ?? ''}</code> so that when it is
+rendered in the UI we don't get <code>undefined</code> or <code>null</code> showing.</p>
+<p>With snippets you can create reusable parts of Svelte code for easier rendering.
+<code>{#snippet pageButton(...)}</code> allows us to define the section to be rendered. We
+can then use it and pass the required type safe parameters using
+<code>{@render pageButton(...)}</code>. You can see this for all of the pagination buttons.</p>
+<p>Another neat Svelte trick is whenever <code>&lt;style&gt;</code> is defined on the page, it is
+scoped only to the file it is used in. So we are able to add these classes
+knowing that it will not affect any of our other files if they also used that
+styling.</p>
+<p>I have updated some of the styling to make it more pleasant to look at, but I
+know you have great taste and are free to make it look however you'd like!</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-08-17T00:00:00.000Z">August 17, 2026</time></p></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/examples/tutorials/sveltekit.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main><div class="hidden sticky top-header max-h-[calc(100dvh-var(--header-height))] border-l border-l-foreground-tertiary pt-1.5 lg:flex lg:flex-col lg:w-full"><h2 id="on-this-page" class="px-4 pt-4 leading-none pb-2 uppercase text-smaller font-bold tracking-wide text-foreground-secondary">This page</h2><ul class="toc-list overflow-y-auto scrollbar-none [&amp;::-webkit-scrollbar]:hidden flex flex-col flex-1 min-h-0 pb-4 pl-0" id="toc" aria-labelledby="on-this-page"><li class="leading-tight text-balance"><a href="#getting-started" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Getting started </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#deno-setup" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deno setup </a></li><li class="leading-tight text-balance"><a href="#walkthrough" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Walkthrough </a></li><li class="leading-tight text-balance"><a href="#setup-our-%22database%22" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Setup our "database" </a></li><li class="leading-tight text-balance"><a href="#loading-data-to-be-rendered" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Loading data to be rendered </a></li><li class="leading-tight text-balance"><a href="#adding-an-individual-dino-page" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Adding an individual Dino page </a></li><li class="leading-tight text-balance"><a href="#layouts" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Layouts </a></li><li class="leading-tight text-balance"><a href="#advanced-routing%2C-search-parameters%2C-and-styling" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Advanced routing, search parameters, and styling </a></li></ul></li></ul></div></div><footer class="text-smaller bg-gray-50 dark:bg-gray-950 p-4 pt-12 border-t border-t-foreground-tertiary"><nav class="flex flex-col gap-x-4 gap-y-12 w-max max-w-full md:flex-row md:flex-wrap md:justify-between md:gap-16 lg:gap-24"><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Deno Docs</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="/runtime/">Deno Runtime</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/examples/">Examples</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://jsr.io/@std">Standard Library</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/api/deno/">Deno API Reference</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Services Docs</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="/deploy/">Deno Deploy </a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/deploy/classic/">Deno Deploy Classic</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/subhosting/manual/">Deno Subhosting</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Community</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="https://discord.gg/deno">Discord</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://github.com/denoland">GitHub</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://youtube.com/@deno_land">YouTube</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://bsky.app/profile/deno.land">Bluesky</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://fosstodon.org/@deno_land">Mastodon</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://twitter.com/deno_land">Twitter</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://deno.news/">Newsletter</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Help &amp; Feedback</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="https://discord.gg/deno">Community Support</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://denostatus.com">Deploy System Status</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://github.com/denoland/deploy_feedback">Deploy Feedback</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="mailto:support@deno.com">Report a Problem</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Company</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="https://deno.com/">Deno Website</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://deno.com/blog">Blog</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/deploy/privacy_policy">Privacy Policy</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/llms.txt">LLMs</a></li></ul></section></nav><p class="m-0 mt-16 mx-auto text-xs text-foreground-secondary">Copyright © 2026 the Deno authors.</p></footer></body></html>

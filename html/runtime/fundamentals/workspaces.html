@@ -1,0 +1,1764 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#example" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Example </a></li><li class="leading-tight text-balance"><a href="#workspace-path-patterns" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Workspace path patterns </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#recursive-matching" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Recursive matching </a></li><li class="leading-tight text-balance"><a href="#excluding-members" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Excluding members </a></li></ul></li><li class="leading-tight text-balance"><a href="#how-deno-resolves-workspace-dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">How Deno resolves workspace dependencies </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#important-note-for-containerization" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Important note for containerization </a></li></ul></li><li class="leading-tight text-balance"><a href="#multiple-package-entries" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Multiple package entries </a></li><li class="leading-tight text-balance"><a href="#publishing-workspace-packages-to-registries" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Publishing workspace packages to registries </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#publishing-to-jsr" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Publishing to JSR </a></li><li class="leading-tight text-balance"><a href="#excluding-a-workspace-member-from-publish" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Excluding a workspace member from publish </a></li><li class="leading-tight text-balance"><a href="#managing-interdependent-packages" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Managing interdependent packages </a></li></ul></li><li class="leading-tight text-balance"><a href="#migrating-from-npm-workspaces" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Migrating from npm workspaces </a></li><li class="leading-tight text-balance"><a href="#configuring-built-in-deno-tools" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Configuring built-in Deno tools </a></li><li class="leading-tight text-balance"><a href="#running-commands-across-workspaces" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Running commands across workspaces </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#type-checking" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Type checking </a></li><li class="leading-tight text-balance"><a href="#running-tests" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Running tests </a></li><li class="leading-tight text-balance"><a href="#formatting-and-linting" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Formatting and linting </a></li><li class="leading-tight text-balance"><a href="#using-workspace-tasks" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Using workspace tasks </a></li></ul></li><li class="leading-tight text-balance"><a href="#sharing-and-managing-dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Sharing and managing dependencies </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#sharing-development-dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Sharing development dependencies </a></li><li class="leading-tight text-balance"><a href="#managing-version-conflicts" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Managing version conflicts </a></li><li class="leading-tight text-balance"><a href="#interdependent-workspace-members" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Interdependent workspace members </a></li><li class="leading-tight text-balance"><a href="#using-workspace-protocol-in-package.json" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Using workspace protocol in package.json </a></li></ul></li><li class="leading-tight text-balance"><a href="#centralized-dependency-versions-with-catalog%3A" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Centralized dependency versions with catalog: </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#named-catalogs" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Named catalogs </a></li><li class="leading-tight text-balance"><a href="#catalogs-in-package.json" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Catalogs in package.json </a></li><li class="leading-tight text-balance"><a href="#restrictions" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Restrictions </a></li></ul></li><li class="leading-tight text-balance"><a href="#npm-and-pnpm-workspace-compatibility" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">npm and pnpm workspace compatibility </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Concepts</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/fundamentals/workspaces.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Ffundamentals%2Fworkspaces.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Workspaces and monorepos</h1></div><p>Deno supports workspaces, also known as "monorepos", which allow you to manage
+multiple related and interdependent packages simultaneously.</p>
+<p>A "workspace" is a collection of folders containing
+<a href="/runtime/fundamentals/configuration/"><code>deno.json</code></a> or <code>package.json</code>
+configuration files. The root <code>deno.json</code> file defines the workspace:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./add"</span><span class="token punctuation">,</span> <span class="token string">"./subtract"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-6" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [&quot;./add&quot;, &quot;./subtract&quot;]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This configures a workspace with <code>add</code> and <code>subtract</code> members, which are
+directories expected to have <code>deno.json(c)</code> and/or <code>package.json</code> files.</p>
+<p>Each workspace member directory can contain:</p>
+<ul>
+<li>Only a <code>deno.json</code> (Deno-first package)</li>
+<li>Both a <code>deno.json</code> and a <code>package.json</code> (hybrid package – useful while
+migrating or when you need Node metadata as well as Deno config)</li>
+<li>Only a <code>package.json</code> (Node-first package that still participates in the Deno
+workspace)</li>
+</ul>
+<p>When a member contains only a <code>package.json</code>, you can still import it from
+anywhere else in the workspace using the <code>name</code> field specified in that
+<code>package.json</code> (for example
+<code>import { something } from "@scope/my-node-only-pkg";</code>). Deno will resolve that
+bare specifier as long as the directory is listed in the root workspace
+configuration. This lets you gradually adopt Deno tooling without having to add
+a <code>deno.json</code> to every existing Node package up front.</p>
+<p>
+</p><div class="admonition info">
+  <div class="title">Naming</div>
+
+<p></p>
+<p>Deno uses <code>workspace</code> rather than npm's <code>workspaces</code> to represent a singular
+workspace with multiple members.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="example" tabindex="-1">Example <a class="header-anchor" href="#example"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Let's expand on the <code>deno.json</code> workspace example and see its functionality. The
+file hierarchy looks like this:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">/
+├── deno.json
+├── main.ts
+├── add/
+│     ├── deno.json
+│     └── mod.ts
+└── subtract/
+      ├── deno.json
+      └── mod.ts
+</code></pre>
+
+      <button id="copy-button-48" class="copyButton" data-copy="/
+├── deno.json
+├── main.ts
+├── add/
+│     ├── deno.json
+│     └── mod.ts
+└── subtract/
+      ├── deno.json
+      └── mod.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>There are two workspace members (add and subtract), each with <code>mod.ts</code> files.
+There is also a root <code>deno.json</code> and a <code>main.ts</code>.</p>
+<p>The top-level <code>deno.json</code> configuration file defines the workspace and a
+top-level import map applied to all members:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./add"</span><span class="token punctuation">,</span> <span class="token string">"./subtract"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"chalk"</span><span class="token operator">:</span> <span class="token string">"npm:chalk@5"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-55" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [&quot;./add&quot;, &quot;./subtract&quot;],
+  &quot;imports&quot;: {
+    &quot;chalk&quot;: &quot;npm:chalk@5&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The root <code>main.ts</code> file uses the <code>chalk</code> bare specifier from the import map and
+imports the <code>add</code> and <code>subtract</code> functions from the workspace members. Note that
+it imports them using <code>@scope/add</code> and <code>@scope/subtract</code>, even though these are
+not proper URLs and aren't in the import map. How are they resolved?</p>
+<div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> chalk <span class="token keyword">from</span> <span class="token string">"chalk"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> add <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@scope/add"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> subtract <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@scope/subtract"</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"1 + 2 ="</span><span class="token punctuation">,</span> chalk<span class="token punctuation">.</span><span class="token function">green</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"2 - 4 ="</span><span class="token punctuation">,</span> chalk<span class="token punctuation">.</span><span class="token function">red</span><span class="token punctuation">(</span><span class="token function">subtract</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-59" class="copyButton" data-copy="import chalk from &quot;chalk&quot;;
+import { add } from &quot;@scope/add&quot;;
+import { subtract } from &quot;@scope/subtract&quot;;
+
+console.log(&quot;1 + 2 =&quot;, chalk.green(add(1, 2)));
+console.log(&quot;2 - 4 =&quot;, chalk.red(subtract(2, 4)));
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>In the <code>add/</code> subdirectory, we define a <code>deno.json</code> with a <code>"name"</code> field, which
+is important for referencing the workspace member. The <code>deno.json</code> file also
+contains example configurations, like turning off semicolons when using
+<code>deno fmt</code>.</p>
+<div><div class="markdownBlockTitle">add/deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@scope/add"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.1.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"exports"</span><span class="token operator">:</span> <span class="token string">"./mod.ts"</span><span class="token punctuation">,</span>
+  <span class="token property">"fmt"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"semiColons"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-63" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;@scope/add&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;exports&quot;: &quot;./mod.ts&quot;,
+  &quot;fmt&quot;: {
+    &quot;semiColons&quot;: false
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">add/mod.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-64" class="copyButton" data-copy="export function add(a: number, b: number): number {
+  return a + b;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The <code>subtract/</code> subdirectory is similar but does not have the same <code>deno fmt</code>
+configuration.</p>
+<div><div class="markdownBlockTitle">subtract/deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@scope/subtract"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.3.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"exports"</span><span class="token operator">:</span> <span class="token string">"./mod.ts"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-68" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;@scope/subtract&quot;,
+  &quot;version&quot;: &quot;0.3.0&quot;,
+  &quot;exports&quot;: &quot;./mod.ts&quot;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">subtract/mod.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> add <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@scope/add"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">subtract</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b <span class="token operator">*</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-69" class="copyButton" data-copy="import { add } from &quot;@scope/add&quot;;
+
+export function subtract(a: number, b: number): number {
+  return add(a, b * -1);
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Let's run it:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token operator">&gt;</span> deno run main.ts
+<span class="token number">1</span> + <span class="token number">2</span> <span class="token operator">=</span> <span class="token number">3</span>
+<span class="token number">2</span> - <span class="token number">4</span> <span class="token operator">=</span> <span class="token parameter variable">-2</span>
+</code></pre>
+
+      <button id="copy-button-73" class="copyButton" data-copy="> deno run main.ts
+1 + 2 = 3
+2 - 4 = -2
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>There's a lot to unpack here, showcasing some of the Deno workspace features:</p>
+<ol>
+<li>
+<p>This monorepo consists of two packages, placed in <code>./add</code> and <code>./subtract</code>
+directories.</p>
+</li>
+<li>
+<p>By using <code>name</code> and <code>version</code> options in members' <code>deno.json</code> files, it's
+possible to refer to them using "bare specifiers" across the whole workspace.
+In this case, the packages are named <code>@scope/add</code> and <code>@scope/subtract</code>,
+where <code>scope</code> is the "scope" name you can choose. With these two options,
+it's not necessary to use long and relative file paths in import statements.</p>
+</li>
+<li>
+<p><code>npm:chalk@5</code> package is a shared dependency in the entire workspace.
+Workspace members "inherit" <code>imports</code> of the workspace root, allowing to
+easily manage a single version of a dependency across the codebase.</p>
+</li>
+<li>
+<p><code>add</code> subdirectory specifies in its <code>deno.json</code> that <code>deno fmt</code> should not
+apply semicolons when formatting the code. This makes for a much smoother
+transition for existing projects, without a need to change tens or hundreds
+of files in one go.</p>
+</li>
+</ol>
+<hr>
+<p>Deno workspaces are flexible and can work with Node packages. To make migration
+for existing Node.js projects easier you can have both Deno-first and Node-first
+packages in a single workspace.</p>
+<h2 id="workspace-path-patterns" tabindex="-1">Workspace path patterns <a class="header-anchor" href="#workspace-path-patterns"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno supports pattern matching for workspace member folders, making it easier to
+manage workspaces with many members or with a specific directory structure. You
+can use wildcard patterns to include multiple directories at once:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"some-dir/*"</span><span class="token punctuation">,</span>
+    <span class="token string">"other-dir/*/*"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-109" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [
+    &quot;some-dir/*&quot;,
+    &quot;other-dir/*/*&quot;
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>
+</p><div class="admonition info">
+  <div class="title">Info</div>
+
+<p></p>
+<p>Pattern support was added in Deno 2.1.</p>
+<p>
+</p></div>
+<p></p>
+<p>The pattern matching syntax follows specific rules regarding folder depth:</p>
+<p><code>some-path/*</code> matches files and directories directly within <code>some-path</code> (first
+level of indentation only). For example, with <code>packages/*</code>, this includes
+<code>packages/foo</code> and <code>packages/bar</code> but not <code>packages/foo/subpackage</code>.</p>
+<p><code>some-path/*/*</code> matches the files and directories located within subdirectories
+of <code>some-path</code> (second level of indentation). It does not match items directly
+within <code>some-path</code>. For example, with <code>examples/*/*</code>, this includes
+<code>examples/basic/demo</code> and <code>examples/advanced/sample</code> but not <code>examples/basic</code>.</p>
+<p>Each <code>/*</code> segment in the pattern corresponds to a specific folder depth relative
+to the base path. This allows for precise targeting of workspace members at
+different levels within your directory structure.</p>
+<h3 id="recursive-matching" tabindex="-1">Recursive matching <a class="header-anchor" href="#recursive-matching"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Use <code>**</code> to match directories at any depth below a base path, instead of pinning
+to a single level. For example, <code>packages/**</code> matches <code>packages/foo</code>,
+<code>packages/foo/subpackage</code>, and any deeper directories that contain a config
+file:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"packages/**"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-137" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [&quot;packages/**&quot;]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="excluding-members" tabindex="-1">Excluding members <a class="header-anchor" href="#excluding-members"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Prefix a pattern with <code>!</code> to exclude directories that an earlier pattern would
+otherwise include. This is handy when a wildcard sweeps up a directory you don't
+want as a workspace member. Both literal paths and globs work after the <code>!</code>:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"packages/*"</span><span class="token punctuation">,</span>
+    <span class="token string">"!packages/internal"</span><span class="token punctuation">,</span>
+    <span class="token string">"!packages/*/fixtures"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-144" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [
+    &quot;packages/*&quot;,
+    &quot;!packages/internal&quot;,
+    &quot;!packages/*/fixtures&quot;
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Here <code>packages/*</code> includes every directory under <code>packages</code>, then the two
+exclusions drop <code>packages/internal</code> and any <code>fixtures</code> directory one level down.</p>
+<h2 id="how-deno-resolves-workspace-dependencies" tabindex="-1">How Deno resolves workspace dependencies <a class="header-anchor" href="#how-deno-resolves-workspace-dependencies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>When running a project in a workspace that imports from another workspace
+member, Deno follows these steps to resolve the dependencies:</p>
+<ol>
+<li>Deno starts in the directory of the executing project (e.g., project A)</li>
+<li>It looks up in the parent directory for a root <code>deno.json</code> file</li>
+<li>If found, it checks for the <code>workspace</code> property in that file</li>
+<li>For each import statement in project A, Deno checks if the import matches a
+package name defined in any workspace member's <code>deno.json</code></li>
+<li>If a matching package name is found, Deno verifies that the containing
+directory is listed in the root workspace configuration</li>
+<li>The import is then resolved to the correct file using the <code>exports</code> field in
+the workspace member's <code>deno.json</code></li>
+</ol>
+<p>For example, given this structure:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">/
+├── deno.json         <span class="token comment"># workspace: ["./project-a", "./project-b"]</span>
+├── project-a/
+│   ├── deno.json     <span class="token comment"># name: "@scope/project-a"</span>
+│   └── mod.ts        <span class="token comment"># imports from "@scope/project-b"</span>
+└── project-b/
+    ├── deno.json     <span class="token comment"># name: "@scope/project-b"</span>
+    └── mod.ts
+</code></pre>
+
+      <button id="copy-button-189" class="copyButton" data-copy="/
+├── deno.json         # workspace: [&quot;./project-a&quot;, &quot;./project-b&quot;]
+├── project-a/
+│   ├── deno.json     # name: &quot;@scope/project-a&quot;
+│   └── mod.ts        # imports from &quot;@scope/project-b&quot;
+└── project-b/
+    ├── deno.json     # name: &quot;@scope/project-b&quot;
+    └── mod.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>When <code>project-a/mod.ts</code> imports from <code>"@scope/project-b"</code>, Deno:</p>
+<ol>
+<li>Sees the import statement</li>
+<li>Checks parent directory's <code>deno.json</code></li>
+<li>Finds <code>project-b</code> in the workspace array</li>
+<li>Verifies <code>project-b/deno.json</code> exists and has matching package name</li>
+<li>Resolves the import using <code>project-b</code>'s exports</li>
+</ol>
+<h3 id="important-note-for-containerization" tabindex="-1">Important note for containerization <a class="header-anchor" href="#important-note-for-containerization"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>When containerizing a workspace member that depends on other workspace members,
+you must include:</p>
+<ol>
+<li>The root <code>deno.json</code> file</li>
+<li>All dependent workspace packages</li>
+<li>The same directory structure as your development environment</li>
+</ol>
+<p>For example, if dockerizing <code>project-a</code> above, your Dockerfile should:</p>
+<div class="relative"><pre><code class="highlight notranslate language-dockerfile">COPY deno.json /app/deno.json
+COPY project-a/ /app/project-a/
+COPY project-b/ /app/project-b/
+</code></pre>
+
+      <button id="copy-button-246" class="copyButton" data-copy="COPY deno.json /app/deno.json
+COPY project-a/ /app/project-a/
+COPY project-b/ /app/project-b/
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>This preserves the workspace resolution mechanism that Deno uses to find and
+import workspace dependencies.</p>
+<h2 id="multiple-package-entries" tabindex="-1">Multiple package entries <a class="header-anchor" href="#multiple-package-entries"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>exports</code> property details the entry points and exposes which modules should
+be importable by users of your package.</p>
+<p>So far, our package only has a single entry. This is fine for simple packages,
+but often you'll want to have multiple entries that group relevant aspects of
+your package. This can be done by passing an <code>object</code> instead of a <code>string</code> to
+<code>exports</code>:</p>
+<div><div class="markdownBlockTitle">my-package/deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@scope/my-package"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.3.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"exports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"."</span><span class="token operator">:</span> <span class="token string">"./mod.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"./foo"</span><span class="token operator">:</span> <span class="token string">"./foo.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"./other"</span><span class="token operator">:</span> <span class="token string">"./dir/other.ts"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-259" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;@scope/my-package&quot;,
+  &quot;version&quot;: &quot;0.3.0&quot;,
+  &quot;exports&quot;: {
+    &quot;.&quot;: &quot;./mod.ts&quot;,
+    &quot;./foo&quot;: &quot;./foo.ts&quot;,
+    &quot;./other&quot;: &quot;./dir/other.ts&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The <code>"."</code> entry is the default entry that's picked when importing
+<code>@scope/my-package</code>. Therefore, the above <code>deno.json</code> example provides the
+following entries:</p>
+<ul>
+<li><code>@scope/my-package</code></li>
+<li><code>@scope/my-package/foo</code></li>
+<li><code>@scope/my-package/other</code></li>
+</ul>
+<h2 id="publishing-workspace-packages-to-registries" tabindex="-1">Publishing workspace packages to registries <a class="header-anchor" href="#publishing-workspace-packages-to-registries"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Workspaces make it easy to publish packages to registries like JSR or NPM. You
+can publish individual workspace members while keeping their development
+connected in your monorepo.</p>
+<h4 id="publishing-to-jsr" tabindex="-1">Publishing to JSR <a class="header-anchor" href="#publishing-to-jsr"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>To publish a workspace package to JSR, follow these steps:</p>
+<ol>
+<li>Ensure each package has the appropriate metadata in its <code>deno.json</code>:</li>
+</ol>
+<div><div class="markdownBlockTitle">my-package/deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@scope/my-package"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"exports"</span><span class="token operator">:</span> <span class="token string">"./mod.ts"</span><span class="token punctuation">,</span>
+  <span class="token property">"publish"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"tests/"</span><span class="token punctuation">,</span> <span class="token string">"*.test.ts"</span><span class="token punctuation">,</span> <span class="token string">"examples/"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-299" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;@scope/my-package&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;exports&quot;: &quot;./mod.ts&quot;,
+  &quot;publish&quot;: {
+    &quot;exclude&quot;: [&quot;tests/&quot;, &quot;*.test.ts&quot;, &quot;examples/&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><ol start="2">
+<li>Navigate to the specific package directory and publish:</li>
+</ol>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token builtin class-name">cd</span> my-package
+deno publish
+</code></pre>
+
+      <button id="copy-button-307" class="copyButton" data-copy="cd my-package
+deno publish
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h4 id="excluding-a-workspace-member-from-publish" tabindex="-1">Excluding a workspace member from publish <a class="header-anchor" href="#excluding-a-workspace-member-from-publish"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Workspaces often contain members that are not meant to be published, such as
+internal helpers, examples, or packages that only exist to host shared <code>tasks</code>.
+By default <code>deno publish</code> will try to publish every workspace member that has a
+<code>name</code> and <code>exports</code>, and will error if any of them is missing a <code>version</code>.</p>
+<p>To opt a member out of <code>deno publish</code>, set <code>"publish": false</code> in that member's
+<code>deno.json</code>:</p>
+<div><div class="markdownBlockTitle">internal-helpers/deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@scope/internal-helpers"</span><span class="token punctuation">,</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"deno run -A scripts/build.ts"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"publish"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-317" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;@scope/internal-helpers&quot;,
+  &quot;tasks&quot;: {
+    &quot;build&quot;: &quot;deno run -A scripts/build.ts&quot;
+  },
+  &quot;publish&quot;: false
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The member is still part of the workspace. Its <code>tasks</code> run, its <code>imports</code> are
+resolved, and other members can depend on it, but <code>deno publish</code> skips it
+entirely and won't complain about a missing <code>version</code>.</p>
+<p>This applies to <code>deno.json</code> members only. Workspace members defined solely by a
+<code>package.json</code> are npm packages and are never candidates for <code>deno publish</code>
+(which targets JSR), so no opt-out is needed for them. <code>package.json</code>'s
+<code>"private": true</code> field is not read by Deno.</p>
+<h4 id="managing-interdependent-packages" tabindex="-1">Managing interdependent packages <a class="header-anchor" href="#managing-interdependent-packages"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>When publishing packages from a workspace with interdependencies, use consistent
+versioning schemes across related packages. Publish dependent packages first,
+then the packages that depend on them. After publishing, verify the published
+packages work as expected:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Test a published package</span>
+deno <span class="token function">add</span> jsr:@scope/my-published-package
+deno <span class="token builtin class-name">test</span> integration-test.ts
+</code></pre>
+
+      <button id="copy-button-330" class="copyButton" data-copy="# Test a published package
+deno add jsr:@scope/my-published-package
+deno test integration-test.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>When publishing packages that depend on other workspace members, Deno will
+automatically replace workspace references with proper registry references in
+the published code.</p>
+<h2 id="migrating-from-npm-workspaces" tabindex="-1">Migrating from <code>npm</code> workspaces <a class="header-anchor" href="#migrating-from-npm-workspaces"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno workspaces support using a Deno-first package from an existing npm package.
+In this example, we mix and match a Deno library called <code>@deno/hi</code>, with a
+Node.js library called <code>@deno/log</code> that we developed a couple years back.</p>
+<p>We'll need to include a <code>deno.json</code> configuration file in the root:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"members"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"hi"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-343" class="copyButton" data-copy="{
+  &quot;workspace&quot;: {
+    &quot;members&quot;: [&quot;hi&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Alongside our existing package.json workspace:</p>
+<div><div class="markdownBlockTitle">package.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspaces"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"log"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-347" class="copyButton" data-copy="{
+  &quot;workspaces&quot;: [&quot;log&quot;]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The workspace currently has a log npm package:</p>
+<div><div class="markdownBlockTitle">log/package.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@deno/log"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.5.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"module"</span><span class="token punctuation">,</span>
+  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-351" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;@deno/log&quot;,
+  &quot;version&quot;: &quot;0.5.0&quot;,
+  &quot;type&quot;: &quot;module&quot;,
+  &quot;main&quot;: &quot;index.js&quot;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">log/index.js</div><div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">log</span><span class="token punctuation">(</span><span class="token parameter">output</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-352" class="copyButton" data-copy="export function log(output) {
+  console.log(output);
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Let's create an <code>@deno/hi</code> Deno-first package that imports <code>@deno/log</code>:</p>
+<div><div class="markdownBlockTitle">hi/deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@deno/hi"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.2.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"exports"</span><span class="token operator">:</span> <span class="token string">"./mod.ts"</span><span class="token punctuation">,</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"log"</span><span class="token operator">:</span> <span class="token string">"npm:@deno/log@^0.5"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-356" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;@deno/hi&quot;,
+  &quot;version&quot;: &quot;0.2.0&quot;,
+  &quot;exports&quot;: &quot;./mod.ts&quot;,
+  &quot;imports&quot;: {
+    &quot;log&quot;: &quot;npm:@deno/log@^0.5&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">hi/mod.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> log <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"log"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">sayHiTo</span><span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hi, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-357" class="copyButton" data-copy="import { log } from &quot;log&quot;;
+
+export function sayHiTo(name: string) {
+  log(`Hi, ${name}!`);
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Now, we can write a <code>main.ts</code> file that imports and calls <code>hi</code>:</p>
+<div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> sayHiTo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@deno/hi"</span><span class="token punctuation">;</span>
+
+<span class="token function">sayHiTo</span><span class="token punctuation">(</span><span class="token string">"friend"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-361" class="copyButton" data-copy="import { sayHiTo } from &quot;@deno/hi&quot;;
+
+sayHiTo(&quot;friend&quot;);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">$ deno run main.ts
+Hi, friend<span class="token operator">!</span>
+</code></pre>
+
+      <button id="copy-button-362" class="copyButton" data-copy="$ deno run main.ts
+Hi, friend!
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You can even have both <code>deno.json</code> and <code>package.json</code> in your existing Node.js
+package. Additionally, you could remove the package.json in the root and specify
+the npm package in the deno.json workspace members. That allows you to gradually
+migrate to Deno, without putting a lot of upfront work.</p>
+<p>For example, you can add <code>log/deno.json</code> to configure Deno's linter and
+formatter:</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"fmt"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"semiColons"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"no-unused-vars"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-369" class="copyButton" data-copy="{
+  &quot;fmt&quot;: {
+    &quot;semiColons&quot;: false
+  },
+  &quot;lint&quot;: {
+    &quot;rules&quot;: {
+      &quot;exclude&quot;: [&quot;no-unused-vars&quot;]
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Running <code>deno fmt</code> in the workspace, will format the <code>log</code> package to not have
+any semicolons, and <code>deno lint</code> won't complain if you leave an unused var in one
+of the source files.</p>
+<h2 id="configuring-built-in-deno-tools" tabindex="-1">Configuring built-in Deno tools <a class="header-anchor" href="#configuring-built-in-deno-tools"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Some configuration options only make sense at the root of the workspace, eg.
+specifying <code>nodeModulesDir</code> option in one of the members is not available and
+Deno will warn if an option needs to be applied at the workspace root.</p>
+<p>Here's a full matrix of various <code>deno.json</code> options available at the workspace
+root and its members:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Workspace</th>
+<th>Package</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compilerOptions</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>importMap</td>
+<td>✅</td>
+<td>❌</td>
+<td>Exclusive with imports and scopes per config file. Additionally, it is not supported to have importMap in the workspace config, and imports in the package config.</td>
+</tr>
+<tr>
+<td>imports</td>
+<td>✅</td>
+<td>✅</td>
+<td>Exclusive with importMap per config file.</td>
+</tr>
+<tr>
+<td>scopes</td>
+<td>✅</td>
+<td>❌</td>
+<td>Exclusive with importMap per config file.</td>
+</tr>
+<tr>
+<td>exclude</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>lint.include</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>lint.exclude</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>lint.files</td>
+<td>⚠️</td>
+<td>❌</td>
+<td>Deprecated</td>
+</tr>
+<tr>
+<td>lint.rules.tags</td>
+<td>✅</td>
+<td>✅</td>
+<td>Tags are merged by appending package to workspace list. Duplicates are ignored.</td>
+</tr>
+<tr>
+<td>lint.rules.include</td>
+<td>✅</td>
+<td>✅</td>
+<td>Rules are merged per package, with package taking priority over workspace (package include is stronger than workspace exclude).</td>
+</tr>
+<tr>
+<td>lint.rules.exclude</td>
+<td>✅</td>
+<td>✅</td>
+<td>Rules are merged per package, with package taking priority over workspace (package include is stronger than workspace exclude).</td>
+</tr>
+<tr>
+<td>lint.report</td>
+<td>✅</td>
+<td>❌</td>
+<td>Only one reporter can be active at a time, so allowing different reporters per workspace would not work in the case where you lint files spanning multiple packages.</td>
+</tr>
+<tr>
+<td>fmt.include</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>fmt.exclude</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>fmt.files</td>
+<td>⚠️</td>
+<td>❌</td>
+<td>Deprecated</td>
+</tr>
+<tr>
+<td>fmt.useTabs</td>
+<td>✅</td>
+<td>✅</td>
+<td>Package takes priority over workspace.</td>
+</tr>
+<tr>
+<td>fmt.indentWidth</td>
+<td>✅</td>
+<td>✅</td>
+<td>Package takes priority over workspace.</td>
+</tr>
+<tr>
+<td>fmt.singleQuote</td>
+<td>✅</td>
+<td>✅</td>
+<td>Package takes priority over workspace.</td>
+</tr>
+<tr>
+<td>fmt.proseWrap</td>
+<td>✅</td>
+<td>✅</td>
+<td>Package takes priority over workspace.</td>
+</tr>
+<tr>
+<td>fmt.semiColons</td>
+<td>✅</td>
+<td>✅</td>
+<td>Package takes priority over workspace.</td>
+</tr>
+<tr>
+<td>fmt.options.*</td>
+<td>⚠️</td>
+<td>❌</td>
+<td>Deprecated</td>
+</tr>
+<tr>
+<td>minimumDependencyAge</td>
+<td>✅</td>
+<td>❌</td>
+<td>Resolution behaviour must be the same in the entire workspace.</td>
+</tr>
+<tr>
+<td>nodeModulesDir</td>
+<td>✅</td>
+<td>❌</td>
+<td>Resolution behaviour must be the same in the entire workspace.</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>✅</td>
+<td>❌</td>
+<td>Resolution behaviour must be the same in the entire workspace.</td>
+</tr>
+<tr>
+<td>allowScripts</td>
+<td>✅</td>
+<td>❌</td>
+<td>Must be defined at the workspace root to ensure consistent security policy across all packages.</td>
+</tr>
+<tr>
+<td>links</td>
+<td>✅</td>
+<td>❌</td>
+<td>Only respected in the workspace root.</td>
+</tr>
+<tr>
+<td>tasks</td>
+<td>✅</td>
+<td>✅</td>
+<td>Package tasks take priority over workspace. cwd used is the cwd of the config file that the task was inside of.</td>
+</tr>
+<tr>
+<td>test.include</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>test.exclude</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>test.files</td>
+<td>⚠️</td>
+<td>❌</td>
+<td>Deprecated</td>
+</tr>
+<tr>
+<td>publish</td>
+<td>❌</td>
+<td>✅</td>
+<td>Set to <code>false</code> to exclude a member from <code>deno publish</code>. See <a href="#excluding-a-workspace-member-from-publish">Excluding a workspace member from publish</a>.</td>
+</tr>
+<tr>
+<td>publish.include</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>publish.exclude</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>bench.include</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>bench.exclude</td>
+<td>✅</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>bench.files</td>
+<td>⚠️</td>
+<td>❌</td>
+<td>Deprecated</td>
+</tr>
+<tr>
+<td>lock</td>
+<td>✅</td>
+<td>❌</td>
+<td>Only a single lock file may exist per resolver, and only resolver may exist per workspace, so conditional enablement of the lockfile per package does not make sense.</td>
+</tr>
+<tr>
+<td>unstable</td>
+<td>✅</td>
+<td>❌</td>
+<td>For simplicities sake, we do not allow unstable flags, because a lot of the CLI assumes that unstable flags are immutable and global to the entire process. Also weird interaction with DENO_UNSTABLE_* flags.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>❌</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>version</td>
+<td>❌</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>exports</td>
+<td>❌</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>workspace</td>
+<td>✅</td>
+<td>❌</td>
+<td>Nested workspaces are not supported.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="running-commands-across-workspaces" tabindex="-1">Running commands across workspaces <a class="header-anchor" href="#running-commands-across-workspaces"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno provides several ways to run commands across all or specific workspace
+members:</p>
+<h3 id="type-checking" tabindex="-1">Type checking <a class="header-anchor" href="#type-checking"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Workspace members can have different sets of compiler options. They are also
+inherited between root and member, much like
+<a href="https://www.typescriptlang.org/tsconfig/#extends">TSConfig <code>extends</code></a>. For
+example:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./web"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"checkJs"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1002" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [&quot;./web&quot;],
+  &quot;compilerOptions&quot;: {
+    &quot;checkJs&quot;: true
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">web/deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"esnext"</span><span class="token punctuation">,</span> <span class="token string">"dom"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1003" class="copyButton" data-copy="{
+  &quot;compilerOptions&quot;: {
+    &quot;lib&quot;: [&quot;esnext&quot;, &quot;dom&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Files in the <code>web</code> subdirectory will be configured with the following options:</p>
+<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"checkJs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"esnext"</span><span class="token punctuation">,</span> <span class="token string">"dom"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1007" class="copyButton" data-copy="{
+  &quot;compilerOptions&quot;: {
+    &quot;checkJs&quot;: true,
+    &quot;lib&quot;: [&quot;esnext&quot;, &quot;dom&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Each member will be partitioned and checked separately from one another. Just
+run <code>deno check</code> from the workspace root:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno check
+</code></pre>
+
+      <button id="copy-button-1011" class="copyButton" data-copy="deno check
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="running-tests" tabindex="-1">Running tests <a class="header-anchor" href="#running-tests"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>To run tests across all workspace members, simply execute <code>deno test</code> from the
+workspace root:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token builtin class-name">test</span>
+</code></pre>
+
+      <button id="copy-button-1018" class="copyButton" data-copy="deno test
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This will run tests in all workspace members according to their individual test
+configurations.</p>
+<p>To run tests for a specific workspace member, you can either:</p>
+<ol>
+<li>Change to that member's directory and run the test command:</li>
+</ol>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token builtin class-name">cd</span> my-directory
+deno <span class="token builtin class-name">test</span>
+</code></pre>
+
+      <button id="copy-button-1032" class="copyButton" data-copy="cd my-directory
+deno test
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><ol start="2">
+<li>Or specify the path from the workspace root:</li>
+</ol>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token builtin class-name">test</span> my-directory/
+</code></pre>
+
+      <button id="copy-button-1040" class="copyButton" data-copy="deno test my-directory/
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="formatting-and-linting" tabindex="-1">Formatting and linting <a class="header-anchor" href="#formatting-and-linting"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Similar to testing, formatting and linting commands run across all workspace
+members by default:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">fmt</span>
+deno lint
+</code></pre>
+
+      <button id="copy-button-1047" class="copyButton" data-copy="deno fmt
+deno lint
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Each workspace member follows its own formatting and linting rules as defined in
+its <code>deno.json</code> file, with some settings inherited from the root configuration
+as shown in the table above.</p>
+<h3 id="using-workspace-tasks" tabindex="-1">Using workspace tasks <a class="header-anchor" href="#using-workspace-tasks"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can define tasks at both the workspace root and in individual workspace
+members:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./add"</span><span class="token punctuation">,</span> <span class="token string">"./subtract"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"echo 'Building all packages'"</span><span class="token punctuation">,</span>
+    <span class="token property">"test:all"</span><span class="token operator">:</span> <span class="token string">"deno test"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1057" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [&quot;./add&quot;, &quot;./subtract&quot;],
+  &quot;tasks&quot;: {
+    &quot;build&quot;: &quot;echo 'Building all packages'&quot;,
+    &quot;test:all&quot;: &quot;deno test&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">add/deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@scope/add"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.1.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"exports"</span><span class="token operator">:</span> <span class="token string">"./mod.ts"</span><span class="token punctuation">,</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"echo 'Building add package'"</span><span class="token punctuation">,</span>
+    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"deno test"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1058" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;@scope/add&quot;,
+  &quot;version&quot;: &quot;0.1.0&quot;,
+  &quot;exports&quot;: &quot;./mod.ts&quot;,
+  &quot;tasks&quot;: {
+    &quot;build&quot;: &quot;echo 'Building add package'&quot;,
+    &quot;test&quot;: &quot;deno test&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>To run a task defined in a specific package:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno task <span class="token parameter variable">--cwd</span><span class="token operator">=</span>add build
+</code></pre>
+
+      <button id="copy-button-1062" class="copyButton" data-copy="deno task --cwd=add build
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="sharing-and-managing-dependencies" tabindex="-1">Sharing and managing dependencies <a class="header-anchor" href="#sharing-and-managing-dependencies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Workspace members can share dependencies, depend on each other, and resolve
+version conflicts member by member. To pin one version of a dependency for the
+whole workspace, see <a href="#centralized-dependency-versions-with-catalog"><code>catalog:</code></a>
+below.</p>
+<p>Workspaces provide powerful ways to share and manage dependencies across
+projects:</p>
+<h3 id="sharing-development-dependencies" tabindex="-1">Sharing development dependencies <a class="header-anchor" href="#sharing-development-dependencies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Common development dependencies like testing libraries can be defined at the
+workspace root:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./add"</span><span class="token punctuation">,</span> <span class="token string">"./subtract"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@std/testing/"</span><span class="token operator">:</span> <span class="token string">"jsr:@std/testing@^0.218.0/"</span><span class="token punctuation">,</span>
+    <span class="token property">"chai"</span><span class="token operator">:</span> <span class="token string">"npm:chai@^4.3.7"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1078" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [&quot;./add&quot;, &quot;./subtract&quot;],
+  &quot;imports&quot;: {
+    &quot;@std/testing/&quot;: &quot;jsr:@std/testing@^0.218.0/&quot;,
+    &quot;chai&quot;: &quot;npm:chai@^4.3.7&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This makes these dependencies available to all workspace members without needing
+to redefine them.</p>
+<h3 id="managing-version-conflicts" tabindex="-1">Managing version conflicts <a class="header-anchor" href="#managing-version-conflicts"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>When resolving dependencies, workspace members can override dependencies defined
+in the root. If both the root and a member specify different versions of the
+same dependency, the member's version will be used when resolving within that
+member's folder. This allows individual packages to use specific dependency
+versions when needed.</p>
+<p>However, member-specific dependencies are scoped only to that member's folder.
+Outside of member folders, or when working with files at the workspace root
+level, the workspace root's import map will be used for resolving dependencies
+(including JSR and HTTPS dependencies).</p>
+<h3 id="interdependent-workspace-members" tabindex="-1">Interdependent workspace members <a class="header-anchor" href="#interdependent-workspace-members"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>As shown in the earlier example with the <code>add</code> and <code>subtract</code> modules, workspace
+members can depend on each other. This enables a clean separation of concerns
+while maintaining the ability to develop and test interdependent modules
+together.</p>
+<p>The <code>subtract</code> module imports functionality from the <code>add</code> module, demonstrating
+how workspace members can build upon each other:</p>
+<div><div class="markdownBlockTitle">subtract/mod.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> add <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@scope/add"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">subtract</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b <span class="token operator">*</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1100" class="copyButton" data-copy="import { add } from &quot;@scope/add&quot;;
+
+export function subtract(a: number, b: number): number {
+  return add(a, b * -1);
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This approach allows you to:</p>
+<ol>
+<li>Break down complex projects into manageable, single-purpose packages</li>
+<li>Share code between packages without publishing to a registry</li>
+<li>Test and develop interdependent modules together</li>
+<li>Gradually migrate monolithic codebases to modular architecture</li>
+</ol>
+<h3 id="using-workspace-protocol-in-package.json" tabindex="-1">Using workspace protocol in package.json <a class="header-anchor" href="#using-workspace-protocol-in-package.json"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Deno supports workspace protocol specifiers in <code>package.json</code> files. These are
+useful when you have npm packages that depend on other packages within the
+workspace:</p>
+<div><div class="markdownBlockTitle">package.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"my-npm-package"</span><span class="token punctuation">,</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"another-workspace-package"</span><span class="token operator">:</span> <span class="token string">"workspace:*"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1132" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;my-npm-package&quot;,
+  &quot;dependencies&quot;: {
+    &quot;another-workspace-package&quot;: &quot;workspace:*&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The following workspace protocol specifiers are supported:</p>
+<ul>
+<li><code>workspace:*</code> - Use the latest version available in the workspace</li>
+<li><code>workspace:~</code> - Use the workspace version with only patch-level changes</li>
+<li><code>workspace:^</code> - Use the workspace version with semver-compatible changes</li>
+</ul>
+<h2 id="centralized-dependency-versions-with-catalog%3A" tabindex="-1">Centralized dependency versions with <code>catalog:</code> <a class="header-anchor" href="#centralized-dependency-versions-with-catalog%3A"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>When several workspace members depend on the same npm package, keeping their
+versions in sync usually means editing every member's <code>package.json</code> whenever
+you bump a version. The <code>catalog:</code> protocol — added in Deno 2.8 and compatible
+with the equivalent feature in pnpm, Bun, and Yarn — lets the workspace root
+declare a single version requirement, and each member references it by name.</p>
+<p>A <code>catalog:</code> reference can appear in a member's <code>package.json</code> dependencies or,
+since Deno 2.9, in the <code>imports</code> of a member's <code>deno.json</code>. The catalog
+definition itself lives in either <code>deno.json</code> or <code>package.json</code> at the workspace
+root.</p>
+<p>
+</p><div class="admonition info">
+  <div class="title">Catalogs are npm-only</div>
+
+<p></p>
+<p>Catalogs only manage <strong>npm</strong> dependencies. A catalog entry is a bare package
+name mapped to a version requirement, and a <code>catalog:</code> reference always resolves
+to an <code>npm:</code> specifier — there is no way to point a catalog entry at a <code>jsr:</code>
+package. Manage <code>jsr:</code> dependencies through <code>imports</code> directly instead. Because
+catalog entries are treated as npm packages, <code>deno update</code> and <code>deno outdated</code>
+resolve them against the npm registry.</p>
+<p>
+</p></div>
+<p></p>
+<p>Define a catalog in the root <code>deno.json</code>:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./packages/a"</span><span class="token punctuation">,</span> <span class="token string">"./packages/b"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"catalog"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"^18.3.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"react-dom"</span><span class="token operator">:</span> <span class="token string">"^18.3.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"chalk"</span><span class="token operator">:</span> <span class="token string">"^5.3.0"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1174" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [&quot;./packages/a&quot;, &quot;./packages/b&quot;],
+  &quot;catalog&quot;: {
+    &quot;react&quot;: &quot;^18.3.0&quot;,
+    &quot;react-dom&quot;: &quot;^18.3.0&quot;,
+    &quot;chalk&quot;: &quot;^5.3.0&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>A member references the entry with <code>catalog:</code> (the default catalog):</p>
+<div><div class="markdownBlockTitle">packages/a/package.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"catalog:"</span><span class="token punctuation">,</span>
+    <span class="token property">"react-dom"</span><span class="token operator">:</span> <span class="token string">"catalog:"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1178" class="copyButton" data-copy="{
+  &quot;dependencies&quot;: {
+    &quot;react&quot;: &quot;catalog:&quot;,
+    &quot;react-dom&quot;: &quot;catalog:&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>To bump everyone to a new React version, edit the catalog once.</p>
+<h3 id="named-catalogs" tabindex="-1">Named catalogs <a class="header-anchor" href="#named-catalogs"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Use the plural <code>catalogs</code> field when different members need different versions
+of the same package — for example, while migrating between major versions:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./packages/a"</span><span class="token punctuation">,</span> <span class="token string">"./packages/b"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"catalogs"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"react18"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"^18.3.0"</span><span class="token punctuation">,</span>
+      <span class="token property">"react-dom"</span><span class="token operator">:</span> <span class="token string">"^18.3.0"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"react19"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"^19.0.0"</span><span class="token punctuation">,</span>
+      <span class="token property">"react-dom"</span><span class="token operator">:</span> <span class="token string">"^19.0.0"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1188" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [&quot;./packages/a&quot;, &quot;./packages/b&quot;],
+  &quot;catalogs&quot;: {
+    &quot;react18&quot;: {
+      &quot;react&quot;: &quot;^18.3.0&quot;,
+      &quot;react-dom&quot;: &quot;^18.3.0&quot;
+    },
+    &quot;react19&quot;: {
+      &quot;react&quot;: &quot;^19.0.0&quot;,
+      &quot;react-dom&quot;: &quot;^19.0.0&quot;
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Members select a catalog by name:</p>
+<div><div class="markdownBlockTitle">packages/a/package.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"catalog:react18"</span><span class="token punctuation">,</span>
+    <span class="token property">"react-dom"</span><span class="token operator">:</span> <span class="token string">"catalog:react18"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1192" class="copyButton" data-copy="{
+  &quot;dependencies&quot;: {
+    &quot;react&quot;: &quot;catalog:react18&quot;,
+    &quot;react-dom&quot;: &quot;catalog:react18&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">packages/b/package.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"catalog:react19"</span><span class="token punctuation">,</span>
+    <span class="token property">"react-dom"</span><span class="token operator">:</span> <span class="token string">"catalog:react19"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1193" class="copyButton" data-copy="{
+  &quot;dependencies&quot;: {
+    &quot;react&quot;: &quot;catalog:react19&quot;,
+    &quot;react-dom&quot;: &quot;catalog:react19&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><code>catalog:</code> (with no name) and <code>catalog:default</code> are equivalent and resolve to
+the singular <code>catalog</code> field.</p>
+<h3 id="catalogs-in-package.json" tabindex="-1">Catalogs in <code>package.json</code> <a class="header-anchor" href="#catalogs-in-package.json"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Catalogs can also live in the root <code>package.json</code>, which keeps configuration
+together for projects that haven't moved to <code>deno.json</code>:</p>
+<div><div class="markdownBlockTitle">package.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"catalog"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"react"</span><span class="token operator">:</span> <span class="token string">"^19.0.0"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"catalogs"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"testing"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"vitest"</span><span class="token operator">:</span> <span class="token string">"^2.0.0"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1203" class="copyButton" data-copy="{
+  &quot;catalog&quot;: {
+    &quot;react&quot;: &quot;^19.0.0&quot;
+  },
+  &quot;catalogs&quot;: {
+    &quot;testing&quot;: {
+      &quot;vitest&quot;: &quot;^2.0.0&quot;
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>If both <code>deno.json</code> and <code>package.json</code> define catalogs at the workspace root,
+<code>package.json</code> wins entirely — the two are not merged.</p>
+<h3 id="restrictions" tabindex="-1">Restrictions <a class="header-anchor" href="#restrictions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<ul>
+<li>Catalogs are npm-only. Every entry resolves to an <code>npm:</code> package, so <code>jsr:</code>
+(and other non-npm) dependencies cannot be managed through a catalog.</li>
+<li>Catalogs are root-only. Defining <code>catalog</code> or <code>catalogs</code> inside a workspace
+member emits a diagnostic.</li>
+<li>Members must reference a catalog name that exists. A missing entry produces a
+resolution error during install or run.</li>
+</ul>
+<h2 id="npm-and-pnpm-workspace-compatibility" tabindex="-1">npm and pnpm workspace compatibility <a class="header-anchor" href="#npm-and-pnpm-workspace-compatibility"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno works seamlessly with standard npm workspaces defined in <code>package.json</code>:</p>
+<div><div class="markdownBlockTitle">package.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspaces"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"packages/*"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1233" class="copyButton" data-copy="{
+  &quot;workspaces&quot;: [&quot;packages/*&quot;]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>For pnpm users, Deno supports typical pnpm workspace configurations. However, if
+you're using a <code>pnpm-workspace.yaml</code> file, you'll need to migrate to a
+<code>deno.json</code> workspace configuration:</p>
+<div><div class="markdownBlockTitle">pnpm-workspace.yaml (to be replaced)</div><div class="relative"><pre><code class="highlight notranslate language-yaml">packages:
+  - "packages/*"
+</code></pre>
+
+      <button id="copy-button-1237" class="copyButton" data-copy="packages:
+  - &quot;packages/*&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Should be converted to:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"packages/*"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-1241" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [&quot;packages/*&quot;]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This allows for smooth integration between Deno and npm/pnpm ecosystems during
+migration or in hybrid projects.</p>
+<p>For more information on configuring your project, check out the
+<a href="/runtime/fundamentals/configuration/">Configuration with deno.json</a> tutorial.</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-06-29T00:00:00.000Z">June 29, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/fundamentals/configuration/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Config files</span></a><a href="/runtime/fundamentals/stability_and_releases/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Stability and releases →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/fundamentals/workspaces.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

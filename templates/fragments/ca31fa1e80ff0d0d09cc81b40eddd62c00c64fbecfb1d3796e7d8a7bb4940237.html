@@ -1,0 +1,236 @@
+
+</template>
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>For the page that shows information on each dinosaur, we'll create a new dynamic
+page called <code>[name].vue</code>. This page uses Nuxt's
+<a href="https://nuxt.com/docs/getting-started/routing#route-parameters">dynamic route parameters</a>,
+where the <code>[name]</code> in the filename can be accessed in JavaScript as
+<code>route.params.name</code>. We’ll use the <code>useRoute</code> composable to access the route
+parameters and <code>useFetch</code> to get the specific dinosaur's data based on the name
+parameter:</p>
+<div><div class="markdownBlockTitle">pages/[name].vue</div><div class="relative"><pre><code class="highlight notranslate language-tsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">setup</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ts<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+const route = useRoute();
+const { data: dinosaur } = await useFetch(
+  `/api/dinosaurs/${route.params.name}`
+);
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dinosaur<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-2xl font-bold mb-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token punctuation">{</span> dinosaur<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mb-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token punctuation">{</span> dinosaur<span class="token punctuation">.</span>description <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NuxtLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-blue-600 hover:text-blue-800 hover:underline<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      Back to all dinosaurs
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NuxtLink</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+
+      <button id="copy-button-139" class="copyButton" data-copy="<script setup lang=&quot;ts&quot;>
+const route = useRoute();
+const { data: dinosaur } = await useFetch(
+  `/api/dinosaurs/${route.params.name}`
+);
+</script>
+
+<template>
+  <main v-if=&quot;dinosaur&quot;>
+    <h1 class=&quot;text-2xl font-bold mb-4&quot;>{{ dinosaur.name }}</h1>
+    <p class=&quot;mb-4&quot;>{{ dinosaur.description }}</p>
+    <NuxtLink to=&quot;/&quot; class=&quot;text-blue-600 hover:text-blue-800 hover:underline&quot;>
+      Back to all dinosaurs
+    </NuxtLink>
+  </main>
+</template>
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Next, we’ll have to connect these Vue components together so that they render
+properly when we visit the root of the domain. Let’s update <code>app.vue</code> at the
+root of the directory to serve our application’s root component. We’ll use
+<a href="https://nuxt.com/docs/api/components/nuxt-layout"><code>NuxtLayout</code></a> for consistent
+page structure and <a href="https://nuxt.com/docs/api/components/nuxt-page"><code>NuxtPage</code></a>
+for dynamic page rendering:</p>
+<div><div class="markdownBlockTitle">app.vue</div><div class="relative"><pre><code class="highlight notranslate language-tsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NuxtLayout</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>p-4 bg-gray-100<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NuxtLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text-blue-600 hover:text-blue-800<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          Dinosaur Encyclopedia
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NuxtLink</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container mx-auto p-4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">NuxtPage</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">NuxtLayout</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-143" class="copyButton" data-copy="<template>
+  <NuxtLayout>
+    <div>
+      <nav class=&quot;p-4 bg-gray-100&quot;>
+        <NuxtLink to=&quot;/&quot; class=&quot;text-blue-600 hover:text-blue-800&quot;>
+          Dinosaur Encyclopedia
+        </NuxtLink>
+      </nav>
+
+      <div class=&quot;container mx-auto p-4&quot;>
+        <NuxtPage />
+      </div>
+    </div>
+  </NuxtLayout>
+</template>;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Run the server with <code>deno task dev</code> and see how it looks at
+<a href="http://localhost:3000">http://localhost:3000</a>:</p>
+<p>Looks great!</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">deno <span class="token function">install</span> <span class="token parameter variable">-D</span> npm:tailwindcss npm:@tailwindcss/vite
+</code></pre>
+
+      <button id="copy-button-150" class="copyButton" data-copy="deno install -D npm:tailwindcss npm:@tailwindcss/vite
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Then, we're going to update the <code>nuxt.config.ts</code>. Import the Tailwind dependency
+and configure the Nuxt application for Deno compatibility, We'll enable
+development tools, and set up Tailwind CSS:</p>
+<div><div class="markdownBlockTitle">nuxt.config.ts</div><div class="relative"><pre><code class="highlight notranslate language-tsx"><span class="token keyword">import</span> tailwindcss <span class="token keyword">from</span> <span class="token string">"@tailwindcss/vite"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineNuxtConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  compatibilityDate<span class="token operator">:</span> <span class="token string">"2025-05-15"</span><span class="token punctuation">,</span>
+  devtools<span class="token operator">:</span> <span class="token punctuation">{</span> enabled<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  nitro<span class="token operator">:</span> <span class="token punctuation">{</span>
+    preset<span class="token operator">:</span> <span class="token string">"deno"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  app<span class="token operator">:</span> <span class="token punctuation">{</span>
+    head<span class="token operator">:</span> <span class="token punctuation">{</span>
+      title<span class="token operator">:</span> <span class="token string">"Dinosaur Encyclopedia"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  css<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"~/assets/css/main.css"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  vite<span class="token operator">:</span> <span class="token punctuation">{</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token function">tailwindcss</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-154" class="copyButton" data-copy="import tailwindcss from &quot;@tailwindcss/vite&quot;;
+
+export default defineNuxtConfig({
+  compatibilityDate: &quot;2025-05-15&quot;,
+  devtools: { enabled: true },
+  nitro: {
+    preset: &quot;deno&quot;,
+  },
+  app: {
+    head: {
+      title: &quot;Dinosaur Encyclopedia&quot;,
+    },
+  },
+  css: [&quot;~/assets/css/main.css&quot;],
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Next, create a new css file, <code>assets/css/main.css</code>, and add an import <code>@import</code>
+that imports tailwind, as well as the tailwind utilities:</p>
+<div><div class="markdownBlockTitle">assets/css/main.css</div><div class="relative"><pre><code class="highlight notranslate language-tsx">@<span class="token keyword">import</span> <span class="token string">"tailwindcss"</span><span class="token punctuation">;</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">tailwind</span></span> base<span class="token punctuation">;</span>
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">tailwind</span></span> components<span class="token punctuation">;</span>
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">tailwind</span></span> utilities<span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-158" class="copyButton" data-copy="@import &quot;tailwindcss&quot;;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="running-the-application" tabindex="-1">Running the application <a class="header-anchor" href="#running-the-application"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>We can then run the application using:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">deno task dev
+</code></pre>
+
+      <button id="copy-button-165" class="copyButton" data-copy="deno task dev
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This will start the app at localhost:3000:</p>
+<figure>
+<p><video class="w-full" alt="Build a Nuxt app with Deno." autoplay="" muted="" loop="" playsinline="" src="/examples/tutorials/images/how-to/nuxt/nuxt-4.mp4"></video></p>
+</figure>
+<p>And we’re done!</p>
+<p>🦕 Next steps for a Nuxt app might be to add authentication using the
+<a href="https://auth.nuxtjs.org/">Nuxt Auth</a> module, implement state management with
+<a href="https://pinia.vuejs.org/">Pinia</a>, add server-side data persistence with
+<a href="https://docs.deno.com/examples/prisma_tutorial/">Prisma</a> or
+<a href="https://docs.deno.com/examples/mongoose_tutorial/">MongoDB</a>, and set up
+automated testing with Vitest. These features would make it production-ready for
+larger applications.</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2025-08-26T00:00:00.000Z">August 26, 2025</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/examples/next_tutorial/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Build a Next.js app</span></a><a href="/examples/qwik_tutorial/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Build a Qwik app with Deno →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/examples/tutorials/nuxt.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main><div class="hidden sticky top-header max-h-[calc(100dvh-var(--header-height))] border-l border-l-foreground-tertiary pt-1.5 lg:flex lg:flex-col lg:w-full"><h2 id="on-this-page" class="px-4 pt-4 leading-none pb-2 uppercase text-smaller font-bold tracking-wide text-foreground-secondary">This page</h2><ul class="toc-list overflow-y-auto scrollbar-none [&amp;::-webkit-scrollbar]:hidden flex flex-col flex-1 min-h-0 pb-4 pl-0" id="toc" aria-labelledby="on-this-page"><li class="leading-tight text-balance"><a href="#scaffold-a-nuxt-app-with-deno" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Scaffold a Nuxt app with Deno </a></li><li class="leading-tight text-balance"><a href="#start-the-development-server" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Start the development server </a></li><li class="leading-tight text-balance"><a href="#build-out-the-app-architecture" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Build out the app architecture </a></li><li class="leading-tight text-balance"><a href="#add-dinosaur-data" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Add dinosaur data </a></li><li class="leading-tight text-balance"><a href="#setup-the-api-routes" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Setup the API routes </a></li><li class="leading-tight text-balance"><a href="#setup-the-vue-frontend" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Setup the Vue frontend </a></li><li class="leading-tight text-balance"><a href="#running-the-application" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Running the application </a></li></ul></div></div><footer class="text-smaller bg-gray-50 dark:bg-gray-950 p-4 pt-12 border-t border-t-foreground-tertiary"><nav class="flex flex-col gap-x-4 gap-y-12 w-max max-w-full md:flex-row md:flex-wrap md:justify-between md:gap-16 lg:gap-24"><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Deno Docs</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="/runtime/">Deno Runtime</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/examples/">Examples</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://jsr.io/@std">Standard Library</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/api/deno/">Deno API Reference</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Services Docs</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="/deploy/">Deno Deploy </a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/deploy/classic/">Deno Deploy Classic</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/subhosting/manual/">Deno Subhosting</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Community</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="https://discord.gg/deno">Discord</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://github.com/denoland">GitHub</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://youtube.com/@deno_land">YouTube</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://bsky.app/profile/deno.land">Bluesky</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://fosstodon.org/@deno_land">Mastodon</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://twitter.com/deno_land">Twitter</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://deno.news/">Newsletter</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Help &amp; Feedback</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="https://discord.gg/deno">Community Support</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://denostatus.com">Deploy System Status</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://github.com/denoland/deploy_feedback">Deploy Feedback</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="mailto:support@deno.com">Report a Problem</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Company</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="https://deno.com/">Deno Website</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://deno.com/blog">Blog</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/deploy/privacy_policy">Privacy Policy</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/llms.txt">LLMs</a></li></ul></section></nav><p class="m-0 mt-16 mx-auto text-xs text-foreground-secondary">Copyright © 2026 the Deno authors.</p></footer></body></html>

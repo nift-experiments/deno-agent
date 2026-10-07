@@ -1,0 +1,419 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#installation" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Installation </a></li><li class="leading-tight text-balance"><a href="#enabling-deno-in-a-vs-code-workspace" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Enabling Deno in a VS Code workspace </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#workspace-folder-settings" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Workspace folder settings </a></li></ul></li><li class="leading-tight text-balance"><a href="#partially-enabling-deno-in-a-vs-code-workspace" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Partially enabling Deno in a VS Code workspace </a></li><li class="leading-tight text-balance"><a href="#mixed-deno-projects" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Mixed-Deno projects </a></li><li class="leading-tight text-balance"><a href="#linting" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Linting </a></li><li class="leading-tight text-balance"><a href="#using-a-configuration-file" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Using a configuration file </a></li><li class="leading-tight text-balance"><a href="#formatting" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Formatting </a></li><li class="leading-tight text-balance"><a href="#setting-a-path-to-the-deno-cli" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Setting a path to the Deno CLI </a></li><li class="leading-tight text-balance"><a href="#import-suggestions" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Import suggestions </a></li><li class="leading-tight text-balance"><a href="#caching-dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Caching dependencies </a></li><li class="leading-tight text-balance"><a href="#code-lenses" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Code lenses </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#deno-%3E-code-lens%3A-implementations" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deno &gt; Code Lens: Implementations </a></li><li class="leading-tight text-balance"><a href="#deno-%3E-code-lens%3A-references" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deno &gt; Code Lens: References </a></li><li class="leading-tight text-balance"><a href="#deno-%3E-code-lens%3A-references-all-functions" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deno &gt; Code Lens: References All Functions </a></li><li class="leading-tight text-balance"><a href="#testing-code-lens" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Testing code lens </a></li><li class="leading-tight text-balance"><a href="#test-configuration" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Test Configuration </a></li></ul></li><li class="leading-tight text-balance"><a href="#using-the-debugger" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Using the debugger </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#debugging-a-project-that-runs-through-a-dev-server" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Debugging a project that runs through a dev server </a></li></ul></li><li class="leading-tight text-balance"><a href="#tasks" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Tasks </a></li><li class="leading-tight text-balance"><a href="#using-a-development-container" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Using a development container </a></li><li class="leading-tight text-balance"><a href="#troubleshooting" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Troubleshooting </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#errors%2Fdiagnostics" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Errors/diagnostics </a></li></ul></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Advanced</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/vscode.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Fvscode.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Deno &amp; Visual Studio Code</h1></div><p>This page covers developing Deno applications using
+<a href="https://code.visualstudio.com/">Visual Studio Code</a> and the official
+<a href="https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno">vscode_deno</a>
+extension.</p>
+<h2 id="installation" tabindex="-1">Installation <a class="header-anchor" href="#installation"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The Deno VS Code extension integrates directly with the Deno CLI using the
+<a href="/runtime/reference/lsp_integration/">language server protocol</a>. This helps
+ensure that the information you get about your code aligns to how that code will
+work when you run it with the Deno CLI.</p>
+<p>The Deno extension is installed like other extensions in VS Code. Search for
+<code>Deno</code> in the extensions tab of VS Code and click the <strong>install</strong> button, or
+<a href="vscode:extension/denoland.vscode-deno">this link</a> will open the extension page
+where you can choose to install.</p>
+<p>Once you install the extension for the first time, you should receive a splash
+page that welcomes you to the extension. (If you missed it, or want to see it
+again, <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>P</kbd> to open the command palette, and
+run the <strong>Deno: Welcome</strong> command.)</p>
+<h2 id="enabling-deno-in-a-vs-code-workspace" tabindex="-1">Enabling Deno in a VS Code workspace <a class="header-anchor" href="#enabling-deno-in-a-vs-code-workspace"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>We realize that not every project you might work on in VS Code is a Deno
+project. By default, VS Code comes with a built-in TypeScript/JavaScript
+language service which is used when editing TypeScript or JavaScript files.</p>
+<p>In order to have support for Deno APIs, as well as the ability to resolve
+modules as the Deno CLI does, you need to enable Deno for the workspace. The
+most direct way to do this is to use the <strong>Deno: Initialize Workspace
+Configuration</strong> from the VS Code
+<a href="https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette">command palette</a>.</p>
+<p><img src="/runtime/reference/images/command_palette.png" alt="screenshot of the command palette with Deno: Initialize Workspace Configuration"></p>
+<p>This command will add <code>"deno.enable": true</code> to the workspace configuration (your
+workspace root <code>.vscode/settings.json</code>). Once the command is finished, you will
+get a notification that Deno workspace is initialized.</p>
+<p><img src="/runtime/reference/images/vscode_workspace_initialized.png" alt="screenshot of the notification 'Deno workspace initialized'"></p>
+<p>These settings (and other settings) are available via the VS Code
+<a href="https://code.visualstudio.com/docs/getstarted/userinterface#_settings">settings</a>
+panel. In the panel the setting is <strong>Deno: Enable</strong>.</p>
+<p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>VS Code has user and workspace settings. You probably don't want to enable Deno
+in the <strong>user</strong> settings, instead set it in <strong>workspace</strong> settings, or by
+default every workspace will be Deno enabled.</p>
+<p>
+</p></div>
+<p></p>
+<h3 id="workspace-folder-settings" tabindex="-1">Workspace folder settings <a class="header-anchor" href="#workspace-folder-settings"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>These are the settings that can be set on a workspace folder. The rest of the
+settings currently only apply to the workspace:</p>
+<ul>
+<li><code>deno.enable</code> - Controls if the Deno Language Server is enabled. When enabled,
+the extension will disable the built-in VS Code JavaScript and TypeScript
+language services, and will use the Deno language server instead. <em>boolean,
+default <code>false</code></em></li>
+<li><code>deno.enablePaths</code> - Controls if the Deno Language Server is enabled for only
+specific paths of the workspace folder. Defaults to an empty list.</li>
+<li><code>deno.codeLens.test</code> - Controls if the test code lens is enabled. <em>boolean,
+default <code>true</code></em></li>
+<li><code>deno.codeLens.testArgs</code> - The list of arguments that are passed to
+<code>deno test</code> when activating a test code lens. <em>string array, default
+<code>["--allow-all"]</code></em></li>
+</ul>
+<p>When a project is enabled, the extension will get information directly from the
+installed Deno CLI. The extension will also mute the built-in
+TypeScript/JavaScript extension.</p>
+<h2 id="partially-enabling-deno-in-a-vs-code-workspace" tabindex="-1">Partially enabling Deno in a VS Code workspace <a class="header-anchor" href="#partially-enabling-deno-in-a-vs-code-workspace"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>In a workspace (or workspace folder), sub-paths can be enabled for Deno, while
+code outside those paths will be not be enabled and the VS Code built-in
+JavaScript/TypeScript language server will be used. Use the <strong>Deno: Enable
+Paths</strong> setting (or <code>deno.enablePaths</code> if manually editing)</p>
+<p>For example if you have a project like this:</p>
+<div class="relative"><pre><code class="highlight notranslate language-console">project
+├── worker
+└── front_end
+</code></pre>
+
+      <button id="copy-button-85" class="copyButton" data-copy="project
+├── worker
+└── front_end
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Where you only want to enable the <code>worker</code> path (and its subpaths) to be Deno
+enabled, you will want to add <code>./worker</code> to the list of <strong>Deno: Enable Paths</strong>
+in the configuration.</p>
+<h2 id="mixed-deno-projects" tabindex="-1">Mixed-Deno projects <a class="header-anchor" href="#mixed-deno-projects"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>With this feature, you can have a mixed Deno project, where some of the
+workspace folders are Deno enabled and some are not. This is useful when
+creating a project that might have a front-end component, where you want a
+different configuration for that front end code.</p>
+<p>In order to support this, you would create a new workspace (or add a folder to
+an existing workspace) and in the settings configure one of the folders to have
+<code>deno.enable</code> set to <code>true</code> and one set to <code>false</code>. Once you save the workspace
+configuration, you notice that the Deno language server only applies diagnostics
+to the enabled folders, while the other folder will use the built-in TypeScript
+compiler of VS Code to supply diagnostics for TypeScript and JavaScript files.</p>
+<h2 id="linting" tabindex="-1">Linting <a class="header-anchor" href="#linting"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The same engine that provides the diagnostics when using <code>deno lint</code> can also be
+used via the extension. By enabling the <strong>Deno: Lint</strong> setting in the settings
+panel (or <code>deno.lint</code> if editing settings in JSON) the editor will start to
+display lint "warnings" in your code. See the
+<a href="/runtime/reference/cli/linter/">Linter</a> section for more information on how to
+use the Deno linter.</p>
+<h2 id="using-a-configuration-file" tabindex="-1">Using a configuration file <a class="header-anchor" href="#using-a-configuration-file"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>A configuration file is not required for a Deno project, but there are a few
+scenarios though where it might be useful. If you want to have the same settings
+applied as when specifying the <code>--config</code> option on the command line, the
+<strong>Deno: Config</strong> option can be used (or <code>deno.config</code> if manually editing).</p>
+<p>The Deno extension will also auto-identify and apply a <code>deno.jsonc</code> or
+<code>deno.json</code> by looking in the workspace root for the configuration file and
+applying it. Manually specifying a <strong>Deno: Config</strong> option will override this
+automatic behavior.</p>
+<h2 id="formatting" tabindex="-1">Formatting <a class="header-anchor" href="#formatting"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The Deno CLI comes with a
+<a href="/runtime/reference/cli/formatter/">built-in formatter</a> which can be accessed
+using <code>deno fmt</code> but can also be configured to be used by VS Code. <code>Deno</code> should
+be on the drop down list for the <strong>Editor: Default formatter</strong> setting (or if
+you are editing settings manually, it would be
+<code>"editor.defaultFormatter": "denoland.vscode-deno"</code>).</p>
+<h2 id="setting-a-path-to-the-deno-cli" tabindex="-1">Setting a path to the Deno CLI <a class="header-anchor" href="#setting-a-path-to-the-deno-cli"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The extension looks for the Deno CLI executable in the host's <code>PATH</code>, but
+sometimes that isn't desirable and the <strong>Deno: Path</strong> can be set (or <code>deno.path</code>
+if manually editing) to point to the Deno executable. If the path provided is
+relative, it will be resolved relative to the root of the workspace.</p>
+<h2 id="import-suggestions" tabindex="-1">Import suggestions <a class="header-anchor" href="#import-suggestions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>When attempting to import a module, the extension will offer suggestions to
+complete the import. Local relative files will be included in the suggestions,
+plus any cached remote files.</p>
+<p>The extension supports registry auto-completions, where a remote
+registry/website of modules can optionally provide metadata that allows a client
+to discover modules. By default, the extension will check hosts/origins to see
+if they support suggestions, and if it does, the extension will prompt you to
+see if you want to enable it. This behavior can be changed by unchecking the box
+under <strong>Deno &gt; Suggest &gt; Imports: Auto Discover</strong> in Settings. (or
+<code>deno.suggest.imports.autoDiscover</code> if manually editing).</p>
+<p>Individual hosts/origins can be enabled or disabled by editing the <strong>Deno &gt;
+Suggest &gt; Imports: Hosts</strong> setting - <code>deno.suggest.imports.hosts</code> in the
+appropriate <code>settings.json</code>.</p>
+<h2 id="caching-dependencies" tabindex="-1">Caching dependencies <a class="header-anchor" href="#caching-dependencies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno downloads your dependencies (npm and JSR packages, and any remote URL
+modules) once and stores them in a local cache. When you run a command like
+<code>deno run</code>, <code>deno test</code>, <code>deno info</code>, or <code>deno install</code>, the CLI fetches any
+dependencies that aren't cached yet and populates the cache.</p>
+<p>While developing in the editor, if a dependency isn't cached you'll get a
+diagnostic such as
+<code>Uncached or missing remote URL: "https://deno.land/x/example/mod.ts"</code> for the
+missing dependency. Deno will not automatically cache it, unless it is a
+completion from a registry import suggestion (see above).</p>
+<p>In addition to running a command on a command line, the extension provides ways
+to cache dependencies within the editor. A missing dependency will have a <em>quick
+fix</em> which is to have Deno try to cache the dependency. Fixes can be accessed by
+pressing <kbd>CTRL</kbd> <kbd>.</kbd> or <kbd>⌘</kbd> <kbd>.</kbd> when the
+editor is positioned in the import specifier, or hovering over the specifier and
+selecting <strong>Quick Fix...</strong>.</p>
+<p>There is also the <strong>Deno: Cache Dependencies</strong> command in the command palette
+which will attempt to cache any dependencies of the module currently active in
+the editor.</p>
+<h2 id="code-lenses" tabindex="-1">Code lenses <a class="header-anchor" href="#code-lenses"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The language server currently supports several code lenses (actionable
+contextual information interspersed in the code) that allow you to get greater
+insight into the code. Most are disabled by default, but can easily be enabled:</p>
+<h3 id="deno-%3E-code-lens%3A-implementations" tabindex="-1">Deno &gt; Code Lens: Implementations <a class="header-anchor" href="#deno-%3E-code-lens%3A-implementations"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno.codeLens.implementations</code> - Provides a lens that will list out any
+implementations of an item elsewhere in the code.</p>
+<h3 id="deno-%3E-code-lens%3A-references" tabindex="-1">Deno &gt; Code Lens: References <a class="header-anchor" href="#deno-%3E-code-lens%3A-references"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno.codeLens.references</code> - Provides a lens that will list out any references
+to an item elsewhere in the code.</p>
+<h3 id="deno-%3E-code-lens%3A-references-all-functions" tabindex="-1">Deno &gt; Code Lens: References All Functions <a class="header-anchor" href="#deno-%3E-code-lens%3A-references-all-functions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno.codeLens.referencesAllFunctions</code> - Provides a lens that will list out all
+references to all functions in the code. All functions are excluded from the
+<em>References</em> setting mentioned above.</p>
+<h3 id="testing-code-lens" tabindex="-1">Testing code lens <a class="header-anchor" href="#testing-code-lens"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The Deno CLI includes a
+<a href="/runtime/reference/lsp_integration/#testing">built-in testing API</a> available
+under <a href="/api/deno/~/Deno.test"><code>Deno.test</code></a>. The extension and language server
+have a code lens enabled by default which provides the ability to run a test
+from within the editor.</p>
+<p>When you have a block of code that provides a test:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> assert <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"jsr:@std/assert@1"</span><span class="token punctuation">;</span>
+
+Deno<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">"a test case"</span><span class="token punctuation">,</span>
+  <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> someCondition <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token function">assert</span><span class="token punctuation">(</span>someCondition<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-185" class="copyButton" data-copy="import { assert } from &quot;jsr:@std/assert@1&quot;;
+
+Deno.test({
+  name: &quot;a test case&quot;,
+  fn() {
+    let someCondition = true;
+    assert(someCondition);
+  },
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>You will see a code lens just above the test:</p>
+<div class="relative"><pre><code class="highlight notranslate language-console">▶ Run Test
+</code></pre>
+
+      <button id="copy-button-189" class="copyButton" data-copy="▶ Run Test
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>If you click on the code lens, the extension will start up the Deno CLI to run
+the test for you and display the output. Based on your other settings, the
+extension will try to run your test with the same settings. If you need to
+adjust the arguments provided when doing <code>deno test</code>, you can do so by setting
+the <code>deno.codeLens.testArgs</code> setting.</p>
+<p>The extension will also try to track if in the same module you destructure the
+<a href="/api/deno/~/Deno.test"><code>Deno.test</code></a> function or assign it to a variable. So you
+can do something like this and still have the code lens work:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> <span class="token punctuation">{</span> test<span class="token operator">:</span> denoTest <span class="token punctuation">}</span> <span class="token operator">=</span> Deno<span class="token punctuation">;</span>
+
+<span class="token function">denoTest</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">"example test"</span><span class="token punctuation">,</span>
+  <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-196" class="copyButton" data-copy="const { test: denoTest } = Deno;
+
+denoTest({
+  name: &quot;example test&quot;,
+  fn() {},
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>If you want to disable this feature, you can do so by un-setting the <strong>Deno &gt;
+CodeLens: Test</strong> setting - <code>deno.codeLens.test</code>.</p>
+<p>You can run tests from the Test Explorer view, from the code lens decorations,
+or via the command palette. You can also use the filter function in the Text
+Explorer view to exclude certain tests from a test run.</p>
+<p>When a test fails, the failure message, including the stack trace, will be
+available when inspecting the test results in VS Code.</p>
+<h3 id="test-configuration" tabindex="-1">Test Configuration <a class="header-anchor" href="#test-configuration"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>By default, tests are executed in a similar fashion to if you were to use
+<code>deno test --allow-all</code> on the command line. These default arguments can be
+changed by setting the <strong>Deno &gt; Testing: Args</strong> option in your user or workspace
+settings (or <code>deno.testing.args</code> if you are configuring manually). Add
+individual arguments here which you would have used with the <code>deno test</code>
+subcommand.</p>
+<p>Based on other settings that you have, those options will be automatically
+merged into the "command line" used when running tests unless explicitly
+provided in the <strong>Deno &gt; Testing: Args</strong> setting.</p>
+<h2 id="using-the-debugger" tabindex="-1">Using the debugger <a class="header-anchor" href="#using-the-debugger"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The extension provides integration with the built-in VS Code debugger. You can
+generate a configuration by: going to <code>Run and Debug</code> panel, clicking
+<code>create a launch.json file</code> and selecting the <code>Deno</code> option from the available
+debugger options. (The generated <code>type</code> of the configuration will be <code>node</code>;
+that's ok.)</p>
+<h3 id="debugging-a-project-that-runs-through-a-dev-server" tabindex="-1">Debugging a project that runs through a dev server <a class="header-anchor" href="#debugging-a-project-that-runs-through-a-dev-server"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The generated <code>Deno</code> configuration launches a single entry file directly. That
+does not fit projects whose dev task starts a long-running server through
+another tool, such as a <a href="https://fresh.deno.dev/">Fresh</a> app, whose
+<code>deno task dev</code> runs Vite. For these, start the dev server with the inspector
+enabled and <strong>attach</strong> VS Code to it instead.</p>
+<p>First, add a task that runs your dev server under the Deno inspector. For a
+Fresh app whose <code>dev</code> task is <code>vite</code>, add a debug variant:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"vite"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev:debug"</span><span class="token operator">:</span> <span class="token string">"deno run --inspect -A npm:vite"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-230" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;dev&quot;: &quot;vite&quot;,
+    &quot;dev:debug&quot;: &quot;deno run --inspect -A npm:vite&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><code>--inspect</code> starts the V8 inspector on <code>127.0.0.1:9229</code> without pausing. Use
+<a href="/runtime/fundamentals/debugging/#--inspect-wait"><code>--inspect-wait</code></a> instead if
+you need to debug code that runs during startup, before your first request.</p>
+<p>Then add an <code>attach</code> configuration to <code>.vscode/launch.json</code>:</p>
+<div><div class="markdownBlockTitle">.vscode/launch.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"0.2.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"configurations"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Attach to dev server"</span><span class="token punctuation">,</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"node"</span><span class="token punctuation">,</span>
+      <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"attach"</span><span class="token punctuation">,</span>
+      <span class="token property">"port"</span><span class="token operator">:</span> <span class="token number">9229</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-237" class="copyButton" data-copy="{
+  &quot;version&quot;: &quot;0.2.0&quot;,
+  &quot;configurations&quot;: [
+    {
+      &quot;name&quot;: &quot;Attach to dev server&quot;,
+      &quot;type&quot;: &quot;node&quot;,
+      &quot;request&quot;: &quot;attach&quot;,
+      &quot;port&quot;: 9229
+    }
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Run <code>deno task dev:debug</code>, then start the "Attach to dev server" configuration
+from the <code>Run and Debug</code> panel. Breakpoints set in your server-side code (such
+as Fresh route handlers) are hit on the next matching request.</p>
+<p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>Vite loads and transforms route modules on demand, so a breakpoint in a route
+that hasn't been requested yet may show as "Unbound breakpoint" with a "Some of
+your breakpoints could not be set" warning. This is expected: the breakpoint
+binds once the route is first loaded, and it still pauses when that code runs.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="tasks" tabindex="-1">Tasks <a class="header-anchor" href="#tasks"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>While the extension communicates directly with the language server, there are
+times when you might prefer to run Deno commands via the CLI. You can define
+tasks in a <code>deno.json</code> file in the root of your workspace in a
+<a href="/runtime/reference/deno_json/#tasks"><code>tasks</code> field</a>.</p>
+<h2 id="using-a-development-container" tabindex="-1">Using a development container <a class="header-anchor" href="#using-a-development-container"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Using a
+<a href="https://code.visualstudio.com/docs/remote/containers">development container</a>
+with VS Code is a great way to have an isolated development environment without
+having to worry about having to install the Deno CLI on your local system. Deno
+supports development containers and the Deno extension will work with them.</p>
+<p>If you have an existing Deno project that you would like to add dev container
+support to, execute <strong>Remote-Containers: Add Development Container Configuration
+Files...</strong> in the command palette, choose <strong>Show All Definitions...</strong> and then
+search for the <code>Deno</code> definition. This will setup a baseline <code>.devcontainer</code>
+configuration, which will install the latest version of the Deno CLI in the
+container.</p>
+<p>Once added, VS Code will prompt if you want to open the project in a dev
+container. If you choose to, VS Code will build the development container and
+re-open the workspace using the development container, which will have the Deno
+CLI and the <code>vscode_deno</code> extension installed in it.</p>
+<h2 id="troubleshooting" tabindex="-1">Troubleshooting <a class="header-anchor" href="#troubleshooting"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The following sections cover challenges you might face when using the extension
+and try to give likely causes.</p>
+<h3 id="errors%2Fdiagnostics" tabindex="-1">Errors/diagnostics <a class="header-anchor" href="#errors%2Fdiagnostics"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>An import path cannot end with a '.ts' extension.</code> or
+<code>Cannot find name 'Deno'.</code></p>
+<p>This is normally a situation where Deno is not enabled on a Deno project. If you
+look at the source of the diagnostic you are probably going to see a <code>ts(2691)</code>.
+The <code>ts</code> indicates that it is coming from the built-in TypeScript/JavaScript
+engine in VS Code. You will want to check that your configuration is set
+properly and the <strong>Deno: Enable</strong> setting - <code>deno.enable</code> is true.</p>
+<p>You can also check what the Deno language server thinks is your current active
+configuration by using <strong>Deno: Language Server Status</strong> from the command
+palette. This will display a document from the language server with a section
+named "Workspace Configuration". This will give you the configuration as
+reported by VS Code to the language server.</p>
+<p>Also check if the VS Code configuration called <code>enableProjectDiagnostics</code>,
+located in <strong>TypeScript › Tsserver › Experimental: Enable Project Diagnostics</strong>
+is <strong>disabled</strong>. This setting allows TypeScript language server to execute in
+the background to check the entire project at once and Deno cannot disable its
+behavior so the errors keep showing even when all other settings are correctly
+set.</p>
+<p>If <code>"enable"</code> is set to <code>true</code> in there, and the error message still persists,
+you might want to try restarting VS Code, as the part of the extension that
+"mutes" the built-in TypeScript diagnostics for files is not working as
+designed. If the issue still persists after a restart, you may have encountered
+a bug that we didn't expect and searching the issues and reporting a bug at
+<a href="https://github.com/denoland/vscode_deno">https://github.com/denoland/vscode_deno</a> is the next step.</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-06-18T00:00:00.000Z">June 18, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/reference/continuous_integration/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Continuous integration</span></a><a href="/runtime/reference/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Overview →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/vscode.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

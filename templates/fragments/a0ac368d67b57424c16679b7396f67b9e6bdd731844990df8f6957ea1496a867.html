@@ -1,0 +1,179 @@
+
+    <template id=&quot;user&quot;>
+      <li></li>
+    </template>
+    <template id=&quot;message&quot;>
+      <div>
+        <span></span>
+        <p></p>
+      </div>
+    </template>
+  </body>
+</html>
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="css" tabindex="-1">CSS <a class="header-anchor" href="#css"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>If you'd like to style your chat app, create a <code>style.css</code> file in the <code>public</code>
+folder and add this
+<a href="https://raw.githubusercontent.com/denoland/tutorial-with-websockets/refs/heads/main/public/style.css">pre-made CSS</a>.</p>
+<h3 id="javascript" tabindex="-1">JavaScript <a class="header-anchor" href="#javascript"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>We'll set up the client side JavaScript in an <code>app.js</code> file, you'll have seen it
+linked in the HTML we just wrote. In the <code>public</code> folder and add an <code>app.js</code>
+file with the following code:</p>
+<div><div class="markdownBlockTitle">app.js</div><div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">const</span> myUsername <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"Please enter your name"</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token string">"Anonymous"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">./start_web_socket?username=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>myUsername<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> location<span class="token punctuation">.</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
+url<span class="token punctuation">.</span>protocol <span class="token operator">=</span> url<span class="token punctuation">.</span>protocol<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">,</span> <span class="token string">"ws"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> socket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebSocket</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+socket<span class="token punctuation">.</span><span class="token function-variable function">onmessage</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">"update-users"</span><span class="token operator">:</span>
+      <span class="token function">updateUserList</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>usernames<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">case</span> <span class="token string">"send-message"</span><span class="token operator">:</span>
+      <span class="token function">addMessage</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>username<span class="token punctuation">,</span> data<span class="token punctuation">.</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">updateUserList</span><span class="token punctuation">(</span><span class="token parameter">usernames</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> userList <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"users"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  userList<span class="token punctuation">.</span><span class="token function">replaceChildren</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> username <span class="token keyword">of</span> usernames<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> listItem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    listItem<span class="token punctuation">.</span>textContent <span class="token operator">=</span> username<span class="token punctuation">;</span>
+    userList<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>listItem<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">addMessage</span><span class="token punctuation">(</span><span class="token parameter">username<span class="token punctuation">,</span> message</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> template <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"message"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> clone <span class="token operator">=</span> template<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  clone<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"span"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> username<span class="token punctuation">;</span>
+  clone<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"p"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>textContent <span class="token operator">=</span> message<span class="token punctuation">;</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"conversation"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">prepend</span><span class="token punctuation">(</span>clone<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> inputElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"data"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+inputElement<span class="token punctuation">.</span><span class="token function">focus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> form <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"form"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+form<span class="token punctuation">.</span><span class="token function-variable function">onsubmit</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> message <span class="token operator">=</span> inputElement<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+  inputElement<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+  socket<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">event</span><span class="token operator">:</span> <span class="token string">"send-message"</span><span class="token punctuation">,</span> message <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-77" class="copyButton" data-copy="const myUsername = prompt(&quot;Please enter your name&quot;) || &quot;Anonymous&quot;;
+const url = new URL(`./start_web_socket?username=${myUsername}`, location.href);
+url.protocol = url.protocol.replace(&quot;http&quot;, &quot;ws&quot;);
+const socket = new WebSocket(url);
+
+socket.onmessage = (event) => {
+  const data = JSON.parse(event.data);
+
+  switch (data.event) {
+    case &quot;update-users&quot;:
+      updateUserList(data.usernames);
+      break;
+
+    case &quot;send-message&quot;:
+      addMessage(data.username, data.message);
+      break;
+  }
+};
+
+function updateUserList(usernames) {
+  const userList = document.getElementById(&quot;users&quot;);
+  userList.replaceChildren();
+
+  for (const username of usernames) {
+    const listItem = document.createElement(&quot;li&quot;);
+    listItem.textContent = username;
+    userList.appendChild(listItem);
+  }
+}
+
+function addMessage(username, message) {
+  const template = document.getElementById(&quot;message&quot;);
+  const clone = template.content.cloneNode(true);
+
+  clone.querySelector(&quot;span&quot;).textContent = username;
+  clone.querySelector(&quot;p&quot;).textContent = message;
+  document.getElementById(&quot;conversation&quot;).prepend(clone);
+}
+
+const inputElement = document.getElementById(&quot;data&quot;);
+inputElement.focus();
+
+const form = document.getElementById(&quot;form&quot;);
+
+form.onsubmit = (e) => {
+  e.preventDefault();
+  const message = inputElement.value;
+  inputElement.value = &quot;&quot;;
+  socket.send(JSON.stringify({ event: &quot;send-message&quot;, message }));
+};
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This code prompts the user for a username, then creates a WebSocket connection
+to the server with the username as a query parameter. It listens for messages
+from the server and either updates the list of connected users or adds a new
+message to the chat window. It also sends messages to the server when the user
+submits the form either by pressing enter or clicking the send button. We use an
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template">HTML template</a>
+to scaffold out the new messages to show in the chat window.</p>
+<h2 id="run-the-server" tabindex="-1">Run the server <a class="header-anchor" href="#run-the-server"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>To run the server we'll need to grant the necessary permissions to Deno. In your
+<code>deno.json</code> file, update the <code>dev</code> task to allow read and network access:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-diff"><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">"dev": "deno run --watch main.ts"
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">"dev": "deno run --allow-net --allow-read --watch main.ts"
+</span></span></code></pre>
+
+      <button id="copy-button-87" class="copyButton" data-copy="-&quot;dev&quot;: &quot;deno run --watch main.ts&quot;
++&quot;dev&quot;: &quot;deno run --allow-net --allow-read --watch main.ts&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Now if you visit <a href="http://localhost:8080/">http://localhost:8080</a> you will be
+able to start a chat session. You can open 2 simultaneous tabs and try chatting
+with yourself.</p>
+<p><img src="/examples/tutorials/images/websockets.gif" alt="Chat app UI"></p>
+<p>🦕 Now you can use WebSockets with Deno you're ready to build all kinds of
+realtime applications! WebSockets can be used to build realtime dashboards,
+games and collaborative editing tools and much more! If you're looking for ways
+to expand upon your chat app, perhaps you could consider adding data to the
+messages to allow you to style messages differently if they're sent from you or
+someone else. Whatever you're building, Deno will WebSocket to ya!</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2025-07-28T00:00:00.000Z">July 28, 2025</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/examples/authjs_github/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Authentication with Auth.js</span></a><a href="/examples/quic/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Communicate over QUIC →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/examples/tutorials/chat_app.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main><div class="hidden sticky top-header max-h-[calc(100dvh-var(--header-height))] border-l border-l-foreground-tertiary pt-1.5 lg:flex lg:flex-col lg:w-full"><h2 id="on-this-page" class="px-4 pt-4 leading-none pb-2 uppercase text-smaller font-bold tracking-wide text-foreground-secondary">This page</h2><ul class="toc-list overflow-y-auto scrollbar-none [&amp;::-webkit-scrollbar]:hidden flex flex-col flex-1 min-h-0 pb-4 pl-0" id="toc" aria-labelledby="on-this-page"><li class="leading-tight text-balance"><a href="#initialize-a-new-project" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Initialize a new project </a></li><li class="leading-tight text-balance"><a href="#build-the-backend" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Build the backend </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#import-dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Import dependencies </a></li><li class="leading-tight text-balance"><a href="#set-up-the-server" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Set up the server </a></li></ul></li><li class="leading-tight text-balance"><a href="#build-the-frontend" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Build the frontend </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#html" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">HTML </a></li><li class="leading-tight text-balance"><a href="#css" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">CSS </a></li><li class="leading-tight text-balance"><a href="#javascript" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">JavaScript </a></li></ul></li><li class="leading-tight text-balance"><a href="#run-the-server" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Run the server </a></li></ul></div></div><footer class="text-smaller bg-gray-50 dark:bg-gray-950 p-4 pt-12 border-t border-t-foreground-tertiary"><nav class="flex flex-col gap-x-4 gap-y-12 w-max max-w-full md:flex-row md:flex-wrap md:justify-between md:gap-16 lg:gap-24"><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Deno Docs</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="/runtime/">Deno Runtime</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/examples/">Examples</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://jsr.io/@std">Standard Library</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/api/deno/">Deno API Reference</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Services Docs</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="/deploy/">Deno Deploy </a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/deploy/classic/">Deno Deploy Classic</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/subhosting/manual/">Deno Subhosting</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Community</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="https://discord.gg/deno">Discord</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://github.com/denoland">GitHub</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://youtube.com/@deno_land">YouTube</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://bsky.app/profile/deno.land">Bluesky</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://fosstodon.org/@deno_land">Mastodon</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://twitter.com/deno_land">Twitter</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://deno.news/">Newsletter</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Help &amp; Feedback</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="https://discord.gg/deno">Community Support</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://denostatus.com">Deploy System Status</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://github.com/denoland/deploy_feedback">Deploy Feedback</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="mailto:support@deno.com">Report a Problem</a></li></ul></section><section class="flex-auto"><h3 class="mb-2 uppercase font-bold text-foreground-primary whitespace-pre">Company</h3><ul class="m-0 p-0 pl-3 border-l border-l-sidebar-line list-none"><li><a class="block mb-2 hover:text-primary hover:underline" href="https://deno.com/">Deno Website</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="https://deno.com/blog">Blog</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/deploy/privacy_policy">Privacy Policy</a></li><li><a class="block mb-2 hover:text-primary hover:underline" href="/llms.txt">LLMs</a></li></ul></section></nav><p class="m-0 mt-16 mx-auto text-xs text-foreground-secondary">Copyright © 2026 the Deno authors.</p></footer></body></html>

@@ -1,0 +1,474 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#opening-and-closing-a-database" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Opening and closing a database </a></li><li class="leading-tight text-balance"><a href="#creating%2C-updating%2C-and-reading-a-key-value-pair" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Creating, updating, and reading a key-value pair </a></li><li class="leading-tight text-balance"><a href="#listing-several-key-value-pairs" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Listing several key-value pairs </a></li><li class="leading-tight text-balance"><a href="#deleting-key-value-pairs" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deleting key-value pairs </a></li><li class="leading-tight text-balance"><a href="#atomic-transactions" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Atomic transactions </a></li><li class="leading-tight text-balance"><a href="#improve-querying-with-secondary-indexes" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Improve querying with secondary indexes </a></li><li class="leading-tight text-balance"><a href="#watching-for-updates-in-deno-kv" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Watching for updates in Deno KV </a></li><li class="leading-tight text-balance"><a href="#production-usage" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Production usage </a></li><li class="leading-tight text-balance"><a href="#testing" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Testing </a></li><li class="leading-tight text-balance"><a href="#next-steps" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Next steps </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">KV</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/deploy/kv/index.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fdeploy%2Fkv%2Findex.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Deno KV Quick Start</h1></div><p>Deno KV is a
+<a href="https://en.wikipedia.org/wiki/Key%E2%80%93value_database">key-value database</a>
+built directly into the Deno runtime, available in the
+<a href="https://docs.deno.com/api/deno/~/Deno.Kv"><code>Deno.Kv</code> namespace</a>. It can be used
+for many kinds of data storage use cases, but excels at storing simple data
+structures that benefit from very fast reads and writes. Deno KV is available in
+the Deno CLI and on <a href="/deploy/reference/deno_kv/">Deno Deploy</a>.</p>
+<p>
+</p><div class="admonition caution">
+  <div class="title">Caution</div>
+
+<p></p>
+<p>Deno KV is still in development and may change. To use it, you must pass the
+<code>--unstable-kv</code> flag to Deno.</p>
+<p>
+</p></div>
+<p></p>
+<p>Let's walk through the key features of Deno KV.</p>
+<h2 id="opening-and-closing-a-database" tabindex="-1">Opening and closing a database <a class="header-anchor" href="#opening-and-closing-a-database"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>In your Deno program, you can get a reference to a KV database using
+<a href="/api/deno/~/Deno.openKv"><code>Deno.openKv()</code></a>. You may pass in an optional file
+system path to where you'd like to store your database, otherwise one will be
+created for you based on the current working directory of your script.</p>
+<p>To close the database connection, use the
+<a href="https://docs.deno.com/api/deno/~/Deno.Kv#method_close_0"><code>.close()</code></a> method.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Execute some queries ...</span>
+kv<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-24" class="copyButton" data-copy="const kv = await Deno.openKv();
+// Execute some queries ...
+kv.close();
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="creating%2C-updating%2C-and-reading-a-key-value-pair" tabindex="-1">Creating, updating, and reading a key-value pair <a class="header-anchor" href="#creating%2C-updating%2C-and-reading-a-key-value-pair"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Data in Deno KV is stored as key-value pairs, much like properties of a
+JavaScript object literal or a
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>.
+<a href="/deploy/kv/key_space">Keys</a> are represented as an array of JavaScript types, like
+<code>string</code>, <code>number</code>, <code>bigint</code>, or <code>boolean</code>. Values can be arbitrary JavaScript
+objects. In this example, we create a key-value pair representing a user's UI
+preferences, and save it with
+<a href="https://docs.deno.com/api/deno/~/Deno.Kv.prototype.set"><code>kv.set()</code></a>.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> prefs <span class="token operator">=</span> <span class="token punctuation">{</span>
+  username<span class="token operator">:</span> <span class="token string">"ada"</span><span class="token punctuation">,</span>
+  theme<span class="token operator">:</span> <span class="token string">"dark"</span><span class="token punctuation">,</span>
+  language<span class="token operator">:</span> <span class="token string">"en-US"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">,</span> <span class="token string">"ada"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> prefs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-31" class="copyButton" data-copy="const kv = await Deno.openKv();
+
+const prefs = {
+  username: &quot;ada&quot;,
+  theme: &quot;dark&quot;,
+  language: &quot;en-US&quot;,
+};
+
+const result = await kv.set([&quot;preferences&quot;, &quot;ada&quot;], prefs);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Once a key-value pair is set, you can read it from the database with
+<a href="https://docs.deno.com/api/deno/~/Deno.Kv.prototype.get"><code>kv.get()</code></a>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> entry <span class="token operator">=</span> <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">,</span> <span class="token string">"ada"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>versionstamp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-35" class="copyButton" data-copy="const entry = await kv.get([&quot;preferences&quot;, &quot;ada&quot;]);
+console.log(entry.key);
+console.log(entry.value);
+console.log(entry.versionstamp);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Both <code>get</code> and <code>list</code> <a href="/deploy/kv/operations">operations</a> return a
+<a href="https://docs.deno.com/api/deno/~/Deno.KvEntry">KvEntry</a> object with the
+following properties:</p>
+<ul>
+<li><code>key</code> - the array key you used to set the value</li>
+<li><code>value</code> - the JavaScript object you set for this key</li>
+<li><code>versionstamp</code> - a generated value used to determine if a key has been
+updated.</li>
+</ul>
+<p>The <code>set</code> operation is also used to update objects that already exist for a
+given key. When a key's value is updated, its <code>versionstamp</code> will change to a
+new generated value.</p>
+<h2 id="listing-several-key-value-pairs" tabindex="-1">Listing several key-value pairs <a class="header-anchor" href="#listing-several-key-value-pairs"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>To get values for a finite number of keys, you may use
+<a href="https://docs.deno.com/api/deno/~/Deno.Kv.prototype.getMany"><code>kv.getMany()</code></a>.
+Pass in several keys as arguments, and you'll receive an array of values for
+each key. Note that <strong>values and versionstamps can be <code>null</code></strong> if no value
+exists for the given key(s).</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">getMany</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">,</span> <span class="token string">"ada"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">,</span> <span class="token string">"grace"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>key<span class="token punctuation">;</span> <span class="token comment">// ["preferences", "ada"]</span>
+result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span> <span class="token comment">// { ... }</span>
+result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>versionstamp<span class="token punctuation">;</span> <span class="token comment">// "00000000000000010000"</span>
+result<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>key<span class="token punctuation">;</span> <span class="token comment">// ["preferences", "grace"]</span>
+result<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span> <span class="token comment">// null</span>
+result<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>versionstamp<span class="token punctuation">;</span> <span class="token comment">// null</span>
+</code></pre>
+
+      <button id="copy-button-65" class="copyButton" data-copy="const kv = await Deno.openKv();
+const result = await kv.getMany([
+  [&quot;preferences&quot;, &quot;ada&quot;],
+  [&quot;preferences&quot;, &quot;grace&quot;],
+]);
+result[0].key; // [&quot;preferences&quot;, &quot;ada&quot;]
+result[0].value; // { ... }
+result[0].versionstamp; // &quot;00000000000000010000&quot;
+result[1].key; // [&quot;preferences&quot;, &quot;grace&quot;]
+result[1].value; // null
+result[1].versionstamp; // null
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Often, it is useful to retrieve a list of key-value pairs from all keys that
+share a given prefix. This type of operation is possible using
+<a href="https://docs.deno.com/api/deno/~/Deno.Kv.prototype.list"><code>kv.list()</code></a>. In this
+example, we get a list of key-value pairs that share the <code>"preferences"</code> prefix.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> entries <span class="token operator">=</span> kv<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">{</span> prefix<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token keyword">await</span> <span class="token punctuation">(</span><span class="token keyword">const</span> entry <span class="token keyword">of</span> entries<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ["preferences", "ada"]</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// { ... }</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span>versionstamp<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "00000000000000010000"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-69" class="copyButton" data-copy="const kv = await Deno.openKv();
+const entries = kv.list({ prefix: [&quot;preferences&quot;] });
+for await (const entry of entries) {
+  console.log(entry.key); // [&quot;preferences&quot;, &quot;ada&quot;]
+  console.log(entry.value); // { ... }
+  console.log(entry.versionstamp); // &quot;00000000000000010000&quot;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Returned keys are ordered lexicographically based on the next component of the
+key after the prefix. So KV pairs with these keys:</p>
+<ul>
+<li><code>["preferences", "ada"]</code></li>
+<li><code>["preferences", "bob"]</code></li>
+<li><code>["preferences", "cassie"]</code></li>
+</ul>
+<p>Will be returned in that order by <code>kv.list()</code>.</p>
+<p>Read operations can either be performed in
+<a href="/deploy/kv/operations"><strong>strong or eventual consistency mode</strong></a>. Strong consistency mode
+guarantees that the read operation will return the most recently written value.
+Eventual consistency mode may return a stale value, but is faster. By contrast,
+writes are always performed in strong consistency mode.</p>
+<h2 id="deleting-key-value-pairs" tabindex="-1">Deleting key-value pairs <a class="header-anchor" href="#deleting-key-value-pairs"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>You can delete a key from the database using
+<a href="https://docs.deno.com/api/deno/~/Deno.Kv.prototype.delete"><code>kv.delete()</code></a>. No
+action is taken if no value is found for the given key.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">,</span> <span class="token string">"alan"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-102" class="copyButton" data-copy="const kv = await Deno.openKv();
+await kv.delete([&quot;preferences&quot;, &quot;alan&quot;]);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="atomic-transactions" tabindex="-1">Atomic transactions <a class="header-anchor" href="#atomic-transactions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno KV is capable of executing <a href="/deploy/kv/transactions">atomic transactions</a>, which
+enables you to conditionally execute one or many data manipulation operations at
+once. In the following example, we create a new preferences object only if it
+hasn't been created already.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">,</span> <span class="token string">"alan"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token punctuation">{</span>
+  username<span class="token operator">:</span> <span class="token string">"alan"</span><span class="token punctuation">,</span>
+  theme<span class="token operator">:</span> <span class="token string">"light"</span><span class="token punctuation">,</span>
+  language<span class="token operator">:</span> <span class="token string">"en-GB"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">atomic</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">check</span><span class="token punctuation">(</span><span class="token punctuation">{</span> key<span class="token punctuation">,</span> versionstamp<span class="token operator">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// `null` versionstamps mean 'no value'</span>
+  <span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>ok<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Preferences did not yet exist. Inserted!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"Preferences already exist."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-109" class="copyButton" data-copy="const kv = await Deno.openKv();
+
+const key = [&quot;preferences&quot;, &quot;alan&quot;];
+const value = {
+  username: &quot;alan&quot;,
+  theme: &quot;light&quot;,
+  language: &quot;en-GB&quot;,
+};
+
+const res = await kv.atomic()
+  .check({ key, versionstamp: null }) // `null` versionstamps mean 'no value'
+  .set(key, value)
+  .commit();
+if (res.ok) {
+  console.log(&quot;Preferences did not yet exist. Inserted!&quot;);
+} else {
+  console.error(&quot;Preferences already exist.&quot;);
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Learn more about transactions in Deno KV <a href="/deploy/kv/transactions">here</a>.</p>
+<h2 id="improve-querying-with-secondary-indexes" tabindex="-1">Improve querying with secondary indexes <a class="header-anchor" href="#improve-querying-with-secondary-indexes"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p><a href="/deploy/kv/secondary_indexes">Secondary indexes</a> store the same data by multiple keys,
+allowing for simpler queries of the data you need. Let's say that we need to be
+able to access user preferences by both username AND email. To enable this, you
+could provide a function that wraps the logic to save the preferences to create
+two indexes.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">savePreferences</span><span class="token punctuation">(</span>prefs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">,</span> prefs<span class="token punctuation">.</span>username<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Set the primary key</span>
+  <span class="token keyword">const</span> r <span class="token operator">=</span> <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> prefs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Set the secondary key's value to be the primary key</span>
+  <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"preferencesByEmail"</span><span class="token punctuation">,</span> prefs<span class="token punctuation">.</span>email<span class="token punctuation">]</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> r<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getByUsername</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Use as before...</span>
+  <span class="token keyword">const</span> r <span class="token operator">=</span> <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">,</span> username<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> r<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getByEmail</span><span class="token punctuation">(</span>email<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Look up the key by email, then second lookup for actual data</span>
+  <span class="token keyword">const</span> r1 <span class="token operator">=</span> <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"preferencesByEmail"</span><span class="token punctuation">,</span> email<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> r2 <span class="token operator">=</span> <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>r1<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> r2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-119" class="copyButton" data-copy="const kv = await Deno.openKv();
+
+async function savePreferences(prefs) {
+  const key = [&quot;preferences&quot;, prefs.username];
+
+  // Set the primary key
+  const r = await kv.set(key, prefs);
+
+  // Set the secondary key's value to be the primary key
+  await kv.set([&quot;preferencesByEmail&quot;, prefs.email], key);
+
+  return r;
+}
+
+async function getByUsername(username) {
+  // Use as before...
+  const r = await kv.get([&quot;preferences&quot;, username]);
+  return r;
+}
+
+async function getByEmail(email) {
+  // Look up the key by email, then second lookup for actual data
+  const r1 = await kv.get([&quot;preferencesByEmail&quot;, email]);
+  const r2 = await kv.get(r1.value);
+  return r2;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Learn more about <a href="/deploy/kv/secondary_indexes/">secondary indexes in the manual here</a>.</p>
+<h2 id="watching-for-updates-in-deno-kv" tabindex="-1">Watching for updates in Deno KV <a class="header-anchor" href="#watching-for-updates-in-deno-kv"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>You can also listen for updates from Deno KV with <code>kv.watch()</code>, which will emit
+a new value or values of the key or keys you provide. In the below chat example,
+we watch for updates on the key <code>["last_message_id", roomId]</code>. We retrieve
+<code>messageId</code>, which we then use with <code>kv.list()</code> to grab all the new messages
+from <code>seen</code> and <code>messageId</code>.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">let</span> seen <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token keyword">await</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token punctuation">[</span>messageId<span class="token punctuation">]</span> <span class="token keyword">of</span> kv<span class="token punctuation">.</span><span class="token function">watch</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"last_message_id"</span><span class="token punctuation">,</span> roomId<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> newMessages <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token function">fromAsync</span><span class="token punctuation">(</span>kv<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    start<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"messages"</span><span class="token punctuation">,</span> roomId<span class="token punctuation">,</span> seen<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    end<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"messages"</span><span class="token punctuation">,</span> roomId<span class="token punctuation">,</span> messageId<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">await</span> websocket<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>newMessages<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  seen <span class="token operator">=</span> messageId<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-129" class="copyButton" data-copy="let seen = &quot;&quot;;
+for await (const [messageId] of kv.watch([[&quot;last_message_id&quot;, roomId]])) {
+  const newMessages = await Array.fromAsync(kv.list({
+    start: [&quot;messages&quot;, roomId, seen, &quot;&quot;],
+    end: [&quot;messages&quot;, roomId, messageId, &quot;&quot;],
+  }));
+  await websocket.write(JSON.stringify(newMessages));
+  seen = messageId;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Learn more about <a href="/deploy/kv/operations#watch">using Deno KV watch here</a>.</p>
+<h2 id="production-usage" tabindex="-1">Production usage <a class="header-anchor" href="#production-usage"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno KV is available for use in live applications on
+<a href="/deploy/reference/deno_kv/">Deno Deploy</a>. In production, Deno KV is backed by
+<a href="https://www.foundationdb.org/">FoundationDB</a>, the open source key-value store
+created by Apple.</p>
+<h2 id="testing" tabindex="-1">Testing <a class="header-anchor" href="#testing"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>By default, <a href="https://docs.deno.com/api/deno/~/Deno.openKv"><code>Deno.openKv()</code></a>
+creates or opens a persistent store based on the path from which the script that
+invoked it was run. This isn't usually desirable for tests, which need to
+produce the same behavior when run many times in a row.</p>
+<p>To test code that uses Deno KV, you can use the special argument <code>":memory:"</code> to
+create an ephemeral Deno KV datastore.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">setDisplayName</span><span class="token punctuation">(</span>
+  kv<span class="token operator">:</span> Deno<span class="token punctuation">.</span>Kv<span class="token punctuation">,</span>
+  username<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+  displayname<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">,</span> username<span class="token punctuation">,</span> <span class="token string">"displayname"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> displayname<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getDisplayName</span><span class="token punctuation">(</span>
+  kv<span class="token operator">:</span> Deno<span class="token punctuation">.</span>Kv<span class="token punctuation">,</span>
+  username<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token builtin">string</span> <span class="token operator">|</span> <span class="token keyword">null</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"preferences"</span><span class="token punctuation">,</span> username<span class="token punctuation">,</span> <span class="token string">"displayname"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span>value <span class="token keyword">as</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Deno<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Preferences"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>t<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token string">":memory:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">await</span> t<span class="token punctuation">.</span><span class="token function">step</span><span class="token punctuation">(</span><span class="token string">"can set displayname"</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> displayName <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getDisplayName</span><span class="token punctuation">(</span>kv<span class="token punctuation">,</span> <span class="token string">"example"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">assertEquals</span><span class="token punctuation">(</span>displayName<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">await</span> <span class="token function">setDisplayName</span><span class="token punctuation">(</span>kv<span class="token punctuation">,</span> <span class="token string">"example"</span><span class="token punctuation">,</span> <span class="token string">"Exemplary User"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> displayName <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getDisplayName</span><span class="token punctuation">(</span>kv<span class="token punctuation">,</span> <span class="token string">"example"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">assertEquals</span><span class="token punctuation">(</span>displayName<span class="token punctuation">,</span> <span class="token string">"Exemplary User"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-148" class="copyButton" data-copy="async function setDisplayName(
+  kv: Deno.Kv,
+  username: string,
+  displayname: string,
+) {
+  await kv.set([&quot;preferences&quot;, username, &quot;displayname&quot;], displayname);
+}
+
+async function getDisplayName(
+  kv: Deno.Kv,
+  username: string,
+): Promise<string | null> {
+  return (await kv.get([&quot;preferences&quot;, username, &quot;displayname&quot;]))
+    .value as string;
+}
+
+Deno.test(&quot;Preferences&quot;, async (t) => {
+  const kv = await Deno.openKv(&quot;:memory:&quot;);
+
+  await t.step(&quot;can set displayname&quot;, async () => {
+    const displayName = await getDisplayName(kv, &quot;example&quot;);
+    assertEquals(displayName, null);
+
+    await setDisplayName(kv, &quot;example&quot;, &quot;Exemplary User&quot;);
+
+    const displayName = await getDisplayName(kv, &quot;example&quot;);
+    assertEquals(displayName, &quot;Exemplary User&quot;);
+  });
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>This works because Deno KV is backed by SQLite when run for local development.
+Just like in-memory SQLite databases, multiple ephemeral Deno KV stores can
+exist at once without interfering with one another. For more information about
+special database addressing modes, see
+<a href="https://www.sqlite.org/inmemorydb.html">the SQLite docs on the topic</a>.</p>
+<h2 id="next-steps" tabindex="-1">Next steps <a class="header-anchor" href="#next-steps"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>At this point, you're just beginning to scratch the surface with Deno KV. Be
+sure to check out our guide on the <a href="/deploy/kv/key_space/">Deno KV key space</a>,
+and a collection of
+<a href="/examples/#unstable-apis">tutorials and example applications</a> here.</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-03-26T00:00:00.000Z">March 26, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/deploy/reference/button/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Deploy Button</span></a><a href="/deploy/kv/key_space/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Key space →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/deploy/kv/index.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

@@ -1,0 +1,769 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#structure" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Structure </a></li><li class="leading-tight text-balance"><a href="#settings" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Settings </a></li><li class="leading-tight text-balance"><a href="#commands" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Commands </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#.cache" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">.cache </a></li><li class="leading-tight text-balance"><a href="#showreferences" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">showReferences </a></li><li class="leading-tight text-balance"><a href="#test" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">test </a></li></ul></li><li class="leading-tight text-balance"><a href="#requests" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Requests </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#%2Fcache" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">/cache </a></li><li class="leading-tight text-balance"><a href="#performance" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">performance </a></li><li class="leading-tight text-balance"><a href="#reloadimportregistries" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">reloadImportRegistries </a></li><li class="leading-tight text-balance"><a href="#virtualtextdocument" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">virtualTextDocument </a></li><li class="leading-tight text-balance"><a href="#task" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">task </a></li></ul></li><li class="leading-tight text-balance"><a href="#notifications" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Notifications </a></li><li class="leading-tight text-balance"><a href="#language-ids" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Language IDs </a></li><li class="leading-tight text-balance"><a href="#testing" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Testing </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#testing-settings" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Testing settings </a></li><li class="leading-tight text-balance"><a href="#testing-notifications" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Testing notifications </a></li><li class="leading-tight text-balance"><a href="#testing-requests" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Testing requests </a></li></ul></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/lsp_integration.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Flsp_integration.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Language Server Integration</h1></div><p>
+</p><div class="admonition tip">
+  <div class="title">Tip</div>
+
+<p></p>
+<p>If you are looking for information how to use Deno's LSP with various editors,
+visit
+<a href="/runtime/getting_started/setup_your_environment/">Setup your environment page</a>.</p>
+<p>
+</p></div>
+<p></p>
+<p>The Deno CLI comes with a built in language server that can provide an
+intelligent editing experience, as well as a way to easily access the other
+tools that come built in with Deno. For most users, using the language server
+would be via an editor such as <a href="/runtime/reference/vscode/">Visual Studio Code</a>
+or <a href="/runtime/getting_started/setup_your_environment/">other editors</a>.</p>
+<p>This page is designed for those creating integrations to the language server or
+providing a package registry for Deno that integrates intelligently.</p>
+<p>The Deno Language Server provides a server implementation of the
+<a href="https://microsoft.github.io/language-server-protocol/">Language Server Protocol</a>
+which is specifically tailored to provide a <em>Deno</em> view of code. It is
+integrated into the command line and can be started via the <code>lsp</code> sub-command.</p>
+<h2 id="structure" tabindex="-1">Structure <a class="header-anchor" href="#structure"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>When the language server is started, a <code>LanguageServer</code> instance is created
+which holds all of the state of the language server. It also defines all of the
+methods that the client calls via the Language Server RPC protocol.</p>
+<h2 id="settings" tabindex="-1">Settings <a class="header-anchor" href="#settings"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The language server supports a number of settings for a workspace:</p>
+<ul>
+<li><code>deno.enable</code></li>
+<li><code>deno.enablePaths</code></li>
+<li><code>deno.cache</code></li>
+<li><code>deno.certificateStores</code></li>
+<li><code>deno.config</code></li>
+<li><code>deno.importMap</code></li>
+<li><code>deno.internalDebug</code></li>
+<li><code>deno.codeLens.implementations</code></li>
+<li><code>deno.codeLens.references</code></li>
+<li><code>deno.codeLens.referencesAllFunctions</code></li>
+<li><code>deno.codeLens.test</code></li>
+<li><code>deno.suggest.completeFunctionCalls</code></li>
+<li><code>deno.suggest.names</code></li>
+<li><code>deno.suggest.paths</code></li>
+<li><code>deno.suggest.autoImports</code></li>
+<li><code>deno.suggest.imports.autoDiscover</code></li>
+<li><code>deno.suggest.imports.hosts</code></li>
+<li><code>deno.lint</code></li>
+<li><code>deno.tlsCertificate</code></li>
+<li><code>deno.unsafelyIgnoreCertificateErrors</code></li>
+<li><code>deno.unstable</code></li>
+</ul>
+<p>And there are settings that are supported on a per resource basis by the
+language server:</p>
+<ul>
+<li><code>deno.enable</code></li>
+<li><code>deno.enablePaths</code></li>
+<li><code>deno.codeLens.test</code></li>
+</ul>
+<p>Deno analyzes these settings at multiple points in the language server process.
+First, when the <code>initialize</code> request arrives from the client, the
+<code>initializationOptions</code> will be assumed to be an object that represents the
+<code>deno</code> namespace of options. For example, the following value will enable Deno
+with the unstable APIs for this instance of the language server.</p>
+<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"enable"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"unstable"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-160" class="copyButton" data-copy="{
+  &quot;enable&quot;: true,
+  &quot;unstable&quot;: true
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>When the language server receives a <code>workspace/didChangeConfiguration</code>
+notification, it will assess if the client has indicated if it has a
+<code>workspaceConfiguration</code> capability. If it does, it will send a
+<code>workspace/configuration</code> request which will include a request for the workspace
+configuration as well as the configuration of all URIs that the language server
+is currently tracking.</p>
+<p>If the client has the <code>workspaceConfiguration</code> capability, the language server
+will send a configuration request for the URI when it received the
+<code>textDocument/didOpen</code> notification in order to get the resources specific
+settings.</p>
+<p>If the client does not have the <code>workspaceConfiguration</code> capability, the
+language server will assume the workspace setting applies to all resources.</p>
+<h2 id="commands" tabindex="-1">Commands <a class="header-anchor" href="#commands"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>There are several commands that might be issued by the language server to the
+client, which the client is expected to implement:</p>
+<h3 id=".cache" tabindex="-1">.cache <a class="header-anchor" href="#.cache"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno.cache</code> is sent as a resolution code action when there is an un-cached
+module specifier that is being imported into a module. It will be sent with an
+argument that contains the resolved specifier as a string to be cached.</p>
+<h3 id="showreferences" tabindex="-1">showReferences <a class="header-anchor" href="#showreferences"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno.showReferences</code> is sent as the command on some code lenses to show
+locations of references. The arguments contain the specifier that is the subject
+of the command, the start position of the target and the locations of the
+references to show.</p>
+<h3 id="test" tabindex="-1">test <a class="header-anchor" href="#test"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno.test</code> is sent as part of a test code lens to, of which the client is
+expected to run a test based on the arguments, which are the specifier the test
+is contained in and the name of the test to filter the tests on.</p>
+<h2 id="requests" tabindex="-1">Requests <a class="header-anchor" href="#requests"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The LSP currently supports the following custom requests. A client should
+implement these in order to have a fully functioning client that integrates well
+with Deno:</p>
+<h3 id="%2Fcache" tabindex="-1">/cache <a class="header-anchor" href="#%2Fcache"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno/cache</code> will instruct Deno to attempt to cache a module and all of its
+dependencies. If a <code>referrer</code> only is passed, then all dependencies for the
+module specifier will be loaded. If there are values in the <code>uris</code>, then only
+those <code>uris</code> will be cached.</p>
+<p>It expects parameters of:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">interface</span> <span class="token class-name">CacheParams</span> <span class="token punctuation">{</span>
+  referrer<span class="token operator">:</span> TextDocumentIdentifier<span class="token punctuation">;</span>
+  uris<span class="token operator">:</span> TextDocumentIdentifier<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-209" class="copyButton" data-copy="interface CacheParams {
+  referrer: TextDocumentIdentifier;
+  uris: TextDocumentIdentifier[];
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="performance" tabindex="-1">performance <a class="header-anchor" href="#performance"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno/performance</code> requests the return of the timing averages for the internal
+instrumentation of Deno. It does not expect any parameters.</p>
+<h3 id="reloadimportregistries" tabindex="-1">reloadImportRegistries <a class="header-anchor" href="#reloadimportregistries"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno/reloadImportRegistries</code> reloads any cached responses from import
+registries. It does not expect any parameters.</p>
+<h3 id="virtualtextdocument" tabindex="-1">virtualTextDocument <a class="header-anchor" href="#virtualtextdocument"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno/virtualTextDocument</code> requests a virtual text document from the LSP, which
+is a read only document that can be displayed in the client. This allows clients
+to access documents in the Deno cache, like remote modules and TypeScript
+library files built into Deno. The Deno language server will encode all internal
+files under the custom scheme <code>deno:</code>, so clients should route all requests for
+the <code>deno:</code> scheme back to the <code>deno/virtualTextDocument</code> API.</p>
+<p>It also supports a special URL of <code>deno:/status.md</code> which provides a markdown
+formatted text document that contains details about the status of the LSP for
+display to a user.</p>
+<p>It expects parameters of:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">interface</span> <span class="token class-name">VirtualTextDocumentParams</span> <span class="token punctuation">{</span>
+  textDocument<span class="token operator">:</span> TextDocumentIdentifier<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-234" class="copyButton" data-copy="interface VirtualTextDocumentParams {
+  textDocument: TextDocumentIdentifier;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="task" tabindex="-1">task <a class="header-anchor" href="#task"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno/task</code> requests the return of available deno tasks, see
+<a href="/runtime/reference/cli/task_runner/">task_runner</a>. It does not expect any
+parameters.</p>
+<h2 id="notifications" tabindex="-1">Notifications <a class="header-anchor" href="#notifications"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>There is currently one custom notification that is sent from the server to the
+client, <code>deno/registryState</code>. When <code>deno.suggest.imports.autoDiscover</code> is <code>true</code>
+and an origin for an import being added to a document is not explicitly set in
+<code>deno.suggest.imports.hosts</code>, the origin will be checked and the notification
+will be sent to the client of the status.</p>
+<p>When receiving the notification, if the param <code>suggestion</code> is <code>true</code>, the client
+should offer the user the choice to enable the origin and add it to the
+configuration for <code>deno.suggest.imports.hosts</code>. If <code>suggestion</code> is <code>false</code> the
+client should add it to the configuration of as <code>false</code> to stop the language
+server from attempting to detect if suggestions are supported.</p>
+<p>The params for the notification are:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">interface</span> <span class="token class-name">RegistryStatusNotificationParams</span> <span class="token punctuation">{</span>
+  origin<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  suggestions<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-253" class="copyButton" data-copy="interface RegistryStatusNotificationParams {
+  origin: string;
+  suggestions: boolean;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="language-ids" tabindex="-1">Language IDs <a class="header-anchor" href="#language-ids"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The language server supports diagnostics and formatting for the following
+<a href="https://microsoft.github.io/language-server-protocol/specifications/specification-current/#textDocumentItem">text document language IDs</a>:</p>
+<ul>
+<li><code>"javascript"</code></li>
+<li><code>"javascriptreact"</code></li>
+<li><code>"jsx"</code> <em>non standard, same as <code>javascriptreact</code></em></li>
+<li><code>"typescript"</code></li>
+<li><code>"typescriptreact"</code></li>
+<li><code>"tsx"</code> <em>non standard, same as <code>typescriptreact</code></em></li>
+</ul>
+<p>The language server supports only formatting for the following language IDs:</p>
+<ul>
+<li><code>"json"</code></li>
+<li><code>"jsonc"</code></li>
+<li><code>"markdown"</code></li>
+</ul>
+<h2 id="testing" tabindex="-1">Testing <a class="header-anchor" href="#testing"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The Deno language server supports a custom set of APIs to enable testing. These
+are built around providing information to enable the
+<a href="https://code.visualstudio.com/api/extension-guides/testing">vscode's Testing API</a>
+but can be used by other language server clients to provide a similar interface.</p>
+<p>Both the client and the server should support the experimental <code>testingApi</code>
+capability:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">interface</span> <span class="token class-name">ClientCapabilities</span> <span class="token punctuation">{</span>
+  experimental<span class="token operator">?</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    testingApi<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-321" class="copyButton" data-copy="interface ClientCapabilities {
+  experimental?: {
+    testingApi: boolean;
+  };
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">interface</span> <span class="token class-name">ServerCapabilities</span> <span class="token punctuation">{</span>
+  experimental<span class="token operator">?</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    testingApi<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-322" class="copyButton" data-copy="interface ServerCapabilities {
+  experimental?: {
+    testingApi: boolean;
+  };
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>When a version of Deno that supports the testing API encounters a client which
+supports the capability, it will initialize the code which handles the test
+detection and will start providing the notifications which enable it.</p>
+<p>It should also be noted that when the testing API capabilities are enabled, the
+testing code lenses will no longer be sent to the client.</p>
+<h3 id="testing-settings" tabindex="-1">Testing settings <a class="header-anchor" href="#testing-settings"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>There are specific settings which change the behavior of the language server:</p>
+<ul>
+<li><code>deno.testing.args</code> - An array of strings which will be provided as arguments
+when executing tests. This works in the same fashion as the <code>deno test</code>
+subcommand.</li>
+<li><code>deno.testing.enable</code> - A binary flag that enables or disables the testing
+server</li>
+</ul>
+<h3 id="testing-notifications" tabindex="-1">Testing notifications <a class="header-anchor" href="#testing-notifications"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The server will send notifications to the client under certain conditions.</p>
+<h4 id="deno%2Ftestmodule" tabindex="-1">deno/testModule <a class="header-anchor" href="#deno%2Ftestmodule"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>When a module containing tests is discovered by the server, it will notify the
+client by sending a <code>deno/testModule</code> notification along with a payload of
+<code>TestModuleParams</code>.</p>
+<p>Deno structures in this fashion:</p>
+<ul>
+<li>A module can contain <em>n</em> tests.</li>
+<li>A test can contain <em>n</em> steps.</li>
+<li>A step can contain <em>n</em> steps.</li>
+</ul>
+<p>When Deno does static analysis of a test module, it attempts to identify any
+tests and test steps. Because of the dynamic way tests can be declared in Deno,
+they cannot always be statically identified and can only be identified when the
+module is executed. The notification is designed to handle both of these
+situations when updating the client. When tests are discovered statically, the
+notification <code>kind</code> will be <code>"replace"</code>, when tests or steps are discovered at
+execution time, the notification <code>kind</code> will be <code>"insert"</code>.</p>
+<p>As a test document is edited in the editor, and <code>textDocument/didChange</code>
+notifications are received from the client, the static analysis of those changes
+will be performed server side and if the tests have changed, the client will
+receive a notification.</p>
+<p>When a client receives a <code>"replace"</code> notification, it can safely "replace" a
+test module representation, where when an <code>"insert"</code> it received, it should
+recursively try to add to existing representations.</p>
+<p>For test modules the <code>textDocument.uri</code> should be used as the unique ID for any
+representation (as it the string URL to the unique module). <code>TestData</code> items
+contain a unique <code>id</code> string. This <code>id</code> string is a SHA-256 hash of identifying
+information that the server tracks for a test.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">interface</span> <span class="token class-name">TestData</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The unique ID for this test/step. */</span>
+  id<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The display label for the test/step. */</span>
+  label<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** Any test steps that are associated with this test/step */</span>
+  steps<span class="token operator">?</span><span class="token operator">:</span> TestData<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The range of the owning text document that applies to the test. */</span>
+  range<span class="token operator">?</span><span class="token operator">:</span> Range<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">TestModuleParams</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The text document identifier that the tests are related to. */</span>
+  textDocument<span class="token operator">:</span> TextDocumentIdentifier<span class="token punctuation">;</span>
+
+  <span class="token comment">/** A indication if tests described are _newly_ discovered and should be
+   * _inserted_ or if the tests associated are a replacement for any existing
+   * tests. */</span>
+  kind<span class="token operator">:</span> <span class="token string">"insert"</span> <span class="token operator">|</span> <span class="token string">"replace"</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The text label for the test module. */</span>
+  label<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** An array of tests that are owned by this test module. */</span>
+  tests<span class="token operator">:</span> TestData<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-391" class="copyButton" data-copy="interface TestData {
+  /** The unique ID for this test/step. */
+  id: string;
+
+  /** The display label for the test/step. */
+  label: string;
+
+  /** Any test steps that are associated with this test/step */
+  steps?: TestData[];
+
+  /** The range of the owning text document that applies to the test. */
+  range?: Range;
+}
+
+interface TestModuleParams {
+  /** The text document identifier that the tests are related to. */
+  textDocument: TextDocumentIdentifier;
+
+  /** A indication if tests described are _newly_ discovered and should be
+   * _inserted_ or if the tests associated are a replacement for any existing
+   * tests. */
+  kind: &quot;insert&quot; | &quot;replace&quot;;
+
+  /** The text label for the test module. */
+  label: string;
+
+  /** An array of tests that are owned by this test module. */
+  tests: TestData[];
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="deno%2Ftestmoduledelete" tabindex="-1">deno/testModuleDelete <a class="header-anchor" href="#deno%2Ftestmoduledelete"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>When a test module is deleted that the server is observing, the server will
+issue a <code>deno/testModuleDelete</code> notification. When receiving the notification
+the client should remove the representation of the test module and all of its
+children tests and test steps.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">interface</span> <span class="token class-name">TestModuleDeleteParams</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The text document identifier that has been removed. */</span>
+  textDocument<span class="token operator">:</span> TextDocumentIdentifier<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-398" class="copyButton" data-copy="interface TestModuleDeleteParams {
+  /** The text document identifier that has been removed. */
+  textDocument: TextDocumentIdentifier;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="deno%2Ftestrunprogress" tabindex="-1">deno/testRunProgress <a class="header-anchor" href="#deno%2Ftestrunprogress"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>When a <a href="#denotestrun"><code>deno/testRun</code></a> is requested from the client, the server
+will support progress of that test run via the <code>deno/testRunProgress</code>
+notification.</p>
+<p>The client should process these messages and update any UI representation.</p>
+<p>The state change is represented in the <code>.message.kind</code> property of the
+<code>TestRunProgressParams</code>. The states are:</p>
+<ul>
+<li><code>"enqueued"</code> - A test or test step has been enqueued for testing.</li>
+<li><code>"skipped"</code> - A test or test step was skipped. This occurs when the Deno test
+has the <code>ignore</code> option set to <code>true</code>.</li>
+<li><code>"started"</code> - A test or test step has started.</li>
+<li><code>"passed"</code> - A test or test step has passed.</li>
+<li><code>"failed"</code> - A test or test step has failed. This is intended to indicate an
+error with the test harness instead of the test itself, but Deno currently
+does not support this distinction.</li>
+<li><code>"errored"</code> - The test or test step has errored. Additional information about
+the error will be in the <code>.message.messages</code> property.</li>
+<li><code>"end"</code> - The test run has ended.</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">interface</span> <span class="token class-name">TestIdentifier</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The test module the message is related to. */</span>
+  textDocument<span class="token operator">:</span> TextDocumentIdentifier<span class="token punctuation">;</span>
+
+  <span class="token comment">/** The optional ID of the test. If not present, then the message applies to
+   * all tests in the test module. */</span>
+  id<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The optional ID of the step. If not present, then the message only applies
+   * to the test. */</span>
+  stepId<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">TestMessage</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The content of the message. */</span>
+  message<span class="token operator">:</span> MarkupContent<span class="token punctuation">;</span>
+
+  <span class="token comment">/** An optional string which represents the expected output. */</span>
+  expectedOutput<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** An optional string which represents the actual output. */</span>
+  actualOutput<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** An optional location related to the message. */</span>
+  location<span class="token operator">?</span><span class="token operator">:</span> Location<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">TestEnqueuedStartedSkipped</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The state change that has occurred to a specific test or test step.
+   *
+   * - `"enqueued"` - the test is now enqueued to be tested
+   * - `"started"` - the test has started
+   * - `"skipped"` - the test was skipped
+   */</span>
+  type<span class="token operator">:</span> <span class="token string">"enqueued"</span> <span class="token operator">|</span> <span class="token string">"started"</span> <span class="token operator">|</span> <span class="token string">"skipped"</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The test or test step relating to the state change. */</span>
+  test<span class="token operator">:</span> TestIdentifier<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">TestFailedErrored</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The state change that has occurred to a specific test or test step.
+   *
+   * - `"failed"` - The test failed to run properly, versus the test erroring.
+   *   currently the Deno language server does not support this.
+   * - `"errored"` - The test errored.
+   */</span>
+  type<span class="token operator">:</span> <span class="token string">"failed"</span> <span class="token operator">|</span> <span class="token string">"errored"</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The test or test step relating to the state change. */</span>
+  test<span class="token operator">:</span> TestIdentifier<span class="token punctuation">;</span>
+
+  <span class="token comment">/** Messages related to the state change. */</span>
+  messages<span class="token operator">:</span> TestMessage<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** An optional duration, in milliseconds from the start to the current
+   * state. */</span>
+  duration<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">TestPassed</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The state change that has occurred to a specific test or test step. */</span>
+  type<span class="token operator">:</span> <span class="token string">"passed"</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The test or test step relating to the state change. */</span>
+  test<span class="token operator">:</span> TestIdentifier<span class="token punctuation">;</span>
+
+  <span class="token comment">/** An optional duration, in milliseconds from the start to the current
+   * state. */</span>
+  duration<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">TestOutput</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The test or test step has output information / logged information. */</span>
+  type<span class="token operator">:</span> <span class="token string">"output"</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The value of the output. */</span>
+  value<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The associated test or test step if there was one. */</span>
+  test<span class="token operator">?</span><span class="token operator">:</span> TestIdentifier<span class="token punctuation">;</span>
+
+  <span class="token comment">/** An optional location associated with the output. */</span>
+  location<span class="token operator">?</span><span class="token operator">:</span> Location<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">TestEnd</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The test run has ended. */</span>
+  type<span class="token operator">:</span> <span class="token string">"end"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">TestRunProgressMessage</span> <span class="token operator">=</span>
+  <span class="token operator">|</span> TestEnqueuedStartedSkipped
+  <span class="token operator">|</span> TestFailedErrored
+  <span class="token operator">|</span> TestPassed
+  <span class="token operator">|</span> TestOutput
+  <span class="token operator">|</span> TestEnd<span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">TestRunProgressParams</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The test run ID that the progress message applies to. */</span>
+  id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The message*/</span>
+  message<span class="token operator">:</span> TestRunProgressMessage<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-448" class="copyButton" data-copy="interface TestIdentifier {
+  /** The test module the message is related to. */
+  textDocument: TextDocumentIdentifier;
+
+  /** The optional ID of the test. If not present, then the message applies to
+   * all tests in the test module. */
+  id?: string;
+
+  /** The optional ID of the step. If not present, then the message only applies
+   * to the test. */
+  stepId?: string;
+}
+
+interface TestMessage {
+  /** The content of the message. */
+  message: MarkupContent;
+
+  /** An optional string which represents the expected output. */
+  expectedOutput?: string;
+
+  /** An optional string which represents the actual output. */
+  actualOutput?: string;
+
+  /** An optional location related to the message. */
+  location?: Location;
+}
+
+interface TestEnqueuedStartedSkipped {
+  /** The state change that has occurred to a specific test or test step.
+   *
+   * - `&quot;enqueued&quot;` - the test is now enqueued to be tested
+   * - `&quot;started&quot;` - the test has started
+   * - `&quot;skipped&quot;` - the test was skipped
+   */
+  type: &quot;enqueued&quot; | &quot;started&quot; | &quot;skipped&quot;;
+
+  /** The test or test step relating to the state change. */
+  test: TestIdentifier;
+}
+
+interface TestFailedErrored {
+  /** The state change that has occurred to a specific test or test step.
+   *
+   * - `&quot;failed&quot;` - The test failed to run properly, versus the test erroring.
+   *   currently the Deno language server does not support this.
+   * - `&quot;errored&quot;` - The test errored.
+   */
+  type: &quot;failed&quot; | &quot;errored&quot;;
+
+  /** The test or test step relating to the state change. */
+  test: TestIdentifier;
+
+  /** Messages related to the state change. */
+  messages: TestMessage[];
+
+  /** An optional duration, in milliseconds from the start to the current
+   * state. */
+  duration?: number;
+}
+
+interface TestPassed {
+  /** The state change that has occurred to a specific test or test step. */
+  type: &quot;passed&quot;;
+
+  /** The test or test step relating to the state change. */
+  test: TestIdentifier;
+
+  /** An optional duration, in milliseconds from the start to the current
+   * state. */
+  duration?: number;
+}
+
+interface TestOutput {
+  /** The test or test step has output information / logged information. */
+  type: &quot;output&quot;;
+
+  /** The value of the output. */
+  value: string;
+
+  /** The associated test or test step if there was one. */
+  test?: TestIdentifier;
+
+  /** An optional location associated with the output. */
+  location?: Location;
+}
+
+interface TestEnd {
+  /** The test run has ended. */
+  type: &quot;end&quot;;
+}
+
+type TestRunProgressMessage =
+  | TestEnqueuedStartedSkipped
+  | TestFailedErrored
+  | TestPassed
+  | TestOutput
+  | TestEnd;
+
+interface TestRunProgressParams {
+  /** The test run ID that the progress message applies to. */
+  id: number;
+
+  /** The message*/
+  message: TestRunProgressMessage;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="testing-requests" tabindex="-1">Testing requests <a class="header-anchor" href="#testing-requests"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The server handles two different requests:</p>
+<h4 id="deno%2Ftestrun" tabindex="-1">deno/testRun <a class="header-anchor" href="#deno%2Ftestrun"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>To request the language server to perform a set of tests, the client sends a
+<code>deno/testRun</code> request, which includes that ID of the test run to be used in
+future responses to the client, the type of the test run, and any test modules
+or tests to include or exclude.</p>
+<p>Currently Deno only supports the <code>"run"</code> kind of test run. Both <code>"debug"</code> and
+<code>"coverage"</code> are planned to be supported in the future.</p>
+<p>When there are no test modules or tests that are included, it implies that all
+discovered tests modules and tests should be executed. When a test module is
+included, but not any test ids, it implies that all tests within that test
+module should be included. Once all the tests are identified, any excluded tests
+are removed and the resolved set of tests are returned in the response as
+<code>"enqueued"</code>.</p>
+<p>It is not possible to include or exclude test steps via this API, because of the
+dynamic nature of how test steps are declared and run.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">interface</span> <span class="token class-name">TestRunRequestParams</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The id of the test run to be used for future messages. */</span>
+  id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** The run kind. Currently Deno only supports `"run"` */</span>
+  kind<span class="token operator">:</span> <span class="token string">"run"</span> <span class="token operator">|</span> <span class="token string">"coverage"</span> <span class="token operator">|</span> <span class="token string">"debug"</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** Test modules or tests to exclude from the test run. */</span>
+  exclude<span class="token operator">?</span><span class="token operator">:</span> TestIdentifier<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/** Test modules or tests to include in the test run. */</span>
+  include<span class="token operator">?</span><span class="token operator">:</span> TestIdentifier<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">EnqueuedTestModule</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The test module the enqueued test IDs relate to */</span>
+  textDocument<span class="token operator">:</span> TextDocumentIdentifier<span class="token punctuation">;</span>
+
+  <span class="token comment">/** The test IDs which are now enqueued for testing */</span>
+  ids<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">TestRunResponseParams</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** Test modules and test IDs that are now enqueued for testing. */</span>
+  enqueued<span class="token operator">:</span> EnqueuedTestModule<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-470" class="copyButton" data-copy="interface TestRunRequestParams {
+  /** The id of the test run to be used for future messages. */
+  id: number;
+
+  /** The run kind. Currently Deno only supports `&quot;run&quot;` */
+  kind: &quot;run&quot; | &quot;coverage&quot; | &quot;debug&quot;;
+
+  /** Test modules or tests to exclude from the test run. */
+  exclude?: TestIdentifier[];
+
+  /** Test modules or tests to include in the test run. */
+  include?: TestIdentifier[];
+}
+
+interface EnqueuedTestModule {
+  /** The test module the enqueued test IDs relate to */
+  textDocument: TextDocumentIdentifier;
+
+  /** The test IDs which are now enqueued for testing */
+  ids: string[];
+}
+
+interface TestRunResponseParams {
+  /** Test modules and test IDs that are now enqueued for testing. */
+  enqueued: EnqueuedTestModule[];
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="deno%2Ftestruncancel" tabindex="-1">deno/testRunCancel <a class="header-anchor" href="#deno%2Ftestruncancel"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>If a client wishes to cancel a currently running test run, it sends a
+<code>deno/testRunCancel</code> request with the test ID to cancel. The response back will
+be a boolean of <code>true</code> if the test is cancelled or <code>false</code> if it was not
+possible. Appropriate test progress notifications will still be sent as the test
+is being cancelled.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">interface</span> <span class="token class-name">TestRunCancelParams</span> <span class="token punctuation">{</span>
+  <span class="token comment">/** The test id to be cancelled. */</span>
+  id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-477" class="copyButton" data-copy="interface TestRunCancelParams {
+  /** The test id to be cancelled. */
+  id: number;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-02-02T00:00:00.000Z">February 2, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/reference/permissions/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Permissions</span></a><a href="/lint/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Lint rules →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/lsp_integration.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

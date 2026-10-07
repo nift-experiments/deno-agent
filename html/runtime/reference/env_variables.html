@@ -1,0 +1,326 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#built-in-deno.env-method" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Built-in Deno.env method </a></li><li class="leading-tight text-balance"><a href="#.env-file" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">.env file </a></li><li class="leading-tight text-balance"><a href="#%40std%2Fdotenv" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">@std/dotenv </a></li><li class="leading-tight text-balance"><a href="#set-a-variable-when-running-a-command" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Set a variable when running a command </a></li><li class="leading-tight text-balance"><a href="#special-environment-variables" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Special environment variables </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/env_variables.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Fenv_variables.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Environment variables</h1></div><p>There are a few ways to use environment variables in Deno:</p>
+<h2 id="built-in-deno.env-method" tabindex="-1">Built-in Deno.env method <a class="header-anchor" href="#built-in-deno.env-method"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The Deno runtime offers built-in support for environment variables with
+<a href="https://docs.deno.com/api/deno/~/Deno.env"><code>Deno.env</code></a>.</p>
+<p><a href="/api/deno/~/Deno.env"><code>Deno.env</code></a> has getter and setter methods. Here is
+example usage:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts">Deno<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"FIREBASE_API_KEY"</span><span class="token punctuation">,</span> <span class="token string">"examplekey123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Deno<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"FIREBASE_AUTH_DOMAIN"</span><span class="token punctuation">,</span> <span class="token string">"firebasedomain.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Deno<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"FIREBASE_API_KEY"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// examplekey123</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Deno<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"FIREBASE_AUTH_DOMAIN"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// firebasedomain.com</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Deno<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span><span class="token string">"FIREBASE_AUTH_DOMAIN"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre>
+
+      <button id="copy-button-12" class="copyButton" data-copy="Deno.env.set(&quot;FIREBASE_API_KEY&quot;, &quot;examplekey123&quot;);
+Deno.env.set(&quot;FIREBASE_AUTH_DOMAIN&quot;, &quot;firebasedomain.com&quot;);
+
+console.log(Deno.env.get(&quot;FIREBASE_API_KEY&quot;)); // examplekey123
+console.log(Deno.env.get(&quot;FIREBASE_AUTH_DOMAIN&quot;)); // firebasedomain.com
+console.log(Deno.env.has(&quot;FIREBASE_AUTH_DOMAIN&quot;)); // true
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id=".env-file" tabindex="-1">.env file <a class="header-anchor" href="#.env-file"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno also supports <code>.env</code> files. You can tell Deno to read environment variables
+from <code>.env</code> with the <code>--env-file</code> flag, for example:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --env-file main.ts
+</code></pre>
+
+      <button id="copy-button-19" class="copyButton" data-copy="deno run --env-file main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This will read the <code>.env</code> file from the current working directory or the first
+parent directory that contains one. If you want to load environment variables
+from a different file, you can specify that file as a parameter to the flag.</p>
+<p>You can pass multiple <code>--env-file</code> flags (e.g.,
+<code>deno run --env-file=.env.one --env-file=.env.two --allow-env &lt;script&gt;</code>) to load
+variables from multiple files.</p>
+<p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>When multiple declarations for the same environment variable exist within a
+single <code>.env</code> file, the first occurrence is applied. However, if the same
+variable is defined across multiple <code>.env</code> files (using multiple <code>--env-file</code>
+arguments), the value from the last file specified takes precedence. This means
+that the first occurrence found in the last <code>.env</code> file listed will be applied.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="%40std%2Fdotenv" tabindex="-1"><a href="/runtime/reference/std/dotenv/"><code>@std/dotenv</code></a> <a class="header-anchor" href="#%40std%2Fdotenv"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>dotenv</code> package in the standard library can be used to load environment
+variables from <code>.env</code>.</p>
+<p>Let's say you have an <code>.env</code> file that looks like this:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">GREETING</span><span class="token operator">=</span><span class="token string">"Hello, world."</span>
+</code></pre>
+
+      <button id="copy-button-44" class="copyButton" data-copy="GREETING=&quot;Hello, world.&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Import the <code>load</code> module to auto-import from the <code>.env</code> file and into the
+process environment.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> load <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"jsr:@std/dotenv"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> env <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">load</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// optional: choose a specific path (defaults to ".env")</span>
+  envPath<span class="token operator">:</span> <span class="token string">".env.local"</span><span class="token punctuation">,</span>
+  <span class="token comment">// optional: also export to the process environment (so Deno.env can read it)</span>
+  <span class="token keyword">export</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>env<span class="token punctuation">.</span><span class="token constant">GREETING</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Deno<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"GREETING"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-48" class="copyButton" data-copy="import { load } from &quot;jsr:@std/dotenv&quot;;
+
+const env = await load({
+  // optional: choose a specific path (defaults to &quot;.env&quot;)
+  envPath: &quot;.env.local&quot;,
+  // optional: also export to the process environment (so Deno.env can read it)
+  export: true,
+});
+
+console.log(env.GREETING);
+console.log(Deno.env.get(&quot;GREETING&quot;));
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Run this with <code>deno run --allow-read --allow-env app.ts</code>.</p>
+<p>Further documentation for <code>.env</code> handling can be found in the
+<a href="https://jsr.io/@std/dotenv/doc">@std/dotenv</a> documentation.</p>
+<h2 id="set-a-variable-when-running-a-command" tabindex="-1">Set a variable when running a command <a class="header-anchor" href="#set-a-variable-when-running-a-command"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>As with other CLI commands, you can set environment variables before running a
+command like so:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell"><span class="token assign-left variable">MY_VAR</span><span class="token operator">=</span><span class="token string">"my value"</span> deno run main.ts
+</code></pre>
+
+      <button id="copy-button-61" class="copyButton" data-copy="MY_VAR=&quot;my value&quot; deno run main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>This can be useful when you want to vary a task based on an environment
+variable, and can be helpfully combined with
+<a href="/runtime/reference/cli/task/"><code>deno task</code></a> commands like so:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+
+  ...
+  
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build:full"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Build the site with all features"</span><span class="token punctuation">,</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"BUILD_TYPE=FULL deno run main.ts"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"build:light"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Build the site without expensive operations"</span><span class="token punctuation">,</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"BUILD_TYPE=LIGHT deno run main.ts"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-65" class="copyButton" data-copy="{
+
+  ...
+  
+  &quot;tasks&quot;: {
+    &quot;build:full&quot;: {
+      &quot;description&quot;: &quot;Build the site with all features&quot;,
+      &quot;command&quot;: &quot;BUILD_TYPE=FULL deno run main.ts&quot;
+    },
+    &quot;build:light&quot;: {
+      &quot;description&quot;: &quot;Build the site without expensive operations&quot;,
+      &quot;command&quot;: &quot;BUILD_TYPE=LIGHT deno run main.ts&quot;
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>
+</p><div class="admonition note">
+  <div class="title">Variables with spaces</div>
+
+<p></p>
+<p>When setting environment variables that contain space characters in a <code>.env</code>
+file, ensure you enclose the value in quotes. For example:</p>
+<div class="relative"><pre><code class="highlight notranslate language-shell"><span class="token assign-left variable">MY_VAR</span><span class="token operator">=</span><span class="token string">"my value with spaces"</span>
+</code></pre>
+
+      <button id="copy-button-72" class="copyButton" data-copy="MY_VAR=&quot;my value with spaces&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>
+</p></div>
+<p></p>
+<h2 id="special-environment-variables" tabindex="-1">Special environment variables <a class="header-anchor" href="#special-environment-variables"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The Deno runtime has these special environment variables.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DENO_AUTH_TOKENS</td>
+<td>A semi-colon separated list of bearer tokens and hostnames to use when fetching remote modules from private repositories<br>(e.g. <code>abcde12345@deno.land;54321edcba@github.com</code>)</td>
+</tr>
+<tr>
+<td>DENO_TLS_CA_STORE</td>
+<td>Comma-separated list of order dependent certificate stores.<br>Possible values: <code>system</code>, <code>mozilla</code>. Defaults to <code>mozilla</code>.</td>
+</tr>
+<tr>
+<td>DENO_CERT</td>
+<td>Load certificate authorities from a PEM encoded file. The file can contain more than one certificate, each in its own PEM block. This is the environment variable form of the <code>--cert</code> flag.</td>
+</tr>
+<tr>
+<td>NODE_EXTRA_CA_CERTS</td>
+<td>Path to a PEM file with extra certificate authorities. Loaded at the root certificate store level, so the certs are honored by <code>fetch()</code>, <a href="/api/deno/~/Deno.connectTls"><code>Deno.connectTls()</code></a>, and Node compat APIs (<code>node:https</code>, <code>node:tls</code>). Available in Deno 2.8+. Missing or invalid files emit a warning rather than failing, matching Node.js.</td>
+</tr>
+<tr>
+<td>DENO_COVERAGE_DIR</td>
+<td>Set the directory for collecting coverage profile data. This option only works for <a href="/runtime/reference/cli/test/"><code>deno test</code> subcommand</a>.</td>
+</tr>
+<tr>
+<td>DENO_DIR</td>
+<td>Set the cache directory</td>
+</tr>
+<tr>
+<td>DENO_INSTALL</td>
+<td>Used by the <a href="/runtime/getting_started/installation/">shell install script</a> to choose where the <code>deno</code> executable is installed. The binary is placed at <code>$DENO_INSTALL/bin/deno</code>.</td>
+</tr>
+<tr>
+<td>DENO_INSTALL_ROOT</td>
+<td>Set the installation root for <code>deno install</code>. Executables are placed in its <code>bin</code> subdirectory, unless the path already ends with <code>bin</code> (defaults to <code>$HOME/.deno</code>, i.e. executables go to <code>$HOME/.deno/bin</code>)</td>
+</tr>
+<tr>
+<td>DENO_REPL_HISTORY</td>
+<td>Set REPL history file path History file is disabled when the value is empty <br>(defaults to <code>$DENO_DIR/deno_history.txt</code>)</td>
+</tr>
+<tr>
+<td>DENO_NO_PACKAGE_JSON</td>
+<td>Disables auto-resolution of <code>package.json</code></td>
+</tr>
+<tr>
+<td>DENO_CONDITIONS</td>
+<td>Comma-separated list of custom conditions to use when resolving npm package exports (equivalent to the <code>--conditions</code> flag)</td>
+</tr>
+<tr>
+<td>DENO_UNSTABLE_TSGO</td>
+<td>Set to <code>1</code> to type-check with TypeScript's native (Go) compiler. Equivalent to the <code>--unstable-tsgo</code> flag. See <a href="/runtime/fundamentals/typescript/#faster-type-checking-with-the-native-compiler-tsgo">TypeScript</a>.</td>
+</tr>
+<tr>
+<td>DENO_NO_PROMPT</td>
+<td>Set to disable permission prompts on access<br>(alternative to passing <code>--no-prompt</code> on invocation)</td>
+</tr>
+<tr>
+<td>DENO_NO_UPDATE_CHECK</td>
+<td>Set to disable checking if a newer Deno version is available</td>
+</tr>
+<tr>
+<td>DENO_V8_FLAGS</td>
+<td>Set V8 command line options</td>
+</tr>
+<tr>
+<td>DENO_JOBS</td>
+<td>Number of parallel workers used for the <code>--parallel</code> flag with the test subcommand.<br>Defaults to number of available CPUs.</td>
+</tr>
+<tr>
+<td>DENO_KV_ACCESS_TOKEN</td>
+<td>Personal access token used when connecting to Deno KV databases (for example via <a href="/api/deno/~/Deno.openKv"><code>Deno.openKv</code></a> or <code>@deno/kv</code> with a KV Connect URL).</td>
+</tr>
+<tr>
+<td>DENO_AUDIT_PERMISSIONS</td>
+<td>Audit every permission access. Set to a file path to write JSONL, or to the literal value <code>otel</code> to emit OpenTelemetry log records via the configured OTel exporter. See <a href="/runtime/reference/permissions/">permissions audit</a> for the field set.</td>
+</tr>
+<tr>
+<td>DENO_TRACE_PERMISSIONS</td>
+<td>Set to <code>1</code> to enable stack traces in permission prompts (disabled by default because collecting traces costs performance)</td>
+</tr>
+<tr>
+<td>DENO_WEBGPU_TRACE</td>
+<td>Path to a directory to output a <a href="https://github.com/gfx-rs/wgpu/pull/619">WGPU trace</a> to when using the WebGPU API</td>
+</tr>
+<tr>
+<td>DENO_WEBGPU_BACKEND</td>
+<td>Select the backend WebGPU will use, or a comma separated list of backends in order of preference. Possible values are <code>vulkan</code>, <code>dx12</code>, <code>metal</code>, or <code>opengl</code></td>
+</tr>
+<tr>
+<td>HTTP_PROXY</td>
+<td>Proxy address for HTTP requests (module downloads, fetch)</td>
+</tr>
+<tr>
+<td>HTTPS_PROXY</td>
+<td>Proxy address for HTTPS requests (module downloads, fetch)</td>
+</tr>
+<tr>
+<td>NPM_CONFIG_REGISTRY</td>
+<td>URL to use for the npm registry.</td>
+</tr>
+<tr>
+<td>NO_COLOR</td>
+<td>Set to disable color</td>
+</tr>
+<tr>
+<td>NO_PROXY</td>
+<td>Comma-separated list of hosts which do not use a proxy (module downloads, fetch)</td>
+</tr>
+</tbody>
+</table></div>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-07-02T00:00:00.000Z">July 2, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/reference/ts_config_migration/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← TypeScript</span></a><a href="/runtime/reference/permissions/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Permissions →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/env_variables.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

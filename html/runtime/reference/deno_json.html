@@ -1,0 +1,1758 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Dependencies </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#custom-path-mappings" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Custom path mappings </a></li><li class="leading-tight text-balance"><a href="#scoped-mappings" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Scoped mappings </a></li><li class="leading-tight text-balance"><a href="#overriding-packages" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Overriding packages </a></li><li class="leading-tight text-balance"><a href="#prefer-package.json-for-dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Prefer package.json for dependencies </a></li></ul></li><li class="leading-tight text-balance"><a href="#tasks" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Tasks </a></li><li class="leading-tight text-balance"><a href="#linting" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Linting </a></li><li class="leading-tight text-balance"><a href="#formatting" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Formatting </a></li><li class="leading-tight text-balance"><a href="#lockfile" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Lockfile </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#merge-conflicts" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Merge conflicts </a></li></ul></li><li class="leading-tight text-balance"><a href="#minimum-dependency-age" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Minimum dependency age </a></li><li class="leading-tight text-balance"><a href="#node-modules-directory" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Node modules directory </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#jsr-dependencies-in-node_modules" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">JSR dependencies in node_modules </a></li></ul></li><li class="leading-tight text-balance"><a href="#typescript-compiler-options" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">TypeScript compiler options </a></li><li class="leading-tight text-balance"><a href="#unstable-features" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Unstable features </a></li><li class="leading-tight text-balance"><a href="#include-and-exclude" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">include and exclude </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#include" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">include </a></li><li class="leading-tight text-balance"><a href="#exclude" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">exclude </a></li><li class="leading-tight text-balance"><a href="#top-level-exclude" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Top level exclude </a></li><li class="leading-tight text-balance"><a href="#publish---override-.gitignore" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Publish - Override .gitignore </a></li></ul></li><li class="leading-tight text-balance"><a href="#exports" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Exports </a></li><li class="leading-tight text-balance"><a href="#permissions" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Permissions </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#named-permissions" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Named permissions </a></li><li class="leading-tight text-balance"><a href="#default-permission" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Default permission </a></li><li class="leading-tight text-balance"><a href="#allow%2C-deny%2C-and-ignore" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Allow, deny, and ignore </a></li><li class="leading-tight text-balance"><a href="#test%2C-bench%2C-and-compile-permissions" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Test, bench, and compile permissions </a></li><li class="leading-tight text-balance"><a href="#security-risk" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Security risk </a></li></ul></li><li class="leading-tight text-balance"><a href="#compile-config" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Compile config </a></li><li class="leading-tight text-balance"><a href="#an-example-deno.json-file" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">An example deno.json file </a></li><li class="leading-tight text-balance"><a href="#json-schema" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">JSON schema </a></li><li class="leading-tight text-balance"><a href="#proxies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Proxies </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/deno_json.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Fdeno_json.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Configuration file (deno.json)</h1></div><p>This page documents the fields you can set in a <code>deno.json</code> (or <code>deno.jsonc</code>)
+configuration file. For an overview of how Deno discovers and applies
+configuration, and how <code>deno.json</code> relates to <code>package.json</code>, see the
+<a href="/runtime/fundamentals/configuration/">Configuration</a> concept page.</p>
+<h2 id="dependencies" tabindex="-1">Dependencies <a class="header-anchor" href="#dependencies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>"imports"</code> field in your <code>deno.json</code> allows you to specify dependencies
+used in your project. You can use it to map bare specifiers to URLs or file
+paths making it easier to manage dependencies and module resolution in your
+applications.</p>
+<p>For example, if you want to use the <code>assert</code> module from the standard library in
+your project, you could use this import map:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@std/assert"</span><span class="token operator">:</span> <span class="token string">"jsr:@std/assert@^1.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"chalk"</span><span class="token operator">:</span> <span class="token string">"npm:chalk@5"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-12" class="copyButton" data-copy="{
+  &quot;imports&quot;: {
+    &quot;@std/assert&quot;: &quot;jsr:@std/assert@^1.0.0&quot;,
+    &quot;chalk&quot;: &quot;npm:chalk@5&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Then your script can use the bare specifier <code>@std/assert</code>:</p>
+<div><div class="markdownBlockTitle">script.ts</div><div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> assertEquals <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@std/assert"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> chalk <span class="token keyword">from</span> <span class="token string">"chalk"</span><span class="token punctuation">;</span>
+
+<span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>chalk<span class="token punctuation">.</span><span class="token function">yellow</span><span class="token punctuation">(</span><span class="token string">"Hello world"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-16" class="copyButton" data-copy="import { assertEquals } from &quot;@std/assert&quot;;
+import chalk from &quot;chalk&quot;;
+
+assertEquals(1, 2);
+console.log(chalk.yellow(&quot;Hello world&quot;));
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You can also use a <code>"dependencies"</code> field in <code>package.json</code>:</p>
+<div><div class="markdownBlockTitle">package.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"express"</span><span class="token operator">:</span> <span class="token string">"^1.0.0"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-20" class="copyButton" data-copy="{
+  &quot;dependencies&quot;: {
+    &quot;express&quot;: &quot;^1.0.0&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">script.ts</div><div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">import</span> express <span class="token keyword">from</span> <span class="token string">"express"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-21" class="copyButton" data-copy="import express from &quot;express&quot;;
+
+const app = express();
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Note that this will require you to run <code>deno install</code>.</p>
+<p>Read more about
+<a href="/runtime/fundamentals/modules/">module imports and dependencies</a></p>
+<h3 id="custom-path-mappings" tabindex="-1">Custom path mappings <a class="header-anchor" href="#custom-path-mappings"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The import map in <code>deno.json</code> can be used for more general path mapping of
+specifiers. You can map an exact specifiers to a third party module or a file
+directly, or you can map a part of an import specifier to a directory.</p>
+<div><div class="markdownBlockTitle">deno.jsonc</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Map to an exact file</span>
+    <span class="token property">"foo"</span><span class="token operator">:</span> <span class="token string">"./some/long/path/foo.ts"</span><span class="token punctuation">,</span>
+    <span class="token comment">// Map to a directory, usage: "bar/file.ts"</span>
+    <span class="token property">"bar/"</span><span class="token operator">:</span> <span class="token string">"./some/folder/bar/"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-34" class="copyButton" data-copy="{
+  &quot;imports&quot;: {
+    // Map to an exact file
+    &quot;foo&quot;: &quot;./some/long/path/foo.ts&quot;,
+    // Map to a directory, usage: &quot;bar/file.ts&quot;
+    &quot;bar/&quot;: &quot;./some/folder/bar/&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Usage:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> foo <span class="token keyword">from</span> <span class="token string">"foo"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> bar <span class="token keyword">from</span> <span class="token string">"bar/file.ts"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-38" class="copyButton" data-copy="import * as foo from &quot;foo&quot;;
+import * as bar from &quot;bar/file.ts&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Path mapping of import specifies is commonly used in larger code bases for
+brevity.</p>
+<p>For example:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@/"</span><span class="token operator">:</span> <span class="token string">"./"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-45" class="copyButton" data-copy="{
+  &quot;imports&quot;: {
+    &quot;@/&quot;: &quot;./&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> MyUtil <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@/util.ts"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-46" class="copyButton" data-copy="import { MyUtil } from &quot;@/util.ts&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This causes import specifiers starting with <code>@/</code> to be resolved relative to the
+import map's URL or file path.</p>
+<h3 id="scoped-mappings" tabindex="-1">Scoped mappings <a class="header-anchor" href="#scoped-mappings"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The <code>"scopes"</code> field lets you override import mappings for modules loaded from a
+particular path prefix, following the
+<a href="https://github.com/WICG/import-maps#scoping-examples">import maps specification</a>.
+Each key is a scope (a path prefix), and its value is an import map that applies
+only to modules whose specifier falls under that scope. This is useful when two
+dependencies need different versions of the same package.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@std/assert"</span><span class="token operator">:</span> <span class="token string">"jsr:@std/assert@^1.0.0"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"scopes"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"./legacy/"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"@std/assert"</span><span class="token operator">:</span> <span class="token string">"jsr:@std/assert@^0.224.0"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-56" class="copyButton" data-copy="{
+  &quot;imports&quot;: {
+    &quot;@std/assert&quot;: &quot;jsr:@std/assert@^1.0.0&quot;
+  },
+  &quot;scopes&quot;: {
+    &quot;./legacy/&quot;: {
+      &quot;@std/assert&quot;: &quot;jsr:@std/assert@^0.224.0&quot;
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>In this example modules under <code>./legacy/</code> resolve <code>@std/assert</code> to the older
+version, while the rest of the project uses the version from <code>"imports"</code>.</p>
+<h3 id="overriding-packages" tabindex="-1">Overriding packages <a class="header-anchor" href="#overriding-packages"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The <code>links</code> field in <code>deno.json</code> allows you to override dependencies with local
+packages stored on disk. This is similar to <code>npm link</code>.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"links"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"../some-package"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-66" class="copyButton" data-copy="{
+  &quot;links&quot;: [
+    &quot;../some-package&quot;
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This capability addresses several common development challenges:</p>
+<ul>
+<li>Dependency bug fixes</li>
+<li>Private local libraries</li>
+<li>Compatibility issues</li>
+</ul>
+<p>The package being referenced doesn't need to be published at all. It just needs
+to have the proper package name and metadata in <code>deno.json</code> or <code>package.json</code>,
+so that Deno knows what package it's dealing with. This provides greater
+flexibility and modularity, maintaining clean separation between your main code
+and external packages.</p>
+<h3 id="prefer-package.json-for-dependencies" tabindex="-1">Prefer package.json for dependencies <a class="header-anchor" href="#prefer-package.json-for-dependencies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Set <code>preferPackageJson</code> to <code>true</code> to make dependency commands target
+<code>package.json</code> instead of <code>deno.json</code>:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"preferPackageJson"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-96" class="copyButton" data-copy="{
+  &quot;preferPackageJson&quot;: true
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>With this enabled, <code>deno add</code>, <code>deno install &lt;pkg&gt;</code>, and <code>deno remove</code> write to
+<code>package.json</code>, creating one if it does not exist. This is equivalent to passing
+<code>--package-json</code> on every invocation. Deno also warns when <code>imports</code> or <code>scopes</code>
+are still present in <code>deno.json</code>, since those dependencies should move to
+<code>package.json</code>.</p>
+<p>Entries can also be globs, which is convenient for linking every package in a
+directory at once. Relative-path globs and <code>file://</code> URL globs are both
+supported, and a <code>!</code>-prefixed pattern excludes matches:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"links"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"../packages/*"</span><span class="token punctuation">,</span>
+    <span class="token string">"!../packages/internal-only"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-103" class="copyButton" data-copy="{
+  &quot;links&quot;: [
+    &quot;../packages/*&quot;,
+    &quot;!../packages/internal-only&quot;
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="tasks" tabindex="-1">Tasks <a class="header-anchor" href="#tasks"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>tasks</code> field in your <code>deno.json</code> file is used to define custom commands
+that can be executed with the <code>deno task</code> command and allows you to tailor
+commands and permissions to the specific needs of your project.</p>
+<p>It is similar to the <code>scripts</code> field in a <code>package.json</code> file, which is also
+supported.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"deno run --allow-net --watch=static/,routes/,data/ dev.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"deno test --allow-net"</span><span class="token punctuation">,</span>
+    <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token string">"deno lint"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-113" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;start&quot;: &quot;deno run --allow-net --watch=static/,routes/,data/ dev.ts&quot;,
+    &quot;test&quot;: &quot;deno test --allow-net&quot;,
+    &quot;lint&quot;: &quot;deno lint&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">package.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"vite dev"</span><span class="token punctuation">,</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"vite build"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-114" class="copyButton" data-copy="{
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;vite dev&quot;,
+    &quot;build&quot;: &quot;vite build&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>To execute a task, use the <code>deno task</code> command followed by the task name. For
+example:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno task start
+deno task <span class="token builtin class-name">test</span>
+deno task lint
+deno task dev
+deno task build
+</code></pre>
+
+      <button id="copy-button-118" class="copyButton" data-copy="deno task start
+deno task test
+deno task lint
+deno task dev
+deno task build
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Read more about <a href="/runtime/reference/cli/task/"><code>deno task</code></a>.</p>
+<h2 id="linting" tabindex="-1">Linting <a class="header-anchor" href="#linting"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>lint</code> field in the <code>deno.json</code> file is used to configure the behavior of
+Deno’s built-in linter. This allows you to specify which files to include or
+exclude from linting, as well as customize the linting rules to suit your
+project’s needs.</p>
+<p>For example:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/testdata/"</span><span class="token punctuation">,</span> <span class="token string">"src/fixtures/**/*.ts"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"tags"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"recommended"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ban-untagged-todo"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"no-unused-vars"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-131" class="copyButton" data-copy="{
+  &quot;lint&quot;: {
+    &quot;include&quot;: [&quot;src/&quot;],
+    &quot;exclude&quot;: [&quot;src/testdata/&quot;, &quot;src/fixtures/**/*.ts&quot;],
+    &quot;rules&quot;: {
+      &quot;tags&quot;: [&quot;recommended&quot;],
+      &quot;include&quot;: [&quot;ban-untagged-todo&quot;],
+      &quot;exclude&quot;: [&quot;no-unused-vars&quot;]
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This configuration will:</p>
+<ul>
+<li>only lint files in the <code>src/</code> directory,</li>
+<li>not lint files in the <code>src/testdata/</code> directory or any TypeScript files in the
+<code>src/fixtures/</code> directory.</li>
+<li>specify that the recommended linting rules should be applied,</li>
+<li>add the <code>ban-untagged-todo</code>, and</li>
+<li>exclude the <code>no-unused-vars</code> rule.</li>
+</ul>
+<p>You can find a full list of available linting rules in the
+<a href="/lint/">List of rules</a> documentation page.</p>
+<p>Read more about <a href="/runtime/reference/cli/lint/">linting with Deno</a>.</p>
+<h2 id="formatting" tabindex="-1">Formatting <a class="header-anchor" href="#formatting"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>fmt</code> field in the <code>deno.json</code> file is used to configure the behavior of
+Deno’s built-in code formatter. This allows you to customize how your code is
+formatted, ensuring consistency across your project, making it easier to read
+and collaborate on. Here are the key options you can configure:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"fmt"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"useTabs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"lineWidth"</span><span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+    <span class="token property">"indentWidth"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token property">"semiColons"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"proseWrap"</span><span class="token operator">:</span> <span class="token string">"preserve"</span><span class="token punctuation">,</span>
+    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/testdata/"</span><span class="token punctuation">,</span> <span class="token string">"src/fixtures/**/*.ts"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-174" class="copyButton" data-copy="{
+  &quot;fmt&quot;: {
+    &quot;useTabs&quot;: true,
+    &quot;lineWidth&quot;: 80,
+    &quot;indentWidth&quot;: 4,
+    &quot;semiColons&quot;: true,
+    &quot;singleQuote&quot;: true,
+    &quot;proseWrap&quot;: &quot;preserve&quot;,
+    &quot;include&quot;: [&quot;src/&quot;],
+    &quot;exclude&quot;: [&quot;src/testdata/&quot;, &quot;src/fixtures/**/*.ts&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This configuration will:</p>
+<ul>
+<li>use tabs instead of spaces for indentation,</li>
+<li>limit lines to 80 characters,</li>
+<li>use an indentation width of 4 spaces,</li>
+<li>add semicolons to the end of statements,</li>
+<li>use single quotes for strings,</li>
+<li>preserve prose wrapping,</li>
+<li>format files in the <code>src/</code> directory,</li>
+<li>exclude files in the <code>src/testdata/</code> directory and any TypeScript files in the
+<code>src/fixtures/</code> directory.</li>
+</ul>
+<p>The <code>fmt</code> field accepts the following options, each shown with its default and
+allowed values:</p>
+<div class="fmt-options">
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Possible values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bracePosition</code></td>
+<td><code>sameLine</code></td>
+<td><code>maintain</code>, <code>sameLine</code>, <code>nextLine</code>, <code>sameLineUnlessHanging</code></td>
+</tr>
+<tr>
+<td><code>indentWidth</code></td>
+<td><code>2</code></td>
+<td>a number</td>
+</tr>
+<tr>
+<td><code>lineWidth</code></td>
+<td><code>80</code></td>
+<td>a number</td>
+</tr>
+<tr>
+<td><code>newLineKind</code></td>
+<td><code>lf</code></td>
+<td><code>auto</code>, <code>crlf</code>, <code>lf</code>, <code>system</code></td>
+</tr>
+<tr>
+<td><code>nextControlFlowPosition</code></td>
+<td><code>sameLine</code></td>
+<td><code>sameLine</code>, <code>nextLine</code>, <code>maintain</code></td>
+</tr>
+<tr>
+<td><code>operatorPosition</code></td>
+<td><code>sameLine</code></td>
+<td><code>sameLine</code>, <code>nextLine</code>, <code>maintain</code></td>
+</tr>
+<tr>
+<td><code>proseWrap</code></td>
+<td><code>always</code></td>
+<td><code>always</code>, <code>never</code>, <code>preserve</code></td>
+</tr>
+<tr>
+<td><code>quoteProps</code></td>
+<td><code>asNeeded</code></td>
+<td><code>asNeeded</code>, <code>consistent</code>, <code>preserve</code></td>
+</tr>
+<tr>
+<td><code>semiColons</code></td>
+<td><code>true</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>singleBodyPosition</code></td>
+<td><code>sameLineUnlessHanging</code></td>
+<td><code>sameLine</code>, <code>nextLine</code>, <code>maintain</code>, <code>sameLineUnlessHanging</code></td>
+</tr>
+<tr>
+<td><code>singleQuote</code></td>
+<td><code>false</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>sortNamedExports</code></td>
+<td><code>caseInsensitive</code></td>
+<td><code>caseInsensitive</code>, <code>caseSensitive</code>, <code>maintain</code></td>
+</tr>
+<tr>
+<td><code>sortNamedImports</code></td>
+<td><code>caseInsensitive</code></td>
+<td><code>caseInsensitive</code>, <code>caseSensitive</code>, <code>maintain</code></td>
+</tr>
+<tr>
+<td><code>spaceAround</code></td>
+<td><code>false</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>spaceSurroundingProperties</code></td>
+<td><code>true</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>trailingCommas</code></td>
+<td><code>always</code></td>
+<td><code>always</code>, <code>never</code></td>
+</tr>
+<tr>
+<td><code>typeLiteral.separatorKind</code></td>
+<td><code>semiColon</code></td>
+<td><code>comma</code>, <code>semiColon</code></td>
+</tr>
+<tr>
+<td><code>useBraces</code></td>
+<td><code>whenNotSingleLine</code></td>
+<td><code>maintain</code>, <code>whenNotSingleLine</code>, <code>always</code>, <code>preferNone</code></td>
+</tr>
+<tr>
+<td><code>useTabs</code></td>
+<td><code>false</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>json.trailingCommas</code></td>
+<td><code>never</code></td>
+<td><code>never</code>, <code>always</code>, <code>maintain</code>, <code>jsonc</code></td>
+</tr>
+<tr>
+<td><code>jsx.bracketPosition</code></td>
+<td><code>nextLine</code></td>
+<td><code>maintain</code>, <code>sameLine</code>, <code>nextLine</code></td>
+</tr>
+<tr>
+<td><code>jsx.forceNewLinesSurroundingContent</code></td>
+<td><code>false</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>jsx.multiLineParens</code></td>
+<td><code>prefer</code></td>
+<td><code>never</code>, <code>prefer</code>, <code>always</code></td>
+</tr>
+<tr>
+<td><code>unstable-component</code></td>
+<td><code>false</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>unstable-sql</code></td>
+<td><code>false</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><code>json.trailingCommas</code> controls trailing commas in JSON and JSONC files
+separately from the <code>trailingCommas</code> option, which applies to JavaScript and
+TypeScript. The <code>maintain</code> value keeps trailing commas as written, and the
+<code>jsonc</code> value adds trailing commas in <code>.jsonc</code> files while omitting them in
+<code>.json</code> files.</p>
+<p>Read more about <a href="/runtime/lint_and_format/">formatting your code with Deno</a>.</p>
+<h2 id="lockfile" tabindex="-1">Lockfile <a class="header-anchor" href="#lockfile"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>lock</code> field in the <code>deno.json</code> file is used to specify configuration of the
+lock file that Deno uses to
+<a href="/runtime/packages/#lockfile-and-reproducible-installs">ensure the integrity of your dependencies</a>.
+A lock file records the exact versions and integrity hashes of the modules your
+project depends on, ensuring that the same versions are used every time the
+project is run, even if the dependencies are updated or changed remotely.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"lock"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"./deno.lock"</span><span class="token punctuation">,</span>
+    <span class="token property">"frozen"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-529" class="copyButton" data-copy="{
+  &quot;lock&quot;: {
+    &quot;path&quot;: &quot;./deno.lock&quot;,
+    &quot;frozen&quot;: true
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This configuration will:</p>
+<ul>
+<li>specify lockfile location at <code>./deno.lock</code> (this is the default and can be
+omitted)</li>
+<li>tell Deno that you want to error out if any dependency changes</li>
+</ul>
+<p>Deno uses lockfile by default, you can disable it with following configuration:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"lock"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-548" class="copyButton" data-copy="{
+  &quot;lock&quot;: false
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="merge-conflicts" tabindex="-1">Merge conflicts <a class="header-anchor" href="#merge-conflicts"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>After merging branches, <code>deno.lock</code> can be left with git conflict markers. These
+markers make the file invalid JSON, which used to make Deno error out with
+<code>Lockfile may be corrupt</code>. Deno now resolves these conflicts for you: the next
+command that reads the lockfile merges the conflicting entries and rewrites a
+clean file. Most of the lockfile is a set of identity-keyed entries where a key
+always maps to the same value regardless of which branch wrote it, so the merge
+is a union and you do not need to edit the markers by hand.</p>
+<h2 id="minimum-dependency-age" tabindex="-1">Minimum dependency age <a class="header-anchor" href="#minimum-dependency-age"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>minimumDependencyAge</code> field stops Deno from installing npm or JSR package
+versions that were published more recently than the configured age. Freshly
+published malicious versions are usually detected and yanked within days, so a
+small delay window catches the bulk of supply-chain attacks. See
+<a href="/runtime/packages/supply_chain/">supply chain management</a> for guidance on
+choosing a window.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token comment">// Don't install versions published less than 3 days ago</span>
+  <span class="token property">"minimumDependencyAge"</span><span class="token operator">:</span> <span class="token string">"P3D"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-561" class="copyButton" data-copy="{
+  // Don't install versions published less than 3 days ago
+  &quot;minimumDependencyAge&quot;: &quot;P3D&quot;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The value accepts an
+<a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO-8601 duration</a> such as
+<code>P3D</code> or <code>PT72H</code>, a number of minutes (<code>120</code>), an absolute cutoff date
+(<code>2025-09-16</code>) or RFC3339 timestamp, or <code>0</code> to disable.</p>
+<p>Since Deno 2.9 a 24-hour minimum applies by default even when this field is
+unset; set an explicit value to widen or narrow the window, or <code>0</code> to turn it
+off.</p>
+<p>To exempt specific packages, use the object form with an <code>exclude</code> list:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"minimumDependencyAge"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"age"</span><span class="token operator">:</span> <span class="token string">"P3D"</span><span class="token punctuation">,</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"npm:@mycompany/cli"</span><span class="token punctuation">,</span> <span class="token string">"jsr:@mycompany/lib"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-571" class="copyButton" data-copy="{
+  &quot;minimumDependencyAge&quot;: {
+    &quot;age&quot;: &quot;P3D&quot;,
+    &quot;exclude&quot;: [&quot;npm:@mycompany/cli&quot;, &quot;jsr:@mycompany/lib&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The same control is available as the <code>--minimum-dependency-age</code> CLI flag and as
+<code>min-release-age</code> in
+<a href="/runtime/fundamentals/node/#.npmrc-configuration"><code>.npmrc</code></a>.</p>
+<h2 id="node-modules-directory" tabindex="-1">Node modules directory <a class="header-anchor" href="#node-modules-directory"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>By default Deno uses a local <code>node_modules</code> directory if you have a
+<code>package.json</code> file in your project directory.</p>
+<p>You can control this behavior using the <code>nodeModulesDir</code> field in the
+<code>deno.json</code> file.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"nodeModulesDir"</span><span class="token operator">:</span> <span class="token string">"auto"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-584" class="copyButton" data-copy="{
+  &quot;nodeModulesDir&quot;: &quot;auto&quot;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You can set this field to following values:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"none"</code></td>
+<td>Don't use a local <code>node_modules</code> directory. Instead use global cache in <code>$DENO_DIR</code> that is automatically kept up to date by Deno.</td>
+</tr>
+<tr>
+<td><code>"auto"</code></td>
+<td>Use a local <code>node_modules</code> directory. The directory is automatically created and kept up to date by Deno.</td>
+</tr>
+<tr>
+<td><code>"manual"</code></td>
+<td>Use a local <code>node_modules</code> directory. User must keep this directory up to date manually, eg. using <code>deno install</code> or <code>npm install</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<p>It is not required to specify this setting, the following defaults are applied:</p>
+<ul>
+<li><code>"none"</code> if there is no <code>package.json</code> file in your project directory</li>
+<li><code>"manual"</code> if there is a <code>package.json</code> file in your project directory</li>
+</ul>
+<p>When using workspaces, this setting can only be used in the workspace root.
+Specifying it in any of the members will result in warnings. The <code>"manual"</code>
+setting will only be applied automatically if there's a <code>package.json</code> file in
+the workspace root.</p>
+<h3 id="jsr-dependencies-in-node_modules" tabindex="-1">JSR dependencies in <code>node_modules</code> <a class="header-anchor" href="#jsr-dependencies-in-node_modules"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>When a <code>node_modules</code> directory is in use, set <code>jsrDepsInNodeModules</code> to <code>true</code>
+to install <code>jsr:</code> dependencies through JSR's npm compatibility registry, the
+same way npm and pnpm handle them. Each <code>jsr:</code> specifier is rewritten to its npm
+form (<code>jsr:@david/dax</code> becomes <code>npm:@jsr/david__dax</code>, served from
+<code>https://npm.jsr.io</code>) and installed into <code>node_modules</code> alongside your npm
+packages. The option is off by default.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"jsrDepsInNodeModules"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-650" class="copyButton" data-copy="{
+  &quot;jsrDepsInNodeModules&quot;: true
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="typescript-compiler-options" tabindex="-1">TypeScript compiler options <a class="header-anchor" href="#typescript-compiler-options"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>compilerOptions</code> field in the <code>deno.json</code> file is used to configure
+<a href="https://www.typescriptlang.org/tsconfig">TypeScript compiler settings</a> for your
+Deno project. This allows you to customize how TypeScript code is compiled,
+ensuring it aligns with your project’s requirements and coding standards.</p>
+<p>
+</p><div class="admonition info">
+  <div class="title">Info</div>
+
+<p></p>
+<p>Deno recommends the default TypeScript configuration. This will help when
+sharing code.</p>
+<p>
+</p></div>
+<p></p>
+<p>If you’re migrating from Node.js, your existing <code>tsconfig.json</code> files work out
+of the box with Deno. See the
+<a href="/runtime/reference/ts_config_migration/">tsconfig.json compatibility reference</a>
+for the supported fields and precedence rules.</p>
+<p>For the full list of supported compiler options, library configuration, and
+advanced settings, see
+<a href="/runtime/reference/ts_config_migration/">Configuring TypeScript</a>.</p>
+<h2 id="unstable-features" tabindex="-1">Unstable features <a class="header-anchor" href="#unstable-features"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>unstable</code> field in a <code>deno.json</code> file is used to enable specific unstable
+features for your Deno project.</p>
+<p>These features are still in development and not yet part of the stable API. By
+listing features in the <code>unstable</code> array, you can experiment with and use these
+new capabilities before they are officially released.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"unstable"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"cron"</span><span class="token punctuation">,</span> <span class="token string">"kv"</span><span class="token punctuation">,</span> <span class="token string">"webgpu"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-681" class="copyButton" data-copy="{
+  &quot;unstable&quot;: [&quot;cron&quot;, &quot;kv&quot;, &quot;webgpu&quot;]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><a href="/runtime/reference/cli/unstable_flags/">Learn more</a>.</p>
+<h2 id="include-and-exclude" tabindex="-1">include and exclude <a class="header-anchor" href="#include-and-exclude"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Many configurations (ex. <code>lint</code>, <code>fmt</code>) have an <code>include</code> and <code>exclude</code> property
+for specifying the files to include.</p>
+<h3 id="include" tabindex="-1">include <a class="header-anchor" href="#include"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Only the paths or patterns specified here will be included.</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// only format the src/ directory</span>
+    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-697" class="copyButton" data-copy="{
+  &quot;lint&quot;: {
+    // only format the src/ directory
+    &quot;include&quot;: [&quot;src/&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="exclude" tabindex="-1">exclude <a class="header-anchor" href="#exclude"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The paths or patterns specified here will be excluded.</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// don't lint the dist/ folder</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"dist/"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-704" class="copyButton" data-copy="{
+  &quot;lint&quot;: {
+    // don't lint the dist/ folder
+    &quot;exclude&quot;: [&quot;dist/&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>This has HIGHER precedence than <code>include</code> and will win over <code>include</code> if a path
+is matched in both <code>include</code> and <code>exclude</code>.</p>
+<p>You may wish to exclude a directory, but include a sub directory. In Deno
+1.41.2+, you may un-exclude a more specific path by specifying a negated glob
+below the more general exclude:</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"fmt"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// don't format the "fixtures" directory,</span>
+    <span class="token comment">// but do format "fixtures/scripts"</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"fixtures"</span><span class="token punctuation">,</span>
+      <span class="token string">"!fixtures/scripts"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-711" class="copyButton" data-copy="{
+  &quot;fmt&quot;: {
+    // don't format the &quot;fixtures&quot; directory,
+    // but do format &quot;fixtures/scripts&quot;
+    &quot;exclude&quot;: [
+      &quot;fixtures&quot;,
+      &quot;!fixtures/scripts&quot;
+    ]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="top-level-exclude" tabindex="-1">Top level exclude <a class="header-anchor" href="#top-level-exclude"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>If there's a directory you never want Deno to fmt, lint, type check, analyze in
+the LSP, etc., then specify it in the top level exclude array:</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// exclude the dist folder from all sub-commands and the LSP</span>
+    <span class="token string">"dist/"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-718" class="copyButton" data-copy="{
+  &quot;exclude&quot;: [
+    // exclude the dist folder from all sub-commands and the LSP
+    &quot;dist/&quot;
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Sometimes you may find that you want to un-exclude a path or pattern that's
+excluded in the top level-exclude. In Deno 1.41.2+, you may un-exclude a path by
+specifying a negated glob in a more specific config:</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"fmt"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token comment">// format the dist folder even though it's</span>
+      <span class="token comment">// excluded at the top level</span>
+      <span class="token string">"!dist"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"dist/"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-722" class="copyButton" data-copy="{
+  &quot;fmt&quot;: {
+    &quot;exclude&quot;: [
+      // format the dist folder even though it's
+      // excluded at the top level
+      &quot;!dist&quot;
+    ]
+  },
+  &quot;exclude&quot;: [
+    &quot;dist/&quot;
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="publish---override-.gitignore" tabindex="-1">Publish - Override .gitignore <a class="header-anchor" href="#publish---override-.gitignore"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The <code>.gitignore</code> is taken into account for the <code>deno publish</code> command. In Deno
+1.41.2+, you can opt-out of excluded files ignored in the <em>.gitignore</em> by using
+a negated exclude glob:</p>
+<div><div class="markdownBlockTitle">.gitignore</div><div class="relative"><pre><code class="highlight notranslate language-title=&quot;.gitignore&quot;">dist/
+.env
+</code></pre>
+
+      <button id="copy-button-729" class="copyButton" data-copy="dist/
+.env
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"publish"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token comment">// include the .gitignored dist folder</span>
+      <span class="token string">"!dist/"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-730" class="copyButton" data-copy="{
+  &quot;publish&quot;: {
+    &quot;exclude&quot;: [
+      // include the .gitignored dist folder
+      &quot;!dist/&quot;
+    ]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Alternatively, explicitly specifying the gitignored paths in an <code>"include"</code>
+works as well:</p>
+<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"publish"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"dist/"</span><span class="token punctuation">,</span>
+      <span class="token string">"README.md"</span><span class="token punctuation">,</span>
+      <span class="token string">"deno.json"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-734" class="copyButton" data-copy="{
+  &quot;publish&quot;: {
+    &quot;include&quot;: [
+      &quot;dist/&quot;,
+      &quot;README.md&quot;,
+      &quot;deno.json&quot;
+    ]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="exports" tabindex="-1">Exports <a class="header-anchor" href="#exports"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>exports</code> field in the <code>deno.json</code> file allows you to define which paths of
+your package should be publicly accessible. This is particularly useful for
+controlling the API surface of your package and ensuring that only the intended
+parts of your code are exposed to users.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"exports"</span><span class="token operator">:</span> <span class="token string">"./src/mod.ts"</span> <span class="token comment">// A default entry point</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-741" class="copyButton" data-copy="{
+  &quot;exports&quot;: &quot;./src/mod.ts&quot; // A default entry point
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You can also define multiple entry points:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"exports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"./module1"</span><span class="token operator">:</span> <span class="token string">"./src/module1.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"./module2"</span><span class="token operator">:</span> <span class="token string">"./src/module2.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"."</span><span class="token operator">:</span> <span class="token string">"./src/mod.ts"</span> <span class="token comment">// Default entry point</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-745" class="copyButton" data-copy="{
+  &quot;exports&quot;: {
+    &quot;./module1&quot;: &quot;./src/module1.ts&quot;,
+    &quot;./module2&quot;: &quot;./src/module2.ts&quot;,
+    &quot;.&quot;: &quot;./src/mod.ts&quot; // Default entry point
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This configuration will:</p>
+<ul>
+<li>expose <code>module1</code> and <code>module2</code> as entry points for your package, and</li>
+<li>make <code>./src/mod.ts</code> the default entry point (<code>.</code>).</li>
+</ul>
+<p>Users can import these modules using the specified paths, while other files in
+your package remain private.</p>
+<p>To use the exports in your code, you can import them like this:</p>
+<div><div class="markdownBlockTitle">example.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> module_1 <span class="token keyword">from</span> <span class="token string">"@example/my-package/module1"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> module_2 <span class="token keyword">from</span> <span class="token string">"@example/my-package/module2"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-767" class="copyButton" data-copy="import * as module_1 from &quot;@example/my-package/module1&quot;;
+import * as module_2 from &quot;@example/my-package/module2&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="permissions" tabindex="-1">Permissions <a class="header-anchor" href="#permissions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno 2.5+ supports storing <a href="/runtime/reference/permissions/">permission</a> sets in
+the config file.</p>
+<h3 id="named-permissions" tabindex="-1">Named permissions <a class="header-anchor" href="#named-permissions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Permissions can be defined as key-value pairs under arbitrarily-named permission
+sets under the <code>"permissions"</code> key. Within each set,</p>
+<ul>
+<li>the key is the name of a <a href="/runtime/reference/permissions/">permission</a> that
+would follow <code>--allow-</code> or <code>--deny-</code> in the CLI invocation (i.e. <code>read</code>,
+<code>write</code>, <code>net</code>, <code>env</code>, <code>sys</code>, <code>run</code>, <code>ffi</code>, <code>import</code>)</li>
+<li>the value is a boolean (<code>true</code> / <code>false</code> correspond to allow / deny), an array
+of strings representing paths, domains etc., or an object with <code>allow</code>,
+<code>deny</code>, and/or <code>ignore</code> boolean key-value pairs.</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"read-data"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"read"</span><span class="token operator">:</span> <span class="token string">"./data"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"read-and-write"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"read"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">"write"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./data"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-792" class="copyButton" data-copy="{
+  &quot;permissions&quot;: {
+    &quot;read-data&quot;: {
+      &quot;read&quot;: &quot;./data&quot;
+    },
+    &quot;read-and-write&quot;: {
+      &quot;read&quot;: true,
+      &quot;write&quot;: [&quot;./data&quot;]
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Permission sets can be used by specifying the <code>--permission-set=&lt;name&gt;</code> or
+<code>-P=&lt;name&gt;</code> flag:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">$ deno run <span class="token parameter variable">-P</span><span class="token operator">=</span>read-data main.ts
+</code></pre>
+
+      <button id="copy-button-796" class="copyButton" data-copy="$ deno run -P=read-data main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="default-permission" tabindex="-1">Default permission <a class="header-anchor" href="#default-permission"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>A special <code>"default"</code> permission key allows excluding the name when using the
+<code>--permission-set</code>/<code>-P</code> flag:</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"default"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"env"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-803" class="copyButton" data-copy="{
+  &quot;permissions&quot;: {
+    &quot;default&quot;: {
+      &quot;env&quot;: true
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Then run with just <code>-P</code>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">$ deno run <span class="token parameter variable">-P</span> main.ts
+</code></pre>
+
+      <button id="copy-button-807" class="copyButton" data-copy="$ deno run -P main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="allow%2C-deny%2C-and-ignore" tabindex="-1">Allow, deny, and ignore <a class="header-anchor" href="#allow%2C-deny%2C-and-ignore"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>For finer control over permissions, you can use the object form with <code>allow</code>,
+<code>deny</code>, and <code>ignore</code> keys. This is especially useful when you need more granular
+permission control than simple boolean or array values provide.</p>
+<h4 id="object-form-syntax" tabindex="-1">Object form syntax <a class="header-anchor" href="#object-form-syntax"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Instead of specifying a permission as a boolean or array:</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"default"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"read"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// Simple boolean form</span>
+      <span class="token property">"write"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./data"</span><span class="token punctuation">]</span> <span class="token comment">// Simple array form</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-820" class="copyButton" data-copy="{
+  &quot;permissions&quot;: {
+    &quot;default&quot;: {
+      &quot;read&quot;: true, // Simple boolean form
+      &quot;write&quot;: [&quot;./data&quot;] // Simple array form
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>You can use the object form:</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"default"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"read"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./data"</span><span class="token punctuation">,</span> <span class="token string">"./config"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./data/secrets"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"ignore"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./data/cache"</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">"write"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./output"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./output/system"</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-824" class="copyButton" data-copy="{
+  &quot;permissions&quot;: {
+    &quot;default&quot;: {
+      &quot;read&quot;: {
+        &quot;allow&quot;: [&quot;./data&quot;, &quot;./config&quot;],
+        &quot;deny&quot;: [&quot;./data/secrets&quot;],
+        &quot;ignore&quot;: [&quot;./data/cache&quot;]
+      },
+      &quot;write&quot;: {
+        &quot;allow&quot;: [&quot;./output&quot;],
+        &quot;deny&quot;: [&quot;./output/system&quot;]
+      }
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="available-permissions" tabindex="-1">Available permissions <a class="header-anchor" href="#available-permissions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>The <code>allow</code>, <code>deny</code>, and <code>ignore</code> keys work differently depending on the
+permission type:</p>
+<ul>
+<li><strong><code>read</code> and <code>env</code></strong>: Support <code>allow</code>, <code>deny</code>, and <code>ignore</code></li>
+<li><strong><code>write</code>, <code>net</code>, <code>run</code>, <code>ffi</code>, <code>sys</code>, and <code>import</code></strong>: Support <code>allow</code> and
+<code>deny</code> (but not <code>ignore</code>)</li>
+</ul>
+<h4 id="behavior" tabindex="-1">Behavior <a class="header-anchor" href="#behavior"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ul>
+<li><strong><code>allow</code></strong>: Explicitly grant access to specific resources. Can be <code>true</code> (to
+allow all), <code>false</code> (to allow none), or an array of specific paths/values to
+allow.</li>
+<li><strong><code>deny</code></strong>: Explicitly deny access (throw
+<a href="https://docs.deno.com/api/deno/~/Deno.errors.PermissionDenied">PermissionDenied</a>)
+to specific resources, even if they would otherwise be allowed. Can be <code>true</code>
+(to deny all), <code>false</code> (to deny none), or an array of specific paths/values to
+deny.</li>
+<li><strong><code>ignore</code></strong>: (Only for <code>read</code> and <code>env</code> permissions) Silently ignore access
+attempts to specific resources without throwing errors. Can be <code>true</code>,
+<code>false</code>, or an array of specific paths/values to ignore.</li>
+</ul>
+<h4 id="example" tabindex="-1">Example <a class="header-anchor" href="#example"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"default"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Allow reading from data directory, but deny access to secrets</span>
+      <span class="token comment">// and silently ignore cache files</span>
+      <span class="token property">"read"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./data"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./data/secrets"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"ignore"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./data/cache"</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// Allow all environment variables except API keys</span>
+      <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">"ignore"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"API_KEY"</span><span class="token punctuation">,</span> <span class="token string">"SECRET_TOKEN"</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// Allow all, but deny 'rm', 'sudo'</span>
+      <span class="token property">"run"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"rm"</span><span class="token punctuation">,</span> <span class="token string">"sudo"</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-866" class="copyButton" data-copy="{
+  &quot;permissions&quot;: {
+    &quot;default&quot;: {
+      // Allow reading from data directory, but deny access to secrets
+      // and silently ignore cache files
+      &quot;read&quot;: {
+        &quot;allow&quot;: [&quot;./data&quot;],
+        &quot;deny&quot;: [&quot;./data/secrets&quot;],
+        &quot;ignore&quot;: [&quot;./data/cache&quot;]
+      },
+      // Allow all environment variables except API keys
+      &quot;env&quot;: {
+        &quot;allow&quot;: true,
+        &quot;ignore&quot;: [&quot;API_KEY&quot;, &quot;SECRET_TOKEN&quot;]
+      },
+      // Allow all, but deny 'rm', 'sudo'
+      &quot;run&quot;: {
+        &quot;allow&quot;: true,
+        &quot;deny&quot;: [&quot;rm&quot;, &quot;sudo&quot;]
+      }
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="test%2C-bench%2C-and-compile-permissions" tabindex="-1">Test, bench, and compile permissions <a class="header-anchor" href="#test%2C-bench%2C-and-compile-permissions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Permissions can be optionally specified within the <code>"test"</code>, <code>"bench"</code>, or
+<code>"compile"</code> keys.</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"read"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./data"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-873" class="copyButton" data-copy="{
+  &quot;test&quot;: {
+    &quot;permissions&quot;: {
+      &quot;read&quot;: [&quot;./data&quot;]
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Or reference a permission set:</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token string">"read-data"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"read-data"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"read"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./data"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-877" class="copyButton" data-copy="{
+  &quot;test&quot;: {
+    &quot;permissions&quot;: &quot;read-data&quot;
+  },
+  &quot;permissions&quot;: {
+    &quot;read-data&quot;: {
+      &quot;read&quot;: [&quot;./data&quot;]
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>When this is defined, you must run <code>deno test</code> with <code>-P</code> or a permission flag:</p>
+<div class="relative"><pre><code>&gt; deno test
+error: Test permissions were found in the config file. Did you mean to run with `-P`?
+    at file:///Users/david/dev/example/deno.json
+&gt; deno test -P
+...runs...
+&gt; deno test --allow-read
+...runs...
+&gt; deno test -A
+...runs...
+</code></pre>
+
+      <button id="copy-button-881" class="copyButton" data-copy="> deno test
+error: Test permissions were found in the config file. Did you mean to run with `-P`?
+    at file:///Users/david/dev/example/deno.json
+> deno test -P
+...runs...
+> deno test --allow-read
+...runs...
+> deno test -A
+...runs...
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>This is to help prevent you waste your time wondering why something is not
+working when you forget to run without permissions.</p>
+<p>Note that test and bench files in a workspace will use the closest <code>deno.json</code>
+for determining <code>test</code> and <code>bench</code> permissions. This allows giving different
+permissions to different workspace members.</p>
+<h3 id="security-risk" tabindex="-1">Security risk <a class="header-anchor" href="#security-risk"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The threat model for permissions in the config file is similar to <code>deno task</code>,
+in that a script could modify the <code>deno.json</code> to elevate permissions. That's why
+this requires an explicit opt-in with <code>-P</code> and is not loaded by default.</p>
+<p>If you're ok with this risk, then this feature will be useful for you.</p>
+<h2 id="compile-config" tabindex="-1">Compile config <a class="header-anchor" href="#compile-config"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>"compile"</code> block configures
+<a href="/runtime/reference/cli/compile/"><code>deno compile</code></a> without requiring you to
+repeat flags on every invocation. You can declare which extra files or
+directories to bundle into the executable, and which paths to exclude:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"compile"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"names.csv"</span><span class="token punctuation">,</span> <span class="token string">"data"</span><span class="token punctuation">,</span> <span class="token string">"worker.ts"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"data/secrets"</span><span class="token punctuation">,</span> <span class="token string">"**/*.test.ts"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-903" class="copyButton" data-copy="{
+  &quot;compile&quot;: {
+    &quot;include&quot;: [&quot;names.csv&quot;, &quot;data&quot;, &quot;worker.ts&quot;],
+    &quot;exclude&quot;: [&quot;data/secrets&quot;, &quot;**/*.test.ts&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><code>--include</code> and <code>--exclude</code> flags on the command line are merged with these
+lists rather than replacing them. The <code>"compile"</code> block can also carry
+<code>permissions</code> (see
+<a href="#test-bench-and-compile-permissions">Test, bench, and compile permissions</a>).</p>
+<h2 id="an-example-deno.json-file" tabindex="-1">An example <code>deno.json</code> file <a class="header-anchor" href="#an-example-deno.json-file"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"allowJs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"deno.window"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"strict"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"default"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"read"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"./src/secrets/"</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token property">"ignore"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"TEMP_*"</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"lint"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/testdata/"</span><span class="token punctuation">,</span> <span class="token string">"src/fixtures/**/*.ts"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"tags"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"recommended"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ban-untagged-todo"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"no-unused-vars"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"fmt"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"useTabs"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"lineWidth"</span><span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+    <span class="token property">"indentWidth"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token property">"semiColons"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"proseWrap"</span><span class="token operator">:</span> <span class="token string">"preserve"</span><span class="token punctuation">,</span>
+    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/testdata/"</span><span class="token punctuation">,</span> <span class="token string">"src/fixtures/**/*.ts"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"lock"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"nodeModulesDir"</span><span class="token operator">:</span> <span class="token string">"auto"</span><span class="token punctuation">,</span>
+  <span class="token property">"unstable"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"webgpu"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/testdata/"</span><span class="token punctuation">,</span> <span class="token string">"src/fixtures/**/*.ts"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"deno run --allow-read main.ts"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"oak"</span><span class="token operator">:</span> <span class="token string">"jsr:@oak/oak"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"dist/"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-910" class="copyButton" data-copy="{
+  &quot;compilerOptions&quot;: {
+    &quot;allowJs&quot;: true,
+    &quot;lib&quot;: [&quot;deno.window&quot;],
+    &quot;strict&quot;: true
+  },
+  &quot;permissions&quot;: {
+    &quot;default&quot;: {
+      &quot;read&quot;: {
+        &quot;allow&quot;: [&quot;./src/&quot;],
+        &quot;deny&quot;: [&quot;./src/secrets/&quot;]
+      },
+      &quot;env&quot;: {
+        &quot;allow&quot;: true,
+        &quot;ignore&quot;: [&quot;TEMP_*&quot;]
+      }
+    }
+  },
+  &quot;lint&quot;: {
+    &quot;include&quot;: [&quot;src/&quot;],
+    &quot;exclude&quot;: [&quot;src/testdata/&quot;, &quot;src/fixtures/**/*.ts&quot;],
+    &quot;rules&quot;: {
+      &quot;tags&quot;: [&quot;recommended&quot;],
+      &quot;include&quot;: [&quot;ban-untagged-todo&quot;],
+      &quot;exclude&quot;: [&quot;no-unused-vars&quot;]
+    }
+  },
+  &quot;fmt&quot;: {
+    &quot;useTabs&quot;: true,
+    &quot;lineWidth&quot;: 80,
+    &quot;indentWidth&quot;: 4,
+    &quot;semiColons&quot;: false,
+    &quot;singleQuote&quot;: true,
+    &quot;proseWrap&quot;: &quot;preserve&quot;,
+    &quot;include&quot;: [&quot;src/&quot;],
+    &quot;exclude&quot;: [&quot;src/testdata/&quot;, &quot;src/fixtures/**/*.ts&quot;]
+  },
+  &quot;lock&quot;: false,
+  &quot;nodeModulesDir&quot;: &quot;auto&quot;,
+  &quot;unstable&quot;: [&quot;webgpu&quot;],
+  &quot;test&quot;: {
+    &quot;include&quot;: [&quot;src/&quot;],
+    &quot;exclude&quot;: [&quot;src/testdata/&quot;, &quot;src/fixtures/**/*.ts&quot;]
+  },
+  &quot;tasks&quot;: {
+    &quot;start&quot;: &quot;deno run --allow-read main.ts&quot;
+  },
+  &quot;imports&quot;: {
+    &quot;oak&quot;: &quot;jsr:@oak/oak&quot;
+  },
+  &quot;exclude&quot;: [
+    &quot;dist/&quot;
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>This is an example of a <code>deno.json</code> file that configures the TypeScript compiler
+options, linter, formatter, node modules directory, etc. For a full list of
+available fields and configurations, see the
+<a href="#json-schema">Deno configuration file schema</a>.</p>
+<h2 id="json-schema" tabindex="-1">JSON schema <a class="header-anchor" href="#json-schema"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>A JSON schema file is available for editors to provide autocompletion. The file
+is versioned and available at:
+<a href="https://github.com/denoland/deno/blob/main/cli/schemas/config-file.v1.json">https://github.com/denoland/deno/blob/main/cli/schemas/config-file.v1.json</a></p>
+<h2 id="proxies" tabindex="-1">Proxies <a class="header-anchor" href="#proxies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno supports proxies for module downloads and the fetch API. Proxy
+configuration is read from
+<a href="https://docs.deno.com/runtime/reference/env_variables/#special-environment-variables">environment variables</a>:
+HTTP_PROXY, HTTPS_PROXY and NO_PROXY.</p>
+<p>If you are using Windows - if environment variables are not found Deno falls
+back to reading proxies from the registry.</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-06-25T00:00:00.000Z">June 25, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/reference/std/yaml/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← yaml</span></a><a href="/runtime/reference/ts_config_migration/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">TypeScript →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/deno_json.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

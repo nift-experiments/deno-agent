@@ -1,0 +1,554 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#configuring-typescript-in-deno" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Configuring TypeScript in Deno </a></li><li class="leading-tight text-balance"><a href="#tsconfig.json-compatibility" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">tsconfig.json compatibility </a></li><li class="leading-tight text-balance"><a href="#migrating-compileroptions-from-node.js" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Migrating compilerOptions from Node.js </a></li><li class="leading-tight text-balance"><a href="#ts-compiler-options" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">TS Compiler Options </a></li><li class="leading-tight text-balance"><a href="#using-the-%22lib%22-property" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Using the "lib" property </a></li><li class="leading-tight text-balance"><a href="#targeting-deno-and-the-browser" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Targeting Deno and the Browser </a></li><li class="leading-tight text-balance"><a href="#types-and-type-declarations" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Types and Type Declarations </a></li><li class="leading-tight text-balance"><a href="#type-checking-web-workers" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Type Checking Web Workers </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#triple-slash-directives" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Triple-slash directives </a></li><li class="leading-tight text-balance"><a href="#providing-%22lib%22-setting-in-deno.json" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Providing "lib" setting in deno.json </a></li></ul></li><li class="leading-tight text-balance"><a href="#important-points" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Important points </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#type-declaration-semantics" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Type declaration semantics </a></li></ul></li><li class="leading-tight text-balance"><a href="#behavior-of-javascript-when-type-checking" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Behavior of JavaScript when type checking </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#internals" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Internals </a></li></ul></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/ts_config_migration.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Fts_config_migration.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Configuring TypeScript</h1></div><p>This page covers advanced TypeScript configuration in Deno, including compiler
+options, <code>tsconfig.json</code> compatibility, and library targeting. For an
+introduction to using TypeScript with Deno, see
+<a href="/runtime/fundamentals/typescript/">TypeScript support</a>.</p>
+<h2 id="configuring-typescript-in-deno" tabindex="-1">Configuring TypeScript in Deno <a class="header-anchor" href="#configuring-typescript-in-deno"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno aims to simplify TypeScript configuration based on the following design
+choices:</p>
+<ul>
+<li>Strict and modern defaults for type-checking rules.</li>
+<li>Allowing the omission of settings relating to the target runtime or
+compatibility, leveraging direct integration with the execution environment.</li>
+<li>Project references using <code>deno.json</code> directory scopes.</li>
+</ul>
+<p>The last point presents a simpler format than <code>tsconfig.json</code>'s
+<a href="https://www.typescriptlang.org/tsconfig/#references"><code>references</code></a> and
+<a href="https://www.typescriptlang.org/tsconfig/#extends"><code>extends</code></a> fields, replacing
+them with <code>deno.json</code> workspaces and root-member inheritance. See the section on
+<a href="/runtime/fundamentals/workspaces/#type-checking">type checking in workspaces</a>.</p>
+<h2 id="tsconfig.json-compatibility" tabindex="-1"><code>tsconfig.json</code> compatibility <a class="header-anchor" href="#tsconfig.json-compatibility"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>While using <a href="https://www.typescriptlang.org/tsconfig/"><code>tsconfig.json</code></a> files is
+not recommended for Deno-first projects, existing Node.js + TypeScript
+workspaces using them will work out-of-the-box under Deno's type checker and
+LSP.</p>
+<p>Each workspace directory containing a <code>deno.json</code> or <code>package.json</code> is probed
+for a <code>tsconfig.json</code>. If it exists, it is added as a 'root' project reference
+and contained references are included recursively.</p>
+<p>As with <code>tsc</code>, the scope of a TSConfig is determined by its
+<a href="https://www.typescriptlang.org/tsconfig/#root-fields">root fields</a>. In case of
+overlap:</p>
+<ul>
+<li>A reference takes precedence over its referrer.</li>
+<li>For root references, <code>foo/bar/tsconfig.json</code> takes precedence over
+<code>foo/tsconfig.json</code>.</li>
+<li>If a parent <code>deno.json</code> contains <code>compilerOptions</code>, that will take precedence
+over any TSConfig.</li>
+</ul>
+<p>The following fields are supported:</p>
+<div><div class="markdownBlockTitle">tsconfig.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"..."</span><span class="token punctuation">,</span>
+  <span class="token property">"files"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"..."</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"..."</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"..."</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"references"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"..."</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"..."</span><span class="token operator">:</span> <span class="token string">"..."</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-61" class="copyButton" data-copy="{
+  &quot;extends&quot;: &quot;...&quot;,
+  &quot;files&quot;: [&quot;...&quot;],
+  &quot;include&quot;: [&quot;...&quot;],
+  &quot;exclude&quot;: [&quot;...&quot;],
+  &quot;references&quot;: [
+    { &quot;path&quot;: &quot;...&quot; }
+  ],
+  &quot;compilerOptions&quot;: {
+    &quot;...&quot;: &quot;...&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Except for <code>compilerOptions</code>, these fields cannot be specified in <code>deno.json</code>.</p>
+<p>You may be forced to use a <code>tsconfig.json</code> file when, for example, the required
+granularity for <a href="https://www.typescriptlang.org/tsconfig/#include"><code>include</code></a>
+cannot be represented with <code>deno.json</code> workspaces and directory scopes.</p>
+<h2 id="migrating-compileroptions-from-node.js" tabindex="-1">Migrating compilerOptions from Node.js <a class="header-anchor" href="#migrating-compileroptions-from-node.js"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Most of a typical Node.js <code>tsconfig.json</code> exists to configure compilation output
+and module interop. Deno runs TypeScript directly and never emits JavaScript, so
+most of those options have no effect and can be deleted. Deno warns about
+ignored options when they appear in a <code>tsconfig.json</code>; moving your remaining
+options into <code>deno.json</code>'s <code>compilerOptions</code> suppresses the warning.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Option in your <code>tsconfig.json</code></th>
+<th>In Deno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target</code>, <code>outDir</code>, <code>outFile</code>, <code>rootDir</code></td>
+<td>Delete. Deno never emits: code runs directly on the latest V8, and <code>deno check</code> type-checks without producing output.</td>
+</tr>
+<tr>
+<td><code>declaration</code>, <code>declarationMap</code>, <code>emitDeclarationOnly</code></td>
+<td>Delete. No emit. Use <a href="/runtime/reference/cli/doc/"><code>deno doc</code></a> for API documentation.</td>
+</tr>
+<tr>
+<td><code>sourceMap</code>, <code>inlineSourceMap</code>, <code>inlineSources</code></td>
+<td>Delete. Stack traces map to your TypeScript sources automatically.</td>
+</tr>
+<tr>
+<td><code>esModuleInterop</code>, <code>allowSyntheticDefaultImports</code></td>
+<td>Delete. Deno is ESM-native and handles CommonJS interop in the runtime.</td>
+</tr>
+<tr>
+<td><code>importHelpers</code>, <code>noEmitHelpers</code>, <code>downlevelIteration</code></td>
+<td>Delete. No downleveling happens, so no helpers are emitted.</td>
+</tr>
+<tr>
+<td><code>resolveJsonModule</code></td>
+<td>Delete. Import JSON with an attribute instead: <code>import data from "./data.json" with { type: "json" }</code>.</td>
+</tr>
+<tr>
+<td><code>skipLibCheck</code></td>
+<td>Delete. Deno does not type-check dependencies by default (<code>deno check --all</code> opts in).</td>
+</tr>
+<tr>
+<td><code>module</code>, <code>moduleResolution</code></td>
+<td>Usually delete. Deno defaults to <code>nodenext</code>; the supported values are listed in the table below.</td>
+</tr>
+<tr>
+<td><code>lib</code>, <code>types</code></td>
+<td>Usually delete. Deno's defaults cover its runtime; keep <code>lib</code> only for cross-runtime code (see <a href="#using-the-lib-property">"lib" property</a>).</td>
+</tr>
+<tr>
+<td><code>strict</code>, <code>noImplicit*</code>, <code>noUnused*</code>, other check flags</td>
+<td>Keep the ones you want, in <code>deno.json</code>'s <code>compilerOptions</code>. Note Deno's defaults are already strict (table below).</td>
+</tr>
+<tr>
+<td><code>paths</code>, <code>baseUrl</code></td>
+<td>Keep if needed for type-time path mapping, or replace with <a href="/runtime/fundamentals/modules/">import maps</a>, which also work at runtime.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="ts-compiler-options" tabindex="-1">TS Compiler Options <a class="header-anchor" href="#ts-compiler-options"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Here is a table of compiler options that can be changed, their default in Deno
+and any other notes about that option:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>allowUnreachableCode</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>allowUnusedLabels</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>baseUrl</code></td>
+<td><code>"./"</code></td>
+<td>This is used for resolving bare specifier entries in <code>paths</code> and <code>rootDirs</code>, but never for bare specifiers in module imports.</td>
+</tr>
+<tr>
+<td><code>checkJs</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>jsx</code></td>
+<td><code>"react"</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>jsxFactory</code></td>
+<td><code>"React.createElement"</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>jsxFragmentFactory</code></td>
+<td><code>"React.Fragment"</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>keyofStringsOnly</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>lib</code></td>
+<td><code>[ "deno.window" ]</code></td>
+<td>The default for this varies based on other settings in Deno. If it is supplied, it overrides the default. See below for more information.</td>
+</tr>
+<tr>
+<td><code>module</code></td>
+<td><code>"nodenext"</code></td>
+<td>Supported values: <code>["nodenext", "esnext", "preserve"]</code>.</td>
+</tr>
+<tr>
+<td><code>moduleResolution</code></td>
+<td><code>"nodenext"</code></td>
+<td>Supported values: <code>["nodenext", "bundler"]</code>.</td>
+</tr>
+<tr>
+<td><code>noErrorTruncation</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>noFallthroughCasesInSwitch</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>noImplicitAny</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>noImplicitOverride</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>noImplicitReturns</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>noImplicitThis</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>noImplicitUseStrict</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>noStrictGenericChecks</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>noUncheckedIndexedAccess</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>noUnusedLocals</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>noUnusedParameters</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>paths</code></td>
+<td><code>{}</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>rootDirs</code></td>
+<td><code>null</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>strict</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>strictBindCallApply</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>strictFunctionTypes</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>strictNullChecks</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>strictPropertyInitialization</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>suppressExcessPropertyErrors</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>suppressImplicitAnyIndexErrors</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>useUnknownInCatchVariables</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>For a full list of compiler options and how they affect TypeScript, please refer
+to the
+<a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html">TypeScript Handbook</a>.</p>
+<h2 id="using-the-%22lib%22-property" tabindex="-1">Using the "lib" property <a class="header-anchor" href="#using-the-%22lib%22-property"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>If you're working on a project that ships code to multiple runtimes, like
+browsers for example, you can tweak the default types via the "lib" property
+within the <code>compilerOptions</code>.</p>
+<p>The built-in libraries that are of interest to users:</p>
+<ul>
+<li><code>"deno.ns"</code> - This includes all the custom <code>Deno</code> global namespace APIs plus
+the Deno additions to <code>import.meta</code>. This should generally not conflict with
+other libraries or global types.</li>
+<li><code>"deno.window"</code> - This is the "default" library used when checking Deno main
+runtime scripts. It includes the <code>"deno.ns"</code> as well as other type libraries
+for the extensions that are built into Deno. This library will conflict with
+libraries like <code>"dom"</code> and <code>"dom.iterable"</code> that are standard TypeScript
+libraries.</li>
+<li><code>"deno.worker"</code> - This is the library used when checking a Deno web worker
+script. For more information about web workers, check out
+<a href="/runtime/reference/ts_config_migration/#type-checking-web-workers">Type Checking Web Workers</a>.</li>
+<li><code>"dom.asynciterable"</code> - TypeScript currently does not include the DOM async
+iterables that Deno implements (plus several browsers), so we have implemented
+it ourselves until it becomes available in TypeScript.</li>
+<li><code>"deno.desktop"</code> - This is the library used when checking apps created with
+<code>deno desktop</code>. Check out <a href="/runtime/desktop/">Desktop apps</a>.</li>
+</ul>
+<p>These are common libraries that are not enabled by default, but are useful when
+writing code that is intended to also work in another runtime:</p>
+<ul>
+<li><code>"dom"</code> - The main browser global library that ships with TypeScript. The type
+definitions conflict in many ways with <code>"deno.window"</code> and so if <code>"dom"</code> is
+used, then consider using just <code>"deno.ns"</code> to expose the Deno specific APIs.</li>
+<li><code>"dom.iterable"</code> - The iterable extensions to the browser global library.</li>
+<li><code>"scripthost"</code> - The library for the Microsoft Windows Script Host.</li>
+<li><code>"webworker"</code> - The main library for web workers in the browser. Like <code>"dom"</code>
+this will conflict with <code>"deno.window"</code> or <code>"deno.worker"</code>, so consider using
+just <code>"deno.ns"</code> to expose the Deno specific APIs.</li>
+<li><code>"webworker.importscripts"</code> - The library that exposes the <code>importScripts()</code>
+API in the web worker.</li>
+<li><code>"webworker.iterable"</code> - The library that adds iterables to objects within a
+web worker. Modern browsers support this.</li>
+</ul>
+<h2 id="targeting-deno-and-the-browser" tabindex="-1">Targeting Deno and the Browser <a class="header-anchor" href="#targeting-deno-and-the-browser"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>You may want to write code that seamlessly runs in both Deno and the browser. In
+this case you'll need to conditionally check the execution environment before
+using any APIs exclusive to one or the other. In such cases, a typical
+<code>compilerOptions</code> configuration might look like this:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"dom"</span><span class="token punctuation">,</span> <span class="token string">"dom.iterable"</span><span class="token punctuation">,</span> <span class="token string">"dom.asynciterable"</span><span class="token punctuation">,</span> <span class="token string">"deno.ns"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-631" class="copyButton" data-copy="{
+  &quot;compilerOptions&quot;: {
+    &quot;lib&quot;: [&quot;dom&quot;, &quot;dom.iterable&quot;, &quot;dom.asynciterable&quot;, &quot;deno.ns&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This should allow most code to be type checked properly by Deno.</p>
+<p>If your code uses APIs that are gated behind one of the <code>--unstable-*</code> flags,
+add the <code>deno.unstable</code> library to the mix as well:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"dom"</span><span class="token punctuation">,</span>
+      <span class="token string">"dom.iterable"</span><span class="token punctuation">,</span>
+      <span class="token string">"dom.asynciterable"</span><span class="token punctuation">,</span>
+      <span class="token string">"deno.ns"</span><span class="token punctuation">,</span>
+      <span class="token string">"deno.unstable"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-638" class="copyButton" data-copy="{
+  &quot;compilerOptions&quot;: {
+    &quot;lib&quot;: [
+      &quot;dom&quot;,
+      &quot;dom.iterable&quot;,
+      &quot;dom.asynciterable&quot;,
+      &quot;deno.ns&quot;,
+      &quot;deno.unstable&quot;
+    ]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Typically, when you use the <code>"lib"</code> option in TypeScript, you need to include an
+"es" library as well. In the case of <code>"deno.ns"</code> and <code>"deno.unstable"</code>, they
+automatically include <code>"esnext"</code> when you bring them in.</p>
+<p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>If you get type errors like <strong>cannot find <code>document</code> or <code>HTMLElement</code></strong>, it is
+likely that the library you are using has dependencies on the DOM. This is
+common for packages that are designed to run in a browser as well as
+server-side. By default, Deno only includes the libraries that are directly
+supported. Assuming the package properly identifies what environment it is
+running in at runtime it is "safe" to use the DOM libraries to type check the
+code.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="types-and-type-declarations" tabindex="-1">Types and Type Declarations <a class="header-anchor" href="#types-and-type-declarations"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>For information on providing type declarations for JavaScript modules (using
+<code>@ts-types</code>, <code>@ts-self-types</code>, <code>X-TypeScript-Types</code> headers, and <code>.d.ts</code> files),
+see
+<a href="/runtime/fundamentals/typescript/#providing-declaration-files">Providing declaration files</a>
+in the TypeScript fundamentals guide.</p>
+<p>For information on augmenting global types using <code>declare global</code> or <code>.d.ts</code>
+files, see
+<a href="/runtime/fundamentals/typescript/#augmenting-global-types">Augmenting global types</a>.</p>
+<h2 id="type-checking-web-workers" tabindex="-1">Type Checking Web Workers <a class="header-anchor" href="#type-checking-web-workers"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>When Deno loads a TypeScript module in a web worker, it will automatically type
+check the module and its dependencies against the Deno web worker library. This
+can present a challenge in other contexts like <code>deno check</code> or in editors. There
+are a couple of ways to instruct Deno to use the worker libraries instead of the
+standard Deno libraries.</p>
+<h3 id="triple-slash-directives" tabindex="-1">Triple-slash directives <a class="header-anchor" href="#triple-slash-directives"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>This option couples the library settings with the code itself. By adding the
+following triple-slash directives near the top of the entry point file for the
+worker script, Deno will now type check it as a Deno worker script, irrespective
+of how the module is analyzed:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token comment">/// &lt;reference no-default-lib="true" /&gt;</span>
+<span class="token comment">/// &lt;reference lib="deno.worker" /&gt;</span>
+</code></pre>
+
+      <button id="copy-button-672" class="copyButton" data-copy="/// <reference no-default-lib=&quot;true&quot; />
+/// <reference lib=&quot;deno.worker&quot; />
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The first directive ensures that no other default libraries are used. If this is
+omitted, you will get some conflicting type definitions, because Deno will try
+to apply the standard Deno library as well. The second instructs Deno to apply
+the built-in Deno worker type definitions plus dependent libraries (like
+<code>"esnext"</code>).</p>
+<p>The one disadvantage of this, is that it makes the code less portable to other
+non-Deno platforms like <code>tsc</code>, as it is only Deno which has the <code>"deno.worker"</code>
+library built into it.</p>
+<h3 id="providing-%22lib%22-setting-in-deno.json" tabindex="-1">Providing "lib" setting in deno.json <a class="header-anchor" href="#providing-%22lib%22-setting-in-deno.json"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can provide a "lib" option in your <code>deno.json</code> file to instruct Deno to use
+library files. For example:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"esnext"</span><span class="token punctuation">,</span>
+    <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"deno.worker"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-685" class="copyButton" data-copy="{
+  &quot;compilerOptions&quot;: {
+    &quot;target&quot;: &quot;esnext&quot;,
+    &quot;lib&quot;: [&quot;deno.worker&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>If you also have non-worker scripts, consider using
+<a href="/runtime/fundamentals/workspaces/">workspaces</a> so each workspace member can
+have its own <code>compilerOptions</code>.</p>
+<h2 id="important-points" tabindex="-1">Important points <a class="header-anchor" href="#important-points"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="type-declaration-semantics" tabindex="-1">Type declaration semantics <a class="header-anchor" href="#type-declaration-semantics"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Type declaration files (<code>.d.ts</code> files) follow the same semantics as other files
+in Deno. This means that declaration files are assumed to be module declarations
+(<em>UMD declarations</em>) and not ambient/global declarations. It is unpredictable
+how Deno will handle ambient/global declarations.</p>
+<p>In addition, if a type declaration imports something else, like another <code>.d.ts</code>
+file, its resolution follow the normal import rules of Deno. For a lot of the
+<code>.d.ts</code> files that are generated and available on the web, they may not be
+compatible with Deno.</p>
+<p>When using HTTPS imports from CDNs like <a href="https://esm.sh">esm.sh</a>, type
+declarations are provided by default (via the <code>X-TypeScript-Types</code> header). This
+can be disabled by appending <code>?no-dts</code> to the import URL. Note that for most use
+cases, <code>npm:</code> specifiers are the recommended way to import npm packages.</p>
+<h2 id="behavior-of-javascript-when-type-checking" tabindex="-1">Behavior of JavaScript when type checking <a class="header-anchor" href="#behavior-of-javascript-when-type-checking"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>When you import JavaScript code into TypeScript within Deno, even if you’ve set
+<code>checkJs</code> to <code>false</code> (which is the default behavior for Deno), the TypeScript
+compiler will still analyze the JavaScript module. It tries to infer the shape
+of the exports from that module to validate the import in your TypeScript file.</p>
+<p>Usually, this isn’t an issue when importing a standard ES module. However, there
+are cases where TypeScript’s analysis might fail, for example, with modules that
+have special packaging or are global UMD (Universal Module Definition) modules.
+When faced with such situations, the best approach is to provide some form of
+type information using one of the methods mentioned earlier.</p>
+<h3 id="internals" tabindex="-1">Internals <a class="header-anchor" href="#internals"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>While it isn't required to understand how Deno works internally to be able to
+leverage TypeScript with Deno well, it can help to understand how it works.</p>
+<p>Before any code is executed or compiled, Deno generates a module graph by
+parsing the root module, and then detecting all of its dependencies, and then
+retrieving and parsing those modules, recursively, until all the dependencies
+are retrieved.</p>
+<p>For each dependency, there are two potential "slots" that are used. There is the
+code slot and the type slot. As the module graph is filled out, if the module is
+something that is or can be emitted to JavaScript, it fills the code slot, and
+type only dependencies, like <code>.d.ts</code> files fill the type slot.</p>
+<p>When the module graph is built, and there is a need to type check the graph,
+Deno starts up the TypeScript compiler and feeds it the names of the modules
+that need to be potentially emitted as JavaScript. During that process, the
+TypeScript compiler will request additional modules, and Deno will look at the
+slots for the dependency, offering it the type slot if it is filled before
+offering it the code slot.</p>
+<p>This means when you import a <code>.d.ts</code> module, or you use one of the solutions
+above to provide alternative type modules for JavaScript code, that is what is
+provided to TypeScript instead when resolving the module.</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-06-25T00:00:00.000Z">June 25, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/reference/deno_json/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← deno.json</span></a><a href="/runtime/reference/env_variables/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Environment variables →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/ts_config_migration.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

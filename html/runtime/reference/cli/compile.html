@@ -1,0 +1,721 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#flags" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Flags </a></li><li class="leading-tight text-balance"><a href="#framework-detection" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Framework detection </a></li><li class="leading-tight text-balance"><a href="#watch-mode" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Watch mode </a></li><li class="leading-tight text-balance"><a href="#cross-compilation" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Cross Compilation </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#supported-targets" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Supported Targets </a></li></ul></li><li class="leading-tight text-balance"><a href="#the-denort-binary" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">The denort binary </a></li><li class="leading-tight text-balance"><a href="#choosing-a-javascript-engine" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Choosing a JavaScript engine </a></li><li class="leading-tight text-balance"><a href="#icons" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Icons </a></li><li class="leading-tight text-balance"><a href="#dynamic-imports" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Dynamic Imports </a></li><li class="leading-tight text-balance"><a href="#including-data-files-or-directories" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Including Data Files or Directories </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#configuring-include-%2F-exclude-in-deno.json" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Configuring include / exclude in deno.json </a></li></ul></li><li class="leading-tight text-balance"><a href="#workers" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Workers </a></li><li class="leading-tight text-balance"><a href="#bundling-dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Bundling dependencies </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#minifying-the-bundle" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Minifying the bundle </a></li><li class="leading-tight text-balance"><a href="#limitations" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Limitations </a></li></ul></li><li class="leading-tight text-balance"><a href="#self-extracting-executables" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Self-Extracting Executables </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#trade-offs" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Trade-offs </a></li></ul></li><li class="leading-tight text-balance"><a href="#code-signing" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Code Signing </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#macos" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">macOS </a></li><li class="leading-tight text-balance"><a href="#windows" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Windows </a></li></ul></li><li class="leading-tight text-balance"><a href="#persistent-storage-in-executables" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Persistent storage in executables </a></li><li class="leading-tight text-balance"><a href="#options" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Options</a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference<span aria-hidden="true">›</span></li><li class="flex items-center gap-2 m-0"><a href="/runtime/reference/cli/" class="text-inherit no-underline hover:underline">CLI</a></li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/cli/compile.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Fcli%2Fcompile.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">deno compile</h1></div><h2 id="flags" tabindex="-1">Flags <a class="header-anchor" href="#flags"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>As with <a href="/runtime/reference/cli/install/"><code>deno install</code></a>, the runtime flags
+used to execute the script must be specified at compilation time. This includes
+permission flags.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile --allow-read --allow-net jsr:@std/http/file-server
+</code></pre>
+
+      <button id="copy-button-6" class="copyButton" data-copy="deno compile --allow-read --allow-net jsr:@std/http/file-server
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><a href="/runtime/run/#passing-script-arguments">Script arguments</a> can be partially
+embedded.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile --allow-read --allow-net jsr:@std/http/file-server <span class="token parameter variable">-p</span> <span class="token number">8080</span>
+
+./file_server <span class="token parameter variable">--help</span>
+</code></pre>
+
+      <button id="copy-button-10" class="copyButton" data-copy="deno compile --allow-read --allow-net jsr:@std/http/file-server -p 8080
+
+./file_server --help
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="framework-detection" tabindex="-1">Framework detection <a class="header-anchor" href="#framework-detection"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Starting in Deno 2.8, <code>deno compile .</code> (or <code>deno compile &lt;directory&gt;</code>) detects
+common web frameworks and produces an entrypoint that knows how to start them.
+The detected build script is run first, so the compiled binary always contains a
+fresh build.</p>
+<p>Supported frameworks:</p>
+<ul>
+<li>Next.js</li>
+<li>Astro</li>
+<li>Fresh (1.x and 2.x)</li>
+<li>Remix</li>
+<li>React Router</li>
+<li>SvelteKit</li>
+<li>Nuxt</li>
+<li>SolidStart</li>
+<li>TanStack Start</li>
+<li>Vite (SSR, plus SPA/MPA projects served as static output)</li>
+</ul>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># In a Next.js / Astro / Fresh / React Router / etc. project</span>
+deno compile <span class="token builtin class-name">.</span>
+
+<span class="token comment"># Or pointing at a specific app directory</span>
+deno compile ./apps/web
+</code></pre>
+
+      <button id="copy-button-72" class="copyButton" data-copy="# In a Next.js / Astro / Fresh / React Router / etc. project
+deno compile .
+
+# Or pointing at a specific app directory
+deno compile ./apps/web
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Generated entrypoints use <code>import.meta.dirname</code> so framework asset paths resolve
+correctly against the <a href="#including-data-files-or-directories">virtual filesystem</a>
+inside the compiled binary.</p>
+<p>React Router projects must build successfully under Deno before they can be
+compiled. Because React Router's default server entry targets Node.js, add a Web
+Streams-compatible <code>app/entry.server.tsx</code> when building with Deno. See the
+<a href="/runtime/desktop/frameworks/#react-router">React Router desktop framework notes</a>
+for an example.</p>
+<p>If the project doesn't match any supported framework, <code>deno compile</code> will error
+out.</p>
+<h2 id="watch-mode" tabindex="-1">Watch mode <a class="header-anchor" href="#watch-mode"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Pass <code>--watch</code> to rebuild the executable whenever a file in the compile graph
+changes:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile <span class="token parameter variable">--watch</span> main.ts
+</code></pre>
+
+      <button id="copy-button-88" class="copyButton" data-copy="deno compile --watch main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Use <code>--watch-exclude</code> to keep specific paths from triggering a rebuild, and
+<code>--no-clear-screen</code> to preserve the terminal output between rebuilds:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile <span class="token parameter variable">--watch</span> --watch-exclude<span class="token operator">=</span>./dist --no-clear-screen main.ts
+</code></pre>
+
+      <button id="copy-button-92" class="copyButton" data-copy="deno compile --watch --watch-exclude=./dist --no-clear-screen main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="cross-compilation" tabindex="-1">Cross Compilation <a class="header-anchor" href="#cross-compilation"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>You can cross-compile binaries for other platforms by using the <code>--target</code> flag.</p>
+<div class="relative"><pre><code># Cross compile for Apple Silicon
+deno compile --target aarch64-apple-darwin main.ts
+
+# Cross compile for Windows with an icon
+deno compile --target x86_64-pc-windows-msvc --icon ./icon.ico main.ts
+</code></pre>
+
+      <button id="copy-button-99" class="copyButton" data-copy="# Cross compile for Apple Silicon
+deno compile --target aarch64-apple-darwin main.ts
+
+# Cross compile for Windows with an icon
+deno compile --target x86_64-pc-windows-msvc --icon ./icon.ico main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="supported-targets" tabindex="-1">Supported Targets <a class="header-anchor" href="#supported-targets"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Deno supports cross compiling to all targets regardless of the host platform.</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Architecture</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td>x86_64</td>
+<td><code>x86_64-pc-windows-msvc</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>ARM64</td>
+<td><code>aarch64-pc-windows-msvc</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>x86_64</td>
+<td><code>x86_64-apple-darwin</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>ARM64</td>
+<td><code>aarch64-apple-darwin</code></td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>x86_64</td>
+<td><code>x86_64-unknown-linux-gnu</code></td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>ARM64</td>
+<td><code>aarch64-unknown-linux-gnu</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><code>aarch64-pc-windows-msvc</code> (Windows on ARM) is supported starting in Deno 2.9.3.</p>
+<h2 id="the-denort-binary" tabindex="-1">The denort binary <a class="header-anchor" href="#the-denort-binary"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p><code>deno compile</code> embeds your program into <code>denort</code> ("Deno runtime"): a stripped
+build of Deno that contains only what's needed to run a compiled program, with
+none of the tooling subcommands. Using <code>denort</code> as the base instead of the full
+<code>deno</code> binary is what keeps compiled executables smaller.</p>
+<p>The first time you compile for a given Deno version and target, Deno downloads
+the matching <code>denort-&lt;target&gt;.zip</code> from <code>dl.deno.land</code> and caches it in
+<code>DENO_DIR</code>. This is also how cross-compilation works: compiling with <code>--target</code>
+fetches that platform's <code>denort</code>. Subsequent compiles reuse the cached binary
+and work offline.</p>
+<p>To use a custom or locally built runtime as the base, set the <code>DENORT_BIN</code>
+environment variable to its path. Deno also picks up a <code>denort</code> binary placed
+next to the <code>deno</code> executable.</p>
+<h2 id="choosing-a-javascript-engine" tabindex="-1">Choosing a JavaScript engine <a class="header-anchor" href="#choosing-a-javascript-engine"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>
+</p><div class="admonition caution">
+  <div class="title">Caution</div>
+
+<p></p>
+<p><code>--engine quickjs</code> is experimental and subject to change. It landed after Deno
+2.9.4, so it is available in
+<a href="/runtime/reference/cli/upgrade/#canary-build">canary builds</a> and in later
+releases.</p>
+<p>
+</p></div>
+<p></p>
+<p>Compiled binaries run on V8 by default. The <code>--engine</code> flag lets you build
+against QuickJS instead, which produces a smaller executable:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Default, same as omitting the flag</span>
+deno compile <span class="token parameter variable">--engine</span> v8 main.ts
+
+<span class="token comment"># Build a binary that runs on QuickJS</span>
+deno compile <span class="token parameter variable">--engine</span> quickjs main.ts
+</code></pre>
+
+      <button id="copy-button-219" class="copyButton" data-copy="# Default, same as omitting the flag
+deno compile --engine v8 main.ts
+
+# Build a binary that runs on QuickJS
+deno compile --engine quickjs main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The same flag is available on <a href="/runtime/desktop/distribution/"><code>deno desktop</code></a>,
+where it selects the engine embedded in the app's runtime library.</p>
+<p>Trade-offs to weigh before shipping a QuickJS binary:</p>
+<ul>
+<li><strong>Security updates.</strong> The QuickJS backend does not receive the same security
+updates as V8. Don't use it for programs that run untrusted input.</li>
+<li><strong>Performance.</strong> QuickJS is an interpreter with no JIT, so compute-heavy code
+runs slower than on V8. Startup and memory use are lower.</li>
+<li><strong>Maturity.</strong> The backend is experimental; behavior differences from V8 are
+possible, so test your program with the engine you intend to ship.</li>
+</ul>
+<p>Each engine has its own prebuilt runtime: with <code>--engine quickjs</code>, Deno
+downloads <code>denort-quickjs-&lt;target&gt;.zip</code> (or <code>libdenort-quickjs-&lt;target&gt;.zip</code> for
+<code>deno desktop</code>) instead of the default <code>denort-&lt;target&gt;.zip</code>. Both variants are
+published for every <a href="#supported-targets">supported target</a>, so cross-compilation
+works the same way. If you override the base runtime with <code>DENORT_BIN</code> (or a
+<code>denort</code> binary next to <code>deno</code>), that binary is used as-is: <code>--engine</code> is then
+ignored and Deno prints a warning.</p>
+<h2 id="icons" tabindex="-1">Icons <a class="header-anchor" href="#icons"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>It is possible to add an icon to the executable by using the <code>--icon</code> flag when
+targeting Windows. The icon must be in the <code>.ico</code> format.</p>
+<div class="relative"><pre><code>deno compile --icon icon.ico main.ts
+
+# Cross compilation with icon
+deno compile --target x86_64-pc-windows-msvc --icon ./icon.ico main.ts
+</code></pre>
+
+      <button id="copy-button-252" class="copyButton" data-copy="deno compile --icon icon.ico main.ts
+
+# Cross compilation with icon
+deno compile --target x86_64-pc-windows-msvc --icon ./icon.ico main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="dynamic-imports" tabindex="-1">Dynamic Imports <a class="header-anchor" href="#dynamic-imports"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>By default, statically analyzable dynamic imports (imports that have the string
+literal within the <code>import("...")</code> call expression) will be included in the
+output.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token comment">// calculator.ts and its dependencies will be included in the binary</span>
+<span class="token keyword">const</span> calculator <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">"./calculator.ts"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-259" class="copyButton" data-copy="// calculator.ts and its dependencies will be included in the binary
+const calculator = await import(&quot;./calculator.ts&quot;);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>But non-statically analyzable dynamic imports won't:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> specifier <span class="token operator">=</span> condition <span class="token operator">?</span> <span class="token string">"./calc.ts"</span> <span class="token operator">:</span> <span class="token string">"./better_calc.ts"</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> calculator <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">import</span><span class="token punctuation">(</span>specifier<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-263" class="copyButton" data-copy="const specifier = condition ? &quot;./calc.ts&quot; : &quot;./better_calc.ts&quot;;
+const calculator = await import(specifier);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>To include non-statically analyzable dynamic imports, specify an
+<code>--include &lt;path&gt;</code> flag.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile <span class="token parameter variable">--include</span> calc.ts <span class="token parameter variable">--include</span> better_calc.ts main.ts
+</code></pre>
+
+      <button id="copy-button-267" class="copyButton" data-copy="deno compile --include calc.ts --include better_calc.ts main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="including-data-files-or-directories" tabindex="-1">Including Data Files or Directories <a class="header-anchor" href="#including-data-files-or-directories"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Starting in Deno 2.1, you can include files or directories in the executable by
+specifying them via the <code>--include &lt;path&gt;</code> flag.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile <span class="token parameter variable">--include</span> names.csv <span class="token parameter variable">--include</span> data main.ts
+</code></pre>
+
+      <button id="copy-button-274" class="copyButton" data-copy="deno compile --include names.csv --include data main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Then read the file relative to the directory path of the current module via
+<code>import.meta.dirname</code>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token comment">// main.ts</span>
+<span class="token keyword">const</span> names <span class="token operator">=</span> Deno<span class="token punctuation">.</span><span class="token function">readTextFileSync</span><span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>dirname <span class="token operator">+</span> <span class="token string">"/names.csv"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> dataFiles <span class="token operator">=</span> Deno<span class="token punctuation">.</span><span class="token function">readDirSync</span><span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>dirname <span class="token operator">+</span> <span class="token string">"/data"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// use names and dataFiles here</span>
+</code></pre>
+
+      <button id="copy-button-278" class="copyButton" data-copy="// main.ts
+const names = Deno.readTextFileSync(import.meta.dirname + &quot;/names.csv&quot;);
+const dataFiles = Deno.readDirSync(import.meta.dirname + &quot;/data&quot;);
+
+// use names and dataFiles here
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Note this currently only works for files on the file system and not remote
+files.</p>
+<p><code>--include</code> treats embedded <code>.js</code> and <code>.ts</code> files as module-graph roots, so it
+resolves and transpiles them. To embed files exactly as they are, without any
+module resolution, use <code>--include-as-is</code> instead. This is the right choice for
+pre-built frontend bundles (for example Vite or webpack output) that are already
+processed and would fail to resolve as Deno modules:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile --include-as-is ./dist main.ts
+</code></pre>
+
+      <button id="copy-button-285" class="copyButton" data-copy="deno compile --include-as-is ./dist main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="configuring-include-%2F-exclude-in-deno.json" tabindex="-1">Configuring <code>include</code> / <code>exclude</code> in <code>deno.json</code> <a class="header-anchor" href="#configuring-include-%2F-exclude-in-deno.json"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The <code>--include</code> and <code>--exclude</code> paths can be set declaratively in <code>deno.json</code> so
+you don't have to repeat them on every <code>deno compile</code> invocation:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"compile"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"names.csv"</span><span class="token punctuation">,</span> <span class="token string">"data"</span><span class="token punctuation">,</span> <span class="token string">"worker.ts"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"exclude"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"data/secrets"</span><span class="token punctuation">,</span> <span class="token string">"**/*.test.ts"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-292" class="copyButton" data-copy="{
+  &quot;compile&quot;: {
+    &quot;include&quot;: [&quot;names.csv&quot;, &quot;data&quot;, &quot;worker.ts&quot;],
+    &quot;exclude&quot;: [&quot;data/secrets&quot;, &quot;**/*.test.ts&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>CLI flags are merged with the config: <code>--include</code> and <code>--exclude</code> add to the
+lists in <code>deno.json</code> rather than replacing them. See the
+<a href="/runtime/reference/deno_json/#compile-config">Compile config</a> section in the
+configuration guide for more details, including how to declare <code>permissions</code> on
+the same block.</p>
+<h2 id="workers" tabindex="-1">Workers <a class="header-anchor" href="#workers"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Similarly to non-statically analyzable dynamic imports, code for
+<a href="/runtime/reference/web_platform_apis/#web-workers">workers</a> is not included in the compiled
+executable by default. There are two ways to include workers:</p>
+<ol>
+<li>Use the <code>--include &lt;path&gt;</code> flag to include the worker code.</li>
+</ol>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile <span class="token parameter variable">--include</span> worker.ts main.ts
+</code></pre>
+
+      <button id="copy-button-309" class="copyButton" data-copy="deno compile --include worker.ts main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><ol start="2">
+<li>Import worker module using a statically analyzable import.</li>
+</ol>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token comment">// main.ts</span>
+<span class="token keyword">import</span> <span class="token string">"./worker.ts"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-317" class="copyButton" data-copy="// main.ts
+import &quot;./worker.ts&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile main.ts
+</code></pre>
+
+      <button id="copy-button-318" class="copyButton" data-copy="deno compile main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="bundling-dependencies" tabindex="-1">Bundling dependencies <a class="header-anchor" href="#bundling-dependencies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>
+</p><div class="admonition caution">
+  <div class="title">Caution</div>
+
+<p></p>
+<p><code>--bundle</code> is experimental and subject to change. Some dynamic patterns are not
+yet supported (see <a href="#limitations">Limitations</a> below).</p>
+<p>
+</p></div>
+<p></p>
+<p>By default, <code>deno compile</code> embeds the entire resolved <code>node_modules</code> tree in the
+executable. For projects with many npm dependencies this can make binaries large
+and slow to start. The <code>--bundle</code> flag instead runs your entrypoint through the
+bundler before embedding, so only the code your program actually reaches ends up
+in the binary.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile <span class="token parameter variable">--bundle</span> main.ts
+</code></pre>
+
+      <button id="copy-button-334" class="copyButton" data-copy="deno compile --bundle main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>For a pure-ESM dependency tree, tree-shaking removes everything unused and the
+npm payload is dropped entirely, producing a much smaller binary. When a
+CommonJS package or a native addon (<code>.node</code>) is reached, the relevant packages
+are embedded so they keep working at runtime, but unreached packages are still
+left out.</p>
+<p><code>--bundle</code> understands several real-world patterns automatically:</p>
+<ul>
+<li><strong>CommonJS and native addons</strong> — CJS dependencies and <code>.node</code> native addons
+are detected and the packages that provide them are embedded.</li>
+<li><strong>Workers</strong> — <code>new Worker(new URL("./worker.ts", import.meta.url), ...)</code> calls
+are discovered, each worker is bundled separately and embedded alongside the
+main bundle.</li>
+<li><strong><code>package.json</code> reads</strong> — packages that read their own <code>package.json</code> at
+runtime (for example to report a version) have it included automatically.</li>
+</ul>
+<h3 id="minifying-the-bundle" tabindex="-1">Minifying the bundle <a class="header-anchor" href="#minifying-the-bundle"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Combine <code>--bundle</code> with <code>--minify</code> to minify the bundled output. This reduces
+both the embedded bundle size and runtime memory use, at the cost of less
+readable stack traces.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile <span class="token parameter variable">--bundle</span> <span class="token parameter variable">--minify</span> main.ts
+</code></pre>
+
+      <button id="copy-button-364" class="copyButton" data-copy="deno compile --bundle --minify main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><code>--minify</code> is only meaningful together with <code>--bundle</code>.</p>
+<h3 id="limitations" tabindex="-1">Limitations <a class="header-anchor" href="#limitations"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Because bundling relies on statically analyzing your code, patterns that can't
+be traced are dropped from the binary:</p>
+<ul>
+<li>Dynamic <code>require()</code> / <code>import()</code> of specifiers that aren't string literals.</li>
+<li>Workers spawned with computed URLs, or spawned from transitive dependencies
+rather than your own source.</li>
+</ul>
+<p>If your program relies on these, either keep them statically analyzable, add the
+needed files with <a href="#including-data-files-or-directories"><code>--include</code></a>, or
+compile without <code>--bundle</code>.</p>
+<h2 id="self-extracting-executables" tabindex="-1">Self-Extracting Executables <a class="header-anchor" href="#self-extracting-executables"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>By default, compiled executables serve embedded files from an in-memory virtual
+file system. The <code>--self-extracting</code> flag changes this behavior so that the
+binary extracts all embedded files to disk on first run and uses real file
+system operations at runtime.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile --self-extracting main.ts
+</code></pre>
+
+      <button id="copy-button-395" class="copyButton" data-copy="deno compile --self-extracting main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This is useful for scenarios where code needs real files on disk, such as native
+addons or native code that reads relative files.</p>
+<p>The extraction directory is chosen in order of preference:</p>
+<ol>
+<li><code>&lt;exe_dir&gt;/.&lt;exe_name&gt;/&lt;hash&gt;/</code> (next to the compiled binary)</li>
+<li>Platform data directory fallback:
+<ul>
+<li>Linux: <code>$XDG_DATA_HOME/&lt;exe_name&gt;/&lt;hash&gt;</code> or
+<code>~/.local/share/&lt;exe_name&gt;/&lt;hash&gt;</code></li>
+<li>macOS: <code>~/Library/Application Support/&lt;exe_name&gt;/&lt;hash&gt;</code></li>
+<li>Windows: <code>%LOCALAPPDATA%\&lt;exe_name&gt;\&lt;hash&gt;</code></li>
+</ul>
+</li>
+</ol>
+<p>Files are only extracted once — subsequent runs reuse the extracted directory if
+it already exists and the hash matches.</p>
+<h3 id="trade-offs" tabindex="-1">Trade-offs <a class="header-anchor" href="#trade-offs"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Self-extracting mode enables broader compatibility, but comes with some
+trade-offs:</p>
+<ul>
+<li><strong>Initial startup cost</strong>: The first run takes longer due to file extraction.</li>
+<li><strong>Disk usage</strong>: Extracted files take up additional space on disk.</li>
+<li><strong>Memory usage</strong>: Higher memory usage since embedded content can no longer be
+referenced as static data.</li>
+<li><strong>Tamper risk</strong>: Users or other code can modify the extracted files on disk.</li>
+</ul>
+<h2 id="code-signing" tabindex="-1">Code Signing <a class="header-anchor" href="#code-signing"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="macos" tabindex="-1">macOS <a class="header-anchor" href="#macos"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>By default, on macOS, the compiled executable will be signed using an ad-hoc
+signature which is the equivalent of running <code>codesign -s -</code>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile <span class="token parameter variable">-o</span> main main.ts
+codesign <span class="token parameter variable">--verify</span> <span class="token parameter variable">-vv</span> ./main
+
+./main: valid on disk
+./main: satisfies its Designated Requirement
+</code></pre>
+
+      <button id="copy-button-471" class="copyButton" data-copy="deno compile -o main main.ts
+codesign --verify -vv ./main
+
+./main: valid on disk
+./main: satisfies its Designated Requirement
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You can specify a signing identity when code signing the executable just like
+you would do with any other macOS executable:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">codesign <span class="token parameter variable">-s</span> <span class="token string">"Developer ID Application: Your Name"</span> ./main
+</code></pre>
+
+      <button id="copy-button-475" class="copyButton" data-copy="codesign -s &quot;Developer ID Application: Your Name&quot; ./main
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Refer to the
+<a href="https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution">official documentation</a>
+for more information on codesigning and notarization on macOS.</p>
+<h3 id="windows" tabindex="-1">Windows <a class="header-anchor" href="#windows"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>On Windows, the compiled executable can be signed using the <code>SignTool.exe</code>
+utility.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile <span class="token parameter variable">-o</span> main.exe main.ts
+signtool sign /fd SHA256 main.exe
+</code></pre>
+
+      <button id="copy-button-485" class="copyButton" data-copy="deno compile -o main.exe main.ts
+signtool sign /fd SHA256 main.exe
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="persistent-storage-in-executables" tabindex="-1">Persistent storage in executables <a class="header-anchor" href="#persistent-storage-in-executables"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>A compiled binary is treated as a standalone application, so origin-bound
+storage persists across runs in the platform's application data directory
+(<code>%LOCALAPPDATA%</code> on Windows, <code>~/Library/Application Support</code> on macOS,
+<code>$XDG_DATA_HOME</code> on Linux):</p>
+<ul>
+<li><a href="/runtime/reference/web_platform_apis/#web-storage"><code>localStorage</code></a> and the
+<a href="/api/web/~/Cache">Web Cache API</a> read and write to that directory.</li>
+<li><a href="/api/deno/~/Deno.openKv"><code>Deno.openKv()</code></a> called without a path opens a
+persistent database there instead of falling back to an in-memory one.</li>
+</ul>
+<p>Each compiled app gets its own location derived from its identity, so separate
+apps do not share storage. That identity comes from the <code>--app-name</code> flag, which
+is baked in at compile time and falls back to the output file name when omitted:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno compile --app-name my-app main.ts
+</code></pre>
+
+      <button id="copy-button-507" class="copyButton" data-copy="deno compile --app-name my-app main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Because the name (not the module path) drives the directory, the store stays
+stable across runs even if you rename the binary, two binaries built with the
+same <code>--app-name</code> share a store, and differently named apps stay isolated.
+Recompiling with a different <code>--app-name</code> starts a fresh store.</p>
+<div><div class="bg-transparent mt-4 mb-12 relative pl-2 border-l border-background-tertiary"><div class="text-xs font-bold mb-1">Command line usage:</div><div><pre class="!mb-0 !p-6"><code>compile</code></pre></div></div><div class="flex flex-col gap-4"><p>Compile the script into a self contained executable</p></div><h2 id="options">Options <a class="header-anchor" href="#options"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2><div class="flex flex-col gap-8 mt-4"><div id="options-app-name"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--app-name</code></div><a class="header-anchor" href="#options-app-name"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Stable identity for the compiled app.
+Determines where origin-bound storage such as the default <code>Deno.openKv()</code>,
+<code>localStorage</code> and <code>caches</code> is persisted (under the platform's app data directory).
+Defaults to the output file name. Set this to keep storage stable across renames.</p></div></div><div id="options-bundle"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--bundle</code></div><a class="header-anchor" href="#options-bundle"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Experimental. Bundle the entrypoint with esbuild before embedding, instead of shipping the whole node_modules tree.
+Produces a smaller binary with faster startup, at the cost of dropping dynamic require/import patterns that can't be statically traced.</p></div></div><div id="options-cached-only"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--cached-only</code></div><a class="header-anchor" href="#options-cached-only"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Require that remote dependencies are already cached.</p></div></div><div id="options-cert"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--cert</code></div><a class="header-anchor" href="#options-cert"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Load certificate authority from PEM encoded file.</p></div></div><div id="options-check"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--check</code></div><a class="header-anchor" href="#options-check"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Set type-checking behavior. This subcommand type-checks local modules by default, so passing<code> --check</code> is redundant; pass<code> --check=all</code> to also type-check remote modules. Alternatively, use the 'deno check' subcommand.</p></div></div><div id="options-conditions"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold"><a href=" https://docs.deno.com/go/conditional-exports">--conditions</a></code></div><a class="header-anchor" href="#options-conditions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Use this argument to specify custom conditions for npm package exports. You can also use DENO_CONDITIONS env var.
+.</p></div></div><div id="options-config"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold"><a href=" https://docs.deno.com/go/config">--config, -c</a></code></div><a class="header-anchor" href="#options-config"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Configure different aspects of deno including TypeScript, linting, and code formatting.
+Typically the configuration file will be called <code>deno.json</code> or <code>deno.jsonc</code> and
+automatically detected; in that case this flag is not necessary.</p></div></div><div id="options-engine"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--engine</code></div><a class="header-anchor" href="#options-engine"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>JS engine the compiled binary runs on (quickjs is smaller and experimental, and does not receive the same security updates as v8).</p></div></div><div id="options-env-file"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--env-file</code></div><a class="header-anchor" href="#options-env-file"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Load environment variables from local file
+Only the first environment variable with a given key is used.
+Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.
+Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.</p></div></div><div id="options-exclude"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--exclude</code></div><a class="header-anchor" href="#options-exclude"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Excludes a file/directory in the compiled executable.
+Use this flag to exclude a specific file or directory within the included files.
+For example, to exclude a certain folder in the bundled node_modules directory.</p></div></div><div id="options-exclude-unused-npm"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--exclude-unused-npm</code></div><a class="header-anchor" href="#options-exclude-unused-npm"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Embed only the npm packages reachable from the module graph (managed npm; no node_modules directory).
+Without this flag the full managed npm snapshot from the lockfile / package.json is embedded.
+Reduces binary size when the lockfile contains packages the entrypoint does not import.
+Skips packages that are only reached through non-statically-analyzable dynamic imports;
+pass those with<code> --include</code> npm:<pkg> if needed.</pkg></p></div></div><div id="options-ext"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--ext</code></div><a class="header-anchor" href="#options-ext"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Set content type of the supplied file.</p></div></div><div id="options-frozen-lockfile"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--frozen-lockfile</code></div><a class="header-anchor" href="#options-frozen-lockfile"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Error out if lockfile is out of date.</p></div></div><div id="options-icon"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--icon</code></div><a class="header-anchor" href="#options-icon"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Set the icon of the executable on Windows (.ico).</p></div></div><div id="options-import-map"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold"><a href=" https://docs.deno.com/runtime/manual/basics/import_maps">--import-map</a></code></div><a class="header-anchor" href="#options-import-map"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Load import map file from local file or remote URL.</p></div></div><div id="options-include"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--include</code></div><a class="header-anchor" href="#options-include"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Includes an additional module or file/directory in the compiled executable.
+Use this flag if a dynamically imported module or a web worker main module
+fails to load in the executable or to embed a file or directory in the executable.
+This flag can be passed multiple times, to include multiple additional modules.</p></div></div><div id="options-inspect"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--inspect</code></div><a class="header-anchor" href="#options-inspect"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Activate inspector on host:port [default: 127.0.0.1:9229]. Host and port are optional. Using port 0 will assign a random free port.</p></div></div><div id="options-inspect-brk"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--inspect-brk</code></div><a class="header-anchor" href="#options-inspect-brk"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Activate inspector on host:port, wait for debugger to connect and break at the start of user script.</p></div></div><div id="options-inspect-publish-uid"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--inspect-publish-uid</code></div><a class="header-anchor" href="#options-inspect-publish-uid"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div></div><div id="options-inspect-wait"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--inspect-wait</code></div><a class="header-anchor" href="#options-inspect-wait"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Activate inspector on host:port and wait for debugger to connect before running user code.</p></div></div><div id="options-location"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--location</code></div><a class="header-anchor" href="#options-location"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Value of globalThis.location used by some web APIs.</p></div></div><div id="options-lock"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--lock</code></div><a class="header-anchor" href="#options-lock"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Check the specified lock file. (If value is not provided, defaults to "./deno.lock").</p></div></div><div id="options-min-dep-age"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--min-dep-age</code></div><a class="header-anchor" href="#options-min-dep-age"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>(Unstable) The age in minutes, ISO-8601 duration or RFC3339 absolute timestamp (e.g. '120' for two hours, 'P2D' for two days, '2025-09-16' for cutoff date, '2025-09-16T12:00:00+00:00' for cutoff time, '0' to disable).</p></div></div><div id="options-minify"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--minify</code></div><a class="header-anchor" href="#options-minify"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Experimental. Minify the bundled output. Only meaningful with<code> --bundle.</code>
+Reduces both the embedded bundle size and runtime memory use, at the cost of less readable stack traces.</p></div></div><div id="options-no-check"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-check</code></div><a class="header-anchor" href="#options-no-check"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored.</p></div></div><div id="options-no-clear-screen"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-clear-screen</code></div><a class="header-anchor" href="#options-no-clear-screen"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Do not clear terminal screen when under watch mode.</p></div></div><div id="options-no-code-cache"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-code-cache</code></div><a class="header-anchor" href="#options-no-code-cache"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Disable V8 code cache feature.</p></div></div><div id="options-no-config"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-config</code></div><a class="header-anchor" href="#options-no-config"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Disable automatic loading of the configuration file.</p></div></div><div id="options-no-lock"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-lock</code></div><a class="header-anchor" href="#options-no-lock"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Disable auto discovery of the lock file.</p></div></div><div id="options-no-npm"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-npm</code></div><a class="header-anchor" href="#options-no-npm"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Do not resolve npm modules.</p></div></div><div id="options-no-remote"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-remote</code></div><a class="header-anchor" href="#options-no-remote"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Do not resolve remote modules.</p></div></div><div id="options-no-terminal"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-terminal</code></div><a class="header-anchor" href="#options-no-terminal"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Hide terminal on Windows.</p></div></div><div id="options-node-modules-dir"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--node-modules-dir</code></div><a class="header-anchor" href="#options-node-modules-dir"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Selects the node_modules directory mode for npm packages (not a path). One of: auto (create a local node_modules directory and install npm packages into it), manual (use the existing local node_modules directory, do not modify it), none (do not use a local node_modules directory; resolve npm packages from the global cache). Defaults to auto when the flag is passed without a value.</p></div></div><div id="options-node-modules-linker"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--node-modules-linker</code></div><a class="header-anchor" href="#options-node-modules-linker"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Sets the linker mode for npm packages (isolated or hoisted).</p></div></div><div id="options-output"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--output, -o</code></div><a class="header-anchor" href="#options-output"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Output file (defaults to $PWD/<inferred-name>).</inferred-name></p></div></div><div id="options-preload"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--preload</code></div><a class="header-anchor" href="#options-preload"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>A list of files that will be executed before the main module.</p></div></div><div id="options-reload"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--reload, -r</code></div><a class="header-anchor" href="#options-reload"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Reload source code cache (recompile TypeScript). With no value, reloads everything. Pass a comma-separated list of specifiers to reload only those modules; npm: reloads all npm modules; npm:chalk reloads a single npm module; jsr:@std/http/file-server,jsr:@std/assert/assert-equals reloads specific modules.</p></div></div><div id="options-require"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--require</code></div><a class="header-anchor" href="#options-require"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>A list of CommonJS modules that will be executed before the main module.</p></div></div><div id="options-seed"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--seed</code></div><a class="header-anchor" href="#options-seed"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Set the random number generator seed.</p></div></div><div id="options-self-extracting"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--self-extracting</code></div><a class="header-anchor" href="#options-self-extracting"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Create a self-extracting binary that extracts the embedded file system to disk on first run and then runs from there.</p></div></div><div id="options-target"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--target</code></div><a class="header-anchor" href="#options-target"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Target OS architecture.</p></div></div><div id="options-unsafely-ignore-certificate-errors"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--unsafely-ignore-certificate-errors</code></div><a class="header-anchor" href="#options-unsafely-ignore-certificate-errors"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>DANGER: Disables verification of TLS certificates.</p></div></div><div id="options-v8-flags"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--v8-flags</code></div><a class="header-anchor" href="#options-v8-flags"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>To see a list of all available flags use<code> --v8-flags=--help</code>
+Flags can also be set via the DENO_V8_FLAGS environment variable.
+Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable.</p></div></div><div id="options-vendor"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--vendor</code></div><a class="header-anchor" href="#options-vendor"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages.</p></div></div><div id="options-watch"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--watch</code></div><a class="header-anchor" href="#options-watch"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Watch for file changes and restart process automatically.
+Only local files from entry point module graph are watched.</p></div></div><div id="options-watch-exclude"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--watch-exclude</code></div><a class="header-anchor" href="#options-watch-exclude"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Exclude provided files/patterns from watch mode.</p></div></div></div></div></div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-08-06T00:00:00.000Z">August 6, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/reference/cli/clean/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← deno clean</span></a><a href="/runtime/reference/cli/create/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">deno create →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/cli/compile.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

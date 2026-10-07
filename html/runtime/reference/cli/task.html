@@ -1,0 +1,1474 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#description" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Description </a></li><li class="leading-tight text-balance"><a href="#running-a-task-only-if-it-exists" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Running a task only if it exists </a></li><li class="leading-tight text-balance"><a href="#specifying-the-current-working-directory" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Specifying the current working directory </a></li><li class="leading-tight text-balance"><a href="#getting-directory-deno-task-was-run-from" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Getting directory deno task was run from </a></li><li class="leading-tight text-balance"><a href="#wildcard-matching-of-tasks" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Wildcard matching of tasks </a></li><li class="leading-tight text-balance"><a href="#loading-environment-variables-from-a-file" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Loading environment variables from a file </a></li><li class="leading-tight text-balance"><a href="#task-dependencies" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Task dependencies </a></li><li class="leading-tight text-balance"><a href="#caching-task-results" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Caching task results </a></li><li class="leading-tight text-balance"><a href="#node-and-npx-binary-support" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Node and npx binary support </a></li><li class="leading-tight text-balance"><a href="#workspace-support" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Workspace support </a></li><li class="leading-tight text-balance"><a href="#syntax" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Syntax </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#boolean-lists" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Boolean lists </a></li><li class="leading-tight text-balance"><a href="#sequential-lists" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Sequential lists </a></li><li class="leading-tight text-balance"><a href="#async-commands" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Async commands </a></li><li class="leading-tight text-balance"><a href="#environment-variables" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Environment variables </a></li><li class="leading-tight text-balance"><a href="#shell-variables" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Shell variables </a></li><li class="leading-tight text-balance"><a href="#exit-status-variable" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Exit status variable </a></li><li class="leading-tight text-balance"><a href="#pipelines" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Pipelines </a></li><li class="leading-tight text-balance"><a href="#command-substitution" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Command substitution </a></li><li class="leading-tight text-balance"><a href="#negate-exit-code" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Negate exit code </a></li><li class="leading-tight text-balance"><a href="#redirects" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Redirects </a></li><li class="leading-tight text-balance"><a href="#cross-platform-shebang" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Cross-platform shebang </a></li><li class="leading-tight text-balance"><a href="#glob-expansion" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Glob expansion </a></li><li class="leading-tight text-balance"><a href="#shell-options" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Shell options </a></li></ul></li><li class="leading-tight text-balance"><a href="#built-in-commands" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Built-in commands </a></li><li class="leading-tight text-balance"><a href="#package.json-support" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">package.json support </a></li><li class="leading-tight text-balance"><a href="#command-resolution" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Command Resolution </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#example" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Example </a></li></ul></li><li class="leading-tight text-balance"><a href="#options" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Options</a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference<span aria-hidden="true">›</span></li><li class="flex items-center gap-2 m-0"><a href="/runtime/reference/cli/" class="text-inherit no-underline hover:underline">CLI</a></li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/cli/task.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Fcli%2Ftask.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">deno task</h1></div><h2 id="description" tabindex="-1">Description <a class="header-anchor" href="#description"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p><code>deno task</code> provides a cross-platform way to define and execute custom commands
+specific to a codebase.</p>
+<p>To get started, define your commands in your codebase's
+<a href="/runtime/fundamentals/configuration/">Deno configuration file</a> under a
+<code>"tasks"</code> key.</p>
+<p>For example:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"data"</span><span class="token operator">:</span> <span class="token string">"deno task collect &amp;&amp; deno task analyze"</span><span class="token punctuation">,</span>
+    <span class="token property">"collect"</span><span class="token operator">:</span> <span class="token string">"deno run --allow-read=. --allow-write=. scripts/collect.js"</span><span class="token punctuation">,</span>
+    <span class="token property">"analyze"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Run analysis script"</span><span class="token punctuation">,</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"deno run --allow-read=. scripts/analyze.js"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-12" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;data&quot;: &quot;deno task collect &amp;&amp; deno task analyze&quot;,
+    &quot;collect&quot;: &quot;deno run --allow-read=. --allow-write=. scripts/collect.js&quot;,
+    &quot;analyze&quot;: {
+      &quot;description&quot;: &quot;Run analysis script&quot;,
+      &quot;command&quot;: &quot;deno run --allow-read=. scripts/analyze.js&quot;
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="running-a-task-only-if-it-exists" tabindex="-1">Running a task only if it exists <a class="header-anchor" href="#running-a-task-only-if-it-exists"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p><code>deno task &lt;name&gt;</code> exits with a non-zero code when the named task is not
+defined. To make a task optional, pass <code>--if-present</code>. Deno then exits with code
+0 and prints nothing when the task is missing, which is useful for shared CI
+scripts that call a task only some packages define:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno task --if-present build
+</code></pre>
+
+      <button id="copy-button-19" class="copyButton" data-copy="deno task --if-present build
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The flag only suppresses the not-found case for the named task. Listing tasks
+with a bare <code>deno task</code>, running a task that does exist, and real errors such as
+a missing task dependency are unaffected.</p>
+<h2 id="specifying-the-current-working-directory" tabindex="-1">Specifying the current working directory <a class="header-anchor" href="#specifying-the-current-working-directory"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>By default, <code>deno task</code> executes commands with the directory of the Deno
+configuration file (ex. <em>deno.json</em>) as the current working directory. This
+allows tasks to use relative paths and continue to work regardless of where in
+the directory tree you happen to execute the deno task from. In some scenarios,
+this may not be desired and this behavior can be overridden with the <code>INIT_CWD</code>
+environment variable.</p>
+<p><code>INIT_CWD</code> will be set with the full path to the directory the task was run in,
+if not already set. This aligns with the same behavior as <code>npm run</code>.</p>
+<p>For example, the following task will change the current working directory of the
+task to be in the same directory the user ran the task from and then output the
+current working directory which is now that directory (remember, this works on
+Windows too because <code>deno task</code> is cross-platform).</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"my_task"</span><span class="token operator">:</span> <span class="token string">"cd $INIT_CWD &amp;&amp; pwd"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-35" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;my_task&quot;: &quot;cd $INIT_CWD &amp;&amp; pwd&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="getting-directory-deno-task-was-run-from" tabindex="-1">Getting directory <code>deno task</code> was run from <a class="header-anchor" href="#getting-directory-deno-task-was-run-from"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Since tasks are run using the directory of the Deno configuration file as the
+current working directory, it may be useful to know the directory the
+<code>deno task</code> was executed from instead. This is possible by using the <code>INIT_CWD</code>
+environment variable in a task or script launched from <code>deno task</code> (works the
+same way as in <code>npm run</code>, but in a cross-platform way).</p>
+<p>For example, to provide this directory to a script in a task, do the following
+(note the directory is surrounded in double quotes to keep it as a single
+argument in case it contains spaces):</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"deno run main.ts \"$INIT_CWD\""</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-45" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;start&quot;: &quot;deno run main.ts \&quot;$INIT_CWD\&quot;&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="wildcard-matching-of-tasks" tabindex="-1">Wildcard matching of tasks <a class="header-anchor" href="#wildcard-matching-of-tasks"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>deno task</code> command can run multiple tasks in parallel by passing a wildcard
+pattern. A wildcard pattern is specified with the <code>*</code> character.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build:client"</span><span class="token operator">:</span> <span class="token string">"deno run -RW client/build.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"build:server"</span><span class="token operator">:</span> <span class="token string">"deno run -RW server/build.ts"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-52" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;build:client&quot;: &quot;deno run -RW client/build.ts&quot;,
+    &quot;build:server&quot;: &quot;deno run -RW server/build.ts&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Running <code>deno task "build:*"</code> will run both <code>build:client</code> and <code>build:server</code>
+tasks.</p>
+<p>For multi-word task names, we recommend using <code>:</code> as the separator (e.g.
+<code>build:client</code>, <code>test:unit</code>, <code>lint:fix</code>) to match the convention used in the npm
+ecosystem and to group related tasks for wildcard matching.</p>
+<p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p><strong>When using a wildcard</strong> make sure to quote the task name (eg. <code>"build:*"</code>),
+otherwise your shell might try to expand the wildcard character, leading to
+surprising errors.</p>
+<p>
+</p></div>
+<p></p>
+<p>Exclude tasks from a wildcard match by adding an exclusion group <code>(!a|b|c)</code> to
+the end of the pattern. Each listed value is matched against what the <code>*</code>
+captured. For example, given <code>test:unit</code>, <code>test:integration</code>, <code>test:e2e</code>, and
+<code>test:interactive</code> tasks:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno task <span class="token string">"test:*(!e2e|interactive)"</span>
+</code></pre>
+
+      <button id="copy-button-71" class="copyButton" data-copy="deno task &quot;test:*(!e2e|interactive)&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>runs <code>test:unit</code> and <code>test:integration</code> but skips <code>test:e2e</code> and
+<code>test:interactive</code>. A pattern that has an exclusion group but no <code>*</code> is
+rejected, since there is nothing to exclude from.</p>
+<h2 id="loading-environment-variables-from-a-file" tabindex="-1">Loading environment variables from a file <a class="header-anchor" href="#loading-environment-variables-from-a-file"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Pass <code>--env-file</code> to load variables from a dotenv file into the task's shell
+environment, so every command in the task body inherits them:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Load .env</span>
+deno task --env-file start
+
+<span class="token comment"># Load a specific file</span>
+deno task --env-file<span class="token operator">=</span>.env.production start
+</code></pre>
+
+      <button id="copy-button-81" class="copyButton" data-copy="# Load .env
+deno task --env-file start
+
+# Load a specific file
+deno task --env-file=.env.production start
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The flag can be given more than once to load multiple files, with later files
+taking precedence. With no value it defaults to <code>.env</code>.</p>
+<h2 id="task-dependencies" tabindex="-1">Task dependencies <a class="header-anchor" href="#task-dependencies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>You can specify dependencies for a task:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"deno run -RW build.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"generate"</span><span class="token operator">:</span> <span class="token string">"deno run -RW generate.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"serve"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"deno run -RN server.ts"</span><span class="token punctuation">,</span>
+      <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"build"</span><span class="token punctuation">,</span> <span class="token string">"generate"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-91" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;build&quot;: &quot;deno run -RW build.ts&quot;,
+    &quot;generate&quot;: &quot;deno run -RW generate.ts&quot;,
+    &quot;serve&quot;: {
+      &quot;command&quot;: &quot;deno run -RN server.ts&quot;,
+      &quot;dependencies&quot;: [&quot;build&quot;, &quot;generate&quot;]
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>In the above example, running <code>deno task serve</code> will first execute <code>build</code> and
+<code>generate</code> tasks in parallel, and once both of them finish successfully the
+<code>serve</code> task will be executed:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno task serve
+Task build deno run <span class="token parameter variable">-RW</span> build.ts
+Task generate deno run <span class="token parameter variable">-RW</span> generate.ts
+Generating data<span class="token punctuation">..</span>.
+Starting the build<span class="token punctuation">..</span>.
+Build finished
+Data generated
+Task serve deno run <span class="token parameter variable">-RN</span> server.ts
+Listening on http://localhost:8000/
+</code></pre>
+
+      <button id="copy-button-95" class="copyButton" data-copy="deno task serve
+Task build deno run -RW build.ts
+Task generate deno run -RW generate.ts
+Generating data...
+Starting the build...
+Build finished
+Data generated
+Task serve deno run -RN server.ts
+Listening on http://localhost:8000/
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Dependency tasks are executed in parallel, with the default parallel limit being
+equal to number of cores on your machine. To change this limit for a single
+invocation, pass <code>--jobs</code> (short <code>-j</code>, also spelled <code>--concurrency</code>); to set it
+for the environment, use the <code>DENO_JOBS</code> environment variable. The flag takes
+precedence:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Run workspace tasks fully sequentially</span>
+deno task <span class="token parameter variable">--recursive</span> <span class="token parameter variable">--jobs</span> <span class="token number">1</span> build
+</code></pre>
+
+      <button id="copy-button-99" class="copyButton" data-copy="# Run workspace tasks fully sequentially
+deno task --recursive --jobs 1 build
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>
+</p><div class="admonition info">
+  <div class="title">Deno 2.8</div>
+
+<p></p>
+<p>When tasks run in parallel, each output line is prefixed with the task name that
+produced it (color-coded per task). Prefixes stay attached even when a task
+forks subprocesses, so a parallel <code>build</code> + <code>test</code> + <code>lint</code> run stays legible
+without an external multiplexer.</p>
+<p>
+</p></div>
+<p></p>
+<p>Dependencies are tracked and if multiple tasks depend on the same task, that
+task will only be run once:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token comment">//   a</span>
+  <span class="token comment">//  / \</span>
+  <span class="token comment">// b   c</span>
+  <span class="token comment">//  \ /</span>
+  <span class="token comment">//   d</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"a"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"deno run a.js"</span><span class="token punctuation">,</span>
+      <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"b"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"deno run b.js"</span><span class="token punctuation">,</span>
+      <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"d"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"c"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"deno run c.js"</span><span class="token punctuation">,</span>
+      <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"d"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"d"</span><span class="token operator">:</span> <span class="token string">"deno run d.js"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-112" class="copyButton" data-copy="{
+  //   a
+  //  / \
+  // b   c
+  //  \ /
+  //   d
+  &quot;tasks&quot;: {
+    &quot;a&quot;: {
+      &quot;command&quot;: &quot;deno run a.js&quot;,
+      &quot;dependencies&quot;: [&quot;b&quot;, &quot;c&quot;]
+    },
+    &quot;b&quot;: {
+      &quot;command&quot;: &quot;deno run b.js&quot;,
+      &quot;dependencies&quot;: [&quot;d&quot;]
+    },
+    &quot;c&quot;: {
+      &quot;command&quot;: &quot;deno run c.js&quot;,
+      &quot;dependencies&quot;: [&quot;d&quot;]
+    },
+    &quot;d&quot;: &quot;deno run d.js&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno task a
+Task d deno run d.js
+Running d
+Task c deno run c.js
+Running c
+Task b deno run b.js
+Running b
+Task a deno run a.js
+Running a
+</code></pre>
+
+      <button id="copy-button-113" class="copyButton" data-copy="deno task a
+Task d deno run d.js
+Running d
+Task c deno run c.js
+Running c
+Task b deno run b.js
+Running b
+Task a deno run a.js
+Running a
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>If a cycle between dependencies is discovered, an error will be returned:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"a"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"deno run a.js"</span><span class="token punctuation">,</span>
+      <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"b"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"b"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"deno run b.js"</span><span class="token punctuation">,</span>
+      <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"a"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-117" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;a&quot;: {
+      &quot;command&quot;: &quot;deno run a.js&quot;,
+      &quot;dependencies&quot;: [&quot;b&quot;]
+    },
+    &quot;b&quot;: {
+      &quot;command&quot;: &quot;deno run b.js&quot;,
+      &quot;dependencies&quot;: [&quot;a&quot;]
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno task a
+Task cycle detected: a -<span class="token operator">&gt;</span> b -<span class="token operator">&gt;</span> a
+</code></pre>
+
+      <button id="copy-button-118" class="copyButton" data-copy="deno task a
+Task cycle detected: a -> b -> a
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You can also specify a task that has <code>dependencies</code> but no <code>command</code>. This is
+useful to logically group several tasks together:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dev:client"</span><span class="token operator">:</span> <span class="token string">"deno run --watch client/mod.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev:server"</span><span class="token operator">:</span> <span class="token string">"deno run --watch server/mod.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"dev:client"</span><span class="token punctuation">,</span> <span class="token string">"dev:server"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-122" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;dev:client&quot;: &quot;deno run --watch client/mod.ts&quot;,
+    &quot;dev:server&quot;: &quot;deno run --watch server/mod.ts&quot;,
+    &quot;dev&quot;: {
+      &quot;dependencies&quot;: [&quot;dev:client&quot;, &quot;dev:server&quot;]
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Running <code>deno task dev</code> will run both <code>dev:client</code> and <code>dev:server</code> in parallel.</p>
+<h2 id="caching-task-results" tabindex="-1">Caching task results <a class="header-anchor" href="#caching-task-results"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>A task can skip work when none of its inputs have changed. Add a <code>files</code> field
+listing the input globs the task reads, and Deno fingerprints the command, its
+appended arguments, the contents of the matching files, and the values of any
+listed env vars, then skips the task on the next run when none of them changed.
+Caching is opt-in: a task with no <code>files</code> field always runs.</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"deno run -RW build.ts"</span><span class="token punctuation">,</span>
+      <span class="token property">"files"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"src/**/*.ts"</span><span class="token punctuation">,</span> <span class="token string">"deno.json"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"output"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"dist/"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"NODE_ENV"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-132" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;build&quot;: {
+      &quot;command&quot;: &quot;deno run -RW build.ts&quot;,
+      &quot;files&quot;: [&quot;src/**/*.ts&quot;, &quot;deno.json&quot;],
+      &quot;output&quot;: [&quot;dist/&quot;],
+      &quot;env&quot;: [&quot;NODE_ENV&quot;]
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><ul>
+<li><code>files</code> lists the input globs that make up the cache key. Declaring them is
+what turns on caching for the task.</li>
+<li><code>output</code> lists the globs the task produces. On a cache hit they are restored
+from the cache, so deleting <code>dist/</code> and re-running regenerates it.</li>
+<li><code>env</code> lists environment variable names whose values are part of the cache key,
+so the task re-runs when one of them changes.</li>
+</ul>
+<p>A task's <a href="#task-dependencies">dependency</a> fingerprints are folded into its own
+cache key, so a task re-runs whenever an upstream one did.</p>
+<h2 id="node-and-npx-binary-support" tabindex="-1">Node and npx binary support <a class="header-anchor" href="#node-and-npx-binary-support"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>By default, <code>deno task</code> will execute commands with the <code>deno</code> binary. If you
+need to ensure that a command is run with the <code>npm</code> or <code>npx</code> binary, you can do
+so by invoking the <code>npm</code> or <code>npx</code> <code>run</code> command respectively. For example:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"test:node"</span><span class="token operator">:</span> <span class="token string">"npm run test"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-159" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;test:node&quot;: &quot;npm run test&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="workspace-support" tabindex="-1">Workspace support <a class="header-anchor" href="#workspace-support"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p><code>deno task</code> can be used in workspaces, to run tasks from multiple member
+directories in parallel. To execute <code>dev</code> tasks from all workspace members use
+<code>--recursive</code> flag:</p>
+<div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"workspace"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"client"</span><span class="token punctuation">,</span>
+    <span class="token string">"server"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-166" class="copyButton" data-copy="{
+  &quot;workspace&quot;: [
+    &quot;client&quot;,
+    &quot;server&quot;
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">client/deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@scope/client"</span><span class="token punctuation">,</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"deno run -RN build.ts"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-167" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;@scope/client&quot;,
+  &quot;tasks&quot;: {
+    &quot;dev&quot;: &quot;deno run -RN build.ts&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">server/deno.json</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@scope/server"</span><span class="token punctuation">,</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"deno run -RN server.ts"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-168" class="copyButton" data-copy="{
+  &quot;name&quot;: &quot;@scope/server&quot;,
+  &quot;tasks&quot;: {
+    &quot;dev&quot;: &quot;deno run -RN server.ts&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno task <span class="token parameter variable">--recursive</span> dev
+Task dev deno run <span class="token parameter variable">-RN</span> build.ts
+Task dev deno run <span class="token parameter variable">-RN</span> server.ts
+Bundling project<span class="token punctuation">..</span>.
+Listening on http://localhost:8000/
+Project bundled
+</code></pre>
+
+      <button id="copy-button-169" class="copyButton" data-copy="deno task --recursive dev
+Task dev deno run -RN build.ts
+Task dev deno run -RN server.ts
+Bundling project...
+Listening on http://localhost:8000/
+Project bundled
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Tasks to run can be filtered based on the workspace members:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno task <span class="token parameter variable">--filter</span> <span class="token string">"client"</span> dev
+Task dev deno run <span class="token parameter variable">-RN</span> build.ts
+Bundling project<span class="token punctuation">..</span>.
+Project bundled
+</code></pre>
+
+      <button id="copy-button-173" class="copyButton" data-copy="deno task --filter &quot;client&quot; dev
+Task dev deno run -RN build.ts
+Bundling project...
+Project bundled
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Note that the filter matches against the workspace member names as specified in
+the <code>name</code> field of each member's
+<a href="/runtime/fundamentals/configuration/"><code>deno.json</code></a> file.</p>
+<h2 id="syntax" tabindex="-1">Syntax <a class="header-anchor" href="#syntax"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p><code>deno task</code> uses a cross-platform shell that's a subset of sh/bash to execute
+defined tasks.</p>
+<h3 id="boolean-lists" tabindex="-1">Boolean lists <a class="header-anchor" href="#boolean-lists"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Boolean lists provide a way to execute additional commands based on the exit
+code of the initial command. They separate commands using the <code>&amp;&amp;</code> and <code>||</code>
+operators.</p>
+<p>The <code>&amp;&amp;</code> operator provides a way to execute a command and if it <em>succeeds</em> (has
+an exit code of <code>0</code>) it will execute the next command:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --allow-read<span class="token operator">=</span>. --allow-write<span class="token operator">=</span>. collect.ts <span class="token operator">&amp;&amp;</span> deno run --allow-read<span class="token operator">=</span>. analyze.ts
+</code></pre>
+
+      <button id="copy-button-192" class="copyButton" data-copy="deno run --allow-read=. --allow-write=. collect.ts &amp;&amp; deno run --allow-read=. analyze.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The <code>||</code> operator is the opposite. It provides a way to execute a command and
+only if it <em>fails</em> (has a non-zero exit code) it will execute the next command:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --allow-read<span class="token operator">=</span>. --allow-write<span class="token operator">=</span>. collect.ts <span class="token operator">||</span> deno run play_sad_music.ts
+</code></pre>
+
+      <button id="copy-button-196" class="copyButton" data-copy="deno run --allow-read=. --allow-write=. collect.ts || deno run play_sad_music.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="sequential-lists" tabindex="-1">Sequential lists <a class="header-anchor" href="#sequential-lists"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Sequential lists are similar to boolean lists, but execute regardless of whether
+the previous command in the list passed or failed. Commands are separated with a
+semi-colon (<code>;</code>).</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run output_data.ts <span class="token punctuation">;</span> deno run --allow-net server.ts
+</code></pre>
+
+      <button id="copy-button-203" class="copyButton" data-copy="deno run output_data.ts ; deno run --allow-net server.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="async-commands" tabindex="-1">Async commands <a class="header-anchor" href="#async-commands"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Async commands provide a way to make a command execute asynchronously. This can
+be useful when starting multiple processes. To make a command asynchronous, add
+an <code>&amp;</code> to the end of it. For example the following would execute
+<code>sleep 1 &amp;&amp; deno run --allow-net server.ts</code> and <code>deno run --allow-net client.ts</code>
+at the same time:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token function">sleep</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> deno run --allow-net server.ts <span class="token operator">&amp;</span> deno run --allow-net client.ts
+</code></pre>
+
+      <button id="copy-button-210" class="copyButton" data-copy="sleep 1 &amp;&amp; deno run --allow-net server.ts &amp; deno run --allow-net client.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Unlike in most shells, the first async command to fail will cause all the other
+commands to fail immediately. In the example above, this would mean that if the
+server command fails then the client command will also fail and exit. You can
+opt out of this behavior by adding <code>|| true</code> to the end of a command, which will
+force a <code>0</code> exit code. For example:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --allow-net server.ts <span class="token operator">||</span> <span class="token boolean">true</span> <span class="token operator">&amp;</span> deno run --allow-net client.ts <span class="token operator">||</span> <span class="token boolean">true</span>
+</code></pre>
+
+      <button id="copy-button-214" class="copyButton" data-copy="deno run --allow-net server.ts || true &amp; deno run --allow-net client.ts || true
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="environment-variables" tabindex="-1">Environment variables <a class="header-anchor" href="#environment-variables"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Environment variables are defined like the following:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token builtin class-name">export</span> <span class="token assign-left variable">VAR_NAME</span><span class="token operator">=</span>value
+</code></pre>
+
+      <button id="copy-button-221" class="copyButton" data-copy="export VAR_NAME=value
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Here's an example of using one in a task with shell variable substitution and
+then with it being exported as part of the environment of the spawned Deno
+process (note that in the JSON configuration file the double quotes would need
+to be escaped with backslashes):</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token builtin class-name">export</span> <span class="token assign-left variable">VAR</span><span class="token operator">=</span>hello <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token variable">$VAR</span> <span class="token operator">&amp;&amp;</span> deno <span class="token builtin class-name">eval</span> <span class="token string">"console.log('Deno: ' + Deno.env.get('VAR'))"</span>
+</code></pre>
+
+      <button id="copy-button-225" class="copyButton" data-copy="export VAR=hello &amp;&amp; echo $VAR &amp;&amp; deno eval &quot;console.log('Deno: ' + Deno.env.get('VAR'))&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Would output:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">hello
+Deno: hello
+</code></pre>
+
+      <button id="copy-button-229" class="copyButton" data-copy="hello
+Deno: hello
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h4 id="setting-environment-variables-for-a-command" tabindex="-1">Setting environment variables for a command <a class="header-anchor" href="#setting-environment-variables-for-a-command"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>To specify environment variable(s) before a command, list them like so:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">VAR</span><span class="token operator">=</span>hello <span class="token assign-left variable">VAR2</span><span class="token operator">=</span>bye deno run main.ts
+</code></pre>
+
+      <button id="copy-button-236" class="copyButton" data-copy="VAR=hello VAR2=bye deno run main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This will use those environment variables specifically for the following
+command.</p>
+<h3 id="shell-variables" tabindex="-1">Shell variables <a class="header-anchor" href="#shell-variables"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Shell variables are similar to environment variables, but won't be exported to
+spawned commands. They are defined with the following syntax:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">VAR_NAME</span><span class="token operator">=</span>value
+</code></pre>
+
+      <button id="copy-button-246" class="copyButton" data-copy="VAR_NAME=value
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>If we use a shell variable instead of an environment variable in a similar
+example to what's shown in the previous "Environment variables" section:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">VAR</span><span class="token operator">=</span>hello <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token variable">$VAR</span> <span class="token operator">&amp;&amp;</span> deno <span class="token builtin class-name">eval</span> <span class="token string">"console.log('Deno: ' + Deno.env.get('VAR'))"</span>
+</code></pre>
+
+      <button id="copy-button-250" class="copyButton" data-copy="VAR=hello &amp;&amp; echo $VAR &amp;&amp; deno eval &quot;console.log('Deno: ' + Deno.env.get('VAR'))&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>We will get the following output:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">hello
+Deno: undefined
+</code></pre>
+
+      <button id="copy-button-254" class="copyButton" data-copy="hello
+Deno: undefined
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Shell variables can be useful when we want to reuse a value, but don't want it
+available in any spawned processes.</p>
+<h3 id="exit-status-variable" tabindex="-1">Exit status variable <a class="header-anchor" href="#exit-status-variable"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The exit code of the previously run command is available in the <code>$?</code> variable.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># outputs 10</span>
+deno <span class="token builtin class-name">eval</span> <span class="token string">'Deno.exit(10)'</span> <span class="token operator">||</span> <span class="token builtin class-name">echo</span> <span class="token variable">$?</span>
+</code></pre>
+
+      <button id="copy-button-264" class="copyButton" data-copy="# outputs 10
+deno eval 'Deno.exit(10)' || echo $?
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="pipelines" tabindex="-1">Pipelines <a class="header-anchor" href="#pipelines"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Pipelines provide a way to pipe the output of one command to another.</p>
+<p>The following command pipes the stdout output "Hello" to the stdin of the
+spawned Deno process:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token builtin class-name">echo</span> Hello <span class="token operator">|</span> deno run main.ts
+</code></pre>
+
+      <button id="copy-button-274" class="copyButton" data-copy="echo Hello | deno run main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>To pipe stdout and stderr, use <code>|&amp;</code> instead:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token builtin class-name">eval</span> <span class="token string">'console.log(1); console.error(2);'</span> <span class="token operator">|&amp;</span> deno run main.ts
+</code></pre>
+
+      <button id="copy-button-278" class="copyButton" data-copy="deno eval 'console.log(1); console.error(2);' |&amp; deno run main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="command-substitution" tabindex="-1">Command substitution <a class="header-anchor" href="#command-substitution"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>The <code>$(command)</code> syntax provides a way to use the output of a command in other
+commands that get executed.</p>
+<p>For example, to provide the output of getting the latest git revision to another
+command you could do the following:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run main.ts <span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> rev-parse HEAD<span class="token variable">)</span></span>
+</code></pre>
+
+      <button id="copy-button-288" class="copyButton" data-copy="deno run main.ts $(git rev-parse HEAD)
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Another example using a shell variable:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">REV</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> rev-parse HEAD<span class="token variable">)</span></span> <span class="token operator">&amp;&amp;</span> deno run main.ts <span class="token variable">$REV</span> <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">echo</span> <span class="token variable">$REV</span>
+</code></pre>
+
+      <button id="copy-button-292" class="copyButton" data-copy="REV=$(git rev-parse HEAD) &amp;&amp; deno run main.ts $REV &amp;&amp; echo $REV
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="negate-exit-code" tabindex="-1">Negate exit code <a class="header-anchor" href="#negate-exit-code"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>To negate the exit code, add an exclamation point and space before a command:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># change the exit code from 1 to 0</span>
+<span class="token operator">!</span> deno <span class="token builtin class-name">eval</span> <span class="token string">'Deno.exit(1);'</span>
+</code></pre>
+
+      <button id="copy-button-299" class="copyButton" data-copy="# change the exit code from 1 to 0
+! deno eval 'Deno.exit(1);'
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="redirects" tabindex="-1">Redirects <a class="header-anchor" href="#redirects"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Redirects provide a way to pipe stdout and/or stderr to a file.</p>
+<p>For example, the following redirects <em>stdout</em> of <code>deno run main.ts</code> to a file
+called <code>file.txt</code> on the file system:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run main.ts <span class="token operator">&gt;</span> file.txt
+</code></pre>
+
+      <button id="copy-button-309" class="copyButton" data-copy="deno run main.ts > file.txt
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>To instead redirect <em>stderr</em>, use <code>2&gt;</code>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run main.ts <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span> file.txt
+</code></pre>
+
+      <button id="copy-button-313" class="copyButton" data-copy="deno run main.ts 2> file.txt
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>To redirect both stdout <em>and</em> stderr, use <code>&amp;&gt;</code>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run main.ts <span class="token operator">&amp;&gt;</span> file.txt
+</code></pre>
+
+      <button id="copy-button-317" class="copyButton" data-copy="deno run main.ts &amp;> file.txt
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>To append to a file, instead of overwriting an existing one, use two right angle
+brackets instead of one:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run main.ts <span class="token operator">&gt;&gt;</span> file.txt
+</code></pre>
+
+      <button id="copy-button-321" class="copyButton" data-copy="deno run main.ts >> file.txt
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Suppressing either stdout, stderr, or both of a command is possible by
+redirecting to <code>/dev/null</code>. This works in a cross-platform way including on
+Windows.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># suppress stdout</span>
+deno run main.ts <span class="token operator">&gt;</span> /dev/null
+<span class="token comment"># suppress stderr</span>
+deno run main.ts <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span> /dev/null
+<span class="token comment"># suppress both stdout and stderr</span>
+deno run main.ts <span class="token operator">&amp;&gt;</span> /dev/null
+</code></pre>
+
+      <button id="copy-button-325" class="copyButton" data-copy="# suppress stdout
+deno run main.ts > /dev/null
+# suppress stderr
+deno run main.ts 2> /dev/null
+# suppress both stdout and stderr
+deno run main.ts &amp;> /dev/null
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Or redirecting stdout to stderr and vice-versa:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># redirect stdout to stderr</span>
+deno run main.ts <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;2</span>
+<span class="token comment"># redirect stderr to stdout</span>
+deno run main.ts <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+</code></pre>
+
+      <button id="copy-button-329" class="copyButton" data-copy="# redirect stdout to stderr
+deno run main.ts >&amp;2
+# redirect stderr to stdout
+deno run main.ts 2>&amp;1
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Input redirects are also supported:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># redirect file.txt to the stdin of gzip</span>
+<span class="token function">gzip</span> <span class="token operator">&lt;</span> file.txt
+</code></pre>
+
+      <button id="copy-button-333" class="copyButton" data-copy="# redirect file.txt to the stdin of gzip
+gzip < file.txt
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Note that redirecting multiple redirects is currently not supported.</p>
+<h3 id="cross-platform-shebang" tabindex="-1">Cross-platform shebang <a class="header-anchor" href="#cross-platform-shebang"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Starting in Deno 1.42, <code>deno task</code> will execute scripts that start with
+<code>#!/usr/bin/env -S</code> the same way on all platforms.</p>
+<p>For example:</p>
+<div><div class="markdownBlockTitle">script.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token hashbang comment">#!/usr/bin/env -S deno run</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Hello there!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-346" class="copyButton" data-copy="#!/usr/bin/env -S deno run
+console.log(&quot;Hello there!&quot;);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle">deno.json</div><div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"hi"</span><span class="token operator">:</span> <span class="token string">"./script.ts"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-347" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;hi&quot;: &quot;./script.ts&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Then on a Windows machine:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token operator">&gt;</span> <span class="token builtin class-name">pwd</span>
+C:<span class="token punctuation">\</span>Users<span class="token punctuation">\</span>david<span class="token punctuation">\</span>dev<span class="token punctuation">\</span>my_project
+<span class="token operator">&gt;</span> deno task hi
+Hello there<span class="token operator">!</span>
+</code></pre>
+
+      <button id="copy-button-351" class="copyButton" data-copy="> pwd
+C:\Users\david\dev\my_project
+> deno task hi
+Hello there!
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="glob-expansion" tabindex="-1">Glob expansion <a class="header-anchor" href="#glob-expansion"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Glob expansion is supported in Deno 1.34 and above. This allows for specifying
+globs to match files in a cross-platform way.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># match .ts files in the current and descendant directories</span>
+<span class="token builtin class-name">echo</span> **/*.ts
+<span class="token comment"># match .ts files in the current directory</span>
+<span class="token builtin class-name">echo</span> *.ts
+<span class="token comment"># match files that start with "data", have a single number, then end with .csv</span>
+<span class="token builtin class-name">echo</span> data<span class="token punctuation">[</span><span class="token number">0</span>-9<span class="token punctuation">]</span>.csv
+</code></pre>
+
+      <button id="copy-button-358" class="copyButton" data-copy="# match .ts files in the current and descendant directories
+echo **/*.ts
+# match .ts files in the current directory
+echo *.ts
+# match files that start with &quot;data&quot;, have a single number, then end with .csv
+echo data[0-9].csv
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The supported glob characters are <code>*</code>, <code>?</code>, and <code>[</code>/<code>]</code>.</p>
+<p>
+</p><div class="admonition caution">
+  <div class="title">Caution</div>
+
+<p></p>
+<p>Because <code>globstar</code> is enabled by default (see <a href="#shell-options">Shell options</a>),
+<code>**</code> recurses into <strong>all</strong> descendant directories, including <code>node_modules</code>.
+This differs from some interactive shells where <code>**</code> is not recursive unless
+explicitly enabled, so a task like <code>deno check **/*.ts</code> can expand to far more
+files than the same command typed in your terminal, sweeping in dependency
+files. That can lead to errors such as <code>Argument list too long</code> or type-checking
+files you didn't intend to.</p>
+<p>For <code>deno check</code> and <code>deno fmt</code>, prefer running them without glob arguments and
+using the <a href="/runtime/reference/deno_json/#include-and-exclude"><code>exclude</code></a> option
+in your <code>deno.json</code> (<code>node_modules</code> is excluded by default), or disable
+recursion for the task with <code>shopt -u globstar</code>.</p>
+<p>
+</p></div>
+<p></p>
+<h3 id="shell-options" tabindex="-1">Shell options <a class="header-anchor" href="#shell-options"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p><code>deno task</code> supports shell options in Deno 2.6.6 and above to control glob
+expansion and pipeline behavior. By default, <code>failglob</code> and <code>globstar</code> are
+enabled.</p>
+<ul>
+<li><strong>failglob</strong> - When enabled, globs that don't match any files will cause an
+error. Disable with <code>shopt -u failglob</code>.</li>
+<li><strong>globstar</strong> - When enabled, <code>**</code> matches zero or more directories. Disable
+with <code>shopt -u globstar</code>.</li>
+<li><strong>nullglob</strong> - When enabled, globs that don't match any files expand to
+nothing instead of the literal glob pattern. Enable with <code>shopt -s nullglob</code>.</li>
+<li><strong>pipefail</strong> - When enabled, the exit code of a pipeline is the exit code of
+the last command to exit with a non-zero status, or zero if all commands exit
+successfully. Enable with <code>set -o pipefail</code>.</li>
+<li><strong>errexit</strong> (Deno 2.8+) - When enabled, a sequential list aborts on the first
+command that exits non-zero. Enable with <code>set -e</code> or <code>set -o errexit</code>; disable
+again with <code>set +e</code> or <code>set +o errexit</code>. Useful when porting a shell script
+that relies on <code>set -e</code> semantics into a <code>tasks</code> block.</li>
+</ul>
+<p>Examples:</p>
+<div><div class="markdownBlockTitle">deno.jsonc</div><div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// disable failglob</span>
+    <span class="token property">"task1"</span><span class="token operator">:</span> <span class="token string">"shopt -u failglob &amp;&amp; rm -rf *.ts"</span><span class="token punctuation">,</span>
+    <span class="token comment">// disable failglob and enable nullglob</span>
+    <span class="token property">"task2"</span><span class="token operator">:</span> <span class="token string">"shopt -u failglob &amp;&amp; shopt -s nullglob &amp;&amp; rm -rf *.ts"</span><span class="token punctuation">,</span>
+    <span class="token comment">// disable globstar</span>
+    <span class="token property">"task3"</span><span class="token operator">:</span> <span class="token string">"shopt -u globstar &amp;&amp; echo **/*.ts"</span><span class="token punctuation">,</span>
+    <span class="token comment">// enable pipefail</span>
+    <span class="token property">"task4"</span><span class="token operator">:</span> <span class="token string">"set -o pipefail &amp;&amp; cat missing.txt | echo 'hello'"</span><span class="token punctuation">,</span>
+    <span class="token comment">// abort the sequential list on the first failing command</span>
+    <span class="token property">"task5"</span><span class="token operator">:</span> <span class="token string">"set -e; build_step_one; build_step_two; build_step_three"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-410" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    // disable failglob
+    &quot;task1&quot;: &quot;shopt -u failglob &amp;&amp; rm -rf *.ts&quot;,
+    // disable failglob and enable nullglob
+    &quot;task2&quot;: &quot;shopt -u failglob &amp;&amp; shopt -s nullglob &amp;&amp; rm -rf *.ts&quot;,
+    // disable globstar
+    &quot;task3&quot;: &quot;shopt -u globstar &amp;&amp; echo **/*.ts&quot;,
+    // enable pipefail
+    &quot;task4&quot;: &quot;set -o pipefail &amp;&amp; cat missing.txt | echo 'hello'&quot;,
+    // abort the sequential list on the first failing command
+    &quot;task5&quot;: &quot;set -e; build_step_one; build_step_two; build_step_three&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>
+</p><div class="admonition note">
+  <div class="title">Note</div>
+
+<p></p>
+<p>Shell options do not propagate to <code>deno task</code> subprocesses. Each <code>deno task</code>
+invocation starts with the default options.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="built-in-commands" tabindex="-1">Built-in commands <a class="header-anchor" href="#built-in-commands"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p><code>deno task</code> ships with several built-in commands that work the same out of the
+box on Windows, Mac, and Linux.</p>
+<ul>
+<li><a href="https://man7.org/linux/man-pages/man1/cp.1.html"><code>cp</code></a> - Copies files.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/mv.1.html"><code>mv</code></a> - Moves files.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/rm.1.html"><code>rm</code></a> - Remove files or
+directories.
+<ul>
+<li>Ex: <code>rm -rf [FILE]...</code> - Commonly used to recursively delete files or
+directories.</li>
+</ul>
+</li>
+<li><a href="https://man7.org/linux/man-pages/man1/mkdir.1.html"><code>mkdir</code></a> - Makes
+directories.
+<ul>
+<li>Ex. <code>mkdir -p DIRECTORY...</code> - Commonly used to make a directory and all its
+parents with no error if it exists.</li>
+</ul>
+</li>
+<li><a href="https://man7.org/linux/man-pages/man1/pwd.1.html"><code>pwd</code></a> - Prints the name of
+the current/working directory.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/sleep.1.html"><code>sleep</code></a> - Delays for a
+specified amount of time.
+<ul>
+<li>Ex. <code>sleep 1</code> to sleep for 1 second, <code>sleep 0.5</code> to sleep for half a second,
+or <code>sleep 1m</code> to sleep a minute</li>
+</ul>
+</li>
+<li><a href="https://man7.org/linux/man-pages/man1/echo.1.html"><code>echo</code></a> - Displays a line
+of text.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/cat.1.html"><code>cat</code></a> - Concatenates files
+and outputs them on stdout. When no arguments are provided it reads and
+outputs stdin.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/exit.1p.html"><code>exit</code></a> - Causes the
+shell to exit.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/head.1.html"><code>head</code></a> - Output the first
+part of a file.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/export.1p.html"><code>export</code></a> - Sets
+environment variables and exports them to spawned commands.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/unset.1p.html"><code>unset</code></a> - Unsets
+environment variables.</li>
+<li><a href="https://man7.org/linux/man-pages/man1/xargs.1p.html"><code>xargs</code></a> - Builds
+arguments from stdin and executes a command.</li>
+<li><a href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/colon.html"><code>:</code></a> -
+The POSIX null command. Does nothing and always exits with status <code>0</code> (Deno
+2.8+). Handy as a no-op placeholder in conditionals or for parameter-expansion
+side effects.</li>
+</ul>
+<p>If you find a useful flag missing on a command or have any suggestions for
+additional commands that should be supported out of the box, then please
+<a href="https://github.com/denoland/deno_task_shell/issues">open an issue</a> on the
+<a href="https://github.com/denoland/deno_task_shell/">deno_task_shell</a> repo.</p>
+<p>Note that if you wish to execute any of these commands in a non-cross-platform
+way on Mac or Linux, then you may do so by running it through <code>sh</code>:
+<code>sh -c &lt;command&gt;</code> (ex. <code>sh -c cp source destination</code>).</p>
+<h2 id="package.json-support" tabindex="-1">package.json support <a class="header-anchor" href="#package.json-support"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p><code>deno task</code> falls back to reading from the <code>"scripts"</code> entries in a package.json
+file if it is discovered. Note that Deno does not respect or support any npm
+life cycle events like <code>preinstall</code> or <code>postinstall</code>—you must explicitly run the
+script entries you want to run (ex.
+<code>deno install --entrypoint main.ts &amp;&amp; deno task postinstall</code>).</p>
+<p>When <code>deno task</code> runs a <code>package.json</code> script, it sets the <code>npm_*</code> environment
+variables that npm exposes, so scripts that read them keep working. These
+include <code>npm_package_name</code>, <code>npm_package_version</code>, <code>npm_lifecycle_event</code> (the
+script name), <code>npm_lifecycle_script</code> (its command string), and
+<code>npm_config_user_agent</code>, along with <code>npm_execpath</code> and <code>npm_node_execpath</code> (both
+set to the path of the running <code>deno</code> executable) and <code>npm_command</code> (set to
+<code>run-script</code>). These variables are set only for <code>package.json</code> scripts. Tasks
+defined in <code>deno.json</code> do not receive them.</p>
+<h2 id="command-resolution" tabindex="-1">Command Resolution <a class="header-anchor" href="#command-resolution"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>When a task command references a binary (e.g., <code>ohm</code>, <code>tsc</code>, <code>eslint</code>), Deno
+resolves it using the following order:</p>
+<ol>
+<li>
+<p><code>node_modules/.bin/</code> - if the task's directory or a parent directory has a
+<code>node_modules/.bin/</code> folder, Deno looks there first. Note that
+<code>deno add npm:&lt;pkg&gt;</code> updates <code>deno.json</code> imports and <code>deno.lock</code> but does not
+create a <code>node_modules</code> directory. The <code>node_modules</code> directory is only
+created when using <code>deno install</code> or other npm-compatible tooling.</p>
+</li>
+<li>
+<p><code>package.json</code> <code>bin</code> field - when a dependency defines a <code>bin</code> field in its
+<code>package.json</code>, Deno automatically makes those commands available within task
+scripts through its npm compatibility layer.</p>
+</li>
+<li>
+<p>System <code>PATH</code> - if the command is not found above, Deno falls back to
+searching the system <code>PATH</code>.</p>
+</li>
+</ol>
+<h3 id="example" tabindex="-1">Example <a class="header-anchor" href="#example"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Given a <code>package.json</code> with:</p>
+<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@ohm-js/cli"</span><span class="token operator">:</span> <span class="token string">"^2.0.0"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-563" class="copyButton" data-copy="{
+  &quot;dependencies&quot;: {
+    &quot;@ohm-js/cli&quot;: &quot;^2.0.0&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>And a <code>deno.json</code> with:</p>
+<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"generate"</span><span class="token operator">:</span> <span class="token string">"ohm src/grammar.ohm -o src/grammar.js"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-567" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;generate&quot;: &quot;ohm src/grammar.ohm -o src/grammar.js&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Running <code>deno task generate</code> will:</p>
+<ol>
+<li>Look for <code>ohm</code> in <code>node_modules/.bin/ohm</code></li>
+<li>If found, execute it using Deno's Node.js compatibility layer</li>
+<li>The command runs under Deno's runtime, not Node.js.</li>
+</ol>
+<div><div class="bg-transparent mt-4 mb-12 relative pl-2 border-l border-background-tertiary"><div class="text-xs font-bold mb-1">Command line usage:</div><div><pre class="!mb-0 !p-6"><code>task</code></pre></div></div><div class="flex flex-col gap-4"><p>Run a task defined in the configuration file</p></div><h2 id="options">Options <a class="header-anchor" href="#options"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2><div class="flex flex-col gap-8 mt-4"><div id="options-config"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold"><a href=" https://docs.deno.com/go/config">--config, -c</a></code></div><a class="header-anchor" href="#options-config"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Configure different aspects of deno including TypeScript, linting, and code formatting.
+Typically the configuration file will be called <code>deno.json</code> or <code>deno.jsonc</code> and
+automatically detected; in that case this flag is not necessary.</p></div></div><div id="options-cwd"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--cwd</code></div><a class="header-anchor" href="#options-cwd"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Specify the directory to run the task in.</p></div></div><div id="options-env-file"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--env-file</code></div><a class="header-anchor" href="#options-env-file"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Load environment variables from local file
+Only the first environment variable with a given key is used.
+Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.
+Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.</p></div></div><div id="options-eval"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--eval</code></div><a class="header-anchor" href="#options-eval"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Evaluate the passed value as if it was a task in a configuration file.</p></div></div><div id="options-filter"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--filter, -f</code></div><a class="header-anchor" href="#options-filter"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Filter members of the workspace by name, implies<code> --recursive</code> flag.</p></div></div><div id="options-frozen-lockfile"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--frozen-lockfile</code></div><a class="header-anchor" href="#options-frozen-lockfile"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Error out if lockfile is out of date.</p></div></div><div id="options-if-present"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--if-present</code></div><a class="header-anchor" href="#options-if-present"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Exit with code 0 instead of an error when the task is not found.</p></div></div><div id="options-jobs"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--jobs, -j</code></div><a class="header-anchor" href="#options-jobs"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Maximum number of tasks to run concurrently.
+Overrides the DENO_JOBS environment variable; defaults to the number of
+available CPUs. Use 1 to force sequential execution. Only affects runs
+where multiple tasks can run concurrently (workspace runs, or a task with
+parallelizable dependencies).</p></div></div><div id="options-lock"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--lock</code></div><a class="header-anchor" href="#options-lock"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Check the specified lock file. (If value is not provided, defaults to "./deno.lock").</p></div></div><div id="options-members"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--members</code></div><a class="header-anchor" href="#options-members"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Run the task in all workspace members, but not in the workspace root.</p></div></div><div id="options-no-lock"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-lock</code></div><a class="header-anchor" href="#options-no-lock"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Disable auto discovery of the lock file.</p></div></div><div id="options-no-prefix"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-prefix</code></div><a class="header-anchor" href="#options-no-prefix"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Disable prefixing the output of concurrently-executing tasks with the task name.</p></div></div><div id="options-node-modules-dir"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--node-modules-dir</code></div><a class="header-anchor" href="#options-node-modules-dir"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Selects the node_modules directory mode for npm packages (not a path). One of: auto (create a local node_modules directory and install npm packages into it), manual (use the existing local node_modules directory, do not modify it), none (do not use a local node_modules directory; resolve npm packages from the global cache). Defaults to auto when the flag is passed without a value.</p></div></div><div id="options-recursive"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--recursive, -r</code></div><a class="header-anchor" href="#options-recursive"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Run the task in all projects in the workspace.</p></div></div></div></div></div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-06-25T00:00:00.000Z">June 25, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/reference/cli/serve/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← deno serve</span></a><a href="/runtime/reference/cli/test/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">deno test →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/cli/task.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

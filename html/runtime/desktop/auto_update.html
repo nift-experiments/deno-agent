@@ -1,0 +1,416 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#prerequisites" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Prerequisites </a></li><li class="leading-tight text-balance"><a href="#calling-autoupdate()" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Calling autoUpdate() </a></li><li class="leading-tight text-balance"><a href="#manifest-format" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Manifest format </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#signed-manifests" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Signed manifests </a></li></ul></li><li class="leading-tight text-balance"><a href="#update-flow" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Update flow </a></li><li class="leading-tight text-balance"><a href="#rollback-on-failed-launch" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Rollback on failed launch </a></li><li class="leading-tight text-balance"><a href="#generating-patches" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Generating patches </a></li><li class="leading-tight text-balance"><a href="#best-practices" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Best practices </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Guides<span aria-hidden="true">›</span></li><li class="flex items-center gap-2 m-0"><a href="/runtime/desktop/" class="text-inherit no-underline hover:underline">Desktop apps</a></li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/desktop/auto_update.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Fdesktop%2Fauto_update.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Auto-update</h1></div><p>
+</p><div class="admonition info">
+  <div class="title">Available in Deno 2.9</div>
+
+<p></p>
+<p><code>deno desktop</code> is available starting in Deno v2.9.0. If you're on an earlier
+version, <a href="/runtime/reference/cli/upgrade/">update Deno</a> to use it.</p>
+<p>
+</p></div>
+<p></p>
+<p><a href="/api/deno/~/Deno.autoUpdate"><code>Deno.autoUpdate()</code></a> polls a release server for
+new versions, downloads binary-diff patches, applies them to the runtime dylib,
+and stages the result for the next launch. If the next launch fails, the runtime
+rolls back to the previous version automatically. Updates ship as small <code>bsdiff</code>
+patches instead of full binary downloads, with rollback baked into the launcher.</p>
+<p>
+</p><div class="admonition note">
+  <div class="title">Platform support</div>
+
+<p></p>
+<p>Applying staged updates and rolling back on a failed launch currently run on
+<strong>macOS and Linux only</strong>. On Windows, patches are still downloaded and staged,
+but the launcher does not yet swap them in (a loaded DLL can't be replaced in
+place), so updates do not take effect. Treat Windows auto-update as not yet
+supported.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="prerequisites" tabindex="-1">Prerequisites <a class="header-anchor" href="#prerequisites"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Two pieces of configuration are required:</p>
+<ol>
+<li>A <code>version</code> in your <code>deno.json</code>:<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span> <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.4.0"</span> <span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-32" class="copyButton" data-copy="{ &quot;version&quot;: &quot;1.4.0&quot; }
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></li>
+<li>A <code>desktop.release.baseUrl</code> in your <code>deno.json</code>:<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"desktop"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"release"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"baseUrl"</span><span class="token operator">:</span> <span class="token string">"https://releases.example.com/my-app"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-38" class="copyButton" data-copy="{
+  &quot;desktop&quot;: {
+    &quot;release&quot;: { &quot;baseUrl&quot;: &quot;https://releases.example.com/my-app&quot; }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></li>
+</ol>
+<p>Both are baked into the compiled binary. The version is exposed at runtime as
+<a href="/api/deno/~/Deno.desktopVersion"><code>Deno.desktopVersion</code></a>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Deno<span class="token punctuation">.</span>desktopVersion<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// "1.4.0", or null if no version was set</span>
+</code></pre>
+
+      <button id="copy-button-44" class="copyButton" data-copy="console.log(Deno.desktopVersion); // &quot;1.4.0&quot;, or null if no version was set
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>If <a href="/api/deno/~/Deno.desktopVersion"><code>Deno.desktopVersion</code></a> is <code>null</code>,
+<a href="/api/deno/~/Deno.autoUpdate"><code>Deno.autoUpdate()</code></a> is a no-op: the runtime warns
+once and returns. This is also what happens under <code>deno run</code>, since a
+non-compiled program has no baked-in version.
+<a href="/api/deno/~/Deno.autoUpdate"><code>Deno.autoUpdate()</code></a> does not throw there, so you
+can leave the call in your code and run the same entry point with <code>deno run</code>
+during development.</p>
+<h2 id="calling-autoupdate()" tabindex="-1">Calling <code>autoUpdate()</code> <a class="header-anchor" href="#calling-autoupdate()"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<div class="relative"><pre><code class="highlight notranslate language-ts">Deno<span class="token punctuation">.</span><span class="token function">autoUpdate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  url<span class="token operator">:</span> <span class="token string">"https://releases.example.com/my-app"</span><span class="token punctuation">,</span>
+  interval<span class="token operator">:</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token comment">// hourly</span>
+  <span class="token function">onUpdateReady</span><span class="token punctuation">(</span>version<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Update"</span><span class="token punctuation">,</span> version<span class="token punctuation">,</span> <span class="token string">"ready; will apply on next launch"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">onRollback</span><span class="token punctuation">(</span>reason<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token string">"Previous launch failed; rolled back:"</span><span class="token punctuation">,</span> reason<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-51" class="copyButton" data-copy="Deno.autoUpdate({
+  url: &quot;https://releases.example.com/my-app&quot;,
+  interval: 60 * 60 * 1000, // hourly
+  onUpdateReady(version) {
+    console.log(&quot;Update&quot;, version, &quot;ready; will apply on next launch&quot;);
+  },
+  onRollback(reason) {
+    console.warn(&quot;Previous launch failed; rolled back:&quot;, reason);
+  },
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Or pass a URL string for a single one-shot check on startup:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts">Deno<span class="token punctuation">.</span><span class="token function">autoUpdate</span><span class="token punctuation">(</span><span class="token string">"https://releases.example.com/my-app"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-55" class="copyButton" data-copy="Deno.autoUpdate(&quot;https://releases.example.com/my-app&quot;);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td><code>string</code></td>
+<td>Required if no <code>desktop.release.baseUrl</code> is set in <code>deno.json</code>.</td>
+</tr>
+<tr>
+<td><code>interval</code></td>
+<td><code>number</code> (milliseconds)</td>
+<td>Poll interval. If omitted, only a single check is performed.</td>
+</tr>
+<tr>
+<td><code>onUpdateReady</code></td>
+<td><code>(version: string) =&gt; void</code></td>
+<td>Called once a patch is applied and staged for next launch.</td>
+</tr>
+<tr>
+<td><code>onRollback</code></td>
+<td><code>(reason: string) =&gt; void</code></td>
+<td>Called shortly after this call if the previous launch failed.</td>
+</tr>
+<tr>
+<td><code>publicKey</code></td>
+<td><code>string</code></td>
+<td>Base64 Ed25519 public key. When set, the manifest must be signed (see <a href="#signed-manifests">Signed manifests</a>).</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="manifest-format" tabindex="-1">Manifest format <a class="header-anchor" href="#manifest-format"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The runtime fetches <code>&lt;url&gt;/latest.json</code> and parses it as JSON. Each patch entry
+is an object carrying the patch filename and its <strong>SHA-256 hash</strong>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.5.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"patches"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"1.4.0"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"patch-1.4.0-to-1.5.0.bin"</span><span class="token punctuation">,</span> <span class="token property">"sha256"</span><span class="token operator">:</span> <span class="token string">"&lt;64-hex-chars&gt;"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"1.4.1"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"patch-1.4.1-to-1.5.0.bin"</span><span class="token punctuation">,</span> <span class="token property">"sha256"</span><span class="token operator">:</span> <span class="token string">"&lt;64-hex-chars&gt;"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"1.3.9"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"patch-1.3.9-to-1.5.0.bin"</span><span class="token punctuation">,</span> <span class="token property">"sha256"</span><span class="token operator">:</span> <span class="token string">"&lt;64-hex-chars&gt;"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-134" class="copyButton" data-copy="{
+  &quot;version&quot;: &quot;1.5.0&quot;,
+  &quot;patches&quot;: {
+    &quot;1.4.0&quot;: { &quot;name&quot;: &quot;patch-1.4.0-to-1.5.0.bin&quot;, &quot;sha256&quot;: &quot;<64-hex-chars>&quot; },
+    &quot;1.4.1&quot;: { &quot;name&quot;: &quot;patch-1.4.1-to-1.5.0.bin&quot;, &quot;sha256&quot;: &quot;<64-hex-chars>&quot; },
+    &quot;1.3.9&quot;: { &quot;name&quot;: &quot;patch-1.3.9-to-1.5.0.bin&quot;, &quot;sha256&quot;: &quot;<64-hex-chars>&quot; }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>version</code></td>
+<td>The latest available version. Compared with <a href="/api/deno/~/Deno.desktopVersion"><code>Deno.desktopVersion</code></a>.</td>
+</tr>
+<tr>
+<td><code>patches</code></td>
+<td>Map of from-version → <code>{ name, sha256 }</code>. <code>name</code> is the patch filename relative to the manifest's URL; <code>sha256</code> is the lowercase hex SHA-256 of the patch bytes.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The <code>sha256</code> is <strong>required</strong>: the runtime refuses to apply a patch whose bytes
+don't hash to the declared value, so a tampered or truncated download can never
+be applied.</p>
+<p>Old versions you no longer want to support can be omitted from <code>patches</code>. Users
+on those versions log a "no patch available for X" message and stay on their
+current version.</p>
+<p>The update URL <strong>must</strong> be <code>https://</code>: the runtime refuses to poll a plaintext
+endpoint.</p>
+<h3 id="signed-manifests" tabindex="-1">Signed manifests <a class="header-anchor" href="#signed-manifests"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>For tamper protection beyond TLS, sign the manifest with an Ed25519 key and pass
+the public key to <a href="/api/deno/~/Deno.autoUpdate"><code>Deno.autoUpdate()</code></a>. When a
+<code>publicKey</code> is configured, the manifest must be an envelope:</p>
+<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"signed"</span><span class="token operator">:</span> <span class="token string">"{\"version\":\"1.5.0\",\"patches\":{ … }}"</span><span class="token punctuation">,</span>
+  <span class="token property">"signature"</span><span class="token operator">:</span> <span class="token string">"&lt;base64 Ed25519 signature over the `signed` string&gt;"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-180" class="copyButton" data-copy="{
+  &quot;signed&quot;: &quot;{\&quot;version\&quot;:\&quot;1.5.0\&quot;,\&quot;patches\&quot;:{ … }}&quot;,
+  &quot;signature&quot;: &quot;<base64 Ed25519 signature over the `signed` string>&quot;
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The runtime verifies <code>signature</code> over the exact bytes of the <code>signed</code> string
+using your <code>publicKey</code>, then parses <code>signed</code> as the trusted manifest. To avoid
+depending on a canonical-JSON implementation, the real manifest is embedded
+verbatim as the <code>signed</code> string and only its contents are trusted.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts">Deno<span class="token punctuation">.</span><span class="token function">autoUpdate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  url<span class="token operator">:</span> <span class="token string">"https://releases.example.com/my-app"</span><span class="token punctuation">,</span>
+  publicKey<span class="token operator">:</span> <span class="token string">"&lt;base64-encoded 32-byte Ed25519 public key&gt;"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-184" class="copyButton" data-copy="Deno.autoUpdate({
+  url: &quot;https://releases.example.com/my-app&quot;,
+  publicKey: &quot;<base64-encoded 32-byte Ed25519 public key>&quot;,
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="update-flow" tabindex="-1">Update flow <a class="header-anchor" href="#update-flow"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<ol>
+<li><strong>Fetch manifest.</strong> <code>GET &lt;url&gt;/latest.json</code>. On a non-2xx response, the check
+silently returns and waits for the next interval.</li>
+<li><strong>Compare versions.</strong> If <code>manifest.version === Deno.desktopVersion</code>, nothing
+to do.</li>
+<li><strong>Look up a patch.</strong> <code>manifest.patches[Deno.desktopVersion]</code> →
+<code>{ name, sha256 }</code>.</li>
+<li><strong>Download the patch.</strong> <code>GET &lt;url&gt;/&lt;name&gt;</code>. The whole patch is buffered into
+memory; for typical bsdiff outputs (a few MB) this is fine.</li>
+<li><strong>Verify and apply.</strong> The runtime checks the downloaded bytes against the
+manifest's <code>sha256</code> and refuses to continue on a mismatch, then applies the
+binary diff to the app's runtime dylib using the
+<a href="https://crates.io/crates/qbsdiff"><code>qbsdiff</code></a> crate. The patched bytes are
+sanity-checked to look like a native binary before staging.</li>
+<li><strong>Stage the result.</strong> Write the patched dylib as <code>&lt;dylib&gt;.update</code> next to the
+original. The running dylib is left untouched.</li>
+<li><strong>Fire <code>onUpdateReady</code>.</strong></li>
+</ol>
+<p>The running dylib is untouched until the next launch. When the app restarts, the
+launcher swaps the staged update into place before anything else runs.</p>
+<h2 id="rollback-on-failed-launch" tabindex="-1">Rollback on failed launch <a class="header-anchor" href="#rollback-on-failed-launch"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The launcher resolves staged updates and rollback state at startup, before
+anything else runs, using three files next to the runtime dylib:
+<code>&lt;dylib&gt;.update</code> (a staged patch), <code>&lt;dylib&gt;.backup</code> (the previous dylib), and
+<code>&lt;dylib&gt;.update-ok</code> (a success sentinel).</p>
+<ul>
+<li>If <code>&lt;dylib&gt;.update</code> exists, the launcher copies the current dylib aside to
+<code>&lt;dylib&gt;.backup</code> (leaving the original in place), swaps the staged update into
+the dylib path, and starts the new version. Once it boots successfully, the
+runtime calls an internal "confirm update" op that writes <code>&lt;dylib&gt;.update-ok</code>.</li>
+<li>On a later launch, if <code>&lt;dylib&gt;.backup</code> and <code>&lt;dylib&gt;.update-ok</code> both exist, the
+previous update is confirmed good and both files are cleaned up.</li>
+<li>If <code>&lt;dylib&gt;.backup</code> exists but <code>&lt;dylib&gt;.update-ok</code> does not, the last update
+started but never confirmed, meaning it crashed during startup. The launcher
+restores <code>&lt;dylib&gt;.backup</code> over the dylib, rolling back. The next
+<a href="/api/deno/~/Deno.autoUpdate"><code>Deno.autoUpdate()</code></a> call then fires
+<code>onRollback</code> with the reason.</li>
+</ul>
+<p>This makes broken updates self-healing. Users do not need to know anything
+happened beyond seeing the same version they had before.</p>
+<h2 id="generating-patches" tabindex="-1">Generating patches <a class="header-anchor" href="#generating-patches"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>A patch is a <code>bsdiff</code> of the app's runtime dylib between two releases, the file
+the updater patches, which lives inside your built app. <code>qbsdiff</code> reads the
+<code>bsdiff</code> 4.x format, so the classic <code>bsdiff</code> CLI produces compatible output:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">bsdiff old-dylib new-dylib patch-1.4.0-to-1.5.0.bin
+shasum <span class="token parameter variable">-a</span> <span class="token number">256</span> patch-1.4.0-to-1.5.0.bin <span class="token comment"># the sha256 for the manifest entry</span>
+</code></pre>
+
+      <button id="copy-button-260" class="copyButton" data-copy="bsdiff old-dylib new-dylib patch-1.4.0-to-1.5.0.bin
+shasum -a 256 patch-1.4.0-to-1.5.0.bin # the sha256 for the manifest entry
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Then add the patch's <code>name</code> and <code>sha256</code> to <code>latest.json</code> and upload both the
+patch and the manifest to your release server.</p>
+<p>For shipping multiple architectures (macOS arm64, x86_64; Windows x86_64; Linux
+arm64, x86_64), generate patches per-architecture. Either serve the right
+manifest based on user-agent, or include all patches under architecture-specific
+keys and pick on the client:</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token comment">// release/macos-arm64/latest.json</span>
+<span class="token punctuation">{</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.5.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"patches"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"1.4.0"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"patch-1.4.0-to-1.5.0.bin"</span><span class="token punctuation">,</span> <span class="token property">"sha256"</span><span class="token operator">:</span> <span class="token string">"&lt;64-hex-chars&gt;"</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-267" class="copyButton" data-copy="// release/macos-arm64/latest.json
+{
+  &quot;version&quot;: &quot;1.5.0&quot;,
+  &quot;patches&quot;: {
+    &quot;1.4.0&quot;: { &quot;name&quot;: &quot;patch-1.4.0-to-1.5.0.bin&quot;, &quot;sha256&quot;: &quot;<64-hex-chars>&quot; }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> arch <span class="token operator">=</span> Deno<span class="token punctuation">.</span>build<span class="token punctuation">.</span>os <span class="token operator">+</span> <span class="token string">"-"</span> <span class="token operator">+</span> Deno<span class="token punctuation">.</span>build<span class="token punctuation">.</span>arch<span class="token punctuation">;</span>
+Deno<span class="token punctuation">.</span><span class="token function">autoUpdate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  url<span class="token operator">:</span> <span class="token string">"https://releases.example.com/"</span> <span class="token operator">+</span> arch<span class="token punctuation">,</span>
+  interval<span class="token operator">:</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-268" class="copyButton" data-copy="const arch = Deno.build.os + &quot;-&quot; + Deno.build.arch;
+Deno.autoUpdate({
+  url: &quot;https://releases.example.com/&quot; + arch,
+  interval: 60 * 60 * 1000,
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="best-practices" tabindex="-1">Best practices <a class="header-anchor" href="#best-practices"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<ul>
+<li><strong>Sign your manifests.</strong> TLS plus the required per-patch <code>sha256</code> already stop
+a tampered patch from being applied, but anyone able to serve from your URL
+could still push a validly-hashed malicious patch. For defense in depth, sign
+the manifest with an Ed25519 key and configure <code>publicKey</code> (see
+<a href="#signed-manifests">Signed manifests</a>). Keep the private key off the release
+host.</li>
+<li><strong>Test patches against a real install.</strong> A patch that applies cleanly but
+produces a non-bootable binary triggers rollback, but only after a failed
+launch, so your users see a brief startup failure once. Run the patched binary
+in CI before publishing the manifest.</li>
+<li><strong>Choose a sensible interval.</strong> Hourly is fine for most apps. Polling more
+often than every few minutes is wasteful for both you and your users.</li>
+<li><strong>Handle <code>onRollback</code>.</strong> A rollback is a signal that a recent release was
+broken on at least one machine. Log it to your telemetry so you notice broken
+releases quickly.</li>
+</ul>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-06-25T00:00:00.000Z">June 25, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/desktop/devtools/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← DevTools</span></a><a href="/runtime/desktop/error_reporting/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Error reporting →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/desktop/auto_update.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

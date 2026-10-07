@@ -1,0 +1,414 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#scaffold-a-solidjs-app-with-vite" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Scaffold a SolidJS app with Vite </a></li><li class="leading-tight text-balance"><a href="#set-up-our-hono-backend" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Set up our Hono backend </a></li><li class="leading-tight text-balance"><a href="#create-our-solidjs-frontend" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Create our SolidJS frontend </a></li><li class="leading-tight text-balance"><a href="#next-steps" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Next steps </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Web frameworks and libraries</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/examples/tutorials/solidjs.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fexamples%2Ftutorials%2Fsolidjs.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Build a SolidJS app with Deno</h1></div><p><a href="https://www.solidjs.com/">SolidJS</a> is a declarative JavaScript library for
+creating user interfaces that emphasizes fine-grained reactivity and minimal
+overhead. When combined with Deno's modern runtime environment, you get a
+powerful, performant stack for building web applications. In this tutorial,
+we'll build a simple dinosaur catalog app that demonstrates the key features of
+both technologies.</p>
+<p>We'll go over how to build a simple SolidJS app using Deno:</p>
+<ul>
+<li><a href="#scaffold-a-solidjs-app-with-vite">Scaffold a SolidJS app</a></li>
+<li><a href="#set-up-our-hono-backend">Set up on Hono backend</a></li>
+<li><a href="#create-our-solidjs-frontend">Create our SolidJS frontend</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+</ul>
+<p>Feel free to skip directly to
+<a href="https://github.com/denoland/examples/tree/main/with-solidjs">the source code</a>
+or follow along below!</p>
+<h2 id="scaffold-a-solidjs-app-with-vite" tabindex="-1">Scaffold a SolidJS app with Vite <a class="header-anchor" href="#scaffold-a-solidjs-app-with-vite"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Let's set up our SolidJS application using <a href="https://vite.dev/">Vite</a>, a modern
+build tool that provides an excellent development experience with features like
+hot module replacement and optimized builds.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">deno init <span class="token parameter variable">--npm</span> vite@latest solid-deno <span class="token parameter variable">--template</span> solid-ts
+</code></pre>
+
+      <button id="copy-button-37" class="copyButton" data-copy="deno init --npm vite@latest solid-deno --template solid-ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Our backend will be powered by <a href="https://hono.dev/">Hono</a>, which we can install
+via <a href="https://jsr.io">JSR</a>. Let's also add <code>solidjs/router</code> for client-side
+routing and navigation between our dinosaur catalog pages.</p>
+<figure>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">deno <span class="token function">add</span> jsr:@hono/hono npm:@solidjs/router
+</code></pre>
+
+      <button id="copy-button-42" class="copyButton" data-copy="deno add jsr:@hono/hono npm:@solidjs/router
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><figcaption>
+<a href="https://docs.deno.com/runtime/reference/cli/add/">
+Learn more about <code>deno add</code> and using Deno as a package manager.
+</a>
+</figcaption>
+</figure>
+<p>We'll also have to update our <code>deno.json</code> to include a few tasks and
+<code>compilerOptions</code> to run our app:</p>
+<figure>
+<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"deno task dev:api &amp; deno task dev:vite"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev:api"</span><span class="token operator">:</span> <span class="token string">"deno run --allow-env --allow-net --allow-read api/main.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev:vite"</span><span class="token operator">:</span> <span class="token string">"deno run -A npm:vite"</span><span class="token punctuation">,</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"deno run -A npm:vite build"</span><span class="token punctuation">,</span>
+    <span class="token property">"serve"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"deno task dev:api"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Run the build, and then start the API server"</span><span class="token punctuation">,</span>
+      <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"deno task build"</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@hono/hono"</span><span class="token operator">:</span> <span class="token string">"jsr:@hono/hono@^4.6.12"</span><span class="token punctuation">,</span>
+    <span class="token property">"@solidjs/router"</span><span class="token operator">:</span> <span class="token string">"npm:@solidjs/router@^0.14.10"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"jsx"</span><span class="token operator">:</span> <span class="token string">"react-jsx"</span><span class="token punctuation">,</span>
+    <span class="token property">"jsxImportSource"</span><span class="token operator">:</span> <span class="token string">"solid-js"</span><span class="token punctuation">,</span>
+    <span class="token property">"lib"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"DOM"</span><span class="token punctuation">,</span> <span class="token string">"DOM.Iterable"</span><span class="token punctuation">,</span> <span class="token string">"ESNext"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-48" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;dev&quot;: &quot;deno task dev:api &amp; deno task dev:vite&quot;,
+    &quot;dev:api&quot;: &quot;deno run --allow-env --allow-net --allow-read api/main.ts&quot;,
+    &quot;dev:vite&quot;: &quot;deno run -A npm:vite&quot;,
+    &quot;build&quot;: &quot;deno run -A npm:vite build&quot;,
+    &quot;serve&quot;: {
+      &quot;command&quot;: &quot;deno task dev:api&quot;,
+      &quot;description&quot;: &quot;Run the build, and then start the API server&quot;,
+      &quot;dependencies&quot;: [&quot;deno task build&quot;]
+    }
+  },
+  &quot;imports&quot;: {
+    &quot;@hono/hono&quot;: &quot;jsr:@hono/hono@^4.6.12&quot;,
+    &quot;@solidjs/router&quot;: &quot;npm:@solidjs/router@^0.14.10&quot;
+  },
+  &quot;compilerOptions&quot;: {
+    &quot;jsx&quot;: &quot;react-jsx&quot;,
+    &quot;jsxImportSource&quot;: &quot;solid-js&quot;,
+    &quot;lib&quot;: [&quot;DOM&quot;, &quot;DOM.Iterable&quot;, &quot;ESNext&quot;]
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><figcaption>
+<a href="https://docs.deno.com/runtime/reference/cli/task/">You can write your <code>tasks</code> as objects</a>. Here our <code>serve</code> command includes a <code>description</code> and <code>dependencies</code>.
+</figcaption>
+</figure>
+<p>Great! Next, let's setup our API backend.</p>
+<h2 id="set-up-our-hono-backend" tabindex="-1">Set up our Hono backend <a class="header-anchor" href="#set-up-our-hono-backend"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Within our main directory, we will set up an <code>api/</code> directory and create two
+files. First, our dinosaur data file,
+<a href="https://github.com/denoland/examples/blob/main/with-solidjs/api/data.json"><code>api/data.json</code></a>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token comment">// api/data.json</span>
+
+<span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Aardonyx"</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"An early stage in the evolution of sauropods."</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Abelisaurus"</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"\"Abel's lizard\" has been reconstructed from a single skull."</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Abrictosaurus"</span><span class="token punctuation">,</span>
+    <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"An early relative of Heterodontosaurus."</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  ...
+<span class="token punctuation">]</span>
+</code></pre>
+
+      <button id="copy-button-59" class="copyButton" data-copy="// api/data.json
+
+[
+  {
+    &quot;name&quot;: &quot;Aardonyx&quot;,
+    &quot;description&quot;: &quot;An early stage in the evolution of sauropods.&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Abelisaurus&quot;,
+    &quot;description&quot;: &quot;\&quot;Abel's lizard\&quot; has been reconstructed from a single skull.&quot;
+  },
+  {
+    &quot;name&quot;: &quot;Abrictosaurus&quot;,
+    &quot;description&quot;: &quot;An early relative of Heterodontosaurus.&quot;
+  },
+  ...
+]
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>This is where our data will be pulled from. In a full application, this data
+would come from a database.</p>
+<blockquote>
+<p>⚠️️ In this tutorial we hard code the data. But you can connect
+to&nbsp;<a href="https://docs.deno.com/runtime/tutorials/connecting_to_databases/">a variety of databases</a>&nbsp;and&nbsp;<a href="https://docs.deno.com/runtime/tutorials/how_to_with_npm/prisma/">even use ORMs like Prisma</a>&nbsp;with
+Deno.</p>
+</blockquote>
+<p>Secondly, we need our Hono server, <code>api/main.ts</code>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-tsx"><span class="token comment">// api/main.ts</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Hono <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@hono/hono"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> data <span class="token keyword">from</span> <span class="token string">"./data.json"</span> <span class="token keyword">with</span> <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">"json"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hono</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> c<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">"Welcome to the dinosaur API!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/api/dinosaurs"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> c<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/api/dinosaurs/:dinosaur"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>c<span class="token punctuation">.</span>req<span class="token punctuation">.</span><span class="token function">param</span><span class="token punctuation">(</span><span class="token string">"dinosaur"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> c<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">"No dinosaur name provided."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> dinosaur <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+    item<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">===</span> c<span class="token punctuation">.</span>req<span class="token punctuation">.</span><span class="token function">param</span><span class="token punctuation">(</span><span class="token string">"dinosaur"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>dinosaur<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>dinosaur<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> c<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>dinosaur<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> c<span class="token punctuation">.</span><span class="token function">notFound</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span>app<span class="token punctuation">.</span>fetch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-71" class="copyButton" data-copy="// api/main.ts
+
+import { Hono } from &quot;@hono/hono&quot;;
+import data from &quot;./data.json&quot; with { type: &quot;json&quot; };
+
+const app = new Hono();
+
+app.get(&quot;/&quot;, (c) => {
+  return c.text(&quot;Welcome to the dinosaur API!&quot;);
+});
+
+app.get(&quot;/api/dinosaurs&quot;, (c) => {
+  return c.json(data);
+});
+
+app.get(&quot;/api/dinosaurs/:dinosaur&quot;, (c) => {
+  if (!c.req.param(&quot;dinosaur&quot;)) {
+    return c.text(&quot;No dinosaur name provided.&quot;);
+  }
+
+  const dinosaur = data.find((item) =>
+    item.name.toLowerCase() === c.req.param(&quot;dinosaur&quot;).toLowerCase()
+  );
+
+  console.log(dinosaur);
+
+  if (dinosaur) {
+    return c.json(dinosaur);
+  } else {
+    return c.notFound();
+  }
+});
+
+Deno.serve(app.fetch);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>This Hono server provides two API endpoints:</p>
+<ul>
+<li><code>GET /api/dinosaurs</code> to fetch all dinosaurs, and</li>
+<li><code>GET /api/dinosaurs/:dinosaur</code> to fetch a specific dinosaur by name</li>
+</ul>
+<p>This server will be started on <code>localhost:8000</code> when we run <code>deno task dev</code>.</p>
+<p>Finally, before we start building out the frontend, let's update our
+<code>vite.config.ts</code> file with the below, especially the <code>server.proxy</code>, which
+informs our SolidJS frontend where to locate the API endpoint.</p>
+<div class="relative"><pre><code class="highlight notranslate language-tsx"><span class="token comment">// vite.config.ts</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineConfig <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"vite"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> solid <span class="token keyword">from</span> <span class="token string">"vite-plugin-solid"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">solid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  server<span class="token operator">:</span> <span class="token punctuation">{</span>
+    proxy<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">"/api"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        target<span class="token operator">:</span> <span class="token string">"http://localhost:8000"</span><span class="token punctuation">,</span>
+        changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-93" class="copyButton" data-copy="// vite.config.ts
+import { defineConfig } from &quot;vite&quot;;
+import solid from &quot;vite-plugin-solid&quot;;
+
+export default defineConfig({
+  plugins: [solid()],
+  server: {
+    proxy: {
+      &quot;/api&quot;: {
+        target: &quot;http://localhost:8000&quot;,
+        changeOrigin: true,
+      },
+    },
+  },
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="create-our-solidjs-frontend" tabindex="-1">Create our SolidJS frontend <a class="header-anchor" href="#create-our-solidjs-frontend"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Before we begin building out the frontend components, let's quickly define the
+<code>Dino</code> type in <code>src/types.ts</code>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-tsx"><span class="token comment">// src/types.ts</span>
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Dino</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  description<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-100" class="copyButton" data-copy="// src/types.ts
+export type Dino = {
+  name: string;
+  description: string;
+};
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The <code>Dino</code> type interface ensures type safety throughout our application,
+defining the shape of our dinosaur data and enabling TypeScript's static type
+checking.</p>
+<p>Next, let's set up our frontend to receive that data. We're going to have two
+pages:</p>
+<ul>
+<li><code>Index.tsx</code></li>
+<li><code>Dinosaur.tsx</code></li>
+</ul>
+<p>Here's the code for the <code>src/pages/Index.tsx</code> page:</p>
+<div class="relative"><pre><code class="highlight notranslate language-tsx"><span class="token comment">// src/pages/Index.tsx</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createSignal<span class="token punctuation">,</span> For<span class="token punctuation">,</span> onMount <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"solid-js"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">A</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@solidjs/router"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token keyword">type</span> <span class="token punctuation">{</span> Dino <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../types.ts"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">Index</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>dinosaurs<span class="token punctuation">,</span> setDinosaurs<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token generic-function"><span class="token function">createSignal</span><span class="token generic class-name"><span class="token operator">&lt;</span>Dino<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">"/api/dinosaurs"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> allDinosaurs <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">as</span> Dino<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token function">setDinosaurs</span><span class="token punctuation">(</span>allDinosaurs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Fetched dinosaurs:"</span><span class="token punctuation">,</span> allDinosaurs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"Failed to fetch dinosaurs:"</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Welcome to the Dinosaur app</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click on a dinosaur below to learn more.</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">For</span></span> <span class="token attr-name">each</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token function">dinosaurs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token punctuation">{</span><span class="token punctuation">(</span>dinosaur<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">A</span></span> <span class="token attr-name">href</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>dinosaur<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">}</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>dinosaur<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+            </span><span class="token punctuation">{</span>dinosaur<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token plain-text">
+          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">A</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">For</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-122" class="copyButton" data-copy="// src/pages/Index.tsx
+
+import { createSignal, For, onMount } from &quot;solid-js&quot;;
+import { A } from &quot;@solidjs/router&quot;;
+import type { Dino } from &quot;../types.ts&quot;;
+
+export default function Index() {
+  const [dinosaurs, setDinosaurs] = createSignal<Dino[]>([]);
+
+  onMount(async () => {
+    try {
+      const response = await fetch(&quot;/api/dinosaurs&quot;);
+      const allDinosaurs = (await response.json()) as Dino[];
+      setDinosaurs(allDinosaurs);
+      console.log(&quot;Fetched dinosaurs:&quot;, allDinosaurs);
+    } catch (error) {
+      console.error(&quot;Failed to fetch dinosaurs:&quot;, error);
+    }
+  });
+
+  return (
+    <main id=&quot;content&quot;>
+      <h1>Welcome to the Dinosaur app</h1>
+      <p>Click on a dinosaur below to learn more.</p>
+      <For each={dinosaurs()}>
+        {(dinosaur) => (
+          <A href={`/${dinosaur.name.toLowerCase()}`} class=&quot;dinosaur&quot;>
+            {dinosaur.name}
+          </A>
+        )}
+      </For>
+    </main>

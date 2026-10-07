@@ -1,0 +1,374 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#build-triggers" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Build triggers </a></li><li class="leading-tight text-balance"><a href="#build-stages" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Build stages </a></li><li class="leading-tight text-balance"><a href="#app-configuration" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">App configuration </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#editing-app-configuration-in-the-dashboard" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Editing app configuration in the dashboard </a></li><li class="leading-tight text-balance"><a href="#editing-app-configuration-from-source-code" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Editing app configuration from source code </a></li></ul></li><li class="leading-tight text-balance"><a href="#build-environment" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Build environment </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/deploy/reference/builds.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fdeploy%2Freference%2Fbuilds.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Builds</h1></div><p>In Deno Deploy, each version of your application code is represented as a
+revision (or build). When deploying from GitHub, revisions generally map
+one-to-one to git commits in your repository.</p>
+<h2 id="build-triggers" tabindex="-1">Build triggers <a class="header-anchor" href="#build-triggers"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Builds can be triggered in three ways:</p>
+<ul>
+<li>
+<p><strong>Automatically from GitHub</strong>: When a new commit is pushed to a GitHub
+repository linked to your app.</p>
+</li>
+<li>
+<p><strong>Manually from the CLI</strong>: Using the <code>deno deploy</code> command.</p>
+</li>
+<li>
+<p><strong>Manually from the UI</strong>: Using the "Deploy Default Branch" button on the
+builds page, which deploys the default git branch (usually <code>main</code>). The
+dropdown menu lets you select a different branch.</p>
+</li>
+</ul>
+<h2 id="build-stages" tabindex="-1">Build stages <a class="header-anchor" href="#build-stages"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>A revision goes through these stages before becoming available:</p>
+<ol>
+<li><strong>Queuing</strong>: The revision waits to be assigned to a builder.</li>
+<li><strong>Preparing</strong>: A builder downloads the source code and restores any available
+build caches.</li>
+<li><strong>Install</strong>: The install command executes (if specified), typically
+downloading dependencies.</li>
+<li><strong>Build</strong>: The build command executes (if specified), creating a build
+artifact that is uploaded to the runtime infrastructure.</li>
+<li><strong>Deploy</strong>: The revision is prepared for deployment into each timeline. For
+each timeline, the following occurs:
+<ol>
+<li><strong>Create database</strong>: If the application has an attached database, ensure
+one exists for this timeline (creating it if necessary).</li>
+<li><strong>Pre-deploy command</strong>: Any pre-deploy command configured for the
+application executes, typically for tasks like database migrations. The
+command receives the timeline it is preparing in the
+<a href="/deploy/reference/env_vars_and_contexts/"><code>DENO_TIMELINE</code> environment variable</a>,
+so migrations can target the correct environment.</li>
+<li><strong>Warmup</strong>: Only in the "Preview" timeline, the application is started to
+ensure it boots correctly.</li>
+<li><strong>Routing</strong>: Roll out the new revision to the URLs associated with this
+timeline.</li>
+</ol>
+</li>
+</ol>
+<p>If any step fails, the build enters a "Failed" state and does not receive
+traffic.</p>
+<p>Build logs are streamed live to the dashboard during the build process and
+remain available on the build page after completion.</p>
+<p>Build caching speeds up builds by reusing files that haven't changed between
+builds. This happens automatically for framework presets and the <code>DENO_DIR</code>
+dependency cache.</p>
+<p>You can cancel a running build using the "Cancel" button in the top-right corner
+of the build page. Builds automatically time out based on application
+configuration. By default, builds time out after 5 minutes, but this can be
+increased for users on the Pro plan.</p>
+<h2 id="app-configuration" tabindex="-1">App configuration <a class="header-anchor" href="#app-configuration"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>App configuration defines how to convert source code into a deployable artifact.</p>
+<p>There are two places you can set app configuration:</p>
+<ul>
+<li><strong>In source code</strong>: Using a <code>deno.json</code> or <code>deno.jsonc</code> file in the
+application directory.</li>
+<li><strong>In the Deno Deploy dashboard</strong>: Using the app configuration settings.</li>
+</ul>
+<p>If you specify both options, settings in the source code take precedence over
+those in the dashboard. You will be unable to edit any of the app configuration
+values in the dashboard if the most recent successful build used configuration
+from source code.</p>
+<p>The application directory must be configured through the dashboard. This setting
+is not configurable from source code, as it determines where to find the source
+code itself.</p>
+<h3 id="editing-app-configuration-in-the-dashboard" tabindex="-1">Editing app configuration in the dashboard <a class="header-anchor" href="#editing-app-configuration-in-the-dashboard"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can modify app configuration in three places:</p>
+<ul>
+<li>During app creation by clicking "Edit app config"</li>
+<li>In app settings by clicking "Edit" in the app configuration section</li>
+<li>In the retry drawer on a failed build's page</li>
+</ul>
+<p>When creating an app, app configuration may be automatically detected from your
+repository if you're using a recognized framework or common build setup.</p>
+<h4 id="configuration-options" tabindex="-1">Configuration options <a class="header-anchor" href="#configuration-options"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ul>
+<li>
+<p><strong>App directory</strong>: The directory within the repository to use as the
+application root. Useful for monorepos. Defaults to the repository root.</p>
+</li>
+<li>
+<p><strong>Framework preset</strong>: Optimized configuration for supported frameworks like
+Next.js or Fresh. <a href="/deploy/reference/frameworks/">Learn more about framework integrations</a>.</p>
+</li>
+<li>
+<p><strong>Install command</strong>: Shell command for installing dependencies, such as
+<code>npm install</code> or <code>deno install</code>.</p>
+</li>
+<li>
+<p><strong>Build command</strong>: Shell command for building the project, often a task from
+<code>package.json</code> or <code>deno.json</code>, such as <code>deno task build</code> or <code>npm run build</code>.</p>
+</li>
+<li>
+<p><strong>Pre-deploy command</strong>: Shell command that runs after the build is complete
+but before deployment, typically for tasks like database migrations.</p>
+</li>
+<li>
+<p><strong>Runtime configuration</strong>: Determines how the application serves traffic:</p>
+<ul>
+<li><strong>Dynamic</strong>: For applications that respond to requests using a server (API
+servers, server-rendered websites, etc.)
+<ul>
+<li><strong>Entrypoint</strong>: The JavaScript or TypeScript file to execute</li>
+<li><strong>Arguments</strong> (optional): Command-line arguments passed to the
+application, after the entrypoint. These are not flags for the Deno
+runtime: runtime flags such as <code>--unstable-*</code> cannot be passed, since the
+runtime always runs with a fixed set of flags. See the
+<a href="/deploy/reference/runtime/">runtime reference</a> for details.</li>
+<li><strong>Runtime working directory</strong> (optional): The working directory for the
+application at runtime</li>
+<li><strong>Runtime memory limit</strong> (optional): The maximum amount of memory the
+application can use at runtime. Defaults to 768 MB, can be increased to 4
+GB on the Pro plan.</li>
+</ul>
+</li>
+<li><strong>Static</strong>: For static websites serving pre-rendered content
+<ul>
+<li><strong>Directory</strong>: Folder containing static assets (e.g., <code>dist</code>, <code>.output</code>)</li>
+<li><strong>Single page app mode</strong> (optional): Serves <code>index.html</code> for paths that
+don't match static files instead of returning 404 errors</li>
+</ul>
+</li>
+<li><strong>Automatic</strong>: When using a framework preset, the runtime configuration is
+set automatically.
+<ul>
+<li><strong>Runtime memory limit</strong> (optional): The maximum amount of memory the
+application can use at runtime. Defaults to 768 MB, can be increased to 4
+GB on the Pro plan.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Build timeout</strong>: Maximum time allowed for the build process. Defaults to 5
+minutes, can be increased to 30 minutes on the Pro plan. For apps configured
+from <code>deno.json</code>, set it with <code>deploy.buildTimeout</code> instead.</p>
+</li>
+<li>
+<p><strong>Build memory</strong>: Amount of memory allocated to the build process. Defaults to
+3 GB, can be increased to 4 GB on the Pro plan.</p>
+</li>
+</ul>
+<h3 id="editing-app-configuration-from-source-code" tabindex="-1">Editing app configuration from source code <a class="header-anchor" href="#editing-app-configuration-from-source-code"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>To configure your application from source code, add a <code>deno.json</code> or
+<code>deno.jsonc</code> file to the root of your application directory with a <code>deploy</code> key.
+If any of the following app configuration options other than
+<code>deploy.buildTimeout</code> are specified under this key, the entire configuration
+will be sourced from the file instead of the dashboard (any configuration
+specified in the dashboard will be ignored).</p>
+<h4 id="deno.json-options" tabindex="-1"><code>deno.json</code> options <a class="header-anchor" href="#deno.json-options"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ul>
+<li><code>deploy.framework</code> (required unless <code>deploy.runtime</code> is set): The framework
+preset to use, such as <code>nextjs</code> or <code>fresh</code>. Setting this option automatically
+configures defaults for the framework. Available presets are listed in the
+<a href="/deploy/reference/frameworks/">framework integrations docs</a>.</li>
+<li><code>deploy.install</code> (optional): Shell command to install dependencies.</li>
+<li><code>deploy.build</code> (optional): Shell command to build the project.</li>
+<li><code>deploy.predeploy</code> (optional): Shell command to run after the build is
+complete but before deployment, typically for tasks like database migrations.</li>
+<li><code>deploy.buildTimeout</code> (optional): Maximum time allowed for the build process.
+Either a whole number of seconds (<code>600</code>), or a whole number with an <code>s</code>, <code>m</code>
+or <code>h</code> suffix (<code>"90s"</code>, <code>"10m"</code>, <code>"1h"</code>). Defaults to 5 minutes. Any other
+value (such as <code>0</code>, <code>"10"</code> or <code>"1.5m"</code>) causes the whole <code>deploy</code> section to
+be ignored. A value above your plan's maximum (5 minutes on the Free plan, 30
+minutes on the Pro plan) is capped to that maximum, and a value below 1 minute
+is raised to 1 minute. Because the dashboard setting is ignored for apps
+configured from <code>deno.json</code>, this is the only way to change their build
+timeout. On its own, this option does not move the app configuration into
+<code>deno.json</code>: it only takes effect together with at least one of the other
+options in this list.</li>
+<li><code>deploy.runtime</code> (required unless <code>deploy.framework</code> is set): Configuration
+for how the app serves traffic. The app can either be static or dynamic, as
+defined below:
+<ul>
+<li>For dynamic apps:
+<ul>
+<li><code>deploy.runtime.type</code>: Must be set to <code>"dynamic"</code>, or omitted (dynamic is
+the default).</li>
+<li><code>deploy.runtime.entrypoint</code>: The JavaScript or TypeScript file to execute.</li>
+<li><code>deploy.runtime.args</code> (optional): Command-line arguments passed to the
+application, after the entrypoint. These are not flags for the Deno
+runtime; runtime flags such as <code>--unstable-*</code> cannot be passed. See the
+<a href="/deploy/reference/runtime/">runtime reference</a>.</li>
+<li><code>deploy.runtime.cwd</code> (optional): The working directory for the application
+at runtime.</li>
+<li><code>deploy.runtime.memoryLimit</code> (optional): The maximum amount of memory the
+application can use at runtime, in MB. Defaults to 768 MB, can be
+increased to 4 GB on the Pro plan. The earlier spelling <code>memory_limit</code> is
+still accepted but deprecated.</li>
+</ul>
+</li>
+<li>For static apps:
+<ul>
+<li><code>deploy.runtime.type</code>: Must be set to <code>"static"</code>.</li>
+<li><code>deploy.runtime.cwd</code>: Folder containing static assets (e.g., <code>dist</code>,
+<code>.output</code>).</li>
+<li><code>deploy.runtime.spa</code> (optional): If <code>true</code>, serves <code>index.html</code> for paths
+that don't match static files instead of returning 404 errors.</li>
+</ul>
+</li>
+<li>For apps using a framework preset:
+<ul>
+<li><code>deploy.runtime.memoryLimit</code> (optional): The maximum amount of memory the
+application can use at runtime, in MB. Defaults to 768 MB, can be
+increased to 4 GB on the Pro plan. The earlier spelling <code>memory_limit</code> is
+still accepted but deprecated.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="examples" tabindex="-1">Examples <a class="header-anchor" href="#examples"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p><strong>Example dynamic app configuration from <code>deno.json</code>:</strong></p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"deploy"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"install"</span><span class="token operator">:</span> <span class="token string">"npm install"</span><span class="token punctuation">,</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"npm run build"</span><span class="token punctuation">,</span>
+    <span class="token property">"predeploy"</span><span class="token operator">:</span> <span class="token string">"deno run --allow-net --allow-env migrate.ts"</span><span class="token punctuation">,</span>
+    <span class="token property">"runtime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"dynamic"</span><span class="token punctuation">,</span>
+      <span class="token property">"entrypoint"</span><span class="token operator">:</span> <span class="token string">"./app/server.js"</span><span class="token punctuation">,</span>
+      <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"--port"</span><span class="token punctuation">,</span> <span class="token string">"8080"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"cwd"</span><span class="token operator">:</span> <span class="token string">"./app"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-364" class="copyButton" data-copy="{
+  &quot;deploy&quot;: {
+    &quot;install&quot;: &quot;npm install&quot;,
+    &quot;build&quot;: &quot;npm run build&quot;,
+    &quot;predeploy&quot;: &quot;deno run --allow-net --allow-env migrate.ts&quot;,
+    &quot;runtime&quot;: {
+      &quot;type&quot;: &quot;dynamic&quot;,
+      &quot;entrypoint&quot;: &quot;./app/server.js&quot;,
+      &quot;args&quot;: [&quot;--port&quot;, &quot;8080&quot;],
+      &quot;cwd&quot;: &quot;./app&quot;
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p><strong>Example static app configuration from <code>deno.jsonc</code>:</strong></p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"deploy"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"install"</span><span class="token operator">:</span> <span class="token string">"npm install"</span><span class="token punctuation">,</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"npm run build"</span><span class="token punctuation">,</span>
+    <span class="token property">"runtime"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"static"</span><span class="token punctuation">,</span>
+      <span class="token property">"cwd"</span><span class="token operator">:</span> <span class="token string">"./public"</span><span class="token punctuation">,</span>
+      <span class="token property">"spa"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-368" class="copyButton" data-copy="{
+  &quot;deploy&quot;: {
+    &quot;install&quot;: &quot;npm install&quot;,
+    &quot;build&quot;: &quot;npm run build&quot;,
+    &quot;runtime&quot;: {
+      &quot;type&quot;: &quot;static&quot;,
+      &quot;cwd&quot;: &quot;./public&quot;,
+      &quot;spa&quot;: true
+    }
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p><strong>Example framework preset configuration with Next.js from <code>deno.json</code>:</strong></p>
+<div class="relative"><pre><code class="highlight notranslate language-jsonc"><span class="token punctuation">{</span>
+  <span class="token property">"deploy"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"framework"</span><span class="token operator">:</span> <span class="token string">"nextjs"</span><span class="token punctuation">,</span>
+    <span class="token property">"install"</span><span class="token operator">:</span> <span class="token string">"npm install"</span><span class="token punctuation">,</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"npm run build"</span><span class="token punctuation">,</span>
+    <span class="token property">"buildTimeout"</span><span class="token operator">:</span> <span class="token string">"15m"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-372" class="copyButton" data-copy="{
+  &quot;deploy&quot;: {
+    &quot;framework&quot;: &quot;nextjs&quot;,
+    &quot;install&quot;: &quot;npm install&quot;,
+    &quot;build&quot;: &quot;npm run build&quot;,
+    &quot;buildTimeout&quot;: &quot;15m&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="build-environment" tabindex="-1">Build environment <a class="header-anchor" href="#build-environment"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The build environment runs on Linux using either x64 or ARM64 architecture.
+Available tools include:</p>
+<ul>
+<li><code>deno</code> (same version as at runtime)</li>
+<li><code>node</code></li>
+<li><code>npm</code></li>
+<li><code>npx</code></li>
+<li><code>yarn</code> (v1)</li>
+<li><code>pnpm</code></li>
+<li><code>git</code></li>
+<li><code>tar</code></li>
+<li><code>gzip</code></li>
+</ul>
+<p>
+</p><div class="admonition info">
+  <div class="title">Info</div>
+
+<p></p>
+<p>All JavaScript inside of the builder is executed using Deno.</p>
+<p>The <code>node</code> command is actually a shim that translates Node.js invocations to
+<code>deno run</code>. Similarly, <code>npm</code>, <code>npx</code>, <code>yarn</code>, and <code>pnpm</code> run through Deno rather
+than Node.js.</p>
+<p>
+</p></div>
+<p></p>
+<p>Environment variables configured for the "Build" context are available during
+builds, but variables from "Production" or "Development" contexts are not.
+<a href="/deploy/reference/env_vars_and_contexts/">Learn more about environment variables</a>.</p>
+<p>The following environment variables are additionally always available during
+builds:</p>
+<ul>
+<li><code>CI</code>: <code>true</code></li>
+<li><code>DENO_DEPLOY</code>: <code>true</code> - Indicates that the code is running in Deno Deploy.</li>
+<li><code>DENO_DEPLOY_ORG_ID</code>: The ID of the organization that owns the application.
+This is a UUID.</li>
+<li><code>DENO_DEPLOY_ORG_SLUG</code>: The slug of the organization that owns the
+application. This is the human-readable identifier used in URLs that was set
+when creating the organization.</li>
+<li><code>DENO_DEPLOY_APP_ID</code>: The ID of the application. This is a UUID.</li>
+<li><code>DENO_DEPLOY_APP_SLUG</code>: The slug of the application. This is the
+human-readable identifier used in URLs that was set when creating the
+application, or changed later in the application settings.</li>
+<li><code>DENO_DEPLOY_BUILD_ID</code>: The ID of the currently running build.</li>
+</ul>
+<p>Builders have the following resources available during the build process:</p>
+<ul>
+<li>2 vCPUs</li>
+<li>3 GB of RAM (can be increased to 4 GB on Pro plan)</li>
+<li>8 GB of storage</li>
+</ul>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-10-01T00:00:00.000Z">October 1, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/deploy/reference/apps/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Apps</span></a><a href="/deploy/reference/env_vars_and_contexts/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Env Vars and Contexts →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/deploy/reference/builds.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

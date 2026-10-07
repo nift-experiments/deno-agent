@@ -1,0 +1,700 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#prerequisites" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Prerequisites </a></li><li class="leading-tight text-balance"><a href="#create-a-basic-api-application" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Create a basic API application </a></li><li class="leading-tight text-balance"><a href="#add-opentelemetry-instrumentation" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Add OpenTelemetry instrumentation </a></li><li class="leading-tight text-balance"><a href="#create-a-github-repository" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Create a GitHub repository </a></li><li class="leading-tight text-balance"><a href="#deploy-to-deno-deploy" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deploy to Deno Deploy </a></li><li class="leading-tight text-balance"><a href="#generate-sample-traffic" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Generate sample traffic </a></li><li class="leading-tight text-balance"><a href="#explore-opentelemetry-traces-and-metrics" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Explore OpenTelemetry traces and metrics </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">OpenTelemetry</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/examples/tutorials/deploy_otel.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fexamples%2Ftutorials%2Fdeploy_otel.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Monitor your app with OpenTelemetry and Deno Deploy</h1></div><p>Deno Deploy includes built-in OpenTelemetry support that automatically captures
+traces for HTTP requests, database queries, and other operations. This tutorial
+shows how to add custom OpenTelemetry instrumentation to your applications for
+more detailed observability.</p>
+<h2 id="prerequisites" tabindex="-1">Prerequisites <a class="header-anchor" href="#prerequisites"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<ol>
+<li>A <a href="https://github.com">GitHub</a> account</li>
+<li><a href="https://docs.deno.com/runtime/manual/getting_started/installation">Deno installed</a>
+on your local machine</li>
+<li>Access to the <a href="https://console.deno.com/">Deno Deploy account</a></li>
+<li>Basic familiarity with
+<a href="https://opentelemetry.io/docs/concepts/">OpenTelemetry concepts</a></li>
+</ol>
+<h2 id="create-a-basic-api-application" tabindex="-1">Create a basic API application <a class="header-anchor" href="#create-a-basic-api-application"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>First, let's create a simple API server that we'll instrument with
+OpenTelemetry:</p>
+<div><div class="markdownBlockTitle">main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">const</span> dataStore<span class="token operator">:</span> Record<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handler</span><span class="token punctuation">(</span>req<span class="token operator">:</span> Request<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Response<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token constant">URL</span></span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Simulate random latency</span>
+  <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Handle product listing</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">.</span>pathname <span class="token operator">===</span> <span class="token string">"/products"</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">"GET"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>dataStore<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Handle product creation</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">.</span>pathname <span class="token operator">===</span> <span class="token string">"/products"</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">"POST"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> req<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> id <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      dataStore<span class="token punctuation">[</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">;</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> id<span class="token punctuation">,</span> <span class="token operator">...</span>data <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        status<span class="token operator">:</span> <span class="token number">201</span><span class="token punctuation">,</span>
+        headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Handle product retrieval by ID</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">.</span>pathname<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"/products/"</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">"GET"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> id <span class="token operator">=</span> url<span class="token punctuation">.</span>pathname<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> product <span class="token operator">=</span> dataStore<span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>product<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"Product not found"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> status<span class="token operator">:</span> <span class="token number">404</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>product<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Handle root route</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">.</span>pathname <span class="token operator">===</span> <span class="token string">"/"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"Product API - Try /products endpoint"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"Not Found"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> status<span class="token operator">:</span> <span class="token number">404</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"Error handling request:"</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"Internal Server Error"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> status<span class="token operator">:</span> <span class="token number">500</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Server running on http://localhost:8000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span>handler<span class="token punctuation">,</span> <span class="token punctuation">{</span> port<span class="token operator">:</span> <span class="token number">8000</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-34" class="copyButton" data-copy="const dataStore: Record<string, string> = {};
+
+async function handler(req: Request): Promise<Response> {
+  const url = new URL(req.url);
+
+  // Simulate random latency
+  await new Promise((resolve) => setTimeout(resolve, Math.random() * 200));
+
+  try {
+    // Handle product listing
+    if (url.pathname === &quot;/products&quot; &amp;&amp; req.method === &quot;GET&quot;) {
+      return new Response(JSON.stringify(Object.values(dataStore)), {
+        headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+      });
+    }
+
+    // Handle product creation
+    if (url.pathname === &quot;/products&quot; &amp;&amp; req.method === &quot;POST&quot;) {
+      const data = await req.json();
+      const id = crypto.randomUUID();
+      dataStore[id] = data;
+      return new Response(JSON.stringify({ id, ...data }), {
+        status: 201,
+        headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+      });
+    }
+
+    // Handle product retrieval by ID
+    if (url.pathname.startsWith(&quot;/products/&quot;) &amp;&amp; req.method === &quot;GET&quot;) {
+      const id = url.pathname.split(&quot;/&quot;)[2];
+      const product = dataStore[id];
+
+      if (!product) {
+        return new Response(&quot;Product not found&quot;, { status: 404 });
+      }
+
+      return new Response(JSON.stringify(product), {
+        headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+      });
+    }
+
+    // Handle root route
+    if (url.pathname === &quot;/&quot;) {
+      return new Response(&quot;Product API - Try /products endpoint&quot;);
+    }
+
+    return new Response(&quot;Not Found&quot;, { status: 404 });
+  } catch (error) {
+    console.error(&quot;Error handling request:&quot;, error);
+    return new Response(&quot;Internal Server Error&quot;, { status: 500 });
+  }
+}
+
+console.log(&quot;Server running on http://localhost:8000&quot;);
+Deno.serve(handler, { port: 8000 });
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Save this file and run it locally:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --allow-net main.ts
+</code></pre>
+
+      <button id="copy-button-38" class="copyButton" data-copy="deno run --allow-net main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Test the API with curl or a browser to ensure it works:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># List products (empty at first)</span>
+<span class="token function">curl</span> http://localhost:8000/products
+
+<span class="token comment"># Add a product</span>
+<span class="token function">curl</span> <span class="token parameter variable">-X</span> POST http://localhost:8000/products <span class="token punctuation">\</span>
+  <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/json"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">-d</span> <span class="token string">'{"name": "Test Product", "price": 19.99}'</span>
+</code></pre>
+
+      <button id="copy-button-42" class="copyButton" data-copy="# List products (empty at first)
+curl http://localhost:8000/products
+
+# Add a product
+curl -X POST http://localhost:8000/products \
+  -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;name&quot;: &quot;Test Product&quot;, &quot;price&quot;: 19.99}'
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="add-opentelemetry-instrumentation" tabindex="-1">Add OpenTelemetry instrumentation <a class="header-anchor" href="#add-opentelemetry-instrumentation"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Now, let's add custom OpenTelemetry instrumentation to our application. Create a
+new file called <code>instrumented-main.ts</code>:</p>
+<div><div class="markdownBlockTitle">instrumented-main.ts</div><div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> trace <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"npm:@opentelemetry/api@1"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Get the OpenTelemetry tracer</span>
+<span class="token keyword">const</span> tracer <span class="token operator">=</span> trace<span class="token punctuation">.</span><span class="token function">getTracer</span><span class="token punctuation">(</span><span class="token string">"product-api"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> dataStore<span class="token operator">:</span> Record<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token punctuation">,</span> <span class="token builtin">string</span><span class="token operator">&gt;</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Simulate a database operation with custom span</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">queryDatabase</span><span class="token punctuation">(</span>
+  operation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+  data<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">unknown</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token builtin">unknown</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">await</span> tracer<span class="token punctuation">.</span><span class="token function">startActiveSpan</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">database.</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>operation<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>span<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Add attributes to the span for better context</span>
+      span<span class="token punctuation">.</span><span class="token function">setAttributes</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token string-property property">"db.system"</span><span class="token operator">:</span> <span class="token string">"memory-store"</span><span class="token punctuation">,</span>
+        <span class="token string-property property">"db.operation"</span><span class="token operator">:</span> operation<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Simulate database latency</span>
+      <span class="token keyword">const</span> delay <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">;</span>
+      <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Promise</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> delay<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Add latency information to the span</span>
+      span<span class="token punctuation">.</span><span class="token function">setAttributes</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string-property property">"db.latency_ms"</span><span class="token operator">:</span> delay <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>operation <span class="token operator">===</span> <span class="token string">"list"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>dataStore<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>operation <span class="token operator">===</span> <span class="token string">"get"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> dataStore<span class="token punctuation">[</span>data <span class="token keyword">as</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>operation <span class="token operator">===</span> <span class="token string">"insert"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> id <span class="token operator">=</span> crypto<span class="token punctuation">.</span><span class="token function">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        dataStore<span class="token punctuation">[</span>id<span class="token punctuation">]</span> <span class="token operator">=</span> data <span class="token keyword">as</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> id<span class="token punctuation">,</span> data <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Record any errors to the span</span>
+      span<span class="token punctuation">.</span><span class="token function">recordException</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      span<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token punctuation">{</span> code<span class="token operator">:</span> trace<span class="token punctuation">.</span>SpanStatusCode<span class="token punctuation">.</span><span class="token constant">ERROR</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+      <span class="token comment">// End the span when we're done</span>
+      span<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">handler</span><span class="token punctuation">(</span>req<span class="token operator">:</span> Request<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span>Response<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Create a parent span for the entire request</span>
+  <span class="token keyword">return</span> <span class="token keyword">await</span> tracer<span class="token punctuation">.</span><span class="token function">startActiveSpan</span><span class="token punctuation">(</span>
+    <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>req<span class="token punctuation">.</span>method<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">new</span> <span class="token class-name"><span class="token constant">URL</span></span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span>pathname<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token keyword">async</span> <span class="token punctuation">(</span>parentSpan<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token constant">URL</span></span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Add request details as span attributes</span>
+      parentSpan<span class="token punctuation">.</span><span class="token function">setAttributes</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token string-property property">"http.method"</span><span class="token operator">:</span> req<span class="token punctuation">.</span>method<span class="token punctuation">,</span>
+        <span class="token string-property property">"http.url"</span><span class="token operator">:</span> req<span class="token punctuation">.</span>url<span class="token punctuation">,</span>
+        <span class="token string-property property">"http.route"</span><span class="token operator">:</span> url<span class="token punctuation">.</span>pathname<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Handle product listing</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">.</span>pathname <span class="token operator">===</span> <span class="token string">"/products"</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">"GET"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">const</span> products <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">queryDatabase</span><span class="token punctuation">(</span><span class="token string">"list"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>products<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// Handle product creation</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">.</span>pathname <span class="token operator">===</span> <span class="token string">"/products"</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">"POST"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// Create a span for parsing request JSON</span>
+          <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token keyword">await</span> tracer<span class="token punctuation">.</span><span class="token function">startActiveSpan</span><span class="token punctuation">(</span>
+            <span class="token string">"parse.request.body"</span><span class="token punctuation">,</span>
+            <span class="token keyword">async</span> <span class="token punctuation">(</span>span<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+              <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> req<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+              <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                span<span class="token punctuation">.</span><span class="token function">recordException</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                span<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token punctuation">{</span> code<span class="token operator">:</span> trace<span class="token punctuation">.</span>SpanStatusCode<span class="token punctuation">.</span><span class="token constant">ERROR</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">throw</span> error<span class="token punctuation">;</span>
+              <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+                span<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+          <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">queryDatabase</span><span class="token punctuation">(</span><span class="token string">"insert"</span><span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            status<span class="token operator">:</span> <span class="token number">201</span><span class="token punctuation">,</span>
+            headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// Handle product retrieval by ID</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">.</span>pathname<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"/products/"</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">"GET"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">const</span> id <span class="token operator">=</span> url<span class="token punctuation">.</span>pathname<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+          parentSpan<span class="token punctuation">.</span><span class="token function">setAttributes</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string-property property">"product.id"</span><span class="token operator">:</span> id <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+          <span class="token keyword">const</span> product <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">queryDatabase</span><span class="token punctuation">(</span><span class="token string">"get"</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>product<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            parentSpan<span class="token punctuation">.</span><span class="token function">setAttributes</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+              <span class="token string-property property">"error"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+              <span class="token string-property property">"error.type"</span><span class="token operator">:</span> <span class="token string">"not_found"</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"Product not found"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> status<span class="token operator">:</span> <span class="token number">404</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+
+          <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>product<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// Handle root route</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>url<span class="token punctuation">.</span>pathname <span class="token operator">===</span> <span class="token string">"/"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"Product API - Try /products endpoint"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        parentSpan<span class="token punctuation">.</span><span class="token function">setAttributes</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string-property property">"error"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string-property property">"error.type"</span><span class="token operator">:</span> <span class="token string">"not_found"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"Not Found"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> status<span class="token operator">:</span> <span class="token number">404</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"Error handling request:"</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// Record the error in the span</span>
+        parentSpan<span class="token punctuation">.</span><span class="token function">recordException</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        parentSpan<span class="token punctuation">.</span><span class="token function">setAttributes</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          <span class="token string-property property">"error"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token string-property property">"error.type"</span><span class="token operator">:</span> error<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+          <span class="token string-property property">"error.message"</span><span class="token operator">:</span> error<span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        parentSpan<span class="token punctuation">.</span><span class="token function">setStatus</span><span class="token punctuation">(</span><span class="token punctuation">{</span> code<span class="token operator">:</span> trace<span class="token punctuation">.</span>SpanStatusCode<span class="token punctuation">.</span><span class="token constant">ERROR</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token string">"Internal Server Error"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> status<span class="token operator">:</span> <span class="token number">500</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+        <span class="token comment">// End the parent span when we're done</span>
+        parentSpan<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
+  <span class="token string">"Server running with OpenTelemetry instrumentation on http://localhost:8000"</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span>handler<span class="token punctuation">,</span> <span class="token punctuation">{</span> port<span class="token operator">:</span> <span class="token number">8000</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-49" class="copyButton" data-copy="import { trace } from &quot;npm:@opentelemetry/api@1&quot;;
+
+// Get the OpenTelemetry tracer
+const tracer = trace.getTracer(&quot;product-api&quot;);
+
+const dataStore: Record<string, string> = {};
+
+// Simulate a database operation with custom span
+async function queryDatabase(
+  operation: string,
+  data?: unknown,
+): Promise<unknown> {
+  return await tracer.startActiveSpan(`database.${operation}`, async (span) => {
+    try {
+      // Add attributes to the span for better context
+      span.setAttributes({
+        &quot;db.system&quot;: &quot;memory-store&quot;,
+        &quot;db.operation&quot;: operation,
+      });
+
+      // Simulate database latency
+      const delay = Math.random() * 100;
+      await new Promise((resolve) => setTimeout(resolve, delay));
+
+      // Add latency information to the span
+      span.setAttributes({ &quot;db.latency_ms&quot;: delay });
+
+      if (operation === &quot;list&quot;) {
+        return Object.values(dataStore);
+      } else if (operation === &quot;get&quot;) {
+        return dataStore[data as string];
+      } else if (operation === &quot;insert&quot;) {
+        const id = crypto.randomUUID();
+        dataStore[id] = data as string;
+        return { id, data };
+      }
+
+      return null;
+    } catch (error) {
+      // Record any errors to the span
+      span.recordException(error);
+      span.setStatus({ code: trace.SpanStatusCode.ERROR });
+      throw error;
+    } finally {
+      // End the span when we're done
+      span.end();
+    }
+  });
+}
+
+async function handler(req: Request): Promise<Response> {
+  // Create a parent span for the entire request
+  return await tracer.startActiveSpan(
+    `${req.method} ${new URL(req.url).pathname}`,
+    async (parentSpan) => {
+      const url = new URL(req.url);
+
+      // Add request details as span attributes
+      parentSpan.setAttributes({
+        &quot;http.method&quot;: req.method,
+        &quot;http.url&quot;: req.url,
+        &quot;http.route&quot;: url.pathname,
+      });
+
+      try {
+        // Handle product listing
+        if (url.pathname === &quot;/products&quot; &amp;&amp; req.method === &quot;GET&quot;) {
+          const products = await queryDatabase(&quot;list&quot;);
+          return new Response(JSON.stringify(products), {
+            headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+          });
+        }
+
+        // Handle product creation
+        if (url.pathname === &quot;/products&quot; &amp;&amp; req.method === &quot;POST&quot;) {
+          // Create a span for parsing request JSON
+          const data = await tracer.startActiveSpan(
+            &quot;parse.request.body&quot;,
+            async (span) => {
+              try {
+                const result = await req.json();
+                return result;
+              } catch (error) {
+                span.recordException(error);
+                span.setStatus({ code: trace.SpanStatusCode.ERROR });
+                throw error;
+              } finally {
+                span.end();
+              }
+            },
+          );
+
+          const result = await queryDatabase(&quot;insert&quot;, data);
+          return new Response(JSON.stringify(result), {
+            status: 201,
+            headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+          });
+        }
+
+        // Handle product retrieval by ID
+        if (url.pathname.startsWith(&quot;/products/&quot;) &amp;&amp; req.method === &quot;GET&quot;) {
+          const id = url.pathname.split(&quot;/&quot;)[2];
+          parentSpan.setAttributes({ &quot;product.id&quot;: id });
+
+          const product = await queryDatabase(&quot;get&quot;, id);
+
+          if (!product) {
+            parentSpan.setAttributes({
+              &quot;error&quot;: true,
+              &quot;error.type&quot;: &quot;not_found&quot;,
+            });
+            return new Response(&quot;Product not found&quot;, { status: 404 });
+          }
+
+          return new Response(JSON.stringify(product), {
+            headers: { &quot;Content-Type&quot;: &quot;application/json&quot; },
+          });
+        }
+
+        // Handle root route
+        if (url.pathname === &quot;/&quot;) {
+          return new Response(&quot;Product API - Try /products endpoint&quot;);
+        }
+
+        parentSpan.setAttributes({ &quot;error&quot;: true, &quot;error.type&quot;: &quot;not_found&quot; });
+        return new Response(&quot;Not Found&quot;, { status: 404 });
+      } catch (error) {
+        console.error(&quot;Error handling request:&quot;, error);
+        // Record the error in the span
+        parentSpan.recordException(error);
+        parentSpan.setAttributes({
+          &quot;error&quot;: true,
+          &quot;error.type&quot;: error.name,
+          &quot;error.message&quot;: error.message,
+        });
+        parentSpan.setStatus({ code: trace.SpanStatusCode.ERROR });
+
+        return new Response(&quot;Internal Server Error&quot;, { status: 500 });
+      } finally {
+        // End the parent span when we're done
+        parentSpan.end();
+      }
+    },
+  );
+}
+
+console.log(
+  &quot;Server running with OpenTelemetry instrumentation on http://localhost:8000&quot;,
+);
+Deno.serve(handler, { port: 8000 });
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Run the instrumented version locally:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run --allow-net instrumented-main.ts
+</code></pre>
+
+      <button id="copy-button-53" class="copyButton" data-copy="deno run --allow-net instrumented-main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Test the API again with curl to generate some traces.</p>
+<h2 id="create-a-github-repository" tabindex="-1">Create a GitHub repository <a class="header-anchor" href="#create-a-github-repository"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<ol>
+<li>
+<p>Go to <a href="https://github.com">GitHub</a> and create a new repository.</p>
+</li>
+<li>
+<p>Initialize your local directory as a Git repository:</p>
+</li>
+</ol>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token function">git</span> init
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Add OpenTelemetry instrumented API"</span>
+</code></pre>
+
+      <button id="copy-button-72" class="copyButton" data-copy="git init
+git add .
+git commit -m &quot;Add OpenTelemetry instrumented API&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><ol start="3">
+<li>Add your GitHub repository as a remote and push your code:</li>
+</ol>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token function">git</span> remote <span class="token function">add</span> origin https://github.com/your-username/otel-demo-app.git
+<span class="token function">git</span> branch <span class="token parameter variable">-M</span> main
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin main
+</code></pre>
+
+      <button id="copy-button-80" class="copyButton" data-copy="git remote add origin https://github.com/your-username/otel-demo-app.git
+git branch -M main
+git push -u origin main
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="deploy-to-deno-deploy" tabindex="-1">Deploy to Deno Deploy <a class="header-anchor" href="#deploy-to-deno-deploy"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<ol>
+<li>
+<p>Navigate to <a href="https://console.deno.com">console.deno.com</a></p>
+</li>
+<li>
+<p>Select your organization or create a new one if needed</p>
+</li>
+<li>
+<p>Click "+ New App"</p>
+</li>
+<li>
+<p>Select the GitHub repository you created earlier</p>
+</li>
+<li>
+<p>Configure the build settings:</p>
+<ul>
+<li>Framework preset: No preset</li>
+<li>Runtime configuration: Dynamic</li>
+<li>Entrypoint: <code>instrumented-main.ts</code></li>
+</ul>
+</li>
+<li>
+<p>Click "Create App" to start the deployment process</p>
+</li>
+</ol>
+<h2 id="generate-sample-traffic" tabindex="-1">Generate sample traffic <a class="header-anchor" href="#generate-sample-traffic"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>To generate sample traces and metrics, let's send some traffic to your deployed
+application:</p>
+<ol>
+<li>
+<p>Copy your deployment URL from the Deno Deploy dashboard</p>
+</li>
+<li>
+<p>Send several requests to different endpoints:</p>
+</li>
+</ol>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Store your app URL in a variable</span>
+<span class="token assign-left variable">APP_URL</span><span class="token operator">=</span>https://your-app-name.your-org-name.deno.net
+
+<span class="token comment"># Get the root route</span>
+<span class="token function">curl</span> <span class="token variable">$APP_URL</span>/
+
+<span class="token comment"># List products (empty at first)</span>
+<span class="token function">curl</span> <span class="token variable">$APP_URL</span>/products
+
+<span class="token comment"># Add some products</span>
+<span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token variable">$APP_URL</span>/products <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/json"</span> <span class="token parameter variable">-d</span> <span class="token string">'{"name": "Laptop", "price": 999.99}'</span>
+<span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token variable">$APP_URL</span>/products <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/json"</span> <span class="token parameter variable">-d</span> <span class="token string">'{"name": "Headphones", "price": 129.99}'</span>
+<span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token variable">$APP_URL</span>/products <span class="token parameter variable">-H</span> <span class="token string">"Content-Type: application/json"</span> <span class="token parameter variable">-d</span> <span class="token string">'{"name": "Mouse", "price": 59.99}'</span>
+
+<span class="token comment"># List products again</span>
+<span class="token function">curl</span> <span class="token variable">$APP_URL</span>/products
+
+<span class="token comment"># Try to access a non-existent product (will generate an error span)</span>
+<span class="token function">curl</span> <span class="token variable">$APP_URL</span>/products/nonexistent-id
+</code></pre>
+
+      <button id="copy-button-151" class="copyButton" data-copy="# Store your app URL in a variable
+APP_URL=https://your-app-name.your-org-name.deno.net
+
+# Get the root route
+curl $APP_URL/
+
+# List products (empty at first)
+curl $APP_URL/products
+
+# Add some products
+curl -X POST $APP_URL/products -H &quot;Content-Type: application/json&quot; -d '{&quot;name&quot;: &quot;Laptop&quot;, &quot;price&quot;: 999.99}'
+curl -X POST $APP_URL/products -H &quot;Content-Type: application/json&quot; -d '{&quot;name&quot;: &quot;Headphones&quot;, &quot;price&quot;: 129.99}'
+curl -X POST $APP_URL/products -H &quot;Content-Type: application/json&quot; -d '{&quot;name&quot;: &quot;Mouse&quot;, &quot;price&quot;: 59.99}'
+
+# List products again
+curl $APP_URL/products
+
+# Try to access a non-existent product (will generate an error span)
+curl $APP_URL/products/nonexistent-id
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="explore-opentelemetry-traces-and-metrics" tabindex="-1">Explore OpenTelemetry traces and metrics <a class="header-anchor" href="#explore-opentelemetry-traces-and-metrics"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Now let's explore the observability data collected by Deno Deploy:</p>
+<ol>
+<li>
+<p>From your application dashboard, click "Traces" in the sidebar</p>
+<ul>
+<li>You'll see a list of traces for each request to your application</li>
+<li>You can filter traces by HTTP method or status code using the search bar</li>
+</ul>
+</li>
+<li>
+<p>Select one of your <code>/products</code> POST traces to see detailed information:</p>
+<ul>
+<li>The parent span for the entire request</li>
+<li>Child spans for database operations</li>
+<li>The span for parsing the request body</li>
+</ul>
+<p><img src="/examples/tutorials/images/otel_trace.png" alt="Trace waterfall view"></p>
+</li>
+<li>
+<p>Click on individual spans to see their details:</p>
+<ul>
+<li>Duration and timing information</li>
+<li>Attributes you set like <code>db.operation</code> and <code>db.latency_ms</code></li>
+<li>Any recorded exceptions</li>
+</ul>
+</li>
+<li>
+<p>Click "Logs" in the sidebar to see console output with trace context:</p>
+<ul>
+<li>Notice how logs emitted during a traced operation are automatically linked
+to the trace</li>
+<li>Click "View trace" on a log line to see the associated trace</li>
+</ul>
+</li>
+<li>
+<p>Click "Metrics" to view application performance metrics:</p>
+<ul>
+<li>HTTP request counts by endpoint</li>
+<li>Error rates</li>
+<li>Response time distributions</li>
+</ul>
+</li>
+</ol>
+<p>🦕 The automatic instrumentation in Deno Deploy combined with your custom
+instrumentation provides comprehensive visibility into your application's
+performance and behavior.</p>
+<p>For more information about OpenTelemetry in Deno, check out these resources:</p>
+<ul>
+<li><a href="/runtime/fundamentals/open_telemetry/">OpenTelemetry in Deno documentation</a></li>
+<li><a href="/deploy/reference/observability/">Deno Deploy Observability reference</a></li>
+<li><a href="https://opentelemetry.io/docs/">OpenTelemetry official documentation</a></li>
+</ul>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2025-09-29T00:00:00.000Z">September 29, 2025</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/examples/hyperdx_tutorial/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Export telemetry to Hyperdx</span></a><a href="/examples/otel_span_propagation_tutorial/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Span propagation →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/examples/tutorials/deploy_otel.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

@@ -1,0 +1,609 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#creating-a-database-instance" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Creating a database instance </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#linking-an-external-database" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Linking an external database </a></li><li class="leading-tight text-balance"><a href="#provisioning-a-managed-database" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Provisioning a managed database </a></li></ul></li><li class="leading-tight text-balance"><a href="#linking-databases-to-your-apps" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Linking databases to your apps </a></li><li class="leading-tight text-balance"><a href="#connecting-to-databases-from-your-code" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Connecting to databases from your code </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#deno-kv" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deno KV </a></li><li class="leading-tight text-balance"><a href="#postgresql" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">PostgreSQL </a></li></ul></li><li class="leading-tight text-balance"><a href="#running-migrations-and-seeding-data" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Running migrations and seeding data </a></li><li class="leading-tight text-balance"><a href="#local-development" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Local Development </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#using-a-local-database-instance" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Using a local database instance </a></li><li class="leading-tight text-balance"><a href="#using-a-hosted-isolated-local-development-instance" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Using a hosted isolated local development instance </a></li></ul></li><li class="leading-tight text-balance"><a href="#database-management" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Database management </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#organization-level" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Organization level </a></li><li class="leading-tight text-balance"><a href="#app-level" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">App level </a></li></ul></li><li class="leading-tight text-balance"><a href="#database-explorer" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Database explorer </a></li><li class="leading-tight text-balance"><a href="#prisma-postgres-instances-and-claiming" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Prisma Postgres instances and claiming </a></li><li class="leading-tight text-balance"><a href="#limits" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Limits </a></li><li class="leading-tight text-balance"><a href="#frequently-asked-questions" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Frequently Asked Questions </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/deploy/reference/databases.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fdeploy%2Freference%2Fdatabases.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Databases</h1></div><p>Deno Deploy's databases feature enables your applications to easily connect to a
+variety of databases, enabling seamless state management in your apps.
+Currently, PostgreSQL and Deno KV are supported.</p>
+<p>After creating or linking a database instance, Deno Deploy automatically creates
+isolated (logical) databases inside of that instance for each deployment
+environment, including production, Git branches, and preview timelines. Your
+application code connects to the appropriate database based on the current
+environment, using automatically injected environment variables. This ensures
+that your data remains consistent and isolated across different stages of
+development and deployment.</p>
+<p>Deno Deploy currently supports two database engines:</p>
+<ul>
+<li><strong>PostgreSQL</strong> — Connect an existing externally hosted PostgreSQL instance, or
+provision a managed PostgreSQL database through Deno Deploy, hosted by Prisma.</li>
+<li><strong>Deno KV</strong> — Provision a fast, globally distributed key‑value store built for
+the edge.</li>
+</ul>
+<h2 id="creating-a-database-instance" tabindex="-1">Creating a database instance <a class="header-anchor" href="#creating-a-database-instance"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>There are two ways to add a database instance to your Deno Deploy organization:</p>
+<ul>
+<li><strong>Link Database</strong>: Connect an existing external database instance (for
+example, a PostgreSQL server you run or a managed instance from a cloud
+provider).</li>
+<li><strong>Provision Database</strong>: Create and attach a managed data store from Deno
+Deploy (Deno KV or Prisma Postgres).</li>
+</ul>
+<h3 id="linking-an-external-database" tabindex="-1">Linking an external database <a class="header-anchor" href="#linking-an-external-database"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>To link an existing external database instance you can either:</p>
+<ul>
+<li>go to the "Databases" page in your organization dashboard and click the "Link
+Database" button,</li>
+<li>go to the "Databases" tab in your app settings, click on "Attach Database",
+then select "Link Database" in database instance selection dropdown.</li>
+</ul>
+<p>From here, enter the connection details for your external database instance. You
+will need to provide:</p>
+<ul>
+<li><strong>Engine</strong>: Select the database engine (currently only PostgreSQL is
+supported).</li>
+<li><strong>Connection Details</strong>: Enter the hostname, port, username, password, and
+optionally a CA certificate if required by your provider. You can also paste a
+connection string to automatically populate these fields.</li>
+<li><strong>Slug</strong>: Give your database instance a descriptive name to identify it in the
+dashboard. This name is only used within Deno Deploy and does not affect your
+actual database server.</li>
+</ul>
+<p>Once you've filled out the form, click "Test Connection" to verify your
+settings. If the connection is successful, click "Save" to add the database
+instance to your organization.</p>
+<p>If the connection fails, double-check your connection details and ensure that
+your database server is accessible from Deno Deploy's network. We are unable to
+provide a list of IP addresses for Deno Deploy at this time, so please ensure
+your database server allows connections from all IPs. If you continue to have
+trouble, you can <a href="/deploy/support/">contact support</a> for assistance.</p>
+<p>
+</p><div class="admonition info">
+  <div class="title">Info</div>
+
+<p></p>
+<p>Because Deno Deploy creates isolated databases for each environment (production,
+Git branches, and previews), ensure that the database user you provide has
+sufficient privileges to create new databases on the server.</p>
+<p>
+</p></div>
+<p></p>
+<h4 id="tls%2Fssl-configuration" tabindex="-1">TLS/SSL configuration <a class="header-anchor" href="#tls%2Fssl-configuration"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>When linking an external database, Deno Deploy supports secure SSL/TLS
+connections. Depending on your database provider, you may need to upload a CA
+certificate to verify the server's identity.</p>
+<p>If your database provider uses a trusted root Certificate Authority (CA), such
+as Let's Encrypt, no certificate upload is needed and SSL connections work
+automatically.</p>
+<p>For users of AWS RDS, we will automatically detect RDS instances and provide an
+option to "Use AWS Certificate Bundle" to configure the necessary certificates
+without manual downloads.</p>
+<p>For Google Cloud SQL users, you will need to download the Google Cloud SQL CA
+certificate from your Google Cloud Console and upload it when linking your
+database.</p>
+<p>For other providers using self-signed certificates or private CAs, you will need
+to upload the specific CA certificate that was used to sign your database's
+certificate. You can usually obtain this from your database provider's
+documentation or console.</p>
+<h3 id="provisioning-a-managed-database" tabindex="-1">Provisioning a managed database <a class="header-anchor" href="#provisioning-a-managed-database"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>To create and attach a managed database instance from Deno Deploy, you can
+either:</p>
+<ul>
+<li>go to the "Databases" page in your organization dashboard and click the
+"Provision Database" button,</li>
+<li>go to the "Databases" tab in your app settings, click on "Attach Database",
+then select "Provision Database" in database instance selection dropdown.</li>
+</ul>
+<p>From here, select the database engine you want to provision. Available today:</p>
+<ul>
+<li><strong>Deno KV</strong> — a fast, globally distributed key‑value store built for the edge,
+hosted by Deno on your behalf.</li>
+<li><strong>Prisma Postgres</strong> — the world's most advanced open source relational
+database, hosted by <a href="https://www.prisma.io/">Prisma</a>.</li>
+</ul>
+<p>You will have to provide a <strong>Slug</strong> to identify the database instance in the
+dashboard. This name is only used within Deno Deploy and does not affect your
+actual database server.</p>
+<p>Depending on the engine you select, there may be additional configuration
+options, such as choosing a region. Choosing a region close to your
+application's users can help reduce latency and improve performance of your
+database queries.</p>
+<p>Once you're ready, click "Provision" to create the database instance. Deno
+Deploy will handle the provisioning process and set up the necessary
+infrastructure on your behalf.</p>
+<h2 id="linking-databases-to-your-apps" tabindex="-1">Linking databases to your apps <a class="header-anchor" href="#linking-databases-to-your-apps"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>After creating or linking a database instance, you can assign it to your apps.
+Each database instance can be assigned to multiple apps. Each app gets its own
+isolated databases within the instance for each deployment environment
+(production, Git branches, and preview timelines).</p>
+<p>
+</p><div class="admonition info">
+  <div class="title">Info</div>
+
+<p></p>
+<p>It is not currently possible to link multiple database instances to a single
+app. It is thus not possible to link both a Deno KV and a PostgreSQL database to
+the same app at this time.</p>
+<p>
+</p></div>
+<p></p>
+<p>Once assigned, Deno Deploy automatically creates an isolated database for each
+timeline within that app. The naming scheme for these databases is as follows:</p>
+<ul>
+<li>The single production database uses the format <code>{app-id}-production</code></li>
+<li>Each Git branch database uses the format <code>{app-id}--{branch-name}</code></li>
+<li>A singular preview database exists, with the format <code>{app-id}-preview</code></li>
+</ul>
+<p>
+</p><div class="admonition info">
+  <div class="title">Info</div>
+
+<p></p>
+<p>Currently only one preview database is created per app, shared across all
+preview deployments. In future releases, each preview deployment will get its
+own isolated database.</p>
+<p>
+</p></div>
+<p></p>
+<p>To assign a database to an app you can either:</p>
+<ul>
+<li>Go to the "Databases" page in your organization dashboard, find the database
+instance you want to assign, click "Assign", then select the app from the
+dropdown.</li>
+<li>Go to the "Databases" tab in your app settings, click on "Attach Database",
+then select the database instance from the dropdown.</li>
+</ul>
+<p>Once assigned, Deno Deploy will automatically create the necessary isolated
+databases for each environment within that app.</p>
+<h2 id="connecting-to-databases-from-your-code" tabindex="-1">Connecting to databases from your code <a class="header-anchor" href="#connecting-to-databases-from-your-code"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Once you've assigned a database to your app, connecting to it from your code is
+simple. Deno Deploy automatically handles connection details, credentials, and
+environment variables for you.</p>
+<h3 id="deno-kv" tabindex="-1">Deno KV <a class="header-anchor" href="#deno-kv"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>For Deno KV, you can use the built-in <code>Deno.openKv()</code> API to connect to your
+assigned Deno KV instance. No additional configuration is needed - Deno Deploy
+automatically connects your app to the correct Deno KV instance based on the
+current environment.</p>
+<div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token comment">// No arguments needed - Deno Deploy handles this automatically</span>
+<span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Use the Deno KV instance</span>
+  <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">"Alice"</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"content-type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-226" class="copyButton" data-copy="// No arguments needed - Deno Deploy handles this automatically
+const kv = await Deno.openKv();
+
+Deno.serve(async () => {
+  // Use the Deno KV instance
+  await kv.set([&quot;user&quot;, &quot;123&quot;], { name: &quot;Alice&quot;, age: 30 });
+  const user = await kv.get([&quot;user&quot;, &quot;123&quot;]);
+
+  return new Response(JSON.stringify(user.value), {
+    headers: { &quot;content-type&quot;: &quot;application/json&quot; },
+  });
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="postgresql" tabindex="-1">PostgreSQL <a class="header-anchor" href="#postgresql"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>For PostgreSQL databases (both external and provisioned), Deno Deploy
+automatically injects standard database environment variables into your app's
+runtime environment:</p>
+<ul>
+<li><code>DATABASE_URL</code>: A full connection string for the current environment, in the
+format <code>postgresql://username:password@hostname:port/database</code>.</li>
+<li><code>PGHOST</code>: The database server hostname.</li>
+<li><code>PGPORT</code>: The database server port.</li>
+<li><code>PGDATABASE</code>: The database name for the current environment.</li>
+<li><code>PGUSER</code>: The database username.</li>
+<li><code>PGPASSWORD</code>: The database password.</li>
+</ul>
+<p>If your database requires a custom SSL/TLS certificate, Deno Deploy also injects
+that certificate into the default certificate store, so that all SSL connections
+work automatically.</p>
+<p>You can use your favorite PostgreSQL client library (such as <code>pg</code> from npm) to
+connect to your database using these environment variables. Most libraries
+automatically detect and use these standard environment variables without any
+configuration.</p>
+<p>As an example, here's how to connect to PostgreSQL in your Deno Deploy app:</p>
+<div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Pool <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"npm:pg"</span><span class="token punctuation">;</span>
+
+<span class="token comment">// No arguments needed - the library reads connection details from environment variables automatically</span>
+<span class="token keyword">const</span> pool <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pool</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Use the database</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> pool<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">"SELECT * FROM users WHERE id = $1"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">123</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span>rows<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"content-type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-274" class="copyButton" data-copy="import { Pool } from &quot;npm:pg&quot;;
+
+// No arguments needed - the library reads connection details from environment variables automatically
+const pool = new Pool();
+
+Deno.serve(async () => {
+  // Use the database
+  const result = await pool.query(&quot;SELECT * FROM users WHERE id = $1&quot;, [123]);
+
+  return new Response(JSON.stringify(result.rows), {
+    headers: { &quot;content-type&quot;: &quot;application/json&quot; },
+  });
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="running-migrations-and-seeding-data" tabindex="-1">Running migrations and seeding data <a class="header-anchor" href="#running-migrations-and-seeding-data"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Since each environment has its own isolated database, you will often have many
+separate databases to manage in every app. It is not practical to manually run
+migrations or insert seed data into each database individually every time you
+deploy a new revision.</p>
+<p>To streamline this process, Deno Deploy allows you to configure an automated
+pre-deploy command that runs every time a revision is rolled out to a timeline,
+before the deployment starts serving traffic.</p>
+<p>This command runs with the same environment variables available to your
+application, including <code>PGHOST</code>, <code>PGPORT</code>, <code>PGDATABASE</code>, etc., so you can use it
+to run migrations or seed data using your existing migration tools.</p>
+<p>To set up an automated migration command, head to the Settings page of your app,
+and go to the App Config section. There you can edit the app configuration to
+set a pre-deploy command in the "Pre-Deploy Command" field (for example,
+<code>deno task migrate</code> or <code>npm run migrate</code>).</p>
+<p>You can see the detailed logs of the pre-deploy command execution in the
+revision build logs, in the "Deployment" section.</p>
+<p>As an example, you could set up a migration script using
+<a href="https://github.com/salsita/node-pg-migrate"><code>node-pg-migrate</code></a>:</p>
+<ol>
+<li>Add a task to your <code>deno.json</code>:<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"migrate"</span><span class="token operator">:</span> <span class="token string">"deno run --allow-net --allow-env --allow-read --allow-write npm:node-pg-migrate up"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-301" class="copyButton" data-copy="{
+  &quot;tasks&quot;: {
+    &quot;migrate&quot;: &quot;deno run --allow-net --allow-env --allow-read --allow-write npm:node-pg-migrate up&quot;
+  }
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></li>
+<li>Create a migrations directory and add migration files. For example,
+<code>migrations/1234567890_create-users-table.js</code>:<div class="relative"><pre><code class="highlight notranslate language-javascript">exports<span class="token punctuation">.</span><span class="token function-variable function">up</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">pgm</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  pgm<span class="token punctuation">.</span><span class="token function">createTable</span><span class="token punctuation">(</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">"id"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"varchar(100)"</span><span class="token punctuation">,</span> <span class="token literal-property property">notNull</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"varchar(100)"</span><span class="token punctuation">,</span> <span class="token literal-property property">notNull</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">created_at</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"timestamp"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">notNull</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token keyword">default</span><span class="token operator">:</span> pgm<span class="token punctuation">.</span><span class="token function">func</span><span class="token punctuation">(</span><span class="token string">"current_timestamp"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+exports<span class="token punctuation">.</span><span class="token function-variable function">down</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">pgm</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  pgm<span class="token punctuation">.</span><span class="token function">dropTable</span><span class="token punctuation">(</span><span class="token string">"users"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-307" class="copyButton" data-copy="exports.up = (pgm) => {
+  pgm.createTable(&quot;users&quot;, {
+    id: &quot;id&quot;,
+    name: { type: &quot;varchar(100)&quot;, notNull: true },
+    email: { type: &quot;varchar(100)&quot;, notNull: true },
+    created_at: {
+      type: &quot;timestamp&quot;,
+      notNull: true,
+      default: pgm.func(&quot;current_timestamp&quot;),
+    },
+  });
+};
+exports.down = (pgm) => {
+  pgm.dropTable(&quot;users&quot;);
+};
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></li>
+<li>Set your pre-deploy command to <code>deno task migrate</code> in the app settings.</li>
+</ol>
+<p>Deno Deploy will automatically run this command before each deployment, ensuring
+all your environment-specific databases stay up to date.</p>
+<p>Other migration tools such as Prisma Migrate, Drizzle, or Kysely can also be
+used in a similar way.</p>
+<h2 id="local-development" tabindex="-1">Local Development <a class="header-anchor" href="#local-development"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>When developing locally, you have two options for your database setup:</p>
+<ul>
+<li>Use a local database instance running on your machine, for example a local
+PostgreSQL server or the built-in Deno KV backend in Deno.</li>
+<li>Connect to a hosted isolated local development instance provisioned on Deno
+Deploy, through <code>--tunnel</code>.</li>
+</ul>
+<h3 id="using-a-local-database-instance" tabindex="-1">Using a local database instance <a class="header-anchor" href="#using-a-local-database-instance"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<h4 id="deno-kv-1" tabindex="-1">Deno KV <a class="header-anchor" href="#deno-kv-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>For Deno KV, you can use the built-in <code>Deno.openKv()</code> API to connect to a local
+Deno KV instance. By default, this uses a local file-based backend stored in
+your home directory.</p>
+<div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// connects to local Deno KV instance</span>
+
+Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Use the Deno KV instance</span>
+  <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">"Alice"</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">30</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"user"</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Response</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    headers<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token string-property property">"content-type"</span><span class="token operator">:</span> <span class="token string">"application/json"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-348" class="copyButton" data-copy="const kv = await Deno.openKv(); // connects to local Deno KV instance
+
+Deno.serve(async () => {
+  // Use the Deno KV instance
+  await kv.set([&quot;user&quot;, &quot;123&quot;], { name: &quot;Alice&quot;, age: 30 });
+  const user = await kv.get([&quot;user&quot;, &quot;123&quot;]);
+
+  return new Response(JSON.stringify(user.value), {
+    headers: { &quot;content-type&quot;: &quot;application/json&quot; },
+  });
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="postgresql-1" tabindex="-1">PostgreSQL <a class="header-anchor" href="#postgresql-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>To install PostgreSQL locally, follow the instructions for your operating system
+on <a href="https://www.postgresql.org/download/">postgresql.org</a>. On macOS, you can use
+<code>brew install postgresql</code>, while many Linux distributions provide PostgreSQL
+packages through their package managers.</p>
+<p>After installing PostgreSQL, create a new database and user for your local
+development:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">createdb myapp_dev
+createuser myuser <span class="token parameter variable">--pwprompt</span>
+</code></pre>
+
+      <button id="copy-button-358" class="copyButton" data-copy="createdb myapp_dev
+createuser myuser --pwprompt
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Set up a <code>.env</code> file in your project root with the connection details for your
+local PostgreSQL instance:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash"><span class="token assign-left variable">DATABASE_URL</span><span class="token operator">=</span>postgresql://myuser:mypassword@localhost:5432/myapp_dev
+</code></pre>
+
+      <button id="copy-button-362" class="copyButton" data-copy="DATABASE_URL=postgresql://myuser:mypassword@localhost:5432/myapp_dev
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You can then use your favorite PostgreSQL client library (such as <code>pg</code> from npm)
+to connect to your local database using the <code>DATABASE_URL</code> environment variable.</p>
+<p>If you are using Deno for local development, you can pass the <code>--env-file</code> flag
+to automatically load environment variables from your <code>.env</code> file on startup:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">deno run <span class="token parameter variable">-A</span> --env-file main.ts
+</code></pre>
+
+      <button id="copy-button-369" class="copyButton" data-copy="deno run -A --env-file main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="using-a-hosted-isolated-local-development-instance" tabindex="-1">Using a hosted isolated local development instance <a class="header-anchor" href="#using-a-hosted-isolated-local-development-instance"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Deno Deploy allows you to connect to a hosted isolated local development
+database when using the
+<a href="https://docs.deno.com/deploy/reference/tunnel"><code>--tunnel</code> flag in Deno</a>.</p>
+<p>To set this up, first provision a database instance in your Deno Deploy
+organization, and assign it to your app as usual.</p>
+<p>Next, start your local development server with the <code>--tunnel</code> flag:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">deno task <span class="token parameter variable">--tunnel</span> dev
+<span class="token comment"># or</span>
+deno run <span class="token parameter variable">-A</span> <span class="token parameter variable">--tunnel</span> main.ts
+</code></pre>
+
+      <button id="copy-button-382" class="copyButton" data-copy="deno task --tunnel dev
+# or
+deno run -A --tunnel main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Deno Deploy will automatically inject the appropriate database environment
+variables into your local environment, allowing your code to connect to the
+hosted isolated database instance. Please note that this database instance is
+shared across all developers using the same app, so be cautious when modifying
+data.</p>
+<p>
+</p><div class="admonition info">
+  <div class="title">Info</div>
+
+<p></p>
+<p>When using the <code>--tunnel</code> flag, Deno Deploy also enables other features such as:</p>
+<ul>
+<li>exporting your logs, traces, and metrics from your local environment to the
+Deno Deploy dashboard</li>
+<li>pulling environment variables from the "Local" context to your local
+environment</li>
+<li>exposing your local server to a public URL for easy sharing and testing</li>
+</ul>
+<p>If you do not want to use these features, consider using a local database
+instance instead.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="database-management" tabindex="-1">Database management <a class="header-anchor" href="#database-management"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="organization-level" tabindex="-1">Organization level <a class="header-anchor" href="#organization-level"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can view and manage your database instances from the "Databases" page in
+your organization dashboard. Here you will find all your linked and provisioned
+database instances, along with their status, assigned apps, and connection
+details (if applicable).</p>
+<p>Clicking on a database instance takes you to the database detail page, where you
+can view more information about the instance, including assigned apps,
+individual databases created within the instance. For each database provisioned
+in the instance, you can see its name, status, and associated app and timeline.</p>
+<p>If a database fails to create, you'll see an error status with a "Fix" button
+that you can use to retry the operation and view more detailed error
+information.</p>
+<p>From this page, you can also detach database instances from an app, or delete
+the instance entirely.</p>
+<p>Next to each database in the instance, you can open the database explorer (for
+PostgreSQL databases), or copy the connection string (<code>DATABASE_URL</code>), allowing
+you to easily connect to your databases from your local machine for debugging.</p>
+<h3 id="app-level" tabindex="-1">App level <a class="header-anchor" href="#app-level"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can also manage database instances from the "Databases" tab in your app
+settings. Here you can see the database instance assigned to your app, along
+with its status and connection details.</p>
+<p>You can see all databases created for your app within the assigned instance,
+including those for production, Git branches, and preview timelines. For each
+database, you can see its name and status.</p>
+<p>You can open the database explorer (for PostgreSQL databases), and copy the
+connection string (<code>DATABASE_URL</code>) for each database directly from this page,
+allowing you to easily connect to your databases from your local machine for
+debugging.</p>
+<h2 id="database-explorer" tabindex="-1">Database explorer <a class="header-anchor" href="#database-explorer"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno Deploy provides a built-in database explorer for PostgreSQL databases,
+allowing you to browse and manage your data directly from the Deno Deploy
+dashboard.</p>
+<p>To access the database explorer, go to the "Databases" tab in your app settings,
+find the assigned PostgreSQL database instance, and click "Explore Database".
+This opens the database explorer interface, where you can view tables, run
+queries, and manage your data.</p>
+<p>
+</p><div class="admonition info">
+  <div class="title">Info</div>
+
+<p></p>
+<p>The database explorer is not available for Deno KV databases at this time.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="prisma-postgres-instances-and-claiming" tabindex="-1">Prisma Postgres instances and claiming <a class="header-anchor" href="#prisma-postgres-instances-and-claiming"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>When you provision a managed Prisma Postgres database instance through Deno
+Deploy, the instance is initially "unclaimed". This means that the instance is
+managed by Deno Deploy on your behalf, but you do not have direct access to the
+Prisma account that owns the instance. Unclaimed instances have default limits
+on the number of databases and size based on Deno Deploy's plans.</p>
+<p>If you want to have full control over the Prisma Postgres instance, including to
+upgrade to a higher Prisma plan, you can "claim" the instance into your own
+Prisma account. To do this, go to the database instance detail page in the Deno
+Deploy dashboard, and click the "Claim Instance" button. You will be guided
+through the process of linking the instance to your Prisma account.</p>
+<p>
+</p><div class="admonition warning">
+  <div class="title">Warning</div>
+
+<p></p>
+<p>Claiming a Prisma Postgres instance is a permanent action and cannot be undone.
+Once claimed, the instance is managed through your Prisma account and will make
+use of your Prisma account limits (based on plan). The Deno Deploy integration
+to automatically create isolated databases for each app will continue to work as
+before.</p>
+<p>
+</p></div>
+<p></p>
+<h2 id="limits" tabindex="-1">Limits <a class="header-anchor" href="#limits"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>There is no limit on the number of linked database instances, or Deno KV
+instances you can create in your organization.</p>
+<p>For managed Prisma Postgres instances, only a couple of instances can be created
+per organization. In each Prisma Postgres instance, there is a limit to the
+number of databases that can be created, which directly affects the number of
+apps that can be assigned to that instance. Once a Prisma Postgres instance
+reaches its database limit, no more databases can be created in that instance.</p>
+<p>If a Prisma Postgres instance is "claimed" through your own Prisma account, the
+database limit is determined by your Prisma plan. For unclaimed Prisma Postgres
+instances, a default limit applies.</p>
+<p>For managed Prisma Postgres instances, each database has a size limit and
+operation count limit based on the plan you are on. The usage is shown at the
+bottom of the database instance detail page. If you are on a claimed Prisma
+Postgres instance, the limits are determined by your Prisma plan. For unclaimed
+Prisma Postgres instances, a default limit applies.</p>
+<h2 id="frequently-asked-questions" tabindex="-1">Frequently Asked Questions <a class="header-anchor" href="#frequently-asked-questions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p><strong>Q: Can multiple apps share the same database instance?</strong></p>
+<p>Yes! Multiple apps can be assigned to the same database instance. Each app gets
+its own isolated databases within that instance.</p>
+<p><strong>Q: What happens to my data when I remove an app assignment?</strong></p>
+<p>The databases remain on your database server. Only the connection between your
+app and the database instance is removed.</p>
+<p><strong>Q: Can I use the same database for multiple environments?</strong></p>
+<p>By default, each environment (production, branch, preview) gets its own database
+to ensure isolation and prevent data conflicts. However, you can customize the
+database your code connects to using options in your database library.</p>
+<p><strong>Q: How do I access my databases directly?</strong></p>
+<p>You can connect directly to your database server using the connection details
+you provided. Use the database names shown in the Deno Deploy dashboard.</p>
+<p><strong>Q: Can I change database connection details?</strong></p>
+<p>Yes, click "Edit" on any database instance to update connection details. Test
+the connection before saving to ensure it works.</p>
+<p><strong>Q: How do I delete a database instance?</strong></p>
+<p>First remove all app assignments, then click "Delete" on the database instance.
+This only removes the connection from Deno Deploy - your actual database server
+is not affected.</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-02-10T00:00:00.000Z">February 10, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/deploy/reference/deno_kv/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Deno KV</span></a><a href="/deploy/reference/cloud_connections/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Cloud Connections →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/deploy/reference/databases.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

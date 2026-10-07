@@ -1,0 +1,827 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#configuration-file" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Configuration file </a></li><li class="leading-tight text-balance"><a href="#file-system-access" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">File system access </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#symbolic-links" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Symbolic links </a></li></ul></li><li class="leading-tight text-balance"><a href="#network-access" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Network access </a></li><li class="leading-tight text-balance"><a href="#environment-variables" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Environment variables </a></li><li class="leading-tight text-balance"><a href="#system-information" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">System Information </a></li><li class="leading-tight text-balance"><a href="#subprocesses" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Subprocesses </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#subprocesses-with-ld_*-and-dyld_*-environment-variables" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Subprocesses with LD_* and DYLD_* environment variables </a></li></ul></li><li class="leading-tight text-balance"><a href="#ffi-(foreign-function-interface)" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">FFI (Foreign Function Interface) </a></li><li class="leading-tight text-balance"><a href="#importing-from-the-web" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Importing from the Web </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/permissions.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Fpermissions.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Permissions</h1></div><p>Deno runs code in a secure sandbox: a program has no access to sensitive system
+I/O unless you grant it. This page is the reference for every permission and the
+<code>--allow-*</code> / <code>--deny-*</code> flags that control it. For the security model behind it
+and guidance on running untrusted code, see
+<a href="/runtime/fundamentals/security/">Security</a>.</p>
+<p>By default, access to most system I/O is denied. There are some I/O operations
+that are allowed in a limited capacity, even by default. These are described
+below.</p>
+<p>To enable these operations, the user must explicitly grant permission to the
+Deno runtime. This is done by passing the <code>--allow-read</code>, <code>--allow-write</code>,
+<code>--allow-net</code>, <code>--allow-env</code>, <code>--allow-run</code>, <code>--allow-sys</code>, <code>--allow-ffi</code>, and
+<code>--allow-import</code> flags to the <code>deno</code> command.</p>
+<p>During execution of a script, a user can also explicitly grant permission to
+specific files, directories, network addresses, environment variables, and
+subprocesses when prompted by the runtime. Prompts are not shown if
+stdout/stderr are not a TTY, or when the <code>--no-prompt</code> flag is passed to the
+<code>deno</code> command.</p>
+<p>Users can also explicitly disallow access to specific resources by using the
+<code>--deny-read</code>, <code>--deny-write</code>, <code>--deny-net</code>, <code>--deny-env</code>, <code>--deny-run</code>,
+<code>--deny-sys</code>, <code>--deny-ffi</code>, and <code>--deny-import</code> flags. These flags take
+precedence over the allow flags. For example, if you allow network access but
+deny access to a specific domain, the deny flag will take precedence.</p>
+<p>Deno also provides a <code>--allow-all</code> flag that grants all permissions to the
+script. This <strong>disables</strong> the security sandbox entirely, and should be used with
+caution. The <code>--allow-all</code> has the same security properties as running a script
+in Node.js (ie none).</p>
+<p>Definition: <code>-A, --allow-all</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno run <span class="token parameter variable">-A</span> script.ts
+deno run --allow-all script.ts
+</code></pre>
+
+      <button id="copy-button-21" class="copyButton" data-copy="deno run -A script.ts
+deno run --allow-all script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>By default, Deno will not generate a stack trace for permission requests as it
+comes with a hit to performance. Users can enable stack traces with the
+<code>DENO_TRACE_PERMISSIONS</code> environment variable to <code>1</code>.</p>
+<p>Deno can also generate an audit log of all accessed permissions, regardless of
+whether the access was allowed or denied.</p>
+<p>Set <code>DENO_AUDIT_PERMISSIONS</code> to a <strong>file path</strong> to write JSONL — each line is an
+object with the following keys:</p>
+<ul>
+<li><code>v</code>: the version of the format</li>
+<li><code>datetime</code>: when the permission was accessed, in RFC 3339 format</li>
+<li><code>permission</code>: the name of the permission</li>
+<li><code>value</code>: the value that the permission was accessed with, or <code>null</code> if it was
+accessed with no value</li>
+</ul>
+<p>A schema for this can be found in
+<a href="https://github.com/denoland/deno/blob/main/cli/schemas/permission-audit.v1.json">permission-audit.v1.json</a>.</p>
+<p>In addition, this env var can be combined with the above-mentioned
+<code>DENO_TRACE_PERMISSIONS</code>, which then adds a new <code>stack</code> field to the entries
+which is an array containing all the stack trace frames.</p>
+<p>You can also set <code>DENO_AUDIT_PERMISSIONS=otel</code> to emit each access as an
+OpenTelemetry <strong>log record</strong> instead of writing to a file. The records are sent
+to whichever exporter you have configured via
+<a href="/runtime/fundamentals/open_telemetry/"><code>OTEL_DENO</code></a> and carry these attributes:</p>
+<ul>
+<li><code>deno.permission.type</code></li>
+<li><code>deno.permission.value</code></li>
+<li><code>deno.permission.stack</code> (if <code>DENO_TRACE_PERMISSIONS</code> is also set)</li>
+</ul>
+<p>This is the recommended setup if you already collect OpenTelemetry data — the
+permission audit lands next to your traces and metrics so you can correlate it
+with request handling.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token assign-left variable">OTEL_DENO</span><span class="token operator">=</span>true <span class="token assign-left variable">DENO_AUDIT_PERMISSIONS</span><span class="token operator">=</span>otel deno run <span class="token parameter variable">-A</span> main.ts
+</code></pre>
+
+      <button id="copy-button-82" class="copyButton" data-copy="OTEL_DENO=true DENO_AUDIT_PERMISSIONS=otel deno run -A main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="configuration-file" tabindex="-1">Configuration file <a class="header-anchor" href="#configuration-file"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno supports storing permissions in the deno.json/deno.jsonc file. Read more
+under <a href="/runtime/reference/deno_json/#permissions">configuration</a>.</p>
+<h2 id="file-system-access" tabindex="-1">File system access <a class="header-anchor" href="#file-system-access"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>By default, executing code can not read or write arbitrary files on the file
+system. This includes listing the contents of directories, checking for the
+existence of a given file, and opening or connecting to Unix sockets.</p>
+<p>Access to read files is granted using the <code>--allow-read</code> (or <code>-R</code>) flag, and
+access to write files is granted using the <code>--allow-write</code> (or <code>-W</code>) flag. These
+flags can be specified with a list of paths to allow access to specific files or
+directories and any subdirectories in them.</p>
+<p>Definition: <code>--allow-read[=&lt;PATH&gt;...]</code> or <code>-R[=&lt;PATH&gt;...]</code></p>
+<p>PATHs may be separated by comma (<code>,</code>) characters. To include a comma character
+in the PATH, it must be doubled. (Example: <code>this file,, contains a comma.txt</code>)</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow all reads from file system</span>
+deno run <span class="token parameter variable">-R</span> script.ts
+<span class="token comment"># or </span>
+deno run --allow-read script.ts
+
+<span class="token comment"># Allow reads from file foo.txt and bar.txt only</span>
+deno run --allow-read<span class="token operator">=</span>foo.txt,bar.txt script.ts
+
+<span class="token comment"># Allow reads from any file in any subdirectory of ./node_modules</span>
+deno run --allow-read<span class="token operator">=</span>node_modules script.ts
+</code></pre>
+
+      <button id="copy-button-104" class="copyButton" data-copy="# Allow all reads from file system
+deno run -R script.ts
+# or 
+deno run --allow-read script.ts
+
+# Allow reads from file foo.txt and bar.txt only
+deno run --allow-read=foo.txt,bar.txt script.ts
+
+# Allow reads from any file in any subdirectory of ./node_modules
+deno run --allow-read=node_modules script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Definition: <code>--deny-read[=&lt;PATH&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow reading files in /etc but disallow reading /etc/hosts</span>
+deno run --allow-read<span class="token operator">=</span>/etc --deny-read<span class="token operator">=</span>/etc/hosts script.ts
+
+<span class="token comment"># Deny all read access to disk, disabling permission prompts for reads.</span>
+deno run --deny-read script.ts
+</code></pre>
+
+      <button id="copy-button-108" class="copyButton" data-copy="# Allow reading files in /etc but disallow reading /etc/hosts
+deno run --allow-read=/etc --deny-read=/etc/hosts script.ts
+
+# Deny all read access to disk, disabling permission prompts for reads.
+deno run --deny-read script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Definition: <code>--allow-write[=&lt;PATH&gt;...]</code> or <code>-W[=&lt;PATH&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow all writes to file system</span>
+deno run <span class="token parameter variable">-W</span> script.ts
+<span class="token comment"># or </span>
+deno run --allow-write script.ts
+
+<span class="token comment"># Allow writes to file foo.txt and bar.txt only</span>
+deno run --allow-write<span class="token operator">=</span>foo.txt,bar.txt script.ts
+</code></pre>
+
+      <button id="copy-button-112" class="copyButton" data-copy="# Allow all writes to file system
+deno run -W script.ts
+# or 
+deno run --allow-write script.ts
+
+# Allow writes to file foo.txt and bar.txt only
+deno run --allow-write=foo.txt,bar.txt script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Definition: <code>--deny-write[=&lt;PATH&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow reading files in current working directory </span>
+<span class="token comment"># but disallow writing to ./secrets directory.</span>
+deno run --allow-write<span class="token operator">=</span>./ --deny-write<span class="token operator">=</span>./secrets script.ts
+
+<span class="token comment"># Deny all write access to disk, disabling permission prompts.</span>
+deno run --deny-write script.ts
+</code></pre>
+
+      <button id="copy-button-116" class="copyButton" data-copy="# Allow reading files in current working directory 
+# but disallow writing to ./secrets directory.
+deno run --allow-write=./ --deny-write=./secrets script.ts
+
+# Deny all write access to disk, disabling permission prompts.
+deno run --deny-write script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Some APIs in Deno are implemented using file system operations under the hood,
+even though they do not provide direct read/write access to specific files.
+These APIs read and write to disk but do not require any explicit read/write
+permissions. Some examples of these APIs are:</p>
+<ul>
+<li><code>localStorage</code></li>
+<li>Deno KV</li>
+<li><code>caches</code></li>
+<li><code>Blob</code></li>
+</ul>
+<p>Because these APIs are implemented using file system operations, users can use
+them to consume file system resources like storage space, even if they do not
+have direct access to the file system.</p>
+<p>During module loading, Deno can load files from disk. This sometimes requires
+explicit permissions, and sometimes is allowed by default:</p>
+<ul>
+<li>All files that are imported from the entrypoint module in a way that they can
+be statically analyzed are allowed to be read by default. This includes static
+<code>import</code> statements and dynamic <code>import()</code> calls where the argument is a
+string literal that points to a specific file or a directory of files. The
+full list of files that are in this list can be printed using
+<code>deno info &lt;entrypoint&gt;</code>.</li>
+<li>Files that are dynamically imported in a way that can not be statically
+analyzed require runtime read permissions.</li>
+<li>A Web Worker's script is loaded as if it were a dynamic import, so a worker
+whose script is a local file, such as
+<code>new Worker(new URL("./worker.ts", import.meta.url).href, { type: "module" })</code>,
+requires <code>--allow-read</code>. This applies to the worker's entry script and its
+entire static import graph, and the read access is checked against the
+permissions of the thread that created the worker. A worker loaded from an
+<code>https:</code> URL instead requires <a href="#importing-from-the-web"><code>--allow-import</code></a>;
+<code>data:</code> and <code>blob:</code> URLs need no permission.</li>
+<li>Files inside of a <code>node_modules/</code> directory are allowed to be read by default.</li>
+</ul>
+<p>When fetching modules from the network, or when transpiling code from TypeScript
+to JavaScript, Deno uses the file system as a cache. This means that file system
+resources like storage space can be consumed by Deno even if the user has not
+explicitly granted read/write permissions.</p>
+<h3 id="symbolic-links" tabindex="-1">Symbolic links <a class="header-anchor" href="#symbolic-links"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>When reading or writing through a symbolic link, Deno checks permissions based
+on the symlink's location, not the target it points to. This means if you have
+<code>--allow-read=/app</code>, you can read through a symlink at <code>/app/link</code> even if it
+points to a file outside <code>/app</code>.</p>
+<p>However, Deno prevents privilege escalation through symlinks. If a symlink
+resolves to a sensitive system path, additional permissions are required:</p>
+<ul>
+<li><strong><code>/proc</code>, <code>/dev</code>, <code>/sys</code> (Linux)</strong>: Reading or writing through symlinks that
+resolve to these paths requires <code>--allow-all</code>, as these paths can expose
+sensitive system information.</li>
+<li><strong><code>/proc/**/environ</code></strong>: Requires <code>--allow-env</code> since it exposes environment
+variables.</li>
+<li><strong><code>/dev/null</code>, <code>/dev/zero</code>, <code>/dev/random</code>, <code>/dev/urandom</code></strong>: These safe device
+files are always accessible without additional permissions.</li>
+</ul>
+<p>Creating symlinks with <a href="/api/deno/~/Deno.symlink"><code>Deno.symlink()</code></a> requires
+both <code>--allow-read</code> and <code>--allow-write</code> with full access (not path-specific),
+because symlinks can point to arbitrary locations.</p>
+<blockquote>
+<p><strong>Note</strong>: Symlinks that already exist on the filesystem can be read through
+using the permissions for the symlink's location. The full read/write
+permission requirement only applies to <em>creating</em> new symlinks with
+<a href="/api/deno/~/Deno.symlink"><code>Deno.symlink()</code></a>.</p>
+</blockquote>
+<h2 id="network-access" tabindex="-1">Network access <a class="header-anchor" href="#network-access"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>By default, executing code can not make network requests, open network listeners
+or perform DNS resolution. This includes making HTTP requests, opening TCP/UDP
+sockets, and listening for incoming connections on TCP or UDP.</p>
+<p>Network access is granted using the <code>--allow-net</code> flag. This flag can be
+specified with a list of hosts to allow access to specific network addresses. A
+host can be a hostname or IP address, optionally with a port.</p>
+<p>Hostnames do not allow subdomains, unless explicitly listed. To allow any
+subdomain for a hostname, <code>*</code> can be used as wildcard for any subdomain.</p>
+<p>Definition: <code>--allow-net[=&lt;HOST&gt;...]</code> or <code>-N[=&lt;HOST&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow network access</span>
+deno run <span class="token parameter variable">-N</span> script.ts
+<span class="token comment"># or</span>
+deno run --allow-net script.ts
+
+<span class="token comment"># Allow network access to github.com and jsr.io</span>
+deno run --allow-net<span class="token operator">=</span>github.com,jsr.io script.ts
+
+<span class="token comment"># Allow all subdomains for example.com</span>
+deno run --allow-net<span class="token operator">=</span><span class="token string">"*.example.com"</span> script.ts
+
+<span class="token comment"># A hostname at port 80:</span>
+deno run --allow-net<span class="token operator">=</span>example.com:80 script.ts
+
+<span class="token comment"># An IPv4 address on port 443</span>
+deno run --allow-net<span class="token operator">=</span><span class="token number">1.1</span>.1.1:443 script.ts
+
+<span class="token comment"># An IPv6 address, all ports allowed</span>
+deno run --allow-net<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">2606</span>:4700:4700::1111<span class="token punctuation">]</span> script.ts
+</code></pre>
+
+      <button id="copy-button-222" class="copyButton" data-copy="# Allow network access
+deno run -N script.ts
+# or
+deno run --allow-net script.ts
+
+# Allow network access to github.com and jsr.io
+deno run --allow-net=github.com,jsr.io script.ts
+
+# Allow all subdomains for example.com
+deno run --allow-net=&quot;*.example.com&quot; script.ts
+
+# A hostname at port 80:
+deno run --allow-net=example.com:80 script.ts
+
+# An IPv4 address on port 443
+deno run --allow-net=1.1.1.1:443 script.ts
+
+# An IPv6 address, all ports allowed
+deno run --allow-net=[2606:4700:4700::1111] script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Definition: <code>--deny-net[=&lt;HOST&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow access to network, but deny access </span>
+<span class="token comment"># to github.com and jsr.io</span>
+deno run --allow-net --deny-net<span class="token operator">=</span>github.com,jsr.io script.ts
+
+<span class="token comment"># Deny all network access, disabling permission prompts.</span>
+deno run --deny-net script.ts
+</code></pre>
+
+      <button id="copy-button-226" class="copyButton" data-copy="# Allow access to network, but deny access 
+# to github.com and jsr.io
+deno run --allow-net --deny-net=github.com,jsr.io script.ts
+
+# Deny all network access, disabling permission prompts.
+deno run --deny-net script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>During module loading, Deno can load modules from the network. By default Deno
+allows loading modules from the following locations using both static and
+dynamic imports, without requiring explicit network access:</p>
+<ul>
+<li><code>https://deno.land/</code></li>
+<li><code>https://jsr.io/</code></li>
+<li><code>https://esm.sh/</code></li>
+<li><code>https://raw.esm.sh/</code></li>
+<li><code>https://cdn.jsdelivr.net/</code></li>
+<li><code>https://raw.githubusercontent.com/</code></li>
+<li><code>https://gist.githubusercontent.com/</code></li>
+</ul>
+<p>These locations are trusted "public good" registries that are not expected to
+enable data exfiltration through URL paths. You can add more trusted registries
+using the <code>--allow-import</code> flag.</p>
+<p>In addition Deno allows importing any NPM package through <code>npm:</code> specifiers.</p>
+<p>Deno also sends requests to <code>https://dl.deno.land/</code> at most once a day to check
+for updates to the Deno CLI. This can be disabled using <code>DENO_NO_UPDATE_CHECK=1</code>
+environment var.</p>
+<h2 id="environment-variables" tabindex="-1">Environment variables <a class="header-anchor" href="#environment-variables"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>By default, executing code can not read or write environment variables. This
+includes reading environment variables, and setting new values.</p>
+<p>Access to environment variables is granted using the <code>--allow-env</code> flag. This
+flag can be specified with a list of environment variables to allow access to
+specific environment variables. Starting with Deno v2.1, you can now specify
+suffix wildcards to allow “scoped” access to environmental variables.</p>
+<p>Definition: <code>--allow-env[=&lt;VARIABLE_NAME&gt;...]</code> or <code>-E[=&lt;VARIABLE_NAME&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow access to all environment variables</span>
+deno run <span class="token parameter variable">-E</span> script.ts
+<span class="token comment"># or</span>
+deno run --allow-env script.ts
+
+<span class="token comment"># Allow HOME and FOO environment variables</span>
+deno run --allow-env<span class="token operator">=</span><span class="token environment constant">HOME</span>,FOO script.ts
+
+<span class="token comment"># Allow access to all environment variables starting with AWS_</span>
+deno run --allow-env<span class="token operator">=</span><span class="token string">"AWS_*"</span> script.ts
+</code></pre>
+
+      <button id="copy-button-288" class="copyButton" data-copy="# Allow access to all environment variables
+deno run -E script.ts
+# or
+deno run --allow-env script.ts
+
+# Allow HOME and FOO environment variables
+deno run --allow-env=HOME,FOO script.ts
+
+# Allow access to all environment variables starting with AWS_
+deno run --allow-env=&quot;AWS_*&quot; script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Definition: <code>--deny-env[=&lt;VARIABLE_NAME&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow all environment variables except </span>
+<span class="token comment"># AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.</span>
+deno run <span class="token punctuation">\</span>
+  --allow-env <span class="token punctuation">\</span>
+  --deny-env<span class="token operator">=</span>AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY <span class="token punctuation">\</span>
+  script.ts
+
+<span class="token comment"># Deny all access to env variables, disabling permission prompts.</span>
+deno run --deny-env script.ts
+</code></pre>
+
+      <button id="copy-button-292" class="copyButton" data-copy="# Allow all environment variables except 
+# AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
+deno run \
+  --allow-env \
+  --deny-env=AWS_ACCESS_KEY_ID,AWS_SECRET_ACCESS_KEY \
+  script.ts
+
+# Deny all access to env variables, disabling permission prompts.
+deno run --deny-env script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The <code>--ignore-env</code> flag is similar to <code>--deny-env</code>, but instead of denying
+access outright, it silently returns <code>undefined</code> for any env variable reads.
+This is useful when you want code to run without failing on missing permissions,
+treating restricted variables as simply unset.</p>
+<p>Definition: <code>--ignore-env[=&lt;VARIABLE_NAME&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Ignore all environment variable reads (returns undefined).</span>
+deno run --ignore-env script.ts
+
+<span class="token comment"># Ignore specific environment variables.</span>
+deno run --ignore-env<span class="token operator">=</span>PORT,<span class="token environment constant">HOME</span> script.ts
+</code></pre>
+
+      <button id="copy-button-299" class="copyButton" data-copy="# Ignore all environment variable reads (returns undefined).
+deno run --ignore-env script.ts
+
+# Ignore specific environment variables.
+deno run --ignore-env=PORT,HOME script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><blockquote>
+<p>Note for Windows users: environment variables are case insensitive on Windows,
+so Deno also matches them case insensitively (on Windows only).</p>
+</blockquote>
+<p>Deno reads certain environment variables on startup, such as <code>DENO_DIR</code> and
+<code>NO_COLOR</code> (<a href="/runtime/reference/env_variables/">see the full list</a>).</p>
+<p>The value of the <code>NO_COLOR</code> environment variable is visible to all code running
+in the Deno runtime, regardless of whether the code has been granted permission
+to read environment variables.</p>
+<h2 id="system-information" tabindex="-1">System Information <a class="header-anchor" href="#system-information"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>By default, executing code can not access system information, such as the
+operating system release, system uptime, load average, network interfaces, and
+system memory information.</p>
+<p>Access to system information is granted using the <code>--allow-sys</code> flag. This flag
+can be specified with a list of allowed interfaces from the list defined in
+<a href="/api/deno/~/Deno.SysPermissionDescriptor">Deno.SysPermissionDescriptor</a>. These
+strings map to functions in the <code>Deno</code> namespace that provide OS info, like
+<a href="https://docs.deno.com/api/deno/~/Deno.SystemMemoryInfo">Deno.systemMemoryInfo</a>.</p>
+<p>Definition: <code>--allow-sys[=&lt;API_NAME&gt;...]</code> or <code>-S[=&lt;API_NAME&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow all system information APIs</span>
+deno run <span class="token parameter variable">-S</span> script.ts
+<span class="token comment"># or</span>
+deno run --allow-sys script.ts
+
+<span class="token comment"># Allow systemMemoryInfo and osRelease APIs</span>
+deno run --allow-sys<span class="token operator">=</span><span class="token string">"systemMemoryInfo,osRelease"</span> script.ts
+</code></pre>
+
+      <button id="copy-button-323" class="copyButton" data-copy="# Allow all system information APIs
+deno run -S script.ts
+# or
+deno run --allow-sys script.ts
+
+# Allow systemMemoryInfo and osRelease APIs
+deno run --allow-sys=&quot;systemMemoryInfo,osRelease&quot; script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Definition: <code>--deny-sys[=&lt;API_NAME&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow accessing all system information but "networkInterfaces"</span>
+deno run --allow-sys --deny-sys<span class="token operator">=</span><span class="token string">"networkInterfaces"</span> script.ts
+
+<span class="token comment"># Deny all access to system information, disabling permission prompts.</span>
+deno run --deny-sys script.ts
+</code></pre>
+
+      <button id="copy-button-327" class="copyButton" data-copy="# Allow accessing all system information but &quot;networkInterfaces&quot;
+deno run --allow-sys --deny-sys=&quot;networkInterfaces&quot; script.ts
+
+# Deny all access to system information, disabling permission prompts.
+deno run --deny-sys script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The interface names accepted by <code>--allow-sys</code> correspond to the functions in the
+<code>Deno</code> namespace that expose host information, such as <code>hostname</code>, <code>osRelease</code>,
+<code>osUptime</code>, <code>loadavg</code>, <code>networkInterfaces</code>, <code>systemMemoryInfo</code>, <code>uid</code>, <code>gid</code>,
+<code>username</code>, <code>cpus</code>, and <code>homedir</code>. See
+<a href="/api/deno/~/Deno.SysPermissionDescriptor">Deno.SysPermissionDescriptor</a> for the
+full set of recognized names.</p>
+<p>The same flag gates the equivalent Node-compatibility APIs. Functions in
+<a href="/api/node/os/"><code>node:os</code></a> and <a href="/api/node/process/"><code>node:process</code></a> that read
+system information, such as <code>os.hostname()</code>, <code>os.cpus()</code>,
+<code>os.networkInterfaces()</code>, <code>os.freemem()</code>, <code>os.totalmem()</code>, <code>os.uptime()</code>,
+<code>process.getuid()</code>, and <code>process.getgid()</code>, require <code>--allow-sys</code> and map onto
+the same interface names. For example, calling <code>os.cpus()</code> needs
+<code>--allow-sys=cpus</code>, and <code>os.networkInterfaces()</code> needs
+<code>--allow-sys=networkInterfaces</code>.</p>
+<h2 id="subprocesses" tabindex="-1">Subprocesses <a class="header-anchor" href="#subprocesses"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Code executing inside of a Deno runtime can not spawn subprocesses by default,
+as this would constitute a violation of the principle that code can not escalate
+its privileges without user consent.</p>
+<p>Deno provides a mechanism for executing subprocesses, but this requires explicit
+permission from the user. This is done using the <code>--allow-run</code> flag.</p>
+<p>Any subprocesses you spawn from your program run independently from the
+permissions granted to the parent process. This means the child processes can
+access system resources regardless of the permissions you granted to the Deno
+process that spawned it. This is often referred to as privilege escalation.</p>
+<p>Because of this, make sure you carefully consider if you want to grant a program
+<code>--allow-run</code> access: it essentially invalidates the Deno security sandbox. If
+you really need to spawn a specific executable, you can reduce the risk by
+limiting which programs a Deno process can start by passing specific executable
+names to the <code>--allow-run</code> flag.</p>
+<p>Definition: <code>--allow-run[=&lt;PROGRAM_NAME&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow running all subprocesses</span>
+deno run --allow-run script.ts
+
+<span class="token comment"># Allow running "curl" and "whoami" subprocesses</span>
+deno run --allow-run<span class="token operator">=</span><span class="token string">"curl,whoami"</span> script.ts
+</code></pre>
+
+      <button id="copy-button-352" class="copyButton" data-copy="# Allow running all subprocesses
+deno run --allow-run script.ts
+
+# Allow running &quot;curl&quot; and &quot;whoami&quot; subprocesses
+deno run --allow-run=&quot;curl,whoami&quot; script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Sending a signal to your own process does not require <code>--allow-run</code>, since it is
+equivalent to terminating yourself (like <a href="/api/deno/~/Deno.exit"><code>Deno.exit</code></a>).
+<code>Deno.kill(Deno.pid, ...)</code> and <code>process.kill(process.pid, ...)</code> work without the
+flag, so tools that re-raise a signal on their own PID (such as <code>signal-exit</code>,
+used by Vite) no longer force you to grant blanket run access.</p>
+<p>
+</p><div class="admonition caution">
+  <div class="title">Caution</div>
+
+<p></p>
+<p>You probably don't ever want to use <code>--allow-run=deno</code> unless the parent process
+has <code>--allow-all</code>, as being able to spawn a <code>deno</code> process means the script can
+spawn another <code>deno</code> process with full permissions.</p>
+<p>
+</p></div>
+<p></p>
+<h3 id="subprocesses-with-ld_*-and-dyld_*-environment-variables" tabindex="-1">Subprocesses with <code>LD_*</code> and <code>DYLD_*</code> environment variables <a class="header-anchor" href="#subprocesses-with-ld_*-and-dyld_*-environment-variables"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Spawning a subprocess with an environment variable whose name starts with <code>LD_</code>
+(such as <code>LD_LIBRARY_PATH</code> or <code>LD_PRELOAD</code>) or <code>DYLD_</code> (such as
+<code>DYLD_LIBRARY_PATH</code> or <code>DYLD_INSERT_LIBRARIES</code>) requires the unscoped
+<code>--allow-run</code> flag. A scoped allow list like <code>--allow-run=curl</code> is <em>not</em>
+sufficient, even when the value matches the one Deno was started with:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token comment">// Fails under `--allow-run=echo`, succeeds under `--allow-run` or `--allow-all`.</span>
+<span class="token keyword">new</span> <span class="token class-name">Deno</span><span class="token punctuation">.</span><span class="token function">Command</span><span class="token punctuation">(</span><span class="token string">"echo"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  args<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"hello"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  env<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token constant">LD_PRELOAD</span><span class="token operator">:</span> <span class="token string">"/path/to/lib.so"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">outputSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-371" class="copyButton" data-copy="// Fails under `--allow-run=echo`, succeeds under `--allow-run` or `--allow-all`.
+new Deno.Command(&quot;echo&quot;, {
+  args: [&quot;hello&quot;],
+  env: { LD_PRELOAD: &quot;/path/to/lib.so&quot; },
+}).outputSync();
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><div class="relative"><pre><code class="highlight notranslate language-console">NotCapable: Requires --allow-run permissions to spawn subprocess with LD_PRELOAD
+environment variable. Alternatively, spawn with the environment variable unset.
+</code></pre>
+
+      <button id="copy-button-372" class="copyButton" data-copy="NotCapable: Requires --allow-run permissions to spawn subprocess with LD_PRELOAD
+environment variable. Alternatively, spawn with the environment variable unset.
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>These variables instruct the dynamic linker to load arbitrary shared libraries
+into the child process, so they can run code in the subprocess regardless of
+which executable you allowed. Restricting them to the unscoped <code>--allow-run</code>
+keeps a scoped allow list from being silently bypassed. If you don't need them,
+the simplest fix is to spawn the subprocess with the variable unset.</p>
+<p>Definition: <code>--deny-run[=&lt;PROGRAM_NAME&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow running running all programs, but "whoami" and "ps".</span>
+deno run --allow-run --deny-run<span class="token operator">=</span><span class="token string">"whoami,ps"</span> script.ts
+
+<span class="token comment"># Deny all access for spawning subprocessing, disabling</span>
+<span class="token comment"># permission prompts.</span>
+deno run --deny-run script.ts
+</code></pre>
+
+      <button id="copy-button-379" class="copyButton" data-copy="# Allow running running all programs, but &quot;whoami&quot; and &quot;ps&quot;.
+deno run --allow-run --deny-run=&quot;whoami,ps&quot; script.ts
+
+# Deny all access for spawning subprocessing, disabling
+# permission prompts.
+deno run --deny-run script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>By default <code>npm</code> packages will not have their post-install scripts executed
+during installation (like with <code>deno install</code>), as this would allow arbitrary
+code execution. When running with the <code>--allow-scripts</code> flag, post-install
+scripts for npm packages will be executed as a subprocess.</p>
+<h2 id="ffi-(foreign-function-interface)" tabindex="-1">FFI (Foreign Function Interface) <a class="header-anchor" href="#ffi-(foreign-function-interface)"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno provides an
+<a href="/runtime/fundamentals/ffi/">FFI mechanism for executing code written in other languages</a>,
+such as Rust, C, or C++, from within a Deno runtime. This is done using the
+<a href="/api/deno/~/Deno.dlopen"><code>Deno.dlopen</code></a> API, which can load shared libraries
+and call functions from them.</p>
+<p>By default, executing code can not use the
+<a href="/api/deno/~/Deno.dlopen"><code>Deno.dlopen</code></a> API, as this would constitute a
+violation of the principle that code can not escalate its privileges without
+user consent.</p>
+<p>In addition to <a href="/api/deno/~/Deno.dlopen"><code>Deno.dlopen</code></a>, FFI can also be used
+via Node-API (NAPI) native addons. These are also not allowed by default.</p>
+<p>Both <a href="/api/deno/~/Deno.dlopen"><code>Deno.dlopen</code></a> and NAPI native addons require
+explicit permission using the <code>--allow-ffi</code> flag. This flag can be specified
+with a list of files or directories to allow access to specific dynamic
+libraries.</p>
+<p><em>Like subprocesses, dynamic libraries are not run in a sandbox and therefore do
+not have the same security restrictions as the Deno process they are being
+loaded into. Therefore, use with extreme caution.</em></p>
+<p>Definition: <code>--allow-ffi[=&lt;PATH&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow loading dynamic all libraries</span>
+deno run --allow-ffi script.ts
+
+<span class="token comment"># Allow loading dynamic libraries from a specific path</span>
+deno run --allow-ffi<span class="token operator">=</span>./libfoo.so script.ts
+</code></pre>
+
+      <button id="copy-button-404" class="copyButton" data-copy="# Allow loading dynamic all libraries
+deno run --allow-ffi script.ts
+
+# Allow loading dynamic libraries from a specific path
+deno run --allow-ffi=./libfoo.so script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Definition: <code>--deny-ffi[=&lt;PATH&gt;...]</code></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Allow loading all dynamic libraries, but ./libfoo.so</span>
+deno run --allow-ffi --deny-ffi<span class="token operator">=</span>./libfoo.so script.ts
+
+<span class="token comment"># Deny loading all dynamic libraries, disabling permission prompts.</span>
+deno run --deny-ffi script.ts
+</code></pre>
+
+      <button id="copy-button-408" class="copyButton" data-copy="# Allow loading all dynamic libraries, but ./libfoo.so
+deno run --allow-ffi --deny-ffi=./libfoo.so script.ts
+
+# Deny loading all dynamic libraries, disabling permission prompts.
+deno run --deny-ffi script.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h2 id="importing-from-the-web" tabindex="-1">Importing from the Web <a class="header-anchor" href="#importing-from-the-web"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Allow importing code from the Web. By default Deno limits hosts you can import
+code from. This is true for both static and dynamic imports.</p>
+<p>If you want to dynamically import code, either using the <code>import()</code> or the
+<code>new Worker()</code> APIs, additional permissions need to be granted. Loading such
+code from the local file system <a href="#file-system-access">requires <code>--allow-read</code></a>.
+Deno also allows importing from <code>http:</code> and <code>https:</code> URLs, but in that case you
+will need to specify an explicit <code>--allow-import</code> flag:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># allow importing code from `https://example.com`</span>
+$ deno run --allow-import<span class="token operator">=</span>example.com main.ts
+</code></pre>
+
+      <button id="copy-button-418" class="copyButton" data-copy="# allow importing code from `https://example.com`
+$ deno run --allow-import=example.com main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>By default Deno allows importing sources from following hosts:</p>
+<ul>
+<li><code>deno.land</code></li>
+<li><code>jsr.io</code></li>
+<li><code>esm.sh</code></li>
+<li><code>raw.esm.sh</code></li>
+<li><code>cdn.jsdelivr.net</code></li>
+<li><code>raw.githubusercontent.com</code></li>
+<li><code>gist.githubusercontent.com</code></li>
+</ul>
+<p>Imports are only allowed using HTTPS.</p>
+<p>This allow list is applied by default for static imports, and by default to
+dynamic imports if the <code>--allow-import</code> flag is specified.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># allow dynamically importing code from `https://deno.land`</span>
+$ deno run --allow-import main.ts
+</code></pre>
+
+      <button id="copy-button-465" class="copyButton" data-copy="# allow dynamically importing code from `https://deno.land`
+$ deno run --allow-import main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Note that specifying an allow list for <code>--allow-import</code> will override the list
+of default hosts.</p>
+<p>Use <code>--deny-import</code> to block importing from specific hosts, even when they would
+otherwise be allowed. Deny flags take precedence over allow flags:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># allow the default import hosts, except esm.sh</span>
+$ deno run --deny-import<span class="token operator">=</span>esm.sh main.ts
+</code></pre>
+
+      <button id="copy-button-472" class="copyButton" data-copy="# allow the default import hosts, except esm.sh
+$ deno run --deny-import=esm.sh main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-07-21T00:00:00.000Z">July 21, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/reference/env_variables/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Environment variables</span></a><a href="/runtime/reference/lsp_integration/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">LSP integration →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/permissions.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

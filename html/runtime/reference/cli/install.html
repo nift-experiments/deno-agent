@@ -1,0 +1,512 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#examples" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Examples </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#deno-install" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">deno install </a></li><li class="leading-tight text-balance"><a href="#deno-install-%5Bpackages%5D" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">deno install [PACKAGES] </a></li><li class="leading-tight text-balance"><a href="#deno-install---os-and---arch" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">deno install --os and --arch </a></li><li class="leading-tight text-balance"><a href="#deno-install---package-json" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">deno install --package-json </a></li><li class="leading-tight text-balance"><a href="#deno-install---entrypoint-%5Bfiles%5D" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">deno install --entrypoint [FILES] </a></li><li class="leading-tight text-balance"><a href="#deno-install---global-%5Bpackage_or_url%5D" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">deno install --global [PACKAGE_OR_URL] </a></li><li class="leading-tight text-balance"><a href="#deno-install---global---compile-%5Bpackage_or_url%5D" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">deno install --global --compile [PACKAGE_OR_URL] </a></li><li class="leading-tight text-balance"><a href="#deno-install---prod" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">deno install --prod </a></li></ul></li><li class="leading-tight text-balance"><a href="#native-node.js-addons" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Native Node.js addons </a></li><li class="leading-tight text-balance"><a href="#--quiet-flag" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">--quiet flag </a></li><li class="leading-tight text-balance"><a href="#uninstall" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Uninstall </a></li><li class="leading-tight text-balance"><a href="#options" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Options</a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference<span aria-hidden="true">›</span></li><li class="flex items-center gap-2 m-0"><a href="/runtime/reference/cli/" class="text-inherit no-underline hover:underline">CLI</a></li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/cli/install.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Fcli%2Finstall.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">deno install</h1></div><p><code>deno install</code> installs dependencies and caches them for your project. For more
+on how Deno handles modules, see
+<a href="/runtime/fundamentals/modules/">Modules and dependencies</a>.</p>
+<h2 id="examples" tabindex="-1">Examples <a class="header-anchor" href="#examples"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="deno-install" tabindex="-1">deno install <a class="header-anchor" href="#deno-install"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Use this command to install all dependencies defined in
+<a href="/runtime/fundamentals/configuration/"><code>deno.json</code></a> and/or <code>package.json</code>.</p>
+<p>The dependencies will be installed in the global cache, but if your project has
+a <code>package.json</code> file, a local <code>node_modules</code> directory will be set up as well.</p>
+<h3 id="deno-install-%5Bpackages%5D" tabindex="-1">deno install [PACKAGES] <a class="header-anchor" href="#deno-install-%5Bpackages%5D"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Use this command to install particular packages and add them to <code>deno.json</code> or
+<code>package.json</code>.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> jsr:@std/testing npm:express
+</code></pre>
+
+      <button id="copy-button-21" class="copyButton" data-copy="deno install jsr:@std/testing npm:express
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>
+</p><div class="admonition info">
+  <div class="title">Deno 2.8</div>
+
+<p></p>
+<p>Unprefixed package names are treated as npm packages by default, so the <code>npm:</code>
+prefix is no longer required at the CLI. <code>deno install express</code> is equivalent to
+<code>deno install npm:express</code>. JSR packages still need the <code>jsr:</code> prefix to stay
+unambiguous. The <code>npm:</code> prefix remains required in <code>import</code> specifiers.</p>
+<p>
+</p></div>
+<p></p>
+<p>
+</p><div class="admonition tip">
+  <div class="title">Tip</div>
+
+<p></p>
+<p>You can also use <code>deno add</code> which is an alias to <code>deno install [PACKAGES]</code></p>
+<p>
+</p></div>
+<p></p>
+<p>If your project has a <code>package.json</code> file, the packages coming from npm will be
+added to <code>dependencies</code> in <code>package.json</code>. Otherwise all packages will be added
+to <code>deno.json</code>.</p>
+<h3 id="deno-install---os-and---arch" tabindex="-1">deno install --os and --arch <a class="header-anchor" href="#deno-install---os-and---arch"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Starting in Deno 2.8, <code>deno install</code> accepts <code>--os</code> and <code>--arch</code> flags so you
+can install npm packages targeting a different platform than the one you're
+running on. This is most useful for pre-installing packages with native binaries
+— for example, building a deployment artifact on a macOS dev machine that will
+eventually run on Linux/arm64.</p>
+<p>The flags accept Node.js-compatible values, the same strings that
+<code>process.platform</code> and <code>process.arch</code> produce.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Install npm packages for linux/arm64</span>
+deno <span class="token function">install</span> <span class="token parameter variable">--os</span> linux <span class="token parameter variable">--arch</span> arm64
+
+<span class="token comment"># Install for windows/x64</span>
+deno <span class="token function">install</span> <span class="token parameter variable">--os</span> win32 <span class="token parameter variable">--arch</span> x64
+
+<span class="token comment"># Override just the architecture; --os defaults to the current system</span>
+deno <span class="token function">install</span> <span class="token parameter variable">--arch</span> x64
+</code></pre>
+
+      <button id="copy-button-52" class="copyButton" data-copy="# Install npm packages for linux/arm64
+deno install --os linux --arch arm64
+
+# Install for windows/x64
+deno install --os win32 --arch x64
+
+# Override just the architecture; --os defaults to the current system
+deno install --arch x64
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><code>--os</code> and <code>--arch</code> are local-install-only and conflict with <code>--global</code>.</p>
+<h3 id="deno-install---package-json" tabindex="-1">deno install --package-json <a class="header-anchor" href="#deno-install---package-json"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>By default, Deno picks the configuration file to write to (<code>deno.json</code> or
+<code>package.json</code>) based on which one is closest to the current working directory.
+Starting in Deno 2.8, <code>--package-json</code> forces dependencies to be written to
+<code>package.json</code>, regardless of any nearby <code>deno.json</code>. If no <code>package.json</code>
+exists yet, one is created.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> --package-json npm:express jsr:@std/path
+</code></pre>
+
+      <button id="copy-button-62" class="copyButton" data-copy="deno install --package-json npm:express jsr:@std/path
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>JSR packages added with <code>--package-json</code> are written in their npm-compatible
+form (<code>npm:@jsr/...</code>). The same flag works on <code>deno add</code>, <code>deno remove</code>, and
+<code>deno uninstall</code>.</p>
+<p>To make this behavior the default without passing the flag every time, set
+<a href="/runtime/reference/deno_json/#prefer-package-json-for-dependencies"><code>"preferPackageJson": true</code></a>
+in <code>deno.json</code>.</p>
+<h3 id="deno-install---entrypoint-%5Bfiles%5D" tabindex="-1">deno install --entrypoint [FILES] <a class="header-anchor" href="#deno-install---entrypoint-%5Bfiles%5D"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Use this command to install all dependencies that are used in the provided files
+and their dependencies.</p>
+<p>This is particularly useful if you use <code>jsr:</code>, <code>npm:</code>, <code>http:</code> or <code>https:</code>
+specifiers in your code and want to cache all the dependencies before deploying
+your project.</p>
+<div><div class="markdownBlockTitle">main.js</div><div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> colors <span class="token keyword">from</span> <span class="token string">"jsr:@std/fmt/colors"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> express <span class="token keyword">from</span> <span class="token string">"npm:express"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-78" class="copyButton" data-copy="import * as colors from &quot;jsr:@std/fmt/colors&quot;;
+import express from &quot;npm:express&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">-e</span> main.js
+Download jsr:@std/fmt
+Download npm:express
+</code></pre>
+
+      <button id="copy-button-79" class="copyButton" data-copy="deno install -e main.js
+Download jsr:@std/fmt
+Download npm:express
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>
+</p><div class="admonition tip">
+  <div class="title">Tip</div>
+
+<p></p>
+<p>If you want to set up a local <code>node_modules</code> directory, you can pass the
+<code>--node-modules-dir=auto</code> flag.</p>
+<p>Some dependencies might not work correctly without a local <code>node_modules</code>
+directory.</p>
+<p>
+</p></div>
+<p></p>
+<h3 id="deno-install---global-%5Bpackage_or_url%5D" tabindex="-1">deno install --global [PACKAGE_OR_URL] <a class="header-anchor" href="#deno-install---global-%5Bpackage_or_url%5D"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Use this command to install the provided package or script as a globally
+available binary on your system.</p>
+<p>This command creates a thin, executable shell script which invokes <code>deno</code> using
+the specified CLI flags and main module. It is placed in the installation root.</p>
+<p>Example:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">--global</span> --allow-net --allow-read jsr:@std/http/file-server
+Download jsr:@std/http/file-server<span class="token punctuation">..</span>.
+
+✅ Successfully installed file-server.
+/Users/deno/.deno/bin/file-server
+</code></pre>
+
+      <button id="copy-button-104" class="copyButton" data-copy="deno install --global --allow-net --allow-read jsr:@std/http/file-server
+Download jsr:@std/http/file-server...
+
+✅ Successfully installed file-server.
+/Users/deno/.deno/bin/file-server
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>To change the executable name, use <code>-n</code>/<code>--name</code>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">-g</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-R</span> <span class="token parameter variable">-n</span> serve jsr:@std/http/file-server
+</code></pre>
+
+      <button id="copy-button-108" class="copyButton" data-copy="deno install -g -N -R -n serve jsr:@std/http/file-server
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The executable name is inferred by default:</p>
+<ul>
+<li>Attempt to take the file stem of the URL path. The above example would become
+'file-server'.</li>
+<li>If the file stem is something generic like 'main', 'mod', 'index' or 'cli',
+and the path has no parent, take the file name of the parent path. Otherwise
+settle with the generic name.</li>
+<li>If the resulting name has an '@...' suffix, strip it.</li>
+</ul>
+<p>To change the installation root, use <code>--root</code>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">-g</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-R</span> <span class="token parameter variable">--root</span> /usr/local/bin jsr:@std/http/file-server
+</code></pre>
+
+      <button id="copy-button-132" class="copyButton" data-copy="deno install -g -N -R --root /usr/local/bin jsr:@std/http/file-server
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The installation root is determined, in order of precedence:</p>
+<ul>
+<li><code>--root</code> option</li>
+<li><code>DENO_INSTALL_ROOT</code> environment variable</li>
+<li><code>$HOME/.deno</code></li>
+</ul>
+<p>Executables are placed in the <code>bin</code> subdirectory of the installation root,
+unless the root path already ends with <code>bin</code>, in which case it is used directly.
+The resulting directory must be added to the path manually if required.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token builtin class-name">echo</span> <span class="token string">'export PATH="$HOME/.deno/bin:$PATH"'</span> <span class="token operator">&gt;&gt;</span> ~/.bashrc
+</code></pre>
+
+      <button id="copy-button-156" class="copyButton" data-copy="echo 'export PATH=&quot;$HOME/.deno/bin:$PATH&quot;' >> ~/.bashrc
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>You must specify permissions that will be used to run the script at installation
+time.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">-g</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-R</span> jsr:@std/http/file-server -- <span class="token parameter variable">-p</span> <span class="token number">8080</span>
+</code></pre>
+
+      <button id="copy-button-160" class="copyButton" data-copy="deno install -g -N -R jsr:@std/http/file-server -- -p 8080
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>The above command creates an executable called <code>file_server</code> that runs with
+network and read permissions and binds to port 8080.</p>
+<p>For good practice, use the
+<a href="/runtime/tutorials/module_metadata/"><code>import.meta.main</code></a> idiom to specify the
+entry point in an executable script.</p>
+<p>Example:</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token comment">// https://example.com/awesome/cli.ts</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">myAwesomeCli</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token keyword">void</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// -- snip --</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">import</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>main<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">myAwesomeCli</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-170" class="copyButton" data-copy="// https://example.com/awesome/cli.ts
+async function myAwesomeCli(): Promise<void> {
+  // -- snip --
+}
+
+if (import.meta.main) {
+  myAwesomeCli();
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>When you create an executable script make sure to let users know by adding an
+example installation command to your repository:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh"><span class="token comment"># Install using deno install</span>
+
+deno <span class="token function">install</span> <span class="token parameter variable">-n</span> awesome_cli https://example.com/awesome/cli.ts
+</code></pre>
+
+      <button id="copy-button-174" class="copyButton" data-copy="# Install using deno install
+
+deno install -n awesome_cli https://example.com/awesome/cli.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h3 id="deno-install---global---compile-%5Bpackage_or_url%5D" tabindex="-1">deno install --global --compile [PACKAGE_OR_URL] <a class="header-anchor" href="#deno-install---global---compile-%5Bpackage_or_url%5D"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Use this command to compile a package or script into a standalone,
+self-contained binary. The resulting executable can be distributed and run
+without requiring Deno to be installed on the target system.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">--global</span> <span class="token parameter variable">--compile</span> <span class="token parameter variable">-A</span> npm:@anthropic-ai/claude-code
+</code></pre>
+
+      <button id="copy-button-181" class="copyButton" data-copy="deno install --global --compile -A npm:@anthropic-ai/claude-code
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This combines the behavior of <a href="/runtime/reference/cli/compile/"><code>deno compile</code></a>
+with global installation — producing a native binary placed in the installation
+root (same as <code>--global</code> without <code>--compile</code>).</p>
+<h3 id="deno-install---prod" tabindex="-1">deno install --prod <a class="header-anchor" href="#deno-install---prod"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Use this command to install only production dependencies, skipping
+<code>devDependencies</code> from <code>package.json</code>.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">--prod</span>
+</code></pre>
+
+      <button id="copy-button-191" class="copyButton" data-copy="deno install --prod
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This is useful when deploying an application where development dependencies like
+test frameworks or build tools are not needed.</p>
+<p>The <code>--prod</code> flag conflicts with <code>--global</code> and <code>--dev</code>.</p>
+<p>In CI environments, prefer <a href="/runtime/reference/cli/ci/"><code>deno ci --prod</code></a>, which
+also enforces a frozen lockfile and removes any pre-existing <code>node_modules</code>
+before installing.</p>
+<h4 id="--skip-types" tabindex="-1">--skip-types <a class="header-anchor" href="#--skip-types"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>When combined with <code>--prod</code>, the <code>--skip-types</code> flag additionally skips
+<code>@types/*</code> packages from both <code>package.json</code> dependencies and <code>deno.json</code>
+imports:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">--prod</span> --skip-types
+</code></pre>
+
+      <button id="copy-button-207" class="copyButton" data-copy="deno install --prod --skip-types
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>
+</p><div class="admonition caution">
+  <div class="title">Caution</div>
+
+<p></p>
+<p>The <code>--skip-types</code> flag identifies type packages by checking if the package name
+starts with <code>@types/</code>. This heuristic may not cover all type-only packages.</p>
+<p>
+</p></div>
+<p></p>
+<h4 id="--prod-with---entrypoint" tabindex="-1">--prod with --entrypoint <a class="header-anchor" href="#--prod-with---entrypoint"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>When <code>--prod</code> is combined with <code>--entrypoint</code>, the module graph is built as
+"code only", which excludes type-only dependencies:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">--prod</span> <span class="token parameter variable">--entrypoint</span> main.ts
+</code></pre>
+
+      <button id="copy-button-223" class="copyButton" data-copy="deno install --prod --entrypoint main.ts
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This provides the most precise production install — only dependencies that are
+actually imported at runtime by the specified entrypoint (and its transitive
+imports) will be installed.</p>
+<h2 id="native-node.js-addons" tabindex="-1">Native Node.js addons <a class="header-anchor" href="#native-node.js-addons"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>A lot of popular npm packages like
+<a href="https://www.npmjs.com/package/sqlite3"><code>npm:sqlite3</code></a> or
+<a href="https://www.npmjs.com/package/duckdb"><code>npm:duckdb</code></a> depend on
+<a href="https://docs.npmjs.com/cli/v10/using-npm/scripts#life-cycle-scripts">"lifecycle scripts"</a>,
+eg. <code>preinstall</code> or <code>postinstall</code> scripts. Most often running these scripts is
+required for a package to work correctly.</p>
+<p>Unlike npm, Deno does not run these scripts by default as they pose a potential
+security vulnerability.</p>
+<p>You can still run these scripts by passing the <code>--allow-scripts=&lt;packages&gt;</code> flag
+when running <code>deno install</code>:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> --allow-scripts<span class="token operator">=</span>npm:sqlite3
+</code></pre>
+
+      <button id="copy-button-239" class="copyButton" data-copy="deno install --allow-scripts=npm:sqlite3
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><em>Install all dependencies and allow <code>npm:sqlite3</code> package to run its lifecycle
+scripts</em>.</p>
+<h2 id="--quiet-flag" tabindex="-1">--quiet flag <a class="header-anchor" href="#--quiet-flag"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The <code>--quiet</code> flag suppresses diagnostic output when installing dependencies.
+When used with <code>deno install</code>, it will hide progress indicators, download
+information, and success messages.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">install</span> <span class="token parameter variable">--quiet</span> jsr:@std/http/file-server
+</code></pre>
+
+      <button id="copy-button-249" class="copyButton" data-copy="deno install --quiet jsr:@std/http/file-server
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>This is useful for scripting environments or when you want cleaner output in CI
+pipelines.</p>
+<h2 id="uninstall" tabindex="-1">Uninstall <a class="header-anchor" href="#uninstall"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>You can uninstall dependencies or binary script with <code>deno uninstall</code> command:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno uninstall express
+Removed express
+</code></pre>
+
+      <button id="copy-button-259" class="copyButton" data-copy="deno uninstall express
+Removed express
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno uninstall <span class="token parameter variable">-g</span> file-server
+deleted /Users/deno/.deno/bin/file-server
+✅ Successfully uninstalled file-server
+</code></pre>
+
+      <button id="copy-button-260" class="copyButton" data-copy="deno uninstall -g file-server
+deleted /Users/deno/.deno/bin/file-server
+✅ Successfully uninstalled file-server
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>See <a href="/runtime/reference/cli/uninstall/"><code>deno uninstall</code> page for more details</a>.</p>
+<div><div class="bg-transparent mt-4 mb-12 relative pl-2 border-l border-background-tertiary"><div class="text-xs font-bold mb-1">Command line usage:</div><div><pre class="!mb-0 !p-6"><code>install</code></pre></div></div><div class="flex flex-col gap-4"><p>Installs dependencies either in the local project or globally to a bin directory</p></div><h2 id="options">Options <a class="header-anchor" href="#options"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2><div class="flex flex-col gap-8 mt-4"><div id="options-allow-scripts"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--allow-scripts</code></div><a class="header-anchor" href="#options-allow-scripts"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Allow running npm lifecycle scripts for the given packages
+Note: Scripts will only be executed when using a node_modules directory (<code>--node-modules-dir</code>).</p></div></div><div id="options-arch"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--arch</code></div><a class="header-anchor" href="#options-arch"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Target architecture for npm package installation (e.g., x64, arm64).</p></div></div><div id="options-cached-only"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--cached-only</code></div><a class="header-anchor" href="#options-cached-only"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Require that remote dependencies are already cached.</p></div></div><div id="options-cert"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--cert</code></div><a class="header-anchor" href="#options-cert"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Load certificate authority from PEM encoded file.</p></div></div><div id="options-check"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--check</code></div><a class="header-anchor" href="#options-check"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Set type-checking behavior. This subcommand type-checks local modules by default, so passing<code> --check</code> is redundant; pass<code> --check=all</code> to also type-check remote modules. Alternatively, use the 'deno check' subcommand.</p></div></div><div id="options-compile"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--compile</code></div><a class="header-anchor" href="#options-compile"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Install the script as a compiled executable.</p></div></div><div id="options-conditions"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold"><a href=" https://docs.deno.com/go/conditional-exports">--conditions</a></code></div><a class="header-anchor" href="#options-conditions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Use this argument to specify custom conditions for npm package exports. You can also use DENO_CONDITIONS env var.
+.</p></div></div><div id="options-config"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold"><a href=" https://docs.deno.com/go/config">--config, -c</a></code></div><a class="header-anchor" href="#options-config"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Configure different aspects of deno including TypeScript, linting, and code formatting.
+Typically the configuration file will be called <code>deno.json</code> or <code>deno.jsonc</code> and
+automatically detected; in that case this flag is not necessary.</p></div></div><div id="options-dev"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--dev, -D</code></div><a class="header-anchor" href="#options-dev"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Add the package as a dev dependency (under <code>devDependencies</code>). Note: this only applies when adding to a <code>package.json</code> file.</p></div></div><div id="options-entrypoint"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--entrypoint, -e</code></div><a class="header-anchor" href="#options-entrypoint"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Install dependents of the specified entrypoint(s).</p></div></div><div id="options-env-file"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--env-file</code></div><a class="header-anchor" href="#options-env-file"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Load environment variables from local file
+Only the first environment variable with a given key is used.
+Existing process environment variables are not overwritten, so if variables with the same names already exist in the environment, their values will be preserved.
+Where multiple declarations for the same environment variable exist in your .env file, the first one encountered is applied. This is determined by the order of the files you pass as arguments.</p></div></div><div id="options-force"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--force, -f</code></div><a class="header-anchor" href="#options-force"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Forcefully overwrite existing installation.</p></div></div><div id="options-frozen-lockfile"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--frozen-lockfile</code></div><a class="header-anchor" href="#options-frozen-lockfile"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Error out if lockfile is out of date.</p></div></div><div id="options-global"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--global, -g</code></div><a class="header-anchor" href="#options-global"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Install a package or script as a globally available executable.</p></div></div><div id="options-import-map"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold"><a href=" https://docs.deno.com/runtime/manual/basics/import_maps">--import-map</a></code></div><a class="header-anchor" href="#options-import-map"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Load import map file from local file or remote URL.</p></div></div><div id="options-inspect"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--inspect</code></div><a class="header-anchor" href="#options-inspect"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Activate inspector on host:port [default: 127.0.0.1:9229]. Host and port are optional. Using port 0 will assign a random free port.</p></div></div><div id="options-inspect-brk"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--inspect-brk</code></div><a class="header-anchor" href="#options-inspect-brk"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Activate inspector on host:port, wait for debugger to connect and break at the start of user script.</p></div></div><div id="options-inspect-publish-uid"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--inspect-publish-uid</code></div><a class="header-anchor" href="#options-inspect-publish-uid"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div></div><div id="options-inspect-wait"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--inspect-wait</code></div><a class="header-anchor" href="#options-inspect-wait"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Activate inspector on host:port and wait for debugger to connect before running user code.</p></div></div><div id="options-jsr"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--jsr</code></div><a class="header-anchor" href="#options-jsr"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>assume unprefixed package names are jsr packages.</p></div></div><div id="options-location"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--location</code></div><a class="header-anchor" href="#options-location"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Value of globalThis.location used by some web APIs.</p></div></div><div id="options-lock"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--lock</code></div><a class="header-anchor" href="#options-lock"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Check the specified lock file. (If value is not provided, defaults to "./deno.lock").</p></div></div><div id="options-lockfile-only"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--lockfile-only</code></div><a class="header-anchor" href="#options-lockfile-only"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Install only updating the lockfile.</p></div></div><div id="options-min-dep-age"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--min-dep-age</code></div><a class="header-anchor" href="#options-min-dep-age"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>(Unstable) The age in minutes, ISO-8601 duration or RFC3339 absolute timestamp (e.g. '120' for two hours, 'P2D' for two days, '2025-09-16' for cutoff date, '2025-09-16T12:00:00+00:00' for cutoff time, '0' to disable).</p></div></div><div id="options-name"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--name, -n</code></div><a class="header-anchor" href="#options-name"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Executable file name.</p></div></div><div id="options-no-check"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-check</code></div><a class="header-anchor" href="#options-no-check"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored.</p></div></div><div id="options-no-config"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-config</code></div><a class="header-anchor" href="#options-no-config"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Disable automatic loading of the configuration file.</p></div></div><div id="options-no-lock"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-lock</code></div><a class="header-anchor" href="#options-no-lock"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Disable auto discovery of the lock file.</p></div></div><div id="options-no-npm"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-npm</code></div><a class="header-anchor" href="#options-no-npm"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Do not resolve npm modules.</p></div></div><div id="options-no-remote"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-remote</code></div><a class="header-anchor" href="#options-no-remote"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Do not resolve remote modules.</p></div></div><div id="options-no-save"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--no-save</code></div><a class="header-anchor" href="#options-no-save"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Install the package(s) without adding them to the configuration file.</p></div></div><div id="options-node-modules-dir"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--node-modules-dir</code></div><a class="header-anchor" href="#options-node-modules-dir"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Selects the node_modules directory mode for npm packages (not a path). One of: auto (create a local node_modules directory and install npm packages into it), manual (use the existing local node_modules directory, do not modify it), none (do not use a local node_modules directory; resolve npm packages from the global cache). Defaults to auto when the flag is passed without a value.</p></div></div><div id="options-node-modules-linker"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--node-modules-linker</code></div><a class="header-anchor" href="#options-node-modules-linker"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Sets the linker mode for npm packages (isolated or hoisted).</p></div></div><div id="options-npm"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--npm</code></div><a class="header-anchor" href="#options-npm"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>assume unprefixed package names are npm packages (default).</p></div></div><div id="options-os"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--os</code></div><a class="header-anchor" href="#options-os"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Target OS for npm package installation (e.g., linux, darwin, win32).</p></div></div><div id="options-package-json"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--package-json</code></div><a class="header-anchor" href="#options-package-json"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Force using package.json for dependency management instead of deno.json.</p></div></div><div id="options-preload"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--preload</code></div><a class="header-anchor" href="#options-preload"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>A list of files that will be executed before the main module.</p></div></div><div id="options-prod"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--prod</code></div><a class="header-anchor" href="#options-prod"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Only install production dependencies (excludes devDependencies).</p></div></div><div id="options-reload"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--reload, -r</code></div><a class="header-anchor" href="#options-reload"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Reload source code cache (recompile TypeScript). With no value, reloads everything. Pass a comma-separated list of specifiers to reload only those modules; npm: reloads all npm modules; npm:chalk reloads a single npm module; jsr:@std/http/file-server,jsr:@std/assert/assert-equals reloads specific modules.</p></div></div><div id="options-require"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--require</code></div><a class="header-anchor" href="#options-require"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>A list of CommonJS modules that will be executed before the main module.</p></div></div><div id="options-root"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--root</code></div><a class="header-anchor" href="#options-root"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Installation root.</p></div></div><div id="options-save-exact"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--save-exact</code></div><a class="header-anchor" href="#options-save-exact"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Save exact version without the caret (^).</p></div></div><div id="options-save-optional"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--save-optional, -O</code></div><a class="header-anchor" href="#options-save-optional"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Add the package as an optional dependency (under <code>optionalDependencies</code>). Note: this only applies when adding to a <code>package.json</code> file.</p></div></div><div id="options-seed"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--seed</code></div><a class="header-anchor" href="#options-seed"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Set the random number generator seed.</p></div></div><div id="options-skip-types"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--skip-types</code></div><a class="header-anchor" href="#options-skip-types"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Exclude @types/* packages from installation.
+Be careful, as it uses a name-based heuristic and may skip packages that ship runtime code.</p></div></div><div id="options-unsafely-ignore-certificate-errors"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--unsafely-ignore-certificate-errors</code></div><a class="header-anchor" href="#options-unsafely-ignore-certificate-errors"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>DANGER: Disables verification of TLS certificates.</p></div></div><div id="options-unscoped"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--unscoped</code></div><a class="header-anchor" href="#options-unscoped"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Use the package name without its scope as the alias (ex. <code>jsr:@david/jsonc-morph</code> is added as <code>jsonc-morph</code>). Packages given an explicit alias are unaffected.</p></div></div><div id="options-v8-flags"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--v8-flags</code></div><a class="header-anchor" href="#options-v8-flags"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>To see a list of all available flags use<code> --v8-flags=--help</code>
+Flags can also be set via the DENO_V8_FLAGS environment variable.
+Any flags set with this flag are appended after the DENO_V8_FLAGS environment variable.</p></div></div><div id="options-vendor"><div class="flex items-baseline justify-between gap-4 flex-wrap"><div class="flex items-baseline gap-2"><code class="text-sm font-semibold">--vendor</code></div><a class="header-anchor" href="#options-vendor"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></div><div class="mt-2 text-sm !whitespace-pre-line"><p>Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages.</p></div></div></div></div></div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-07-02T00:00:00.000Z">July 2, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/reference/cli/init/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← deno init</span></a><a href="/runtime/reference/cli/jupyter/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">deno jupyter →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/cli/install.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

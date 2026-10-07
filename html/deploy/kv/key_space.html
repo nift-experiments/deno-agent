@@ -1,0 +1,359 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#keys" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Keys </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#key-part-ordering" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Key Part Ordering </a></li><li class="leading-tight text-balance"><a href="#key-examples" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Key Examples </a></li><li class="leading-tight text-balance"><a href="#universally-unique-lexicographically-sortable-identifiers-(ulids)" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Universally Unique Lexicographically Sortable Identifiers (ULIDs) </a></li></ul></li><li class="leading-tight text-balance"><a href="#values" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Values </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#deno.kvu64-type" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Deno.KvU64 type </a></li><li class="leading-tight text-balance"><a href="#value-examples" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Value Examples </a></li></ul></li><li class="leading-tight text-balance"><a href="#versionstamp" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Versionstamp </a></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">KV</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/deploy/kv/key_space.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fdeploy%2Fkv%2Fkey_space.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Key Space</h1></div><p><deno-admonition></deno-admonition></p>
+<p>Deno KV is a key value store. The key space is a flat namespace of
+key+value+versionstamp pairs. Keys are sequences of key parts, which allow
+modeling of hierarchical data. Values are arbitrary JavaScript objects.
+Versionstamps represent when a value was inserted / modified.</p>
+<h2 id="keys" tabindex="-1">Keys <a class="header-anchor" href="#keys"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Keys in Deno KV are sequences of key parts, which can be <code>string</code>s, <code>number</code>s,
+<code>boolean</code>s, <code>Uint8Array</code>s, or <code>bigint</code>s.</p>
+<p>Using a sequence of parts, rather than a single string eliminates the
+possibility of delimiter injection attacks, because there is no visible
+delimiter.</p>
+<blockquote>
+<p>A key injection attack occurs when an attacker manipulates the structure of a
+key-value store by injecting delimiters used in the key encoding scheme into a
+user controlled variable, leading to unintended behavior or unauthorized
+access. For example, consider a key-value store using a slash (/) as a
+delimiter, with keys like "users/alice/settings" and "users/bob/settings". An
+attacker could create a new user with the name "alice/settings/hacked" to form
+the key "users/alice/settings/hacked/settings", injecting the delimiter and
+manipulating the key structure. In Deno KV, the injection would result in the
+key <code>["users", "alice/settings/hacked", "settings"]</code>, which is not harmful.</p>
+</blockquote>
+<p>Between key parts, invisible delimiters are used to separate the parts. These
+delimiters are never visible, but ensure that one part can not be confused with
+another part. For example, the key parts <code>["abc", "def"]</code>, <code>["ab", "cdef"]</code>,
+<code>["abc", "", "def"]</code> are all different keys.</p>
+<p>Keys are case sensitive and are ordered lexicographically by their parts. The
+first part is the most significant, and the last part is the least significant.
+The order of the parts is determined by both the type and the value of the part.</p>
+<h3 id="key-part-ordering" tabindex="-1">Key Part Ordering <a class="header-anchor" href="#key-part-ordering"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Key parts are ordered lexicographically by their type, and within a given type,
+they are ordered by their value. The ordering of types is as follows:</p>
+<ol>
+<li><code>Uint8Array</code></li>
+<li><code>string</code></li>
+<li><code>number</code></li>
+<li><code>bigint</code></li>
+<li><code>boolean</code></li>
+</ol>
+<p>Within a given type, the ordering is:</p>
+<ul>
+<li><code>Uint8Array</code>: byte ordering of the array</li>
+<li><code>string</code>: byte ordering of the UTF-8 encoding of the string</li>
+<li><code>number</code>: -Infinity &lt; -1.0 &lt; -0.5 &lt; -0.0 &lt; 0.0 &lt; 0.5 &lt; 1.0 &lt; Infinity &lt; NaN</li>
+<li><code>bigint</code>: mathematical ordering, largest negative number first, largest
+positive number last</li>
+<li><code>boolean</code>: false &lt; true</li>
+</ul>
+<p>This means that the part <code>1.0</code> (a number) is ordered before the part <code>2.0</code> (also
+a number), but is greater than the part <code>0n</code> (a bigint), because <code>1.0</code> is a
+number and <code>0n</code> is a bigint, and type ordering has precedence over the ordering
+of values within a type.</p>
+<h3 id="key-examples" tabindex="-1">Key Examples <a class="header-anchor" href="#key-examples"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token string">"profile"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// User with ID 42's profile</span>
+<span class="token punctuation">[</span><span class="token string">"posts"</span><span class="token punctuation">,</span> <span class="token string">"2023-04-23"</span><span class="token punctuation">,</span> <span class="token string">"comments"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Comments for all posts on 2023-04-23</span>
+<span class="token punctuation">[</span><span class="token string">"products"</span><span class="token punctuation">,</span> <span class="token string">"electronics"</span><span class="token punctuation">,</span> <span class="token string">"smartphones"</span><span class="token punctuation">,</span> <span class="token string">"apple"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Apple smartphones in the electronics category</span>
+<span class="token punctuation">[</span><span class="token string">"orders"</span><span class="token punctuation">,</span> <span class="token number">1001</span><span class="token punctuation">,</span> <span class="token string">"shipping"</span><span class="token punctuation">,</span> <span class="token string">"tracking"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Tracking information for order ID 1001</span>
+<span class="token punctuation">[</span><span class="token string">"files"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"metadata"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Metadata for a file with Uint8Array identifier</span>
+<span class="token punctuation">[</span><span class="token string">"projects"</span><span class="token punctuation">,</span> <span class="token string">"openai"</span><span class="token punctuation">,</span> <span class="token string">"tasks"</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Task with ID 5 in the OpenAI project</span>
+<span class="token punctuation">[</span><span class="token string">"events"</span><span class="token punctuation">,</span> <span class="token string">"2023-03-31"</span><span class="token punctuation">,</span> <span class="token string">"location"</span><span class="token punctuation">,</span> <span class="token string">"san_francisco"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Events in San Francisco on 2023-03-31</span>
+<span class="token punctuation">[</span><span class="token string">"invoices"</span><span class="token punctuation">,</span> <span class="token number">2023</span><span class="token punctuation">,</span> <span class="token string">"Q1"</span><span class="token punctuation">,</span> <span class="token string">"summary"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Summary of Q1 invoices for 2023</span>
+<span class="token punctuation">[</span><span class="token string">"teams"</span><span class="token punctuation">,</span> <span class="token string">"engineering"</span><span class="token punctuation">,</span> <span class="token string">"members"</span><span class="token punctuation">,</span> <span class="token number">1n</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Member with ID 1n in the engineering team</span>
+</code></pre>
+
+      <button id="copy-button-95" class="copyButton" data-copy="[&quot;users&quot;, 42, &quot;profile&quot;]; // User with ID 42's profile
+[&quot;posts&quot;, &quot;2023-04-23&quot;, &quot;comments&quot;]; // Comments for all posts on 2023-04-23
+[&quot;products&quot;, &quot;electronics&quot;, &quot;smartphones&quot;, &quot;apple&quot;]; // Apple smartphones in the electronics category
+[&quot;orders&quot;, 1001, &quot;shipping&quot;, &quot;tracking&quot;]; // Tracking information for order ID 1001
+[&quot;files&quot;, new Uint8Array([1, 2, 3]), &quot;metadata&quot;]; // Metadata for a file with Uint8Array identifier
+[&quot;projects&quot;, &quot;openai&quot;, &quot;tasks&quot;, 5]; // Task with ID 5 in the OpenAI project
+[&quot;events&quot;, &quot;2023-03-31&quot;, &quot;location&quot;, &quot;san_francisco&quot;]; // Events in San Francisco on 2023-03-31
+[&quot;invoices&quot;, 2023, &quot;Q1&quot;, &quot;summary&quot;]; // Summary of Q1 invoices for 2023
+[&quot;teams&quot;, &quot;engineering&quot;, &quot;members&quot;, 1n]; // Member with ID 1n in the engineering team
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="universally-unique-lexicographically-sortable-identifiers-(ulids)" tabindex="-1">Universally Unique Lexicographically Sortable Identifiers (ULIDs) <a class="header-anchor" href="#universally-unique-lexicographically-sortable-identifiers-(ulids)"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>Key part ordering allows keys consisting of timestamps and ID parts to be listed
+chronologically. Typically, you can generate a key using the following:
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now"><code>Date.now()</code></a>
+and
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID"><code>crypto.randomUUID()</code></a>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">setUser</span><span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> crypto<span class="token punctuation">.</span><span class="token function">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-102" class="copyButton" data-copy="async function setUser(user) {
+  await kv.set([&quot;users&quot;, Date.now(), crypto.randomUUID()], user);
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Run multiple times sequentially, this produces the following keys:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token number">1691377037923</span><span class="token punctuation">,</span> <span class="token string">"8c72fa25-40ad-42ce-80b0-44f79bc7a09e"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// First user</span>
+<span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token number">1691377037924</span><span class="token punctuation">,</span> <span class="token string">"8063f20c-8c2e-425e-a5ab-d61e7a717765"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Second user</span>
+<span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token number">1691377037925</span><span class="token punctuation">,</span> <span class="token string">"35310cea-58ba-4101-b09a-86232bf230b2"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Third user</span>
+</code></pre>
+
+      <button id="copy-button-106" class="copyButton" data-copy="[&quot;users&quot;, 1691377037923, &quot;8c72fa25-40ad-42ce-80b0-44f79bc7a09e&quot;]; // First user
+[&quot;users&quot;, 1691377037924, &quot;8063f20c-8c2e-425e-a5ab-d61e7a717765&quot;]; // Second user
+[&quot;users&quot;, 1691377037925, &quot;35310cea-58ba-4101-b09a-86232bf230b2&quot;]; // Third user
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>However, having the timestamp and ID represented within a single key part may be
+more straightforward in some cases. You can use a
+<a href="https://github.com/ulid/spec">Universally Unique Lexicographically Sortable Identifier (ULID)</a>
+to do this. This type of identifier encodes a UTC timestamp, is
+lexicographically sortable and is cryptographically random by default:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> ulid <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"jsr:@std/ulid"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> kv <span class="token operator">=</span> <span class="token keyword">await</span> Deno<span class="token punctuation">.</span><span class="token function">openKv</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">setUser</span><span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token function">ulid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-110" class="copyButton" data-copy="import { ulid } from &quot;jsr:@std/ulid&quot;;
+
+const kv = await Deno.openKv();
+
+async function setUser(user) {
+  await kv.set([&quot;users&quot;, ulid()], user);
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><div class="relative"><pre><code class="highlight notranslate language-js"><span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token string">"01H76YTWK3YBV020S6MP69TBEQ"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// First user</span>
+<span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token string">"01H76YTWK4V82VFET9YTYDQ0NY"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Second user</span>
+<span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token string">"01H76YTWK5DM1G9TFR0Y5SCZQV"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Third user</span>
+</code></pre>
+
+      <button id="copy-button-111" class="copyButton" data-copy="[&quot;users&quot;, &quot;01H76YTWK3YBV020S6MP69TBEQ&quot;]; // First user
+[&quot;users&quot;, &quot;01H76YTWK4V82VFET9YTYDQ0NY&quot;]; // Second user
+[&quot;users&quot;, &quot;01H76YTWK5DM1G9TFR0Y5SCZQV&quot;]; // Third user
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Furthermore, you can generate ULIDs monotonically increasingly using
+<code>monotonicUlid</code> function:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> monotonicUlid <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"jsr:@std/ulid"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">setUser</span><span class="token punctuation">(</span><span class="token parameter">user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> kv<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token function">monotonicUlid</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-115" class="copyButton" data-copy="import { monotonicUlid } from &quot;jsr:@std/ulid&quot;;
+
+async function setUser(user) {
+  await kv.set([&quot;users&quot;, monotonicUlid()], user);
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><div class="relative"><pre><code class="highlight notranslate language-js"><span class="token comment">// Strict ordering for the same timestamp by incrementing the least-significant random bit by 1</span>
+<span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token string">"01H76YTWK3YBV020S6MP69TBEQ"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// First user</span>
+<span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token string">"01H76YTWK3YBV020S6MP69TBER"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Second user</span>
+<span class="token punctuation">[</span><span class="token string">"users"</span><span class="token punctuation">,</span> <span class="token string">"01H76YTWK3YBV020S6MP69TBES"</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// Third user</span>
+</code></pre>
+
+      <button id="copy-button-116" class="copyButton" data-copy="// Strict ordering for the same timestamp by incrementing the least-significant random bit by 1
+[&quot;users&quot;, &quot;01H76YTWK3YBV020S6MP69TBEQ&quot;]; // First user
+[&quot;users&quot;, &quot;01H76YTWK3YBV020S6MP69TBER&quot;]; // Second user
+[&quot;users&quot;, &quot;01H76YTWK3YBV020S6MP69TBES&quot;]; // Third user
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="values" tabindex="-1">Values <a class="header-anchor" href="#values"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Values in Deno KV can be arbitrary JavaScript values that are compatible with
+the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">structured clone algorithm</a>. This includes:</p>
+<ul>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>boolean</code></li>
+<li><code>number</code></li>
+<li><code>string</code></li>
+<li><code>bigint</code></li>
+<li><code>Uint8Array</code></li>
+<li><code>Array</code></li>
+<li><code>Object</code></li>
+<li><code>Map</code></li>
+<li><code>Set</code></li>
+<li><code>Date</code></li>
+<li><code>RegExp</code></li>
+</ul>
+<p>Objects and arrays can contain any of the above types, including other objects
+and arrays. <code>Map</code>s and <code>Set</code>s can contain any of the above types, including
+other <code>Map</code>s and <code>Set</code>s.</p>
+<p>Circular references within values are supported.</p>
+<p>Objects with a non-primitive prototype are not supported (such as class
+instances or Web API objects). Functions and symbols can also not be serialized.</p>
+<h3 id="deno.kvu64-type" tabindex="-1"><code>Deno.KvU64</code> type <a class="header-anchor" href="#deno.kvu64-type"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>In addition to structured serializable values, the special value <code>Deno.KvU64</code> is
+also supported as a value. This object represents a 64-bit unsigned integer,
+represented as a bigint. It can be used with the <code>sum</code>, <code>min</code>, and <code>max</code> KV
+operations. It can not be stored within an object or array. It must be stored as
+a top-level value.</p>
+<p>It can be created with the <code>Deno.KvU64</code> constructor:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">const</span> u64 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Deno<span class="token punctuation">.</span>KvU64</span><span class="token punctuation">(</span><span class="token number">42n</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-208" class="copyButton" data-copy="const u64 = new Deno.KvU64(42n);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="value-examples" tabindex="-1">Value Examples <a class="header-anchor" href="#value-examples"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div class="relative"><pre><code class="highlight notranslate language-js,ignore">undefined;
+null;
+true;
+false;
+42;
+-42.5;
+42n;
+"hello";
+new Uint8Array([1, 2, 3]);
+[1, 2, 3];
+{ a: 1, b: 2, c: 3 };
+new Map([["a", 1], ["b", 2], ["c", 3]]);
+new Set([1, 2, 3]);
+new Date("2023-04-23");
+/abc/;
+
+// Circular references are supported
+const a = {};
+const b = { a };
+a.b = b;
+
+// Deno.KvU64 is supported
+new Deno.KvU64(42n);
+</code></pre>
+
+      <button id="copy-button-212" class="copyButton" data-copy="undefined;
+null;
+true;
+false;
+42;
+-42.5;
+42n;
+&quot;hello&quot;;
+new Uint8Array([1, 2, 3]);
+[1, 2, 3];
+{ a: 1, b: 2, c: 3 };
+new Map([[&quot;a&quot;, 1], [&quot;b&quot;, 2], [&quot;c&quot;, 3]]);
+new Set([1, 2, 3]);
+new Date(&quot;2023-04-23&quot;);
+/abc/;
+
+// Circular references are supported
+const a = {};
+const b = { a };
+a.b = b;
+
+// Deno.KvU64 is supported
+new Deno.KvU64(42n);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="versionstamp" tabindex="-1">Versionstamp <a class="header-anchor" href="#versionstamp"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>All data in the Deno KV key-space is versioned. Every time a value is inserted
+or modified, a versionstamp is assigned to it. Versionstamps are monotonically
+increasing, non-sequential, 12 byte values that represent the time that the
+value was modified. Versionstamps do not represent real time, but rather the
+order in which the values were modified.</p>
+<p>Because versionstamps are monotonically increasing, they can be used to
+determine whether a given value is newer or older than another value. This can
+be done by comparing the versionstamps of the two values. If versionstamp A is
+greater than versionstamp B, then value A was modified more recently than value
+B.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js">versionstampA <span class="token operator">&gt;</span> versionstampB<span class="token punctuation">;</span>
+<span class="token string">"000002fa526aaccb0000"</span> <span class="token operator">&gt;</span> <span class="token string">"000002fa526aacc90000"</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
+</code></pre>
+
+      <button id="copy-button-222" class="copyButton" data-copy="versionstampA > versionstampB;
+&quot;000002fa526aaccb0000&quot; > &quot;000002fa526aacc90000&quot;; // true
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>All data modified by a single transaction are assigned the same versionstamp.
+This means that if two <code>set</code> operations are performed in the same atomic
+operation, then the versionstamp of the new values will be the same.</p>
+<p>Versionstamps are used to implement optimistic concurrency control. Atomic
+operations can contain checks that ensure that the versionstamp of the data they
+are operating on matches a versionstamp passed to the operation. If the
+versionstamp of the data is not the same as the versionstamp passed to the
+operation, then the transaction will fail and the operation will not be applied.</p>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2025-10-07T00:00:00.000Z">October 7, 2025</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/deploy/kv/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Overview</span></a><a href="/deploy/kv/operations/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">Operations →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/deploy/kv/key_space.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

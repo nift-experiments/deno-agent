@@ -1,0 +1,1489 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#how-it-works" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">How it works </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#environment-variables-set-by-a-connection" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Environment variables set by a connection </a></li></ul></li><li class="leading-tight text-balance"><a href="#setting-up-aws" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Setting up AWS </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#usage" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Usage </a></li></ul></li><li class="leading-tight text-balance"><a href="#setting-up-gcp" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Setting up GCP </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#usage-1" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Usage </a></li></ul></li><li class="leading-tight text-balance"><a href="#removing-a-cloud-integration" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Removing a cloud integration </a></li><li class="leading-tight text-balance"><a href="#setup-guides" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Setup Guides </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#aws%3A-easy-setup-with-deno-deploy-setup-aws" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">AWS: Easy setup with deno deploy setup-aws </a></li><li class="leading-tight text-balance"><a href="#aws%3A-using-the-aws-cli" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">AWS: Using the aws CLI </a></li><li class="leading-tight text-balance"><a href="#aws%3A-using-the-aws-console" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">AWS: Using the AWS Console </a></li><li class="leading-tight text-balance"><a href="#aws%3A-using-terraform" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">AWS: Using Terraform </a></li><li class="leading-tight text-balance"><a href="#gcp%3A-easy-setup-with-deno-deploy-setup-gcp" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">GCP: Easy setup with deno deploy setup-gcp </a></li><li class="leading-tight text-balance"><a href="#gcp%3A-using-the-gcloud-cli" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">GCP: Using the gcloud CLI </a></li><li class="leading-tight text-balance"><a href="#gcp%3A-using-the-gcp-console" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">GCP: Using the GCP Console </a></li><li class="leading-tight text-balance"><a href="#gcp%3A-using-terraform" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">GCP: Using Terraform </a></li></ul></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference</li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/deploy/reference/cloud_connections.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fdeploy%2Freference%2Fcloud_connections.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">Cloud Connections</h1></div><p>Deno Deploy allows you to connect to cloud providers like AWS and Google Cloud
+Platform (GCP) without needing to manually manage static credentials. This is
+done through the use of OpenID Connect (OIDC) and identity federation.</p>
+<h2 id="how-it-works" tabindex="-1">How it works <a class="header-anchor" href="#how-it-works"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>Deno Deploy is an OIDC provider. Every running application of Deno Deploy can be
+issued short-lived JWT tokens that are signed by Deno Deploy. These tokens
+contain information about the application, such as the organization and
+application ids and slugs, the context in which an application is executing, and
+the running revision ID. Learn more about
+<a href="/deploy/reference/oidc">OIDC in Deno Deploy</a>.</p>
+<p>By sending these tokens to AWS or GCP, one can exchange them for short-lived AWS
+or GCP credentials that can be used to access cloud resources such as AWS S3
+buckets or Google Cloud Spanner instances. When sending the token to AWS or GCP,
+the token is verified by the cloud provider, which checks that it was issued by
+Deno Deploy and that it is valid for the application and context that should be
+allowed to access the cloud resources.</p>
+<p>To enable AWS or GCP to exchange OIDC tokens for credentials, the cloud provider
+needs to be configured to trust Deno Deploy as an OIDC identity provider, and an
+AWS IAM role or GCP service account needs to be created that allows the exchange
+of tokens for credentials, for a specific Deno Deploy application.</p>
+<h3 id="environment-variables-set-by-a-connection" tabindex="-1">Environment variables set by a connection <a class="header-anchor" href="#environment-variables-set-by-a-connection"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>When a cloud connection applies to the context your application is running in,
+Deno Deploy sets the environment variables the cloud SDKs look for, so your code
+does not have to configure credentials itself:</p>
+<ul>
+<li>AWS: <code>AWS_ROLE_ARN</code> and <code>AWS_WEB_IDENTITY_TOKEN_FILE</code></li>
+<li>GCP: <code>GOOGLE_APPLICATION_CREDENTIALS</code>, <code>GCP_WORKLOAD_PROVIDER_ID</code>,
+<code>GCP_SERVICE_ACCOUNT_EMAIL</code>, and <code>GCP_PROJECT_ID</code></li>
+</ul>
+<p>Deno Deploy sets these, and they take precedence over an environment variable
+you have defined with the same name, in every scope. In contexts where no
+connection applies, these names are ordinary environment variables that you are
+free to use for your own purposes.</p>
+<h2 id="setting-up-aws" tabindex="-1">Setting up AWS <a class="header-anchor" href="#setting-up-aws"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>This guide contains three guides for setting up these AWS resources. You can use
+any of these to set up the AWS resources.</p>
+<ul>
+<li><a href="#aws%3A-easy-setup-with-deno-deploy-setup-aws">Using the <code>deno deploy setup-aws</code> command from your local machine</a>
+(recommended)</li>
+<li><a href="#setup-aws-cli">Using the <code>aws</code> CLI</a></li>
+<li><a href="#setup-aws-console">Using the AWS Console</a></li>
+<li><a href="#setup-aws-terraform">Using Terraform</a></li>
+</ul>
+<p>To set up AWS with Deno Deploy, the following resources need to be created
+inside of your AWS account:</p>
+<ul>
+<li>An
+<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html">AWS IAM OIDC Identity Provider</a>
+that trusts Deno Deploy as an OIDC provider.
+<ul>
+<li>The OIDC provider URL is <code>https://oidc.deno.com</code>.</li>
+<li>The audience (client ID) is <code>sts.amazonaws.com</code>.</li>
+</ul>
+</li>
+<li>An
+<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_oidc.html">AWS IAM Role</a>
+that can be "assumed" (signed into) using a Deno Deploy OIDC token.
+<ul>
+<li>The trust policy of the role should allow the OIDC provider to assume the
+role, such as:<div class="relative"><pre><code class="highlight notranslate language-json"><span class="token punctuation">{</span>
+  <span class="token property">"Version"</span><span class="token operator">:</span> <span class="token string">"2012-10-17"</span><span class="token punctuation">,</span>
+  <span class="token property">"Statement"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"Effect"</span><span class="token operator">:</span> <span class="token string">"Allow"</span><span class="token punctuation">,</span>
+      <span class="token property">"Principal"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"Federated"</span><span class="token operator">:</span> <span class="token string">"arn:aws:iam::&lt;account-id&gt;:oidc-provider/oidc.deno.com"</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">"Action"</span><span class="token operator">:</span> <span class="token string">"sts:AssumeRoleWithWebIdentity"</span><span class="token punctuation">,</span>
+      <span class="token property">"Condition"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"StringEquals"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token property">"oidc.deno.com:aud"</span><span class="token operator">:</span> <span class="token string">"sts.amazonaws.com"</span><span class="token punctuation">,</span>
+          <span class="token property">"oidc.deno.com:sub"</span><span class="token operator">:</span> <span class="token string">"deployment:&lt;organization-slug&gt;/&lt;application-slug&gt;/&lt;context-name&gt;"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+      <button id="copy-button-94" class="copyButton" data-copy="{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;Federated&quot;: &quot;arn:aws:iam::<account-id>:oidc-provider/oidc.deno.com&quot;
+      },
+      &quot;Action&quot;: &quot;sts:AssumeRoleWithWebIdentity&quot;,
+      &quot;Condition&quot;: {
+        &quot;StringEquals&quot;: {
+          &quot;oidc.deno.com:aud&quot;: &quot;sts.amazonaws.com&quot;,
+          &quot;oidc.deno.com:sub&quot;: &quot;deployment:<organization-slug>/<application-slug>/<context-name>&quot;
+        }
+      }
+    }
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></li>
+<li>The role should have permissions to access the AWS resources you want to
+use, such as S3 buckets or DynamoDB tables.</li>
+</ul>
+</li>
+</ul>
+<p>After setting up the AWS resources, navigate to the AWS cloud integration setup
+page from the app settings. There you must select the context(s) in which the
+cloud connection should be available.</p>
+<p>Then you must enter the ARN (Amazon Resource Name) for the AWS IAM Role created
+earlier. After entering the ARN you can start a connection test by pressing the
+"Test connection" button. The connection test will check that the AWS IAM Role
+and OIDC provider are configured correctly, and does not allow access from apps,
+orgs, or contexts that should not have access.</p>
+<p>After testing the connection, you can save the cloud connection.</p>
+<h3 id="usage" tabindex="-1">Usage <a class="header-anchor" href="#usage"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>After setting up a cloud connection between AWS and Deno Deploy you can access
+AWS resources such as S3 directly from your application code, without having to
+configure any credentials.</p>
+<p>The AWS SDK v3 automatically picks up on the cloud connection configuration.
+Here is an example of accessing an S3 bucket from a Deno Deploy application with
+a configured AWS account.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> ListBucketsCommand<span class="token punctuation">,</span> S3Client <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@aws-sdk/client-s3"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">S3Client</span><span class="token punctuation">(</span><span class="token punctuation">{</span> region<span class="token operator">:</span> <span class="token string">"us-west-2"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">{</span> Buckets <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> s3<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ListBucketsCommand</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> Response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>Buckets<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-122" class="copyButton" data-copy="import { ListBucketsCommand, S3Client } from &quot;@aws-sdk/client-s3&quot;;
+
+const s3 = new S3Client({ region: &quot;us-west-2&quot; });
+
+Deno.serve(() => {
+  const { Buckets } = await s3.send(new ListBucketsCommand({}));
+  return Response.json(Buckets);
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="setting-up-gcp" tabindex="-1">Setting up GCP <a class="header-anchor" href="#setting-up-gcp"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>To set up GCP with Deno Deploy, the following resources need to be created
+inside of your GCP account:</p>
+<ul>
+<li>A
+<a href="https://cloud.google.com/iam/docs/workload-identity-federation-with-other-providers">Workload Identity Pool and Workload Identity Provider</a>
+that trusts Deno Deploy as an OIDC provider.
+<ul>
+<li>The OIDC provider URL is <code>https://oidc.deno.com</code>.</li>
+<li>The audience should be the default (starts with
+<code>https://iam.googleapis.com</code>).</li>
+<li>At least the following attribute mappings must be set:
+<ul>
+<li><code>google.subject = assertion.sub</code></li>
+<li><code>attribute.full_slug = assertion.org_slug + "/" + assertion.app_slug</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A <a href="https://cloud.google.com/iam/docs/service-accounts-create">Service account</a>
+that can be "impersonated" (signed into) using the OIDC token.
+<ul>
+<li>A principal or principal set from the workload identity pool should have
+access to the service account using the Workload Identity User role
+(<code>roles/iam.workloadIdentityUser</code>). Examples:
+<ul>
+<li>A specific context in an app:
+<code>principal://iam.googleapis.com/projects/&lt;PROJECT_NUMBER&gt;/locations/global/workloadIdentityPools/oidc-deno-com/subject/deployment:&lt;ORG_SLUG&gt;/&lt;APP_SLUG&gt;/&lt;CONTEXT_NAME&gt;</code></li>
+<li>All contexts in an app:
+<code>principalSet://iam.googleapis.com/projects/&lt;PROJECT_NUMBER&gt;/locations/global/workloadIdentityPools/oidc-deno-com/attribute.full_slug/&lt;ORG_SLUG&gt;/&lt;APP_SLUG&gt;</code></li>
+</ul>
+</li>
+<li>The service account should have access to the GCP resources you want to use,
+such as a Google Cloud Storage bucket.</li>
+</ul>
+</li>
+</ul>
+<p>This guide contains three guides for setting up these GCP resources. You can use
+any of these to set up the GCP resources.</p>
+<ul>
+<li><a href="#setup-gcp-easy">Using the <code>deno deploy setup-gcp</code> command from your local machine</a>
+(recommended)</li>
+<li><a href="#setup-gcp-cli">Using the <code>gcloud</code> CLI</a></li>
+<li><a href="#setup-gcp-console">Using the GCP Console</a></li>
+<li><a href="#setup-gcp-terraform">Using Terraform</a></li>
+</ul>
+<p>After setting up the GCP resources, navigate to the GCP cloud integration setup
+page from the app settings. There you must select the context(s) in which the
+cloud connection should be available.</p>
+<p>Then you must enter the workload identity provider ID, in the form
+<code>projects/&lt;PROJECT_NUMBER&gt;/locations/global/workloadIdentityPools/oidc-deno-com/providers/oidc-deno-com</code>,
+and the email address of the GCP Service Account created earlier. After entering
+the email address you can start a connection test by pressing the "Test
+connection" button. The connection test will check that the GCP Service Account
+and OIDC provider are configured correctly, and does not allow access from apps,
+orgs, or contexts that should not have access.</p>
+<p>After testing the connection, you can save the cloud connection.</p>
+<h3 id="usage-1" tabindex="-1">Usage <a class="header-anchor" href="#usage-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>After setting up a cloud connection between GCP and Deno Deploy you can access
+GCP resources such as Cloud Storage directly from your application code, without
+having to configure any credentials.</p>
+<p>The Google Cloud SDK automatically picks up on the cloud connection
+configuration. Here is an example of accessing a Cloud Storage bucket from a
+Deno Deploy application with a configured GCP account.</p>
+<div class="relative"><pre><code class="highlight notranslate language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> Storage <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@google-cloud/storage"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> storage <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Storage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+Deno<span class="token punctuation">.</span><span class="token function">serve</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>buckets<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">await</span> storage<span class="token punctuation">.</span><span class="token function">getBuckets</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> Response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>buckets<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-237" class="copyButton" data-copy="import { Storage } from &quot;@google-cloud/storage&quot;;
+
+const storage = new Storage();
+
+Deno.serve(() => {
+  const [buckets] = await storage.getBuckets();
+  return Response.json(buckets);
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="removing-a-cloud-integration" tabindex="-1">Removing a cloud integration <a class="header-anchor" href="#removing-a-cloud-integration"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>You can remove a cloud connection by pressing the "Delete" button in the cloud
+integration section, next to a specific cloud connection.</p>
+<h2 id="setup-guides" tabindex="-1">Setup Guides <a class="header-anchor" href="#setup-guides"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<h3 id="aws%3A-easy-setup-with-deno-deploy-setup-aws" tabindex="-1">AWS: Easy setup with <code>deno deploy setup-aws</code> <a class="header-anchor" href="#aws%3A-easy-setup-with-deno-deploy-setup-aws"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>For instructions on how to set up AWS with Deno Deploy using the
+<code>deno deploy setup-aws</code> command, please see the instructions on the AWS cloud
+integration setup page in your app settings.</p>
+<h3 id="aws%3A-using-the-aws-cli" tabindex="-1">AWS: Using the <code>aws</code> CLI <a class="header-anchor" href="#aws%3A-using-the-aws-cli"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can manually set up AWS resources using the AWS CLI. This requires having
+the AWS CLI installed and configured with appropriate permissions to create IAM
+roles, OIDC providers, and attach policies.</p>
+<h4 id="prerequisites" tabindex="-1">Prerequisites <a class="header-anchor" href="#prerequisites"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ul>
+<li>AWS CLI installed and configured</li>
+<li>Permissions to create IAM roles, OIDC providers, and attach policies</li>
+</ul>
+<h4 id="step-1%3A-create-oidc-provider" tabindex="-1">Step 1: Create OIDC Provider <a class="header-anchor" href="#step-1%3A-create-oidc-provider"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>First, create the OIDC provider if it doesn't already exist:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">aws iam create-open-id-connect-provider <span class="token punctuation">\</span>
+  <span class="token parameter variable">--url</span> https://oidc.deno.com <span class="token punctuation">\</span>
+  --client-id-list sts.amazonaws.com
+</code></pre>
+
+      <button id="copy-button-280" class="copyButton" data-copy="aws iam create-open-id-connect-provider \
+  --url https://oidc.deno.com \
+  --client-id-list sts.amazonaws.com
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h4 id="step-2%3A-create-iam-role-with-trust-policy" tabindex="-1">Step 2: Create IAM Role with Trust Policy <a class="header-anchor" href="#step-2%3A-create-iam-role-with-trust-policy"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Create a trust policy file that allows your Deno Deploy application to assume
+the role. You can choose between allowing access to all contexts or specific
+contexts only.</p>
+<p><strong>For all contexts in your app:</strong></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash"><span class="token comment"># Create trust policy file for entire app</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> trust-policy-all-contexts.json <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::YOUR_ACCOUNT_ID:oidc-provider/oidc.deno.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringLike": {
+          "oidc.deno.com:sub": "deployment:YOUR_ORG/YOUR_APP/*"
+        }
+      }
+    }
+  ]
+}
+EOF</span>
+</code></pre>
+
+      <button id="copy-button-290" class="copyButton" data-copy="# Create trust policy file for entire app
+cat > trust-policy-all-contexts.json << EOF
+{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;Federated&quot;: &quot;arn:aws:iam::YOUR_ACCOUNT_ID:oidc-provider/oidc.deno.com&quot;
+      },
+      &quot;Action&quot;: &quot;sts:AssumeRoleWithWebIdentity&quot;,
+      &quot;Condition&quot;: {
+        &quot;StringLike&quot;: {
+          &quot;oidc.deno.com:sub&quot;: &quot;deployment:YOUR_ORG/YOUR_APP/*&quot;
+        }
+      }
+    }
+  ]
+}
+EOF
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><strong>For specific contexts only:</strong></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash"><span class="token comment"># Create trust policy file for specific contexts</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> trust-policy-specific-contexts.json <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::YOUR_ACCOUNT_ID:oidc-provider/oidc.deno.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "oidc.deno.com:sub": [
+            "deployment:YOUR_ORG/YOUR_APP/production",
+            "deployment:YOUR_ORG/YOUR_APP/staging"
+          ]
+        }
+      }
+    }
+  ]
+}
+EOF</span>
+</code></pre>
+
+      <button id="copy-button-294" class="copyButton" data-copy="# Create trust policy file for specific contexts
+cat > trust-policy-specific-contexts.json << EOF
+{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [
+    {
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Principal&quot;: {
+        &quot;Federated&quot;: &quot;arn:aws:iam::YOUR_ACCOUNT_ID:oidc-provider/oidc.deno.com&quot;
+      },
+      &quot;Action&quot;: &quot;sts:AssumeRoleWithWebIdentity&quot;,
+      &quot;Condition&quot;: {
+        &quot;StringEquals&quot;: {
+          &quot;oidc.deno.com:sub&quot;: [
+            &quot;deployment:YOUR_ORG/YOUR_APP/production&quot;,
+            &quot;deployment:YOUR_ORG/YOUR_APP/staging&quot;
+          ]
+        }
+      }
+    }
+  ]
+}
+EOF
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h4 id="step-3%3A-create-the-iam-role" tabindex="-1">Step 3: Create the IAM Role <a class="header-anchor" href="#step-3%3A-create-the-iam-role"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Create the role using the appropriate trust policy:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash"><span class="token comment"># For entire app</span>
+aws iam create-role <span class="token punctuation">\</span>
+  --role-name DenoDeploy-YourOrg-YourApp <span class="token punctuation">\</span>
+  --assume-role-policy-document file://trust-policy-all-contexts.json
+
+<span class="token comment"># OR for specific contexts</span>
+aws iam create-role <span class="token punctuation">\</span>
+  --role-name DenoDeploy-YourOrg-YourApp <span class="token punctuation">\</span>
+  --assume-role-policy-document file://trust-policy-specific-contexts.json
+</code></pre>
+
+      <button id="copy-button-301" class="copyButton" data-copy="# For entire app
+aws iam create-role \
+  --role-name DenoDeploy-YourOrg-YourApp \
+  --assume-role-policy-document file://trust-policy-all-contexts.json
+
+# OR for specific contexts
+aws iam create-role \
+  --role-name DenoDeploy-YourOrg-YourApp \
+  --assume-role-policy-document file://trust-policy-specific-contexts.json
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h4 id="step-4%3A-attach-policies" tabindex="-1">Step 4: Attach Policies <a class="header-anchor" href="#step-4%3A-attach-policies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Attach the necessary policies to grant permissions for the AWS resources your
+application needs:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">aws iam attach-role-policy <span class="token punctuation">\</span>
+  --role-name DenoDeploy-YourOrg-YourApp <span class="token punctuation">\</span>
+  --policy-arn arn:aws:iam::aws:policy/POLICY_NAME
+</code></pre>
+
+      <button id="copy-button-308" class="copyButton" data-copy="aws iam attach-role-policy \
+  --role-name DenoDeploy-YourOrg-YourApp \
+  --policy-arn arn:aws:iam::aws:policy/POLICY_NAME
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Replace <code>POLICY_NAME</code> with the appropriate AWS policies (e.g.,
+<code>AmazonS3ReadOnlyAccess</code>, <code>AmazonDynamoDBReadOnlyAccess</code>, etc.) based on your
+requirements.</p>
+<p>After completing these steps, use the Role ARN in your Deno Deploy cloud
+connection configuration.</p>
+<h3 id="aws%3A-using-the-aws-console" tabindex="-1">AWS: Using the AWS Console <a class="header-anchor" href="#aws%3A-using-the-aws-console"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can set up AWS resources using the AWS Management Console web interface.
+This method provides a visual way to configure the necessary IAM resources.</p>
+<h4 id="step-1%3A-create-oidc-identity-provider" tabindex="-1">Step 1: Create OIDC Identity Provider <a class="header-anchor" href="#step-1%3A-create-oidc-identity-provider"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li><strong>Navigate to IAM Console</strong> → Identity providers</li>
+<li><strong>Create OIDC Provider</strong>:
+<ul>
+<li>Click "Add provider"</li>
+<li>Select "OpenID Connect"</li>
+<li>Provider URL: <code>https://oidc.deno.com</code></li>
+<li>Audience: <code>sts.amazonaws.com</code></li>
+<li>Click "Add provider"</li>
+</ul>
+</li>
+</ol>
+<h4 id="step-2%3A-create-iam-role" tabindex="-1">Step 2: Create IAM Role <a class="header-anchor" href="#step-2%3A-create-iam-role"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li><strong>Navigate to IAM Console</strong> → Roles</li>
+<li><strong>Create role</strong>:
+<ul>
+<li>Click "Create role"</li>
+<li>Trusted entity type: <strong>Web identity</strong></li>
+<li>Identity provider: Select the created OIDC provider (<code>oidc.deno.com</code>)</li>
+<li>Audience: <code>sts.amazonaws.com</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="step-3%3A-configure-trust-policy-conditions" tabindex="-1">Step 3: Configure Trust Policy Conditions <a class="header-anchor" href="#step-3%3A-configure-trust-policy-conditions"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Add a condition to restrict which Deno Deploy applications can assume this role.
+Choose one approach:</p>
+<p><strong>For all contexts in your app:</strong></p>
+<ul>
+<li>Condition key: <code>oidc.deno.com:sub</code></li>
+<li>Operator: <code>StringLike</code></li>
+<li>Value: <code>deployment:YOUR_ORG/YOUR_APP/*</code></li>
+</ul>
+<p><strong>For specific contexts only:</strong></p>
+<ul>
+<li>Condition key: <code>oidc.deno.com:sub</code></li>
+<li>Operator: <code>StringEquals</code></li>
+<li>Value: <code>deployment:YOUR_ORG/YOUR_APP/production</code></li>
+<li>Add additional conditions for each context (e.g., staging, development)</li>
+</ul>
+<p>Click "Next" to continue.</p>
+<h4 id="step-4%3A-attach-permissions-policies" tabindex="-1">Step 4: Attach Permissions Policies <a class="header-anchor" href="#step-4%3A-attach-permissions-policies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li>Search and select appropriate policies based on your needs:
+<ul>
+<li>For S3 access: <code>AmazonS3ReadOnlyAccess</code> or <code>AmazonS3FullAccess</code></li>
+<li>For DynamoDB access: <code>AmazonDynamoDBReadOnlyAccess</code> or
+<code>AmazonDynamoDBFullAccess</code></li>
+<li>For other services: Select relevant policies</li>
+</ul>
+</li>
+<li>Click "Next"</li>
+</ol>
+<h4 id="step-5%3A-name-and-create-role" tabindex="-1">Step 5: Name and Create Role <a class="header-anchor" href="#step-5%3A-name-and-create-role"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li><strong>Role name</strong>: <code>DenoDeploy-YourOrg-YourApp</code> (replace with your actual
+organization and app names)</li>
+<li><strong>Description</strong>: Optional description of the role's purpose</li>
+<li>Review the trust policy and permissions</li>
+<li>Click "Create role"</li>
+</ol>
+<h4 id="step-6%3A-copy-role-arn" tabindex="-1">Step 6: Copy Role ARN <a class="header-anchor" href="#step-6%3A-copy-role-arn"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>After creating the role:</p>
+<ol>
+<li>Go to the role details page</li>
+<li>Copy the Role ARN (it looks like
+<code>arn:aws:iam::123456789012:role/DenoDeploy-YourOrg-YourApp</code>)</li>
+<li>Use this ARN in your Deno Deploy cloud connection configuration</li>
+</ol>
+<h3 id="aws%3A-using-terraform" tabindex="-1">AWS: Using Terraform <a class="header-anchor" href="#aws%3A-using-terraform"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can use Terraform to programmatically create the AWS resources needed for
+cloud connections. This approach is ideal for infrastructure-as-code workflows.</p>
+<h4 id="terraform-configuration" tabindex="-1">Terraform Configuration <a class="header-anchor" href="#terraform-configuration"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Create a Terraform configuration file with the following content:</p>
+<div class="relative"><pre><code class="highlight notranslate language-hcl"># Variables
+variable "org" {
+  description = "Deno Deploy organization name"
+  type        = string
+}
+
+variable "app" {
+  description = "Deno Deploy app name"
+  type        = string
+}
+
+variable "contexts" {
+  description = "List of specific contexts to allow (leave empty for all contexts)"
+  type        = list(string)
+  default     = []
+}
+
+# OIDC Provider
+resource "aws_iam_openid_connect_provider" "deno_deploy" {
+  url = "https://oidc.deno.com"
+  client_id_list = ["sts.amazonaws.com"]
+}
+
+# IAM Role with dynamic trust policy based on contexts
+resource "aws_iam_role" "deno_deploy_role" {
+  name = "DenoDeploy-${var.org}-${var.app}"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = {
+          Federated = aws_iam_openid_connect_provider.deno_deploy.arn
+        }
+        Action = "sts:AssumeRoleWithWebIdentity"
+        Condition = length(var.contexts) &gt; 0 ? {
+          # Specific contexts only
+          StringEquals = {
+            "oidc.deno.com:sub" = [
+              for context in var.contexts : "deployment:${var.org}/${var.app}/${context}"
+            ]
+          }
+        } : {
+          # All contexts (wildcard)
+          StringLike = {
+            "oidc.deno.com:sub" = "deployment:${var.org}/${var.app}/*"
+          }
+        }
+      }
+    ]
+  })
+}
+
+# Attach policies
+resource "aws_iam_role_policy_attachment" "example" {
+  role       = aws_iam_role.deno_deploy_role.name
+  policy_arn = "arn:aws:iam::aws:policy/POLICY_NAME"
+}
+
+# Output the role ARN
+output "role_arn" {
+  value = aws_iam_role.deno_deploy_role.arn
+}
+</code></pre>
+
+      <button id="copy-button-546" class="copyButton" data-copy="# Variables
+variable &quot;org&quot; {
+  description = &quot;Deno Deploy organization name&quot;
+  type        = string
+}
+
+variable &quot;app&quot; {
+  description = &quot;Deno Deploy app name&quot;
+  type        = string
+}
+
+variable &quot;contexts&quot; {
+  description = &quot;List of specific contexts to allow (leave empty for all contexts)&quot;
+  type        = list(string)
+  default     = []
+}
+
+# OIDC Provider
+resource &quot;aws_iam_openid_connect_provider&quot; &quot;deno_deploy&quot; {
+  url = &quot;https://oidc.deno.com&quot;
+  client_id_list = [&quot;sts.amazonaws.com&quot;]
+}
+
+# IAM Role with dynamic trust policy based on contexts
+resource &quot;aws_iam_role&quot; &quot;deno_deploy_role&quot; {
+  name = &quot;DenoDeploy-${var.org}-${var.app}&quot;
+
+  assume_role_policy = jsonencode({
+    Version = &quot;2012-10-17&quot;
+    Statement = [
+      {
+        Effect = &quot;Allow&quot;
+        Principal = {
+          Federated = aws_iam_openid_connect_provider.deno_deploy.arn
+        }
+        Action = &quot;sts:AssumeRoleWithWebIdentity&quot;
+        Condition = length(var.contexts) > 0 ? {
+          # Specific contexts only
+          StringEquals = {
+            &quot;oidc.deno.com:sub&quot; = [
+              for context in var.contexts : &quot;deployment:${var.org}/${var.app}/${context}&quot;
+            ]
+          }
+        } : {
+          # All contexts (wildcard)
+          StringLike = {
+            &quot;oidc.deno.com:sub&quot; = &quot;deployment:${var.org}/${var.app}/*&quot;
+          }
+        }
+      }
+    ]
+  })
+}
+
+# Attach policies
+resource &quot;aws_iam_role_policy_attachment&quot; &quot;example&quot; {
+  role       = aws_iam_role.deno_deploy_role.name
+  policy_arn = &quot;arn:aws:iam::aws:policy/POLICY_NAME&quot;
+}
+
+# Output the role ARN
+output &quot;role_arn&quot; {
+  value = aws_iam_role.deno_deploy_role.arn
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="usage-examples" tabindex="-1">Usage Examples <a class="header-anchor" href="#usage-examples"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p><strong>For entire app access (all contexts):</strong></p>
+<div class="relative"><pre><code class="highlight notranslate language-hcl">module "deno_deploy_aws" {
+  source = "./path-to-terraform-module"
+
+  org      = "your-org"
+  app      = "your-app"
+  contexts = []  # Empty list allows all contexts
+}
+</code></pre>
+
+      <button id="copy-button-553" class="copyButton" data-copy="module &quot;deno_deploy_aws&quot; {
+  source = &quot;./path-to-terraform-module&quot;
+
+  org      = &quot;your-org&quot;
+  app      = &quot;your-app&quot;
+  contexts = []  # Empty list allows all contexts
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p><strong>For specific contexts only:</strong></p>
+<div class="relative"><pre><code class="highlight notranslate language-hcl">module "deno_deploy_aws" {
+  source = "./path-to-terraform-module"
+
+  org      = "your-org"
+  app      = "your-app"
+  contexts = ["production", "staging"]
+}
+</code></pre>
+
+      <button id="copy-button-557" class="copyButton" data-copy="module &quot;deno_deploy_aws&quot; {
+  source = &quot;./path-to-terraform-module&quot;
+
+  org      = &quot;your-org&quot;
+  app      = &quot;your-app&quot;
+  contexts = [&quot;production&quot;, &quot;staging&quot;]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="applying-the-configuration" tabindex="-1">Applying the Configuration <a class="header-anchor" href="#applying-the-configuration"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li>
+<p>Initialize Terraform:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">terraform init
+</code></pre>
+
+      <button id="copy-button-566" class="copyButton" data-copy="terraform init
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></li>
+<li>
+<p>Plan the deployment:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">terraform plan
+</code></pre>
+
+      <button id="copy-button-572" class="copyButton" data-copy="terraform plan
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></li>
+<li>
+<p>Apply the configuration:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">terraform apply
+</code></pre>
+
+      <button id="copy-button-578" class="copyButton" data-copy="terraform apply
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></li>
+</ol>
+<p>After applying, Terraform will output the Role ARN that you can use in your Deno
+Deploy cloud connection configuration.</p>
+<h4 id="customizing-policies" tabindex="-1">Customizing Policies <a class="header-anchor" href="#customizing-policies"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Replace <code>POLICY_NAME</code> in the <code>aws_iam_role_policy_attachment</code> resource with the
+appropriate AWS managed policies or create custom policies based on your
+requirements. You can add multiple policy attachments by creating additional
+<code>aws_iam_role_policy_attachment</code> resources.</p>
+<h3 id="gcp%3A-easy-setup-with-deno-deploy-setup-gcp" tabindex="-1">GCP: Easy setup with <code>deno deploy setup-gcp</code> <a class="header-anchor" href="#gcp%3A-easy-setup-with-deno-deploy-setup-gcp"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>For instructions on how to set up GCP with Deno Deploy using the
+<code>deno deploy setup-gcp</code> command, please see the instructions on the Google cloud
+integration setup page in your app settings.</p>
+<h3 id="gcp%3A-using-the-gcloud-cli" tabindex="-1">GCP: Using the <code>gcloud</code> CLI <a class="header-anchor" href="#gcp%3A-using-the-gcloud-cli"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can manually set up GCP resources using the gcloud CLI. This requires having
+the gcloud CLI installed and authenticated with appropriate permissions to
+create workload identity pools, service accounts, and grant IAM roles.</p>
+<h4 id="prerequisites-1" tabindex="-1">Prerequisites <a class="header-anchor" href="#prerequisites-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ul>
+<li>gcloud CLI installed and authenticated</li>
+<li>Access to create workload identity pools, service accounts, and grant IAM
+roles</li>
+<li>Required APIs enabled:
+<ul>
+<li><code>iam.googleapis.com</code></li>
+<li><code>iamcredentials.googleapis.com</code></li>
+<li><code>sts.googleapis.com</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="step-1%3A-enable-required-apis" tabindex="-1">Step 1: Enable Required APIs <a class="header-anchor" href="#step-1%3A-enable-required-apis"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>First, enable the required APIs for your project:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">gcloud services <span class="token builtin class-name">enable</span> iam.googleapis.com
+gcloud services <span class="token builtin class-name">enable</span> iamcredentials.googleapis.com
+gcloud services <span class="token builtin class-name">enable</span> sts.googleapis.com
+</code></pre>
+
+      <button id="copy-button-645" class="copyButton" data-copy="gcloud services enable iam.googleapis.com
+gcloud services enable iamcredentials.googleapis.com
+gcloud services enable sts.googleapis.com
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h4 id="step-2%3A-create-workload-identity-pool" tabindex="-1">Step 2: Create Workload Identity Pool <a class="header-anchor" href="#step-2%3A-create-workload-identity-pool"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Create a workload identity pool to manage external identities:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">gcloud iam workload-identity-pools create oidc-deno-com <span class="token punctuation">\</span>
+  <span class="token parameter variable">--location</span><span class="token operator">=</span>global <span class="token punctuation">\</span>
+  --display-name<span class="token operator">=</span><span class="token string">"Deno Deploy Workload Identity Pool"</span>
+</code></pre>
+
+      <button id="copy-button-652" class="copyButton" data-copy="gcloud iam workload-identity-pools create oidc-deno-com \
+  --location=global \
+  --display-name=&quot;Deno Deploy Workload Identity Pool&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h4 id="step-3%3A-create-workload-identity-provider" tabindex="-1">Step 3: Create Workload Identity Provider <a class="header-anchor" href="#step-3%3A-create-workload-identity-provider"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Configure the OIDC provider within the workload identity pool:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">gcloud iam workload-identity-pools providers create-oidc oidc-deno-com <span class="token punctuation">\</span>
+  --workload-identity-pool<span class="token operator">=</span>oidc-deno-com <span class="token punctuation">\</span>
+  <span class="token parameter variable">--location</span><span class="token operator">=</span>global <span class="token punctuation">\</span>
+  --issuer-uri<span class="token operator">=</span>https://oidc.deno.com <span class="token punctuation">\</span>
+  --attribute-mapping<span class="token operator">=</span><span class="token string">"google.subject=assertion.sub,attribute.org_slug=assertion.org_slug,attribute.app_slug=assertion.app_slug,attribute.full_slug=assertion.org_slug+<span class="token entity" title="\&quot;">\"</span>/<span class="token entity" title="\&quot;">\"</span>+assertion.app_slug"</span>
+</code></pre>
+
+      <button id="copy-button-659" class="copyButton" data-copy="gcloud iam workload-identity-pools providers create-oidc oidc-deno-com \
+  --workload-identity-pool=oidc-deno-com \
+  --location=global \
+  --issuer-uri=https://oidc.deno.com \
+  --attribute-mapping=&quot;google.subject=assertion.sub,attribute.org_slug=assertion.org_slug,attribute.app_slug=assertion.app_slug,attribute.full_slug=assertion.org_slug+\&quot;/\&quot;+assertion.app_slug&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h4 id="step-4%3A-create-service-account" tabindex="-1">Step 4: Create Service Account <a class="header-anchor" href="#step-4%3A-create-service-account"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Create a service account that will be used by your Deno Deploy application:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">gcloud iam service-accounts create deno-your-org-your-app <span class="token punctuation">\</span>
+  --display-name<span class="token operator">=</span><span class="token string">"Deno Deploy YourOrg/YourApp"</span>
+</code></pre>
+
+      <button id="copy-button-666" class="copyButton" data-copy="gcloud iam service-accounts create deno-your-org-your-app \
+  --display-name=&quot;Deno Deploy YourOrg/YourApp&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h4 id="step-5%3A-configure-workload-identity-binding" tabindex="-1">Step 5: Configure Workload Identity Binding <a class="header-anchor" href="#step-5%3A-configure-workload-identity-binding"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Get your project number and configure the workload identity binding. Choose
+between allowing access to all contexts or specific contexts only.</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash"><span class="token comment"># Get project number</span>
+<span class="token assign-left variable">PROJECT_NUMBER</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>gcloud projects describe PROJECT_ID <span class="token parameter variable">--format</span><span class="token operator">=</span><span class="token string">"value(projectNumber)"</span><span class="token variable">)</span></span>
+</code></pre>
+
+      <button id="copy-button-673" class="copyButton" data-copy="# Get project number
+PROJECT_NUMBER=$(gcloud projects describe PROJECT_ID --format=&quot;value(projectNumber)&quot;)
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><strong>For all contexts in your app:</strong></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">gcloud iam service-accounts add-iam-policy-binding <span class="token punctuation">\</span>
+  deno-your-org-your-app@PROJECT_ID.iam.gserviceaccount.com <span class="token punctuation">\</span>
+  <span class="token parameter variable">--role</span><span class="token operator">=</span>roles/iam.workloadIdentityUser <span class="token punctuation">\</span>
+  <span class="token parameter variable">--member</span><span class="token operator">=</span><span class="token string">"principalSet://iam.googleapis.com/projects/<span class="token variable">$PROJECT_NUMBER</span>/locations/global/workloadIdentityPools/oidc-deno-com/attribute.full_slug/YOUR_ORG/YOUR_APP"</span>
+</code></pre>
+
+      <button id="copy-button-677" class="copyButton" data-copy="gcloud iam service-accounts add-iam-policy-binding \
+  deno-your-org-your-app@PROJECT_ID.iam.gserviceaccount.com \
+  --role=roles/iam.workloadIdentityUser \
+  --member=&quot;principalSet://iam.googleapis.com/projects/$PROJECT_NUMBER/locations/global/workloadIdentityPools/oidc-deno-com/attribute.full_slug/YOUR_ORG/YOUR_APP&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><strong>For specific contexts only:</strong></p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash"><span class="token comment"># Bind for production context</span>
+gcloud iam service-accounts add-iam-policy-binding <span class="token punctuation">\</span>
+  deno-your-org-your-app@PROJECT_ID.iam.gserviceaccount.com <span class="token punctuation">\</span>
+  <span class="token parameter variable">--role</span><span class="token operator">=</span>roles/iam.workloadIdentityUser <span class="token punctuation">\</span>
+  <span class="token parameter variable">--member</span><span class="token operator">=</span><span class="token string">"principal://iam.googleapis.com/projects/<span class="token variable">$PROJECT_NUMBER</span>/locations/global/workloadIdentityPools/oidc-deno-com/subject/deployment:YOUR_ORG/YOUR_APP/production"</span>
+
+<span class="token comment"># Bind for staging context</span>
+gcloud iam service-accounts add-iam-policy-binding <span class="token punctuation">\</span>
+  deno-your-org-your-app@PROJECT_ID.iam.gserviceaccount.com <span class="token punctuation">\</span>
+  <span class="token parameter variable">--role</span><span class="token operator">=</span>roles/iam.workloadIdentityUser <span class="token punctuation">\</span>
+  <span class="token parameter variable">--member</span><span class="token operator">=</span><span class="token string">"principal://iam.googleapis.com/projects/<span class="token variable">$PROJECT_NUMBER</span>/locations/global/workloadIdentityPools/oidc-deno-com/subject/deployment:YOUR_ORG/YOUR_APP/staging"</span>
+
+<span class="token comment"># Add more bindings for each specific context as needed</span>
+</code></pre>
+
+      <button id="copy-button-681" class="copyButton" data-copy="# Bind for production context
+gcloud iam service-accounts add-iam-policy-binding \
+  deno-your-org-your-app@PROJECT_ID.iam.gserviceaccount.com \
+  --role=roles/iam.workloadIdentityUser \
+  --member=&quot;principal://iam.googleapis.com/projects/$PROJECT_NUMBER/locations/global/workloadIdentityPools/oidc-deno-com/subject/deployment:YOUR_ORG/YOUR_APP/production&quot;
+
+# Bind for staging context
+gcloud iam service-accounts add-iam-policy-binding \
+  deno-your-org-your-app@PROJECT_ID.iam.gserviceaccount.com \
+  --role=roles/iam.workloadIdentityUser \
+  --member=&quot;principal://iam.googleapis.com/projects/$PROJECT_NUMBER/locations/global/workloadIdentityPools/oidc-deno-com/subject/deployment:YOUR_ORG/YOUR_APP/staging&quot;
+
+# Add more bindings for each specific context as needed
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><h4 id="step-6%3A-grant-roles-to-service-account" tabindex="-1">Step 6: Grant Roles to Service Account <a class="header-anchor" href="#step-6%3A-grant-roles-to-service-account"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Grant the necessary roles to the service account for accessing GCP resources:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">gcloud projects add-iam-policy-binding PROJECT_ID <span class="token punctuation">\</span>
+  <span class="token parameter variable">--member</span><span class="token operator">=</span><span class="token string">"serviceAccount:deno-your-org-your-app@PROJECT_ID.iam.gserviceaccount.com"</span> <span class="token punctuation">\</span>
+  <span class="token parameter variable">--role</span><span class="token operator">=</span><span class="token string">"roles/ROLE_NAME"</span>
+</code></pre>
+
+      <button id="copy-button-688" class="copyButton" data-copy="gcloud projects add-iam-policy-binding PROJECT_ID \
+  --member=&quot;serviceAccount:deno-your-org-your-app@PROJECT_ID.iam.gserviceaccount.com&quot; \
+  --role=&quot;roles/ROLE_NAME&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p>Replace <code>ROLE_NAME</code> with appropriate roles such as:</p>
+<ul>
+<li><code>roles/storage.objectViewer</code> for Cloud Storage read access</li>
+<li><code>roles/storage.objectAdmin</code> for Cloud Storage full access</li>
+<li><code>roles/cloudsql.client</code> for Cloud SQL access</li>
+<li>Other roles based on your requirements</li>
+</ul>
+<h4 id="step-7%3A-get-required-values" tabindex="-1">Step 7: Get Required Values <a class="header-anchor" href="#step-7%3A-get-required-values"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>After completing the setup, you'll need two values for your Deno Deploy
+configuration:</p>
+<ol>
+<li><strong>Workload Provider ID</strong>:
+<code>projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/oidc-deno-com/providers/oidc-deno-com</code></li>
+<li><strong>Service Account Email</strong>:
+<code>deno-your-org-your-app@PROJECT_ID.iam.gserviceaccount.com</code></li>
+</ol>
+<p>Use these values in your Deno Deploy cloud connection configuration.</p>
+<h3 id="gcp%3A-using-the-gcp-console" tabindex="-1">GCP: Using the GCP Console <a class="header-anchor" href="#gcp%3A-using-the-gcp-console"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can set up GCP resources using the Google Cloud Console web interface. This
+method provides a visual way to configure workload identity federation and
+service accounts.</p>
+<h4 id="step-1%3A-enable-required-apis-1" tabindex="-1">Step 1: Enable Required APIs <a class="header-anchor" href="#step-1%3A-enable-required-apis-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li><strong>Navigate to APIs &amp; Services</strong> → Library</li>
+<li>Search for and enable the following APIs:
+<ul>
+<li>"Identity and Access Management (IAM) API"</li>
+<li>"IAM Service Account Credentials API"</li>
+<li>"Security Token Service API"</li>
+</ul>
+</li>
+</ol>
+<h4 id="step-2%3A-create-workload-identity-pool-1" tabindex="-1">Step 2: Create Workload Identity Pool <a class="header-anchor" href="#step-2%3A-create-workload-identity-pool-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li><strong>Navigate to IAM &amp; Admin</strong> → Workload Identity Federation</li>
+<li><strong>Create Pool</strong>:
+<ul>
+<li>Click "Create Pool"</li>
+<li>Pool name: <code>Deno Deploy Workload Id Pool</code></li>
+<li>Pool ID: <code>oidc-deno-com</code></li>
+<li>Click "Continue"</li>
+</ul>
+</li>
+</ol>
+<h4 id="step-3%3A-add-provider-to-pool" tabindex="-1">Step 3: Add Provider to Pool <a class="header-anchor" href="#step-3%3A-add-provider-to-pool"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li>
+<p><strong>Add a provider</strong>:</p>
+<ul>
+<li>Click "Add a provider"</li>
+<li>Provider type: <strong>OpenID Connect (OIDC)</strong></li>
+<li>Provider name: <code>Deno Deploy OIDC Provider</code></li>
+<li>Provider ID: <code>oidc-deno-com</code></li>
+<li>Issuer URL: <code>https://oidc.deno.com</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Configure attribute mappings</strong>:</p>
+<ul>
+<li><code>google.subject</code> → <code>assertion.sub</code></li>
+<li><code>attribute.org_slug</code> → <code>assertion.org_slug</code></li>
+<li><code>attribute.app_slug</code> → <code>assertion.app_slug</code></li>
+<li><code>attribute.full_slug</code> → <code>assertion.org_slug + "/" + assertion.app_slug</code></li>
+</ul>
+</li>
+<li>
+<p>Click "Save"</p>
+</li>
+</ol>
+<h4 id="step-4%3A-create-service-account-1" tabindex="-1">Step 4: Create Service Account <a class="header-anchor" href="#step-4%3A-create-service-account-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li><strong>Navigate to IAM &amp; Admin</strong> → Service Accounts</li>
+<li><strong>Create Service Account</strong>:
+<ul>
+<li>Click "Create Service Account"</li>
+<li>Service account name: <code>deno-your-org-your-app</code></li>
+<li>Service account ID: <code>deno-your-org-your-app</code></li>
+<li>Description: <code>Service account for Deno Deploy project your-org/your-app</code></li>
+<li>Click "Create and Continue"</li>
+</ul>
+</li>
+</ol>
+<h4 id="step-5%3A-grant-roles-to-service-account" tabindex="-1">Step 5: Grant Roles to Service Account <a class="header-anchor" href="#step-5%3A-grant-roles-to-service-account"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li>Select appropriate roles based on your needs:
+<ul>
+<li>For Cloud Storage: <code>Storage Object Viewer</code> or <code>Storage Admin</code></li>
+<li>For Cloud SQL: <code>Cloud SQL Client</code></li>
+<li>For other services: Select relevant roles</li>
+</ul>
+</li>
+<li>Click "Continue" then "Done"</li>
+</ol>
+<h4 id="step-6%3A-configure-workload-identity-binding" tabindex="-1">Step 6: Configure Workload Identity Binding <a class="header-anchor" href="#step-6%3A-configure-workload-identity-binding"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li>
+<p><strong>Go back to the created service account</strong></p>
+</li>
+<li>
+<p>Click on the "Principals with access" tab</p>
+</li>
+<li>
+<p>Click "Grant Access"</p>
+</li>
+<li>
+<p>Configure principals - choose one approach:</p>
+<p><strong>For all contexts in your app:</strong></p>
+<ul>
+<li>New principals:
+<code>principalSet://iam.googleapis.com/projects/YOUR_PROJECT_NUMBER/locations/global/workloadIdentityPools/oidc-deno-com/attribute.full_slug/YOUR_ORG/YOUR_APP</code></li>
+</ul>
+<p><strong>For specific contexts only:</strong></p>
+<ul>
+<li>New principals:
+<code>principal://iam.googleapis.com/projects/YOUR_PROJECT_NUMBER/locations/global/workloadIdentityPools/oidc-deno-com/subject/deployment:YOUR_ORG/YOUR_APP/production</code></li>
+<li>Repeat for each context (staging, etc.)</li>
+</ul>
+</li>
+<li>
+<p>Role: <strong>Workload Identity User</strong></p>
+</li>
+<li>
+<p>Click "Save"</p>
+</li>
+</ol>
+<h4 id="step-7%3A-get-required-values-1" tabindex="-1">Step 7: Get Required Values <a class="header-anchor" href="#step-7%3A-get-required-values-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>You'll need two values for your Deno Deploy configuration:</p>
+<ol>
+<li><strong>Workload Provider ID</strong>:
+<ul>
+<li>Navigate back to Workload Identity Federation</li>
+<li>Click on your pool, then your provider</li>
+<li>Copy the provider resource name (full path starting with <code>projects/</code>)</li>
+</ul>
+</li>
+<li><strong>Service Account Email</strong>: Copy from the service account details page</li>
+</ol>
+<h4 id="step-8%3A-verify-configuration" tabindex="-1">Step 8: Verify Configuration <a class="header-anchor" href="#step-8%3A-verify-configuration"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>The final workload identity pool overview should show:</p>
+<ul>
+<li>Your pool with the OIDC provider</li>
+<li>The connected service account</li>
+<li>Proper bindings configured</li>
+</ul>
+<p>Use the Service Account Email and Workload Provider ID in your Deno Deploy cloud
+connection configuration.</p>
+<h3 id="gcp%3A-using-terraform" tabindex="-1">GCP: Using Terraform <a class="header-anchor" href="#gcp%3A-using-terraform"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<p>You can use Terraform to programmatically create the GCP resources needed for
+cloud connections. This approach is ideal for infrastructure-as-code workflows.</p>
+<h4 id="terraform-configuration-1" tabindex="-1">Terraform Configuration <a class="header-anchor" href="#terraform-configuration-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>Create a Terraform configuration file with the following content:</p>
+<div class="relative"><pre><code class="highlight notranslate language-hcl"># Variables
+variable "org" {
+  description = "Deno Deploy organization name"
+  type        = string
+}
+
+variable "app" {
+  description = "Deno Deploy app name"
+  type        = string
+}
+
+variable "contexts" {
+  description = "List of specific contexts to allow (leave empty for all contexts)"
+  type        = list(string)
+  default     = []
+}
+
+variable "project_id" {
+  description = "GCP Project ID"
+  type        = string
+}
+
+variable "roles" {
+  description = "List of IAM roles to grant to the service account"
+  type        = list(string)
+  default     = []
+}
+
+# Data source for project information
+data "google_project" "project" {
+  project_id = var.project_id
+}
+
+# Workload Identity Pool
+resource "google_iam_workload_identity_pool" "deno_deploy" {
+  workload_identity_pool_id = "oidc-deno-com"
+  display_name              = "Deno Deploy Workload Id Pool"
+}
+
+# Workload Identity Provider
+resource "google_iam_workload_identity_pool_provider" "deno_deploy" {
+  workload_identity_pool_id          = google_iam_workload_identity_pool.deno_deploy.workload_identity_pool_id
+  workload_identity_pool_provider_id = "oidc-deno-com"
+  display_name                       = "Deno Deploy OIDC Provider"
+
+  attribute_mapping = {
+    "google.subject"        = "assertion.sub"
+    "attribute.org_slug"    = "assertion.org_slug"
+    "attribute.app_slug"    = "assertion.app_slug"
+    "attribute.full_slug"   = "assertion.org_slug + \"/\" + assertion.app_slug"
+  }
+
+  oidc {
+    issuer_uri = "https://oidc.deno.com"
+  }
+}
+
+# Service Account
+resource "google_service_account" "deno_deploy" {
+  account_id   = "deno-${var.org}-${var.app}"
+  display_name = "Deno Deploy ${var.org}/${var.app}"
+}
+
+# Workload Identity Binding - dynamic based on contexts
+resource "google_service_account_iam_binding" "workload_identity" {
+  service_account_id = google_service_account.deno_deploy.name
+  role               = "roles/iam.workloadIdentityUser"
+
+  members = length(var.contexts) &gt; 0 ? [
+    # Specific contexts only
+    for context in var.contexts :
+    "principal://iam.googleapis.com/projects/${data.google_project.project.number}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.deno_deploy.workload_identity_pool_id}/subject/deployment:${var.org}/${var.app}/${context}"
+  ] : [
+    # All contexts (using attribute mapping)
+    "principalSet://iam.googleapis.com/projects/${data.google_project.project.number}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.deno_deploy.workload_identity_pool_id}/attribute.full_slug/${var.org}/${var.app}"
+  ]
+}
+
+# Grant roles to service account
+resource "google_project_iam_member" "service_account_roles" {
+  for_each = toset(var.roles)
+  project  = var.project_id
+  role     = each.value
+  member   = "serviceAccount:${google_service_account.deno_deploy.email}"
+}
+
+# Outputs
+output "workload_provider_id" {
+  value = "projects/${data.google_project.project.number}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.deno_deploy.workload_identity_pool_id}/providers/${google_iam_workload_identity_pool_provider.deno_deploy.workload_identity_pool_provider_id}"
+}
+
+output "service_account_email" {
+  value = google_service_account.deno_deploy.email
+}
+</code></pre>
+
+      <button id="copy-button-1086" class="copyButton" data-copy="# Variables
+variable &quot;org&quot; {
+  description = &quot;Deno Deploy organization name&quot;
+  type        = string
+}
+
+variable &quot;app&quot; {
+  description = &quot;Deno Deploy app name&quot;
+  type        = string
+}
+
+variable &quot;contexts&quot; {
+  description = &quot;List of specific contexts to allow (leave empty for all contexts)&quot;
+  type        = list(string)
+  default     = []
+}
+
+variable &quot;project_id&quot; {
+  description = &quot;GCP Project ID&quot;
+  type        = string
+}
+
+variable &quot;roles&quot; {
+  description = &quot;List of IAM roles to grant to the service account&quot;
+  type        = list(string)
+  default     = []
+}
+
+# Data source for project information
+data &quot;google_project&quot; &quot;project&quot; {
+  project_id = var.project_id
+}
+
+# Workload Identity Pool
+resource &quot;google_iam_workload_identity_pool&quot; &quot;deno_deploy&quot; {
+  workload_identity_pool_id = &quot;oidc-deno-com&quot;
+  display_name              = &quot;Deno Deploy Workload Id Pool&quot;
+}
+
+# Workload Identity Provider
+resource &quot;google_iam_workload_identity_pool_provider&quot; &quot;deno_deploy&quot; {
+  workload_identity_pool_id          = google_iam_workload_identity_pool.deno_deploy.workload_identity_pool_id
+  workload_identity_pool_provider_id = &quot;oidc-deno-com&quot;
+  display_name                       = &quot;Deno Deploy OIDC Provider&quot;
+
+  attribute_mapping = {
+    &quot;google.subject&quot;        = &quot;assertion.sub&quot;
+    &quot;attribute.org_slug&quot;    = &quot;assertion.org_slug&quot;
+    &quot;attribute.app_slug&quot;    = &quot;assertion.app_slug&quot;
+    &quot;attribute.full_slug&quot;   = &quot;assertion.org_slug + \&quot;/\&quot; + assertion.app_slug&quot;
+  }
+
+  oidc {
+    issuer_uri = &quot;https://oidc.deno.com&quot;
+  }
+}
+
+# Service Account
+resource &quot;google_service_account&quot; &quot;deno_deploy&quot; {
+  account_id   = &quot;deno-${var.org}-${var.app}&quot;
+  display_name = &quot;Deno Deploy ${var.org}/${var.app}&quot;
+}
+
+# Workload Identity Binding - dynamic based on contexts
+resource &quot;google_service_account_iam_binding&quot; &quot;workload_identity&quot; {
+  service_account_id = google_service_account.deno_deploy.name
+  role               = &quot;roles/iam.workloadIdentityUser&quot;
+
+  members = length(var.contexts) > 0 ? [
+    # Specific contexts only
+    for context in var.contexts :
+    &quot;principal://iam.googleapis.com/projects/${data.google_project.project.number}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.deno_deploy.workload_identity_pool_id}/subject/deployment:${var.org}/${var.app}/${context}&quot;
+  ] : [
+    # All contexts (using attribute mapping)
+    &quot;principalSet://iam.googleapis.com/projects/${data.google_project.project.number}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.deno_deploy.workload_identity_pool_id}/attribute.full_slug/${var.org}/${var.app}&quot;
+  ]
+}
+
+# Grant roles to service account
+resource &quot;google_project_iam_member&quot; &quot;service_account_roles&quot; {
+  for_each = toset(var.roles)
+  project  = var.project_id
+  role     = each.value
+  member   = &quot;serviceAccount:${google_service_account.deno_deploy.email}&quot;
+}
+
+# Outputs
+output &quot;workload_provider_id&quot; {
+  value = &quot;projects/${data.google_project.project.number}/locations/global/workloadIdentityPools/${google_iam_workload_identity_pool.deno_deploy.workload_identity_pool_id}/providers/${google_iam_workload_identity_pool_provider.deno_deploy.workload_identity_pool_provider_id}&quot;
+}
+
+output &quot;service_account_email&quot; {
+  value = google_service_account.deno_deploy.email
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="usage-examples-1" tabindex="-1">Usage Examples <a class="header-anchor" href="#usage-examples-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p><strong>For entire app access (all contexts):</strong></p>
+<div class="relative"><pre><code class="highlight notranslate language-hcl">module "deno_deploy_gcp" {
+  source = "./path-to-terraform-module"
+
+  org        = "your-org"
+  app        = "your-app"
+  project_id = "your-gcp-project-id"
+  contexts   = []  # Empty list allows all contexts
+  roles      = [
+    "roles/storage.objectViewer",
+    "roles/cloudsql.client"
+  ]
+}
+</code></pre>
+
+      <button id="copy-button-1093" class="copyButton" data-copy="module &quot;deno_deploy_gcp&quot; {
+  source = &quot;./path-to-terraform-module&quot;
+
+  org        = &quot;your-org&quot;
+  app        = &quot;your-app&quot;
+  project_id = &quot;your-gcp-project-id&quot;
+  contexts   = []  # Empty list allows all contexts
+  roles      = [
+    &quot;roles/storage.objectViewer&quot;,
+    &quot;roles/cloudsql.client&quot;
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p><strong>For specific contexts only:</strong></p>
+<div class="relative"><pre><code class="highlight notranslate language-hcl">module "deno_deploy_gcp" {
+  source = "./path-to-terraform-module"
+
+  org        = "your-org"
+  app        = "your-app"
+  project_id = "your-gcp-project-id"
+  contexts   = ["production", "staging"]
+  roles      = [
+    "roles/storage.objectAdmin",
+    "roles/cloudsql.client"
+  ]
+}
+</code></pre>
+
+      <button id="copy-button-1097" class="copyButton" data-copy="module &quot;deno_deploy_gcp&quot; {
+  source = &quot;./path-to-terraform-module&quot;
+
+  org        = &quot;your-org&quot;
+  app        = &quot;your-app&quot;
+  project_id = &quot;your-gcp-project-id&quot;
+  contexts   = [&quot;production&quot;, &quot;staging&quot;]
+  roles      = [
+    &quot;roles/storage.objectAdmin&quot;,
+    &quot;roles/cloudsql.client&quot;
+  ]
+}
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h4 id="applying-the-configuration-1" tabindex="-1">Applying the Configuration <a class="header-anchor" href="#applying-the-configuration-1"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<ol>
+<li>
+<p>Initialize Terraform:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">terraform init
+</code></pre>
+
+      <button id="copy-button-1106" class="copyButton" data-copy="terraform init
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></li>
+<li>
+<p>Plan the deployment:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">terraform plan
+</code></pre>
+
+      <button id="copy-button-1112" class="copyButton" data-copy="terraform plan
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></li>
+<li>
+<p>Apply the configuration:</p>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-bash">terraform apply
+</code></pre>
+
+      <button id="copy-button-1118" class="copyButton" data-copy="terraform apply
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></li>
+</ol>
+<p>After applying, Terraform will output the Workload Provider ID and Service
+Account Email that you can use in your Deno Deploy cloud connection
+configuration.</p>
+<h4 id="customizing-roles" tabindex="-1">Customizing Roles <a class="header-anchor" href="#customizing-roles"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h4>
+<p>The <code>roles</code> variable accepts a list of GCP IAM roles. Common roles include:</p>
+<ul>
+<li><code>roles/storage.objectViewer</code> - Read access to Cloud Storage</li>
+<li><code>roles/storage.objectAdmin</code> - Full access to Cloud Storage objects</li>
+<li><code>roles/cloudsql.client</code> - Access to Cloud SQL instances</li>
+<li><code>roles/secretmanager.secretAccessor</code> - Access to Secret Manager secrets</li>
+<li>Custom roles can also be specified</li>
+</ul>
+</div><div class="mt-24"><p class="text-sm text-foreground-secondary mb-2 leading-none">Last updated on <time datetime="2026-09-30T00:00:00.000Z">September 30, 2026</time></p><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/deploy/reference/databases/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← Databases</span></a><a href="/deploy/reference/oidc/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">OIDC →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/deploy/reference/cloud_connections.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

@@ -1,0 +1,9 @@
+{
+  "model": "deno-agent",
+  "authored_routes": 330,
+  "byte_identical_html": 330,
+  "markdown_sources": 327,
+  "mdx_sources": 3,
+  "native_markup_claim": false,
+  "all_publication_parity": false
+}
