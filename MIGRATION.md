@@ -214,3 +214,7 @@ Maintained-source model: Maintain rendered HTML bodies, explicit metadata/naviga
 ## D9 final comparison checkpoint
 
 D0–D9 architecture, corpus, HTTP/browser, lifecycle and five-sample benchmark gates are complete; the preceding checkpoint history is retained. Read investigation/D9-COMPARISON.md and MIGRATION-INIT-FINAL-REVIEW.md. Native full and prepared-input boundaries, frozen WASM delivery, measured process/phase RSS and prior timings remain explicit. The final report checkpoint is followed by fresh committed-checkout verification. No Nift core change, Docker experiment change or Labs publication.
+
+## Final clean-checkout gate
+
+D0–D9 complete. Both fresh committed report-checkpoint clones pass complete reference-byte equality and clean Git status. See investigation/D9-CLOSEOUT.md. Labs remains on hold; further improvement candidates are separate future work.

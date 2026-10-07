@@ -1,0 +1,24 @@
+[
+  {
+    "model": "deno",
+    "revision": "110d0a0eb4fe2632f0c144a11f678a420c72f7a1",
+    "publication_files": 2573,
+    "html_documents": 834,
+    "all_reference_bytes_equal": true,
+    "source_clean_after_build": true,
+    "application_state_empty_before_build": true,
+    "verification_observation_s": 14.691229772986844,
+    "boundary": "Dependencies and frozen maintained inputs prepared; this correctness run is not a benchmark sample."
+  },
+  {
+    "model": "deno-agent",
+    "revision": "f19c8bc977d8583fbbed560921c0ae55ac0d2d5d",
+    "publication_files": 2573,
+    "html_documents": 834,
+    "all_reference_bytes_equal": true,
+    "source_clean_after_build": true,
+    "application_state_empty_before_build": true,
+    "verification_observation_s": 2.1834214231930673,
+    "boundary": "Dependencies and frozen maintained inputs prepared; this correctness run is not a benchmark sample."
+  }
+]

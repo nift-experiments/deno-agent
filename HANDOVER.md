@@ -381,3 +381,7 @@ All final five-sample modes and the native production changed-input observation 
 ## D9 report and init review
 
 Read investigation/D9-COMPARISON.md for architecture, measurements, parity limits and independent source-model judgment; read MIGRATION-INIT-FINAL-REVIEW.md for future guidance candidates. Complete publication: python3 scripts/build.py; forced recomputation: python3 scripts/build.py --force. All OG assets are maintained static inputs, with explicit selected-image updates. Next and final action: verify fresh clones from this committed report checkpoint, record their complete byte parity and Git cleanliness, push closeout evidence, stop owned preview services. Keep Labs unpublished. Do not modify Nift or reopen Docker.
+
+## Experiment complete — publication hold
+
+Final fresh report-checkpoint clones reproduce every reference byte and leave Git clean; see investigation/D9-CLOSEOUT.md and d9-final-fresh-checkouts.json. D0–D9 are complete. Routine command: python3 scripts/build.py; force: --force; intentional OG update: scripts/update-og.py --route. The accepted result and remaining limits are in D9-COMPARISON.md. No further experiment work unless a real defect is found. Do not publish Labs or change Nift/Docker under this closeout.

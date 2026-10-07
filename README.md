@@ -10,4 +10,4 @@ OG images are maintained source under `assets/og/`, mapped to original published
 
 Read AGENTS.md → MIGRATION.md → HANDOVER.md before work. Parity contracts and ownership boundaries are recorded in investigation/D5-COMPLETE-PUBLICATION.md and D6-WHOLE-SITE-PARITY.md. Profiling and final benchmarks remain in progress; the Deno Labs page is on hold.
 
-D0–D9 migration and profiling gates are complete. Read [the final comparison](investigation/D9-COMPARISON.md) and [final init review](investigation/MIGRATION-INIT-FINAL-REVIEW.md). Deno Labs publication remains on hold; final fresh-checkout verification follows this report checkpoint.
+D0–D9 migration and profiling gates are complete. Read [the final comparison](investigation/D9-COMPARISON.md) and [final init review](investigation/MIGRATION-INIT-FINAL-REVIEW.md). Deno Labs publication remains on hold; [final fresh-checkout verification](investigation/D9-CLOSEOUT.md) passed with complete byte equality and clean sources.
