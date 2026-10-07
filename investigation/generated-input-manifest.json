@@ -316,98 +316,98 @@
   },
   {
     "path": "runtime/reference/std/assert.md",
-    "bytes": 1318,
-    "sha256": "0baea9d55139a7156b9de002b6e067be5c4d04dd97106bc458585775f8877a45"
+    "bytes": 1317,
+    "sha256": "7b8eb3813fe4402988c8dff50ae19f3513952bc8ccfeaaac554f9c657fd871ac"
   },
   {
     "path": "runtime/reference/std/async.md",
-    "bytes": 1518,
-    "sha256": "7475653afb92fb0abc38cbcc8daf9216bb9a3018fcb547290b71eec4326d92a4"
+    "bytes": 1517,
+    "sha256": "08d278c03880cf83d25ff360a99ddeb0797827d243d8b8183301ea80343e0490"
   },
   {
     "path": "runtime/reference/std/bytes.md",
-    "bytes": 1432,
-    "sha256": "72b72f18c15a48cbb7ae382ddb24a042ef42b6b15f383a88a89411819b564dd6"
+    "bytes": 1431,
+    "sha256": "1ec62a6b3afa8d954667d3eeac82c1022d2ee7e049c98ef64fb2c0ef8336b291"
   },
   {
     "path": "runtime/reference/std/cache.md",
-    "bytes": 1459,
-    "sha256": "d74a94da18af794d0b5d42e759889f21bd1ce25dd9cc5c0bc3fb89c1cb392f57"
+    "bytes": 1458,
+    "sha256": "a5a5f30da01382358337f6cfef0abf88fb8979d403cd2e1e3269888177b4e2dd"
   },
   {
     "path": "runtime/reference/std/cbor.md",
-    "bytes": 2547,
-    "sha256": "f320f47a78acfe56138f9bcffc3d6bf8ce7b1dadd43e920a5e7f5951442e421e"
+    "bytes": 2546,
+    "sha256": "f3068bc2c95fde49c7d489dad429cb67a8ee3f9ef2aa4fb26c4dae42e0d61a26"
   },
   {
     "path": "runtime/reference/std/cli.md",
-    "bytes": 1189,
-    "sha256": "c3b8ceb95e7246bfa1ee44cb7c4ec728450341369f7f148cc0b7214b18bae71f"
+    "bytes": 1188,
+    "sha256": "2a7303c317db747a9b08f4e1be3904368aee9c19786c3e1bbcc10ca84ba6cd5a"
   },
   {
     "path": "runtime/reference/std/collections.md",
-    "bytes": 1722,
-    "sha256": "09463fba28b53f44f594940cac533322e8e6ba4ec08a7ae079cc8b572ababf15"
+    "bytes": 1721,
+    "sha256": "07d059ee8de9fed42875e8964348517e084b78448909a7f9fa71bd0ba1412ffd"
   },
   {
     "path": "runtime/reference/std/crypto.md",
-    "bytes": 1261,
-    "sha256": "01b8fa776a4417596bb4b4674f8e44860a78706870c1a3343d3fede36681f50f"
+    "bytes": 1260,
+    "sha256": "aba3c1f9ddd2e0f39149b4048225114e73415f193619ce867bdd10ecd1bdb841"
   },
   {
     "path": "runtime/reference/std/csv.md",
-    "bytes": 6522,
-    "sha256": "54c016b03c2a6c4a77d783df2589cea3f0f3c76330c8948340d5bf7734f7c785"
+    "bytes": 6521,
+    "sha256": "21ff8d6a2fbfde5276cbf957ccbb9feb312b954b23d8edf5f013460999f73737"
   },
   {
     "path": "runtime/reference/std/data-structures.md",
-    "bytes": 1540,
-    "sha256": "3b71e7655a320e6ad846e326c90e38fdb0620a173443759b0903fbedb472aff1"
+    "bytes": 1539,
+    "sha256": "4815c9f28ecde817f7f4bd14e3f303b8182b520c5cf63e1cfde877b8784c2daf"
   },
   {
     "path": "runtime/reference/std/datetime.md",
-    "bytes": 1566,
-    "sha256": "fddfd626d3d192af99940fc28db5e5bb74e2652e367d3043057a2c3b30bc22a1"
+    "bytes": 1565,
+    "sha256": "bd69eb33e26f9eee8ee3a1cdb1757b523562496551de2dd7090168e448a5907a"
   },
   {
     "path": "runtime/reference/std/dotenv.md",
-    "bytes": 3889,
-    "sha256": "05e07660d2f93ad97c4229f9520a5bd161764b871b6567e32f162cea5eaca1b6"
+    "bytes": 3888,
+    "sha256": "c99a4001dd04ed8313231eb8a552308858204386e3ecda936b529d646e7befce"
   },
   {
     "path": "runtime/reference/std/encoding.md",
-    "bytes": 4451,
-    "sha256": "9e1a0825666bea3ff976f65b06625cba3e368160067824dc514f820342fdf683"
+    "bytes": 4450,
+    "sha256": "8ebede40c4e9690955ef6f57db01cfa647bc85f7ada1c09e3b97e4a63072e09b"
   },
   {
     "path": "runtime/reference/std/expect.md",
-    "bytes": 5650,
-    "sha256": "4c891db51263c9c89efd0bf7dedfa3120dfffe84c9acaf283d851fbd8ac16a40"
+    "bytes": 5649,
+    "sha256": "0298cf198186233464e90c073697ea978332ab3299c362c93ed45428a75e980c"
   },
   {
     "path": "runtime/reference/std/fmt.md",
-    "bytes": 2240,
-    "sha256": "1ba25e4d3728922695c4e07f7fa67e0e403cf76697ea315805a14333e44e3ad4"
+    "bytes": 2239,
+    "sha256": "02b44ac0c6b3e4f7e6c148b96761efe33b038224407e228202c8dd739062a7a7"
   },
   {
     "path": "runtime/reference/std/front-matter.md",
-    "bytes": 3978,
-    "sha256": "0ebbd07cdf1981f81f365893d750abd2d99ff85ffacbc9e47c1e1cce638ff7a9"
+    "bytes": 3977,
+    "sha256": "26ea630325b028a4c32a1e6a723d634524cac668f0e8a179a79581716583238a"
   },
   {
     "path": "runtime/reference/std/fs.md",
-    "bytes": 1105,
-    "sha256": "2dfb44ba7b15b1d5ada588aa66cffc94b96a6d590f79b4af4684f3a987af3895"
+    "bytes": 1104,
+    "sha256": "3557b2a9e39a12f57378e3357e9b2ba9b38322cb8b12ea214225094eff1aab48"
   },
   {
     "path": "runtime/reference/std/html.md",
-    "bytes": 1141,
-    "sha256": "24302d114f59ea38c0fe8ab5fe4706cba97fa6d9eb6469d9830707e5a083e60f"
+    "bytes": 1140,
+    "sha256": "7d71993dd35a917bc5d5dbbda0f581bc5b372dbc8806e8ab29e9e3b7ebcf8be5"
   },
   {
     "path": "runtime/reference/std/http.md",
-    "bytes": 4781,
-    "sha256": "46f28f8bad51a7b3046c5320cc94724f20f4e87c45a941af474acd46c7621b74"
+    "bytes": 4780,
+    "sha256": "858d13bea258baf5b98938b399daad171628d65c0bdf3f989b2d206190002bdd"
   },
   {
     "path": "runtime/reference/std/index.md",
@@ -416,8 +416,8 @@
   },
   {
     "path": "runtime/reference/std/ini.md",
-    "bytes": 4749,
-    "sha256": "94e645ab790a4cf4e8609db651b7e7617e89a7d0f9562395356f526955899e9c"
+    "bytes": 4748,
+    "sha256": "940134e9130baba70ed84609e139f6d933c13eafa75e8da250d845fe284b0f2c"
   },
   {
     "path": "runtime/reference/std/internal.md",
@@ -426,18 +426,18 @@
   },
   {
     "path": "runtime/reference/std/io.md",
-    "bytes": 1366,
-    "sha256": "3ff96f05a522e8da24633e6793b46823947e57971dd059787dde02d2ea1f2258"
+    "bytes": 1365,
+    "sha256": "4eea72324b7243bf5f5725760384639c42a790dfe1cff9ff7595781fef547149"
   },
   {
     "path": "runtime/reference/std/json.md",
-    "bytes": 1190,
-    "sha256": "c16581ca945f9ce5e8c40b03f32b100a573fa93dc1a7e0079e8f9f220f205f9f"
+    "bytes": 1189,
+    "sha256": "0bd964d4158004a2f7cbcb54331baa5f4d50ee3cd6db0e772522c68816ad787d"
   },
   {
     "path": "runtime/reference/std/jsonc.md",
-    "bytes": 1340,
-    "sha256": "7915ceefdc1c46fc39ffa47349aee1592efc6184b8ebe88ddbde94fda0925e6e"
+    "bytes": 1339,
+    "sha256": "adb4601516152e00e9300e0fcdb71014c6563c95f36e85935e27c19e04b3ba87"
   },
   {
     "path": "runtime/reference/std/log.md",
@@ -446,92 +446,92 @@
   },
   {
     "path": "runtime/reference/std/math.md",
-    "bytes": 1202,
-    "sha256": "a6422c2a288540f0002740b52f7bc7e87ce3ad1f5f9aca16d78c52f278efb721"
+    "bytes": 1201,
+    "sha256": "f0950b7253290b05bcfc962c66db03ad35fcba384d20ce47fd9b9afcc0afd75f"
   },
   {
     "path": "runtime/reference/std/media-types.md",
-    "bytes": 1780,
-    "sha256": "0195f8b41b2e45122cac59fda5917f6de1f56f6a8b80397db3ed782bda765b7a"
+    "bytes": 1779,
+    "sha256": "05e5f1425519ab4cc93294946f53d9500112c0b4d50c19c01074bbf8a2648980"
   },
   {
     "path": "runtime/reference/std/msgpack.md",
-    "bytes": 1859,
-    "sha256": "5f203018852fbfd660a54711d0b107b8d7cfa66cfd9de041ec0a2565805e625c"
+    "bytes": 1858,
+    "sha256": "6aa7da88696e073f78a9983c08a1b674d8a8c0fd1ae88bdeed3fc189e9fe4908"
   },
   {
     "path": "runtime/reference/std/net.md",
-    "bytes": 1026,
-    "sha256": "5f7ac0b4633d16e38fc28b6f4bc477f05fa581c8ca41bda3f4fd4c36e2ac22d4"
+    "bytes": 1025,
+    "sha256": "5cfea82d47cfb0549b47b932e3f67acfaf29454e9b2ed20439ac3dd360c13907"
   },
   {
     "path": "runtime/reference/std/path.md",
-    "bytes": 7928,
-    "sha256": "cefda20f0132710399646cbeb822440ccc8bbb453883a0f7ed0fe11be0547836"
+    "bytes": 7927,
+    "sha256": "bcce692c8a9d01fe49c8b407f267bc7330c58b6578cbf6df269b0b1219a4cebd"
   },
   {
     "path": "runtime/reference/std/random.md",
-    "bytes": 1702,
-    "sha256": "462a4548b36ac5e6cc13c7462eeb27e736402ded1b4e8dd93172635daeee01ac"
+    "bytes": 1701,
+    "sha256": "83910e82f77743a6aad39fe87ec5d5bf1994d5608275b7cf319f440cf1b30893"
   },
   {
     "path": "runtime/reference/std/regexp.md",
-    "bytes": 1291,
-    "sha256": "1f0e397b40d0abbde53ea6ac882fe7e38eb3a25f1a75591045ad3daa1f2f5c32"
+    "bytes": 1290,
+    "sha256": "8a053bc1277bc9df35fcda79f6901421e8411e93b7b3c8921ffb299d8ba6d851"
   },
   {
     "path": "runtime/reference/std/semver.md",
-    "bytes": 15985,
-    "sha256": "2c2bb62798a3eafe53781a66b2d4bd940747d95920f16b81bd2b5c4b34c339a2"
+    "bytes": 15984,
+    "sha256": "0eaa1ba667a3616c1577700433bc63387b40a3908eeca9f2cd728fede2ac4e07"
   },
   {
     "path": "runtime/reference/std/streams.md",
-    "bytes": 1256,
-    "sha256": "a1e4a0db3cc24555a683f0c5a35507748e6dfe2376eb84d81ad5650bc1d41bdf"
+    "bytes": 1255,
+    "sha256": "45325772fc55aa68eb5092591938352364845801d7e3a58a717dd8de063732ab"
   },
   {
     "path": "runtime/reference/std/tar.md",
-    "bytes": 1511,
-    "sha256": "a5ce661d28becac99cef267666304c55d0da7839ac11babbd94f2f715f3f003b"
+    "bytes": 1510,
+    "sha256": "8c1e780d983026266edd88c51296737be27a34fb5a6ee2a286148338bd05b888"
   },
   {
     "path": "runtime/reference/std/testing.md",
-    "bytes": 2046,
-    "sha256": "12ffb475a10e40320613c173173cbd2a46f174f4cae24b684dc2ff2fff82c70d"
+    "bytes": 2045,
+    "sha256": "bd885ddffcd5a3822e068ff15d410a63de94e5b6ccef5e60255a2be193e6ccf2"
   },
   {
     "path": "runtime/reference/std/text.md",
-    "bytes": 1205,
-    "sha256": "3755e91be7fb8d16e6593d9b2e4e3c376a5f8e11d2720b347e1e10bdd95ec18e"
+    "bytes": 1204,
+    "sha256": "136e2c91e67930312317b2f8ff54e33ed89b93cadba95ea736633a5c77fa6edf"
   },
   {
     "path": "runtime/reference/std/toml.md",
-    "bytes": 4855,
-    "sha256": "055dbd3421e4bd7b35dc7252dac284d5edc80749878312d719219b040635d931"
+    "bytes": 4854,
+    "sha256": "c0091eefa9caeda5a858897bc6724178aecec2e982e63280f0a40f3393452ee7"
   },
   {
     "path": "runtime/reference/std/ulid.md",
-    "bytes": 2417,
-    "sha256": "637b4f21b4823e2440587a7f283c2f91531ac805e0422b7f9e9623351fb5ae27"
+    "bytes": 2416,
+    "sha256": "e92ea35946c06f8ed2319cf68b90bd4cfcb0350c1c58dbdec6f629557c0586b5"
   },
   {
     "path": "runtime/reference/std/uuid.md",
-    "bytes": 1604,
-    "sha256": "c618c0d1b849ec2fc3cf21d3379ad85056c27bb05fd96bc29cbdde656be4804f"
+    "bytes": 1603,
+    "sha256": "af6cb86ec353a2ef31bd02fc521c2a1bc2160d8baf3b61d8596a14a747810b6a"
   },
   {
     "path": "runtime/reference/std/webgpu.md",
-    "bytes": 1448,
-    "sha256": "513a15fbfad1cb0a4d7361e4b58c6dabb26ff9cec44eea8a34c232193ebd0f98"
+    "bytes": 1447,
+    "sha256": "cc2a45dbca8718ed702abacb881692a74d081444497dd9eb65bee1e5ef053e30"
   },
   {
     "path": "runtime/reference/std/xml.md",
-    "bytes": 6035,
-    "sha256": "d0f1c579dcd46c1f265d909298916b004617a33a280799783a741eeefc3a2713"
+    "bytes": 6034,
+    "sha256": "9abdecdbdfe0b9d8659fb52fc7bccbd2a1bf66aeb2454b8a77229880b9a949e0"
   },
   {
     "path": "runtime/reference/std/yaml.md",
-    "bytes": 2630,
-    "sha256": "d4279d91cab3c6b3742c3f370f9e1f69f16c9c9475d4ffc961a694e7f3f0ff6b"
+    "bytes": 2629,
+    "sha256": "b2378656defb26c49fee83072bd94974b61e86d67022d5c3e9816986e59c6842"
   }
 ]

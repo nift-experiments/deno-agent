@@ -33,3 +33,5 @@ No nift.dev consultation was needed for D0; generated build/status/configuration
 D0 initialization and first review complete; D1 baseline acquisition in progress. No migrated content, no performance claim and no Nift modification. Revisit all categories after actual campaign work; this is an initial assessment, not the final init review.
 
 Generated public/index.html contains a whitespace-only content line, so default git diff --check flags trailing whitespace on initial import. Preserve the generated scaffold for dogfooding; use a one-time blank-at-eol exemption for D0, not a Nift core edit.
+
+D1 finding: upstream full build succeeds without custom patches, but separate local search generation is needed for llms.json, live external std inputs need freezing, and generated std custom-section whitespace changes on rerun. Suggested baseline scaffolding must distinguish complete CLI success from complete deployment/search payload coverage and account for nondeterministic outputs.

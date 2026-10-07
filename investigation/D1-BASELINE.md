@@ -27,3 +27,5 @@ Read D1-ARCHITECTURE.md for families/components/plugins and two maintained-sourc
 ## Init assessment
 
 Generated AGENTS→MIGRATION→HANDOVER sequence and baseline gate guided work well. Safe rerun refusal and existing-AGENTS augmentation verified. Missing concrete manifests/checkpoint/divergence/fixture files and source-model selection required additions, all recorded with example wording in MIGRATION-INIT-REVIEW.md. Generated scaffold contains blank-at-eol whitespace and no README; preserved for honest dogfooding. No Nift changes, no quiet source rewrites. Final init review remains due at D9.
+
+Prepared-reference input manifest refreshed to the final successful run. Acquisition generated inputs are retained separately. Observed 41 generated std Markdown files lose a blank line inside the preserved custom section on regeneration (e.g. fs.md), so publication Markdown/LLM bytes change while rendered HTML may remain equal. Do not infer a registry-version change from this; freeze exact inputs and classify nondeterminism in D2.
