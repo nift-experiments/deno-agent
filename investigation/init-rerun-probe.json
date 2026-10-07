@@ -1,0 +1,8 @@
+{
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "error: cannot initialise project\n  this directory is already a Nift project\n",
+  "changed_files": [],
+  "agent_sentinel_preserved": true,
+  "content_sentinel_preserved": true
+}

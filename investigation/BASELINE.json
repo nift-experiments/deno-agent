@@ -1,0 +1,14 @@
+{
+  "upstream_repository": "https://github.com/denoland/docs",
+  "upstream_sha": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+  "source_directory": "../deno-upstream",
+  "reference_directory": "../deno-baseline",
+  "migration_output": "public/",
+  "nift_version": "4.8.0",
+  "nift_sha256": "eae6fee767e2c21d0100b4c96ab660c685f12b80202e2d4eae563316ca62bf08",
+  "deno_version": "2.9.7",
+  "lume_version": "3.1.2",
+  "production_command": "deno task build",
+  "production_output": "_site/",
+  "state": "baseline-not-yet-reproduced"
+}
