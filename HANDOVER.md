@@ -377,3 +377,7 @@ See investigation/D9-SOURCE-REMOVAL-AND-DEPENDENCIES.md. Actual MDX layout remov
 ## Final native/migration measurement checkpoint
 
 All final five-sample modes and the native production changed-input observation completed. Read investigation/D9-FINAL-MEASUREMENTS.md, qualified raw samples and retained prior campaigns. D9 report/init review and final fresh-checkout closeout follow; Labs remains on hold.
+
+## D9 report and init review
+
+Read investigation/D9-COMPARISON.md for architecture, measurements, parity limits and independent source-model judgment; read MIGRATION-INIT-FINAL-REVIEW.md for future guidance candidates. Complete publication: python3 scripts/build.py; forced recomputation: python3 scripts/build.py --force. All OG assets are maintained static inputs, with explicit selected-image updates. Next and final action: verify fresh clones from this committed report checkpoint, record their complete byte parity and Git cleanliness, push closeout evidence, stop owned preview services. Keep Labs unpublished. Do not modify Nift or reopen Docker.

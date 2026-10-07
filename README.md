@@ -9,3 +9,5 @@ Markdown downloads, search payloads, LLM projections and redirects are maintaine
 OG images are maintained source under `assets/og/`, mapped to original published URLs by `data/og-assets.json`. Normal builds never regenerate them. Use `python3 scripts/update-og.py --route /runtime/run/` for an explicit update, with pinned `DENO_BIN`/`DENO_DIR` configured. New image routes need an entry in `data/og.json`; `--all` is only for intentional whole-corpus maintenance.
 
 Read AGENTS.md → MIGRATION.md → HANDOVER.md before work. Parity contracts and ownership boundaries are recorded in investigation/D5-COMPLETE-PUBLICATION.md and D6-WHOLE-SITE-PARITY.md. Profiling and final benchmarks remain in progress; the Deno Labs page is on hold.
+
+D0–D9 migration and profiling gates are complete. Read [the final comparison](investigation/D9-COMPARISON.md) and [final init review](investigation/MIGRATION-INIT-FINAL-REVIEW.md). Deno Labs publication remains on hold; final fresh-checkout verification follows this report checkpoint.
