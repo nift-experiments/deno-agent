@@ -1,0 +1,64 @@
+[
+  {
+    "phase": "d7-initial",
+    "model": "deno",
+    "case": "1-bodies",
+    "whole_pipeline_s": 205.95350411813706,
+    "components": {
+      "model": "maintained Markdown/MDX/structured references -> standalone renderer -> transient HTML -> Nift -> publication/search",
+      "render_s": 23.22638966399245,
+      "render_components": {
+        "render_s": 22.892305367000002,
+        "pages": 834,
+        "generator_s": 1.721404693,
+        "component_binding_s": 1.5992094880000112,
+        "body_s": 1.1324746169999982,
+        "mdx_s": 0.06436055600000054,
+        "layout_s": 4.179792814999989,
+        "dom_s": 11.541341404000002,
+        "markdown_inclusive_s": 1.0757039009999798,
+        "prism_subset_s": 0.2895127610000266,
+        "render_calls": 2205,
+        "counter_boundaries": "Prism is a subset of inclusive Markdown; MDX is a subset of body; Markdown helpers also occur in layout/generator work. Do not add overlapping counters."
+      },
+      "phases": {
+        "render": {
+          "wall_s": 23.22574230306782,
+          "maximum_measured_process_rss_mib": 971.859375
+        },
+        "search_generation": {
+          "wall_s": 2.54596731509082,
+          "maximum_measured_process_rss_mib": 559.7890625
+        },
+        "search_clock": {
+          "wall_s": 0.3197412460576743,
+          "maximum_measured_process_rss_mib": 159.58203125
+        },
+        "llms": {
+          "wall_s": 0.39307505707256496,
+          "maximum_measured_process_rss_mib": 131.015625
+        },
+        "og": {
+          "wall_s": 178.30271042604,
+          "maximum_measured_process_rss_mib": 277.32421875
+        }
+      },
+      "nift_process": {
+        "wall_s": 0.07725723902694881,
+        "maximum_measured_process_rss_mib": 8.96484375
+      },
+      "nift_preparation_and_composition_s": 0.8496199711225927,
+      "search_s": 2.866650318959728,
+      "llms_s": 0.3936059889383614,
+      "og_s": 178.3031533260364,
+      "publication_s": 0.25687904097139835,
+      "non_html_outputs": 1739,
+      "complete_s": 205.897089980077
+    },
+    "maximum_measured_process_rss_mib": 971.859375,
+    "files": 2573,
+    "incremental_equals_forced_full": true,
+    "expected_change_assertions": true,
+    "source_transaction": "coordinated maintained inputs; authoring outside timed build"
+  }
+]

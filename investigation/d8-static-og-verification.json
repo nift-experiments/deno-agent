@@ -1,0 +1,25 @@
+{
+  "files": 2573,
+  "all_publication_bytes_equal": true,
+  "maintained_og_assets": 834,
+  "normal_build_og_generation_s": 0,
+  "explicit_selected_update_reproduces_accepted_bytes": true,
+  "single_build_observation": {
+    "model": "maintained HTML -> Nift -> publication/search",
+    "nift_preparation_and_composition_s": 1.1817553599830717,
+    "og_generation_s": 0,
+    "og_model": "maintained static publication assets; explicit updates outside routine builds",
+    "nift_process": {
+      "wall_s": 0.5719438910018653,
+      "maximum_measured_process_rss_mib": 131.2734375
+    },
+    "publication_s": 0.36124882008880377,
+    "non_html_outputs": 1739,
+    "complete_s": 1.5441612959839404
+  },
+  "explicit_update": {
+    "explicit_update_s": 0.3451007578987628,
+    "images": 1,
+    "included_in_normal_publication": false
+  }
+}

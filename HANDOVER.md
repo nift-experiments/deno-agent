@@ -349,3 +349,7 @@ Both models reproduce all 2,573 files / 213,555,032 bytes exactly, including 834
 ## D6 checkpoint: whole-site parity verified
 
 Read investigation/D6-WHOLE-SITE-PARITY.md. All 834 routes and both fresh committed publications match the reference; 104 responsive/theme states and 20 interaction checks are recorded, with five small pixel differences retained honestly. Fresh builds leave Git clean. Next D7: full pipeline lifecycle (including download/search/navigation retirement), serialized initial measurements and component/RSS boundaries; then D8 profiling/optimization and D9 final comparison. No Nift change.
+
+## Static OG architecture correction
+
+User-directed interruption stopped the OG-heavy D7 lifecycle campaign and queued upstream run. Initial timing evidence and the completed lifecycle case are preserved externally. See investigation/D8-STATIC-OG-ASSETS.md. Both publications retain exact 2,573-file baseline parity. Resume the remaining D7 cases and measurements with explicit OG maintenance outside normal publication; do not restart the obsolete regeneration campaign. Nift core remains untouched.

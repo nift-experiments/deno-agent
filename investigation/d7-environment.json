@@ -1,0 +1,10 @@
+{
+  "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.43",
+  "machine": "x86_64",
+  "logical_cpus": 20,
+  "cpu_model": "12th Gen Intel(R) Core(TM) i7-12700H",
+  "memory_total": "MemTotal:       64088128 kB",
+  "measurement_host": "Active desktop host; campaign builds serialized, external workload and OS caches uncontrolled",
+  "nift_core_frozen": true,
+  "rss_boundary": "GNU time maximum individual measured process/phase high-water mark; not aggregate simultaneous process-tree memory"
+}

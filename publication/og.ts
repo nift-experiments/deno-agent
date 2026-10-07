@@ -5,7 +5,11 @@ import {initWasm,Resvg} from 'npm:@resvg/resvg-wasm@2.6.2';
 import {toFileUrl} from '@std/path';
 const started=performance.now();
 await initWasm(await Deno.readFile('publication/vendor/resvg-2.6.2.wasm'));
-const data=JSON.parse(await Deno.readTextFile('.generated/og-data.json'));
+const all=JSON.parse(await Deno.readTextFile('.generated/og-data.json'));
+const selected=Deno.args.flatMap((arg,i)=>arg==='--route'?[Deno.args[i+1]]:[]);
+if(!Deno.args.includes('--all') && !selected.length)throw Error('Explicit --route or --all required');
+const data=all.filter((row:any)=>Deno.args.includes('--all')||selected.includes(row.route));
+if(selected.some(route=>!data.some((row:any)=>row.route===route)))throw Error('Unknown OG route');
 const fonts=await Promise.all([
  {name:'Courier',style:'normal',path:'assets/fonts/courier/CourierPrime-Regular.ttf'},
  {name:'Inter',weight:400,style:'normal',path:'assets/fonts/inter/hacked/Inter-Regular-hacked.woff'},
@@ -19,7 +23,7 @@ for(const row of data){
  const svg=await satori(await template(row),{width:1200,height:630,fonts});
  const resvg=new Resvg(svg,{fitTo:{mode:'original'}});const image=resvg.render();
  const png=await sharp(image.asPng()).toBuffer();image.free();resvg.free();
- const dir='public'+row.route;await Deno.mkdir(dir,{recursive:true});
+ const dir='assets/og'+row.route;await Deno.mkdir(dir,{recursive:true});
  await Deno.writeFile(dir+'index.png',png);
 }
 await Deno.writeTextFile('.generated/og-metrics.json',JSON.stringify({og_s:(performance.now()-started)/1000,images:data.length}));

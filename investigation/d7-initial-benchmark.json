@@ -1,0 +1,260 @@
+[
+  {
+    "model": "deno",
+    "revision": "1722f2a92a57360792cb3920899754e9dc5b8c61",
+    "case": "warm-full",
+    "sample": 1,
+    "whole_pipeline_s": 132.2283677640371,
+    "maximum_measured_process_rss_mib": 1033.69921875,
+    "components": {
+      "model": "maintained Markdown/MDX/structured references -> standalone renderer -> transient HTML -> Nift -> publication/search",
+      "render_s": 14.184252267004922,
+      "nift_preparation_and_composition_s": 0.51231345301494,
+      "search_s": 1.444185744971037,
+      "llms_s": 0.20769812096841633,
+      "og_s": 115.7517497909721,
+      "publication_s": 0.09136624401435256,
+      "non_html_outputs": 1739,
+      "complete_s": 132.1918383948505
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno",
+    "revision": "1722f2a92a57360792cb3920899754e9dc5b8c61",
+    "case": "warm-full",
+    "sample": 2,
+    "whole_pipeline_s": 134.8632131209597,
+    "maximum_measured_process_rss_mib": 1014.0,
+    "components": {
+      "model": "maintained Markdown/MDX/structured references -> standalone renderer -> transient HTML -> Nift -> publication/search",
+      "render_s": 14.67676079296507,
+      "nift_preparation_and_composition_s": 0.5518197189085186,
+      "search_s": 1.4691375819966197,
+      "llms_s": 0.21455130400136113,
+      "og_s": 117.82493332517333,
+      "publication_s": 0.09310410008765757,
+      "non_html_outputs": 1739,
+      "complete_s": 134.83057637698948
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno",
+    "revision": "1722f2a92a57360792cb3920899754e9dc5b8c61",
+    "case": "warm-full",
+    "sample": 3,
+    "whole_pipeline_s": 133.253911558073,
+    "maximum_measured_process_rss_mib": 1017.796875,
+    "components": {
+      "model": "maintained Markdown/MDX/structured references -> standalone renderer -> transient HTML -> Nift -> publication/search",
+      "render_s": 14.73375631403178,
+      "nift_preparation_and_composition_s": 0.5090147720184177,
+      "search_s": 1.4405229829717427,
+      "llms_s": 0.20003744796849787,
+      "og_s": 116.24021361605264,
+      "publication_s": 0.09455304779112339,
+      "non_html_outputs": 1739,
+      "complete_s": 133.21837835293263
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno",
+    "revision": "1722f2a92a57360792cb3920899754e9dc5b8c61",
+    "case": "warm-full",
+    "sample": 4,
+    "whole_pipeline_s": 135.34596812399104,
+    "maximum_measured_process_rss_mib": 1034.58984375,
+    "components": {
+      "model": "maintained Markdown/MDX/structured references -> standalone renderer -> transient HTML -> Nift -> publication/search",
+      "render_s": 14.698700370034203,
+      "nift_preparation_and_composition_s": 0.5122746839188039,
+      "search_s": 1.507320238975808,
+      "llms_s": 0.19816807704046369,
+      "og_s": 118.29867462208495,
+      "publication_s": 0.09257356286980212,
+      "non_html_outputs": 1739,
+      "complete_s": 135.3080104670953
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno",
+    "revision": "1722f2a92a57360792cb3920899754e9dc5b8c61",
+    "case": "warm-full",
+    "sample": 5,
+    "whole_pipeline_s": 149.51614959095605,
+    "maximum_measured_process_rss_mib": 1014.26953125,
+    "components": {
+      "model": "maintained Markdown/MDX/structured references -> standalone renderer -> transient HTML -> Nift -> publication/search",
+      "render_s": 14.537346931174397,
+      "nift_preparation_and_composition_s": 0.5089391418732703,
+      "search_s": 1.4714902960695326,
+      "llms_s": 0.19553511892445385,
+      "og_s": 132.6518855309114,
+      "publication_s": 0.1148566568735987,
+      "non_html_outputs": 1739,
+      "complete_s": 149.48052123212256
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno",
+    "revision": "1722f2a92a57360792cb3920899754e9dc5b8c61",
+    "case": "application-cold",
+    "sample": 1,
+    "whole_pipeline_s": 160.05187658406794,
+    "maximum_measured_process_rss_mib": 971.75,
+    "components": {
+      "model": "maintained Markdown/MDX/structured references -> standalone renderer -> transient HTML -> Nift -> publication/search",
+      "render_s": 18.94265181105584,
+      "nift_preparation_and_composition_s": 1.115146242082119,
+      "search_s": 1.8353820249903947,
+      "llms_s": 0.2430189219303429,
+      "og_s": 137.76052259118296,
+      "publication_s": 0.10808702581562102,
+      "non_html_outputs": 1739,
+      "complete_s": 160.00527911400422
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno-agent",
+    "revision": "51aa4135990971507b9ec63e1426d0bf6d9cb271",
+    "case": "warm-full",
+    "sample": 1,
+    "whole_pipeline_s": 166.14717968390323,
+    "maximum_measured_process_rss_mib": 271.81640625,
+    "components": {
+      "model": "maintained HTML -> Nift -> publication/search",
+      "nift_preparation_and_composition_s": 0.061469600070267916,
+      "og_s": 165.8128833931405,
+      "publication_s": 0.22809107112698257,
+      "non_html_outputs": 1739,
+      "complete_s": 166.1053449860774
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno-agent",
+    "revision": "51aa4135990971507b9ec63e1426d0bf6d9cb271",
+    "case": "warm-full",
+    "sample": 2,
+    "whole_pipeline_s": 172.95207463903353,
+    "maximum_measured_process_rss_mib": 277.18359375,
+    "components": {
+      "model": "maintained HTML -> Nift -> publication/search",
+      "nift_preparation_and_composition_s": 0.09234906313940883,
+      "og_s": 172.68397957785055,
+      "publication_s": 0.1200707929674536,
+      "non_html_outputs": 1739,
+      "complete_s": 172.90005739498883
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno-agent",
+    "revision": "51aa4135990971507b9ec63e1426d0bf6d9cb271",
+    "case": "warm-full",
+    "sample": 3,
+    "whole_pipeline_s": 144.0727455620654,
+    "maximum_measured_process_rss_mib": 269.3046875,
+    "components": {
+      "model": "maintained HTML -> Nift -> publication/search",
+      "nift_preparation_and_composition_s": 0.07239256403408945,
+      "og_s": 143.8408359622117,
+      "publication_s": 0.11332672112621367,
+      "non_html_outputs": 1739,
+      "complete_s": 144.03086988604628
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno-agent",
+    "revision": "51aa4135990971507b9ec63e1426d0bf6d9cb271",
+    "case": "warm-full",
+    "sample": 4,
+    "whole_pipeline_s": 138.92465628799982,
+    "maximum_measured_process_rss_mib": 270.8203125,
+    "components": {
+      "model": "maintained HTML -> Nift -> publication/search",
+      "nift_preparation_and_composition_s": 0.06411684188060462,
+      "og_s": 138.70469321799465,
+      "publication_s": 0.1096764609683305,
+      "non_html_outputs": 1739,
+      "complete_s": 138.88128989585675
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno-agent",
+    "revision": "51aa4135990971507b9ec63e1426d0bf6d9cb271",
+    "case": "warm-full",
+    "sample": 5,
+    "whole_pipeline_s": 140.8439770389814,
+    "maximum_measured_process_rss_mib": 267.82421875,
+    "components": {
+      "model": "maintained HTML -> Nift -> publication/search",
+      "nift_preparation_and_composition_s": 0.06881510093808174,
+      "og_s": 140.61314769508317,
+      "publication_s": 0.11057579191401601,
+      "non_html_outputs": 1739,
+      "complete_s": 140.79541954095475
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  },
+  {
+    "model": "deno-agent",
+    "revision": "51aa4135990971507b9ec63e1426d0bf6d9cb271",
+    "case": "application-cold",
+    "sample": 1,
+    "whole_pipeline_s": 142.17072136094794,
+    "maximum_measured_process_rss_mib": 271.8203125,
+    "components": {
+      "model": "maintained HTML -> Nift -> publication/search",
+      "nift_preparation_and_composition_s": 0.45436912402510643,
+      "og_s": 141.5794936879538,
+      "publication_s": 0.09146149596199393,
+      "non_html_outputs": 1739,
+      "complete_s": 142.13044404401444
+    },
+    "files": 2573,
+    "bytes": 213555032,
+    "reference_manifest_equal": true,
+    "git_clean": true
+  }
+]

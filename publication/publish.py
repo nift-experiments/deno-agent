@@ -14,7 +14,7 @@ def publish(root, model):
         shutil.copyfile(source,dst)
         owned.append(target)
     for p in sorted((root/'assets').rglob('*')):
-        if p.is_file():copy(p,p.relative_to(root/'assets').as_posix())
+        if p.is_file() and 'og' not in p.relative_to(root/'assets').parts:copy(p,p.relative_to(root/'assets').as_posix())
     if model=='deno':
         for family in ['runtime','deploy','sandbox','subhosting','examples','lint/rules']:
             for p in sorted((root/'authored'/family).rglob('*.md')):
@@ -24,7 +24,13 @@ def publish(root, model):
         for p in (root/'.generated/search').glob('*.json'):copy(p,p.name)
         for p in (root/'.generated/llms').glob('*'):copy(p,p.name)
     else:
-        for p in (root/'exports').rglob('*.md'):copy(p,p.relative_to(root/'exports').as_posix())
+        route_rows=json.loads((root/'data/routes.json').read_text())
+        declared={row['download'] for row in route_rows if 'download' in row}
+        managed=set(json.loads((root/'data/download-ownership.json').read_text()))
+        for p in (root/'exports').rglob('*.md'):
+            relative=p.relative_to(root/'exports').as_posix()
+            if relative in managed and relative not in declared:continue
+            copy(p,relative)
         for p in (root/'data/publication').glob('*'):copy(p,p.name)
     copy(root/'data/redirects.json','_redirects.json')
     api=root/'.generated/api-redirects.json'if model=='deno'else root/'data/api-redirects.json'
@@ -38,7 +44,12 @@ def publish(root, model):
         xml+='  <url>\n    <loc>https://docs.deno.com'+url+'</loc>\n    <lastmod>'+dates.get(url,'2026-10-07T00:00:00.000Z')+'</lastmod>\n  </url>\n'
     xml+='</urlset>'
     (root/'public/sitemap.xml').write_text(xml);owned.append('sitemap.xml')
-    for url in urls:owned.append(url.lstrip('/')+'index.png')
+    images=json.loads((root/'data/og-assets.json').read_text())
+    images_by_route={image['route']:image for image in images}
+    for url in urls:
+        if url not in images_by_route:raise ValueError('Route has no maintained OG asset: '+url+'. Run the explicit OG maintenance workflow before publication.')
+        image=images_by_route[url]
+        copy(root/image['source'],image['output'])
     ledger=root/'.generated/publication-owned.json'
     old=json.loads(ledger.read_text())if ledger.exists()else['assets/css/style.css','assets/js/script.js']
     owned=sorted(set(owned))
