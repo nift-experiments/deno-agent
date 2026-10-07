@@ -365,3 +365,7 @@ Four persistent DOM-only workers reduce uncached publication while preserving al
 ## Optimized whole-site gate
 
 Read investigation/D8-OPTIMIZED-PARITY.md. All-route HTTP, 104 browser captures and 20 interactions pass with documented control-state pixel differences. Next: repeat 20 lifecycle cases on committed worker defaults, run serialized normal/forced/fresh and native/prepared-input benchmarks, finish D9/init review, verify clean fresh clones. Keep Labs unpublished.
+
+## Final migration measurements
+
+Five normal/forced/fresh samples per model preserve all reference bytes; all twenty production-default lifecycle cases pass. See investigation/D8-FINAL-MEASUREMENTS.md and raw samples. Native upstream measurements and D9 report/init/fresh-checkout closeout remain. Do not publish Labs.
