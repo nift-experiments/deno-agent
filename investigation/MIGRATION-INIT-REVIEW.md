@@ -47,3 +47,7 @@ Proposed generated wording: "For pre-rendered HTML, use an explicitly raw compos
 ## D4 findings
 
 Proposed wording: "Keep filesystem inventory paths distinct from renderer runtime source paths; normalization can alter relative links, Markdown alternatives, edit links and feedback bindings." The one Vento expression demonstrates why source compatibility should be corpus driven: an exact source-function expansion suffices without implementing a general template engine. Add real-source whole-family parity before calling a compatibility adapter complete.
+
+## D5 findings
+
+Proposed generated external-input inventory fields: owner, refresh command, maintained/generated status, content hash, network boundary, clock/order normalization, and normal-build inclusion. Include compiled frontend assets and WASM alongside content/API inputs. Proposed wording: "A complete publication may include Markdown downloads, source examples, search indexes, llms files, sitemap, redirects and generated social images; verify their ownership and lifecycle, not just HTML routes." Add a standalone HTTP contract template recording status, Location, MIME, Vary, Cache-Control and body hashes. No-credentials local testing can retain real middleware while using deterministic browser transport mocks. Do not conflate avoiding Markdown/MDX rendering with removing all runtime/tool dependencies. Preserve inherited code-block whitespace when byte fidelity requires it; keep checks on migration-authored code.

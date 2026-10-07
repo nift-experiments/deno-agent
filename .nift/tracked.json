@@ -2,1652 +2,4172 @@
   "tracked": [
     {
       "name": "runtime/run/index",
-      "title": "/runtime/run/",
+      "title": "Run code",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/run/watch_mode/index",
-      "title": "/runtime/run/watch_mode/",
+      "title": "Watch mode and HMR",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/cli_apps/index",
-      "title": "/runtime/cli_apps/",
+      "title": "Build CLI apps",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/packages/publishing/index",
-      "title": "/runtime/packages/publishing/",
+      "title": "Publishing packages",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/packages/peer_dependencies/index",
-      "title": "/runtime/packages/peer_dependencies/",
+      "title": "Peer dependencies",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/packages/supply_chain/index",
-      "title": "/runtime/packages/supply_chain/",
+      "title": "Supply chain management",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/packages/index",
-      "title": "/runtime/packages/",
+      "title": "Dependency management",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/packages/private_repositories/index",
-      "title": "/runtime/packages/private_repositories/",
+      "title": "Private repositories",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/cron/index",
-      "title": "/runtime/fundamentals/cron/",
+      "title": "Cron",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/stability_and_releases/index",
-      "title": "/runtime/fundamentals/stability_and_releases/",
+      "title": "Stability and releases",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/open_telemetry/index",
-      "title": "/runtime/fundamentals/open_telemetry/",
+      "title": "OpenTelemetry",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/security/index",
-      "title": "/runtime/fundamentals/security/",
+      "title": "Security and permissions",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/typescript/index",
-      "title": "/runtime/fundamentals/typescript/",
+      "title": "TypeScript support",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/web_dev/index",
-      "title": "/runtime/fundamentals/web_dev/",
+      "title": "Web development",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/modules/index",
-      "title": "/runtime/fundamentals/modules/",
+      "title": "Modules",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/configuration/index",
-      "title": "/runtime/fundamentals/configuration/",
+      "title": "Config files",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/ffi/index",
-      "title": "/runtime/fundamentals/ffi/",
+      "title": "Foreign Function Interface (FFI)",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/debugging/index",
-      "title": "/runtime/fundamentals/debugging/",
+      "title": "Debugging",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/cpu_profiling/index",
-      "title": "/runtime/fundamentals/cpu_profiling/",
+      "title": "CPU profiling",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/http_server/index",
-      "title": "/runtime/fundamentals/http_server/",
+      "title": "Writing an HTTP Server",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/node/index",
-      "title": "/runtime/fundamentals/node/",
+      "title": "Node and npm Compatibility",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/fundamentals/workspaces/index",
-      "title": "/runtime/fundamentals/workspaces/",
+      "title": "Workspaces and monorepos",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/serving/index",
-      "title": "/runtime/desktop/serving/",
+      "title": "HTTP serving",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/hmr/index",
-      "title": "/runtime/desktop/hmr/",
+      "title": "Hot module replacement",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/auto_update/index",
-      "title": "/runtime/desktop/auto_update/",
+      "title": "Auto-update",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/tray_and_dock/index",
-      "title": "/runtime/desktop/tray_and_dock/",
+      "title": "Tray and dock",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/comparison/index",
-      "title": "/runtime/desktop/comparison/",
+      "title": "Comparison with other tools",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/webgpu/index",
-      "title": "/runtime/desktop/webgpu/",
+      "title": "WebGPU rendering",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/backends/index",
-      "title": "/runtime/desktop/backends/",
+      "title": "Backends",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/devtools/index",
-      "title": "/runtime/desktop/devtools/",
+      "title": "DevTools",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/distribution/index",
-      "title": "/runtime/desktop/distribution/",
+      "title": "Distribution",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/dialogs/index",
-      "title": "/runtime/desktop/dialogs/",
+      "title": "Dialogs",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/notifications/index",
-      "title": "/runtime/desktop/notifications/",
+      "title": "Notifications",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/error_reporting/index",
-      "title": "/runtime/desktop/error_reporting/",
+      "title": "Error reporting",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/index",
-      "title": "/runtime/desktop/",
+      "title": "Desktop apps",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/bindings/index",
-      "title": "/runtime/desktop/bindings/",
+      "title": "Bindings",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/configuration/index",
-      "title": "/runtime/desktop/configuration/",
+      "title": "Configuration",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/frameworks/index",
-      "title": "/runtime/desktop/frameworks/",
+      "title": "Frameworks",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/menus/index",
-      "title": "/runtime/desktop/menus/",
+      "title": "Menus",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/desktop/windows/index",
-      "title": "/runtime/desktop/windows/",
+      "title": "Windows",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/jsx/index",
-      "title": "/runtime/reference/jsx/",
+      "title": "JSX and React",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/env_variables/index",
-      "title": "/runtime/reference/env_variables/",
+      "title": "Environment variables",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/datetime/index",
+      "title": "@std/datetime",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/csv/index",
+      "title": "@std/csv",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/async/index",
+      "title": "@std/async",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/internal/index",
+      "title": "@std/internal",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/json/index",
+      "title": "@std/json",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/fs/index",
+      "title": "@std/fs",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/data-structures/index",
+      "title": "@std/data-structures",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/cbor/index",
+      "title": "@std/cbor",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/streams/index",
+      "title": "@std/streams",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/xml/index",
+      "title": "@std/xml",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/text/index",
+      "title": "@std/text",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/webgpu/index",
+      "title": "@std/webgpu",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/dotenv/index",
+      "title": "@std/dotenv",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/random/index",
+      "title": "@std/random",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/collections/index",
+      "title": "@std/collections",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/ulid/index",
+      "title": "@std/ulid",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/semver/index",
+      "title": "@std/semver",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/cache/index",
+      "title": "@std/cache",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/front-matter/index",
+      "title": "@std/front-matter",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/ini/index",
+      "title": "@std/ini",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/http/index",
+      "title": "@std/http",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/io/index",
+      "title": "@std/io",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/media-types/index",
+      "title": "@std/media-types",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/cli/index",
+      "title": "@std/cli",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/crypto/index",
+      "title": "@std/crypto",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/index",
+      "title": "Deno Standard Library (@std)",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/fmt/index",
+      "title": "@std/fmt",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/regexp/index",
+      "title": "@std/regexp",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/bytes/index",
+      "title": "@std/bytes",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/msgpack/index",
+      "title": "@std/msgpack",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/testing/index",
+      "title": "@std/testing",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/math/index",
+      "title": "@std/math",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/path/index",
+      "title": "@std/path",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/assert/index",
+      "title": "Standard Assertions (@std/assert)",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/log/index",
+      "title": "@std/log",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/uuid/index",
+      "title": "@std/uuid",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/encoding/index",
+      "title": "@std/encoding",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/expect/index",
+      "title": "@std/expect",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/jsonc/index",
+      "title": "@std/jsonc",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/toml/index",
+      "title": "@std/toml",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/net/index",
+      "title": "@std/net",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/yaml/index",
+      "title": "@std/yaml",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/tar/index",
+      "title": "@std/tar",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/std/html/index",
+      "title": "@std/html",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/continuous_integration/index",
-      "title": "/runtime/reference/continuous_integration/",
+      "title": "Continuous integration",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/env_variables/index",
-      "title": "/runtime/reference/cli/env_variables/",
+      "title": "Configuring Deno behavior",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/coverage/index",
-      "title": "/runtime/reference/cli/coverage/",
+      "title": "deno coverage",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/x/index",
-      "title": "/runtime/reference/cli/x/",
+      "title": "deno x",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/lsp/index",
-      "title": "/runtime/reference/cli/lsp/",
+      "title": "deno lsp",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/bench/index",
-      "title": "/runtime/reference/cli/bench/",
+      "title": "deno bench",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/upgrade/index",
-      "title": "/runtime/reference/cli/upgrade/",
+      "title": "deno upgrade",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/clean/index",
-      "title": "/runtime/reference/cli/clean/",
+      "title": "deno clean",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/run/index",
-      "title": "/runtime/reference/cli/run/",
+      "title": "deno run",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/bundle/index",
-      "title": "/runtime/reference/cli/bundle/",
+      "title": "deno bundle",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/info/index",
-      "title": "/runtime/reference/cli/info/",
+      "title": "deno info",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/task/index",
-      "title": "/runtime/reference/cli/task/",
+      "title": "deno task",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/watch/index",
-      "title": "/runtime/reference/cli/watch/",
+      "title": "deno watch",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/add/index",
-      "title": "/runtime/reference/cli/add/",
+      "title": "deno add",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/audit/index",
-      "title": "/runtime/reference/cli/audit/",
+      "title": "deno audit",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/compile/index",
-      "title": "/runtime/reference/cli/compile/",
+      "title": "deno compile",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/uninstall/index",
-      "title": "/runtime/reference/cli/uninstall/",
+      "title": "deno uninstall",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/lint/index",
-      "title": "/runtime/reference/cli/lint/",
+      "title": "deno lint",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/sandbox/index",
-      "title": "/runtime/reference/cli/sandbox/",
+      "title": "deno sandbox",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/unlink/index",
-      "title": "/runtime/reference/cli/unlink/",
+      "title": "deno unlink",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/link/index",
-      "title": "/runtime/reference/cli/link/",
+      "title": "deno link",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/doc/index",
-      "title": "/runtime/reference/cli/doc/",
+      "title": "deno doc",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/ci/index",
-      "title": "/runtime/reference/cli/ci/",
+      "title": "deno ci",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/update/index",
-      "title": "/runtime/reference/cli/update/",
+      "title": "deno update",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/remove/index",
-      "title": "/runtime/reference/cli/remove/",
+      "title": "deno remove",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/jupyter/index",
-      "title": "/runtime/reference/cli/jupyter/",
+      "title": "Jupyter Kernel for Deno",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/why/index",
-      "title": "/runtime/reference/cli/why/",
+      "title": "deno why",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/index",
-      "title": "/runtime/reference/cli/",
+      "title": "Deno CLI Subcommands",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/fmt/index",
-      "title": "/runtime/reference/cli/fmt/",
+      "title": "deno fmt",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/unstable_flags/index",
-      "title": "/runtime/reference/cli/unstable_flags/",
+      "title": "Unstable feature flags",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/completions/index",
-      "title": "/runtime/reference/cli/completions/",
+      "title": "deno completions",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/repl/index",
-      "title": "/runtime/reference/cli/repl/",
+      "title": "deno repl",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/outdated/index",
-      "title": "/runtime/reference/cli/outdated/",
+      "title": "deno outdated",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/init/index",
-      "title": "/runtime/reference/cli/init/",
+      "title": "deno init",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/create/index",
-      "title": "/runtime/reference/cli/create/",
+      "title": "deno create",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/types/index",
-      "title": "/runtime/reference/cli/types/",
+      "title": "deno types",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/list/index",
-      "title": "/runtime/reference/cli/list/",
+      "title": "deno list",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/serve/index",
-      "title": "/runtime/reference/cli/serve/",
+      "title": "deno serve",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/test/index",
-      "title": "/runtime/reference/cli/test/",
+      "title": "deno test",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/desktop/index",
-      "title": "/runtime/reference/cli/desktop/",
+      "title": "deno desktop",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/deploy/index",
-      "title": "/runtime/reference/cli/deploy/",
+      "title": "deno deploy",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/check/index",
-      "title": "/runtime/reference/cli/check/",
+      "title": "deno check",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/approve_scripts/index",
-      "title": "/runtime/reference/cli/approve_scripts/",
+      "title": "deno approve-scripts",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/bump_version/index",
-      "title": "/runtime/reference/cli/bump_version/",
+      "title": "deno bump-version",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/pack/index",
-      "title": "/runtime/reference/cli/pack/",
+      "title": "deno pack",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/publish/index",
-      "title": "/runtime/reference/cli/publish/",
+      "title": "deno publish",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/transpile/index",
-      "title": "/runtime/reference/cli/transpile/",
+      "title": "deno transpile",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/eval/index",
-      "title": "/runtime/reference/cli/eval/",
+      "title": "deno eval",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/cli/install/index",
-      "title": "/runtime/reference/cli/install/",
+      "title": "deno install",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/ts_config_migration/index",
-      "title": "/runtime/reference/ts_config_migration/",
+      "title": "Configuring TypeScript",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/wasm/index",
-      "title": "/runtime/reference/wasm/",
+      "title": "WebAssembly",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/bundling/index",
-      "title": "/runtime/reference/bundling/",
+      "title": "Bundling",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/deno_serve_legacy_abort/index",
-      "title": "/runtime/reference/deno_serve_legacy_abort/",
+      "title": "Deno.serve request abort behavior",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/deno_json/index",
-      "title": "/runtime/reference/deno_json/",
+      "title": "Configuration file (deno.json)",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/loader_hooks/index",
-      "title": "/runtime/reference/loader_hooks/",
+      "title": "Loader hooks",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/docker/index",
-      "title": "/runtime/reference/docker/",
+      "title": "Deno and Docker",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/permissions/index",
-      "title": "/runtime/reference/permissions/",
+      "title": "Permissions",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/lsp_integration/index",
-      "title": "/runtime/reference/lsp_integration/",
+      "title": "Language Server Integration",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/migration_guide/index",
-      "title": "/runtime/reference/migration_guide/",
+      "title": "Deno 1.x to 2.x Migration Guide",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/index",
-      "title": "/runtime/reference/",
+      "title": "Reference",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/vscode/index",
-      "title": "/runtime/reference/vscode/",
+      "title": "Deno & Visual Studio Code",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/web_platform_apis/index",
-      "title": "/runtime/reference/web_platform_apis/",
+      "title": "Web Platform APIs",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/lint_plugins/index",
-      "title": "/runtime/reference/lint_plugins/",
+      "title": "Lint Plugins",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/reference/node_apis/index",
-      "title": "/runtime/reference/node_apis/",
+      "title": "Node APIs",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/migrate/migrate_from_npm/index",
-      "title": "/runtime/migrate/migrate_from_npm/",
+      "title": "Migrate from npm",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/migrate/migrate_from_yarn/index",
-      "title": "/runtime/migrate/migrate_from_yarn/",
+      "title": "Migrate from Yarn",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/migrate/index",
-      "title": "/runtime/migrate/",
+      "title": "Migrate from Node.js",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/migrate/migrate_from_bun/index",
-      "title": "/runtime/migrate/migrate_from_bun/",
+      "title": "Migrate from Bun",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/migrate/migrate_from_pnpm/index",
-      "title": "/runtime/migrate/migrate_from_pnpm/",
+      "title": "Migrate from pnpm",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/help/index",
-      "title": "/runtime/help/",
+      "title": "Where to get help",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/index",
-      "title": "/runtime/",
+      "title": "Get started with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/getting_started/installation/index",
-      "title": "/runtime/getting_started/installation/",
+      "title": "Installation",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/getting_started/setup_your_environment/index",
-      "title": "/runtime/getting_started/setup_your_environment/",
+      "title": "Set up your environment",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/contributing/release_schedule/index",
-      "title": "/runtime/contributing/release_schedule/",
+      "title": "Release Schedule",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/contributing/architecture/index",
-      "title": "/runtime/contributing/architecture/",
+      "title": "Architecture Overview",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/contributing/index",
-      "title": "/runtime/contributing/",
+      "title": "Contributing and support",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/contributing/style_guide/index",
-      "title": "/runtime/contributing/style_guide/",
+      "title": "Deno Style Guide",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/deploy/index",
-      "title": "/runtime/deploy/",
+      "title": "Deploying your app",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/test/coverage/index",
-      "title": "/runtime/test/coverage/",
+      "title": "Test coverage",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/test/snapshots/index",
-      "title": "/runtime/test/snapshots/",
+      "title": "Snapshot testing",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/test/doc_tests/index",
-      "title": "/runtime/test/doc_tests/",
+      "title": "Documentation tests",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/test/index",
-      "title": "/runtime/test/",
+      "title": "Testing",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/test/sanitizers/index",
-      "title": "/runtime/test/sanitizers/",
+      "title": "Test sanitizers",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/test/mocking/index",
-      "title": "/runtime/test/mocking/",
+      "title": "Mocking and test doubles",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/test/migrate_from_jest/index",
-      "title": "/runtime/test/migrate_from_jest/",
+      "title": "Migrating from Jest",
       "template": "templates/template.html"
     },
     {
       "name": "runtime/lint_and_format/index",
-      "title": "/runtime/lint_and_format/",
+      "title": "Linting and formatting",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/ssh/index",
-      "title": "/sandbox/ssh/",
+      "title": "SSH",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/volumes/index",
-      "title": "/sandbox/volumes/",
+      "title": "Volumes & Snapshots",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/security/index",
-      "title": "/sandbox/security/",
+      "title": "Security",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/cli/index",
-      "title": "/sandbox/cli/",
+      "title": "Management via CLI",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/timeouts/index",
-      "title": "/sandbox/timeouts/",
+      "title": "Sandbox Timeouts",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/promote/index",
-      "title": "/sandbox/promote/",
+      "title": "Promote Deno Sandbox to Deploy Apps",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/expose_http/index",
-      "title": "/sandbox/expose_http/",
+      "title": "Expose HTTP",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/apps/index",
-      "title": "/sandbox/apps/",
+      "title": "Programmatic management of Deno Deploy Apps",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/index",
-      "title": "/sandbox/",
+      "title": "Deno Sandbox",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/create/index",
-      "title": "/sandbox/create/",
+      "title": "Create a Deno Sandbox",
       "template": "templates/template.html"
     },
     {
       "name": "sandbox/getting_started/index",
-      "title": "/sandbox/getting_started/",
+      "title": "Getting started",
       "template": "templates/template.html"
     },
     {
       "name": "orama/README/index",
-      "title": "/orama/README/",
+      "title": "Orama Search Indexing for Deno Documentation ",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/index",
+      "title": "List of rules",
       "template": "templates/template.html"
     },
     {
       "name": "ai/index",
-      "title": "/ai/",
+      "title": "AI entrypoint",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/og/index",
-      "title": "/styleguide/og/",
+      "title": "Example OG images",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/writing/index",
-      "title": "/styleguide/writing/",
+      "title": "Deno Documentation Style Guide",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/index",
-      "title": "/styleguide/",
+      "title": "Style Guide",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/components/index",
-      "title": "/styleguide/components/",
+      "title": "Components",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/typography/index",
-      "title": "/styleguide/typography/",
+      "title": "Typography",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/og/cli-commands/index",
-      "title": "/styleguide/og/cli-commands/",
+      "title": "An example OG image with only a title that is long enough to wrap",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/og/color-override/index",
-      "title": "/styleguide/og/color-override/",
+      "title": "Override the color of the OG image",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/og/title-only/index",
-      "title": "/styleguide/og/title-only/",
+      "title": "An example OG image with only a title that is long enough to wrap",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/og/title-and-description-superscript/index",
-      "title": "/styleguide/og/title-and-description-superscript/",
+      "title": "Superscript\u1d31\u1d2c in the title",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/og/title-and-description/index",
-      "title": "/styleguide/og/title-and-description/",
+      "title": "An example OG image with a title that is long enough to wrap onto three whole lines",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/og/short-title-and-long-description/index",
-      "title": "/styleguide/og/short-title-and-long-description/",
+      "title": "Short title example",
       "template": "templates/template.html"
     },
     {
       "name": "styleguide/og/short-title-and-short-description/index",
-      "title": "/styleguide/og/short-title-and-short-description/",
+      "title": "Short title example",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_spawn_subprocess/index",
-      "title": "/examples/sandbox_spawn_subprocess/",
+      "title": "Spawn a subprocess and get buffered output",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_command_cancellation/index",
-      "title": "/examples/sandbox_command_cancellation/",
+      "title": "Command cancellation",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_access_output/index",
-      "title": "/examples/sandbox_access_output/",
+      "title": "Streaming access string and binary output",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_timeout_control/index",
-      "title": "/examples/sandbox_timeout_control/",
+      "title": "Control sandbox timeout",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_environment_variables/index",
-      "title": "/examples/sandbox_environment_variables/",
+      "title": "Set and get environment variables",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_stream_output/index",
-      "title": "/examples/sandbox_stream_output/",
+      "title": "Stream output to a local file",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_upload_files/index",
-      "title": "/examples/sandbox_upload_files/",
+      "title": "Upload files and directories",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_template_literals/index",
-      "title": "/examples/sandbox_template_literals/",
+      "title": "Template literal commands with variable interpolation",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_vscode_instance/index",
-      "title": "/examples/sandbox_vscode_instance/",
+      "title": "Provide a VSCode instance in a sandbox",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_javascript_repl/index",
-      "title": "/examples/sandbox_javascript_repl/",
+      "title": "Interactive JavaScript REPL",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_error_handling/index",
-      "title": "/examples/sandbox_error_handling/",
+      "title": "Error handling",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_web_framework/index",
-      "title": "/examples/sandbox_web_framework/",
+      "title": "Serve a web framework",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_memory/index",
-      "title": "/examples/sandbox_memory/",
+      "title": "Configure sandbox memory",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sandbox_ssh_access/index",
-      "title": "/examples/sandbox_ssh_access/",
+      "title": "Provide SSH access to a sandbox",
       "template": "templates/template.html"
     },
     {
       "name": "examples/web_testing_tutorial/index",
-      "title": "/examples/web_testing_tutorial/",
+      "title": "Testing web apps",
       "template": "templates/template.html"
     },
     {
       "name": "examples/otel_span_propagation_tutorial/index",
-      "title": "/examples/otel_span_propagation_tutorial/",
+      "title": "Distributed Tracing with Context Propagation in Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/add_remove_dependencies_tutorial/index",
-      "title": "/examples/add_remove_dependencies_tutorial/",
+      "title": "Add and remove dependencies",
       "template": "templates/template.html"
     },
     {
       "name": "examples/prisma_tutorial/index",
-      "title": "/examples/prisma_tutorial/",
+      "title": "How to create a RESTful API with Prisma and Oak",
       "template": "templates/template.html"
     },
     {
       "name": "examples/svelte_tutorial/index",
-      "title": "/examples/svelte_tutorial/",
+      "title": "Build a SvelteKit App",
       "template": "templates/template.html"
     },
     {
       "name": "examples/simple_api_tutorial/index",
-      "title": "/examples/simple_api_tutorial/",
+      "title": "Simple API server",
       "template": "templates/template.html"
     },
     {
       "name": "examples/migrate_custom_domain_tutorial/index",
-      "title": "/examples/migrate_custom_domain_tutorial/",
+      "title": "Migrating a custom domain from Deploy Classic to Deno Deploy",
       "template": "templates/template.html"
     },
     {
       "name": "examples/subprocess_tutorial/index",
-      "title": "/examples/subprocess_tutorial/",
+      "title": "Creating a subprocess",
       "template": "templates/template.html"
     },
     {
       "name": "examples/qwik_tutorial/index",
-      "title": "/examples/qwik_tutorial/",
+      "title": "Build Qwik with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/vue_tutorial/index",
-      "title": "/examples/vue_tutorial/",
+      "title": "Build a Vue.js App",
       "template": "templates/template.html"
     },
     {
       "name": "examples/cloudflare_workers_tutorial/index",
-      "title": "/examples/cloudflare_workers_tutorial/",
+      "title": "Deploying Deno to Cloudflare Workers",
       "template": "templates/template.html"
     },
     {
       "name": "examples/connecting_to_databases_tutorial/index",
-      "title": "/examples/connecting_to_databases_tutorial/",
+      "title": "Connecting to databases",
       "template": "templates/template.html"
     },
     {
       "name": "examples/mongoose_tutorial/index",
-      "title": "/examples/mongoose_tutorial/",
+      "title": "How to use Mongoose with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/deploy_command_tutorial/index",
-      "title": "/examples/deploy_command_tutorial/",
+      "title": "Deploy an app with the deno deploy command",
       "template": "templates/template.html"
     },
     {
       "name": "examples/chat_app_tutorial/index",
-      "title": "/examples/chat_app_tutorial/",
+      "title": "Chat application with WebSockets",
       "template": "templates/template.html"
     },
     {
       "name": "examples/snapshot_python_tutorial/index",
-      "title": "/examples/snapshot_python_tutorial/",
+      "title": "Boot a Python environment with snapshots",
       "template": "templates/template.html"
     },
     {
       "name": "examples/grafana_tutorial/index",
-      "title": "/examples/grafana_tutorial/",
+      "title": "How to export telemetry data to Grafana",
       "template": "templates/template.html"
     },
     {
       "name": "examples/google_cloud_run_tutorial/index",
-      "title": "/examples/google_cloud_run_tutorial/",
+      "title": "How to deploy to Google Cloud Run",
       "template": "templates/template.html"
     },
     {
       "name": "examples/tunnel_database_tutorial/index",
-      "title": "/examples/tunnel_database_tutorial/",
+      "title": "Connect a Database to your local dev",
       "template": "templates/template.html"
     },
     {
       "name": "examples/digital_ocean_tutorial/index",
-      "title": "/examples/digital_ocean_tutorial/",
+      "title": "How to deploy Deno to Digital Ocean",
       "template": "templates/template.html"
     },
     {
       "name": "examples/private_registries_tutorial/index",
-      "title": "/examples/private_registries_tutorial/",
+      "title": "Use private npm registries",
       "template": "templates/template.html"
     },
     {
       "name": "examples/deno_doc_tutorial/index",
-      "title": "/examples/deno_doc_tutorial/",
+      "title": "Generating documentation with deno doc",
       "template": "templates/template.html"
     },
     {
       "name": "examples/redis_tutorial/index",
-      "title": "/examples/redis_tutorial/",
+      "title": "How to use Redis with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/local_unpublished_packages_tutorial/index",
-      "title": "/examples/local_unpublished_packages_tutorial/",
+      "title": "Use local and unpublished packages",
       "template": "templates/template.html"
     },
     {
       "name": "examples/planetscale_tutorial/index",
-      "title": "/examples/planetscale_tutorial/",
+      "title": "How to use Planetscale with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/astro_tutorial/index",
-      "title": "/examples/astro_tutorial/",
+      "title": "Build Astro with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/cjs_to_esm_tutorial/index",
-      "title": "/examples/cjs_to_esm_tutorial/",
+      "title": "Updating from CommonJS to ESM",
       "template": "templates/template.html"
     },
     {
       "name": "examples/fetch_data_tutorial/index",
-      "title": "/examples/fetch_data_tutorial/",
+      "title": "Fetch and stream data",
       "template": "templates/template.html"
     },
     {
       "name": "examples/deploy_otel_tutorial/index",
-      "title": "/examples/deploy_otel_tutorial/",
+      "title": "Monitor your app with OpenTelemetry and Deno Deploy",
       "template": "templates/template.html"
     },
     {
       "name": "examples/deno_deploy_tutorial/index",
-      "title": "/examples/deno_deploy_tutorial/",
+      "title": "Deploy an app with Deno Deploy",
       "template": "templates/template.html"
     },
     {
       "name": "examples/debugging_with_console_tutorial/index",
-      "title": "/examples/debugging_with_console_tutorial/",
+      "title": "Better debugging with the console API",
       "template": "templates/template.html"
     },
     {
       "name": "examples/aws_ecs_fargate_tutorial/index",
-      "title": "/examples/aws_ecs_fargate_tutorial/",
+      "title": "Deploy Deno to AWS ECS Fargate",
       "template": "templates/template.html"
     },
     {
       "name": "examples/testing_library_tutorial/index",
-      "title": "/examples/testing_library_tutorial/",
+      "title": "Use Testing Library with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/vite_tutorial/index",
-      "title": "/examples/vite_tutorial/",
+      "title": "Use Vite with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/os_signals_tutorial/index",
-      "title": "/examples/os_signals_tutorial/",
+      "title": "Handle OS signals",
       "template": "templates/template.html"
     },
     {
       "name": "examples/volumes_tutorial/index",
-      "title": "/examples/volumes_tutorial/",
+      "title": "Deno Sandbox Volumes Tutorial",
       "template": "templates/template.html"
     },
     {
       "name": "examples/cloudflare_workers_wrangler_tutorial/index",
-      "title": "/examples/cloudflare_workers_wrangler_tutorial/",
+      "title": "Deploying Deno to Cloudflare Workers with Wrangler",
       "template": "templates/template.html"
     },
     {
       "name": "examples/initialize_project_tutorial/index",
-      "title": "/examples/initialize_project_tutorial/",
+      "title": "Initialize a project",
       "template": "templates/template.html"
     },
     {
       "name": "examples/sveltekit_tutorial/index",
-      "title": "/examples/sveltekit_tutorial/",
+      "title": "Building a SvelteKit app with sv and Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/word_finder_tutorial/index",
-      "title": "/examples/word_finder_tutorial/",
+      "title": "Building a word finder app with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/dependency_lockfile_tutorial/index",
-      "title": "/examples/dependency_lockfile_tutorial/",
+      "title": "Lock dependencies with deno.lock",
       "template": "templates/template.html"
     },
     {
       "name": "examples/hashbang_tutorial/index",
-      "title": "/examples/hashbang_tutorial/",
+      "title": "Executable scripts",
       "template": "templates/template.html"
     },
     {
       "name": "examples/honeycomb_tutorial/index",
-      "title": "/examples/honeycomb_tutorial/",
+      "title": "How to export telemetry data to Honeycomb",
       "template": "templates/template.html"
     },
     {
       "name": "examples/snapshots_tutorial/index",
-      "title": "/examples/snapshots_tutorial/",
+      "title": "Deno Sandbox Snapshots Tutorial",
       "template": "templates/template.html"
     },
     {
       "name": "examples/file_server_tutorial/index",
-      "title": "/examples/file_server_tutorial/",
+      "title": "Write a file server",
       "template": "templates/template.html"
     },
     {
       "name": "examples/run_script_tutorial/index",
-      "title": "/examples/run_script_tutorial/",
+      "title": "Run a script",
       "template": "templates/template.html"
     },
     {
       "name": "examples/import_maps_tutorial/index",
-      "title": "/examples/import_maps_tutorial/",
+      "title": "Re-map import paths",
       "template": "templates/template.html"
     },
     {
       "name": "examples/workspaces_monorepo_tutorial/index",
-      "title": "/examples/workspaces_monorepo_tutorial/",
+      "title": "Configure a monorepo with workspaces",
       "template": "templates/template.html"
     },
     {
       "name": "examples/basic_opentelemetry_tutorial/index",
-      "title": "/examples/basic_opentelemetry_tutorial/",
+      "title": "Getting Started with OpenTelemetry in Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/next_tutorial/index",
-      "title": "/examples/next_tutorial/",
+      "title": "Build a Next.js App",
       "template": "templates/template.html"
     },
     {
       "name": "examples/migrate_node_project_tutorial/index",
-      "title": "/examples/migrate_node_project_tutorial/",
+      "title": "Use Deno in an existing Node.js project",
       "template": "templates/template.html"
     },
     {
       "name": "examples/file_based_routing_tutorial/index",
-      "title": "/examples/file_based_routing_tutorial/",
+      "title": "File-based routing",
       "template": "templates/template.html"
     },
     {
       "name": "examples/drizzle_tutorial/index",
-      "title": "/examples/drizzle_tutorial/",
+      "title": "Build a Database App with Drizzle ORM and Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/nuxt_tutorial/index",
-      "title": "/examples/nuxt_tutorial/",
+      "title": "Build a Nuxt app with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/testing_tutorial/index",
-      "title": "/examples/testing_tutorial/",
+      "title": "Writing tests",
       "template": "templates/template.html"
     },
     {
       "name": "examples/tunnel_telemetry_tutorial/index",
-      "title": "/examples/tunnel_telemetry_tutorial/",
+      "title": "Local Telemetry with tunnel",
       "template": "templates/template.html"
     },
     {
       "name": "examples/aws_lambda_tutorial/index",
-      "title": "/examples/aws_lambda_tutorial/",
+      "title": "How to Deploy Deno to AWS Lambda",
       "template": "templates/template.html"
     },
     {
       "name": "examples/aws_lightsail_tutorial/index",
-      "title": "/examples/aws_lightsail_tutorial/",
+      "title": "Deploy Deno to Amazon Lightsail",
       "template": "templates/template.html"
     },
     {
       "name": "examples/llm_tutorial/index",
-      "title": "/examples/llm_tutorial/",
+      "title": "Build a Real-time LLM Chat App with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/apollo_tutorial/index",
-      "title": "/examples/apollo_tutorial/",
+      "title": "How to use Apollo with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/solidjs_tutorial/index",
-      "title": "/examples/solidjs_tutorial/",
+      "title": "Build a SolidJS app with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/mysql2_tutorial/index",
-      "title": "/examples/mysql2_tutorial/",
+      "title": "How to use MySQL2 with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/module_metadata_tutorial/index",
-      "title": "/examples/module_metadata_tutorial/",
+      "title": "Module metadata",
       "template": "templates/template.html"
     },
     {
       "name": "examples/tanstack_tutorial/index",
-      "title": "/examples/tanstack_tutorial/",
+      "title": "Build an app with Tanstack and Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/kinsta_tutorial/index",
-      "title": "/examples/kinsta_tutorial/",
+      "title": "How to deploy Deno on Kinsta",
       "template": "templates/template.html"
     },
     {
       "name": "examples/file_system_events_tutorial/index",
-      "title": "/examples/file_system_events_tutorial/",
+      "title": "File system events",
       "template": "templates/template.html"
     },
     {
       "name": "examples/fresh_tutorial/index",
-      "title": "/examples/fresh_tutorial/",
+      "title": "Build a Fresh App",
       "template": "templates/template.html"
     },
     {
       "name": "examples/npm_lifecycle_scripts_tutorial/index",
-      "title": "/examples/npm_lifecycle_scripts_tutorial/",
+      "title": "Run npm lifecycle scripts",
       "template": "templates/template.html"
     },
     {
       "name": "examples/tunnel_tutorial/index",
-      "title": "/examples/tunnel_tutorial/",
+      "title": "Share your local server with Tunnel",
       "template": "templates/template.html"
     },
     {
       "name": "examples/express_tutorial/index",
-      "title": "/examples/express_tutorial/",
+      "title": "How to use Express with Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/bdd_tutorial/index",
-      "title": "/examples/bdd_tutorial/",
+      "title": "Behavior-Driven Development (BDD)",
       "template": "templates/template.html"
     },
     {
       "name": "examples/hyperdx_tutorial/index",
-      "title": "/examples/hyperdx_tutorial/",
+      "title": "How to export telemetry data to HyperDX",
       "template": "templates/template.html"
     },
     {
       "name": "examples/trpc_tutorial/index",
-      "title": "/examples/trpc_tutorial/",
+      "title": "Build a Typesafe API with tRPC and Deno",
       "template": "templates/template.html"
     },
     {
       "name": "examples/react_tutorial/index",
-      "title": "/examples/react_tutorial/",
+      "title": "React app with Vite",
       "template": "templates/template.html"
     },
     {
       "name": "examples/deno_github_actions_tutorial/index",
-      "title": "/examples/deno_github_actions_tutorial/",
+      "title": "Run Deno in GitHub Actions",
       "template": "templates/template.html"
     },
     {
       "name": "AGENTS/index",
-      "title": "/AGENTS/",
+      "title": "Working on the Deno docs ",
       "template": "templates/template.html"
     },
     {
       "name": "api/deno/about/index",
-      "title": "/api/deno/about/",
+      "title": "Deno Namespace APIs",
       "template": "templates/template.html"
     },
     {
       "name": "api/node/about/index",
-      "title": "/api/node/about/",
+      "title": "Node.js Built-in APIs",
       "template": "templates/template.html"
     },
     {
       "name": "api/web/about/index",
-      "title": "/api/web/about/",
+      "title": "Web Platform APIs",
       "template": "templates/template.html"
     },
     {
       "name": "subhosting/api/authentication/index",
-      "title": "/subhosting/api/authentication/",
+      "title": "Authentication",
       "template": "templates/template.html"
     },
     {
       "name": "subhosting/api/index",
-      "title": "/subhosting/api/",
+      "title": "Subhosting Resources",
       "template": "templates/template.html"
     },
     {
       "name": "subhosting/index",
-      "title": "/subhosting/",
+      "title": "",
       "template": "templates/template.html"
     },
     {
       "name": "subhosting/manual/quick_start/index",
-      "title": "/subhosting/manual/quick_start/",
+      "title": "Subhosting Quick Start",
       "template": "templates/template.html"
     },
     {
       "name": "subhosting/manual/api_migration_guide/index",
-      "title": "/subhosting/manual/api_migration_guide/",
+      "title": "Migrating from subhosting API v1 to v2",
       "template": "templates/template.html"
     },
     {
       "name": "subhosting/manual/acceptable_use_policy/index",
-      "title": "/subhosting/manual/acceptable_use_policy/",
+      "title": "Acceptable use policy",
       "template": "templates/template.html"
     },
     {
       "name": "subhosting/manual/index",
-      "title": "/subhosting/manual/",
+      "title": "About Subhosting",
       "template": "templates/template.html"
     },
     {
       "name": "subhosting/manual/events/index",
-      "title": "/subhosting/manual/events/",
+      "title": "Deployment events",
       "template": "templates/template.html"
     },
     {
       "name": "subhosting/manual/pricing_and_limits/index",
-      "title": "/subhosting/manual/pricing_and_limits/",
+      "title": "Pricing and Limits",
       "template": "templates/template.html"
     },
     {
       "name": "subhosting/manual/planning_your_implementation/index",
-      "title": "/subhosting/manual/planning_your_implementation/",
+      "title": "Planning your implementation",
       "template": "templates/template.html"
     },
     {
       "name": "404/index",
-      "title": "/404/",
+      "title": "Page not found",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/support/index",
-      "title": "/deploy/support/",
+      "title": "Support and Feedback",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/acceptable_use_policy/index",
-      "title": "/deploy/acceptable_use_policy/",
+      "title": "Acceptable use policy",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/terms_and_conditions/index",
-      "title": "/deploy/terms_and_conditions/",
+      "title": "Terms and Conditions",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/security/index",
-      "title": "/deploy/security/",
+      "title": "Security and responsible disclosure",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/fulfillment_policy/index",
-      "title": "/deploy/fulfillment_policy/",
+      "title": "Fulfillment Policy",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/databases/index",
-      "title": "/deploy/reference/databases/",
+      "title": "Databases",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/cloud_connections/index",
-      "title": "/deploy/reference/cloud_connections/",
+      "title": "Cloud Connections",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/observability/index",
-      "title": "/deploy/reference/observability/",
+      "title": "Observability",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/cron/index",
-      "title": "/deploy/reference/cron/",
+      "title": "Cron",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/deno_kv/index",
-      "title": "/deploy/reference/deno_kv/",
+      "title": "Deno KV",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/playgrounds/index",
-      "title": "/deploy/reference/playgrounds/",
+      "title": "Playgrounds",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/builds/index",
-      "title": "/deploy/reference/builds/",
+      "title": "Builds",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/runtime/index",
-      "title": "/deploy/reference/runtime/",
+      "title": "Runtime",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/domains/index",
-      "title": "/deploy/reference/domains/",
+      "title": "Domains",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/accounts/index",
-      "title": "/deploy/reference/accounts/",
+      "title": "Accounts",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/timelines/index",
-      "title": "/deploy/reference/timelines/",
+      "title": "Timelines",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/button/index",
-      "title": "/deploy/reference/button/",
+      "title": "Deploy Button",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/apps/index",
-      "title": "/deploy/reference/apps/",
+      "title": "Applications",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/env_vars_and_contexts/index",
-      "title": "/deploy/reference/env_vars_and_contexts/",
+      "title": "Environment Variables and Contexts",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/caching/index",
-      "title": "/deploy/reference/caching/",
+      "title": "CDN and caching",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/oidc/index",
-      "title": "/deploy/reference/oidc/",
+      "title": "OIDC",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/frameworks/index",
-      "title": "/deploy/reference/frameworks/",
+      "title": "Frameworks",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/tunnel/index",
-      "title": "/deploy/reference/tunnel/",
+      "title": "Tunnel",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/reference/organizations/index",
-      "title": "/deploy/reference/organizations/",
+      "title": "Organizations",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/kv/data_modeling_typescript/index",
-      "title": "/deploy/kv/data_modeling_typescript/",
+      "title": "Data Modeling in TypeScript",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/kv/operations/index",
-      "title": "/deploy/kv/operations/",
+      "title": "Operations",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/kv/key_space/index",
-      "title": "/deploy/kv/key_space/",
+      "title": "Key Space",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/kv/transactions/index",
-      "title": "/deploy/kv/transactions/",
+      "title": "Transactions",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/kv/backup/index",
-      "title": "/deploy/kv/backup/",
+      "title": "Backups",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/kv/key_expiration/index",
-      "title": "/deploy/kv/key_expiration/",
+      "title": "Key Expiration (TTL for keys)",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/kv/index",
-      "title": "/deploy/kv/",
+      "title": "Deno KV Quick Start",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/kv/secondary_indexes/index",
-      "title": "/deploy/kv/secondary_indexes/",
+      "title": "Secondary Indexes",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/kv/node/index",
-      "title": "/deploy/kv/node/",
+      "title": "Using KV in Node.js",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/middleware/index",
-      "title": "/deploy/classic/middleware/",
+      "title": "Reverse proxy middleware",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/cron/index",
-      "title": "/deploy/classic/cron/",
+      "title": "Scheduling cron tasks",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/playgrounds/index",
-      "title": "/deploy/classic/playgrounds/",
+      "title": "Playgrounds",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/edge_cache/index",
-      "title": "/deploy/classic/edge_cache/",
+      "title": "Edge Cache",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/dynamodb/index",
-      "title": "/deploy/classic/dynamodb/",
+      "title": "Connect to DynamoDB",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/kv_on_deploy/index",
-      "title": "/deploy/classic/kv_on_deploy/",
+      "title": "KV on Deno Deploy",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/custom-domains/index",
-      "title": "/deploy/classic/custom-domains/",
+      "title": "Custom domains",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/runtime-fetch/index",
-      "title": "/deploy/classic/api/runtime-fetch/",
+      "title": "HTTP requests (fetch)",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/runtime-node/index",
-      "title": "/deploy/classic/api/runtime-node/",
+      "title": "Node.js built-in APIs",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/runtime-broadcast-channel/index",
-      "title": "/deploy/classic/api/runtime-broadcast-channel/",
+      "title": "BroadcastChannel",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/runtime-headers/index",
-      "title": "/deploy/classic/api/runtime-headers/",
+      "title": "HTTP Headers",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/runtime-request/index",
-      "title": "/deploy/classic/api/runtime-request/",
+      "title": "HTTP Request",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/compression/index",
-      "title": "/deploy/classic/api/compression/",
+      "title": "Compressing response bodies",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/index",
-      "title": "/deploy/classic/api/",
+      "title": "API Reference",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/dynamic-import/index",
-      "title": "/deploy/classic/api/dynamic-import/",
+      "title": "Dynamic import",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/runtime-sockets/index",
-      "title": "/deploy/classic/api/runtime-sockets/",
+      "title": "TCP sockets and TLS",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/runtime-fs/index",
-      "title": "/deploy/classic/api/runtime-fs/",
+      "title": "File system APIs",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/api/runtime-response/index",
-      "title": "/deploy/classic/api/runtime-response/",
+      "title": "HTTP Response",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/prisma-postgres/index",
-      "title": "/deploy/classic/prisma-postgres/",
+      "title": "Connect to Prisma Postgres",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/running-scripts-locally/index",
-      "title": "/deploy/classic/running-scripts-locally/",
+      "title": "Local development",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/firebase/index",
-      "title": "/deploy/classic/firebase/",
+      "title": "Connect to Firebase",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/neon-postgres/index",
-      "title": "/deploy/classic/neon-postgres/",
+      "title": "Connect to Neon Postgres",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/postgres/index",
-      "title": "/deploy/classic/postgres/",
+      "title": "Connect to Postgres",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/index",
-      "title": "/deploy/classic/",
+      "title": "Deploy Classic",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/deployments/index",
-      "title": "/deploy/classic/deployments/",
+      "title": "Deployments",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/logs/index",
-      "title": "/deploy/classic/logs/",
+      "title": "Application logging",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/queues/index",
-      "title": "/deploy/classic/queues/",
+      "title": "Using Queues",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/how-to-deploy/index",
-      "title": "/deploy/classic/how-to-deploy/",
+      "title": "Deploy with GitHub integration",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/environment-variables/index",
-      "title": "/deploy/classic/environment-variables/",
+      "title": "Environment variables",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/ci_github/index",
-      "title": "/deploy/classic/ci_github/",
+      "title": "CI and GitHub Actions",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/deployctl/index",
-      "title": "/deploy/classic/deployctl/",
+      "title": "Using deployctl on the command line",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/organizations/index",
-      "title": "/deploy/classic/organizations/",
+      "title": "Organizations",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/classic/regions/index",
-      "title": "/deploy/classic/regions/",
+      "title": "Regions",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/privacy_policy/index",
-      "title": "/deploy/privacy_policy/",
+      "title": "Privacy Policy",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/migration_guide/index",
-      "title": "/deploy/migration_guide/",
+      "title": "Migrating from Deploy Classic to Deno Deploy",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/index",
-      "title": "/deploy/",
+      "title": "About Deno Deploy",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/usage/index",
-      "title": "/deploy/usage/",
+      "title": "Deno Deploy Usage Guidelines",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/changelog/index",
-      "title": "/deploy/changelog/",
+      "title": "Deno Deploy changelog",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/pricing_and_limits/index",
-      "title": "/deploy/pricing_and_limits/",
+      "title": "Pricing and limitations",
       "template": "templates/template.html"
     },
     {
       "name": "deploy/getting_started/index",
-      "title": "/deploy/getting_started/",
+      "title": "Getting started",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/explicit-function-return-type/index",
+      "title": "explicit-function-return-type",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/prefer-namespace-keyword/index",
+      "title": "prefer-namespace-keyword",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-non-null-assertion/index",
+      "title": "no-non-null-assertion",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/camelcase/index",
+      "title": "camelcase",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-external-import/index",
+      "title": "no-external-import",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-no-children-prop/index",
+      "title": "jsx-no-children-prop",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-class-assign/index",
+      "title": "no-class-assign",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-case-declarations/index",
+      "title": "no-case-declarations",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-extra-boolean-cast/index",
+      "title": "no-extra-boolean-cast",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-namespace/index",
+      "title": "no-namespace",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-misused-new/index",
+      "title": "no-misused-new",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-invalid-triple-slash-reference/index",
+      "title": "no-invalid-triple-slash-reference",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-delete-var/index",
+      "title": "no-delete-var",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/explicit-module-boundary-types/index",
+      "title": "explicit-module-boundary-types",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-boolean-value/index",
+      "title": "jsx-boolean-value",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/ban-unknown-rule-code/index",
+      "title": "ban-unknown-rule-code",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-await-in-loop/index",
+      "title": "no-await-in-loop",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/guard-for-in/index",
+      "title": "guard-for-in",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/require-await/index",
+      "title": "require-await",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-key/index",
+      "title": "jsx-key",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/ban-ts-comment/index",
+      "title": "ban-ts-comment",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-this-alias/index",
+      "title": "no-this-alias",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-process-global/index",
+      "title": "no-process-global",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-setter-return/index",
+      "title": "no-setter-return",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-duplicate-case/index",
+      "title": "no-duplicate-case",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-console/index",
+      "title": "no-console",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-func-assign/index",
+      "title": "no-func-assign",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/prefer-ascii/index",
+      "title": "prefer-ascii",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-dupe-class-members/index",
+      "title": "no-dupe-class-members",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-self-assign/index",
+      "title": "no-self-assign",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/fresh-server-event-handlers/index",
+      "title": "fresh-server-event-handlers",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-empty-enum/index",
+      "title": "no-empty-enum",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-unused-vars/index",
+      "title": "no-unused-vars",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-explicit-any/index",
+      "title": "no-explicit-any",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-constant-condition/index",
+      "title": "no-constant-condition",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-undef/index",
+      "title": "no-undef",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/valid-typeof/index",
+      "title": "valid-typeof",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-irregular-whitespace/index",
+      "title": "no-irregular-whitespace",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-const-assign/index",
+      "title": "no-const-assign",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-self-compare/index",
+      "title": "no-self-compare",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-no-comment-text-nodes/index",
+      "title": "jsx-no-comment-text-nodes",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-sloppy-imports/index",
+      "title": "no-sloppy-imports",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-throw-literal/index",
+      "title": "no-throw-literal",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-sync-fn-in-async-fn/index",
+      "title": "no-sync-fn-in-async-fn",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-invalid-regexp/index",
+      "title": "no-invalid-regexp",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-slow-types/index",
+      "title": "no-slow-types",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-cond-assign/index",
+      "title": "no-cond-assign",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/default-param-last/index",
+      "title": "default-param-last",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-node-globals/index",
+      "title": "no-node-globals",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-with/index",
+      "title": "no-with",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-unsafe-negation/index",
+      "title": "no-unsafe-negation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-void-dom-elements-no-children/index",
+      "title": "jsx-void-dom-elements-no-children",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-curly-braces/index",
+      "title": "jsx-curly-braces",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/prefer-const/index",
+      "title": "prefer-const",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-regex-spaces/index",
+      "title": "no-regex-spaces",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-control-regex/index",
+      "title": "no-control-regex",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-new-symbol/index",
+      "title": "no-new-symbol",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/react-no-danger/index",
+      "title": "react-no-danger",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-async-promise-executor/index",
+      "title": "no-async-promise-executor",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-empty-character-class/index",
+      "title": "no-empty-character-class",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-boolean-literal-for-arguments/index",
+      "title": "no-boolean-literal-for-arguments",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/prefer-as-const/index",
+      "title": "prefer-as-const",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-sparse-arrays/index",
+      "title": "no-sparse-arrays",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-array-constructor/index",
+      "title": "no-array-constructor",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-compare-neg-zero/index",
+      "title": "no-compare-neg-zero",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-deprecated-deno-api/index",
+      "title": "no-deprecated-deno-api",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-unused-labels/index",
+      "title": "no-unused-labels",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-import-assertions/index",
+      "title": "no-import-assertions",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-import-prefix/index",
+      "title": "no-import-prefix",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-unversioned-import/index",
+      "title": "no-unversioned-import",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-fallthrough/index",
+      "title": "no-fallthrough",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-dupe-keys/index",
+      "title": "no-dupe-keys",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/ban-untagged-todo/index",
+      "title": "ban-untagged-todo",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/ban-types/index",
+      "title": "ban-types",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/for-direction/index",
+      "title": "for-direction",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-window/index",
+      "title": "no-window",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-octal/index",
+      "title": "no-octal",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/require-yield/index",
+      "title": "require-yield",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-dupe-args/index",
+      "title": "no-dupe-args",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-redeclare/index",
+      "title": "no-redeclare",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/react-no-danger-with-children/index",
+      "title": "react-no-danger-with-children",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-obj-calls/index",
+      "title": "no-obj-calls",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-no-duplicate-props/index",
+      "title": "jsx-no-duplicate-props",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/constructor-super/index",
+      "title": "constructor-super",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-non-null-asserted-optional-chain/index",
+      "title": "no-non-null-asserted-optional-chain",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-no-useless-fragment/index",
+      "title": "jsx-no-useless-fragment",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-debugger/index",
+      "title": "no-debugger",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/ban-unused-ignore/index",
+      "title": "ban-unused-ignore",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-await-in-sync-fn/index",
+      "title": "no-await-in-sync-fn",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-extra-non-null-assertion/index",
+      "title": "no-extra-non-null-assertion",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/adjacent-overload-signatures/index",
+      "title": "adjacent-overload-signatures",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/single-var-declarator/index",
+      "title": "single-var-declarator",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/eqeqeq/index",
+      "title": "eqeqeq",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/react-rules-of-hooks/index",
+      "title": "react-rules-of-hooks",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-empty-pattern/index",
+      "title": "no-empty-pattern",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/verbatim-module-syntax/index",
+      "title": "verbatim-module-syntax",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-props-no-spread-multi/index",
+      "title": "jsx-props-no-spread-multi",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-implicit-declare-namespace-export/index",
+      "title": "no-implicit-declare-namespace-export",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-unsafe-finally/index",
+      "title": "no-unsafe-finally",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-button-has-type/index",
+      "title": "jsx-button-has-type",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-window-prefix/index",
+      "title": "no-window-prefix",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-shadow-restricted-names/index",
+      "title": "no-shadow-restricted-names",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-import-assign/index",
+      "title": "no-import-assign",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-prototype-builtins/index",
+      "title": "no-prototype-builtins",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-empty-interface/index",
+      "title": "no-empty-interface",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/use-isnan/index",
+      "title": "use-isnan",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-unreachable/index",
+      "title": "no-unreachable",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/fresh-handler-export/index",
+      "title": "fresh-handler-export",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-eval/index",
+      "title": "no-eval",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-dupe-else-if/index",
+      "title": "no-dupe-else-if",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/triple-slash-reference/index",
+      "title": "triple-slash-reference",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/getter-return/index",
+      "title": "getter-return",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-var/index",
+      "title": "no-var",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-global-assign/index",
+      "title": "no-global-assign",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-empty/index",
+      "title": "no-empty",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-inner-declarations/index",
+      "title": "no-inner-declarations",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/ban-untagged-ignore/index",
+      "title": "ban-untagged-ignore",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-top-level-await/index",
+      "title": "no-top-level-await",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-this-before-super/index",
+      "title": "no-this-before-super",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-useless-rename/index",
+      "title": "no-useless-rename",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/jsx-no-unescaped-entities/index",
+      "title": "jsx-no-unescaped-entities",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/prefer-primordials/index",
+      "title": "prefer-primordials",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-ex-assign/index",
+      "title": "no-ex-assign",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "lint/rules/no-inferrable-types/index",
+      "title": "no-inferrable-types",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/index",
+      "title": "Deno examples and tutorials",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/convert_string/index",
+      "title": "Convert a string to bytes and back",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/mcp_server/index",
+      "title": "Build an MCP server",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/importing_bytes/index",
+      "title": "Importing binary files",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hash_file_streams/index",
+      "title": "Hash large files with streams",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hard_links/index",
+      "title": "Create hard links",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/performance_timing/index",
+      "title": "Measure performance with marks and measures",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/mongo/index",
+      "title": "Connect to MongoDB",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/udp_connector/index",
+      "title": "UDP connector: Ping",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/anthropic_rag/index",
+      "title": "RAG: ground Claude's answer in your documents",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/send_email/index",
+      "title": "Send email with Resend",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/checking_directory_existence/index",
+      "title": "Checking for directory existence",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_evaluating_javascript/index",
+      "title": "Evaluating JavaScript",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/mime_type/index",
+      "title": "Get the MIME type of a file",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/subprocesses_output/index",
+      "title": "Subprocesses: Collecting output",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/checking_file_existence/index",
+      "title": "Checking for file existence",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/os_info/index",
+      "title": "Get operating system information",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/unix_cat/index",
+      "title": "Unix cat",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_requests/index",
+      "title": "HTTP requests",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_webhooks/index",
+      "title": "HTTP server: Verifying webhook signatures",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/progress_spinners/index",
+      "title": "Show progress bars and spinners",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/anthropic_tool_use/index",
+      "title": "Build an agent with tool use",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/truncate_file/index",
+      "title": "Truncate a file",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/write_file_incremental/index",
+      "title": "Write a file incrementally",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/s3_upload/index",
+      "title": "Upload files to S3-compatible storage",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_graceful_shutdown/index",
+      "title": "HTTP server: Graceful shutdown",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/quic/index",
+      "title": "Communicate over QUIC",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/symlinks/index",
+      "title": "Creating & resolving symlinks",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/zlib_compression/index",
+      "title": "Compress data with node:zlib",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/convert_uint8array/index",
+      "title": "Convert a Uint8Array",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_proxy/index",
+      "title": "Proxy HTTP requests",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/dns_queries/index",
+      "title": "Running DNS queries",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hono/index",
+      "title": "Hono HTTP server",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/terminal_detection/index",
+      "title": "Detect a TTY and get terminal size",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_hot_reload/index",
+      "title": "HTTP server: Hot reload",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/file_url_path/index",
+      "title": "Convert between file URLs and paths",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tests_skip_focus/index",
+      "title": "Skipping and focusing tests",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/fetch_unix_socket/index",
+      "title": "Fetch over a Unix socket",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/file_metadata/index",
+      "title": "Read and change file metadata",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_request_timeouts/index",
+      "title": "HTTP server: Request timeouts",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/broadcast_channel/index",
+      "title": "Communicate between workers with BroadcastChannel",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_tls/index",
+      "title": "HTTP server: TLS",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/openai_structured_output/index",
+      "title": "Get structured JSON output from OpenAI",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tcp_connector/index",
+      "title": "TCP connector: Ping",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/subprocess_stdin/index",
+      "title": "Pipe data into a subprocess",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/intl_relative_time/index",
+      "title": "Format relative time",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/fetch_timeout/index",
+      "title": "Set a timeout on fetch",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/intl_segmenter/index",
+      "title": "Split text by words, sentences, and graphemes",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_static_caching/index",
+      "title": "HTTP server: Caching headers",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_websocket/index",
+      "title": "HTTP server: WebSockets",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/spy_functions/index",
+      "title": "Spy functions",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/udp_listener/index",
+      "title": "UDP listener: Ping",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/kv_transactions/index",
+      "title": "Atomic transactions in Deno KV",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/importing_json/index",
+      "title": "Importing JSON",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/webassembly/index",
+      "title": "Web assembly",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/duckdb/index",
+      "title": "Connect to DuckDB",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_streaming/index",
+      "title": "HTTP server: Streaming",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/cron/index",
+      "title": "Deno Cron",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_rss/index",
+      "title": "Generate an RSS feed",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/heap_snapshot/index",
+      "title": "Inspect memory with heap snapshots",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/intl_number_format/index",
+      "title": "Format numbers and currencies",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/format_bytes_duration/index",
+      "title": "Format bytes and durations for humans",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/authjs_github/index",
+      "title": "Authentication with Auth.js",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/node_crypto/index",
+      "title": "Hash and sign with node:crypto",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hash_password/index",
+      "title": "Hashing and verifying passwords",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/web_workers/index",
+      "title": "Web workers",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/event_emitter/index",
+      "title": "Use EventEmitter from node:events",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_sse/index",
+      "title": "HTTP server: Server-sent events",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/environment_variables/index",
+      "title": "Environment variables",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/reading_system_metrics/index",
+      "title": "Reading system metrics",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tls_listener/index",
+      "title": "TCP/TLS listener: Ping",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/subprocesses_spawn/index",
+      "title": "Subprocesses: Spawning",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_parallel/index",
+      "title": "HTTP server: Scaling across CPU cores",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/find_executable/index",
+      "title": "Find an executable on the PATH",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/semver_versions/index",
+      "title": "Parse and compare semver versions",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/cli_subcommands/index",
+      "title": "Build a CLI with subcommands",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/writing_tests/index",
+      "title": "Writing tests",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/parse_xml/index",
+      "title": "Parse and generate XML",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/promise_timeout/index",
+      "title": "Add a timeout to any promise",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_rate_limit/index",
+      "title": "HTTP server: Rate limiting",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/parsing_serializing_csv/index",
+      "title": "Parsing and serializing CSV",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/convert_node_readable/index",
+      "title": "Convert a Node.js Readable",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_basic_auth/index",
+      "title": "HTTP server: Basic authentication",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hashing/index",
+      "title": "Hashing",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/kv/index",
+      "title": "Deno KV: Key/Value database",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/redis/index",
+      "title": "Redis quick start",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/write_stdout/index",
+      "title": "Write to stdout",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/byte_manipulation/index",
+      "title": "Manipulating byte arrays",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/node_built_in/index",
+      "title": "Use Node.js built-in modules",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/temporary_files/index",
+      "title": "Temporary files & directories",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/worker_threads/index",
+      "title": "Use worker_threads in Deno",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/prompts/index",
+      "title": "Input prompts",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/form_data/index",
+      "title": "Build and send forms with FormData",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_sessions/index",
+      "title": "HTTP server: Sessions",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/permissions/index",
+      "title": "Permission management",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/anthropic_chat_completion/index",
+      "title": "Connect to Claude (Anthropic API)",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tcp_listener/index",
+      "title": "TCP listener: Ping",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/kv_watch/index",
+      "title": "Deno KV watch",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/rsa_signature/index",
+      "title": "RSASSA-PKCS1-v1_5 Signature and Verification",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/color_logging/index",
+      "title": "Logging with colors",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_cors/index",
+      "title": "HTTP server: CORS",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/network_interfaces/index",
+      "title": "List network interfaces",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sss/index",
+      "title": "Shamir's Secret Sharing",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/ffi/index",
+      "title": "Call C functions with FFI",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/csv_streaming/index",
+      "title": "Parse large CSV files as streams",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tls_connector/index",
+      "title": "TCP/TLS connector: Ping",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/websocket_pubsub/index",
+      "title": "WebSocket server: Broadcasting messages",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/front_matter/index",
+      "title": "Extract front matter from markdown",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/convert_blob/index",
+      "title": "Convert a Blob",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/web_cache_api/index",
+      "title": "Cache HTTP responses with the Web Cache API",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/html_templating/index",
+      "title": "Render HTML templates with Eta",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/concurrency_limit/index",
+      "title": "Run async tasks with a concurrency limit",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/oauth_github/index",
+      "title": "Sign in with GitHub (OAuth)",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/generate_pdf/index",
+      "title": "Generate a PDF",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/extract_html_data/index",
+      "title": "Extract links and metadata from HTML",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/streaming_files/index",
+      "title": "Streaming file operations",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/render_markdown/index",
+      "title": "Render markdown to HTML",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/piping_streams/index",
+      "title": "Piping streams",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/create_remove_directories/index",
+      "title": "Creating & removing directories",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/copy_file/index",
+      "title": "Copy a file",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/find_free_port/index",
+      "title": "Find a free port",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deep_equal/index",
+      "title": "Check if two values are deeply equal",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deno_version/index",
+      "title": "Getting the Deno version",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_oak_crud_middleware_with_sqlite3_db/index",
+      "title": "HTTP server: Performing CRUD operations using SQLite3",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/ulid/index",
+      "title": "ULID",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/seeded_random/index",
+      "title": "Generate seeded random numbers",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deleting_files/index",
+      "title": "Deleting files",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/date_format_parse/index",
+      "title": "Parse and format dates",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_sitemap/index",
+      "title": "Generate sitemap.xml and robots.txt",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/supabase/index",
+      "title": "Connect to Supabase",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/os_signals/index",
+      "title": "Listen for OS signals",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/command_line_arguments/index",
+      "title": "Command line arguments",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/parsing_serializing_yaml/index",
+      "title": "Parsing and serializing YAML",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deno_bundle/index",
+      "title": "Bundle code with Deno.bundle",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/web_transport/index",
+      "title": "Connect two peers with WebTransport",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/glob_patterns/index",
+      "title": "Find files with glob patterns",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/openai_tool_use/index",
+      "title": "Build an agent with OpenAI function calling",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/child_process_ipc/index",
+      "title": "Communicate with a child process over IPC",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/send_email_sendgrid/index",
+      "title": "Send email with SendGrid",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/msgpack_encoding/index",
+      "title": "Encode and decode MessagePack",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/convert_readablestream/index",
+      "title": "Convert a ReadableStream",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/escape_html/index",
+      "title": "Escape an HTML string",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/fetch_http_proxy/index",
+      "title": "Route fetch through an HTTP proxy",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/import_export/index",
+      "title": "Importing & exporting",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/intl_date_format/index",
+      "title": "Format dates for any locale",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/typescript_support/index",
+      "title": "Built-in TypeScript support",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/derive_aes_key/index",
+      "title": "Derive encryption keys from passwords",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/openai_streaming/index",
+      "title": "Stream a chat response from OpenAI",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/path_operations/index",
+      "title": "Path operations",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/worker_pool/index",
+      "title": "Distribute work across a worker pool",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/postgres/index",
+      "title": "Connect to Postgres",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/websocket/index",
+      "title": "Outbound WebSockets",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/websocket_stream/index",
+      "title": "Two-way streaming with WebSocketStream",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/node_readline/index",
+      "title": "Read input line by line with node:readline",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/openai_chat_completion/index",
+      "title": "Connect to OpenAI: Chat Completion",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tar_archives/index",
+      "title": "Create and extract tar archives",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_files/index",
+      "title": "HTTP server: Serving files",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/parsing_jsonc/index",
+      "title": "Parsing JSONC",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/stripe_checkout/index",
+      "title": "Accept payments with Stripe Checkout",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/writing_files/index",
+      "title": "Writing files",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sleep_delay/index",
+      "title": "Sleep and delay execution",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/string_case/index",
+      "title": "Convert string case",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/debounce_function/index",
+      "title": "Debounce a function",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/anthropic_structured_output/index",
+      "title": "Get structured JSON output from Claude",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/websocket_context/index",
+      "title": "WebSocket server: Per-socket state",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/memoize_function/index",
+      "title": "Memoize an expensive function",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/generate_qr_code/index",
+      "title": "Generate a QR code",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deno_compile/index",
+      "title": "Compile a script into an executable",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/timers/index",
+      "title": "Timeouts & intervals",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hex_base64_encoding/index",
+      "title": "Hex and base64 encoding",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/walking_directories/index",
+      "title": "Walking directories",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_for_untrusted_code/index",
+      "title": "Spin up a sandbox to run untrusted code",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/queues/index",
+      "title": "Deno queues",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/creating_and_verifying_jwt/index",
+      "title": "Creating and verifying JWT",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/parsing_serializing_json/index",
+      "title": "Parsing and serializing JSON",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/convert_arraybuffer/index",
+      "title": "Convert an ArrayBuffer",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/importing_text/index",
+      "title": "Importing text files",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/compress_decompress/index",
+      "title": "Compress and decompress data",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_pagination/index",
+      "title": "HTTP server: Paginating results",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/file_locking/index",
+      "title": "Lock files across processes",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/reading_files/index",
+      "title": "Reading files",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_node_streams/index",
+      "title": "HTTP server: Node.js streams",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/better_auth/index",
+      "title": "Email and password auth with Better Auth",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/json_lines/index",
+      "title": "Stream JSON Lines data",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tcp_echo_server/index",
+      "title": "TCP Echo Server",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tests_run_control/index",
+      "title": "Filtering and controlling test runs",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hello_world/index",
+      "title": "Hello world",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/openai_rag/index",
+      "title": "RAG: ground an OpenAI answer in your documents",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/data_processing/index",
+      "title": "User Data Processing with Deno Collections",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/ecdsa_signing/index",
+      "title": "Sign and verify data with ECDSA",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/uuids/index",
+      "title": "Generating & validating UUIDs",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/ansi_terminal/index",
+      "title": "Control the terminal with ANSI escape codes",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_routing/index",
+      "title": "HTTP server: Routing",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_health_checks/index",
+      "title": "HTTP server: Health checks",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/starttls/index",
+      "title": "Upgrade a TCP connection to TLS (STARTTLS)",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/regexp_escape/index",
+      "title": "Escape text for regular expressions",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/npm/index",
+      "title": "Import modules from npm",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/parsing_serializing_toml/index",
+      "title": "Parsing and serializing TOML",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/parsing_serializing_ini/index",
+      "title": "Parsing and serializing INI",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/mcp_client/index",
+      "title": "Connect to an MCP server from a client",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/convert_buffer/index",
+      "title": "Convert a Buffer (node:buffer)",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/transform_stream/index",
+      "title": "Transform data with TransformStream",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/structured_logging/index",
+      "title": "Structured logging",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/exponential_backoff/index",
+      "title": "Exponential backoff",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/jupyter_display/index",
+      "title": "Rich output in Jupyter notebooks",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/structured_clone/index",
+      "title": "Deep clone objects with structuredClone",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/url_parsing/index",
+      "title": "Manipulating & parsing URLs",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sqlite/index",
+      "title": "Connect to SQLite",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/download_progress/index",
+      "title": "Download a file with progress",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/anthropic_sse/index",
+      "title": "Stream a Claude response to the browser",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/temporal/index",
+      "title": "Temporal API",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/write_benchmarks/index",
+      "title": "Write benchmarks with Deno.bench",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/secure_random_values/index",
+      "title": "Generate secure random values",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/top_level_await/index",
+      "title": "Await: CommonJS",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/aes_encryption/index",
+      "title": "AES Encryption and Decryption",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/set_timezone/index",
+      "title": "Set the time zone",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/intl_plural_list/index",
+      "title": "Pluralize and format lists",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/pid/index",
+      "title": "Process information",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hmac_generate_verify/index",
+      "title": "HMAC Generation and Verification",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_cookies/index",
+      "title": "HTTP server: Cookies",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deno_outdated/index",
+      "title": "Find and update outdated dependencies",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server_file_upload/index",
+      "title": "HTTP server: File upload",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/reading_stdin/index",
+      "title": "Read from stdin",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/url_pattern/index",
+      "title": "Match URLs with URLPattern",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/watching_files/index",
+      "title": "Watching the filesystem",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/http_server/index",
+      "title": "HTTP Server: Hello world",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/webgpu_compute/index",
+      "title": "Run a compute shader with WebGPU",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/timing_safe_comparison/index",
+      "title": "Compare secrets in constant time",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/exit_codes/index",
+      "title": "Set and read process exit codes",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/moving_renaming_files/index",
+      "title": "Moving/Renaming files",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/abort_controller/index",
+      "title": "Cancel async work with AbortController",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/subprocess_env_cwd/index",
+      "title": "Run a subprocess with custom env and cwd",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hono_jwt_auth/index",
+      "title": "Protect routes with JWT in Hono",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/event_target/index",
+      "title": "Create and dispatch custom events",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/openai_sse/index",
+      "title": "Stream an OpenAI response to the browser",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/cbor_encoding/index",
+      "title": "Encode and decode CBOR",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/resize_images/index",
+      "title": "Resize and convert images",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/bundler/index",
+      "title": "Bundler - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/cloud/index",
+      "title": "Cloud - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/errors/index",
+      "title": "Errors - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/fetch/index",
+      "title": "Fetch - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/ffi/index",
+      "title": "FFI - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/file-system/index",
+      "title": "File System - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/gpu/index",
+      "title": "GPU - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/http-server/index",
+      "title": "HTTP Server - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/io/index",
+      "title": "I/O - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/jupyter/index",
+      "title": "Jupyter - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/linter/index",
+      "title": "Linter - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/network/index",
+      "title": "Network - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/permissions/index",
+      "title": "Permissions - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/runtime/index",
+      "title": "Runtime - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/subprocess/index",
+      "title": "Subprocess - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/telemetry/index",
+      "title": "Telemetry - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/testing/index",
+      "title": "Testing - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/websockets/index",
+      "title": "WebSockets - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/uncategorized/index",
+      "title": "Uncategorized - Deno documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/cache/index",
+      "title": "Cache - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/canvas/index",
+      "title": "Canvas - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/crypto/index",
+      "title": "Crypto - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/encoding/index",
+      "title": "Encoding - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/events/index",
+      "title": "Events - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/fetch/index",
+      "title": "Fetch - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/file/index",
+      "title": "File - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/geometry-interfaces-module-api/index",
+      "title": "Geometry Interfaces Module API - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/gpu/index",
+      "title": "GPU - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/io/index",
+      "title": "I/O - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/intl/index",
+      "title": "Intl - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/messaging/index",
+      "title": "Messaging - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/performance/index",
+      "title": "Performance - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/platform/index",
+      "title": "Platform - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/storage/index",
+      "title": "Storage - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/streams/index",
+      "title": "Streams - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/url/index",
+      "title": "URL - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/wasm/index",
+      "title": "Wasm - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/websockets/index",
+      "title": "WebSockets - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/workers/index",
+      "title": "Workers - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/uncategorized/index",
+      "title": "Uncategorized - Web documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/assert/index",
+      "title": "assert - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/async_hooks/index",
+      "title": "async_hooks - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/buffer/index",
+      "title": "buffer - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/child_process/index",
+      "title": "child_process - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/cluster/index",
+      "title": "cluster - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/console/index",
+      "title": "console - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/constants/index",
+      "title": "constants - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/crypto/index",
+      "title": "crypto - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/dgram/index",
+      "title": "dgram - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/diagnostics_channel/index",
+      "title": "diagnostics_channel - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/dns/index",
+      "title": "dns - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/dns/promises/index",
+      "title": "dns/promises - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/domain/index",
+      "title": "domain - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/events/index",
+      "title": "events - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/fs/index",
+      "title": "fs - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/fs/promises/index",
+      "title": "fs/promises - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/http/index",
+      "title": "http - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/http2/index",
+      "title": "http2 - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/https/index",
+      "title": "https - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/inspector/index",
+      "title": "inspector - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/inspector/promises/index",
+      "title": "inspector/promises - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/module/index",
+      "title": "module - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/net/index",
+      "title": "net - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/os/index",
+      "title": "os - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/path/index",
+      "title": "path - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/perf_hooks/index",
+      "title": "perf_hooks - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/process/index",
+      "title": "process - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/punycode/index",
+      "title": "punycode - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/querystring/index",
+      "title": "querystring - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/readline/index",
+      "title": "readline - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/readline/promises/index",
+      "title": "readline/promises - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/repl/index",
+      "title": "repl - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/sea/index",
+      "title": "sea - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/sqlite/index",
+      "title": "sqlite - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/stream/index",
+      "title": "stream - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/stream/consumers/index",
+      "title": "stream/consumers - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/stream/promises/index",
+      "title": "stream/promises - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/stream/web/index",
+      "title": "stream/web - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/string_decoder/index",
+      "title": "string_decoder - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/test/index",
+      "title": "test - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/test/reporters/index",
+      "title": "test/reporters - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/timers/index",
+      "title": "timers - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/timers/promises/index",
+      "title": "timers/promises - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/tls/index",
+      "title": "tls - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/trace_events/index",
+      "title": "trace_events - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/tty/index",
+      "title": "tty - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/url/index",
+      "title": "url - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/util/index",
+      "title": "util - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/util/types/index",
+      "title": "util/types - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/v8/index",
+      "title": "v8 - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/vm/index",
+      "title": "vm - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/wasi/index",
+      "title": "wasi - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/worker_threads/index",
+      "title": "worker_threads - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/zlib/index",
+      "title": "zlib - Node documentation",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/index",
+      "title": "Deno APIs reference",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/index",
+      "title": "Web APIs reference",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/index",
+      "title": "Node APIs reference",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/index",
+      "title": "API reference",
       "template": "templates/template.html"
     }
   ]

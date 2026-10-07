@@ -1,0 +1,364 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><details class="block lg:hidden my-4 bg-foreground-quaternary rounded-md group"><summary class="px-4 py-2 group-open:border-b border-background-tertiary">On this page</summary><ul class="p-4 pt-2"><li class="leading-tight text-balance"><a href="#overview" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Overview </a><ul class="ml-2"><li class="leading-tight text-balance"><a href="#add-to-your-project" class="block py-2 px-4 leading-none text-smaller lg:text-foreground-secondary hover:text-primary transition-colors duration-200 ease-in-out select-none">Add to your project </a></li></ul></li></ul></details><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="block mb-2 space-y-2"><header class="flex flex-wrap items-center justify-between gap-2"><nav aria-label="Breadcrumb" class="font-bold uppercase leading-none text-sm text-foreground-secondary"><ol class="flex flex-wrap items-center gap-2 m-0 p-0 list-none"><li class="flex items-center gap-2 m-0">Reference<span aria-hidden="true">›</span></li><li class="flex items-center gap-2 m-0"><a href="/runtime/reference/std/" class="text-inherit no-underline hover:underline">Standard library</a></li></ol></nav><div class="copy-page-split inline-flex shrink-0 rounded-full border border-foreground-primary dark:border-background-tertiary"><button type="button" class="copy-page-main-btn flex items-center gap-2 pl-3 pr-2 py-1 text-xs font-semibold text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-l-full transition-colors cursor-pointer select-none"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg><span class="copy-page-main-label">Copy page</span></button><span class="self-stretch w-px bg-foreground-primary dark:bg-background-tertiary shrink-0" aria-hidden="true"></span><button type="button" class="copy-page-toggle-btn flex items-center pl-1.5 pr-2  text-foreground-primary bg-transparent hover:bg-header-highlight dark:hover:text-background-primary rounded-r-full transition-colors cursor-pointer select-none" popovertarget="copy-page-menu" aria-label="More copy options" aria-haspopup="menu"><svg class="copy-page-chevron transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="12" height="12" viewbox="0 0 16 16"><path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path></svg></button><div id="copy-page-menu" popover="auto" class="copy-page-panel"><a href="/runtime/reference/std/semver.md" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg><span><span class="block text-sm font-medium">View Page as Markdown</span><span class="block text-xs text-foreground-secondary mt-0.5">Open the Markdown file in a new tab</span></span></a><a href="https://claude.ai/new?q=Read%20this%20page%20from%20the%20Deno%20docs%3A%20https%3A%2F%2Fdocs.deno.com%2Fruntime%2Freference%2Fstd%2Fsemver.md%20and%20answer%20questions%20about%20the%20content." target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 24 24" class="mt-0.5 shrink-0"><path d="M12 0C12 0 10.5 10.5 0 12C10.5 12 12 24 12 24C12 24 13.5 13.5 24 12C13.5 12 12 0 12 0Z"></path></svg><span><span class="block text-sm font-medium">Open in Claude</span><span class="block text-xs text-foreground-secondary mt-0.5">Ask Claude about this page</span></span></a><a href="/llms.txt" target="_blank" class="no-underline flex items-start gap-3 px-4 py-3 border-t border-foreground-tertiary hover:bg-background-secondary dark:hover:bg-gray-800 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="currentColor" width="16" height="16" viewbox="0 0 16 16" class="mt-0.5 shrink-0"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0 1 13.25 16h-9.5A1.75 1.75 0 0 1 2 14.25Zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .138.112.25.25.25h9.5a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 9 4.25V1.5Zm6.75.062V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914-.013-.011Z"></path></svg><span><span class="block text-sm font-medium">llms.txt</span><span class="block text-xs text-foreground-secondary mt-0.5">Machine-readable index of these docs for AI tools</span></span></a></div></div></header><h1 class="leading-none md:text-4xl text-balance">@std/semver</h1></div><!-- Autogenerated from JSR docs. Do not edit directly. -->
+<h2 id="overview" tabindex="-1">Overview <a class="header-anchor" href="#overview"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h2>
+<p>The Semantic Version parser.</p>
+<p>Adapted directly from <a href="https://github.com/npm/node-semver" rel="nofollow">semver</a>.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>
+  parse<span class="token punctuation">,</span>
+  parseRange<span class="token punctuation">,</span>
+  greaterThan<span class="token punctuation">,</span>
+  lessThan<span class="token punctuation">,</span>
+  format
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@std/semver"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> assertEquals <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@std/assert"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> semver <span class="token operator">=</span> <span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">"1.2.3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">assertEquals</span><span class="token punctuation">(</span>semver<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">major</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">minor</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">patch</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">prerelease</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">build</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token function">format</span><span class="token punctuation">(</span>semver<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"1.2.3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> range <span class="token operator">=</span> <span class="token function">parseRange</span><span class="token punctuation">(</span><span class="token string">"1.x || &gt;=2.5.0 || 5.0.0 - 7.2.3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> s0 <span class="token operator">=</span> <span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">"1.2.3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> s1 <span class="token operator">=</span> <span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">"9.8.7"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token function">greaterThan</span><span class="token punctuation">(</span>s0<span class="token punctuation">,</span> s1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token function">lessThan</span><span class="token punctuation">(</span>s0<span class="token punctuation">,</span> s1<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-5" class="copyButton" data-copy="import {
+  parse,
+  parseRange,
+  greaterThan,
+  lessThan,
+  format
+} from &quot;@std/semver&quot;;
+import { assertEquals } from &quot;@std/assert&quot;;
+
+const semver = parse(&quot;1.2.3&quot;);
+assertEquals(semver, {
+  major: 1,
+  minor: 2,
+  patch: 3,
+  prerelease: [],
+  build: []
+});
+
+assertEquals(format(semver), &quot;1.2.3&quot;);
+
+const range = parseRange(&quot;1.x || >=2.5.0 || 5.0.0 - 7.2.3&quot;);
+
+const s0 = parse(&quot;1.2.3&quot;);
+const s1 = parse(&quot;9.8.7&quot;);
+
+assertEquals(greaterThan(s0, s1), false);
+assertEquals(lessThan(s0, s1), true);
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="versions" class="anchorable"><a href="#versions" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Versions</h2>
+<p>A "version" is described by the <code>v2.0.0</code> specification found at
+<a href="https://semver.org" rel="nofollow">https://semver.org</a>.</p>
+<p>A leading <code>"="</code> or <code>"v"</code> character is stripped off and ignored.</p>
+<h2 id="format" class="anchorable"><a href="#format" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Format</h2>
+<p>Semantic versions can be formatted as strings, by default they
+are formatted as <code>full</code>. Below is a diagram showing the various
+formatting options.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js">          full
+       ┌───┴───┐
+    release    │
+   ┌───┴───┐   │
+primary    │   │
+ ┌─┴─┐     │   │
+ <span class="token number">1.2</span><span class="token number">.3</span><span class="token operator">-</span>pre<span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">+</span>b<span class="token punctuation">.</span><span class="token number">1</span>
+ │ │ │ └─┬─┘ └┬┘
+ │ │ │   │    └── build
+ │ │ │   └─────── pre
+ │ │ └─────────── patch
+ │ └───────────── minor
+ └─────────────── major
+</code></pre>
+
+      <button id="copy-button-7" class="copyButton" data-copy="          full
+       ┌───┴───┐
+    release    │
+   ┌───┴───┐   │
+primary    │   │
+ ┌─┴─┐     │   │
+ 1.2.3-pre.1+b.1
+ │ │ │ └─┬─┘ └┬┘
+ │ │ │   │    └── build
+ │ │ │   └─────── pre
+ │ │ └─────────── patch
+ │ └───────────── minor
+ └─────────────── major
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h2 id="ranges" class="anchorable"><a href="#ranges" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Ranges</h2>
+<p>A version <a href="https://github.com/denoland/std/blob/HEAD/@std/semver@1.0.8/doc/~/Range" rel="nofollow"><code>Range</code></a> is a set of <a href="https://github.com/denoland/std/blob/HEAD/@std/semver@1.0.8/doc/~/Comparator" rel="nofollow"><code>Comparator</code></a>s which specify
+versions that satisfy the range.</p>
+<p>A <a href="https://github.com/denoland/std/blob/HEAD/@std/semver@1.0.8/doc/~/Comparator" rel="nofollow"><code>Comparator</code></a> is composed of an <a href="https://github.com/denoland/std/blob/HEAD/@std/semver@1.0.8/doc/~/Operator" rel="nofollow"><code>Operator</code></a> and a
+<a href="https://github.com/denoland/std/blob/HEAD/@std/semver@1.0.8/doc/~/SemVer" rel="nofollow">SemVer</a>. The set of primitive <code>operators</code> is:</p>
+<ul>
+<li><code>&lt;</code> Less than</li>
+<li><code>&lt;=</code> Less than or equal to</li>
+<li><code>&gt;</code> Greater than</li>
+<li><code>&gt;=</code> Greater than or equal to</li>
+<li><code>=</code> Equal. If no operator is specified, then equality is assumed, so this
+operator is optional, but MAY be included.</li>
+</ul>
+<p>For example, the comparator <code>&gt;=1.2.7</code> would match the versions <code>1.2.7</code>, <code>1.2.8</code>,
+<code>2.5.3</code>, and <code>1.3.9</code>, but not the versions <code>1.2.6</code> or <code>1.1.0</code>.</p>
+<p>Comparators can be joined by whitespace to form a <code>comparator set</code>, which is
+satisfied by the <strong>intersection</strong> of all of the comparators it includes.</p>
+<p>A range is composed of one or more comparator sets, joined by <code>||</code>. A version
+matches a range if and only if every comparator in at least one of the
+<code>||</code>-separated comparator sets is satisfied by the version.</p>
+<p>For example, the range <code>&gt;=1.2.7 &lt;1.3.0</code> would match the versions <code>1.2.7</code>,
+<code>1.2.8</code>, and <code>1.2.99</code>, but not the versions <code>1.2.6</code>, <code>1.3.0</code>, or <code>1.1.0</code>.</p>
+<p>The range <code>1.2.7 || &gt;=1.2.9 &lt;2.0.0</code> would match the versions <code>1.2.7</code>, <code>1.2.9</code>,
+and <code>1.4.6</code>, but not the versions <code>1.2.8</code> or <code>2.0.0</code>.</p>
+<h3 id="prerelease-tags" class="anchorable"><a href="#prerelease-tags" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Prerelease Tags</h3>
+<p>If a version has a prerelease tag (for example, <code>1.2.3-alpha.3</code>) then it will
+only be allowed to satisfy comparator sets if at least one comparator with the
+same <code>[major, minor, patch]</code> tuple also has a prerelease tag.</p>
+<p>For example, the range <code>&gt;1.2.3-alpha.3</code> would be allowed to match the version
+<code>1.2.3-alpha.7</code>, but it would <em>not</em> be satisfied by <code>3.4.5-alpha.9</code>, even though
+<code>3.4.5-alpha.9</code> is technically "greater than" <code>1.2.3-alpha.3</code> according to the
+SemVer sort rules. The version range only accepts prerelease tags on the <code>1.2.3</code>
+version. The version <code>3.4.5</code> <em>would</em> satisfy the range, because it does not have
+a prerelease flag, and <code>3.4.5</code> is greater than <code>1.2.3-alpha.7</code>.</p>
+<p>The purpose for this behavior is twofold. First, prerelease versions frequently
+are updated very quickly, and contain many breaking changes that are (by the
+author"s design) not yet fit for public consumption. Therefore, by default, they
+are excluded from range matching semantics.</p>
+<p>Second, a user who has opted into using a prerelease version has clearly
+indicated the intent to use <em>that specific</em> set of alpha/beta/rc versions. By
+including a prerelease tag in the range, the user is indicating that they are
+aware of the risk. However, it is still not appropriate to assume that they have
+opted into taking a similar risk on the <em>next</em> set of prerelease versions.</p>
+<h4 id="prerelease-identifiers" class="anchorable"><a href="#prerelease-identifiers" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Prerelease Identifiers</h4>
+<p>The method <a href="https://github.com/denoland/std/blob/HEAD/@std/semver@1.0.8/doc/~/increment" rel="nofollow"><code>increment</code></a> takes an additional <code>identifier</code> string
+argument that will append the value of the string as a prerelease identifier:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> increment<span class="token punctuation">,</span> parse <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@std/semver"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> assertEquals <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@std/assert"</span><span class="token punctuation">;</span>
+
+<span class="token function">assertEquals</span><span class="token punctuation">(</span><span class="token function">increment</span><span class="token punctuation">(</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">"1.2.3"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"prerelease"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">prerelease</span><span class="token operator">:</span> <span class="token string">"alpha"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">"1.2.4-alpha.0"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-9" class="copyButton" data-copy="import { increment, parse } from &quot;@std/semver&quot;;
+import { assertEquals } from &quot;@std/assert&quot;;
+
+assertEquals(increment(parse(&quot;1.2.3&quot;), &quot;prerelease&quot;, { prerelease: &quot;alpha&quot; }), parse(&quot;1.2.4-alpha.0&quot;));
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><h3 id="build-metadata" class="anchorable"><a href="#build-metadata" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Build Metadata</h3>
+<p>Build metadata is <code>.</code> delimited alpha-numeric string.
+When parsing a version it is retained on the <code>build: string[]</code> field
+of the SemVer instance. When incrementing there is an additional parameter that
+can set the build metadata on the SemVer instance.</p>
+<h3 id="advanced-range-syntax" class="anchorable"><a href="#advanced-range-syntax" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Advanced Range Syntax</h3>
+<p>Advanced range syntax desugars to primitive comparators in deterministic ways.</p>
+<p>Advanced ranges may be combined in the same way as primitive comparators using
+white space or <code>||</code>.</p>
+<h4 id="hyphen-ranges-x.y.z---a.b.c" class="anchorable"><a href="#hyphen-ranges-x.y.z---a.b.c" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Hyphen Ranges <code>X.Y.Z - A.B.C</code></h4>
+<p>Specifies an inclusive set.</p>
+<ul>
+<li><code>1.2.3 - 2.3.4</code> := <code>&gt;=1.2.3 &lt;=2.3.4</code></li>
+</ul>
+<p>If a partial version is provided as the first version in the inclusive range,
+then the missing pieces are replaced with zeroes.</p>
+<ul>
+<li><code>1.2 - 2.3.4</code> := <code>&gt;=1.2.0 &lt;=2.3.4</code></li>
+</ul>
+<p>If a partial version is provided as the second version in the inclusive range,
+then all versions that start with the supplied parts of the tuple are accepted,
+but nothing that would be greater than the provided tuple parts.</p>
+<ul>
+<li><code>1.2.3 - 2.3</code> := <code>&gt;=1.2.3 &lt;2.4.0</code></li>
+<li><code>1.2.3 - 2</code> := <code>&gt;=1.2.3 &lt;3.0.0</code></li>
+</ul>
+<h4 id="x-ranges-1.2.x-1.x-1.2.*-*" class="anchorable"><a href="#x-ranges-1.2.x-1.x-1.2.*-*" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>X-Ranges <code>1.2.x</code> <code>1.X</code> <code>1.2.*</code> <code>*</code></h4>
+<p>Any of <code>X</code>, <code>x</code>, or <code>*</code> may be used to "stand in" for one of the numeric values
+in the <code>[major, minor, patch]</code> tuple.</p>
+<ul>
+<li><code>*</code> := <code>&gt;=0.0.0</code> (Any version satisfies)</li>
+<li><code>1.x</code> := <code>&gt;=1.0.0 &lt;2.0.0</code> (Matching major version)</li>
+<li><code>1.2.x</code> := <code>&gt;=1.2.0 &lt;1.3.0</code> (Matching major and minor versions)</li>
+</ul>
+<p>A partial version range is treated as an X-Range, so the special character is in
+fact optional.</p>
+<ul>
+<li><code>""</code> (empty string) := <code>*</code> := <code>&gt;=0.0.0</code></li>
+<li><code>1</code> := <code>1.x.x</code> := <code>&gt;=1.0.0 &lt;2.0.0</code></li>
+<li><code>1.2</code> := <code>1.2.x</code> := <code>&gt;=1.2.0 &lt;1.3.0</code></li>
+</ul>
+<h4 id="tilde-ranges-1.2.3-1.2-1" class="anchorable"><a href="#tilde-ranges-1.2.3-1.2-1" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Tilde Ranges <code>~1.2.3</code> <code>~1.2</code> <code>~1</code></h4>
+<p>Allows patch-level changes if a minor version is specified on the comparator.
+Allows minor-level changes if not.</p>
+<ul>
+<li><code>~1.2.3</code> := <code>&gt;=1.2.3 &lt;1.(2+1).0</code> := <code>&gt;=1.2.3 &lt;1.3.0</code></li>
+<li><code>~1.2</code> := <code>&gt;=1.2.0 &lt;1.(2+1).0</code> := <code>&gt;=1.2.0 &lt;1.3.0</code> (Same as <code>1.2.x</code>)</li>
+<li><code>~1</code> := <code>&gt;=1.0.0 &lt;(1+1).0.0</code> := <code>&gt;=1.0.0 &lt;2.0.0</code> (Same as <code>1.x</code>)</li>
+<li><code>~0.2.3</code> := <code>&gt;=0.2.3 &lt;0.(2+1).0</code> := <code>&gt;=0.2.3 &lt;0.3.0</code></li>
+<li><code>~0.2</code> := <code>&gt;=0.2.0 &lt;0.(2+1).0</code> := <code>&gt;=0.2.0 &lt;0.3.0</code> (Same as <code>0.2.x</code>)</li>
+<li><code>~0</code> := <code>&gt;=0.0.0 &lt;(0+1).0.0</code> := <code>&gt;=0.0.0 &lt;1.0.0</code> (Same as <code>0.x</code>)</li>
+<li><code>~1.2.3-beta.2</code> := <code>&gt;=1.2.3-beta.2 &lt;1.3.0</code> Note that prereleases in the
+<code>1.2.3</code> version will be allowed, if they are greater than or equal to
+<code>beta.2</code>. So, <code>1.2.3-beta.4</code> would be allowed, but <code>1.2.4-beta.2</code> would not,
+because it is a prerelease of a different <code>[major, minor, patch]</code> tuple.</li>
+</ul>
+<h4 id="caret-ranges-^1.2.3-^0.2.5-^0.0.4" class="anchorable"><a href="#caret-ranges-^1.2.3-^0.2.5-^0.0.4" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Caret Ranges <code>^1.2.3</code> <code>^0.2.5</code> <code>^0.0.4</code></h4>
+<p>Allows changes that do not modify the left-most non-zero element in the
+<code>[major, minor, patch]</code> tuple. In other words, this allows patch and minor
+updates for versions <code>1.0.0</code> and above, patch updates for versions
+<code>0.X &gt;=0.1.0</code>, and <em>no</em> updates for versions <code>0.0.X</code>.</p>
+<p>Many authors treat a <code>0.x</code> version as if the <code>x</code> were the major
+"breaking-change" indicator.</p>
+<p>Caret ranges are ideal when an author may make breaking changes between <code>0.2.4</code>
+and <code>0.3.0</code> releases, which is a common practice. However, it presumes that
+there will <em>not</em> be breaking changes between <code>0.2.4</code> and <code>0.2.5</code>. It allows for
+changes that are presumed to be additive (but non-breaking), according to
+commonly observed practices.</p>
+<ul>
+<li><code>^1.2.3</code> := <code>&gt;=1.2.3 &lt;2.0.0</code></li>
+<li><code>^0.2.3</code> := <code>&gt;=0.2.3 &lt;0.3.0</code></li>
+<li><code>^0.0.3</code> := <code>&gt;=0.0.3 &lt;0.0.4</code></li>
+<li><code>^1.2.3-beta.2</code> := <code>&gt;=1.2.3-beta.2 &lt;2.0.0</code> Note that prereleases in the
+<code>1.2.3</code> version will be allowed, if they are greater than or equal to
+<code>beta.2</code>. So, <code>1.2.3-beta.4</code> would be allowed, but <code>1.2.4-beta.2</code> would not,
+because it is a prerelease of a different <code>[major, minor, patch]</code> tuple.</li>
+<li><code>^0.0.3-beta</code> := <code>&gt;=0.0.3-beta &lt;0.0.4</code> Note that prereleases in the <code>0.0.3</code>
+version <em>only</em> will be allowed, if they are greater than or equal to <code>beta</code>.
+So, <code>0.0.3-pr.2</code> would be allowed.</li>
+</ul>
+<p>When parsing caret ranges, a missing <code>patch</code> value desugars to the number <code>0</code>,
+but will allow flexibility within that value, even if the major and minor
+versions are both <code>0</code>.</p>
+<ul>
+<li><code>^1.2.x</code> := <code>&gt;=1.2.0 &lt;2.0.0</code></li>
+<li><code>^0.0.x</code> := <code>&gt;=0.0.0 &lt;0.1.0</code></li>
+<li><code>^0.0</code> := <code>&gt;=0.0.0 &lt;0.1.0</code></li>
+</ul>
+<p>A missing <code>minor</code> and <code>patch</code> values will desugar to zero, but also allow
+flexibility within those values, even if the major version is zero.</p>
+<ul>
+<li><code>^1.x</code> := <code>&gt;=1.0.0 &lt;2.0.0</code></li>
+<li><code>^0.x</code> := <code>&gt;=0.0.0 &lt;1.0.0</code></li>
+</ul>
+<h3 id="range-grammar" class="anchorable"><a href="#range-grammar" class="anchor" aria-label="Anchor" tabindex="-1" rel="nofollow">
+</a>Range Grammar</h3>
+<p>Putting all this together, here is a Backus-Naur grammar for ranges, for the
+benefit of parser authors:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js">range<span class="token operator">-</span>set  <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> <span class="token function">range</span> <span class="token punctuation">(</span> logical<span class="token operator">-</span>or range <span class="token punctuation">)</span> <span class="token operator">*</span>
+logical<span class="token operator">-</span>or <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> <span class="token punctuation">(</span> <span class="token string">" "</span> <span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token string">"||"</span> <span class="token punctuation">(</span> <span class="token string">" "</span> <span class="token punctuation">)</span> <span class="token operator">*</span>
+<span class="token literal-property property">range</span>      <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> hyphen <span class="token operator">|</span> <span class="token function">simple</span> <span class="token punctuation">(</span> <span class="token string">" "</span> simple <span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token operator">|</span> <span class="token string">""</span>
+<span class="token literal-property property">hyphen</span>     <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> partial <span class="token string">" - "</span> partial
+<span class="token literal-property property">simple</span>     <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> primitive <span class="token operator">|</span> partial <span class="token operator">|</span> tilde <span class="token operator">|</span> caret
+<span class="token literal-property property">primitive</span>  <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> <span class="token punctuation">(</span> <span class="token string">"&lt;"</span> <span class="token operator">|</span> <span class="token string">"&gt;"</span> <span class="token operator">|</span> <span class="token string">"&gt;="</span> <span class="token operator">|</span> <span class="token string">"&lt;="</span> <span class="token operator">|</span> <span class="token string">"="</span> <span class="token punctuation">)</span> partial
+<span class="token literal-property property">partial</span>    <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> <span class="token function">xr</span> <span class="token punctuation">(</span> <span class="token string">"."</span> <span class="token function">xr</span> <span class="token punctuation">(</span> <span class="token string">"."</span> xr qualifier <span class="token operator">?</span> <span class="token punctuation">)</span><span class="token operator">?</span> <span class="token punctuation">)</span><span class="token operator">?</span>
+<span class="token literal-property property">xr</span>         <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> <span class="token string">"x"</span> <span class="token operator">|</span> <span class="token string">"X"</span> <span class="token operator">|</span> <span class="token string">"*"</span> <span class="token operator">|</span> nr
+<span class="token literal-property property">nr</span>         <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> <span class="token string">"0"</span> <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token string">"1"</span><span class="token operator">-</span><span class="token string">"9"</span><span class="token punctuation">]</span> <span class="token punctuation">(</span> <span class="token punctuation">[</span><span class="token string">"0"</span><span class="token operator">-</span><span class="token string">"9"</span><span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token operator">*</span>
+<span class="token literal-property property">tilde</span>      <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> <span class="token string">"~"</span> partial
+<span class="token literal-property property">caret</span>      <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> <span class="token string">"^"</span> partial
+<span class="token literal-property property">qualifier</span>  <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> <span class="token punctuation">(</span> <span class="token string">"-"</span> pre <span class="token punctuation">)</span><span class="token operator">?</span> <span class="token punctuation">(</span> <span class="token string">"+"</span> build <span class="token punctuation">)</span><span class="token operator">?</span>
+<span class="token literal-property property">pre</span>        <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> parts
+<span class="token literal-property property">build</span>      <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> parts
+<span class="token literal-property property">parts</span>      <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> <span class="token function">part</span> <span class="token punctuation">(</span> <span class="token string">"."</span> part <span class="token punctuation">)</span> <span class="token operator">*</span>
+<span class="token literal-property property">part</span>       <span class="token operator">:</span><span class="token operator">:</span><span class="token operator">=</span> nr <span class="token operator">|</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0</span><span class="token operator">-</span>9A<span class="token operator">-</span>Za<span class="token operator">-</span>z<span class="token punctuation">]</span><span class="token operator">+</span>
+</code></pre>
+
+      <button id="copy-button-11" class="copyButton" data-copy="range-set  ::= range ( logical-or range ) *
+logical-or ::= ( &quot; &quot; ) * &quot;||&quot; ( &quot; &quot; ) *
+range      ::= hyphen | simple ( &quot; &quot; simple ) * | &quot;&quot;
+hyphen     ::= partial &quot; - &quot; partial
+simple     ::= primitive | partial | tilde | caret
+primitive  ::= ( &quot;<&quot; | &quot;>&quot; | &quot;>=&quot; | &quot;<=&quot; | &quot;=&quot; ) partial
+partial    ::= xr ( &quot;.&quot; xr ( &quot;.&quot; xr qualifier ? )? )?
+xr         ::= &quot;x&quot; | &quot;X&quot; | &quot;*&quot; | nr
+nr         ::= &quot;0&quot; | [&quot;1&quot;-&quot;9&quot;] ( [&quot;0&quot;-&quot;9&quot;] ) *
+tilde      ::= &quot;~&quot; partial
+caret      ::= &quot;^&quot; partial
+qualifier  ::= ( &quot;-&quot; pre )? ( &quot;+&quot; build )?
+pre        ::= parts
+build      ::= parts
+parts      ::= part ( &quot;.&quot; part ) *
+part       ::= nr | [-0-9A-Za-z]+
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Note that, since ranges may be non-contiguous, a version might not be greater
+than a range, less than a range, <em>or</em> satisfy a range! For example, the range
+<code>1.2 &lt;1.2.9 || &gt;2.0.0</code> would have a hole from <code>1.2.9</code> until <code>2.0.0</code>, so the
+version <code>1.2.10</code> would not be greater than the range (because <code>2.0.1</code> satisfies,
+which is higher), nor less than the range (since <code>1.2.8</code> satisfies, which is
+lower), and it also does not satisfy the range.</p>
+<p>If you want to know if a version satisfies or does not satisfy a range, use the
+<a href="https://github.com/denoland/std/blob/HEAD/@std/semver@1.0.8/doc/~/satisfies" rel="nofollow"><code>satisfies</code></a> function.</p>
+<h3 id="add-to-your-project" tabindex="-1">Add to your project <a class="header-anchor" href="#add-to-your-project"><span class="sr-only">Jump to heading</span><span aria-hidden="true" class="anchor-end">#</span></a></h3>
+<div><div class="markdownBlockTitle"><span aria-label="Terminal" role="img">›_</span></div><div class="relative"><pre><code class="highlight notranslate language-sh">deno <span class="token function">add</span> jsr:@std/semver
+</code></pre>
+
+      <button id="copy-button-16" class="copyButton" data-copy="deno add jsr:@std/semver
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div><p><a href="https://jsr.io/@std/semver/doc" class="docs-cta jsr-cta">See all symbols in @std/semver on
+<svg class="inline ml-1" viewbox="0 0 13 7" aria-hidden="true" height="20"><path d="M0,2h2v-2h7v1h4v4h-2v2h-7v-1h-4" fill="#083344"></path><g fill="#f7df1e"><path d="M1,3h1v1h1v-3h1v4h-3"></path><path d="M5,1h3v1h-2v1h2v3h-3v-1h2v-1h-2"></path><path d="M9,2h3v2h-1v-1h-1v3h-1"></path></g></svg></a></p>
+<!-- custom:start -->
+<!-- Add persistent custom content below. This section is preserved across generations. -->
+<!-- custom:end -->
+</div><div class="mt-24"><nav aria-label="Previous and next page" class="flex justify-between gap-4 pt-4 border-t border-foreground-tertiary"><a href="/runtime/reference/std/regexp/" rel="prev" class="no-underline hover:underline"><span class="block text-xs text-foreground-secondary mb-1">Previous</span><span class="text-sm font-medium">← regexp</span></a><a href="/runtime/reference/std/streams/" rel="next" class="no-underline hover:underline text-right"><span class="block text-xs text-foreground-secondary mb-1">Next</span><span class="text-sm font-medium">streams →</span></a></nav></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label><a class="btn" target="_blank" href="https://github.com/denoland/docs/edit/main/runtime/reference/std/semver.md">Edit this page<svg width="98" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;" viewbox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"></path></svg></a></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

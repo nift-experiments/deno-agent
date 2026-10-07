@@ -1,0 +1,262 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="ddoc markdown-body"><ul class="breadcrumbs sticky top-header w-full p-4 !pl-0 m-0 bg-background-raw z-10"><li><a href="../" class="contextLink">Node</a></li><span class="text-[#0F172A]"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.76748 11.8159C5.5378 11.577 5.54525 11.1972 5.78411 10.9675L8.93431 8L5.78411 5.0325C5.54525 4.80282 5.5378 4.423 5.76748 4.18413C5.99715 3.94527 6.37698 3.93782 6.61584 4.1675L10.2158 7.5675C10.3335 7.68062 10.4 7.83679 10.4 8C10.4 8.16321 10.3335 8.31938 10.2158 8.4325L6.61584 11.8325C6.37698 12.0622 5.99715 12.0547 5.76748 11.8159Z" fill="currentColor"></path></svg></span><li>domain</li></ul><div class="multiSymbolPage"><header><h1 class="ref-h1">domain</h1><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>
+</p><div class="admonition caution">
+  <div class="title">Deno compatibility</div>
+
+<p></p>
+<p>All exports are non-functional stubs.
+This is a deprecated Node module.</p>
+<p>
+</p></div>
+<p></p>
+<p><strong>This module is pending deprecation.</strong> Once a replacement API has been
+finalized, this module will be fully deprecated. Most developers should
+<strong>not</strong> have cause to use this module. Users who absolutely must have
+the functionality that domains provide may rely on it for the time being
+but should expect to have to migrate to a different solution
+in the future.</p>
+<p>Domains provide a way to handle multiple different IO operations as a
+single group. If any of the event emitters or callbacks registered to a
+domain emit an <code>'error'</code> event, or throw an error, then the domain object
+will be notified, rather than losing the context of the error in the <code>process.on('uncaughtException')</code> handler, or causing the program to
+exit immediately with an error code.</p>
+</div></div><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> mod <span class="token keyword">from</span> <span class="token string">"node:domain"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-0" class="copyButton" data-copy="import * as mod from &quot;node:domain&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div></header><section class="mt-8" id="symbol-index"><div class="mb-6"><h2 class="ref-h2" id="Classes">Classes</h2><div class="namespaceSection"><div id="namespace_domain" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Class bg-Class/15" title="Class">c</div></div><div class="namespaceItemContent"><a href="/api/node/domain/#Domain" title="Domain">Domain</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="/api/node/domain/#Domain.method_add_0">add</a></li><li><a href="/api/node/domain/#Domain.method_bind_0">bind</a></li><li><a href="/api/node/domain/#Domain.method_enter_0">enter</a></li><li><a href="/api/node/domain/#Domain.method_exit_0">exit</a></li><li><a href="/api/node/domain/#Domain.method_intercept_0">intercept</a></li><li><a href="/api/node/domain/#Domain.property_members">members</a></li><li><a href="/api/node/domain/#Domain.method_remove_0">remove</a></li><li><a href="/api/node/domain/#Domain.method_run_0">run</a></li></ul></div></div></div></div><div class="mb-6"><h2 class="ref-h2" id="Functions">Functions</h2><div class="namespaceSection"><div id="namespace_create" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Function bg-Function/15" title="Function">f</div></div><div class="namespaceItemContent"><a href="/api/node/domain/#create" title="create">create</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"></ul></div></div></div></div></section><hr class="my-10"><section id="symbol-docs"><article class="symbolGroup scroll-mt-16" id="Domain"><div><h2 class="ref-h1"><span class="text-Class">class</span> <a href="#Domain" class="font-bold !text-foreground-primary hover:underline">Domain</a></h2><div class="symbolSubtitle"><div><span class="type">extends</span> EventEmitter<span></span> </div></div><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Domain <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:domain"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="Domain.copy-button-0" class="copyButton" data-copy="import { Domain } from &quot;node:domain&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="space-y-7" id=""><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>
+</p><div class="admonition caution">
+  <div class="title">Deno compatibility</div>
+
+<p></p>
+<p>This symbol is a non-functional stub.</p>
+<p>
+</p></div>
+<p></p>
+<p>The <code>Domain</code> class encapsulates the functionality of routing errors and
+uncaught exceptions to the active <code>Domain</code> object.</p>
+<p>To handle the errors that it catches, listen to its <code>'error'</code> event.</p>
+</div></div><section class="section" id="Domain.properties"><h3 class="anchorable-heading mb-4">Properties <a href="#Domain.properties" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class="anchorable docEntry" id="Domain.property_members"><div class="docEntryHeader"><code class=""><a href="#Domain.property_members" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/domain/#Domain">members</a><span class="font-medium"><span>: <span>Array</span>&lt;<span><span>EventEmitter</span><span> | </span><span>Timer</span></span>&gt;</span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>An array of timers and event emitters that have been explicitly added
+to the domain.</p>
+</div></div></div></div></section><section class="section" id="Domain.methods"><h3 class="anchorable-heading mb-4">Methods <a href="#Domain.methods" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class="anchorable docEntry" id="Domain.method_add_0"><div class="docEntryHeader"><code class=""><a href="#Domain.method_add_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/domain/#Domain">add</a><span class="font-medium">(<span><span>emitter<span>: <span><span>EventEmitter</span><span> | </span><span>Timer</span></span></span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Explicitly adds an emitter to the domain. If any event handlers called by
+the emitter throw an error, or if the emitter emits an <code>'error'</code> event, it
+will be routed to the domain's <code>'error'</code> event, just like with implicit
+binding.</p>
+<p>This also works with timers that are returned from <code>setInterval()</code> and <code>setTimeout()</code>. If their callback function throws, it will be caught by
+the domain <code>'error'</code> handler.</p>
+<p>If the Timer or <code>EventEmitter</code> was already bound to a domain, it is removed
+from that one, and bound to this one instead.</p>
+</div></div></div><div class="anchorable docEntry" id="Domain.method_bind_0"><div class="docEntryHeader"><code class=""><a href="#Domain.method_bind_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/domain/#Domain">bind</a><span class="font-medium"><span>&lt;<span><span>T</span><span><span> extends </span><span>Function</span></span></span>&gt;</span>(<span><span>callback<span>: <span>T</span></span></span></span>)<span>: <span>T</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>The returned function will be a wrapper around the supplied callback
+function. When the returned function is called, any errors that are
+thrown will be routed to the domain's <code>'error'</code> event.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">const</span> d <span class="token operator">=</span> domain<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">readSomeFile</span><span class="token punctuation">(</span><span class="token parameter">filename<span class="token punctuation">,</span> cb</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">,</span> <span class="token function">d</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">er<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// If this throws, it will also be passed to the domain.</span>
+    <span class="token keyword">return</span> <span class="token function">cb</span><span class="token punctuation">(</span>er<span class="token punctuation">,</span> data <span class="token operator">?</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+d<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">er</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// An error occurred somewhere. If we throw it now, it will crash the program</span>
+  <span class="token comment">// with the normal line number and stack message.</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="Domain.copy-button-3" class="copyButton" data-copy="const d = domain.create();
+
+function readSomeFile(filename, cb) {
+  fs.readFile(filename, 'utf8', d.bind((er, data) => {
+    // If this throws, it will also be passed to the domain.
+    return cb(er, data ? JSON.parse(data) : null);
+  }));
+}
+
+d.on('error', (er) => {
+  // An error occurred somewhere. If we throw it now, it will crash the program
+  // with the normal line number and stack message.
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div class="anchorable docEntry" id="Domain.method_enter_0"><div class="docEntryHeader"><code class=""><a href="#Domain.method_enter_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/domain/#Domain">enter</a><span class="font-medium">()<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>The <code>enter()</code> method is plumbing used by the <code>run()</code>, <code>bind()</code>, and <code>intercept()</code> methods to set the active domain. It sets <code>domain.active</code> and <code>process.domain</code> to the domain, and implicitly
+pushes the domain onto the domain
+stack managed by the domain module (see exit for details on the
+domain stack). The call to <code>enter()</code> delimits the beginning of a chain of
+asynchronous calls and I/O operations bound to a domain.</p>
+<p>Calling <code>enter()</code> changes only the active domain, and does not alter the domain
+itself. <code>enter()</code> and <code>exit()</code> can be called an arbitrary number of times on a
+single domain.</p>
+</div></div></div><div class="anchorable docEntry" id="Domain.method_exit_0"><div class="docEntryHeader"><code class=""><a href="#Domain.method_exit_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/domain/#Domain">exit</a><span class="font-medium">()<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>The <code>exit()</code> method exits the current domain, popping it off the domain stack.
+Any time execution is going to switch to the context of a different chain of
+asynchronous calls, it's important to ensure that the current domain is exited.
+The call to <code>exit()</code> delimits either the end of or an interruption to the chain
+of asynchronous calls and I/O operations bound to a domain.</p>
+<p>If there are multiple, nested domains bound to the current execution context, <code>exit()</code> will exit any domains nested within this domain.</p>
+<p>Calling <code>exit()</code> changes only the active domain, and does not alter the domain
+itself. <code>enter()</code> and <code>exit()</code> can be called an arbitrary number of times on a
+single domain.</p>
+</div></div></div><div class="anchorable docEntry" id="Domain.method_intercept_0"><div class="docEntryHeader"><code class=""><a href="#Domain.method_intercept_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/domain/#Domain">intercept</a><span class="font-medium"><span>&lt;<span><span>T</span><span><span> extends </span><span>Function</span></span></span>&gt;</span>(<span><span>callback<span>: <span>T</span></span></span></span>)<span>: <span>T</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>This method is almost identical to bind. However, in
+addition to catching thrown errors, it will also intercept <code>Error</code> objects sent as the first argument to the function.</p>
+<p>In this way, the common <code>if (err) return callback(err);</code> pattern can be replaced
+with a single error handler in a single place.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">const</span> d <span class="token operator">=</span> domain<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">readSomeFile</span><span class="token punctuation">(</span><span class="token parameter">filename<span class="token punctuation">,</span> cb</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  fs<span class="token punctuation">.</span><span class="token function">readFile</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">,</span> d<span class="token punctuation">.</span><span class="token function">intercept</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Note, the first argument is never passed to the</span>
+    <span class="token comment">// callback since it is assumed to be the 'Error' argument</span>
+    <span class="token comment">// and thus intercepted by the domain.</span>
+
+    <span class="token comment">// If this throws, it will also be passed to the domain</span>
+    <span class="token comment">// so the error-handling logic can be moved to the 'error'</span>
+    <span class="token comment">// event on the domain instead of being repeated throughout</span>
+    <span class="token comment">// the program.</span>
+    <span class="token keyword">return</span> <span class="token function">cb</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+d<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">er</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// An error occurred somewhere. If we throw it now, it will crash the program</span>
+  <span class="token comment">// with the normal line number and stack message.</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="Domain.copy-button-6" class="copyButton" data-copy="const d = domain.create();
+
+function readSomeFile(filename, cb) {
+  fs.readFile(filename, 'utf8', d.intercept((data) => {
+    // Note, the first argument is never passed to the
+    // callback since it is assumed to be the 'Error' argument
+    // and thus intercepted by the domain.
+
+    // If this throws, it will also be passed to the domain
+    // so the error-handling logic can be moved to the 'error'
+    // event on the domain instead of being repeated throughout
+    // the program.
+    return cb(null, JSON.parse(data));
+  }));
+}
+
+d.on('error', (er) => {
+  // An error occurred somewhere. If we throw it now, it will crash the program
+  // with the normal line number and stack message.
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div class="anchorable docEntry" id="Domain.method_remove_0"><div class="docEntryHeader"><code class=""><a href="#Domain.method_remove_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/domain/#Domain">remove</a><span class="font-medium">(<span><span>emitter<span>: <span><span>EventEmitter</span><span> | </span><span>Timer</span></span></span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>The opposite of add. Removes domain handling from the
+specified emitter.</p>
+</div></div></div><div class="anchorable docEntry" id="Domain.method_run_0"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Domain.method_run_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/domain/#Domain">run</a><span class="font-medium"><span>&lt;<span><span>T</span></span>&gt;</span>(<div class="ml-4"><div><span>fn<span>: (<span><span><span>...args</span><span>: <span>any</span>[]</span></span></span>) =&gt; <span>T</span></span></span>,</div><div><span><span>...args</span><span>: <span>any</span>[]</span></span>,</div></div>)<span>: <span>T</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Run the supplied function in the context of the domain, implicitly
+binding all event emitters, timers, and low-level requests that are
+created in that context. Optionally, arguments can be passed to
+the function.</p>
+<p>This is the most basic way to use a domain.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">import</span> domain <span class="token keyword">from</span> <span class="token string">'node:domain'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> fs <span class="token keyword">from</span> <span class="token string">'node:fs'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> d <span class="token operator">=</span> domain<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+d<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">er</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'Caught error!'</span><span class="token punctuation">,</span> er<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+d<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  process<span class="token punctuation">.</span><span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// Simulating some various async stuff</span>
+      fs<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'non-existent file'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">er<span class="token punctuation">,</span> fd</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>er<span class="token punctuation">)</span> <span class="token keyword">throw</span> er<span class="token punctuation">;</span>
+        <span class="token comment">// proceed...</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="Domain.copy-button-6" class="copyButton" data-copy="import domain from 'node:domain';
+import fs from 'node:fs';
+const d = domain.create();
+d.on('error', (er) => {
+  console.error('Caught error!', er);
+});
+d.run(() => {
+  process.nextTick(() => {
+    setTimeout(() => { // Simulating some various async stuff
+      fs.open('non-existent file', 'r', (er, fd) => {
+        if (er) throw er;
+        // proceed...
+      });
+    }, 100);
+  });
+});
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>In this example, the <code>d.on('error')</code> handler will be triggered, rather
+than crashing the program.</p>
+</div></div></div></div></section></div></div></div></article><hr class="my-10 last:hidden"><article class="symbolGroup scroll-mt-16" id="create"><div><h2 class="ref-h1"><span class="text-Function">function</span> <a href="#create" class="font-bold !text-foreground-primary hover:underline">create</a></h2><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> create <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:domain"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="create.copy-button-0" class="copyButton" data-copy="import { create } from &quot;node:domain&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="mt-3"><div class="scroll-mt-16" id="create.function_create_0"><code class="anchorable break-words inline-code-block"><a href="#create.function_create_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold">create</span><span class="font-medium">()<span>: <a href="/api/node/domain/#Domain" class="link">Domain</a></span></span></code><div class="space-y-7" id=""><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>
+</p><div class="admonition caution">
+  <div class="title">Deno compatibility</div>
+
+<p></p>
+<p>This symbol is a non-functional stub.</p>
+<p>
+</p></div>
+<p></p>
+</div></div><section class="section" id="create.return-type"><h3 class="anchorable-heading mb-4">Return Type <a href="#create.return-type" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class=" docEntry" id="create.function_create_0_return"><div class="docEntryHeader"><code class=""><span class="font-medium"><a href="/api/node/domain/#Domain" class="link">Domain</a></span></code> </div></div></div></section></div></div></div></div></div></article><hr class="my-10 last:hidden"></section></div></div></div><div class="mt-24"></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

@@ -341,3 +341,7 @@ Read investigation/D2-PARITY-CONTRACT.md and source-route-accounting.json. Exact
 ## D4 checkpoint: complete authored-family HTML
 
 330/330 authored-family pages match frozen publication bytes in both models. The sole Vento expression is supported explicitly without a general engine; normalized source accounting paths are converted back to original leading-slash runtime semantics. Read investigation/D4-AUTHORED-CORPUS.md. Next D5: all generated families and complete non-HTML publication/HTTP contract.
+
+## D5 checkpoint: complete frozen publication
+
+Both models reproduce all 2,573 files / 213,555,032 bytes exactly, including 834 generated PNGs. Read investigation/D5-COMPLETE-PUBLICATION.md for source/compiled-asset ownership and clock boundaries. Nine original HTTP states match both servers, including headers/body hashes. Browser fixtures are being rechecked for D6. Formal serialized benchmarking and complete changed-input/ancillary lifecycle remain D7; initial diagnostic uncached OG cost is retained as a profiling target. No Nift change.

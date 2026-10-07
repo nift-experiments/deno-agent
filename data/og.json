@@ -1,0 +1,4631 @@
+[
+  {
+    "route": "/runtime/run/",
+    "title": "Run code",
+    "description": "Run JavaScript and TypeScript with Deno: the secure-by-default permission model, running files, URLs and stdin, script arguments, watch mode, and project tasks.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/run/watch_mode/",
+    "title": "Watch mode and HMR",
+    "description": "Deno's built-in file watcher: re-run code on change with --watch, control what gets watched, and hot-replace modules with --watch-hmr.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/cli_apps/",
+    "title": "Build CLI apps",
+    "description": "Build command-line tools with Deno: read arguments and stdin, prompt the user, set exit codes, compile to a single self-contained executable, and distribute your tool.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/packages/publishing/",
+    "title": "Publishing packages",
+    "description": "Publish Deno packages to JSR with deno publish, build npm-compatible tarballs with deno pack, and choose the right registry for your library.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/packages/peer_dependencies/",
+    "title": "Peer dependencies",
+    "description": "Peer dependencies are an npm and package.json feature. deno.json has no peerDependencies field or equivalent. How Deno resolves peer dependencies when you consume npm packages, the node_modules layout caveat, optional peers, and fixing unmet-peer errors.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/packages/supply_chain/",
+    "title": "Supply chain management",
+    "description": "Keep Deno dependencies deterministic and safe: lockfile discipline, minimum dependency age, publishing-trust policy, deno audit, intentional updates, and a recommended CI baseline.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/packages/",
+    "title": "Dependency management",
+    "description": "Use Deno as your package manager for npm and JSR: install, add, update, audit, and inspect dependencies, manage lockfiles and lifecycle scripts, and override packages.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/packages/private_repositories/",
+    "title": "Private repositories",
+    "description": "Load remote modules from private repositories with DENO_AUTH_TOKENS: bearer tokens, basic auth, and a GitHub walkthrough.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/cron/",
+    "title": "Cron",
+    "description": "Schedule recurring tasks in Deno with the Deno.cron() runtime API, an unstable feature enabled via --unstable-cron.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/stability_and_releases/",
+    "title": "Stability and releases",
+    "description": "Guide to Deno's stability guarantees and release process. Covering release channels, long-term support (LTS), unstable features, versioning policy, and how Deno maintains backward compatibility.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/open_telemetry/",
+    "title": "OpenTelemetry",
+    "description": "Learn how to implement observability in Deno applications using OpenTelemetry. Covers tracing, metrics collection, and integration with monitoring systems.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/security/",
+    "title": "Security and permissions",
+    "description": "A guide to Deno's security model: secure-by-default execution, the permission sandbox, evaluating and executing untrusted code, and the permission broker. See the Permissions reference for the flags.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/typescript/",
+    "title": "TypeScript support",
+    "description": "TypeScript is a first-class language in Deno. Run .ts files directly with no build step, type-check with deno check, reuse your tsconfig.json, and skip the toolchain you needed under Node.js.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/web_dev/",
+    "title": "Web development",
+    "description": "A guide to web development with Deno. Learn about supported frameworks like Fresh, Next.js, and Astro, along with built-in features for building modern web applications.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/modules/",
+    "title": "Modules",
+    "description": "Learn how Deno's ECMAScript module system works: importing local and third-party modules, import attributes, import maps, and supported import types such as Wasm and data URLs.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/configuration/",
+    "title": "Config files",
+    "description": "How Deno projects are configured: first-class package.json support, the deno.json file for Deno's own tooling, .jsonc support and discovery, and an overview of what you can configure. See the deno.json reference for every field.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/ffi/",
+    "title": "Foreign Function Interface (FFI)",
+    "description": "Learn how to use Deno's Foreign Function Interface (FFI) to call native libraries directly from JavaScript or TypeScript. Includes examples, best practices, and security considerations.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/debugging/",
+    "title": "Debugging",
+    "description": "Debug Deno programs with the V8 inspector: Chrome DevTools, VS Code and JetBrains setup, network inspection, worker debugging, and the --inspect flag family.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/cpu_profiling/",
+    "title": "CPU profiling",
+    "description": "Profile Deno programs with the built-in CPU profiler: collecting profiles, Markdown and flamegraph reports, Chrome DevTools analysis, and profiling tips.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/http_server/",
+    "title": "Writing an HTTP Server",
+    "description": "A guide to creating HTTP servers in Deno. Learn about the Deno.serve API, request handling, WebSocket support, response streaming, and how to build production-ready HTTP/HTTPS servers with automatic compression.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/node/",
+    "title": "Node and npm Compatibility",
+    "description": "Guide to using Node.js modules and npm packages in Deno. Learn about compatibility features, importing npm packages, and differences between Node.js and Deno environments.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/fundamentals/workspaces/",
+    "title": "Workspaces and monorepos",
+    "description": "A guide to managing workspaces and monorepos in Deno. Learn about workspace configuration, package management, dependency resolution, and how to structure multi-package projects effectively.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/serving/",
+    "title": "HTTP serving",
+    "description": "How Deno.serve() works inside a desktop app: automatic port binding, the DENO_SERVE_ADDRESS env var, and serving local UI to the embedded webview.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/hmr/",
+    "title": "Hot module replacement",
+    "description": "deno desktop --hmr keeps the runtime and rendering backend alive across edits: framework dev servers in framework projects, V8 hot-swap in everything else.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/auto_update/",
+    "title": "Auto-update",
+    "description": "Ship binary-diff updates to deno desktop apps with Deno.autoUpdate(): bsdiff patches, manifest polling, automatic rollback on failed launch.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/tray_and_dock/",
+    "title": "Tray and dock",
+    "description": "Add icons to the OS status area and the macOS dock: tooltips, dark-mode variants, click events, and right-click context menus.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/comparison/",
+    "title": "Comparison with other tools",
+    "description": "How deno desktop compares to Electron, Electrobun, Tauri, and Dioxus across language, engine, process model, app size, ecosystem, and what's built-in.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/webgpu/",
+    "title": "WebGPU rendering",
+    "description": "Draw to a native window with WebGPU on the raw backend: request an adapter, wrap the window as an UnsafeWindowSurface, configure a canvas context, and run a render loop.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/backends/",
+    "title": "Backends",
+    "description": "Pick a rendering engine for your desktop app: bundled Chromium, the OS webview, or raw windowing. Tradeoffs and how to switch.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/devtools/",
+    "title": "DevTools",
+    "description": "Attach Chrome DevTools to a deno desktop app: a single session shows both the Deno runtime V8 and the renderer V8 as inspectable targets.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/distribution/",
+    "title": "Distribution",
+    "description": "Cross-compile a deno desktop app for macOS, Windows, and Linux from one machine, and produce per-platform output formats: .app, .dmg, .exe directory, AppImage.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/dialogs/",
+    "title": "Dialogs",
+    "description": "prompt(), alert(), and confirm() show native popup dialogs in deno desktop apps instead of terminal prompts.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/notifications/",
+    "title": "Notifications",
+    "description": "Show native OS notifications from deno desktop apps with the standard Web Notifications API: permission flow, options, and events.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/error_reporting/",
+    "title": "Error reporting",
+    "description": "Capture uncaught errors, unhandled rejections, and Rust panics, showing a native alert and POSTing a JSON report to your server.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/",
+    "title": "Desktop apps",
+    "description": "Build self-contained desktop applications from a Deno project, with framework auto-detection, hot reload, native windowing, auto-update, and cross-platform distribution.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/bindings/",
+    "title": "Bindings",
+    "description": "Call Deno-side functions from webview JavaScript via win.bind(): type-safe RPC over in-process channels, encoded at the boundary with no cross-process round-trip.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/configuration/",
+    "title": "Configuration",
+    "description": "Configure deno desktop in deno.json: app metadata, icons, deep-link URL schemes, backend selection, output paths, error reporting, and the auto-update server.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/frameworks/",
+    "title": "Frameworks",
+    "description": "Run Next.js, Astro, Fresh, Remix, React Router, Nuxt, SvelteKit, SolidStart, TanStack Start, and Vite projects as desktop apps.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/menus/",
+    "title": "Menus",
+    "description": "Build native application menu bars and right-click context menus, with submenus, accelerators, separators, checkboxes, and click events.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/desktop/windows/",
+    "title": "Windows",
+    "description": "Create and manage native windows with Deno.BrowserWindow: lifecycle, multiple windows, sizing, navigation, keyboard / mouse / focus events, and native window handles.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/jsx/",
+    "title": "JSX and React",
+    "description": "Configure JSX in Deno for React, Preact, or Hono: the automatic runtime, server-side rendering and its permission caveat, the precompile transform, and per-file pragmas.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/env_variables/",
+    "title": "Environment variables",
+    "description": "A guide to working with environment variables in Deno. Learn about Deno.env API, .env file support, CLI configuration, and special environment variables that control Deno's behavior.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/datetime/",
+    "title": "@std/datetime",
+    "description": "Utilities for dealing with Date objects",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/csv/",
+    "title": "@std/csv",
+    "description": "Reading and writing of comma-separated values (CSV) files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/async/",
+    "title": "@std/async",
+    "description": "Utilities for asynchronous operations, like delays, debouncing, or pooling",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/internal/",
+    "title": "@std/internal",
+    "description": "The internal package for @std. Do not use this directly.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/json/",
+    "title": "@std/json",
+    "description": "(Streaming) parsing and serializing of JSON files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/fs/",
+    "title": "@std/fs",
+    "description": "Helpers for working with the file system",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/data-structures/",
+    "title": "@std/data-structures",
+    "description": "Common data structures like red-black trees and binary heaps",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/cbor/",
+    "title": "@std/cbor",
+    "description": "Utilities for parsing and serializing Concise Binary Object Representation (CBOR)",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/streams/",
+    "title": "@std/streams",
+    "description": "Utilities for working with the Web Streams API",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/xml/",
+    "title": "@std/xml",
+    "description": "XML parsing and serialization for Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/text/",
+    "title": "@std/text",
+    "description": "Utilities for working with text",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/webgpu/",
+    "title": "@std/webgpu",
+    "description": "Utilities for working with the Web GPU API",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/dotenv/",
+    "title": "@std/dotenv",
+    "description": "Parsing and loading environment variables from a `.env` file",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/random/",
+    "title": "@std/random",
+    "description": "Various utilities using random number generators. The package also provides seeded pseudo-random number generator.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/collections/",
+    "title": "@std/collections",
+    "description": "Pure functions for common tasks related to collection types like arrays and objects",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/ulid/",
+    "title": "@std/ulid",
+    "description": "Generation of Universally Unique Lexicographically Sortable Identifiers (ULIDs)",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/semver/",
+    "title": "@std/semver",
+    "description": "Parsing and comparing of semantic versions (SemVer)",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/cache/",
+    "title": "@std/cache",
+    "description": "Cache utilities",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/front-matter/",
+    "title": "@std/front-matter",
+    "description": "Extract front matter from strings",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/ini/",
+    "title": "@std/ini",
+    "description": "Parsing and serializing of INI files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/http/",
+    "title": "@std/http",
+    "description": "Utilities for building HTTP servers",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/io/",
+    "title": "@std/io",
+    "description": "The utilities for advanced I/O operations using Reader and Writer interfaces.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/media-types/",
+    "title": "@std/media-types",
+    "description": "Utility functions for media types (MIME types)",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/cli/",
+    "title": "@std/cli",
+    "description": "Tools for creating interactive command line tools",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/crypto/",
+    "title": "@std/crypto",
+    "description": "Extensions to the Web Crypto API",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/",
+    "title": "Deno Standard Library (@std)",
+    "description": "The Deno Standard Library is a set of audited, dependency-free modules for common tasks, published on JSR under the @std scope.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/fmt/",
+    "title": "@std/fmt",
+    "description": "Utilities for formatting values, such as adding colors to text, formatting durations, printf utils, formatting byte numbers.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/regexp/",
+    "title": "@std/regexp",
+    "description": "Utilities for working with RegExp",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/bytes/",
+    "title": "@std/bytes",
+    "description": "Utilities to manipulate Uint8Arrays that are not built-in to JavaScript",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/msgpack/",
+    "title": "@std/msgpack",
+    "description": "Encoding and decoding for the msgpack format",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/testing/",
+    "title": "@std/testing",
+    "description": "Tools for testing Deno code like snapshot testing, bdd testing, and time mocking",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/math/",
+    "title": "@std/math",
+    "description": "Basic math utilities",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/path/",
+    "title": "@std/path",
+    "description": "Utilities for working with file system paths",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/assert/",
+    "title": "Standard Assertions (@std/assert)",
+    "description": "Common assertion functions, especially useful for testing",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/log/",
+    "title": "@std/log",
+    "description": "A customizable logger framework",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/uuid/",
+    "title": "@std/uuid",
+    "description": "Generators and validators for UUIDs",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/encoding/",
+    "title": "@std/encoding",
+    "description": "Utilities for encoding and decoding common formats like hex, base64, and varint",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/expect/",
+    "title": "@std/expect",
+    "description": "Jest compatible `expect` assertion functions",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/jsonc/",
+    "title": "@std/jsonc",
+    "description": "Parsing and serializing of JSONC files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/toml/",
+    "title": "@std/toml",
+    "description": "Parsing and serializing of TOML files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/net/",
+    "title": "@std/net",
+    "description": "Utilities for working with the network",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/yaml/",
+    "title": "@std/yaml",
+    "description": "Parsing and serializing of YAML files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/tar/",
+    "title": "@std/tar",
+    "description": "Streaming utilities for working with tar archives.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/std/html/",
+    "title": "@std/html",
+    "description": "Functions for HTML, such as escaping or unescaping HTML entities",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/continuous_integration/",
+    "title": "Continuous integration",
+    "description": "Guide to setting up continuous integration (CI) pipelines for Deno projects. Learn how to configure GitHub Actions workflows, run tests and linting in CI, handle cross-platform builds, and optimize pipeline performance with caching.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/env_variables/",
+    "title": "Configuring Deno behavior",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/coverage/",
+    "title": "deno coverage",
+    "description": "Generate a coverage report for your code",
+    "openGraphTitle": "deno coverage",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/x/",
+    "title": "deno x",
+    "description": "Execute npm or JSR packages with Deno.",
+    "openGraphTitle": "deno x",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/lsp/",
+    "title": "deno lsp",
+    "description": "Start the Deno language server, used by editors for IntelliSense, formatting, and diagnostics",
+    "openGraphTitle": "deno lsp",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/bench/",
+    "title": "deno bench",
+    "description": "Run benchmarks using Deno's built-in bench tool.",
+    "openGraphTitle": "deno bench",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/upgrade/",
+    "title": "deno upgrade",
+    "description": "Upgrade Deno to the latest, or any specific version",
+    "openGraphTitle": "deno upgrade",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/clean/",
+    "title": "deno clean",
+    "description": "Remove cached dependencies for a clean start",
+    "openGraphTitle": "deno clean",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/run/",
+    "title": "deno run",
+    "description": "Run a JavaScript or TypeScript program with Deno's runtime",
+    "openGraphTitle": "deno run",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/bundle/",
+    "title": "deno bundle",
+    "openGraphTitle": "deno bundle",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/info/",
+    "title": "deno info",
+    "description": "Inspect the dependencies of your project",
+    "openGraphTitle": "deno info",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/task/",
+    "title": "deno task",
+    "description": "A configurable task runner for Deno",
+    "openGraphTitle": "deno task",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/watch/",
+    "title": "deno watch",
+    "description": "Run a program in watch mode with hot module replacement",
+    "openGraphTitle": "deno watch",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/add/",
+    "title": "deno add",
+    "description": "Add and manage project dependencies with Deno",
+    "openGraphTitle": "deno add",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/audit/",
+    "title": "deno audit",
+    "description": "Audit project dependencies for known security vulnerabilities",
+    "openGraphTitle": "deno audit",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/compile/",
+    "title": "deno compile",
+    "description": "Compile your code into a standalone executable",
+    "openGraphTitle": "deno compile",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/uninstall/",
+    "title": "deno uninstall",
+    "description": "Remove a dependency from your project or from your global cache",
+    "openGraphTitle": "deno uninstall",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/lint/",
+    "title": "deno lint",
+    "description": "Run the Deno linter to check your code for errors and apply automated fixes",
+    "openGraphTitle": "deno lint",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/sandbox/",
+    "title": "deno sandbox",
+    "description": "Spin up a secure Linux microVM",
+    "openGraphTitle": "deno sandbox",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/unlink/",
+    "title": "deno unlink",
+    "description": "Unlink a local JSR package from the current project",
+    "openGraphTitle": "deno unlink",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/link/",
+    "title": "deno link",
+    "description": "Link a local JSR package into the current project for development",
+    "openGraphTitle": "deno link",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/doc/",
+    "title": "deno doc",
+    "description": "Generate documentation from your code",
+    "openGraphTitle": "deno doc",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/ci/",
+    "title": "deno ci",
+    "description": "Reproducible install for CI environments",
+    "openGraphTitle": "deno ci",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/update/",
+    "title": "deno update",
+    "description": "Update outdated dependencies with an interactive CLI",
+    "openGraphTitle": "deno update",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/remove/",
+    "title": "deno remove",
+    "description": "Remove a dependency from your project",
+    "openGraphTitle": "deno remove",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/jupyter/",
+    "title": "Jupyter Kernel for Deno",
+    "description": "Write JavaScript and TypeScript in Jupyter notebooks thanks to Deno's built-in Jupyter kernel",
+    "openGraphTitle": "deno jupyter",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/why/",
+    "title": "deno why",
+    "description": "Explain why a package is installed by showing its dependency chains",
+    "openGraphTitle": "deno why",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/",
+    "title": "Deno CLI Subcommands",
+    "openGraphTitle": "deno help",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/fmt/",
+    "title": "deno fmt",
+    "description": "Format your code with Deno's built-in formatter",
+    "openGraphTitle": "deno fmt",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/unstable_flags/",
+    "title": "Unstable feature flags",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/completions/",
+    "title": "deno completions",
+    "description": "Generate shell completions for Deno",
+    "openGraphTitle": "deno completions",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/repl/",
+    "title": "deno repl",
+    "description": "Interact with Deno's runtime in a REPL environment",
+    "openGraphTitle": "deno repl",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/outdated/",
+    "title": "deno outdated",
+    "description": "Check for outdated dependencies in your project and safely update them with an interactive CLI",
+    "openGraphTitle": "deno outdated",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/init/",
+    "title": "deno init",
+    "description": "Scaffold a new Deno project with tests and configuration",
+    "openGraphTitle": "deno init",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/create/",
+    "title": "deno create",
+    "description": "Scaffold a new project from a template package",
+    "openGraphTitle": "deno create",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/types/",
+    "title": "deno types",
+    "description": "Print Deno's built-in TypeScript type declarations",
+    "openGraphTitle": "deno types",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/list/",
+    "title": "deno list",
+    "description": "List the dependencies declared in your project",
+    "openGraphTitle": "deno list",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/serve/",
+    "title": "deno serve",
+    "description": "A flexible and configurable HTTP server for Deno",
+    "openGraphTitle": "deno serve",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/test/",
+    "title": "deno test",
+    "description": "Run tests for your project with Deno's built-in test runner",
+    "openGraphTitle": "deno test",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/desktop/",
+    "title": "deno desktop",
+    "description": "Build self-contained desktop applications from a Deno project",
+    "openGraphTitle": "deno desktop",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/deploy/",
+    "title": "deno deploy",
+    "description": "Manage and publish your projects on the web",
+    "openGraphTitle": "deno deploy",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/check/",
+    "title": "deno check",
+    "description": "Download and type-check code without execution",
+    "openGraphTitle": "deno check",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/approve_scripts/",
+    "title": "deno approve-scripts",
+    "description": "Manage lifecycle scripts of npm packages in the dependency tree.",
+    "openGraphTitle": "deno approve-scripts",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/bump_version/",
+    "title": "deno bump-version",
+    "description": "Bump the project version field in deno.json or package.json",
+    "openGraphTitle": "deno bump-version",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/pack/",
+    "title": "deno pack",
+    "description": "Create an npm tarball from a Deno project for publishing to npm",
+    "openGraphTitle": "deno pack",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/publish/",
+    "title": "deno publish",
+    "description": "Publish your package or workspace to the JSR registry",
+    "openGraphTitle": "deno publish",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/transpile/",
+    "title": "deno transpile",
+    "description": "Transpile TypeScript, JSX, or TSX to JavaScript",
+    "openGraphTitle": "deno transpile",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/eval/",
+    "title": "deno eval",
+    "description": "Evaluate JavaScript and TypeScript code in the command line",
+    "openGraphTitle": "deno eval",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/cli/install/",
+    "title": "deno install",
+    "description": "Install and cache dependencies for your project",
+    "openGraphTitle": "deno install",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/runtime/reference/ts_config_migration/",
+    "title": "Configuring TypeScript",
+    "description": "A guide to TypeScript configuration in Deno. Learn about compiler options, type checking JavaScript, JSDoc support, type declarations, and configuring TypeScript for cross-platform compatibility.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/wasm/",
+    "title": "WebAssembly",
+    "description": "A guide to using WebAssembly (Wasm) in Deno. Learn about module imports, type checking, streaming APIs, optimization techniques, and how to work with various programming languages that compile to Wasm.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/bundling/",
+    "title": "Bundling",
+    "description": "An overview of `deno bundle` subcommand that can be used to produce a single file application created from multiple source files for optimized execution.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/deno_serve_legacy_abort/",
+    "title": "Deno.serve request abort behavior",
+    "description": "Understand the legacy request.signal abort behavior in Deno.serve, why it is changing, and how to detect request completion with the --unstable-no-legacy-abort flag.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/deno_json/",
+    "title": "Configuration file (deno.json)",
+    "description": "Reference for every deno.json field: dependencies and import maps, tasks, lint and fmt, lockfile, node_modules directory, TypeScript compiler options, unstable flags, include/exclude, exports, permissions, compile, and proxies.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/loader_hooks/",
+    "title": "Loader hooks",
+    "description": "Customize module resolution and loading in Deno using the Node.js-compatible module.registerHooks() API. Create virtual modules, transpile custom formats, and intercept imports.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/docker/",
+    "title": "Deno and Docker",
+    "description": "Complete guide to using Deno with Docker containers. Learn about official Deno images, writing Dockerfiles, multi-stage builds, workspace containerization, and Docker best practices for Deno applications.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/permissions/",
+    "title": "Permissions",
+    "description": "Reference for Deno's permission system: how the runtime sandbox works and how to grant or deny file system, network, environment, system, subprocess, FFI, and import access with the --allow and --deny flags.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/lsp_integration/",
+    "title": "Language Server Integration",
+    "description": "Technical guide to integrating Deno's Language Server Protocol (LSP). Learn about LSP implementation details, custom commands, requests, notifications, and testing API integration for editor and tool developers.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/migration_guide/",
+    "title": "Deno 1.x to 2.x Migration Guide",
+    "description": "Comprehensive guide to migrating from Deno 1.x to 2.x. Learn about breaking changes, API updates, Node.js compatibility features, and how to update your codebase to work with Deno 2.x.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/",
+    "title": "Reference",
+    "description": "Look it up: the full deno CLI, configuration, the standard library, and runtime APIs.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/vscode/",
+    "title": "Deno & Visual Studio Code",
+    "description": "Complete guide to using Deno with Visual Studio Code. Learn about extension setup, workspace configuration, debugging, testing, task automation, and advanced IDE features for Deno development.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/web_platform_apis/",
+    "title": "Web Platform APIs",
+    "description": "A guide to the Web Platform APIs available in Deno. Learn about fetch, events, workers, storage, and other web standard APIs, including implementation details and deviations from browser specifications.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/lint_plugins/",
+    "title": "Lint Plugins",
+    "description": "Guide to creating and using custom lint plugins in Deno. Learn how to write custom lint rules, use selectors for AST matching, implement fixes, and test your plugins using Deno's lint plugin API.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/reference/node_apis/",
+    "title": "Node APIs",
+    "description": "A guide to Node.js compatibility in Deno. Learn about supported Node.js built-in modules, global objects, and how to use Node.js packages in Deno projects.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/migrate/migrate_from_npm/",
+    "title": "Migrate from npm",
+    "description": "How to move an npm project to Deno: install dependencies from your existing package.json, keep your pinned versions, map npm CLI commands to Deno, run workspaces unchanged, and handle lifecycle scripts.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/migrate/migrate_from_yarn/",
+    "title": "Migrate from Yarn",
+    "description": "How to move a Yarn project to Deno: install dependencies from your existing package.json, keep your pinned versions, map Yarn CLI commands to Deno, run workspaces unchanged, and what to do about Plug'n'Play.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/migrate/",
+    "title": "Migrate from Node.js",
+    "description": "How to move a Node.js project to Deno: use Deno as a drop-in package manager, run your existing project and package.json scripts, understand how CommonJS and ES modules are resolved, and map your Node commands to Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/migrate/migrate_from_bun/",
+    "title": "Migrate from Bun",
+    "description": "How to move a Bun project to Deno: install dependencies from your existing package.json, keep your pinned versions, run your scripts unchanged, map Bun CLI commands to Deno, and replace Bun-specific APIs with Deno and Node built-ins.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/migrate/migrate_from_pnpm/",
+    "title": "Migrate from pnpm",
+    "description": "How to move a pnpm project to Deno: install dependencies from your existing package.json, keep your pinned versions, map pnpm CLI commands to Deno, and let Deno migrate pnpm-workspace.yaml workspaces and catalogs automatically.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/help/",
+    "title": "Where to get help",
+    "description": "Guide to getting help with Deno. Find community resources, support channels, discussion forums, and how to engage with the Deno community for troubleshooting and assistance.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/",
+    "title": "Get started with Deno",
+    "description": "Install Deno and build your first project: why Deno, install, create, run, test, add a dependency, and use the built-in toolchain. No build step, no config.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/getting_started/installation/",
+    "title": "Installation",
+    "description": "A Guide to installing Deno on different operating systems. Includes instructions for Windows, macOS, and Linux using various package managers, manual installation methods, and Docker containers.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/getting_started/setup_your_environment/",
+    "title": "Set up your environment",
+    "description": "A guide to setting up your development environment for Deno. Learn how to configure popular editors like VS Code, set up language server support, and enable shell completions for better productivity.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/contributing/release_schedule/",
+    "title": "Release Schedule",
+    "description": "Overview of Deno's release cycle and versioning process. Learn about stable releases, canary builds, and how to manage different Deno versions including upgrading to specific builds.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/contributing/architecture/",
+    "title": "Architecture Overview",
+    "description": "Deep dive into Deno's internal architecture, explaining core components like the runtime, compiler, and security sandbox. Learn how Deno processes requests and executes JavaScript/TypeScript code.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/contributing/",
+    "title": "Contributing and support",
+    "description": "Guide to contributing to the Deno project and ecosystem. Learn about different Deno repositories, contribution guidelines, and how to submit effective pull requests.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/contributing/style_guide/",
+    "title": "Deno Style Guide",
+    "description": "Comprehensive style guide for contributing to Deno's internal runtime code and standard library. Covers coding conventions, documentation standards, testing requirements, and best practices for TypeScript and Rust development.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/deploy/",
+    "title": "Deploying your app",
+    "description": "Ways to run a Deno app in production: the managed Deno Deploy platform, containers and Docker, cloud and serverless providers, and self-hosting a standalone binary.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/test/coverage/",
+    "title": "Test coverage",
+    "description": "Collect coverage data with deno test --coverage and turn it into terminal summaries, HTML reports, and lcov files for CI with deno coverage.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/test/snapshots/",
+    "title": "Snapshot testing",
+    "description": "Capture program output as reference snapshots with Deno's built-in test runner, compare against them on every run, and update them with deno test --update-snapshots.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/test/doc_tests/",
+    "title": "Documentation tests",
+    "description": "Run the code examples in your JSDoc comments and markdown files as tests with deno test --doc, so your documentation never goes stale.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/test/",
+    "title": "Testing",
+    "description": "Write and run tests with Deno's built-in test runner: assertions, test steps, hooks, filtering, and reporters, with dedicated guides for mocking, snapshots, and coverage.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/test/sanitizers/",
+    "title": "Test sanitizers",
+    "description": "Deno's test sanitizers catch leaking async operations, resources, and surprise exits in your tests. Learn what each sanitizer checks and how to enable them.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/test/mocking/",
+    "title": "Mocking and test doubles",
+    "description": "Isolate the code under test with spies, stubs, mocks, and fake time using the Deno Standard Library's @std/testing package.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/test/migrate_from_jest/",
+    "title": "Migrating from Jest",
+    "description": "Move a Jest test suite to deno test: describe/it via node:test, expect mappings, mock function equivalents, snapshot testing, fake timers, and translating Jest configuration.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/runtime/lint_and_format/",
+    "title": "Linting and formatting",
+    "description": "A guide to Deno's built-in code quality tools. Learn how to use deno lint and deno fmt commands, configure rules, integrate with CI/CD pipelines, and maintain consistent code style across your projects.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/ssh/",
+    "title": "SSH",
+    "description": "How to open secure SSH access into a sandbox for interactive debugging, editor sessions, or long-running processes.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/volumes/",
+    "title": "Volumes & Snapshots",
+    "description": "Persistent storage and bootable images for Deno Sandbox",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/security/",
+    "title": "Security",
+    "description": "Understand the defense-in-depth model behind Deno Sandbox: isolation, secrets, network controls, and auditing.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/cli/",
+    "title": "Management via CLI",
+    "description": "How to manage Deno Sandbox with the Deno CLI.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/timeouts/",
+    "title": "Sandbox Timeouts",
+    "description": "Understand how long Deno Sandbox stays alive, how to extend or reconnect to them, and when to promote work to a Deno Deploy app.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/promote/",
+    "title": "Promote Deno Sandbox to Deploy Apps",
+    "description": "Learn how to promote a sandbox to a full Deno Deploy app for production use.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/expose_http/",
+    "title": "Expose HTTP",
+    "description": "Learn how to expose HTTP endpoints from Deno Sandbox, enabling you to run web servers, APIs, and preview environments at the edge.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/apps/",
+    "title": "Programmatic management of Deno Deploy Apps",
+    "description": "Use the @deno/sandbox Client to create, list, update, and delete Deno Deploy apps programmatically.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/",
+    "title": "Deno Sandbox",
+    "description": "Overview of the Deno Sandbox microVM platform on Deploy, including capabilities, security model, and ideal use cases.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/create/",
+    "title": "Create a Deno Sandbox",
+    "description": "Learn how to provision a sandbox with the static Sandbox.create() method and configure runtime, network, and lifecycle options.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/sandbox/getting_started/",
+    "title": "Getting started",
+    "description": "Step-by-step walkthrough for enabling Deno Sandbox, creating your first microVM, running commands, exposing services, and managing secrets.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/orama/README/",
+    "title": "Orama Search Indexing for Deno Documentation ",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/",
+    "title": "List of rules",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/ai/",
+    "title": "AI entrypoint",
+    "description": "Overview and key resources for LLMs and AI agents using the Deno docs",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/og/",
+    "title": "Example OG images",
+    "description": "Examples of OG images in the Deno documentation site.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/writing/",
+    "title": "Deno Documentation Style Guide",
+    "description": "Guidelines and best practices for writing clear, consistent, and helpful documentation for the Deno runtime and ecosystem.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/",
+    "title": "Style Guide",
+    "description": "A guide to the style and design of the Deno documentation.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/components/",
+    "title": "Components",
+    "description": "The components available to use across the Deno documentation.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/typography/",
+    "title": "Typography",
+    "description": "A guide to the typography of the Deno documentation.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/og/cli-commands/",
+    "title": "An example OG image with only a title that is long enough to wrap",
+    "openGraphTitle": "deno command",
+    "openGraphLayout": "/open_graph/cli-commands.jsx"
+  },
+  {
+    "route": "/styleguide/og/color-override/",
+    "title": "Override the color of the OG image",
+    "description": "Showing how a custom color can be used to override the default color of the OG image",
+    "openGraphColor": "#b3e0ff",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/og/title-only/",
+    "title": "An example OG image with only a title that is long enough to wrap",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/og/title-and-description-superscript/",
+    "title": "Superscript\u1d31\u1d2c in the title",
+    "description": "A description of typical length that will wrap under the title and offer some additional information about this page",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/og/title-and-description/",
+    "title": "An example OG image with a title that is long enough to wrap onto three whole lines",
+    "description": "A description of typical length that will wrap under the title and offer some additional information about this page",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/og/short-title-and-long-description/",
+    "title": "Short title example",
+    "description": "A description of typical length that will wrap under the title and offer some additional information about this page. Perhaps this might sometimes get a little longer.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/styleguide/og/short-title-and-short-description/",
+    "title": "Short title example",
+    "description": "A short description",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_spawn_subprocess/",
+    "title": "Spawn a subprocess and get buffered output",
+    "description": "Learn how to spawn a subprocess, and get buffered output in a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_command_cancellation/",
+    "title": "Command cancellation",
+    "description": "Learn how to cancel commands in a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_access_output/",
+    "title": "Streaming access string and binary output",
+    "description": "Learn how to stream string and binary output from commands in a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_timeout_control/",
+    "title": "Control sandbox timeout",
+    "description": "Learn how to control how long your sandbox stays alive using the timeout option.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_environment_variables/",
+    "title": "Set and get environment variables",
+    "description": "Learn how to set and get environment variables in a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_stream_output/",
+    "title": "Stream output to a local file",
+    "description": "Learn how to stream output to a local file in a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_upload_files/",
+    "title": "Upload files and directories",
+    "description": "Learn how to upload files and directories to a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_template_literals/",
+    "title": "Template literal commands with variable interpolation",
+    "description": "Learn how to use template literal commands with variable interpolation in a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_vscode_instance/",
+    "title": "Provide a VSCode instance in a sandbox",
+    "description": "Learn how to provide a VSCode instance in a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_javascript_repl/",
+    "title": "Interactive JavaScript REPL",
+    "description": "Learn how to provide an interactive Deno REPL in a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_error_handling/",
+    "title": "Error handling",
+    "description": "Learn how to handle errors in a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_web_framework/",
+    "title": "Serve a web framework",
+    "description": "Create a package.json, install deps, run a web framework (Express), and expose it publicly from a sandbox",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_memory/",
+    "title": "Configure sandbox memory",
+    "description": "Learn how to configure the memory allocated to a sandbox",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_ssh_access/",
+    "title": "Provide SSH access to a sandbox",
+    "description": "Learn how to provide SSH access to a sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/web_testing_tutorial/",
+    "title": "Testing web apps",
+    "description": "A comprehensive guide to testing web applications with Deno",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/otel_span_propagation_tutorial/",
+    "title": "Distributed Tracing with Context Propagation in Deno",
+    "description": "Implement end-to-end distributed tracing with automatic context propagation in Deno applications. This tutorial covers creating traced services, automatic propagation of trace context, and visualizing distributed traces.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/add_remove_dependencies_tutorial/",
+    "title": "Add and remove dependencies",
+    "description": "Manage project dependencies with deno add and deno remove: npm and JSR packages, version pinning, dev dependencies, and aliasing packages in your import map.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/prisma_tutorial/",
+    "title": "How to create a RESTful API with Prisma and Oak",
+    "description": "Guide to building a RESTful API using Prisma and Oak with Deno. Learn how to set up database schemas, generate clients, implement CRUD operations, and deploy your API with proper type safety.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/svelte_tutorial/",
+    "title": "Build a SvelteKit App",
+    "description": "A tutorial on building SvelteKit applications with Deno. Learn how to set up a SvelteKit project, implement file-based routing, manage state with load functions, and create a full-stack TypeScript application.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/simple_api_tutorial/",
+    "title": "Simple API server",
+    "description": "Build a simple link shortener API with Deno KV and web standard primitives, then deploy it to Deno Deploy.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/migrate_custom_domain_tutorial/",
+    "title": "Migrating a custom domain from Deploy Classic to Deno Deploy",
+    "description": "Learn how to migrate your custom domain from Deploy Classic to Deno Deploy",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/subprocess_tutorial/",
+    "title": "Creating a subprocess",
+    "description": "A guide to working with subprocesses in Deno. Learn how to spawn processes, handle input/output streams, manage process lifecycles, and implement inter-process communication patterns safely.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/qwik_tutorial/",
+    "title": "Build Qwik with Deno",
+    "description": "Step-by-step guide to building Qwik applications with Deno. Learn about resumability, server-side rendering, route handling, and how to create fast, modern web applications with zero client-side JavaScript by default.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/vue_tutorial/",
+    "title": "Build a Vue.js App",
+    "description": "A tutorial on building Vue.js applications with Deno. Learn how to set up a Vite project, implement component architecture, add routing, manage state, and create a full-stack TypeScript application.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/cloudflare_workers_tutorial/",
+    "title": "Deploying Deno to Cloudflare Workers",
+    "description": "Step-by-step tutorial on deploying Deno functions to Cloudflare Workers. Learn how to configure denoflare, create worker modules, test locally, and deploy your code to Cloudflare's global edge network.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/connecting_to_databases_tutorial/",
+    "title": "Connecting to databases",
+    "description": "A guide to database connectivity in Deno. Learn how to use MySQL, PostgreSQL, MongoDB, SQLite, Firebase, Supabase, and popular ORMs to build data-driven applications with TypeScript.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/mongoose_tutorial/",
+    "title": "How to use Mongoose with Deno",
+    "description": "Step-by-step guide to using Mongoose with Deno. Learn how to set up MongoDB connectivity, create schemas, implement data models, and perform CRUD operations using Mongoose's schema-based modeling.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deploy_command_tutorial/",
+    "title": "Deploy an app with the deno deploy command",
+    "description": "Step-by-step tutorial for using the deno deploy CLI command to create and deploy your first application to Deno Deploy.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/chat_app_tutorial/",
+    "title": "Chat application with WebSockets",
+    "description": "A tutorial on building a real-time chat app using Deno WebSockets. Learn how to create a WebSocket server with Oak, handle multiple client connections, manage state, and build an interactive chat interface with HTML, CSS, and JavaScript.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/snapshot_python_tutorial/",
+    "title": "Boot a Python environment with snapshots",
+    "description": "Create a sandbox, preload Python + scientific packages, snapshot it, and boot zero-setup sandboxes that run a Mandelbrot explorer.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/grafana_tutorial/",
+    "title": "How to export telemetry data to Grafana",
+    "description": "Complete guide to exporting telemetry data with OpenTelemetry and Grafana. Learn how to configure collectors, visualize traces, and monitor application performance.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/google_cloud_run_tutorial/",
+    "title": "How to deploy to Google Cloud Run",
+    "description": "Step-by-step guide to deploying Deno applications on Google Cloud Run. Learn about Docker containerization, Artifact Registry configuration, GitHub Actions automation, and how to set up continuous deployment to Google Cloud.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tunnel_database_tutorial/",
+    "title": "Connect a Database to your local dev",
+    "description": "Connect a Postgres database to your local development server with Deno Deploy and Deno's tunnel feature",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/digital_ocean_tutorial/",
+    "title": "How to deploy Deno to Digital Ocean",
+    "description": "A step-by-step guide to deploying Deno applications on Digital Ocean. Learn about Docker containerization, GitHub Actions automation, container registries, and how to set up continuous deployment workflows.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/private_registries_tutorial/",
+    "title": "Use private npm registries",
+    "description": "Configure Deno to install npm packages from private registries: .npmrc scoped registries and auth tokens, the NPM_CONFIG_REGISTRY override, DENO_AUTH_TOKENS, and worked setups for Azure Artifacts and JFrog Artifactory.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deno_doc_tutorial/",
+    "title": "Generating documentation with deno doc",
+    "description": "Learn how to generate professional documentation for your Deno projects using the built-in deno doc command. This tutorial covers JSDoc comments, HTML output, linting, and best practices for documenting your code.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/redis_tutorial/",
+    "title": "How to use Redis with Deno",
+    "description": "Step-by-step guide to using Redis with Deno. Learn how to set up caching, implement message brokers, handle data streaming, and optimize your applications with Redis's in-memory data store.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/local_unpublished_packages_tutorial/",
+    "title": "Use local and unpublished packages",
+    "description": "Work with code that isn't on a registry: link a local package copy with the links field, import straight from HTTPS URLs including private GitHub repos, and know which specifiers Deno does not support.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/planetscale_tutorial/",
+    "title": "How to use Planetscale with Deno",
+    "description": "Step-by-step guide to using Planetscale with Deno. Learn how to set up serverless MySQL databases, manage connections, execute queries, and build scalable applications with Planetscale's developer-friendly platform.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/astro_tutorial/",
+    "title": "Build Astro with Deno",
+    "description": "Step-by-step tutorial on building web applications with Astro and Deno. Learn how to scaffold projects, create dynamic pages, implement SSR, and deploy your Astro sites using Deno's Node.js compatibility.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/cjs_to_esm_tutorial/",
+    "title": "Updating from CommonJS to ESM",
+    "description": "Step-by-step guide to migrating Node.js projects from CommonJS to ESM modules. Learn about import/export syntax changes, module resolution differences, and how to use modern JavaScript features in Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/fetch_data_tutorial/",
+    "title": "Fetch and stream data",
+    "description": "A tutorial on working with network requests in Deno. Learn how to use the fetch API for HTTP requests, handle responses, implement data streaming, and manage file uploads and downloads.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deploy_otel_tutorial/",
+    "title": "Monitor your app with OpenTelemetry and Deno Deploy",
+    "description": "A step-by-step tutorial for adding custom OpenTelemetry instrumentation to your Deno Deploy application.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deno_deploy_tutorial/",
+    "title": "Deploy an app with Deno Deploy",
+    "description": "A step-by-step tutorial for deploying your first Deno application to Deno Deploy.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/debugging_with_console_tutorial/",
+    "title": "Better debugging with the console API",
+    "description": "An in-depth guide to advanced console debugging in Deno. Learn about console.table, timers, counters, tracers, and how to leverage the full console API beyond basic logging for better debugging workflows.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/aws_ecs_fargate_tutorial/",
+    "title": "Deploy Deno to AWS ECS Fargate",
+    "description": "Step-by-step tutorial on deploying a Deno app to AWS ECS Fargate. Learn how to containerize a Deno app, push the image to Amazon ECR, and run it as a serverless Fargate service behind a load balancer.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/testing_library_tutorial/",
+    "title": "Use Testing Library with Deno",
+    "description": "Test DOM behavior with @testing-library/dom and happy-dom in deno test: querying by role and text, simulating events, and the permissions the setup needs.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/vite_tutorial/",
+    "title": "Use Vite with Deno",
+    "description": "Step-by-step tutorial on building a front-end app with Vite and Deno. Learn how to scaffold a project, install dependencies, run the dev server with hot module replacement, and build for production.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/os_signals_tutorial/",
+    "title": "Handle OS signals",
+    "description": "Tutorial on handling operating system signals in Deno. Learn how to capture SIGINT and SIGBREAK events, manage signal listeners, and implement graceful shutdown handlers in your applications.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/volumes_tutorial/",
+    "title": "Deno Sandbox Volumes Tutorial",
+    "description": "Add read-write block storage to your Deno sandbox.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/cloudflare_workers_wrangler_tutorial/",
+    "title": "Deploying Deno to Cloudflare Workers with Wrangler",
+    "description": "Learn how to build and deploy a Deno application to Cloudflare Workers using Wrangler",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/initialize_project_tutorial/",
+    "title": "Initialize a project",
+    "description": "Guide to creating and structuring new Deno projects. Learn about starting a new project, task configuration, dependency management, and best practices for growing applications.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sveltekit_tutorial/",
+    "title": "Building a SvelteKit app with sv and Deno",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/word_finder_tutorial/",
+    "title": "Building a word finder app with Deno",
+    "description": "A tutorial on creating a word search application with Deno. Learn how to build a web server, implement pattern matching, handle HTTP requests, and create an interactive web interface using Oak framework.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/dependency_lockfile_tutorial/",
+    "title": "Lock dependencies with deno.lock",
+    "description": "Use deno.lock for reproducible installs: what the lockfile records, reviewing lockfile diffs, frozen lockfiles for CI with --frozen and deno ci, and regenerating or relocating the lockfile.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hashbang_tutorial/",
+    "title": "Executable scripts",
+    "description": "Guide to creating executable scripts with Deno. Learn about hashbangs, file permissions, cross-platform compatibility, and how to create command-line tools that can run directly from the terminal.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/honeycomb_tutorial/",
+    "title": "How to export telemetry data to Honeycomb",
+    "description": "Complete guide to exporting telemetry data with OpenTelemetry and Honeycomb.io. Learn how to configure collectors, visualize traces, and monitor application performance.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/snapshots_tutorial/",
+    "title": "Deno Sandbox Snapshots Tutorial",
+    "description": "Use read only images to create isolated and reproducible environments.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/file_server_tutorial/",
+    "title": "Write a file server",
+    "description": "Tutorial on building a file server with Deno. Learn how to handle HTTP requests, serve static files, implement streaming responses, and use the standard library's file server module for production deployments.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/run_script_tutorial/",
+    "title": "Run a script",
+    "description": "A guide to creating and running basic scripts with Deno. Learn how to write and execute JavaScript and TypeScript code, understand runtime environments, and get started with fundamental Deno concepts.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/import_maps_tutorial/",
+    "title": "Re-map import paths",
+    "description": "Use the imports field in deno.json as an import map: path aliases like @/ for src/, bare names for local modules, and scoped overrides for transitive imports.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/workspaces_monorepo_tutorial/",
+    "title": "Configure a monorepo with workspaces",
+    "description": "Set up a Deno workspace with multiple packages: member names and exports, glob patterns, root-only options, shared imports, and centralized dependency versions with catalogs.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/basic_opentelemetry_tutorial/",
+    "title": "Getting Started with OpenTelemetry in Deno",
+    "description": "Set up basic OpenTelemetry instrumentation in a Deno application. This tutorial covers creating a simple HTTP server with custom metrics and traces, and viewing the telemetry data.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/next_tutorial/",
+    "title": "Build a Next.js App",
+    "description": "Walkthrough guide to building a Next.js application with Deno. Learn how to set up a project, create API routes, implement server-side rendering, and build a full-stack TypeScript application.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/migrate_node_project_tutorial/",
+    "title": "Use Deno in an existing Node.js project",
+    "description": "Run an existing Node.js project with Deno without rewriting it: install from package.json, run npm scripts with deno task, use node: built-ins, and adopt Deno's built-in tooling incrementally.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/file_based_routing_tutorial/",
+    "title": "File-based routing",
+    "description": "Tutorial on implementing file-based routing in Deno. Learn how to create a dynamic routing system similar to Next.js, handle HTTP methods, manage nested routes, and build a flexible server architecture.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/drizzle_tutorial/",
+    "title": "Build a Database App with Drizzle ORM and Deno",
+    "description": "Step-by-step guide to building database applications with Drizzle ORM and Deno. Learn about schema management, type-safe queries, PostgreSQL integration, migrations, and how to implement CRUD operations.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/nuxt_tutorial/",
+    "title": "Build a Nuxt app with Deno",
+    "description": "Step-by-step guide to building Nuxt applications with Deno. Learn how to create a full-stack Vue.js app, implement server-side rendering, add Tailwind styling, and deploy your application.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/testing_tutorial/",
+    "title": "Writing tests",
+    "description": "Learn key concepts like test setup and structure, assertions, async testing, mocking, test fixtures, and code coverage",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tunnel_telemetry_tutorial/",
+    "title": "Local Telemetry with tunnel",
+    "description": "Send telemetry from your local development server using Deno's tunnel feature",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/aws_lambda_tutorial/",
+    "title": "How to Deploy Deno to AWS Lambda",
+    "description": "Step-by-step tutorial on deploying Deno applications to AWS Lambda. Learn about Docker containerization, ECR repositories, function configuration, and how to set up serverless Deno apps on AWS.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/aws_lightsail_tutorial/",
+    "title": "Deploy Deno to Amazon Lightsail",
+    "description": "Step-by-step tutorial on deploying Deno applications to AWS Lightsail. Learn about Docker containers, GitHub Actions automation, continuous deployment, and how to set up cost-effective cloud hosting for Deno apps.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/llm_tutorial/",
+    "title": "Build a Real-time LLM Chat App with Deno",
+    "description": "Learn how to integrate Large Language Models (LLM) with Deno to create an interactive roleplay chat application with AI characters using OpenAI or Anthropic APIs.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/apollo_tutorial/",
+    "title": "How to use Apollo with Deno",
+    "description": "Step-by-step tutorial on integrating Apollo GraphQL with Deno. Learn how to set up an Apollo Server, define schemas, implement resolvers, and build a complete GraphQL API using TypeScript.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/solidjs_tutorial/",
+    "title": "Build a SolidJS app with Deno",
+    "description": "Build a SolidJS application with Deno. Learn how to set up a project, implement reactive components, handle routing, create API endpoints with Hono, and build a full-stack TypeScript application.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/mysql2_tutorial/",
+    "title": "How to use MySQL2 with Deno",
+    "description": "Step-by-step guide to using MySQL2 with Deno. Learn how to set up database connections, execute queries, handle transactions, and build data-driven applications using MySQL's Node.js driver.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/module_metadata_tutorial/",
+    "title": "Module metadata",
+    "description": "A guide to working with module metadata in Deno. Learn about import.meta properties, main module detection, file paths, URL resolution, and how to access module context information in your applications.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tanstack_tutorial/",
+    "title": "Build an app with Tanstack and Deno",
+    "description": "Complete guide to building applications with Tanstack and Deno. Learn how to implement Query for data fetching, Router for navigation, manage server state, and create type-safe full-stack applications.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/kinsta_tutorial/",
+    "title": "How to deploy Deno on Kinsta",
+    "description": "Step-by-step guide to deploying Deno applications on Kinsta. Learn how to configure package.json, handle environment variables, set up Git deployments, and use Kinsta's application hosting platform.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/file_system_events_tutorial/",
+    "title": "File system events",
+    "description": "Tutorial on monitoring file system changes with Deno. Learn how to watch directories for file modifications, handle change events, and understand platform-specific behaviors across Linux, macOS, and Windows.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/fresh_tutorial/",
+    "title": "Build a Fresh App",
+    "description": "Complete guide to building Full-stack applications with Fresh and Deno. Learn how to set up a project, implement server-side rendering with islands architecture, add API routes, and deploy your TypeScript application.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/npm_lifecycle_scripts_tutorial/",
+    "title": "Run npm lifecycle scripts",
+    "description": "Allow npm postinstall and other lifecycle scripts in Deno with deno approve-scripts, and persist approvals with the allowScripts field in deno.json.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tunnel_tutorial/",
+    "title": "Share your local server with Tunnel",
+    "description": "Expose a public URL instantly with the --tunnel option",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/express_tutorial/",
+    "title": "How to use Express with Deno",
+    "description": "Step-by-step guide to using Express.js with Deno. Learn how to set up an Express server, configure routes, handle middleware, and build REST APIs using Deno's Node.js compatibility features.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/bdd_tutorial/",
+    "title": "Behavior-Driven Development (BDD)",
+    "description": "Implementing Behavior-Driven Development with Deno's Standard Library's BDD module. Create readable, well organised tests with effective assertions.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hyperdx_tutorial/",
+    "title": "How to export telemetry data to HyperDX",
+    "description": "Complete guide to exporting telemetry data with OpenTelemetry and HyperDX. Learn how to configure collectors, visualize traces, logs, metrics, and debug distributed applications effectively.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/trpc_tutorial/",
+    "title": "Build a Typesafe API with tRPC and Deno",
+    "description": "A guide to building type-safe APIs with tRPC and Deno. Learn how to set up endpoints, implement RPC procedures, handle data validation, and create efficient client-server applications.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/react_tutorial/",
+    "title": "React app with Vite",
+    "description": "Complete guide to building React applications with Deno and Vite. Learn how to set up a project, implement routing, add API endpoints, and deploy your full-stack TypeScript application.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deno_github_actions_tutorial/",
+    "title": "Run Deno in GitHub Actions",
+    "description": "Set up a GitHub Actions workflow for a Deno project: install Deno with setup-deno, cache dependencies, run fmt, lint and test, install with a frozen lockfile, and test across Deno versions.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/AGENTS/",
+    "title": "Working on the Deno docs ",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/about/",
+    "title": "Deno Namespace APIs",
+    "description": "A guide to Deno's built-in runtime APIs. Learn about file system operations, network functionality, permissions management, and other core capabilities available through the global Deno namespace.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/about/",
+    "title": "Node.js Built-in APIs",
+    "description": "Complete reference for Node.js built-in modules and globals supported in Deno. Explore Node.js APIs including fs, http, crypto, process, buffer, and more with compatibility information.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/about/",
+    "title": "Web Platform APIs",
+    "description": "A guide to the Web Platform APIs available in Deno. Learn about fetch, events, workers, storage, and other web standard APIs, including implementation details and deviations from browser specifications.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/subhosting/api/authentication/",
+    "title": "Authentication",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/subhosting/api/",
+    "title": "Subhosting Resources",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/subhosting/",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/subhosting/manual/quick_start/",
+    "title": "Subhosting Quick Start",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/subhosting/manual/api_migration_guide/",
+    "title": "Migrating from subhosting API v1 to v2",
+    "description": "Detailed guide for migrating from the Deno Deploy subhosting API v1 to v2, covering endpoint changes, deployment model differences, and new features like labels and layers.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/subhosting/manual/acceptable_use_policy/",
+    "title": "Acceptable use policy",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/subhosting/manual/",
+    "title": "About Subhosting",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/subhosting/manual/events/",
+    "title": "Deployment events",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/subhosting/manual/pricing_and_limits/",
+    "title": "Pricing and Limits",
+    "description": "Overview of Deno Subhosting pricing plans, resource limits, deployment restrictions, and performance constraints for your applications.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/subhosting/manual/planning_your_implementation/",
+    "title": "Planning your implementation",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/404/",
+    "title": "Page not found",
+    "description": "404, can't find the page you're looking for.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/support/",
+    "title": "Support and Feedback",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/acceptable_use_policy/",
+    "title": "Acceptable use policy",
+    "description": "What constitutes acceptable use of Deno Deploy Classic.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/terms_and_conditions/",
+    "title": "Terms and Conditions",
+    "description": "Deno Terms and Conditions",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/security/",
+    "title": "Security and responsible disclosure",
+    "description": "How to report security vulnerabilities in Deno Deploy.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/fulfillment_policy/",
+    "title": "Fulfillment Policy",
+    "description": "Our policies regarding refunds and cancellations for Deno Deploy.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/databases/",
+    "title": "Databases",
+    "description": "Connect to external database instances and integrate your applications and their environments seamlessly.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/cloud_connections/",
+    "title": "Cloud Connections",
+    "description": "Learn how to connect Deno Deploy to cloud providers like AWS and Google Cloud Platform without needing to manage credentials.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/observability/",
+    "title": "Observability",
+    "description": "Comprehensive overview of monitoring features in Deno Deploy, including logs, traces, metrics, and filtering options.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/cron/",
+    "title": "Cron",
+    "description": "Scheduling and managing cron jobs in Deno Deploy, including defining cron jobs in code, execution lifecycle, retries, and observability.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/deno_kv/",
+    "title": "Deno KV",
+    "description": "Use Deno KV in your applications with a dedicated database per timeline",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/playgrounds/",
+    "title": "Playgrounds",
+    "description": "Write and deploy code completely from Deno Deploy, without the need for a git repository.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/builds/",
+    "title": "Builds",
+    "description": "Detailed explanation of the build process in Deno Deploy, covering build triggers, stages, configuration options, caching, and the build environment.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/runtime/",
+    "title": "Runtime",
+    "description": "Details about the Deno Deploy runtime environment, including application lifecycle, startup, shutdown, and cold start optimization.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/domains/",
+    "title": "Domains",
+    "description": "Complete guide to domain management in Deno Deploy, including organization domains, custom domains, DNS configuration, TLS certificates, and domain assignments.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/accounts/",
+    "title": "Accounts",
+    "description": "Information about user accounts, authentication via GitHub, and managing your profile in Deno Deploy.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/timelines/",
+    "title": "Timelines",
+    "description": "Understanding deployment timelines in Deno Deploy, including production and development contexts, active revisions, rollbacks, and timeline locking.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/button/",
+    "title": "Deploy Button",
+    "description": "Help users quickly and easily clone code and deploy it to Deno Deploy with the click of a button",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/apps/",
+    "title": "Applications",
+    "description": "Guide to managing applications in Deno Deploy, including app creation, configuration, GitHub integration, and deployment options.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/env_vars_and_contexts/",
+    "title": "Environment Variables and Contexts",
+    "description": "Guide to managing environment variables and contexts in Deno Deploy, including variable types, creation, editing, and accessing them in your code.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/caching/",
+    "title": "CDN and caching",
+    "description": "HTTP caching in Deno Deploy: cache control headers, cache tags, invalidation API, and best practices for edge caching.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/oidc/",
+    "title": "OIDC",
+    "description": "The Deno Deploy runtime environment acts as an OpenID Connect (OIDC) provider, enabling you to integrate with third-party services that support OIDC authentication.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/frameworks/",
+    "title": "Frameworks",
+    "description": "Detailed guide to supported JavaScript and TypeScript frameworks in Deno Deploy, including Next.js, Astro, Nuxt, SvelteKit, and more.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/tunnel/",
+    "title": "Tunnel",
+    "description": "Learn about Deno Deploy's local tunnel feature, which allows secure access to your local development server from the internet.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/reference/organizations/",
+    "title": "Organizations",
+    "description": "Guide to creating and managing organizations in Deno Deploy, including members, permissions, and organization administration.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/kv/data_modeling_typescript/",
+    "title": "Data Modeling in TypeScript",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/kv/operations/",
+    "title": "Operations",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/kv/key_space/",
+    "title": "Key Space",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/kv/transactions/",
+    "title": "Transactions",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/kv/backup/",
+    "title": "Backups",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/kv/key_expiration/",
+    "title": "Key Expiration (TTL for keys)",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/kv/",
+    "title": "Deno KV Quick Start",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/kv/secondary_indexes/",
+    "title": "Secondary Indexes",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/kv/node/",
+    "title": "Using KV in Node.js",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/middleware/",
+    "title": "Reverse proxy middleware",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/cron/",
+    "title": "Scheduling cron tasks",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/playgrounds/",
+    "title": "Playgrounds",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/edge_cache/",
+    "title": "Edge Cache",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/dynamodb/",
+    "title": "Connect to DynamoDB",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/kv_on_deploy/",
+    "title": "KV on Deno Deploy",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/custom-domains/",
+    "title": "Custom domains",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-fetch/",
+    "title": "HTTP requests (fetch)",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-node/",
+    "title": "Node.js built-in APIs",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-broadcast-channel/",
+    "title": "BroadcastChannel",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-headers/",
+    "title": "HTTP Headers",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-request/",
+    "title": "HTTP Request",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/compression/",
+    "title": "Compressing response bodies",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/",
+    "title": "API Reference",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/dynamic-import/",
+    "title": "Dynamic import",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-sockets/",
+    "title": "TCP sockets and TLS",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-fs/",
+    "title": "File system APIs",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-response/",
+    "title": "HTTP Response",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/prisma-postgres/",
+    "title": "Connect to Prisma Postgres",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/running-scripts-locally/",
+    "title": "Local development",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/firebase/",
+    "title": "Connect to Firebase",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/neon-postgres/",
+    "title": "Connect to Neon Postgres",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/postgres/",
+    "title": "Connect to Postgres",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/",
+    "title": "Deploy Classic",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/deployments/",
+    "title": "Deployments",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/logs/",
+    "title": "Application logging",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/queues/",
+    "title": "Using Queues",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/how-to-deploy/",
+    "title": "Deploy with GitHub integration",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/environment-variables/",
+    "title": "Environment variables",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/ci_github/",
+    "title": "CI and GitHub Actions",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/deployctl/",
+    "title": "Using deployctl on the command line",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/organizations/",
+    "title": "Organizations",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/classic/regions/",
+    "title": "Regions",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/privacy_policy/",
+    "title": "Privacy Policy",
+    "description": "Deno's Privacy Policy",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/migration_guide/",
+    "title": "Migrating from Deploy Classic to Deno Deploy",
+    "description": "Guide to migrating your applications from Deno Deploy Classic (dash.deno.com) to the new Deno Deploy (console.deno.com), including subhosting API migration.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/",
+    "title": "About Deno Deploy",
+    "description": "Guide to Deno Deploy features, comparison with Deploy Classic, and getting started instructions for deployment.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/usage/",
+    "title": "Deno Deploy Usage Guidelines",
+    "description": "Important limitations, service level expectations, and terms of use for Deno Deploy.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/changelog/",
+    "title": "Deno Deploy changelog",
+    "description": "Listing notable progress in the development and evolution of Deno Deploy",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/pricing_and_limits/",
+    "title": "Pricing and limitations",
+    "description": "Important limitations, service level expectations, and terms of use for Deno Deploy.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/deploy/getting_started/",
+    "title": "Getting started",
+    "description": "Step-by-step guide to creating and configuring your first Deno Deploy application, including organization setup, build configuration, environment variables, and deployment monitoring.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/explicit-function-return-type/",
+    "title": "explicit-function-return-type",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/prefer-namespace-keyword/",
+    "title": "prefer-namespace-keyword",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-non-null-assertion/",
+    "title": "no-non-null-assertion",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/camelcase/",
+    "title": "camelcase",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-external-import/",
+    "title": "no-external-import",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-no-children-prop/",
+    "title": "jsx-no-children-prop",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-class-assign/",
+    "title": "no-class-assign",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-case-declarations/",
+    "title": "no-case-declarations",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-extra-boolean-cast/",
+    "title": "no-extra-boolean-cast",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-namespace/",
+    "title": "no-namespace",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-misused-new/",
+    "title": "no-misused-new",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-invalid-triple-slash-reference/",
+    "title": "no-invalid-triple-slash-reference",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-delete-var/",
+    "title": "no-delete-var",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/explicit-module-boundary-types/",
+    "title": "explicit-module-boundary-types",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-boolean-value/",
+    "title": "jsx-boolean-value",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/ban-unknown-rule-code/",
+    "title": "ban-unknown-rule-code",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-await-in-loop/",
+    "title": "no-await-in-loop",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/guard-for-in/",
+    "title": "guard-for-in",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/require-await/",
+    "title": "require-await",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-key/",
+    "title": "jsx-key",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/ban-ts-comment/",
+    "title": "ban-ts-comment",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-this-alias/",
+    "title": "no-this-alias",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-process-global/",
+    "title": "no-process-global",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-setter-return/",
+    "title": "no-setter-return",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-duplicate-case/",
+    "title": "no-duplicate-case",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-console/",
+    "title": "no-console",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-func-assign/",
+    "title": "no-func-assign",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/prefer-ascii/",
+    "title": "prefer-ascii",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-dupe-class-members/",
+    "title": "no-dupe-class-members",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-self-assign/",
+    "title": "no-self-assign",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/fresh-server-event-handlers/",
+    "title": "fresh-server-event-handlers",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-empty-enum/",
+    "title": "no-empty-enum",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-unused-vars/",
+    "title": "no-unused-vars",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-explicit-any/",
+    "title": "no-explicit-any",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-constant-condition/",
+    "title": "no-constant-condition",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-undef/",
+    "title": "no-undef",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/valid-typeof/",
+    "title": "valid-typeof",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-irregular-whitespace/",
+    "title": "no-irregular-whitespace",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-const-assign/",
+    "title": "no-const-assign",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-self-compare/",
+    "title": "no-self-compare",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-no-comment-text-nodes/",
+    "title": "jsx-no-comment-text-nodes",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-sloppy-imports/",
+    "title": "no-sloppy-imports",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-throw-literal/",
+    "title": "no-throw-literal",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-sync-fn-in-async-fn/",
+    "title": "no-sync-fn-in-async-fn",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-invalid-regexp/",
+    "title": "no-invalid-regexp",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-slow-types/",
+    "title": "no-slow-types",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-cond-assign/",
+    "title": "no-cond-assign",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/default-param-last/",
+    "title": "default-param-last",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-node-globals/",
+    "title": "no-node-globals",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-with/",
+    "title": "no-with",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-unsafe-negation/",
+    "title": "no-unsafe-negation",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-void-dom-elements-no-children/",
+    "title": "jsx-void-dom-elements-no-children",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-curly-braces/",
+    "title": "jsx-curly-braces",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/prefer-const/",
+    "title": "prefer-const",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-regex-spaces/",
+    "title": "no-regex-spaces",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-control-regex/",
+    "title": "no-control-regex",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-new-symbol/",
+    "title": "no-new-symbol",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/react-no-danger/",
+    "title": "react-no-danger",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-async-promise-executor/",
+    "title": "no-async-promise-executor",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-empty-character-class/",
+    "title": "no-empty-character-class",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-boolean-literal-for-arguments/",
+    "title": "no-boolean-literal-for-arguments",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/prefer-as-const/",
+    "title": "prefer-as-const",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-sparse-arrays/",
+    "title": "no-sparse-arrays",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-array-constructor/",
+    "title": "no-array-constructor",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-compare-neg-zero/",
+    "title": "no-compare-neg-zero",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-deprecated-deno-api/",
+    "title": "no-deprecated-deno-api",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-unused-labels/",
+    "title": "no-unused-labels",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-import-assertions/",
+    "title": "no-import-assertions",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-import-prefix/",
+    "title": "no-import-prefix",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-unversioned-import/",
+    "title": "no-unversioned-import",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-fallthrough/",
+    "title": "no-fallthrough",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-dupe-keys/",
+    "title": "no-dupe-keys",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/ban-untagged-todo/",
+    "title": "ban-untagged-todo",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/ban-types/",
+    "title": "ban-types",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/for-direction/",
+    "title": "for-direction",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-window/",
+    "title": "no-window",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-octal/",
+    "title": "no-octal",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/require-yield/",
+    "title": "require-yield",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-dupe-args/",
+    "title": "no-dupe-args",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-redeclare/",
+    "title": "no-redeclare",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/react-no-danger-with-children/",
+    "title": "react-no-danger-with-children",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-obj-calls/",
+    "title": "no-obj-calls",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-no-duplicate-props/",
+    "title": "jsx-no-duplicate-props",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/constructor-super/",
+    "title": "constructor-super",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-non-null-asserted-optional-chain/",
+    "title": "no-non-null-asserted-optional-chain",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-no-useless-fragment/",
+    "title": "jsx-no-useless-fragment",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-debugger/",
+    "title": "no-debugger",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/ban-unused-ignore/",
+    "title": "ban-unused-ignore",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-await-in-sync-fn/",
+    "title": "no-await-in-sync-fn",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-extra-non-null-assertion/",
+    "title": "no-extra-non-null-assertion",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/adjacent-overload-signatures/",
+    "title": "adjacent-overload-signatures",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/single-var-declarator/",
+    "title": "single-var-declarator",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/eqeqeq/",
+    "title": "eqeqeq",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/react-rules-of-hooks/",
+    "title": "react-rules-of-hooks",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-empty-pattern/",
+    "title": "no-empty-pattern",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/verbatim-module-syntax/",
+    "title": "verbatim-module-syntax",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-props-no-spread-multi/",
+    "title": "jsx-props-no-spread-multi",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-implicit-declare-namespace-export/",
+    "title": "no-implicit-declare-namespace-export",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-unsafe-finally/",
+    "title": "no-unsafe-finally",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-button-has-type/",
+    "title": "jsx-button-has-type",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-window-prefix/",
+    "title": "no-window-prefix",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-shadow-restricted-names/",
+    "title": "no-shadow-restricted-names",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-import-assign/",
+    "title": "no-import-assign",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-prototype-builtins/",
+    "title": "no-prototype-builtins",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-empty-interface/",
+    "title": "no-empty-interface",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/use-isnan/",
+    "title": "use-isnan",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-unreachable/",
+    "title": "no-unreachable",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/fresh-handler-export/",
+    "title": "fresh-handler-export",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-eval/",
+    "title": "no-eval",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-dupe-else-if/",
+    "title": "no-dupe-else-if",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/triple-slash-reference/",
+    "title": "triple-slash-reference",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/getter-return/",
+    "title": "getter-return",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-var/",
+    "title": "no-var",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-global-assign/",
+    "title": "no-global-assign",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-empty/",
+    "title": "no-empty",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-inner-declarations/",
+    "title": "no-inner-declarations",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/ban-untagged-ignore/",
+    "title": "ban-untagged-ignore",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-top-level-await/",
+    "title": "no-top-level-await",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-this-before-super/",
+    "title": "no-this-before-super",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-useless-rename/",
+    "title": "no-useless-rename",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/jsx-no-unescaped-entities/",
+    "title": "jsx-no-unescaped-entities",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/prefer-primordials/",
+    "title": "prefer-primordials",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-ex-assign/",
+    "title": "no-ex-assign",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/lint/rules/no-inferrable-types/",
+    "title": "no-inferrable-types",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/",
+    "title": "Deno examples and tutorials",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/convert_string/",
+    "title": "Convert a string to bytes and back",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/mcp_server/",
+    "title": "Build an MCP server",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/importing_bytes/",
+    "title": "Importing binary files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hash_file_streams/",
+    "title": "Hash large files with streams",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hard_links/",
+    "title": "Create hard links",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/performance_timing/",
+    "title": "Measure performance with marks and measures",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/mongo/",
+    "title": "Connect to MongoDB",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/udp_connector/",
+    "title": "UDP connector: Ping",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/anthropic_rag/",
+    "title": "RAG: ground Claude's answer in your documents",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/send_email/",
+    "title": "Send email with Resend",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/checking_directory_existence/",
+    "title": "Checking for directory existence",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_evaluating_javascript/",
+    "title": "Evaluating JavaScript",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/mime_type/",
+    "title": "Get the MIME type of a file",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/subprocesses_output/",
+    "title": "Subprocesses: Collecting output",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/checking_file_existence/",
+    "title": "Checking for file existence",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/os_info/",
+    "title": "Get operating system information",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/unix_cat/",
+    "title": "Unix cat",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_requests/",
+    "title": "HTTP requests",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_webhooks/",
+    "title": "HTTP server: Verifying webhook signatures",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/progress_spinners/",
+    "title": "Show progress bars and spinners",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/anthropic_tool_use/",
+    "title": "Build an agent with tool use",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/truncate_file/",
+    "title": "Truncate a file",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/write_file_incremental/",
+    "title": "Write a file incrementally",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/s3_upload/",
+    "title": "Upload files to S3-compatible storage",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_graceful_shutdown/",
+    "title": "HTTP server: Graceful shutdown",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/quic/",
+    "title": "Communicate over QUIC",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/symlinks/",
+    "title": "Creating & resolving symlinks",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/zlib_compression/",
+    "title": "Compress data with node:zlib",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/convert_uint8array/",
+    "title": "Convert a Uint8Array",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_proxy/",
+    "title": "Proxy HTTP requests",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/dns_queries/",
+    "title": "Running DNS queries",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hono/",
+    "title": "Hono HTTP server",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/terminal_detection/",
+    "title": "Detect a TTY and get terminal size",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_hot_reload/",
+    "title": "HTTP server: Hot reload",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/file_url_path/",
+    "title": "Convert between file URLs and paths",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tests_skip_focus/",
+    "title": "Skipping and focusing tests",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/fetch_unix_socket/",
+    "title": "Fetch over a Unix socket",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/file_metadata/",
+    "title": "Read and change file metadata",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_request_timeouts/",
+    "title": "HTTP server: Request timeouts",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/broadcast_channel/",
+    "title": "Communicate between workers with BroadcastChannel",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_tls/",
+    "title": "HTTP server: TLS",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/openai_structured_output/",
+    "title": "Get structured JSON output from OpenAI",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tcp_connector/",
+    "title": "TCP connector: Ping",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/subprocess_stdin/",
+    "title": "Pipe data into a subprocess",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/intl_relative_time/",
+    "title": "Format relative time",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/fetch_timeout/",
+    "title": "Set a timeout on fetch",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/intl_segmenter/",
+    "title": "Split text by words, sentences, and graphemes",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_static_caching/",
+    "title": "HTTP server: Caching headers",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_websocket/",
+    "title": "HTTP server: WebSockets",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/spy_functions/",
+    "title": "Spy functions",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/udp_listener/",
+    "title": "UDP listener: Ping",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/kv_transactions/",
+    "title": "Atomic transactions in Deno KV",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/importing_json/",
+    "title": "Importing JSON",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/webassembly/",
+    "title": "Web assembly",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/duckdb/",
+    "title": "Connect to DuckDB",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_streaming/",
+    "title": "HTTP server: Streaming",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/cron/",
+    "title": "Deno Cron",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_rss/",
+    "title": "Generate an RSS feed",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/heap_snapshot/",
+    "title": "Inspect memory with heap snapshots",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/intl_number_format/",
+    "title": "Format numbers and currencies",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/format_bytes_duration/",
+    "title": "Format bytes and durations for humans",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/authjs_github/",
+    "title": "Authentication with Auth.js",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/node_crypto/",
+    "title": "Hash and sign with node:crypto",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hash_password/",
+    "title": "Hashing and verifying passwords",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/web_workers/",
+    "title": "Web workers",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/event_emitter/",
+    "title": "Use EventEmitter from node:events",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_sse/",
+    "title": "HTTP server: Server-sent events",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/environment_variables/",
+    "title": "Environment variables",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/reading_system_metrics/",
+    "title": "Reading system metrics",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tls_listener/",
+    "title": "TCP/TLS listener: Ping",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/subprocesses_spawn/",
+    "title": "Subprocesses: Spawning",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_parallel/",
+    "title": "HTTP server: Scaling across CPU cores",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/find_executable/",
+    "title": "Find an executable on the PATH",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/semver_versions/",
+    "title": "Parse and compare semver versions",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/cli_subcommands/",
+    "title": "Build a CLI with subcommands",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/writing_tests/",
+    "title": "Writing tests",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/parse_xml/",
+    "title": "Parse and generate XML",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/promise_timeout/",
+    "title": "Add a timeout to any promise",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_rate_limit/",
+    "title": "HTTP server: Rate limiting",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/parsing_serializing_csv/",
+    "title": "Parsing and serializing CSV",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/convert_node_readable/",
+    "title": "Convert a Node.js Readable",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_basic_auth/",
+    "title": "HTTP server: Basic authentication",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hashing/",
+    "title": "Hashing",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/kv/",
+    "title": "Deno KV: Key/Value database",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/redis/",
+    "title": "Redis quick start",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/write_stdout/",
+    "title": "Write to stdout",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/byte_manipulation/",
+    "title": "Manipulating byte arrays",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/node_built_in/",
+    "title": "Use Node.js built-in modules",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/temporary_files/",
+    "title": "Temporary files & directories",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/worker_threads/",
+    "title": "Use worker_threads in Deno",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/prompts/",
+    "title": "Input prompts",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/form_data/",
+    "title": "Build and send forms with FormData",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_sessions/",
+    "title": "HTTP server: Sessions",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/permissions/",
+    "title": "Permission management",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/anthropic_chat_completion/",
+    "title": "Connect to Claude (Anthropic API)",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tcp_listener/",
+    "title": "TCP listener: Ping",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/kv_watch/",
+    "title": "Deno KV watch",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/rsa_signature/",
+    "title": "RSASSA-PKCS1-v1_5 Signature and Verification",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/color_logging/",
+    "title": "Logging with colors",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_cors/",
+    "title": "HTTP server: CORS",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/network_interfaces/",
+    "title": "List network interfaces",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sss/",
+    "title": "Shamir's Secret Sharing",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/ffi/",
+    "title": "Call C functions with FFI",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/csv_streaming/",
+    "title": "Parse large CSV files as streams",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tls_connector/",
+    "title": "TCP/TLS connector: Ping",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/websocket_pubsub/",
+    "title": "WebSocket server: Broadcasting messages",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/front_matter/",
+    "title": "Extract front matter from markdown",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/convert_blob/",
+    "title": "Convert a Blob",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/web_cache_api/",
+    "title": "Cache HTTP responses with the Web Cache API",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/html_templating/",
+    "title": "Render HTML templates with Eta",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/concurrency_limit/",
+    "title": "Run async tasks with a concurrency limit",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/oauth_github/",
+    "title": "Sign in with GitHub (OAuth)",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/generate_pdf/",
+    "title": "Generate a PDF",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/extract_html_data/",
+    "title": "Extract links and metadata from HTML",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/streaming_files/",
+    "title": "Streaming file operations",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/render_markdown/",
+    "title": "Render markdown to HTML",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/piping_streams/",
+    "title": "Piping streams",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/create_remove_directories/",
+    "title": "Creating & removing directories",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/copy_file/",
+    "title": "Copy a file",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/find_free_port/",
+    "title": "Find a free port",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deep_equal/",
+    "title": "Check if two values are deeply equal",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deno_version/",
+    "title": "Getting the Deno version",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_oak_crud_middleware_with_sqlite3_db/",
+    "title": "HTTP server: Performing CRUD operations using SQLite3",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/ulid/",
+    "title": "ULID",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/seeded_random/",
+    "title": "Generate seeded random numbers",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deleting_files/",
+    "title": "Deleting files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/date_format_parse/",
+    "title": "Parse and format dates",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_sitemap/",
+    "title": "Generate sitemap.xml and robots.txt",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/supabase/",
+    "title": "Connect to Supabase",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/os_signals/",
+    "title": "Listen for OS signals",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/command_line_arguments/",
+    "title": "Command line arguments",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/parsing_serializing_yaml/",
+    "title": "Parsing and serializing YAML",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deno_bundle/",
+    "title": "Bundle code with Deno.bundle",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/web_transport/",
+    "title": "Connect two peers with WebTransport",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/glob_patterns/",
+    "title": "Find files with glob patterns",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/openai_tool_use/",
+    "title": "Build an agent with OpenAI function calling",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/child_process_ipc/",
+    "title": "Communicate with a child process over IPC",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/send_email_sendgrid/",
+    "title": "Send email with SendGrid",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/msgpack_encoding/",
+    "title": "Encode and decode MessagePack",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/convert_readablestream/",
+    "title": "Convert a ReadableStream",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/escape_html/",
+    "title": "Escape an HTML string",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/fetch_http_proxy/",
+    "title": "Route fetch through an HTTP proxy",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/import_export/",
+    "title": "Importing & exporting",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/intl_date_format/",
+    "title": "Format dates for any locale",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/typescript_support/",
+    "title": "Built-in TypeScript support",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/derive_aes_key/",
+    "title": "Derive encryption keys from passwords",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/openai_streaming/",
+    "title": "Stream a chat response from OpenAI",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/path_operations/",
+    "title": "Path operations",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/worker_pool/",
+    "title": "Distribute work across a worker pool",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/postgres/",
+    "title": "Connect to Postgres",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/websocket/",
+    "title": "Outbound WebSockets",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/websocket_stream/",
+    "title": "Two-way streaming with WebSocketStream",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/node_readline/",
+    "title": "Read input line by line with node:readline",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/openai_chat_completion/",
+    "title": "Connect to OpenAI: Chat Completion",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tar_archives/",
+    "title": "Create and extract tar archives",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_files/",
+    "title": "HTTP server: Serving files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/parsing_jsonc/",
+    "title": "Parsing JSONC",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/stripe_checkout/",
+    "title": "Accept payments with Stripe Checkout",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/writing_files/",
+    "title": "Writing files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sleep_delay/",
+    "title": "Sleep and delay execution",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/string_case/",
+    "title": "Convert string case",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/debounce_function/",
+    "title": "Debounce a function",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/anthropic_structured_output/",
+    "title": "Get structured JSON output from Claude",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/websocket_context/",
+    "title": "WebSocket server: Per-socket state",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/memoize_function/",
+    "title": "Memoize an expensive function",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/generate_qr_code/",
+    "title": "Generate a QR code",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deno_compile/",
+    "title": "Compile a script into an executable",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/timers/",
+    "title": "Timeouts & intervals",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hex_base64_encoding/",
+    "title": "Hex and base64 encoding",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/walking_directories/",
+    "title": "Walking directories",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sandbox_for_untrusted_code/",
+    "title": "Spin up a sandbox to run untrusted code",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/queues/",
+    "title": "Deno queues",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/creating_and_verifying_jwt/",
+    "title": "Creating and verifying JWT",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/parsing_serializing_json/",
+    "title": "Parsing and serializing JSON",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/convert_arraybuffer/",
+    "title": "Convert an ArrayBuffer",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/importing_text/",
+    "title": "Importing text files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/compress_decompress/",
+    "title": "Compress and decompress data",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_pagination/",
+    "title": "HTTP server: Paginating results",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/file_locking/",
+    "title": "Lock files across processes",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/reading_files/",
+    "title": "Reading files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_node_streams/",
+    "title": "HTTP server: Node.js streams",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/better_auth/",
+    "title": "Email and password auth with Better Auth",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/json_lines/",
+    "title": "Stream JSON Lines data",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tcp_echo_server/",
+    "title": "TCP Echo Server",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/tests_run_control/",
+    "title": "Filtering and controlling test runs",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hello_world/",
+    "title": "Hello world",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/openai_rag/",
+    "title": "RAG: ground an OpenAI answer in your documents",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/data_processing/",
+    "title": "User Data Processing with Deno Collections",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/ecdsa_signing/",
+    "title": "Sign and verify data with ECDSA",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/uuids/",
+    "title": "Generating & validating UUIDs",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/ansi_terminal/",
+    "title": "Control the terminal with ANSI escape codes",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_routing/",
+    "title": "HTTP server: Routing",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_health_checks/",
+    "title": "HTTP server: Health checks",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/starttls/",
+    "title": "Upgrade a TCP connection to TLS (STARTTLS)",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/regexp_escape/",
+    "title": "Escape text for regular expressions",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/npm/",
+    "title": "Import modules from npm",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/parsing_serializing_toml/",
+    "title": "Parsing and serializing TOML",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/parsing_serializing_ini/",
+    "title": "Parsing and serializing INI",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/mcp_client/",
+    "title": "Connect to an MCP server from a client",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/convert_buffer/",
+    "title": "Convert a Buffer (node:buffer)",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/transform_stream/",
+    "title": "Transform data with TransformStream",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/structured_logging/",
+    "title": "Structured logging",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/exponential_backoff/",
+    "title": "Exponential backoff",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/jupyter_display/",
+    "title": "Rich output in Jupyter notebooks",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/structured_clone/",
+    "title": "Deep clone objects with structuredClone",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/url_parsing/",
+    "title": "Manipulating & parsing URLs",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/sqlite/",
+    "title": "Connect to SQLite",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/download_progress/",
+    "title": "Download a file with progress",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/anthropic_sse/",
+    "title": "Stream a Claude response to the browser",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/temporal/",
+    "title": "Temporal API",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/write_benchmarks/",
+    "title": "Write benchmarks with Deno.bench",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/secure_random_values/",
+    "title": "Generate secure random values",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/top_level_await/",
+    "title": "Await: CommonJS",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/aes_encryption/",
+    "title": "AES Encryption and Decryption",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/set_timezone/",
+    "title": "Set the time zone",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/intl_plural_list/",
+    "title": "Pluralize and format lists",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/pid/",
+    "title": "Process information",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hmac_generate_verify/",
+    "title": "HMAC Generation and Verification",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_cookies/",
+    "title": "HTTP server: Cookies",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/deno_outdated/",
+    "title": "Find and update outdated dependencies",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server_file_upload/",
+    "title": "HTTP server: File upload",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/reading_stdin/",
+    "title": "Read from stdin",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/url_pattern/",
+    "title": "Match URLs with URLPattern",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/watching_files/",
+    "title": "Watching the filesystem",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/http_server/",
+    "title": "HTTP Server: Hello world",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/webgpu_compute/",
+    "title": "Run a compute shader with WebGPU",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/timing_safe_comparison/",
+    "title": "Compare secrets in constant time",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/exit_codes/",
+    "title": "Set and read process exit codes",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/moving_renaming_files/",
+    "title": "Moving/Renaming files",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/abort_controller/",
+    "title": "Cancel async work with AbortController",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/subprocess_env_cwd/",
+    "title": "Run a subprocess with custom env and cwd",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/hono_jwt_auth/",
+    "title": "Protect routes with JWT in Hono",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/event_target/",
+    "title": "Create and dispatch custom events",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/openai_sse/",
+    "title": "Stream an OpenAI response to the browser",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/cbor_encoding/",
+    "title": "Encode and decode CBOR",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/examples/resize_images/",
+    "title": "Resize and convert images",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/bundler/",
+    "title": "Bundler - Deno documentation",
+    "description": "Bundle TypeScript and JavaScript code, along with their dependencies, into a single file. Useful for producing self-contained scripts for distribution or dep...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/cloud/",
+    "title": "Cloud - Deno documentation",
+    "description": "Tools for managing state, scheduling tasks, and interacting with key-value stores. Eg Deno.openKv , Deno.cron",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/errors/",
+    "title": "Errors - Deno documentation",
+    "description": "Error types and utilities for handling exceptions and custom error scenarios. Helps improve error handling and debugging. Eg Deno.errors.NotFound",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/fetch/",
+    "title": "Fetch - Deno documentation",
+    "description": "HTTP client for fetching data across a network. Retrieve resources from servers, handle responses, and manage network requests. Eg fetch , Response , Request...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/ffi/",
+    "title": "FFI - Deno documentation",
+    "description": "Foreign Function Interface. Call functions from shared libraries (e.g., C/C++) directly from Deno. Useful for integrating with existing native code or access...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/file-system/",
+    "title": "File System - Deno documentation",
+    "description": "File System APIs for working with files, directories, and file metadata. Includes functions for reading, writing, and manipulating file paths. Eg Deno.readDi...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/gpu/",
+    "title": "GPU - Deno documentation",
+    "description": "GPU programming and rendering. Efficiently use a device\u2019s graphics processing unit (GPU) for high-performance computations and complex image rendering. Eg GP...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/http-server/",
+    "title": "HTTP Server - Deno documentation",
+    "description": "Handling HTTP requests, serving responses, and managing server behavior. Eg Deno.serveHttp , Deno.serve",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/io/",
+    "title": "I/O - Deno documentation",
+    "description": "Interfaces for reading, writing, seeking, and managing resources. For handling of data streams, file I/O, and console interactions. Eg Deno.stdin , Deno.inspect",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/jupyter/",
+    "title": "Jupyter - Deno documentation",
+    "description": "Create interactive notebooks and execute code cells. Useful for data analysis, visualization, and educational purposes. Eg Deno.jupyter",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/linter/",
+    "title": "Linter - Deno documentation",
+    "description": "Interfaces and helpers for writing and testing custom lint rules. Eg Deno.lint.Plugin",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/network/",
+    "title": "Network - Deno documentation",
+    "description": "A wide range of networking tasks, from low-level connections to high-level server creation. Handle HTTP requests, WebSocket communication, and DNS resolution...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/permissions/",
+    "title": "Permissions - Deno documentation",
+    "description": "Permission system controls access to resources (e.g., file system, network, environment variables). Request permissions explicitly, enhancing security and us...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/runtime/",
+    "title": "Runtime - Deno documentation",
+    "description": "System-related functionality, process management, and observability. Eg Deno.mainModule , Deno.exit , Deno.cwd",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/subprocess/",
+    "title": "Subprocess - Deno documentation",
+    "description": "Spawn and manage child processes, execute commands, and collect output. Useful for executing external programs from Deno. Eg Deno.Command",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/telemetry/",
+    "title": "Telemetry - Deno documentation",
+    "description": "OpenTelemetry observability integration tools. Useful for getting more visibility into your own programs. Deno.telemetry",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/testing/",
+    "title": "Testing - Deno documentation",
+    "description": "Robust testing and benchmarking capabilities to ensure code quality and performance. Eg Deno.test , Deno.bench",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/websockets/",
+    "title": "WebSockets - Deno documentation",
+    "description": "Enable real-time communication between clients and servers using WebSockets. Tools to create interactive and dynamic applications. Eg WebSocket",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/uncategorized/",
+    "title": "Uncategorized - Deno documentation",
+    "description": "API reference for Deno's built-in Uncategorized APIs.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/cache/",
+    "title": "Cache - Web documentation",
+    "description": "Tools for caching and managing data. Store and retrieve data from the cache, manage cache storage limits, and handle cache-related events. Eg caches",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/canvas/",
+    "title": "Canvas - Web documentation",
+    "description": "Create, transform, and display images and graphics within the HTML element. Eg createImageBitmap",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/crypto/",
+    "title": "Crypto - Web documentation",
+    "description": "Cryptographic functionality for secure communication, data protection, and key management. Generate secure random numbers, encrypt and decrypt data, and mana...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/encoding/",
+    "title": "Encoding - Web documentation",
+    "description": "Handle character encoding, decoding, and binary data conversion. Eg TextDecoder , TextEncoder",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/events/",
+    "title": "Events - Web documentation",
+    "description": "Handle events and interactions. Listen for and respond to various events, including custom events, errors, progress, and promise rejections. Eg addEventListener",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/fetch/",
+    "title": "Fetch - Web documentation",
+    "description": "HTTP client for fetching data across a network. Retrieve resources from servers, handle responses, and manage network requests. Eg fetch , Response , Request...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/file/",
+    "title": "File - Web documentation",
+    "description": "File and data manipulation tools. Handle files, read data and work with binary content. Eg File , Blob",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/geometry-interfaces-module-api/",
+    "title": "Geometry Interfaces Module API - Web documentation",
+    "description": "API reference for the Geometry Interfaces Module API Web APIs available in Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/gpu/",
+    "title": "GPU - Web documentation",
+    "description": "GPU programming and rendering. Efficiently use a device\u2019s graphics processing unit (GPU) for high-performance computations and complex image rendering. Eg GP...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/io/",
+    "title": "I/O - Web documentation",
+    "description": "Interfaces for reading, writing, seeking, and managing resources. For handling of data streams, file I/O, and console interactions. Eg stdin , inspect",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/intl/",
+    "title": "Intl - Web documentation",
+    "description": "Tools for internationalization and localization. Create language-aware applications, handle date and time formatting, and adapt content for different locales...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/messaging/",
+    "title": "Messaging - Web documentation",
+    "description": "Facilitate communication between different parts of an application, allowing data exchange and coordination. Eg BroadcastChannel , MessageChannel",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/performance/",
+    "title": "Performance - Web documentation",
+    "description": "Measure, analyze, and optimize application performance. Eg performance",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/platform/",
+    "title": "Platform - Web documentation",
+    "description": "A set of essential interfaces and functions to interact with the browser environment. Eg handling user interactions, getting browser and device information, ...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/storage/",
+    "title": "Storage - Web documentation",
+    "description": "Store data locally within the browser. Manage session storage and local storage. sessionStorage , localStorage",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/streams/",
+    "title": "Streams - Web documentation",
+    "description": "Manage data streams, queuing strategies, and transformations. Handle data in chunks, process large datasets, and optimize memory usage. Eg ReadableStream , W...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/url/",
+    "title": "URL - Web documentation",
+    "description": "Manipulate URLs, extract data from URLs and manage query parameters. Eg URL",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/wasm/",
+    "title": "Wasm - Web documentation",
+    "description": "Efficiently execute computationally intensive tasks. Wasm module compilation, instantiation, memory management, and interaction with imports and exports. Eg ...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/websockets/",
+    "title": "WebSockets - Web documentation",
+    "description": "Enable real-time communication between clients and servers using WebSockets. Tools to create interactive and dynamic applications. Eg WebSocket",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/workers/",
+    "title": "Workers - Web documentation",
+    "description": "Run script operations in background threads. Manage worker threads, communicate with workers, and handle data transfer between workers and the main thread. E...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/uncategorized/",
+    "title": "Uncategorized - Web documentation",
+    "description": "API reference for the Uncategorized Web APIs available in Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/assert/",
+    "title": "assert - Node documentation",
+    "description": "The node:assert module provides a set of assertion functions for verifying invariants.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/async_hooks/",
+    "title": "async_hooks - Node documentation",
+    "description": "We strongly discourage the use of the async_hooks API. Other APIs that can cover most of its use cases include: AsyncLocalStorage tracks async context proces...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/buffer/",
+    "title": "buffer - Node documentation",
+    "description": "Buffer objects are used to represent a fixed-length sequence of bytes. Many Node.js APIs support Buffer s. The Buffer class is a subclass of JavaScript's Uin...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/child_process/",
+    "title": "child_process - Node documentation",
+    "description": "The node:child_process module provides the ability to spawn subprocesses in a manner that is similar, but not identical, to popen(3) . This capability is pri...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/cluster/",
+    "title": "cluster - Node documentation",
+    "description": "Deno compatibility All exports are non-functional stubs. Clusters of Node.js processes can be used to run multiple instances of Node.js that can distribute w...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/console/",
+    "title": "console - Node documentation",
+    "description": "The node:console module provides a simple debugging console that is similar to the JavaScript console mechanism provided by web browsers. The module exports ...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/constants/",
+    "title": "constants - Node documentation",
+    "description": "API reference for the node:constants module in Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/crypto/",
+    "title": "crypto - Node documentation",
+    "description": "The node:crypto module provides cryptographic functionality that includes a set of wrappers for OpenSSL's hash, HMAC, cipher, decipher, sign, and verify func...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/dgram/",
+    "title": "dgram - Node documentation",
+    "description": "The node:dgram module provides an implementation of UDP datagram sockets. import dgram from 'node:dgram' ; const server = dgram . createSocket ( 'udp4' ) ; s...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/diagnostics_channel/",
+    "title": "diagnostics_channel - Node documentation",
+    "description": "The node:diagnostics_channel module provides an API to create named channels to report arbitrary message data for diagnostics purposes. It can be accessed us...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/dns/",
+    "title": "dns - Node documentation",
+    "description": "The node:dns module enables name resolution. For example, use it to look up IP addresses of host names. Although named for the Domain Name System (DNS) , it ...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/dns/promises/",
+    "title": "dns/promises - Node documentation",
+    "description": "The dns.promises API provides an alternative set of asynchronous DNS methods that return Promise objects rather than using callbacks. The API is accessible v...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/domain/",
+    "title": "domain - Node documentation",
+    "description": "Deno compatibility All exports are non-functional stubs. This is a deprecated Node module. This module is pending deprecation. Once a replacement API has bee...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/events/",
+    "title": "events - Node documentation",
+    "description": "Much of the Node.js core API is built around an idiomatic asynchronous event-driven architecture in which certain kinds of objects (called &quot;emitters&quo...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/fs/",
+    "title": "fs - Node documentation",
+    "description": "The node:fs module enables interacting with the file system in a way modeled on standard POSIX functions. To use the promise-based APIs: import * as fs from ...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/fs/promises/",
+    "title": "fs/promises - Node documentation",
+    "description": "The fs/promises API provides asynchronous file system methods that return promises. The promise APIs use the underlying Node.js threadpool to perform file sy...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/http/",
+    "title": "http - Node documentation",
+    "description": "To use the HTTP server and client one must import the node:http module. The HTTP interfaces in Node.js are designed to support many features of the protocol ...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/http2/",
+    "title": "http2 - Node documentation",
+    "description": "The node:http2 module provides an implementation of the HTTP/2 protocol. It can be accessed using: import http2 from 'node:http2' ;",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/https/",
+    "title": "https - Node documentation",
+    "description": "HTTPS is the HTTP protocol over TLS/SSL. In Node.js this is implemented as a separate module.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/inspector/",
+    "title": "inspector - Node documentation",
+    "description": "Deno compatibility console is supported. Other APIs are non-functional stubs. The node:inspector module provides an API for interacting with the V8 inspector.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/inspector/promises/",
+    "title": "inspector/promises - Node documentation",
+    "description": "The node:inspector/promises module provides an API for interacting with the V8 inspector.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/module/",
+    "title": "module - Node documentation",
+    "description": "API reference for the node:module module in Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/net/",
+    "title": "net - Node documentation",
+    "description": "Stability: 2 - Stable The node:net module provides an asynchronous network API for creating stream-based TCP or IPC servers ( createServer ) and clients ( cr...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/os/",
+    "title": "os - Node documentation",
+    "description": "The node:os module provides operating system-related utility methods and properties. It can be accessed using: import os from 'node:os' ;",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/path/",
+    "title": "path - Node documentation",
+    "description": "The node:path module provides utilities for working with file and directory paths. It can be accessed using: import path from 'node:path' ;",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/perf_hooks/",
+    "title": "perf_hooks - Node documentation",
+    "description": "This module provides an implementation of a subset of the W3C Web Performance APIs as well as additional APIs for Node.js-specific performance measurements. ...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/process/",
+    "title": "process - Node documentation",
+    "description": "API reference for the node:process module in Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/punycode/",
+    "title": "punycode - Node documentation",
+    "description": "**The version of the punycode module bundled in Node.js is being deprecated. **In a future major version of Node.js this module will be removed. Users curren...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/querystring/",
+    "title": "querystring - Node documentation",
+    "description": "The node:querystring module provides utilities for parsing and formatting URL query strings. It can be accessed using: import querystring from 'node:querystr...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/readline/",
+    "title": "readline - Node documentation",
+    "description": "The node:readline module provides an interface for reading data from a Readable stream (such as process.stdin ) one line at a time. To use the promise-based ...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/readline/promises/",
+    "title": "readline/promises - Node documentation",
+    "description": "API reference for the node:readline/promises module in Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/repl/",
+    "title": "repl - Node documentation",
+    "description": "Deno compatibility All symbols are not supported. The node:repl module provides a Read-Eval-Print-Loop (REPL) implementation that is available both as a stan...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/sea/",
+    "title": "sea - Node documentation",
+    "description": "Deno compatibility All symbols are not supported. This feature allows the distribution of a Node.js application conveniently to a system that does not have N...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/sqlite/",
+    "title": "sqlite - Node documentation",
+    "description": "Deno compatibility This module has been added in Deno v2.2. The node:sqlite module facilitates working with SQLite databases. To access it: import sqlite fro...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/stream/",
+    "title": "stream - Node documentation",
+    "description": "A stream is an abstract interface for working with streaming data in Node.js. The node:stream module provides an API for implementing the stream interface. T...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/stream/consumers/",
+    "title": "stream/consumers - Node documentation",
+    "description": "The utility consumer functions provide common options for consuming streams.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/stream/promises/",
+    "title": "stream/promises - Node documentation",
+    "description": "API reference for the node:stream/promises module in Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/stream/web/",
+    "title": "stream/web - Node documentation",
+    "description": "API reference for the node:stream/web module in Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/string_decoder/",
+    "title": "string_decoder - Node documentation",
+    "description": "The node:string_decoder module provides an API for decoding Buffer objects into strings in a manner that preserves encoded multi-byte UTF-8 and UTF-16 charac...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/test/",
+    "title": "test - Node documentation",
+    "description": "The node:test module facilitates the creation of JavaScript tests. To access it: import test from 'node:test' ; This module is only available under the node:...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/test/reporters/",
+    "title": "test/reporters - Node documentation",
+    "description": "The node:test/reporters module exposes the builtin-reporters for node:test . To access it: import test from 'node:test/reporters' ; This module is only avail...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/timers/",
+    "title": "timers - Node documentation",
+    "description": "The timer module exposes a global API for scheduling functions to be called at some future period of time. Because the timer functions are globals, there is ...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/timers/promises/",
+    "title": "timers/promises - Node documentation",
+    "description": "The timers/promises API provides an alternative set of timer functions that return Promise objects. The API is accessible via require('node:timers/promises')...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/tls/",
+    "title": "tls - Node documentation",
+    "description": "The node:tls module provides an implementation of the Transport Layer Security (TLS) and Secure Socket Layer (SSL) protocols that is built on top of OpenSSL....",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/trace_events/",
+    "title": "trace_events - Node documentation",
+    "description": "Deno compatibility All exports are non-functional stubs. The node:trace_events module provides a mechanism to centralize tracing information generated by V8,...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/tty/",
+    "title": "tty - Node documentation",
+    "description": "The node:tty module provides the tty.ReadStream and tty.WriteStream classes. In most cases, it will not be necessary or possible to use this module directly....",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/url/",
+    "title": "url - Node documentation",
+    "description": "The node:url module provides utilities for URL resolution and parsing. It can be accessed using: import url from 'node:url' ;",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/util/",
+    "title": "util - Node documentation",
+    "description": "The node:util module supports the needs of Node.js internal APIs. Many of the utilities are useful for application and module developers as well. To access i...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/util/types/",
+    "title": "util/types - Node documentation",
+    "description": "API reference for the node:util/types module in Deno.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/v8/",
+    "title": "v8 - Node documentation",
+    "description": "Deno compatibility cachedDataVersionTag and getHeapStatistics , serialize and deserialize are supported. setFlagsFromStrings is a noop. Other APIs are not su...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/vm/",
+    "title": "vm - Node documentation",
+    "description": "The node:vm module enables compiling and running code within V8 Virtual Machine contexts. The node:vm module is not a security mechanism. Do not use it to ru...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/wasi/",
+    "title": "wasi - Node documentation",
+    "description": "Deno compatibility All exports are non-functional stubs. The node:wasi module does not currently provide the comprehensive file system security properties pr...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/worker_threads/",
+    "title": "worker_threads - Node documentation",
+    "description": "The node:worker_threads module enables the use of threads that execute JavaScript in parallel. To access it: import worker from 'node:worker_threads' ; Worke...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/zlib/",
+    "title": "zlib - Node documentation",
+    "description": "The node:zlib module provides compression functionality implemented using Gzip, Deflate/Inflate, and Brotli. To access it: import zlib from 'node:zlib' ; Com...",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/deno/",
+    "title": "Deno APIs reference",
+    "description": "Every API in the global Deno namespace, by category. Use your browser's find-in-page to locate a symbol, then click through for full documentation.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/web/",
+    "title": "Web APIs reference",
+    "description": "Every web platform API implemented by Deno, by category. Use your browser's find-in-page to locate a symbol, then click through for full documentation.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/node/",
+    "title": "Node APIs reference",
+    "description": "Every Node.js built-in module supported by Deno and its exports. Use your browser's find-in-page to locate a symbol, then click through for full documentation.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  },
+  {
+    "route": "/api/",
+    "title": "API reference",
+    "description": "Complete API reference for Deno: built-in Deno APIs, supported Web APIs, and Node.js compatibility modules.",
+    "openGraphLayout": "/open_graph/default.jsx"
+  }
+]

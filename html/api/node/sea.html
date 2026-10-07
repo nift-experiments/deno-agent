@@ -1,0 +1,479 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="ddoc markdown-body"><ul class="breadcrumbs sticky top-header w-full p-4 !pl-0 m-0 bg-background-raw z-10"><li><a href="../" class="contextLink">Node</a></li><span class="text-[#0F172A]"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.76748 11.8159C5.5378 11.577 5.54525 11.1972 5.78411 10.9675L8.93431 8L5.78411 5.0325C5.54525 4.80282 5.5378 4.423 5.76748 4.18413C5.99715 3.94527 6.37698 3.93782 6.61584 4.1675L10.2158 7.5675C10.3335 7.68062 10.4 7.83679 10.4 8C10.4 8.16321 10.3335 8.31938 10.2158 8.4325L6.61584 11.8325C6.37698 12.0622 5.99715 12.0547 5.76748 11.8159Z" fill="currentColor"></path></svg></span><li>sea</li></ul><div class="multiSymbolPage"><header><h1 class="ref-h1">sea</h1><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>
+</p><div class="admonition caution">
+  <div class="title">Deno compatibility</div>
+
+<p></p>
+<p>All symbols are not supported.</p>
+<p>
+</p></div>
+<p></p>
+<p>This feature allows the distribution of a Node.js application conveniently to a
+system that does not have Node.js installed.</p>
+<p>Node.js supports the creation of <a href="https://github.com/nodejs/single-executable">single executable applications</a> by allowing
+the injection of a blob prepared by Node.js, which can contain a bundled script,
+into the <code>node</code> binary. During start up, the program checks if anything has been
+injected. If the blob is found, it executes the script in the blob. Otherwise
+Node.js operates as it normally does.</p>
+<p>The single executable application feature currently only supports running a
+single embedded script using the <code>CommonJS</code> module system.</p>
+<p>Users can create a single executable application from their bundled script
+with the <code>node</code> binary itself and any tool which can inject resources into the
+binary.</p>
+<p>Here are the steps for creating a single executable application using one such
+tool, <a href="https://github.com/nodejs/postject">postject</a>:</p>
+<ol>
+<li>Create a JavaScript file:</li>
+</ol>
+<div class="relative"><pre><code class="highlight notranslate language-bash"><span class="token builtin class-name">echo</span> <span class="token string">'console.log(`Hello, ${process.argv[2]}!`);'</span> <span class="token operator">&gt;</span> hello.js
+</code></pre>
+
+      <button id="copy-button-31" class="copyButton" data-copy="echo 'console.log(`Hello, ${process.argv[2]}!`);' > hello.js
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ol start="2">
+<li>Create a configuration file building a blob that can be injected into the
+single executable application (see <code>Generating single executable preparation blobs</code> for details):</li>
+</ol>
+<div class="relative"><pre><code class="highlight notranslate language-bash"><span class="token builtin class-name">echo</span> <span class="token string">'{ "main": "hello.js", "output": "sea-prep.blob" }'</span> <span class="token operator">&gt;</span> sea-config.json
+</code></pre>
+
+      <button id="copy-button-39" class="copyButton" data-copy="echo '{ &quot;main&quot;: &quot;hello.js&quot;, &quot;output&quot;: &quot;sea-prep.blob&quot; }' > sea-config.json
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ol start="3">
+<li>Generate the blob to be injected:</li>
+</ol>
+<div class="relative"><pre><code class="highlight notranslate language-bash"><span class="token function">node</span> --experimental-sea-config sea-config.json
+</code></pre>
+
+      <button id="copy-button-47" class="copyButton" data-copy="node --experimental-sea-config sea-config.json
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ol start="4">
+<li>Create a copy of the <code>node</code> executable and name it according to your needs:
+<ul>
+<li>On systems other than Windows:</li>
+</ul>
+</li>
+</ol>
+<div class="relative"><pre><code class="highlight notranslate language-bash"><span class="token function">cp</span> <span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">command</span> <span class="token parameter variable">-v</span> <span class="token function">node</span><span class="token variable">)</span></span> hello
+</code></pre>
+
+      <button id="copy-button-62" class="copyButton" data-copy="cp $(command -v node) hello
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ul>
+<li>On Windows:</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-text">node -e "require('fs').copyFileSync(process.execPath, 'hello.exe')"
+</code></pre>
+
+      <button id="copy-button-70" class="copyButton" data-copy="node -e &quot;require('fs').copyFileSync(process.execPath, 'hello.exe')&quot;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>The <code>.exe</code> extension is necessary.
+5. Remove the signature of the binary (macOS and Windows only):</p>
+<ul>
+<li>On macOS:</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-bash">codesign --remove-signature hello
+</code></pre>
+
+      <button id="copy-button-81" class="copyButton" data-copy="codesign --remove-signature hello
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ul>
+<li>On Windows (optional):
+<a href="https://learn.microsoft.com/en-us/windows/win32/seccrypto/signtool">signtool</a> can be used from the installed <a href="https://developer.microsoft.com/en-us/windows/downloads/windows-sdk/">Windows SDK</a>.
+If this step is
+skipped, ignore any signature-related warning from postject.</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-powershell">signtool remove /s hello.exe
+</code></pre>
+
+      <button id="copy-button-89" class="copyButton" data-copy="signtool remove /s hello.exe
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ol start="6">
+<li>Inject the blob into the copied binary by running <code>postject</code> with
+the following options:
+<ul>
+<li><code>hello</code> / <code>hello.exe</code> - The name of the copy of the <code>node</code> executable
+created in step 4.</li>
+<li><code>NODE_SEA_BLOB</code> - The name of the resource / note / section in the binary
+where the contents of the blob will be stored.</li>
+<li><code>sea-prep.blob</code> - The name of the blob created in step 1.</li>
+<li><code>--sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2</code> - The <a href="https://www.electronjs.org/docs/latest/tutorial/fuses">fuse</a> used by the Node.js project to detect if a file has been
+injected.</li>
+<li><code>--macho-segment-name NODE_SEA</code> (only needed on macOS) - The name of the
+segment in the binary where the contents of the blob will be
+stored.
+To summarize, here is the required command for each platform:</li>
+<li>On Linux:</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-bash">npx postject hello NODE_SEA_BLOB sea-prep.blob <span class="token punctuation">\</span>
+    --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
+</code></pre>
+
+      <button id="copy-button-127" class="copyButton" data-copy="npx postject hello NODE_SEA_BLOB sea-prep.blob \
+    --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ul>
+<li>On Windows - PowerShell:</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-powershell">npx postject hello.exe NODE_SEA_BLOB sea-prep.blob `
+    --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
+</code></pre>
+
+      <button id="copy-button-135" class="copyButton" data-copy="npx postject hello.exe NODE_SEA_BLOB sea-prep.blob `
+    --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ul>
+<li>On Windows - Command Prompt:</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-text">npx postject hello.exe NODE_SEA_BLOB sea-prep.blob ^
+    --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
+</code></pre>
+
+      <button id="copy-button-143" class="copyButton" data-copy="npx postject hello.exe NODE_SEA_BLOB sea-prep.blob ^
+    --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ul>
+<li>On macOS:</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-bash">npx postject hello NODE_SEA_BLOB sea-prep.blob <span class="token punctuation">\</span>
+    --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2 <span class="token punctuation">\</span>
+    --macho-segment-name NODE_SEA
+</code></pre>
+
+      <button id="copy-button-151" class="copyButton" data-copy="npx postject hello NODE_SEA_BLOB sea-prep.blob \
+    --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2 \
+    --macho-segment-name NODE_SEA
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></li>
+<li>Sign the binary (macOS and Windows only):
+<ul>
+<li>On macOS:</li>
+</ul>
+</li>
+</ol>
+<div class="relative"><pre><code class="highlight notranslate language-bash">codesign <span class="token parameter variable">--sign</span> - hello
+</code></pre>
+
+      <button id="copy-button-166" class="copyButton" data-copy="codesign --sign - hello
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ul>
+<li>On Windows (optional):
+A certificate needs to be present for this to work. However, the unsigned
+binary would still be runnable.</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-powershell">signtool sign /fd SHA256 hello.exe
+</code></pre>
+
+      <button id="copy-button-174" class="copyButton" data-copy="signtool sign /fd SHA256 hello.exe
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ol start="8">
+<li>Run the binary:
+<ul>
+<li>On systems other than Windows</li>
+</ul>
+</li>
+</ol>
+<div class="relative"><pre><code class="highlight notranslate language-console">$ ./hello world
+Hello, world!
+</code></pre>
+
+      <button id="copy-button-189" class="copyButton" data-copy="$ ./hello world
+Hello, world!
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><ul>
+<li>On Windows</li>
+</ul>
+<div class="relative"><pre><code class="highlight notranslate language-console">$ .\hello.exe world
+Hello, world!
+</code></pre>
+
+      <button id="copy-button-197" class="copyButton" data-copy="$ .\hello.exe world
+Hello, world!
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> mod <span class="token keyword">from</span> <span class="token string">"node:sea"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-0" class="copyButton" data-copy="import * as mod from &quot;node:sea&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div></header><section class="mt-8" id="symbol-index"><div class="mb-6"><h2 class="ref-h2" id="Functions">Functions</h2><div class="namespaceSection"><div id="namespace_getasset" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Function bg-Function/15" title="Function">f</div></div><div class="namespaceItemContent"><a href="/api/node/sea/#getAsset" title="getAsset">getAsset</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"></ul></div></div><div id="namespace_getassetasblob" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Function bg-Function/15" title="Function">f</div></div><div class="namespaceItemContent"><a href="/api/node/sea/#getAssetAsBlob" title="getAssetAsBlob">getAssetAsBlob</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"></ul></div></div><div id="namespace_getrawasset" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Function bg-Function/15" title="Function">f</div></div><div class="namespaceItemContent"><a href="/api/node/sea/#getRawAsset" title="getRawAsset">getRawAsset</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"></ul></div></div><div id="namespace_issea" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Function bg-Function/15" title="Function">f</div></div><div class="namespaceItemContent"><a href="/api/node/sea/#isSea" title="isSea">isSea</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"></ul></div></div></div></div><div class="mb-6"><h2 class="ref-h2" id="Type Aliases">Type Aliases</h2><div class="namespaceSection"><div id="namespace_assetkey" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-TypeAlias bg-TypeAlias/15" title="Type Alias">T</div></div><div class="namespaceItemContent"><a href="/api/node/sea/#AssetKey" title="AssetKey">AssetKey</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"></ul></div></div></div></div></section><hr class="my-10"><section id="symbol-docs"><article class="symbolGroup scroll-mt-16" id="getAsset"><div><h2 class="ref-h1"><span class="text-Function">function</span> <a href="#getAsset" class="font-bold !text-foreground-primary hover:underline">getAsset</a></h2><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> getAsset <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:sea"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="getAsset.copy-button-0" class="copyButton" data-copy="import { getAsset } from &quot;node:sea&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="mt-3"><h2>Overload 1</h2><div class="scroll-mt-16" id="getAsset.function_getAsset_0"><code class="anchorable break-words inline-code-block"><a href="#getAsset.function_getAsset_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold">getAsset</span><span class="font-medium">(<span><span>key<span>: <a href="/api/node/sea/#AssetKey" class="link">AssetKey</a></span></span></span>)<span>: <span>ArrayBuffer</span></span></span></code><div class="space-y-7" id=""><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>
+</p><div class="admonition caution">
+  <div class="title">Deno compatibility</div>
+
+<p></p>
+<p>This symbol is not supported.</p>
+<p>
+</p></div>
+<p></p>
+<p>This method can be used to retrieve the assets configured to be bundled into the
+single-executable application at build time.
+An error is thrown when no matching asset can be found.</p>
+</div></div><section class="section" id="getAsset.parameters"><h3 class="anchorable-heading mb-4">Parameters <a href="#getAsset.parameters" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class="anchorable docEntry" id="getAsset.function_getasset_0_parameter_key"><div class="docEntryHeader"><code class=""><a href="#getAsset.function_getasset_0_parameter_key" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold font-lg">key</span><span class="font-medium"><span>: <a href="/api/node/sea/#AssetKey" class="link">AssetKey</a></span></span></code> </div></div></div></section><section class="section" id="getAsset.return-type"><h3 class="anchorable-heading mb-4">Return Type <a href="#getAsset.return-type" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class=" docEntry" id="getAsset.function_getAsset_0_return"><div class="docEntryHeader"><code class=""><span class="font-medium"><span>ArrayBuffer</span></span></code> </div></div></div></section></div></div><h2>Overload 2</h2><div class="scroll-mt-16" id="getAsset.function_getAsset_1"><code class="anchorable break-words inline-code-block"><a href="#getAsset.function_getAsset_1" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold">getAsset</span><span class="font-medium">(<div class="ml-4"><div><span>key<span>: <a href="/api/node/sea/#AssetKey" class="link">AssetKey</a></span></span>,</div><div><span>encoding<span>: <span>string</span></span></span>,</div></div>)<span>: <span>string</span></span></span></code><div class="space-y-7" id=""><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>
+</p><div class="admonition caution">
+  <div class="title">Deno compatibility</div>
+
+<p></p>
+<p>This symbol is not supported.</p>
+<p>
+</p></div>
+<p></p>
+</div></div><section class="section" id="getAsset.parameters-1"><h3 class="anchorable-heading mb-4">Parameters <a href="#getAsset.parameters-1" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class="anchorable docEntry" id="getAsset.function_getasset_1_parameter_key"><div class="docEntryHeader"><code class=""><a href="#getAsset.function_getasset_1_parameter_key" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold font-lg">key</span><span class="font-medium"><span>: <a href="/api/node/sea/#AssetKey" class="link">AssetKey</a></span></span></code> </div></div><div class="anchorable docEntry" id="getAsset.function_getasset_1_parameter_encoding"><div class="docEntryHeader"><code class=""><a href="#getAsset.function_getasset_1_parameter_encoding" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold font-lg">encoding</span><span class="font-medium"><span>: <span>string</span></span></span></code> </div></div></div></section><section class="section" id="getAsset.return-type-1"><h3 class="anchorable-heading mb-4">Return Type <a href="#getAsset.return-type-1" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class=" docEntry" id="getAsset.function_getAsset_1_return"><div class="docEntryHeader"><code class=""><span class="font-medium"><span>string</span></span></code> </div></div></div></section></div></div></div></div></div></article><hr class="my-10 last:hidden"><article class="symbolGroup scroll-mt-16" id="getAssetAsBlob"><div><h2 class="ref-h1"><span class="text-Function">function</span> <a href="#getAssetAsBlob" class="font-bold !text-foreground-primary hover:underline">getAssetAsBlob</a></h2><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> getAssetAsBlob <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:sea"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="getAssetAsBlob.copy-button-0" class="copyButton" data-copy="import { getAssetAsBlob } from &quot;node:sea&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="mt-3"><div class="scroll-mt-16" id="getAssetAsBlob.function_getAssetAsBlob_0"><code class="anchorable break-words inline-code-block"><a href="#getAssetAsBlob.function_getAssetAsBlob_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold">getAssetAsBlob</span><span class="font-medium">(<div class="ml-4"><div><span>key<span>: <a href="/api/node/sea/#AssetKey" class="link">AssetKey</a></span></span>,</div><div><span>options?<span>: { type<span>: <span>string</span></span>;  }</span></span>,</div></div>)<span>: <span>Blob</span></span></span></code><div class="space-y-7" id=""><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>
+</p><div class="admonition caution">
+  <div class="title">Deno compatibility</div>
+
+<p></p>
+<p>This symbol is not supported.</p>
+<p>
+</p></div>
+<p></p>
+<p>Similar to <code>sea.getAsset()</code>, but returns the result in a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob"><code>Blob</code></a>.
+An error is thrown when no matching asset can be found.</p>
+</div></div><section class="section" id="getAssetAsBlob.parameters"><h3 class="anchorable-heading mb-4">Parameters <a href="#getAssetAsBlob.parameters" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class="anchorable docEntry" id="getAssetAsBlob.function_getassetasblob_0_parameter_key"><div class="docEntryHeader"><code class=""><a href="#getAssetAsBlob.function_getassetasblob_0_parameter_key" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold font-lg">key</span><span class="font-medium"><span>: <a href="/api/node/sea/#AssetKey" class="link">AssetKey</a></span></span></code> </div></div><div class="anchorable docEntry" id="getAssetAsBlob.function_getassetasblob_0_parameter_options"><div class="docEntryHeader"><code class=""><a href="#getAssetAsBlob.function_getassetasblob_0_parameter_options" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold font-lg">options</span><span class="font-medium"><span>: { type<span>: <span>string</span></span>;  }</span></span></code> <span><div class="text-optional border border-optional/50 bg-optional/5 inline-flex items-center gap-0.5 flex-none rounded-md leading-none text-sm py-1 px-2">optional</div></span></div></div></div></section><section class="section" id="getAssetAsBlob.return-type"><h3 class="anchorable-heading mb-4">Return Type <a href="#getAssetAsBlob.return-type" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class=" docEntry" id="getAssetAsBlob.function_getAssetAsBlob_0_return"><div class="docEntryHeader"><code class=""><span class="font-medium"><span>Blob</span></span></code> </div></div></div></section></div></div></div></div></div></article><hr class="my-10 last:hidden"><article class="symbolGroup scroll-mt-16" id="getRawAsset"><div><h2 class="ref-h1"><span class="text-Function">function</span> <a href="#getRawAsset" class="font-bold !text-foreground-primary hover:underline">getRawAsset</a></h2><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> getRawAsset <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:sea"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="getRawAsset.copy-button-0" class="copyButton" data-copy="import { getRawAsset } from &quot;node:sea&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="mt-3"><div class="scroll-mt-16" id="getRawAsset.function_getRawAsset_0"><code class="anchorable break-words inline-code-block"><a href="#getRawAsset.function_getRawAsset_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold">getRawAsset</span><span class="font-medium">(<span><span>key<span>: <a href="/api/node/sea/#AssetKey" class="link">AssetKey</a></span></span></span>)<span>: <span>ArrayBuffer</span></span></span></code><div class="space-y-7" id=""><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>
+</p><div class="admonition caution">
+  <div class="title">Deno compatibility</div>
+
+<p></p>
+<p>This symbol is not supported.</p>
+<p>
+</p></div>
+<p></p>
+<p>This method can be used to retrieve the assets configured to be bundled into the
+single-executable application at build time.
+An error is thrown when no matching asset can be found.</p>
+<p>Unlike <code>sea.getRawAsset()</code> or <code>sea.getAssetAsBlob()</code>, this method does not
+return a copy. Instead, it returns the raw asset bundled inside the executable.</p>
+<p>For now, users should avoid writing to the returned array buffer. If the
+injected section is not marked as writable or not aligned properly,
+writes to the returned array buffer is likely to result in a crash.</p>
+</div></div><section class="section" id="getRawAsset.parameters"><h3 class="anchorable-heading mb-4">Parameters <a href="#getRawAsset.parameters" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class="anchorable docEntry" id="getRawAsset.function_getrawasset_0_parameter_key"><div class="docEntryHeader"><code class=""><a href="#getRawAsset.function_getrawasset_0_parameter_key" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold font-lg">key</span><span class="font-medium"><span>: <a href="/api/node/sea/#AssetKey" class="link">AssetKey</a></span></span></code> </div></div></div></section><section class="section" id="getRawAsset.return-type"><h3 class="anchorable-heading mb-4">Return Type <a href="#getRawAsset.return-type" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class=" docEntry" id="getRawAsset.function_getRawAsset_0_return"><div class="docEntryHeader"><code class=""><span class="font-medium"><span>ArrayBuffer</span></span></code> </div></div></div></section></div></div></div></div></div></article><hr class="my-10 last:hidden"><article class="symbolGroup scroll-mt-16" id="isSea"><div><h2 class="ref-h1"><span class="text-Function">function</span> <a href="#isSea" class="font-bold !text-foreground-primary hover:underline">isSea</a></h2><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> isSea <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:sea"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="isSea.copy-button-0" class="copyButton" data-copy="import { isSea } from &quot;node:sea&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="mt-3"><div class="scroll-mt-16" id="isSea.function_isSea_0"><code class="anchorable break-words inline-code-block"><a href="#isSea.function_isSea_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><span class="font-bold">isSea</span><span class="font-medium">()<span>: <span>boolean</span></span></span></code><div class="space-y-7" id=""><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>
+</p><div class="admonition caution">
+  <div class="title">Deno compatibility</div>
+
+<p></p>
+<p>This symbol is not supported.</p>
+<p>
+</p></div>
+<p></p>
+</div></div><section class="section" id="isSea.return-type"><h3 class="anchorable-heading mb-4">Return Type <a href="#isSea.return-type" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class=" docEntry" id="isSea.function_isSea_0_return"><div class="docEntryHeader"><code class=""><span class="font-medium"><span>boolean</span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Whether this script is running inside a single-executable application.</p>
+</div></div></div></div></section></div></div></div></div></div></article><hr class="my-10 last:hidden"><article class="symbolGroup scroll-mt-16" id="AssetKey"><div><h2 class="ref-h1"><span class="text-TypeAlias">type alias</span> <a href="#AssetKey" class="font-bold !text-foreground-primary hover:underline">AssetKey</a></h2><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token keyword">type</span> <span class="token class-name">AssetKey</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:sea"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="AssetKey.copy-button-0" class="copyButton" data-copy="import { type AssetKey } from &quot;node:sea&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="space-y-7" id=""><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>
+</p><div class="admonition caution">
+  <div class="title">Deno compatibility</div>
+
+<p></p>
+<p>This symbol is not supported.</p>
+<p>
+</p></div>
+<p></p>
+</div></div><section class="section" id="AssetKey.definition"><h3 class="anchorable-heading mb-4">Definition <a href="#AssetKey.definition" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class=" docEntry" id="AssetKey.typeAlias_AssetKey"><div class="docEntryHeader"><code class=""><span class="font-medium"><span>string</span></span></code> </div></div></div></section></div></div></div></article><hr class="my-10 last:hidden"></section></div></div></div><div class="mt-24"></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>

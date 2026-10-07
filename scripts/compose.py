@@ -25,7 +25,7 @@ def compose(model):
         wrapper = ''.join('@dep(' + json.dumps(p) + ')' for p in page['dependencies'])
         wrapper += ''.join(emit(page[k]) for k in ('prefix', 'body', 'suffix'))
         changed('.generated/content/' + name + '.html', wrapper)
-        tracked.append({'name': name, 'title': page['title'], 'template': 'templates/template.html'})
+        tracked.append({'name': name, 'title': page['title'] or '', 'template': 'templates/template.html'})
         owned.append('public/' + name + '.html')
     changed('.nift/tracked.json', json.dumps({'tracked': tracked}, indent=2) + '\n')
     ledger = ROOT / '.generated/owned.json'

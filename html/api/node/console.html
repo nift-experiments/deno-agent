@@ -1,0 +1,653 @@
+<main id="content" tabindex="-1" class="content "><div class="w-full"><article class="mx-auto"><div data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" class="markdown-body mt-4"><div class="ddoc markdown-body"><ul class="breadcrumbs sticky top-header w-full p-4 !pl-0 m-0 bg-background-raw z-10"><li><a href="../" class="contextLink">Node</a></li><span class="text-[#0F172A]"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.76748 11.8159C5.5378 11.577 5.54525 11.1972 5.78411 10.9675L8.93431 8L5.78411 5.0325C5.54525 4.80282 5.5378 4.423 5.76748 4.18413C5.99715 3.94527 6.37698 3.93782 6.61584 4.1675L10.2158 7.5675C10.3335 7.68062 10.4 7.83679 10.4 8C10.4 8.16321 10.3335 8.31938 10.2158 8.4325L6.61584 11.8325C6.37698 12.0622 5.99715 12.0547 5.76748 11.8159Z" fill="currentColor"></path></svg></span><li>console</li></ul><div class="multiSymbolPage"><header><h1 class="ref-h1">console</h1><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>The <code>node:console</code> module provides a simple debugging console that is similar to
+the JavaScript console mechanism provided by web browsers.</p>
+<p>The module exports two specific components:</p>
+<ul>
+<li>A <code>Console</code> class with methods such as <code>console.log()</code>, <code>console.error()</code>, and <code>console.warn()</code> that can be used to write to any Node.js stream.</li>
+<li>A global <code>console</code> instance configured to write to <a href="https://nodejs.org/docs/latest-v22.x/api/process.html#processstdout"><code>process.stdout</code></a> and
+<a href="https://nodejs.org/docs/latest-v22.x/api/process.html#processstderr"><code>process.stderr</code></a>. The global <code>console</code> can be used without importing the <code>node:console</code> module.</li>
+</ul>
+<p><em><strong>Warning</strong></em>: The global console object's methods are neither consistently
+synchronous like the browser APIs they resemble, nor are they consistently
+asynchronous like all other Node.js streams. See the <a href="https://nodejs.org/docs/latest-v22.x/api/process.html#a-note-on-process-io"><code>note on process I/O</code></a> for
+more information.</p>
+<p>Example using the global <code>console</code>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: hello world, to stdout</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello %s'</span><span class="token punctuation">,</span> <span class="token string">'world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: hello world, to stdout</span>
+console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Whoops, something bad happened'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints error message and stack trace to stderr:</span>
+<span class="token comment">//   Error: Whoops, something bad happened</span>
+<span class="token comment">//     at [eval]:5:15</span>
+<span class="token comment">//     at Script.runInThisContext (node:vm:132:18)</span>
+<span class="token comment">//     at Object.runInThisContext (node:vm:309:38)</span>
+<span class="token comment">//     at node:internal/process/execution:77:19</span>
+<span class="token comment">//     at [eval]-wrapper:6:22</span>
+<span class="token comment">//     at evalScript (node:internal/process/execution:76:60)</span>
+<span class="token comment">//     at node:internal/main/eval_string:23:3</span>
+
+<span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">'Will Robinson'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Danger </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">! Danger!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: Danger Will Robinson! Danger!, to stderr</span>
+</code></pre>
+
+      <button id="copy-button-24" class="copyButton" data-copy="console.log('hello world');
+// Prints: hello world, to stdout
+console.log('hello %s', 'world');
+// Prints: hello world, to stdout
+console.error(new Error('Whoops, something bad happened'));
+// Prints error message and stack trace to stderr:
+//   Error: Whoops, something bad happened
+//     at [eval]:5:15
+//     at Script.runInThisContext (node:vm:132:18)
+//     at Object.runInThisContext (node:vm:309:38)
+//     at node:internal/process/execution:77:19
+//     at [eval]-wrapper:6:22
+//     at evalScript (node:internal/process/execution:76:60)
+//     at node:internal/main/eval_string:23:3
+
+const name = 'Will Robinson';
+console.warn(`Danger ${name}! Danger!`);
+// Prints: Danger Will Robinson! Danger!, to stderr
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Example using the <code>Console</code> class:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">const</span> out <span class="token operator">=</span> <span class="token function">getStreamSomehow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> err <span class="token operator">=</span> <span class="token function">getStreamSomehow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> myConsole <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">console<span class="token punctuation">.</span>Console</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+myConsole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: hello world, to out</span>
+myConsole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello %s'</span><span class="token punctuation">,</span> <span class="token string">'world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: hello world, to out</span>
+myConsole<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Whoops, something bad happened'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: [Error: Whoops, something bad happened], to err</span>
+
+<span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">'Will Robinson'</span><span class="token punctuation">;</span>
+myConsole<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Danger </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">! Danger!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: Danger Will Robinson! Danger!, to err</span>
+</code></pre>
+
+      <button id="copy-button-28" class="copyButton" data-copy="const out = getStreamSomehow();
+const err = getStreamSomehow();
+const myConsole = new console.Console(out, err);
+
+myConsole.log('hello world');
+// Prints: hello world, to out
+myConsole.log('hello %s', 'world');
+// Prints: hello world, to out
+myConsole.error(new Error('Whoops, something bad happened'));
+// Prints: [Error: Whoops, something bad happened], to err
+
+const name = 'Will Robinson';
+myConsole.warn(`Danger ${name}! Danger!`);
+// Prints: Danger Will Robinson! Danger!, to err
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> mod <span class="token keyword">from</span> <span class="token string">"node:console"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="copy-button-0" class="copyButton" data-copy="import * as mod from &quot;node:console&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div></header><section class="mt-8" id="symbol-index"><div class="mb-6"><h2 class="ref-h2" id="Interfaces">Interfaces</h2><div class="namespaceSection"><div id="namespace_console" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div><div class="namespaceItemContent"><a href="/api/node/console/#Console" title="Console">Console</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="/api/node/console/#Console.property_console">Console</a></li><li><a href="/api/node/console/#Console.method_assert_0">assert</a></li><li><a href="/api/node/console/#Console.method_clear_0">clear</a></li><li><a href="/api/node/console/#Console.method_count_0">count</a></li><li><a href="/api/node/console/#Console.method_countreset_0">countReset</a></li><li><a href="/api/node/console/#Console.method_debug_0">debug</a></li><li><a href="/api/node/console/#Console.method_dir_0">dir</a></li><li><a href="/api/node/console/#Console.method_dirxml_0">dirxml</a></li><li><a href="/api/node/console/#Console.method_error_0">error</a></li><li><a href="/api/node/console/#Console.method_group_0">group</a></li><li><a href="/api/node/console/#Console.method_groupcollapsed_0">groupCollapsed</a></li><li><a href="/api/node/console/#Console.method_groupend_0">groupEnd</a></li><li><a href="/api/node/console/#Console.method_info_0">info</a></li><li><a href="/api/node/console/#Console.method_log_0">log</a></li><li><a href="/api/node/console/#Console.method_profile_0">profile</a></li><li><a href="/api/node/console/#Console.method_profileend_0">profileEnd</a></li><li><a href="/api/node/console/#Console.method_table_0">table</a></li><li><a href="/api/node/console/#Console.method_time_0">time</a></li><li><a href="/api/node/console/#Console.method_timeend_0">timeEnd</a></li><li><a href="/api/node/console/#Console.method_timelog_0">timeLog</a></li><li><a href="/api/node/console/#Console.method_timestamp_0">timeStamp</a></li><li><a href="/api/node/console/#Console.method_trace_0">trace</a></li><li><a href="/api/node/console/#Console.method_warn_0">warn</a></li></ul></div></div><div id="namespace_console_consoleconstructor" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div><div class="namespaceItemContent"><a href="/api/node/console/#console.ConsoleConstructor" title="console.ConsoleConstructor">console.ConsoleConstructor</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="/api/node/console/#console.ConsoleConstructor.property_prototype">prototype</a></li></ul></div></div><div id="namespace_console_consoleconstructoroptions" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div><div class="namespaceItemContent"><a href="/api/node/console/#console.ConsoleConstructorOptions" title="console.ConsoleConstructorOptions">console.ConsoleConstructorOptions</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_colormode">colorMode</a></li><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_groupindentation">groupIndentation</a></li><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_ignoreerrors">ignoreErrors</a></li><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_inspectoptions">inspectOptions</a></li><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_stderr">stderr</a></li><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_stdout">stdout</a></li></ul></div></div></div></div><div class="mb-6"><h2 class="ref-h2" id="Namespaces">Namespaces</h2><div class="namespaceSection"><div id="namespace_console-1" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Namespace bg-Namespace/15" title="Namespace">N</div><div class="text-Variable bg-Variable/15" title="Variable">v</div></div><div class="namespaceItemContent"><a href="/api/node/console/#console" title="console">console</a><div class="namespaceItemContentDoc"><span><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body markdown-summary"><p>The <code>console</code> module provides a simple debugging console that is similar to the
+JavaScript console mechanism provided by web browsers.</p></div></span></div><ul class="namespaceItemContentSubItems"></ul></div></div></div></div></section><hr class="my-10"><section id="symbol-docs"><article class="symbolGroup scroll-mt-16" id="Console"><div><h2 class="ref-h1"><span class="text-Interface">interface</span> <a href="#Console" class="font-bold !text-foreground-primary hover:underline">Console</a></h2><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token keyword">type</span> <span class="token class-name">Console</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:console"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="Console.copy-button-0" class="copyButton" data-copy="import { type Console } from &quot;node:console&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="space-y-7" id=""><section class="section" id="Console.properties"><h3 class="anchorable-heading mb-4">Properties <a href="#Console.properties" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class="anchorable docEntry" id="Console.property_console"><div class="docEntryHeader"><code class=""><a href="#Console.property_console" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">Console</a><span class="font-medium"><span>: <a href="/api/node/console/#console.ConsoleConstructor" class="link">console.ConsoleConstructor</a></span></span></code> </div></div></div></section><section class="section" id="Console.methods"><h3 class="anchorable-heading mb-4">Methods <a href="#Console.methods" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class="anchorable docEntry" id="Console.method_assert_0"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Console.method_assert_0" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">assert</a><span class="font-medium">(<div class="ml-4"><div><span>value<span>: <span>any</span></span></span>,</div><div><span>message?<span>: <span>string</span></span></span>,</div><div><span><span>...optionalParams</span><span>: <span>any</span>[]</span></span>,</div></div>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p><code>console.assert()</code> writes a message if <code>value</code> is <a href="https://developer.mozilla.org/en-US/docs/Glossary/Falsy">falsy</a> or omitted. It only
+writes a message and does not otherwise affect execution. The output always
+starts with <code>"Assertion failed"</code>. If provided, <code>message</code> is formatted using
+<a href="https://nodejs.org/docs/latest-v22.x/api/util.html#utilformatformat-args"><code>util.format()</code></a>.</p>
+<p>If <code>value</code> is <a href="https://developer.mozilla.org/en-US/docs/Glossary/Truthy">truthy</a>, nothing happens.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js">console<span class="token punctuation">.</span><span class="token function">assert</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">'does nothing'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">assert</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token string">'Whoops %s work'</span><span class="token punctuation">,</span> <span class="token string">'didn\'t'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Assertion failed: Whoops didn't work</span>
+
+console<span class="token punctuation">.</span><span class="token function">assert</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Assertion failed</span>
+</code></pre>
+
+      <button id="Console.copy-button-6" class="copyButton" data-copy="console.assert(true, 'does nothing');
+
+console.assert(false, 'Whoops %s work', 'didn\'t');
+// Assertion failed: Whoops didn't work
+
+console.assert();
+// Assertion failed
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div class="anchorable docEntry" id="Console.method_clear_1"><div class="docEntryHeader"><code class=""><a href="#Console.method_clear_1" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">clear</a><span class="font-medium">()<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>When <code>stdout</code> is a TTY, calling <code>console.clear()</code> will attempt to clear the
+TTY. When <code>stdout</code> is not a TTY, this method does nothing.</p>
+<p>The specific operation of <code>console.clear()</code> can vary across operating systems
+and terminal types. For most Linux operating systems, <code>console.clear()</code> operates similarly to the <code>clear</code> shell command. On Windows, <code>console.clear()</code> will clear only the output in the
+current terminal viewport for the Node.js
+binary.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_count_2"><div class="docEntryHeader"><code class=""><a href="#Console.method_count_2" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">count</a><span class="font-medium">(<span><span>label?<span>: <span>string</span></span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Maintains an internal counter specific to <code>label</code> and outputs to <code>stdout</code> the
+number of times <code>console.count()</code> has been called with the given <code>label</code>.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">1</span>
+<span class="token keyword">undefined</span>
+<span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token string">'default'</span><span class="token punctuation">)</span>
+<span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">2</span>
+<span class="token keyword">undefined</span>
+<span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span>
+<span class="token literal-property property">abc</span><span class="token operator">:</span> <span class="token number">1</span>
+<span class="token keyword">undefined</span>
+<span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token string">'xyz'</span><span class="token punctuation">)</span>
+<span class="token literal-property property">xyz</span><span class="token operator">:</span> <span class="token number">1</span>
+<span class="token keyword">undefined</span>
+<span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span>
+<span class="token literal-property property">abc</span><span class="token operator">:</span> <span class="token number">2</span>
+<span class="token keyword">undefined</span>
+<span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">default</span><span class="token operator">:</span> <span class="token number">3</span>
+<span class="token keyword">undefined</span>
+<span class="token operator">&gt;</span>
+</code></pre>
+
+      <button id="Console.copy-button-3" class="copyButton" data-copy="> console.count()
+default: 1
+undefined
+> console.count('default')
+default: 2
+undefined
+> console.count('abc')
+abc: 1
+undefined
+> console.count('xyz')
+xyz: 1
+undefined
+> console.count('abc')
+abc: 2
+undefined
+> console.count()
+default: 3
+undefined
+>
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div class="anchorable docEntry" id="Console.method_countreset_3"><div class="docEntryHeader"><code class=""><a href="#Console.method_countreset_3" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">countReset</a><span class="font-medium">(<span><span>label?<span>: <span>string</span></span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Resets the internal counter specific to <code>label</code>.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token literal-property property">abc</span><span class="token operator">:</span> <span class="token number">1</span>
+<span class="token keyword">undefined</span>
+<span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">countReset</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">undefined</span>
+<span class="token operator">&gt;</span> console<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token string">'abc'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token literal-property property">abc</span><span class="token operator">:</span> <span class="token number">1</span>
+<span class="token keyword">undefined</span>
+<span class="token operator">&gt;</span>
+</code></pre>
+
+      <button id="Console.copy-button-3" class="copyButton" data-copy="> console.count('abc');
+abc: 1
+undefined
+> console.countReset('abc');
+undefined
+> console.count('abc');
+abc: 1
+undefined
+>
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div class="anchorable docEntry" id="Console.method_debug_4"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Console.method_debug_4" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">debug</a><span class="font-medium">(<div class="ml-4"><div><span>message?<span>: <span>any</span></span></span>,</div><div><span><span>...optionalParams</span><span>: <span>any</span>[]</span></span>,</div></div>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>The <code>console.debug()</code> function is an alias for log.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_dir_5"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Console.method_dir_5" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">dir</a><span class="font-medium">(<div class="ml-4"><div><span>obj<span>: <span>any</span></span></span>,</div><div><span>options?<span>: <a href="/api/node/util/#InspectOptions" class="link">InspectOptions</a></span></span>,</div></div>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Uses <a href="https://nodejs.org/docs/latest-v22.x/api/util.html#utilinspectobject-options"><code>util.inspect()</code></a> on <code>obj</code> and prints the resulting string to <code>stdout</code>.
+This function bypasses any custom <code>inspect()</code> function defined on <code>obj</code>.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_dirxml_6"><div class="docEntryHeader"><code class=""><a href="#Console.method_dirxml_6" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">dirxml</a><span class="font-medium">(<span><span><span>...data</span><span>: <span>any</span>[]</span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>This method calls <code>console.log()</code> passing it the arguments received.
+This method does not produce any XML formatting.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_error_7"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Console.method_error_7" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">error</a><span class="font-medium">(<div class="ml-4"><div><span>message?<span>: <span>any</span></span></span>,</div><div><span><span>...optionalParams</span><span>: <span>any</span>[]</span></span>,</div></div>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Prints to <code>stderr</code> with newline. Multiple arguments can be passed, with the
+first used as the primary message and all additional used as substitution
+values similar to <a href="http://man7.org/linux/man-pages/man3/printf.3.html"><code>printf(3)</code></a>
+(the arguments are all passed to <a href="https://nodejs.org/docs/latest-v22.x/api/util.html#utilformatformat-args"><code>util.format()</code></a>).</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">const</span> code <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'error #%d'</span><span class="token punctuation">,</span> code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: error #5, to stderr</span>
+console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: error 5, to stderr</span>
+</code></pre>
+
+      <button id="Console.copy-button-3" class="copyButton" data-copy="const code = 5;
+console.error('error #%d', code);
+// Prints: error #5, to stderr
+console.error('error', code);
+// Prints: error 5, to stderr
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>If formatting elements (e.g. <code>%d</code>) are not found in the first string then
+<a href="https://nodejs.org/docs/latest-v22.x/api/util.html#utilinspectobject-options"><code>util.inspect()</code></a> is called on each argument and the
+resulting string values are concatenated. See <a href="https://nodejs.org/docs/latest-v22.x/api/util.html#utilformatformat-args"><code>util.format()</code></a>
+for more information.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_group_8"><div class="docEntryHeader"><code class=""><a href="#Console.method_group_8" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">group</a><span class="font-medium">(<span><span><span>...label</span><span>: <span>any</span>[]</span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Increases indentation of subsequent lines by spaces for <code>groupIndentation</code> length.</p>
+<p>If one or more <code>label</code>s are provided, those are printed first without the
+additional indentation.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_groupcollapsed_9"><div class="docEntryHeader"><code class=""><a href="#Console.method_groupcollapsed_9" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">groupCollapsed</a><span class="font-medium">(<span><span><span>...label</span><span>: <span>any</span>[]</span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>An alias for group.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_groupend_10"><div class="docEntryHeader"><code class=""><a href="#Console.method_groupend_10" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">groupEnd</a><span class="font-medium">()<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Decreases indentation of subsequent lines by spaces for <code>groupIndentation</code> length.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_info_11"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Console.method_info_11" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">info</a><span class="font-medium">(<div class="ml-4"><div><span>message?<span>: <span>any</span></span></span>,</div><div><span><span>...optionalParams</span><span>: <span>any</span>[]</span></span>,</div></div>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>The <code>console.info()</code> function is an alias for log.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_log_12"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Console.method_log_12" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">log</a><span class="font-medium">(<div class="ml-4"><div><span>message?<span>: <span>any</span></span></span>,</div><div><span><span>...optionalParams</span><span>: <span>any</span>[]</span></span>,</div></div>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Prints to <code>stdout</code> with newline. Multiple arguments can be passed, with the
+first used as the primary message and all additional used as substitution
+values similar to <a href="http://man7.org/linux/man-pages/man3/printf.3.html"><code>printf(3)</code></a>
+(the arguments are all passed to <a href="https://nodejs.org/docs/latest-v22.x/api/util.html#utilformatformat-args"><code>util.format()</code></a>).</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">const</span> count <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'count: %d'</span><span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: count: 5, to stdout</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'count:'</span><span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: count: 5, to stdout</span>
+</code></pre>
+
+      <button id="Console.copy-button-3" class="copyButton" data-copy="const count = 5;
+console.log('count: %d', count);
+// Prints: count: 5, to stdout
+console.log('count:', count);
+// Prints: count: 5, to stdout
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>See <a href="https://nodejs.org/docs/latest-v22.x/api/util.html#utilformatformat-args"><code>util.format()</code></a> for more information.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_table_13"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Console.method_table_13" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">table</a><span class="font-medium">(<div class="ml-4"><div><span>tabularData<span>: <span>any</span></span></span>,</div><div><span>properties?<span>: <span>readonly</span> <span>string</span>[]</span></span>,</div></div>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Try to construct a table with the columns of the properties of <code>tabularData</code> (or use <code>properties</code>) and rows of <code>tabularData</code> and log it. Falls back to just
+logging the argument if it can't be parsed as tabular.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token comment">// These can't be parsed as tabular data</span>
+console<span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Symbol()</span>
+
+console<span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// undefined</span>
+
+console<span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token string">'Y'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token string">'Z'</span><span class="token punctuation">,</span> <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ┌─────────┬─────┬─────┐</span>
+<span class="token comment">// │ (index) │  a  │  b  │</span>
+<span class="token comment">// ├─────────┼─────┼─────┤</span>
+<span class="token comment">// │    0    │  1  │ 'Y' │</span>
+<span class="token comment">// │    1    │ 'Z' │  2  │</span>
+<span class="token comment">// └─────────┴─────┴─────┘</span>
+
+console<span class="token punctuation">.</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token string">'Y'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token string">'Z'</span><span class="token punctuation">,</span> <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// ┌─────────┬─────┐</span>
+<span class="token comment">// │ (index) │  a  │</span>
+<span class="token comment">// ├─────────┼─────┤</span>
+<span class="token comment">// │    0    │  1  │</span>
+<span class="token comment">// │    1    │ 'Z' │</span>
+<span class="token comment">// └─────────┴─────┘</span>
+</code></pre>
+
+      <button id="Console.copy-button-3" class="copyButton" data-copy="// These can't be parsed as tabular data
+console.table(Symbol());
+// Symbol()
+
+console.table(undefined);
+// undefined
+
+console.table([{ a: 1, b: 'Y' }, { a: 'Z', b: 2 }]);
+// ┌─────────┬─────┬─────┐
+// │ (index) │  a  │  b  │
+// ├─────────┼─────┼─────┤
+// │    0    │  1  │ 'Y' │
+// │    1    │ 'Z' │  2  │
+// └─────────┴─────┴─────┘
+
+console.table([{ a: 1, b: 'Y' }, { a: 'Z', b: 2 }], ['a']);
+// ┌─────────┬─────┐
+// │ (index) │  a  │
+// ├─────────┼─────┤
+// │    0    │  1  │
+// │    1    │ 'Z' │
+// └─────────┴─────┘
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div class="anchorable docEntry" id="Console.method_time_14"><div class="docEntryHeader"><code class=""><a href="#Console.method_time_14" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">time</a><span class="font-medium">(<span><span>label?<span>: <span>string</span></span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Starts a timer that can be used to compute the duration of an operation. Timers
+are identified by a unique <code>label</code>. Use the same <code>label</code> when calling timeEnd to stop the timer and output the elapsed time in
+suitable time units to <code>stdout</code>. For example, if the elapsed
+time is 3869ms, <code>console.timeEnd()</code> displays "3.869s".</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_timeend_15"><div class="docEntryHeader"><code class=""><a href="#Console.method_timeend_15" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">timeEnd</a><span class="font-medium">(<span><span>label?<span>: <span>string</span></span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Stops a timer that was previously started by calling time and
+prints the result to <code>stdout</code>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js">console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'bunch-of-stuff'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Do a bunch of stuff.</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'bunch-of-stuff'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: bunch-of-stuff: 225.438ms</span>
+</code></pre>
+
+      <button id="Console.copy-button-3" class="copyButton" data-copy="console.time('bunch-of-stuff');
+// Do a bunch of stuff.
+console.timeEnd('bunch-of-stuff');
+// Prints: bunch-of-stuff: 225.438ms
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div class="anchorable docEntry" id="Console.method_timelog_16"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Console.method_timelog_16" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">timeLog</a><span class="font-medium">(<div class="ml-4"><div><span>label?<span>: <span>string</span></span></span>,</div><div><span><span>...data</span><span>: <span>any</span>[]</span></span>,</div></div>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>For a timer that was previously started by calling time, prints
+the elapsed time and other <code>data</code> arguments to <code>stdout</code>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js">console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'process'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token function">expensiveProcess1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Returns 42</span>
+console<span class="token punctuation">.</span><span class="token function">timeLog</span><span class="token punctuation">(</span><span class="token string">'process'</span><span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints "process: 365.227ms 42".</span>
+<span class="token function">doExpensiveProcess2</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'process'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="Console.copy-button-3" class="copyButton" data-copy="console.time('process');
+const value = expensiveProcess1(); // Returns 42
+console.timeLog('process', value);
+// Prints &quot;process: 365.227ms 42&quot;.
+doExpensiveProcess2(value);
+console.timeEnd('process');
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div class="anchorable docEntry" id="Console.method_trace_17"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Console.method_trace_17" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">trace</a><span class="font-medium">(<div class="ml-4"><div><span>message?<span>: <span>any</span></span></span>,</div><div><span><span>...optionalParams</span><span>: <span>any</span>[]</span></span>,</div></div>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Prints to <code>stderr</code> the string <code>'Trace: '</code>, followed by the <a href="https://nodejs.org/docs/latest-v22.x/api/util.html#utilformatformat-args"><code>util.format()</code></a>
+formatted message and stack trace to the current position in the code.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js">console<span class="token punctuation">.</span><span class="token function">trace</span><span class="token punctuation">(</span><span class="token string">'Show me'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: (stack trace will vary based on where trace is called)</span>
+<span class="token comment">//  Trace: Show me</span>
+<span class="token comment">//    at repl:2:9</span>
+<span class="token comment">//    at REPLServer.defaultEval (repl.js:248:27)</span>
+<span class="token comment">//    at bound (domain.js:287:14)</span>
+<span class="token comment">//    at REPLServer.runBound [as eval] (domain.js:300:12)</span>
+<span class="token comment">//    at REPLServer.&lt;anonymous&gt; (repl.js:412:12)</span>
+<span class="token comment">//    at emitOne (events.js:82:20)</span>
+<span class="token comment">//    at REPLServer.emit (events.js:169:7)</span>
+<span class="token comment">//    at REPLServer.Interface._onLine (readline.js:210:10)</span>
+<span class="token comment">//    at REPLServer.Interface._line (readline.js:549:8)</span>
+<span class="token comment">//    at REPLServer.Interface._ttyWrite (readline.js:826:14)</span>
+</code></pre>
+
+      <button id="Console.copy-button-3" class="copyButton" data-copy="console.trace('Show me');
+// Prints: (stack trace will vary based on where trace is called)
+//  Trace: Show me
+//    at repl:2:9
+//    at REPLServer.defaultEval (repl.js:248:27)
+//    at bound (domain.js:287:14)
+//    at REPLServer.runBound [as eval] (domain.js:300:12)
+//    at REPLServer.<anonymous> (repl.js:412:12)
+//    at emitOne (events.js:82:20)
+//    at REPLServer.emit (events.js:169:7)
+//    at REPLServer.Interface._onLine (readline.js:210:10)
+//    at REPLServer.Interface._line (readline.js:549:8)
+//    at REPLServer.Interface._ttyWrite (readline.js:826:14)
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div class="anchorable docEntry" id="Console.method_warn_18"><div class="docEntryHeader"><code class="inline-code-block"><a href="#Console.method_warn_18" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">warn</a><span class="font-medium">(<div class="ml-4"><div><span>message?<span>: <span>any</span></span></span>,</div><div><span><span>...optionalParams</span><span>: <span>any</span>[]</span></span>,</div></div>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>The <code>console.warn()</code> function is an alias for error.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_profile_19"><div class="docEntryHeader"><code class=""><a href="#Console.method_profile_19" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">profile</a><span class="font-medium">(<span><span>label?<span>: <span>string</span></span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>This method does not display anything unless used in the inspector. The <code>console.profile()</code>
+method starts a JavaScript CPU profile with an optional label until profileEnd
+is called. The profile is then added to the Profile panel of the inspector.</p>
+<div class="relative"><pre><code class="highlight notranslate language-js">console<span class="token punctuation">.</span><span class="token function">profile</span><span class="token punctuation">(</span><span class="token string">'MyLabel'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Some code</span>
+console<span class="token punctuation">.</span><span class="token function">profileEnd</span><span class="token punctuation">(</span><span class="token string">'MyLabel'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Adds the profile 'MyLabel' to the Profiles panel of the inspector.</span>
+</code></pre>
+
+      <button id="Console.copy-button-3" class="copyButton" data-copy="console.profile('MyLabel');
+// Some code
+console.profileEnd('MyLabel');
+// Adds the profile 'MyLabel' to the Profiles panel of the inspector.
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div class="anchorable docEntry" id="Console.method_profileend_20"><div class="docEntryHeader"><code class=""><a href="#Console.method_profileend_20" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">profileEnd</a><span class="font-medium">(<span><span>label?<span>: <span>string</span></span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>This method does not display anything unless used in the inspector. Stops the current
+JavaScript CPU profiling session if one has been started and prints the report to the
+Profiles panel of the inspector. See profile for an example.</p>
+<p>If this method is called without a label, the most recently started profile is stopped.</p>
+</div></div></div><div class="anchorable docEntry" id="Console.method_timestamp_21"><div class="docEntryHeader"><code class=""><a href="#Console.method_timestamp_21" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#Console">timeStamp</a><span class="font-medium">(<span><span>label?<span>: <span>string</span></span></span></span>)<span>: <span>void</span></span></span></code> </div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>This method does not display anything unless used in the inspector. The <code>console.timeStamp()</code>
+method adds an event with the label <code>'label'</code> to the Timeline panel of the inspector.</p>
+</div></div></div></div></section></div></div></div></article><hr class="my-10 last:hidden"><article class="symbolGroup scroll-mt-16" id="console.ConsoleConstructor"><div><h2 class="ref-h1"><span class="text-Interface">interface</span> <a href="#console.ConsoleConstructor" class="font-bold !text-foreground-primary hover:underline">console.ConsoleConstructor</a></h2><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token builtin">console</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:console"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="console.ConsoleConstructor.copy-button-0" class="copyButton" data-copy="import { console } from &quot;node:console&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="space-y-7" id=""><section class="section" id="console.ConsoleConstructor.properties"><h3 class="anchorable-heading mb-4">Properties <a href="#console.ConsoleConstructor.properties" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class="anchorable docEntry" id="console.ConsoleConstructor.property_prototype"><div class="docEntryHeader"><code class=""><a href="#console.ConsoleConstructor.property_prototype" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#console.ConsoleConstructor">prototype</a><span class="font-medium"><span>: <a href="/api/node/console/#Console" class="link">Console</a></span></span></code> </div></div></div></section></div></div></div></article><hr class="my-10 last:hidden"><article class="symbolGroup scroll-mt-16" id="console.ConsoleConstructorOptions"><div><h2 class="ref-h1"><span class="text-Interface">interface</span> <a href="#console.ConsoleConstructorOptions" class="font-bold !text-foreground-primary hover:underline">console.ConsoleConstructorOptions</a></h2><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token builtin">console</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:console"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="console.ConsoleConstructorOptions.copy-button-0" class="copyButton" data-copy="import { console } from &quot;node:console&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="space-y-7" id=""><section class="section" id="console.ConsoleConstructorOptions.properties"><h3 class="anchorable-heading mb-4">Properties <a href="#console.ConsoleConstructorOptions.properties" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class="anchorable docEntry" id="console.ConsoleConstructorOptions.property_stdout"><div class="docEntryHeader"><code class=""><a href="#console.ConsoleConstructorOptions.property_stdout" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#console.ConsoleConstructorOptions">stdout</a><span class="font-medium"><span>: <span>WritableStream</span></span></span></code> </div></div><div class="anchorable docEntry" id="console.ConsoleConstructorOptions.property_stderr"><div class="docEntryHeader"><code class=""><a href="#console.ConsoleConstructorOptions.property_stderr" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#console.ConsoleConstructorOptions">stderr</a><span class="font-medium"><span>: <span><span>WritableStream</span><span> | </span><span>undefined</span></span></span></span></code> <span><div class="text-optional border border-optional/50 bg-optional/5 inline-flex items-center gap-0.5 flex-none rounded-md leading-none text-sm py-1 px-2">optional</div></span></div></div><div class="anchorable docEntry" id="console.ConsoleConstructorOptions.property_ignoreerrors"><div class="docEntryHeader"><code class=""><a href="#console.ConsoleConstructorOptions.property_ignoreerrors" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#console.ConsoleConstructorOptions">ignoreErrors</a><span class="font-medium"><span>: <span><span>boolean</span><span> | </span><span>undefined</span></span></span></span></code> <span><div class="text-optional border border-optional/50 bg-optional/5 inline-flex items-center gap-0.5 flex-none rounded-md leading-none text-sm py-1 px-2">optional</div></span></div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Ignore errors when writing to the underlying streams.</p>
+</div></div></div><div class="anchorable docEntry" id="console.ConsoleConstructorOptions.property_colormode"><div class="docEntryHeader"><code class=""><a href="#console.ConsoleConstructorOptions.property_colormode" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#console.ConsoleConstructorOptions">colorMode</a><span class="font-medium"><span>: <div class="ml-indent"><span><span>boolean</span></span><br><span><span> | </span><span>"auto"</span></span><br><span><span> | </span><span>undefined</span></span></div></span></span></code> <span><div class="text-optional border border-optional/50 bg-optional/5 inline-flex items-center gap-0.5 flex-none rounded-md leading-none text-sm py-1 px-2">optional</div></span></div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Set color support for this <code>Console</code> instance. Setting to true enables coloring while inspecting
+values. Setting to <code>false</code> disables coloring while inspecting values. Setting to <code>'auto'</code> makes color
+support depend on the value of the <code>isTTY</code> property and the value returned by <code>getColorDepth()</code> on the
+respective stream. This option can not be used, if <code>inspectOptions.colors</code> is set as well.</p>
+</div></div></div><div class="anchorable docEntry" id="console.ConsoleConstructorOptions.property_inspectoptions"><div class="docEntryHeader"><code class=""><a href="#console.ConsoleConstructorOptions.property_inspectoptions" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#console.ConsoleConstructorOptions">inspectOptions</a><span class="font-medium"><span>: <span><a href="/api/node/util/#InspectOptions" class="link">InspectOptions</a><span> | </span><span>undefined</span></span></span></span></code> <span><div class="text-optional border border-optional/50 bg-optional/5 inline-flex items-center gap-0.5 flex-none rounded-md leading-none text-sm py-1 px-2">optional</div></span></div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Specifies options that are passed along to
+<a href="https://nodejs.org/docs/latest-v22.x/api/util.html#utilinspectobject-options"><code>util.inspect()</code></a>.</p>
+</div></div></div><div class="anchorable docEntry" id="console.ConsoleConstructorOptions.property_groupindentation"><div class="docEntryHeader"><code class=""><a href="#console.ConsoleConstructorOptions.property_groupindentation" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a><a class="font-bold font-lg link" href="/api/node/console/#console.ConsoleConstructorOptions">groupIndentation</a><span class="font-medium"><span>: <span><span>number</span><span> | </span><span>undefined</span></span></span></span></code> <span><div class="text-optional border border-optional/50 bg-optional/5 inline-flex items-center gap-0.5 flex-none rounded-md leading-none text-sm py-1 px-2">optional</div></span></div><div class="max-w-[75ch]"><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>Set group indentation.</p>
+</div></div></div></div></section></div></div></div></article><hr class="my-10 last:hidden"><article class="symbolGroup scroll-mt-16" id="console"><div><h2 class="ref-h1"><span class="text-Namespace">namespace</span> <a href="#console" class="font-bold !text-foreground-primary hover:underline">console</a></h2><div class="usageContent !my-4 px-4 pt-4 pb-5 bg-stone-100 rounded border border-gray-300"><h3>Usage in Deno</h3><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><div class="relative"><pre><code class="highlight notranslate language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token builtin">console</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"node:console"</span><span class="token punctuation">;</span>
+</code></pre>
+
+      <button id="console.copy-button-0" class="copyButton" data-copy="import { console } from &quot;node:console&quot;;
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div></div><div><div class="space-y-7" id=""><div><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p>The <code>console</code> module provides a simple debugging console that is similar to the
+JavaScript console mechanism provided by web browsers.</p>
+<p>The module exports two specific components:</p>
+<ul>
+<li>A <code>Console</code> class with methods such as <code>console.log()</code>, <code>console.error()</code> and <code>console.warn()</code> that can be used to write to any Node.js stream.</li>
+<li>A global <code>console</code> instance configured to write to <a href="https://nodejs.org/docs/latest-v22.x/api/process.html#processstdout"><code>process.stdout</code></a> and
+<a href="https://nodejs.org/docs/latest-v22.x/api/process.html#processstderr"><code>process.stderr</code></a>. The global <code>console</code> can be used without importing the <code>node:console</code> module.</li>
+</ul>
+<p><em><strong>Warning</strong></em>: The global console object's methods are neither consistently
+synchronous like the browser APIs they resemble, nor are they consistently
+asynchronous like all other Node.js streams. See the <a href="https://nodejs.org/docs/latest-v22.x/api/process.html#a-note-on-process-io"><code>note on process I/O</code></a> for
+more information.</p>
+<p>Example using the global <code>console</code>:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: hello world, to stdout</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello %s'</span><span class="token punctuation">,</span> <span class="token string">'world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: hello world, to stdout</span>
+console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Whoops, something bad happened'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints error message and stack trace to stderr:</span>
+<span class="token comment">//   Error: Whoops, something bad happened</span>
+<span class="token comment">//     at [eval]:5:15</span>
+<span class="token comment">//     at Script.runInThisContext (node:vm:132:18)</span>
+<span class="token comment">//     at Object.runInThisContext (node:vm:309:38)</span>
+<span class="token comment">//     at node:internal/process/execution:77:19</span>
+<span class="token comment">//     at [eval]-wrapper:6:22</span>
+<span class="token comment">//     at evalScript (node:internal/process/execution:76:60)</span>
+<span class="token comment">//     at node:internal/main/eval_string:23:3</span>
+
+<span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">'Will Robinson'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Danger </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">! Danger!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: Danger Will Robinson! Danger!, to stderr</span>
+</code></pre>
+
+      <button id="console.copy-button-24" class="copyButton" data-copy="console.log('hello world');
+// Prints: hello world, to stdout
+console.log('hello %s', 'world');
+// Prints: hello world, to stdout
+console.error(new Error('Whoops, something bad happened'));
+// Prints error message and stack trace to stderr:
+//   Error: Whoops, something bad happened
+//     at [eval]:5:15
+//     at Script.runInThisContext (node:vm:132:18)
+//     at Object.runInThisContext (node:vm:309:38)
+//     at node:internal/process/execution:77:19
+//     at [eval]-wrapper:6:22
+//     at evalScript (node:internal/process/execution:76:60)
+//     at node:internal/main/eval_string:23:3
+
+const name = 'Will Robinson';
+console.warn(`Danger ${name}! Danger!`);
+// Prints: Danger Will Robinson! Danger!, to stderr
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div><p>Example using the <code>Console</code> class:</p>
+<div class="relative"><pre><code class="highlight notranslate language-js"><span class="token keyword">const</span> out <span class="token operator">=</span> <span class="token function">getStreamSomehow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> err <span class="token operator">=</span> <span class="token function">getStreamSomehow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> myConsole <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">console<span class="token punctuation">.</span>Console</span><span class="token punctuation">(</span>out<span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+myConsole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: hello world, to out</span>
+myConsole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello %s'</span><span class="token punctuation">,</span> <span class="token string">'world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: hello world, to out</span>
+myConsole<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'Whoops, something bad happened'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: [Error: Whoops, something bad happened], to err</span>
+
+<span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">'Will Robinson'</span><span class="token punctuation">;</span>
+myConsole<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Danger </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">! Danger!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Prints: Danger Will Robinson! Danger!, to err</span>
+</code></pre>
+
+      <button id="console.copy-button-28" class="copyButton" data-copy="const out = getStreamSomehow();
+const err = getStreamSomehow();
+const myConsole = new console.Console(out, err);
+
+myConsole.log('hello world');
+// Prints: hello world, to out
+myConsole.log('hello %s', 'world');
+// Prints: hello world, to out
+myConsole.error(new Error('Whoops, something bad happened'));
+// Prints: [Error: Whoops, something bad happened], to err
+
+const name = 'Will Robinson';
+myConsole.warn(`Danger ${name}! Danger!`);
+// Prints: Danger Will Robinson! Danger!, to err
+" title="Copy">
+        <svg class="copy-icon" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="7" height="7" fill="none"></rect>
+          <rect x="6" y="6" width="7" height="7" fill="none"></rect>
+          <path d="M1.55566 2.7C1.55566 2.03726 2.09292 1.5 2.75566 1.5H8.75566C9.41841 1.5 9.95566 2.03726 9.95566 2.7V5.1H12.3557C13.0184 5.1 13.5557 5.63726 13.5557 6.3V12.3C13.5557 12.9627 13.0184 13.5 12.3557 13.5H6.35566C5.69292 13.5 5.15566 12.9627 5.15566 12.3V9.9H2.75566C2.09292 9.9 1.55566 9.36274 1.55566 8.7V2.7ZM6.35566 9.9V12.3H12.3557V6.3H9.95566V8.7C9.95566 9.36274 9.41841 9.9 8.75566 9.9H6.35566ZM8.75566 8.7V2.7H2.75566V8.7H8.75566Z" fill="currentColor"></path>
+        </svg>
+        <svg class="check-icon hidden" width="15" height="15" viewbox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 7.5L6.5 11L12 3" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div></div></div><section class="section" id="console.Interfaces"><h3 class="anchorable-heading mb-4">Interfaces <a href="#console.Interfaces" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="namespaceSection"><div id="console.namespace_console_consoleconstructor" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div><div class="namespaceItemContent"><a href="/api/node/console/#console.ConsoleConstructor" title="console.ConsoleConstructor">console.ConsoleConstructor</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="/api/node/console/#console.ConsoleConstructor.property_prototype">prototype</a></li></ul></div></div><div id="console.namespace_console_consoleconstructoroptions" class="namespaceItem"><div class="docNodeKindIcon"><div class="text-Interface bg-Interface/15" title="Interface">I</div></div><div class="namespaceItemContent"><a href="/api/node/console/#console.ConsoleConstructorOptions" title="console.ConsoleConstructorOptions">console.ConsoleConstructorOptions</a><div class="namespaceItemContentDoc"><span class="italic">No documentation available</span></div><ul class="namespaceItemContentSubItems"><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_colormode">colorMode</a></li><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_groupindentation">groupIndentation</a></li><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_ignoreerrors">ignoreErrors</a></li><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_inspectoptions">inspectOptions</a></li><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_stderr">stderr</a></li><li><a href="/api/node/console/#console.ConsoleConstructorOptions.property_stdout">stdout</a></li></ul></div></div></div></section><section class="section" id="console.see"><h3 class="anchorable-heading mb-4">See <a href="#console.see" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><ul class="see"><li><div data-color-mode="dark" data-light-theme="light" data-dark-theme="dark" class="markdown-body"><p><a href="https://github.com/nodejs/node/blob/v22.x/lib/console.js">source</a></p>
+</div></li></ul></section></div></div></div><div><h2 class="ref-h1"><span class="text-Variable">variable</span> <a href="#console" class="font-bold !text-foreground-primary hover:underline">console</a></h2><div><div class="space-y-7" id=""><section class="section" id="console.type"><h3 class="anchorable-heading mb-4">Type <a href="#console.type" class="anchor-link" aria-label="Anchor" tabindex="-1">#</a></h3><div class="space-y-8"><div class=" docEntry" id="console.variable_console"><div class="docEntryHeader"><code class=""><span class="font-medium"><a href="/api/node/console/#Console" class="link">Console</a></span></code> </div></div></div></section></div></div></div></article><hr class="my-10 last:hidden"></section></div></div></div><div class="mt-24"></div></article><section id="feedback-section" class="mt-16 pt-6 border-t border-t-foreground-tertiary"><form aria-live="polite" id="feedback-form"><div id="feedback-form__content" class="grid grid-cols-1 transition-all duration-300 grid-rows-[max-content_0fr] w-full items-start gap-2 overflow-hidden"><div class="flex flex-col sm:flex-row sm:items-center flex-wrap gap-x-4 gap-y-2"><h2 class="text-base font-semibold m-0 mr-auto">Did you find what you needed?</h2><input class="sr-only" id="feedback-yes" type="radio" name="feedback-vote" aria-label="Yes" value="yes" required=""><label class="btn" for="feedback-yes">Yes<svg aria-hidden="true" focusable="false" class="color-fg-muted" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M8.834.066c.763.087 1.5.295 2.01.884.505.581.656 1.378.656 2.3 0 .467-.087 1.119-.157 1.637L11.328 5h1.422c.603 0 1.174.085 1.668.333.508.254.911.679 1.137 1.2.453.998.438 2.447.188 4.316l-.04.306c-.105.79-.195 1.473-.313 2.033-.131.63-.315 1.209-.668 1.672C13.97 15.847 12.706 16 11 16c-1.848 0-3.234-.333-4.388-.653-.165-.045-.323-.09-.475-.133-.658-.186-1.2-.34-1.725-.415A1.75 1.75 0 0 1 2.75 16h-1A1.75 1.75 0 0 1 0 14.25v-7.5C0 5.784.784 5 1.75 5h1a1.75 1.75 0 0 1 1.514.872c.258-.105.59-.268.918-.508C5.853 4.874 6.5 4.079 6.5 2.75v-.5c0-1.202.994-2.337 2.334-2.184ZM4.5 13.3c.705.088 1.39.284 2.072.478l.441.125c1.096.305 2.334.598 3.987.598 1.794 0 2.28-.223 2.528-.549.147-.193.276-.505.394-1.07.105-.502.188-1.124.295-1.93l.04-.3c.25-1.882.189-2.933-.068-3.497a.921.921 0 0 0-.442-.48c-.208-.104-.52-.174-.997-.174H11c-.686 0-1.295-.577-1.206-1.336.023-.192.05-.39.076-.586.065-.488.13-.97.13-1.328 0-.809-.144-1.15-.288-1.316-.137-.158-.402-.304-1.048-.378C8.357 1.521 8 1.793 8 2.25v.5c0 1.922-.978 3.128-1.933 3.825a5.831 5.831 0 0 1-1.567.81ZM2.75 6.5h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg></label><input class="sr-only" id="feedback-no" type="radio" name="feedback-vote" aria-label="No" value="no" required=""><label class="btn" for="feedback-no">No<svg aria-hidden="true" focusable="false" viewbox="0 0 16 16" width="16" height="16" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;"><path d="M7.083 15.986c-.763-.087-1.499-.295-2.011-.884-.504-.581-.655-1.378-.655-2.299 0-.468.087-1.12.157-1.638l.015-.112H3.167c-.603 0-1.174-.086-1.669-.334a2.415 2.415 0 0 1-1.136-1.2c-.454-.998-.438-2.447-.188-4.316l.04-.306C.32 4.108.41 3.424.526 2.864c.132-.63.316-1.209.669-1.672C1.947.205 3.211.053 4.917.053c1.848 0 3.234.332 4.388.652l.474.133c.658.187 1.201.341 1.726.415a1.75 1.75 0 0 1 1.662-1.2h1c.966 0 1.75.784 1.75 1.75v7.5a1.75 1.75 0 0 1-1.75 1.75h-1a1.75 1.75 0 0 1-1.514-.872c-.259.105-.59.268-.919.508-.671.491-1.317 1.285-1.317 2.614v.5c0 1.201-.994 2.336-2.334 2.183Zm4.334-13.232c-.706-.089-1.39-.284-2.072-.479l-.441-.125c-1.096-.304-2.335-.597-3.987-.597-1.794 0-2.28.222-2.529.548-.147.193-.275.505-.393 1.07-.105.502-.188 1.124-.295 1.93l-.04.3c-.25 1.882-.19 2.933.067 3.497a.923.923 0 0 0 .443.48c.208.104.52.175.997.175h1.75c.685 0 1.295.577 1.205 1.335-.022.192-.049.39-.075.586-.066.488-.13.97-.13 1.329 0 .808.144 1.15.288 1.316.137.157.401.303 1.048.377.307.035.664-.237.664-.693v-.5c0-1.922.978-3.127 1.932-3.825a5.878 5.878 0 0 1 1.568-.809Zm1.75 6.798h1a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25h-1a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25Z"></path></svg></label></div><div id="feedback-more" class="hidden w-full overflow-hidden"><p class="font-semibold !mt-2">What can we do to improve this page?</p><div class="space-y-1"><textarea class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-comment" id="feedback-comment" maxlength="2000" placeholder="Your feedback will be posted as an issue in the denoland/docs GitHub repo"></textarea><p id="feedback-comment-count" class="text-xs text-gray-600 dark:text-gray-400 text-right mt-1">0 / 2000</p></div><div class="space-y-1"><label for="feedback-contact">GitHub username (<i>optional</i>)</label><input type="text" class="block w-full p-2 border border-foreground-tertiary bg-white dark:bg-background-primary rounded" name="feedback-contact" id="feedback-contact" aria-invalid="false" placeholder="username" value=""><p class="text-xs text-gray-600 dark:text-gray-400 italic mt-1">If provided, you'll be @mentioned in the created GitHub issue</p></div><button type="submit" class="btn  mt-4">Send us feedback</button></div></div><a rel="" class="mt-4 !underline underline-offset-2 text-xs block" target="_blank" href="/deploy/privacy_policy">Privacy policy</a></form></section></div></main>
