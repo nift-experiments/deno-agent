@@ -337,3 +337,7 @@ Read investigation/D2-PARITY-CONTRACT.md and source-route-accounting.json. Exact
 ## D3 checkpoint: representative architecture proven
 
 13 full pages match frozen HTML exactly after raw Nift composition; both distinct source models pass content/shared-template edits, literal syntax, route CRUD/stale HTML and incremental-vs-forced composition. Read investigation/D3-ARCHITECTURE-PROOF.md. Prepared reference JSON/types are committed generated inputs, with ownership and acquisition boundary disclosed. Next: D4 authored corpus and D5 all generated/special/publication artifacts, then whole-site parity and complete pipeline benchmarking. No Nift change.
+
+## D4 checkpoint: complete authored-family HTML
+
+330/330 authored-family pages match frozen publication bytes in both models. The sole Vento expression is supported explicitly without a general engine; normalized source accounting paths are converted back to original leading-slash runtime semantics. Read investigation/D4-AUTHORED-CORPUS.md. Next D5: all generated families and complete non-HTML publication/HTTP contract.

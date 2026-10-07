@@ -1,11 +1,899 @@
 [
   {
+    "route": "/runtime/run/",
+    "title": "/runtime/run/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/d14d527ed4583dfb5dd77613f3546128915bd0968b6409d2ec581d1a5d80628a.html",
+    "body": "html/runtime/run.html",
+    "suffix": "templates/fragments/5922cb548c5fd749aff7169c1cdcdc43ddb1b66ff3767e20cdb9de6e40754e8d.html"
+  },
+  {
+    "route": "/runtime/run/watch_mode/",
+    "title": "/runtime/run/watch_mode/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/8bd2fa486e973c7b623240bea2ab34c943930804a135122757eaa6ad8d74f363.html",
+    "body": "html/runtime/run/watch_mode.html",
+    "suffix": "templates/fragments/66554767718fdd8dbd0722393b99a67b5f76e382b74a76aebe6569cfe06dcdf0.html"
+  },
+  {
+    "route": "/runtime/cli_apps/",
+    "title": "/runtime/cli_apps/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/ef2fc90df13c30b51b59fb21a67f716469f97b4fd2eac1fcd393cca50c6a7dab.html",
+    "body": "html/runtime/cli_apps.html",
+    "suffix": "templates/fragments/e8f667b495cd4c5af4872f13d555e93bf55aa9ed01da25ef4d3550a1be15f36d.html"
+  },
+  {
+    "route": "/runtime/packages/publishing/",
+    "title": "/runtime/packages/publishing/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/e2d4fe15ca5c0535262a5c4fd6a9f8a86dcd25988183393b2228035be743d37d.html",
+    "body": "html/runtime/packages/publishing.html",
+    "suffix": "templates/fragments/da8c6575cea324dbe72dd4ec83647cf3caafbcea1937c742f4267a3b2c2d683c.html"
+  },
+  {
+    "route": "/runtime/packages/peer_dependencies/",
+    "title": "/runtime/packages/peer_dependencies/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4438c60360116284b18bdda23d7891075d3482dd40d28ae111972a4b25639f0c.html",
+    "body": "html/runtime/packages/peer_dependencies.html",
+    "suffix": "templates/fragments/f27157150741381d3d4b22f95264ea75069d6bb80b7bcfb0e610123f23b0f00a.html"
+  },
+  {
+    "route": "/runtime/packages/supply_chain/",
+    "title": "/runtime/packages/supply_chain/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/394647c777da6fdfb14cdb1ec0f73618a8f0b0c23d4733eb34623f85a1958fc8.html",
+    "body": "html/runtime/packages/supply_chain.html",
+    "suffix": "templates/fragments/3069b076f40835a50431adc71c88877699e26b1de887b9032d2f1a8a20464ccf.html"
+  },
+  {
+    "route": "/runtime/packages/",
+    "title": "/runtime/packages/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a6430594bd65bb4c34f1966dbdd1d4eb33ed027a3ef712880b9e5ebbf68d41a4.html",
+    "body": "html/runtime/packages.html",
+    "suffix": "templates/fragments/01804ae2dae25cd7a48e51181a7c9185ec5ac9c31c31c0292e04dfae14d2178a.html"
+  },
+  {
+    "route": "/runtime/packages/private_repositories/",
+    "title": "/runtime/packages/private_repositories/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/35cb906e51e6708532455e81914505802eaba9a9574e99624abf7ec4ea8cb827.html",
+    "body": "html/runtime/packages/private_repositories.html",
+    "suffix": "templates/fragments/6819d092553db9b565eba90be393b90a87584f8bc0d319ccb1226e963ea139d5.html"
+  },
+  {
+    "route": "/runtime/fundamentals/cron/",
+    "title": "/runtime/fundamentals/cron/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/03206174dfc0c7be62df2d95155b2465feb2cb7e4f9613bebe5a48391fa1fe16.html",
+    "body": "html/runtime/fundamentals/cron.html",
+    "suffix": "templates/fragments/da76b3c813fe4e77e45428d675e95fe636f1be46876b23e6d1cdcbc17bdb1be9.html"
+  },
+  {
+    "route": "/runtime/fundamentals/stability_and_releases/",
+    "title": "/runtime/fundamentals/stability_and_releases/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/dfc2488fe74951a9370d34c8f413b6e32736cbb44c0b38b1bb94aae94af7039a.html",
+    "body": "html/runtime/fundamentals/stability_and_releases.html",
+    "suffix": "templates/fragments/98bb061838fc86be32e0a6565a290cf76a4f6312969c00903b48f97b933917c5.html"
+  },
+  {
+    "route": "/runtime/fundamentals/open_telemetry/",
+    "title": "/runtime/fundamentals/open_telemetry/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/515ca471f8b0648498ba53ec5f779e1df7f71826247d14998d418366a4ee63e3.html",
+    "body": "html/runtime/fundamentals/open_telemetry.html",
+    "suffix": "templates/fragments/9b74d529565ccc75f61bda43d0442244e2dc22b6a2d69083660e2d7c4db01e9e.html"
+  },
+  {
+    "route": "/runtime/fundamentals/security/",
+    "title": "/runtime/fundamentals/security/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a29f2959d12cce3554238599955236a911c4c39a10d25c6eec0b10243a961492.html",
+    "body": "html/runtime/fundamentals/security.html",
+    "suffix": "templates/fragments/1b19879d3af209c0e725d5ca8c9ee39ae49aa6b70db3e1578a3c4d89f51c58bf.html"
+  },
+  {
+    "route": "/runtime/fundamentals/typescript/",
+    "title": "/runtime/fundamentals/typescript/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7b8c6653f45e504967c1eb3e5c4eff2baf6aae794767d78dbd252420a9a19bd4.html",
+    "body": "html/runtime/fundamentals/typescript.html",
+    "suffix": "templates/fragments/36463c1a806c848de75f871e75e644587b98998574bfd266b27663ba604a39f5.html"
+  },
+  {
+    "route": "/runtime/fundamentals/web_dev/",
+    "title": "/runtime/fundamentals/web_dev/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9089fc0fdcab94d26becf2f6ff0fdbba8b1035e5f235da7cd2cdc3cb4ab6001f.html",
+    "body": "html/runtime/fundamentals/web_dev.html",
+    "suffix": "templates/fragments/df7ea986f09fd403de963962c5aeb0758b761c0bb249825251aa4f9ff4d2a4e2.html"
+  },
+  {
+    "route": "/runtime/fundamentals/modules/",
+    "title": "/runtime/fundamentals/modules/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/ff0ee33496683e16c393b89cdfc60c5df34c4a14a3b42d5f55cebfb896f97047.html",
+    "body": "html/runtime/fundamentals/modules.html",
+    "suffix": "templates/fragments/4b5b8840f419f555de98c976e41eb6e77cee7c7ecb6e28636ab6061c63de0c00.html"
+  },
+  {
+    "route": "/runtime/fundamentals/configuration/",
+    "title": "/runtime/fundamentals/configuration/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/5d7525274e99ea773caf8f7973c4ed8760ca98aff842b9532c5aebd6a14b08ad.html",
+    "body": "html/runtime/fundamentals/configuration.html",
+    "suffix": "templates/fragments/42f81f7df65f95ec1ef0b89d6ecaad33b13310bed4c1858f2b71a9722d640f71.html"
+  },
+  {
+    "route": "/runtime/fundamentals/ffi/",
+    "title": "/runtime/fundamentals/ffi/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6c86272abdcb6101bb89b67962daf87d73c608b84fd9692f770e5cb5a06a07a7.html",
+    "body": "html/runtime/fundamentals/ffi.html",
+    "suffix": "templates/fragments/6864267c0b945849d80a08116f11ec3bb175fa0ec703f472aa8f4ccd1d9bbbdd.html"
+  },
+  {
+    "route": "/runtime/fundamentals/debugging/",
+    "title": "/runtime/fundamentals/debugging/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b28def14f7be20343ac43873af34f7827ba3a3ad34e33ea32b4c7a12cfcd32de.html",
+    "body": "html/runtime/fundamentals/debugging.html",
+    "suffix": "templates/fragments/33ff5fdcd8de0b7be39dc1f54f1a41bfb9bb5e6b802f16d3299f2cca46a6b231.html"
+  },
+  {
+    "route": "/runtime/fundamentals/cpu_profiling/",
+    "title": "/runtime/fundamentals/cpu_profiling/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/2cc4b68ebe805fdc2ca0d2da566a59725941b89f4a52ce9d28e7004f7afe1316.html",
+    "body": "html/runtime/fundamentals/cpu_profiling.html",
+    "suffix": "templates/fragments/256cc5cde4c7b4450cd323ae22545acb42de548b84dcf5ec757ee6f85b77e354.html"
+  },
+  {
+    "route": "/runtime/fundamentals/http_server/",
+    "title": "/runtime/fundamentals/http_server/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/12cc3c16cfb85df14bb87196964c13e62755149ccdf18ff16bd10b96979bd962.html",
+    "body": "html/runtime/fundamentals/http_server.html",
+    "suffix": "templates/fragments/76716b74bdbae45159593044b20b2016be62770aa61e6847ac300bf92e4ac9e0.html"
+  },
+  {
+    "route": "/runtime/fundamentals/node/",
+    "title": "/runtime/fundamentals/node/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7967f41ecdfc367f2f1c2223530a3d4b8d349d7ebecab20e4f248df5e23a22df.html",
+    "body": "html/runtime/fundamentals/node.html",
+    "suffix": "templates/fragments/4075d4b1b8f69dd206b1ffa7e738afe71d81e5a24ab3a538ca4b0de19d480461.html"
+  },
+  {
+    "route": "/runtime/fundamentals/workspaces/",
+    "title": "/runtime/fundamentals/workspaces/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b8f33c103ea944efb33f4872c268294d695710d539e8cde646b29f2f68e5fe36.html",
+    "body": "html/runtime/fundamentals/workspaces.html",
+    "suffix": "templates/fragments/0ac2f116dd9dba5dd3babf6ff215232575ed36c42d5cd36b11d6d5f258ca95cf.html"
+  },
+  {
+    "route": "/runtime/desktop/serving/",
+    "title": "/runtime/desktop/serving/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/2657ad954b29ed0a866159f12710c0aac3055513b063b1e71620060b598dac62.html",
+    "body": "html/runtime/desktop/serving.html",
+    "suffix": "templates/fragments/c237ccc169e9b0756e40beb4fc1fc904e8b5f8ad045fc8984fb9d958dc93116f.html"
+  },
+  {
+    "route": "/runtime/desktop/hmr/",
+    "title": "/runtime/desktop/hmr/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/fa1cb753500447a5b066e0f756f78d39c7acfdda4144e828e6b4273a76f3e8a8.html",
+    "body": "html/runtime/desktop/hmr.html",
+    "suffix": "templates/fragments/f0b5c75a529cd0455f75c6218eb1500cf7b2c399f4e8248faa30acc404f2e60a.html"
+  },
+  {
+    "route": "/runtime/desktop/auto_update/",
+    "title": "/runtime/desktop/auto_update/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c5f42867eeff6f23b6b70d6d82947f4f9f159d4128125cf9a2b525fe64b70551.html",
+    "body": "html/runtime/desktop/auto_update.html",
+    "suffix": "templates/fragments/826d130f2403ed77572972735f4f550269f18c53169be061a03bf35784eb7b67.html"
+  },
+  {
+    "route": "/runtime/desktop/tray_and_dock/",
+    "title": "/runtime/desktop/tray_and_dock/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/2856bf3f0d2c86bd006478589eb45b2f0a6033348d809c4741f6f06cd2abc2c9.html",
+    "body": "html/runtime/desktop/tray_and_dock.html",
+    "suffix": "templates/fragments/72464e36665674e08038f4296fcf34779049575cf4febc8c01817fe900785941.html"
+  },
+  {
+    "route": "/runtime/desktop/comparison/",
+    "title": "/runtime/desktop/comparison/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6b8f428cb45e7fdb5170f3b936a1d698083b5098ad5d01b2067f8d91e24e426a.html",
+    "body": "html/runtime/desktop/comparison.html",
+    "suffix": "templates/fragments/66760388f61f88571d32b817529f68137ae66d19247aa9a1becf5858f32363ea.html"
+  },
+  {
+    "route": "/runtime/desktop/webgpu/",
+    "title": "/runtime/desktop/webgpu/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/383713018ebf89b8c505b541e9f8e6b7aabdf27dcf8b6169080613fdfa2a78b9.html",
+    "body": "html/runtime/desktop/webgpu.html",
+    "suffix": "templates/fragments/b9738932138b20beb371fbe6f2f6149546a7418f9fc2afe89a89b2951b173c63.html"
+  },
+  {
+    "route": "/runtime/desktop/backends/",
+    "title": "/runtime/desktop/backends/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9f85fcf54a54e60fcc8ce8adcd03b3c4229e71ba7bd6cf48c03cc5a9995d166a.html",
+    "body": "html/runtime/desktop/backends.html",
+    "suffix": "templates/fragments/46cf9b55bcdd5b4d1d48ec847a9a1041e7c91229507c11b554e8d78a6e8b6296.html"
+  },
+  {
+    "route": "/runtime/desktop/devtools/",
+    "title": "/runtime/desktop/devtools/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f3559043b233ec2c6a0c763a08cbd9cb676678a37d67180b1a8ba97750e712a5.html",
+    "body": "html/runtime/desktop/devtools.html",
+    "suffix": "templates/fragments/261e6db26ffdfdcb02950dc80b1700c755604933279ea7b28d3a19423432453d.html"
+  },
+  {
+    "route": "/runtime/desktop/distribution/",
+    "title": "/runtime/desktop/distribution/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/5f981e0b9140b9222f2d629017496dd55f55bc7a6779ec73c6557dabb8dbb285.html",
+    "body": "html/runtime/desktop/distribution.html",
+    "suffix": "templates/fragments/701f556d474de413f0547d8c52190fc95b56b3bfc976fef8fc152e79e7516f40.html"
+  },
+  {
+    "route": "/runtime/desktop/dialogs/",
+    "title": "/runtime/desktop/dialogs/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/e1dfc598b39e66d606d12087ef7096685ac9b3b09b761b8e6d09c1fa917b6790.html",
+    "body": "html/runtime/desktop/dialogs.html",
+    "suffix": "templates/fragments/282a9676d58127ee344e17de88e229a9aa1cd951ba7de9b7cdba79e4a2ab59d9.html"
+  },
+  {
+    "route": "/runtime/desktop/notifications/",
+    "title": "/runtime/desktop/notifications/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/e7b07618acb9c9a3694b3b8b4d40bddcb9d6418ad351a2f1189532067ba6ccc4.html",
+    "body": "html/runtime/desktop/notifications.html",
+    "suffix": "templates/fragments/735763a0c071f2f8a56a1894d67fd0c9e4e88c8804974210a5969c2ed5b83861.html"
+  },
+  {
+    "route": "/runtime/desktop/error_reporting/",
+    "title": "/runtime/desktop/error_reporting/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/3fdf1b998b786d77f9a6b33891bf7615a7ea1add662220d8498f741e0fce013e.html",
+    "body": "html/runtime/desktop/error_reporting.html",
+    "suffix": "templates/fragments/06b6a1e38174db207e858003c775f5fbd2db504b39a48d427dd3372695ce58e2.html"
+  },
+  {
+    "route": "/runtime/desktop/",
+    "title": "/runtime/desktop/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/e08b002ba2e3332d27ae664bfb5efad947ac8912e64e87b5439b2b6b32d3ba19.html",
+    "body": "html/runtime/desktop.html",
+    "suffix": "templates/fragments/b3178924af2ecf3bccff568f18b113351d2b66960f348329d71bd9063ea8e15d.html"
+  },
+  {
+    "route": "/runtime/desktop/bindings/",
+    "title": "/runtime/desktop/bindings/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/ce22f5c7c3b70ee2d7e9df3daea194a8560cfbb4c46095bbf36c47d47d582a0d.html",
+    "body": "html/runtime/desktop/bindings.html",
+    "suffix": "templates/fragments/f9987bc22497c81cb46811f8a30abcf75fd3f29657dd89169d879efd526746be.html"
+  },
+  {
+    "route": "/runtime/desktop/configuration/",
+    "title": "/runtime/desktop/configuration/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9145e471d9046523fe46bfd7d6b3282e60f6d91349a12127ed62964d2b469302.html",
+    "body": "html/runtime/desktop/configuration.html",
+    "suffix": "templates/fragments/2ed665f109b60a7aad543ec8db94b0b9a407e337d11b264720f3152b81f6ceb3.html"
+  },
+  {
+    "route": "/runtime/desktop/frameworks/",
+    "title": "/runtime/desktop/frameworks/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/0005ce6a5779e2370e5e3ebf87c31879e21cd61cd25560956462b35808cd451c.html",
+    "body": "html/runtime/desktop/frameworks.html",
+    "suffix": "templates/fragments/1910923f41d39993c7a7479db9445274d39f861bab02e98eda9d4c2ba7cce1d7.html"
+  },
+  {
+    "route": "/runtime/desktop/menus/",
+    "title": "/runtime/desktop/menus/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/fc03b3fe1cc002be4c03120ca3236c23c2cf69a1e9c64a16f3ae50b4e77a7b0a.html",
+    "body": "html/runtime/desktop/menus.html",
+    "suffix": "templates/fragments/ca3cfdd43f0b38f2e0e6ef6a7e0cc0ed600c19594f6f374906370ab056168e22.html"
+  },
+  {
+    "route": "/runtime/desktop/windows/",
+    "title": "/runtime/desktop/windows/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/ef7991ab97a92ca772b4bf8da9263a7cb6536f26f8f1138224a18f437ad24de6.html",
+    "body": "html/runtime/desktop/windows.html",
+    "suffix": "templates/fragments/eaa4b7d10bb64bf8758602a0ca5417050bc6673c088289d41ca7386e58395a44.html"
+  },
+  {
+    "route": "/runtime/reference/jsx/",
+    "title": "/runtime/reference/jsx/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/24035eb89bc6f903e78eb9d8de557bbbb835cda83d6cb79f00f95b2d3fe4d5d0.html",
+    "body": "html/runtime/reference/jsx.html",
+    "suffix": "templates/fragments/e89fe83c5352e23deb21cab6d9f4c3dd01e9fc0db1eae4a74d886111f7b6a144.html"
+  },
+  {
+    "route": "/runtime/reference/env_variables/",
+    "title": "/runtime/reference/env_variables/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6cb1f0d4754c7c61949c85cd421bccc9de0e9f54085411ca1ccd761d6653c3fb.html",
+    "body": "html/runtime/reference/env_variables.html",
+    "suffix": "templates/fragments/238ebb7db80a1d799ac159889cb4a6edf195702220fe37636bde8b15866adda6.html"
+  },
+  {
+    "route": "/runtime/reference/continuous_integration/",
+    "title": "/runtime/reference/continuous_integration/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a8a00d6594766bb3c77905f602798b08a095381228856df46b9c3c1793f84cfe.html",
+    "body": "html/runtime/reference/continuous_integration.html",
+    "suffix": "templates/fragments/a37e8471dbc2d39a050734b7a119718fc74fb665c2904891af5f2e490d8679a3.html"
+  },
+  {
+    "route": "/runtime/reference/cli/env_variables/",
+    "title": "/runtime/reference/cli/env_variables/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4e575ce96e25fbf982aa363e216dfad9e4c114e66bdd85475ddbdb07d9fb9587.html",
+    "body": "html/runtime/reference/cli/env_variables.html",
+    "suffix": "templates/fragments/7c69fb0ab2a59f9e063bbaa70f555648f214726c4b028eec547db3c119314d53.html"
+  },
+  {
+    "route": "/runtime/reference/cli/coverage/",
+    "title": "/runtime/reference/cli/coverage/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/cdbaa79249d6c771b3d4e33dd7948ce31297b913889d852258c0bd4f7abd9894.html",
+    "body": "html/runtime/reference/cli/coverage.html",
+    "suffix": "templates/fragments/2eb47b157d8f2af03644b40b548f46826b4eee72496552e0f18192ff147fd47f.html"
+  },
+  {
+    "route": "/runtime/reference/cli/x/",
+    "title": "/runtime/reference/cli/x/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f582156716a5bfadcfe10cc7db207e1d949d3c12af92ba8a7618d7f5d132e083.html",
+    "body": "html/runtime/reference/cli/x.html",
+    "suffix": "templates/fragments/244bd64a15f336ab12c2c6cef646c1948e53fb789a239b64a2507cea4ccc7b87.html"
+  },
+  {
+    "route": "/runtime/reference/cli/lsp/",
+    "title": "/runtime/reference/cli/lsp/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/2fe2793634e1f844558888fc46f851e0230f7263e3b6c6e7adab7d507741edf0.html",
+    "body": "html/runtime/reference/cli/lsp.html",
+    "suffix": "templates/fragments/258d0a36280e92bdb59ead0128e54d99da64b289047252d4eac02132ad38dac1.html"
+  },
+  {
+    "route": "/runtime/reference/cli/bench/",
+    "title": "/runtime/reference/cli/bench/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c40ed77a5d5632c6a1a72ff313c36c1e87080f17c1723772976bfb0a4749ceb7.html",
+    "body": "html/runtime/reference/cli/bench.html",
+    "suffix": "templates/fragments/6742f5036046b150276fbb7eee65401bed0f0432f3d3f681f387a6bde0698f10.html"
+  },
+  {
+    "route": "/runtime/reference/cli/upgrade/",
+    "title": "/runtime/reference/cli/upgrade/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/cd090501dc2cef241af909d2bc9ad9ac5cf53aab9edb7c2cc366f7ee9f6d4866.html",
+    "body": "html/runtime/reference/cli/upgrade.html",
+    "suffix": "templates/fragments/5f87011b3e12820731442981392fe56c83e7cef261b6c360d25368c966af61fd.html"
+  },
+  {
+    "route": "/runtime/reference/cli/clean/",
+    "title": "/runtime/reference/cli/clean/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c316613cdee24a96e482affd3844f8a799f07fbbaa380ab059c0b15bf406e8a2.html",
+    "body": "html/runtime/reference/cli/clean.html",
+    "suffix": "templates/fragments/928370afdcfe087d0c49c42957a4d024e84886b7d585a014686c70d408ae63af.html"
+  },
+  {
     "route": "/runtime/reference/cli/run/",
     "title": "/runtime/reference/cli/run/",
     "source_model": "maintained HTML",
     "prefix": "templates/fragments/f954b88a5ff7c8fd4f505ffe8313ec9189d003433002008e1fade9ebfdf9908a.html",
     "body": "html/runtime/reference/cli/run.html",
     "suffix": "templates/fragments/6b358efb05895d628aba77a01f14c3b46b8bd5a5ec3b3d222f6217b7b41f32f7.html"
+  },
+  {
+    "route": "/runtime/reference/cli/bundle/",
+    "title": "/runtime/reference/cli/bundle/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/52401bd52c13cbda6f9f1de82de639f29ce1114f8bc2486ddbd847cbbb770a99.html",
+    "body": "html/runtime/reference/cli/bundle.html",
+    "suffix": "templates/fragments/c2feec773263320ea9e90e7ee6aafbff1a07b90a3ef4dcae15d446f0f577ef14.html"
+  },
+  {
+    "route": "/runtime/reference/cli/info/",
+    "title": "/runtime/reference/cli/info/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/19b515fad2d9e3040af74412fb212da4ea7c37b468d8c6e593a53b49ef78bf22.html",
+    "body": "html/runtime/reference/cli/info.html",
+    "suffix": "templates/fragments/53665ad4b3e116c343604964b5a39e9ea1af2bb16904aadc45402e4a8c6e3e0d.html"
+  },
+  {
+    "route": "/runtime/reference/cli/task/",
+    "title": "/runtime/reference/cli/task/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/cfd93830410723e202b66c265c0ce7d28b1356f302a1dd2d0d761c1da324eee8.html",
+    "body": "html/runtime/reference/cli/task.html",
+    "suffix": "templates/fragments/3977f9f66733aad99c2256a38f88496b200d691352c63c8562905057e424ced3.html"
+  },
+  {
+    "route": "/runtime/reference/cli/watch/",
+    "title": "/runtime/reference/cli/watch/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/e74efeeef819a2e176d00307199beb50fec256fa952556d59ef3d430029606c4.html",
+    "body": "html/runtime/reference/cli/watch.html",
+    "suffix": "templates/fragments/36237020c215872cb3c392129614e96bd596dc8a35ba0fc6510485d7da5c8104.html"
+  },
+  {
+    "route": "/runtime/reference/cli/add/",
+    "title": "/runtime/reference/cli/add/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/51603107fade8b2327c263d8f69cc526baafa5634ec2006c849e51c1e587c947.html",
+    "body": "html/runtime/reference/cli/add.html",
+    "suffix": "templates/fragments/79631166660a3e4cd07164161f190933224238b74f2d0a67efcfb88132aa7639.html"
+  },
+  {
+    "route": "/runtime/reference/cli/audit/",
+    "title": "/runtime/reference/cli/audit/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/36b41567a1cf8e5d557e5ff6bb9312b63fad28bf7512a2159d84f3a9e05e0ee5.html",
+    "body": "html/runtime/reference/cli/audit.html",
+    "suffix": "templates/fragments/894114456327c09f539962d2892219dcba64e1a6455d22b37dca74f03244c1f6.html"
+  },
+  {
+    "route": "/runtime/reference/cli/compile/",
+    "title": "/runtime/reference/cli/compile/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4f8391fcaf9438e188635fbced5e83f85d2ce7c64b076d4741c906d4117377f6.html",
+    "body": "html/runtime/reference/cli/compile.html",
+    "suffix": "templates/fragments/64794104ca97adaa27ecfc0b8180269abf3e25918b8d4290602d6690ba4ed48f.html"
+  },
+  {
+    "route": "/runtime/reference/cli/uninstall/",
+    "title": "/runtime/reference/cli/uninstall/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/447bfd0e4c9dd83625c48c560a746a2c87b86c5678742a11079426751d60ba81.html",
+    "body": "html/runtime/reference/cli/uninstall.html",
+    "suffix": "templates/fragments/95756a4070e07eb12da2ca3f80464e6756ae5e2c4f863106b9fff6e67d1a8168.html"
+  },
+  {
+    "route": "/runtime/reference/cli/lint/",
+    "title": "/runtime/reference/cli/lint/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/bf4b9e158af3f88d205fc03327a3a69bef45bd36b34d2860c5d28f4019a9e863.html",
+    "body": "html/runtime/reference/cli/lint.html",
+    "suffix": "templates/fragments/1605f2edf49d16b8b571c75228b3cc80f394ff8023026a673765d21db1d6de53.html"
+  },
+  {
+    "route": "/runtime/reference/cli/sandbox/",
+    "title": "/runtime/reference/cli/sandbox/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/dab10605d796b2d4073865d506c56871b4a9233c4b4d9f402395899e89f42c6f.html",
+    "body": "html/runtime/reference/cli/sandbox.html",
+    "suffix": "templates/fragments/69a4124a70b25014568ee7bde29f83c4356389b1db492f4df7484b5f8f213254.html"
+  },
+  {
+    "route": "/runtime/reference/cli/unlink/",
+    "title": "/runtime/reference/cli/unlink/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b382039c07a0eb680bee4c5f25d1a6d99a370b165a8d4321016779fbd2ece044.html",
+    "body": "html/runtime/reference/cli/unlink.html",
+    "suffix": "templates/fragments/335dfaaca796c584a4e986b918f2b0dcad834353bf4d761dd3ae97770ade2945.html"
+  },
+  {
+    "route": "/runtime/reference/cli/link/",
+    "title": "/runtime/reference/cli/link/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/63ad5e1edcaa92efce447bdbd3b42527dcc3f8e3447295d277a66ea89912559b.html",
+    "body": "html/runtime/reference/cli/link.html",
+    "suffix": "templates/fragments/7fe53672ef5130dfe4a7edc6c5913b1f10b564d13ca465a46139e4f9d029cd69.html"
+  },
+  {
+    "route": "/runtime/reference/cli/doc/",
+    "title": "/runtime/reference/cli/doc/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/850bc2ea14ca7da2e195817581371126708fad439905769a78fc52b40521d21b.html",
+    "body": "html/runtime/reference/cli/doc.html",
+    "suffix": "templates/fragments/86c76eb27dbb2151112e1f9360c7b2e2270cfe75ff5f7695e1ef439e63953a8c.html"
+  },
+  {
+    "route": "/runtime/reference/cli/ci/",
+    "title": "/runtime/reference/cli/ci/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/8bf1c5c4ee71e1c90f77c2e4ef8688a824df42beb487a7d47a972c1a63d71f3f.html",
+    "body": "html/runtime/reference/cli/ci.html",
+    "suffix": "templates/fragments/11f16e8f2846e247ffc336e52e16adcfb93db96f3dba3856ecc2731847b72781.html"
+  },
+  {
+    "route": "/runtime/reference/cli/update/",
+    "title": "/runtime/reference/cli/update/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f1ea7cff90a5325c1c774a8dad28b0e4e73eb4e12d483ecfac709f844bf990d5.html",
+    "body": "html/runtime/reference/cli/update.html",
+    "suffix": "templates/fragments/7fe7f863ef43a47a4c60ea8c85c539b8401f21ba5bdf57c87395491739fabf28.html"
+  },
+  {
+    "route": "/runtime/reference/cli/remove/",
+    "title": "/runtime/reference/cli/remove/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/07513640750b00fb5ed3f3e32b15f85f284b1053994c5040e6f55283234be8ea.html",
+    "body": "html/runtime/reference/cli/remove.html",
+    "suffix": "templates/fragments/90f985777dbb60c24082d4a1083359cd9a7f64d7a19643de29dc77a5e29a8460.html"
+  },
+  {
+    "route": "/runtime/reference/cli/jupyter/",
+    "title": "/runtime/reference/cli/jupyter/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/fc6fc30289ba9508efe6a0208c1c831faa4db80d4ad8202547e626c19fecca06.html",
+    "body": "html/runtime/reference/cli/jupyter.html",
+    "suffix": "templates/fragments/9d6b38444cfd15ecb7bf0dd8b78ba7a2a1a1541095ccfa9cf41300020b9bb523.html"
+  },
+  {
+    "route": "/runtime/reference/cli/why/",
+    "title": "/runtime/reference/cli/why/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a4a0579f7d7fd807c9912dc688a356bda5675373b9eeed501ac6a829b756df0f.html",
+    "body": "html/runtime/reference/cli/why.html",
+    "suffix": "templates/fragments/51c747272595afb1c351387ab5c9cc5453c1e5a3840f195b31292b7a27e7674b.html"
+  },
+  {
+    "route": "/runtime/reference/cli/",
+    "title": "/runtime/reference/cli/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/26ee1a52a2c6c4cdd0cf66a4d55b9fd23a5a15f008ed8940f522bc7182f0999a.html",
+    "body": "html/runtime/reference/cli.html",
+    "suffix": "templates/fragments/5a34f2368b5c2450c2e50f7aa3c20b7845625c709f3efa74146d6b316eb469c7.html"
+  },
+  {
+    "route": "/runtime/reference/cli/fmt/",
+    "title": "/runtime/reference/cli/fmt/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/632db3db817c22da16369004f39e1a4836a50dbbed3c062e66d11312125d75c9.html",
+    "body": "html/runtime/reference/cli/fmt.html",
+    "suffix": "templates/fragments/5d6c31be1d496b8defb9e85fec6de9de7bc7347938a00f7354fe52dfc443d8a2.html"
+  },
+  {
+    "route": "/runtime/reference/cli/unstable_flags/",
+    "title": "/runtime/reference/cli/unstable_flags/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c5ad580ce42fa354d10a81f99f7d709da663f7f4d5b4a68d38b2433c24dc74e0.html",
+    "body": "html/runtime/reference/cli/unstable_flags.html",
+    "suffix": "templates/fragments/ee8862256c39854f2403f0fd750c81ebdd997cd244bcb18c4e1ecba205c9fd94.html"
+  },
+  {
+    "route": "/runtime/reference/cli/completions/",
+    "title": "/runtime/reference/cli/completions/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4e6945b8809b075245f188c095e06f95273ba28a837b85f20a24948b6b5d966f.html",
+    "body": "html/runtime/reference/cli/completions.html",
+    "suffix": "templates/fragments/15909ae8b4a16f87b15a5924fd200a7167a1548b25bed911f0730233e15b5ade.html"
+  },
+  {
+    "route": "/runtime/reference/cli/repl/",
+    "title": "/runtime/reference/cli/repl/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/15021786c63f4bfc5cf0ce978dc1ad62a74499c4f558ef860088414fbeff9787.html",
+    "body": "html/runtime/reference/cli/repl.html",
+    "suffix": "templates/fragments/dbb312f30a87068c8d5e6fdea6523b79529ad1cd7562ab4c01f53054c7a41cd3.html"
+  },
+  {
+    "route": "/runtime/reference/cli/outdated/",
+    "title": "/runtime/reference/cli/outdated/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/bd0725e212df19a50124bab15c7fa2b05a3e1d6b7592579a899c8361e5377db1.html",
+    "body": "html/runtime/reference/cli/outdated.html",
+    "suffix": "templates/fragments/7363db80852e22c23374b8f3b8d075a0b4f7d7ab47465bee532600967fb7f887.html"
+  },
+  {
+    "route": "/runtime/reference/cli/init/",
+    "title": "/runtime/reference/cli/init/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/ff4a5a79804f9161198db4e00e0b74b916beac6cdeaf53aa799cbead085fd250.html",
+    "body": "html/runtime/reference/cli/init.html",
+    "suffix": "templates/fragments/759ea70604076c45572c6f7968d263c99004dc3c814df19711bc84e914438a20.html"
+  },
+  {
+    "route": "/runtime/reference/cli/create/",
+    "title": "/runtime/reference/cli/create/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/50bd27c9606323c1244336ee14c4adaaa393c1dd20478c2904848ec55b2e11ff.html",
+    "body": "html/runtime/reference/cli/create.html",
+    "suffix": "templates/fragments/3093316b60d131e0ca620ce204d2711ee4344b6ca9c3caf76e1ee3e6b29d4959.html"
+  },
+  {
+    "route": "/runtime/reference/cli/types/",
+    "title": "/runtime/reference/cli/types/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9b9d3f156bb1014b330b52988d08c9456f27f33c0409121c794dd290d6328d5e.html",
+    "body": "html/runtime/reference/cli/types.html",
+    "suffix": "templates/fragments/6c891acf4ad05440e579ab9968a3ce9663875f2dcdac9290fd829b819d000319.html"
+  },
+  {
+    "route": "/runtime/reference/cli/list/",
+    "title": "/runtime/reference/cli/list/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/25ea3063515327b5b27b03db1a202294db01788a92cb86195a24bad1a6437c22.html",
+    "body": "html/runtime/reference/cli/list.html",
+    "suffix": "templates/fragments/a1329ff16e4a57dd6f477ba7789ad08287cb2e33310557b0ab256b3d13393387.html"
+  },
+  {
+    "route": "/runtime/reference/cli/serve/",
+    "title": "/runtime/reference/cli/serve/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/00946bcf1066a231494f0a35c8e0dfedda2af354481514e10b9633c0553ce025.html",
+    "body": "html/runtime/reference/cli/serve.html",
+    "suffix": "templates/fragments/66a5706553a61d2c0adb1a82aa262ffee0eff5c126b3fd1ac6e6ca1a0389e86d.html"
+  },
+  {
+    "route": "/runtime/reference/cli/test/",
+    "title": "/runtime/reference/cli/test/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/48e735f6fff616b48ae5ce0266793c44ebc87701eaedbcc15d49d1147adea13d.html",
+    "body": "html/runtime/reference/cli/test.html",
+    "suffix": "templates/fragments/fc0bb1904df3367a1b15576918e80116957d23a8e1da6b4a110ea41364474eda.html"
+  },
+  {
+    "route": "/runtime/reference/cli/desktop/",
+    "title": "/runtime/reference/cli/desktop/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6437878f2384e6607c26ab3b1e409256f3217735205bd372eef558386d25caa7.html",
+    "body": "html/runtime/reference/cli/desktop.html",
+    "suffix": "templates/fragments/8d30086d97d4fda2cc1fdc8cd0b509f4845d3b9c6ac41f9a2278ecac1a6c7761.html"
+  },
+  {
+    "route": "/runtime/reference/cli/deploy/",
+    "title": "/runtime/reference/cli/deploy/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/09509f69478af27dfea1642d967e5c6bb60c83954881db9aaa19117112b2e146.html",
+    "body": "html/runtime/reference/cli/deploy.html",
+    "suffix": "templates/fragments/322dd5edb558f1514d635c8a72c5d73330f825fd4c14b487ebec6a539933f1cf.html"
+  },
+  {
+    "route": "/runtime/reference/cli/check/",
+    "title": "/runtime/reference/cli/check/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c23706c0e14eef57114bafdc3788a6f90cf8f63f9948e09889d7747b1c66749b.html",
+    "body": "html/runtime/reference/cli/check.html",
+    "suffix": "templates/fragments/15fd69351c4ae63484c316445184c4a17805f1bf3c55be83e027e7d9244e2954.html"
+  },
+  {
+    "route": "/runtime/reference/cli/approve_scripts/",
+    "title": "/runtime/reference/cli/approve_scripts/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9b62c1286960b6406790a07cfc7e4906004fef0ea26b7781af59e0f1e53e2023.html",
+    "body": "html/runtime/reference/cli/approve_scripts.html",
+    "suffix": "templates/fragments/bceaca82f6f930a1b1c9cc9ee121bf73cdac2f91764d97478c744f0a0ba1c4e1.html"
+  },
+  {
+    "route": "/runtime/reference/cli/bump_version/",
+    "title": "/runtime/reference/cli/bump_version/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/3b73f316980257cd9fcb0ebec636b17c23311a2423f7e7af25862e159bd9ca3d.html",
+    "body": "html/runtime/reference/cli/bump_version.html",
+    "suffix": "templates/fragments/d08ae66ec0a37544fecad82eac1c6568d34531a76e0ca0ea63d830df003c09f0.html"
+  },
+  {
+    "route": "/runtime/reference/cli/pack/",
+    "title": "/runtime/reference/cli/pack/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/5e365093c993d647c8274374576a5b163e90491685e80eac2fbc6059343ff5f4.html",
+    "body": "html/runtime/reference/cli/pack.html",
+    "suffix": "templates/fragments/2de1c5bf87e6ba2735998600504874ad882d6bbf26fd3b056bbb901972482293.html"
+  },
+  {
+    "route": "/runtime/reference/cli/publish/",
+    "title": "/runtime/reference/cli/publish/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7f38e5c5852c1d8d104ee8544d51e749a40ab00402f2e11a87a59d629b983d51.html",
+    "body": "html/runtime/reference/cli/publish.html",
+    "suffix": "templates/fragments/5ffb3ff651b6bff9b0a05bfea37df4a8eecdd94a33dbb5df68c8fe3704950883.html"
+  },
+  {
+    "route": "/runtime/reference/cli/transpile/",
+    "title": "/runtime/reference/cli/transpile/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/62085999db709f9798a1236c7196d825ca68c67cdf07f53d2491d8806aa8d9c1.html",
+    "body": "html/runtime/reference/cli/transpile.html",
+    "suffix": "templates/fragments/a74cea242eb40d99fdca7a56a624b8742f3f88c07966bc18f6edbe9deaf356fa.html"
+  },
+  {
+    "route": "/runtime/reference/cli/eval/",
+    "title": "/runtime/reference/cli/eval/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/edab5a269069630559544ad1748e09d2ad3b82b155a8399c76515bec1fc94469.html",
+    "body": "html/runtime/reference/cli/eval.html",
+    "suffix": "templates/fragments/ca74d6f2204dafaaaeb5fb1c67fc27887f11284d01c442e61f44e0f60e19e25c.html"
+  },
+  {
+    "route": "/runtime/reference/cli/install/",
+    "title": "/runtime/reference/cli/install/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/57ed4e8d778694b9b448ed0621268c999b1de53c2cf3bc0f8be5688f53ca799c.html",
+    "body": "html/runtime/reference/cli/install.html",
+    "suffix": "templates/fragments/17ae7e6ce5da6e7808f753a4cdbd6638c6b78f6a1326de5cba372aecc0b69c7d.html"
+  },
+  {
+    "route": "/runtime/reference/ts_config_migration/",
+    "title": "/runtime/reference/ts_config_migration/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/20e8faef76f001ab107972f34082b68145be9e1628b75ba24f6ab7debddf6b4e.html",
+    "body": "html/runtime/reference/ts_config_migration.html",
+    "suffix": "templates/fragments/eef0fdc4702bc6fe0212e475cf5d0b457178347fb68b29375842ec532c1f5292.html"
+  },
+  {
+    "route": "/runtime/reference/wasm/",
+    "title": "/runtime/reference/wasm/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/0b6026c03ca4793e92067ceec9d3f9bb63fb077489961f47c3ccc5d4b339420e.html",
+    "body": "html/runtime/reference/wasm.html",
+    "suffix": "templates/fragments/e7f52e73d058b4d2346b9eacbffc0b2b28130787e0b518d9683140bac09dcea5.html"
+  },
+  {
+    "route": "/runtime/reference/bundling/",
+    "title": "/runtime/reference/bundling/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/5331e897225be685440fb106d87a0dc9d5d29d64810a7a70251505651bcf28cf.html",
+    "body": "html/runtime/reference/bundling.html",
+    "suffix": "templates/fragments/dd1900750ddfb875ad3b6e3612acc8c047ba5cfaa394866d65f2cfa0fcf508d9.html"
+  },
+  {
+    "route": "/runtime/reference/deno_serve_legacy_abort/",
+    "title": "/runtime/reference/deno_serve_legacy_abort/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/71a5410c4e2b900302be0520686025579f284e0feb3228a53523e12f8898f390.html",
+    "body": "html/runtime/reference/deno_serve_legacy_abort.html",
+    "suffix": "templates/fragments/88e88bbc51cc464dc98b7a21df0bc644f8c82e3b9dc629a0983d76a419ba16ff.html"
+  },
+  {
+    "route": "/runtime/reference/deno_json/",
+    "title": "/runtime/reference/deno_json/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/aee36e944e5d85871c0bee281ec6e9610c747c024aa1d570a52e7f176e4684e7.html",
+    "body": "html/runtime/reference/deno_json.html",
+    "suffix": "templates/fragments/e9ea5e6d48c364d840ce00b982add8300a377f8ea31a0e215ee8c76743756707.html"
+  },
+  {
+    "route": "/runtime/reference/loader_hooks/",
+    "title": "/runtime/reference/loader_hooks/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9bc171ac172d1dee472c8194ae6da7a4db1055eea984ce75d41995284b088729.html",
+    "body": "html/runtime/reference/loader_hooks.html",
+    "suffix": "templates/fragments/2db69c57bbc81423e84573e4b9391d10c2408e7424ef16a762df9b98c2ed936b.html"
+  },
+  {
+    "route": "/runtime/reference/docker/",
+    "title": "/runtime/reference/docker/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/d50fc5c604db938fcb61f6f69991eca07b22a7b86a31c4fe11ec4b86074aa9fb.html",
+    "body": "html/runtime/reference/docker.html",
+    "suffix": "templates/fragments/b106435c92601e4d102f63bf8b08dff6f4ca930b0a9dcfd5c1b26020e4e19c75.html"
+  },
+  {
+    "route": "/runtime/reference/permissions/",
+    "title": "/runtime/reference/permissions/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/48f3fc1f190615419957df98d3438ab6ecfa8a366758c601aea25eddc10e24b8.html",
+    "body": "html/runtime/reference/permissions.html",
+    "suffix": "templates/fragments/73ffcd3575a287fd7e2a7e84d2f8f2e5f12d382b36f7fce450f0835df43ead8e.html"
+  },
+  {
+    "route": "/runtime/reference/lsp_integration/",
+    "title": "/runtime/reference/lsp_integration/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/cb84692f085df716c15dde5f90cb778d1ecb7b22c1f680f069577f2bc887fc98.html",
+    "body": "html/runtime/reference/lsp_integration.html",
+    "suffix": "templates/fragments/f8735bf3608d694adfc7065ff16b953acfc1bb27a6609bee5c551bbc7cc4b1b2.html"
+  },
+  {
+    "route": "/runtime/reference/migration_guide/",
+    "title": "/runtime/reference/migration_guide/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/3058ae1be79278558651211961a20ba943360611e37f64ea3242826df8657aea.html",
+    "body": "html/runtime/reference/migration_guide.html",
+    "suffix": "templates/fragments/095dc3864a6ad41bc76555ad463d104195ca3b13d12cf870e4c5bed7da8312d1.html"
+  },
+  {
+    "route": "/runtime/reference/",
+    "title": "/runtime/reference/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b82eee4fd92d877809547b58269773f03fb8ef5c46cce27600c2197e4cb814e9.html",
+    "body": "html/runtime/reference.html",
+    "suffix": "templates/fragments/617db1c107315ae04caa0203d551ed594ef779ad773b29be2cdc83491e4a8aa5.html"
+  },
+  {
+    "route": "/runtime/reference/vscode/",
+    "title": "/runtime/reference/vscode/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/ab28daf740c4d104eee17feeb36287b8969be8b77fca3245179bd1c6d0f4a7c5.html",
+    "body": "html/runtime/reference/vscode.html",
+    "suffix": "templates/fragments/ee6bec669097fdf16d7d319b5fc10ce05bbfcfe2190d9fd89419702193f32078.html"
+  },
+  {
+    "route": "/runtime/reference/web_platform_apis/",
+    "title": "/runtime/reference/web_platform_apis/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b76c7a1a9774a7a55fd797b250790f7e07fcd792f6d7e66b8511fa7e657af88f.html",
+    "body": "html/runtime/reference/web_platform_apis.html",
+    "suffix": "templates/fragments/ac186fbfcf7f2ed3cfdad7498559f8bbf9dbf6d54cf1d237212985a07572e08f.html"
+  },
+  {
+    "route": "/runtime/reference/lint_plugins/",
+    "title": "/runtime/reference/lint_plugins/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b067b473f3fb9d59c2b1ce98491a0494dfd7e4a547a3d467a5c77590c5a4e833.html",
+    "body": "html/runtime/reference/lint_plugins.html",
+    "suffix": "templates/fragments/3b707b6f750214ba4a6f624a15e01d3074b2d5acec77d4f6889c4a719fef780b.html"
+  },
+  {
+    "route": "/runtime/reference/node_apis/",
+    "title": "/runtime/reference/node_apis/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/610bff20c1a75038f198c96df28688a7223c9a2089799d048d0d64524e5512a0.html",
+    "body": "html/runtime/reference/node_apis.html",
+    "suffix": "templates/fragments/cee435284e2264a607b9984e797010388ce8394c3556914044e6461b7b07c68a.html"
+  },
+  {
+    "route": "/runtime/migrate/migrate_from_npm/",
+    "title": "/runtime/migrate/migrate_from_npm/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/175590b9e6bdb85007fc6bf1431cd0ce52cc20ec9c355c55cfa65f0cdd3496bc.html",
+    "body": "html/runtime/migrate/migrate_from_npm.html",
+    "suffix": "templates/fragments/e1539df211341d4afdf8ad1c2b7d561278134e71c33786536da502a54addcfd2.html"
+  },
+  {
+    "route": "/runtime/migrate/migrate_from_yarn/",
+    "title": "/runtime/migrate/migrate_from_yarn/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/72db853d2e8535fb6cd7e4c8371cdd60f51aa44c1ec21bed2e31961640a21c75.html",
+    "body": "html/runtime/migrate/migrate_from_yarn.html",
+    "suffix": "templates/fragments/4fe068fb3c03105bf2260368269f13e6217b0c28a50a8991a2d70f2f727a7923.html"
+  },
+  {
+    "route": "/runtime/migrate/",
+    "title": "/runtime/migrate/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/70fdfa0b511cea38ab32f69f0d23a0d31ba6ae88c373bab51d2ae776525fd3fc.html",
+    "body": "html/runtime/migrate.html",
+    "suffix": "templates/fragments/0f29863f0ecbb3bd3496ddd68a2f191d14adae8f4e2121716cc1a27cfc51dbce.html"
+  },
+  {
+    "route": "/runtime/migrate/migrate_from_bun/",
+    "title": "/runtime/migrate/migrate_from_bun/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c61039bb567943ba654efe0ba2185300a2701a22b5679afb9c6f927e9358a78a.html",
+    "body": "html/runtime/migrate/migrate_from_bun.html",
+    "suffix": "templates/fragments/c8442df06a8761c2ab4dc87380906a739db5a9546eb93dfab73bc08e359bf911.html"
+  },
+  {
+    "route": "/runtime/migrate/migrate_from_pnpm/",
+    "title": "/runtime/migrate/migrate_from_pnpm/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b169cb5087780d350eb43748b1e2b8b5c2348bf5c0915edf6667a2e2d7739253.html",
+    "body": "html/runtime/migrate/migrate_from_pnpm.html",
+    "suffix": "templates/fragments/33712677097dc52dc3f48e2665f4019c3dfc8a91c6d488f3a65406f429b22cc6.html"
+  },
+  {
+    "route": "/runtime/help/",
+    "title": "/runtime/help/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a3fcddda0697bf78ea64f697736077b9466e60ea9103bf0b7e21b9a7803ee19c.html",
+    "body": "html/runtime/help.html",
+    "suffix": "templates/fragments/2e3d2139007fdcb2193b82dc33af50216ca672a0764aa81881488b4853480396.html"
   },
   {
     "route": "/runtime/",
@@ -16,12 +904,252 @@
     "suffix": "templates/fragments/7be536a03aac6adf224a9c49b0f6c213de866fee1286727052d5f3b2330b218d.html"
   },
   {
+    "route": "/runtime/getting_started/installation/",
+    "title": "/runtime/getting_started/installation/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/fdc4ecb5c767c557e3cc32ec804f068f028c33691a7dc22c3cd1af49c2fb0160.html",
+    "body": "html/runtime/getting_started/installation.html",
+    "suffix": "templates/fragments/f29a73795adbde7e87c5491c80ee95d10415c675c1372a6c52d2b382cae872f1.html"
+  },
+  {
+    "route": "/runtime/getting_started/setup_your_environment/",
+    "title": "/runtime/getting_started/setup_your_environment/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/e7bdb7ade8c9ffcd6a727e6c97eea3bd1085ee3110281c61771afa17fd37369c.html",
+    "body": "html/runtime/getting_started/setup_your_environment.html",
+    "suffix": "templates/fragments/2916345f6bd8e743f2db25d07641de17a3cbb680a35da8aea6ceaf38d783e34a.html"
+  },
+  {
+    "route": "/runtime/contributing/release_schedule/",
+    "title": "/runtime/contributing/release_schedule/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a357b5d6f693a49c302aaad38e855adf47ad88c9e24f2e8fb8cdd71f81c52d89.html",
+    "body": "html/runtime/contributing/release_schedule.html",
+    "suffix": "templates/fragments/894c401498bc6425070c98d729f20905451342c0a56c28264227edfbd310356a.html"
+  },
+  {
+    "route": "/runtime/contributing/architecture/",
+    "title": "/runtime/contributing/architecture/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/2094700c22db9548b479dcc5d559a719047d0951880c4e67e80e772da7adaaf2.html",
+    "body": "html/runtime/contributing/architecture.html",
+    "suffix": "templates/fragments/a342e469c007d101c99a6eadb0f841fe259f90302f10d92f23821880375b15c4.html"
+  },
+  {
+    "route": "/runtime/contributing/",
+    "title": "/runtime/contributing/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c1551ec75051bc8b480f3f49772d6a92f9a039d47901982b2bc7b01f6b2de653.html",
+    "body": "html/runtime/contributing.html",
+    "suffix": "templates/fragments/fb0dace7ef7b4f7d3db16e66be0a9585dd5c1669308364b808e630c25df1519f.html"
+  },
+  {
+    "route": "/runtime/contributing/style_guide/",
+    "title": "/runtime/contributing/style_guide/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b645bb8f10c9e1b819443cd5f83f20eac29ec6dbaddd7f656830794fad639fbb.html",
+    "body": "html/runtime/contributing/style_guide.html",
+    "suffix": "templates/fragments/e02f54689df594250440a282d54a0c740e4225f4d26145ad26bb16692e2c01bb.html"
+  },
+  {
+    "route": "/runtime/deploy/",
+    "title": "/runtime/deploy/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/bed634fa8e5578e183fa2b6c59106995983513915f3a13206153742eda29c2cf.html",
+    "body": "html/runtime/deploy.html",
+    "suffix": "templates/fragments/15332e9f37b45b1ca10e4ec81ce0d7eab84bb0ba6d46303089e52761a722da41.html"
+  },
+  {
+    "route": "/runtime/test/coverage/",
+    "title": "/runtime/test/coverage/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/cd070c802b1c5a1b7524a4fb0526d99979b9f0ffd99e74cbddbfbae44c12cb4d.html",
+    "body": "html/runtime/test/coverage.html",
+    "suffix": "templates/fragments/0ff70651d394a1b4618c8aaf3e1602f2e3c686072202b7dfbc4e3923c597a806.html"
+  },
+  {
+    "route": "/runtime/test/snapshots/",
+    "title": "/runtime/test/snapshots/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/2890e945e8507be3414dc1999611ec8810c4ab99f2f88ebac11ab3bf6aa55057.html",
+    "body": "html/runtime/test/snapshots.html",
+    "suffix": "templates/fragments/1514be1e27f0edd3134626736213226bad709d8d643799c570a80b8d48cc90af.html"
+  },
+  {
+    "route": "/runtime/test/doc_tests/",
+    "title": "/runtime/test/doc_tests/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4d57a0c93d402a5a029adb420ac4a251b6b29ad0d605c437e06533a40a106cbf.html",
+    "body": "html/runtime/test/doc_tests.html",
+    "suffix": "templates/fragments/f332f6ac77ac168ad748813f5276b0c922c0218cf57dc9302da028f05d3d0e14.html"
+  },
+  {
+    "route": "/runtime/test/",
+    "title": "/runtime/test/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/d9e48f0728063eb565a8e514cfcf8ea3dcf368e0a5a5fe3da14944068d4ea936.html",
+    "body": "html/runtime/test.html",
+    "suffix": "templates/fragments/d10f1dc9305b21fd009577bcae1c17b3086e33b3ca8fdb00dd700fb3524bd5f2.html"
+  },
+  {
+    "route": "/runtime/test/sanitizers/",
+    "title": "/runtime/test/sanitizers/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/55b85e9f3caae755d5978455825624bdd39b04f37d713af61465872832af1321.html",
+    "body": "html/runtime/test/sanitizers.html",
+    "suffix": "templates/fragments/f6532a2e12cf0cbef01860dd0e3bda0952247eccc5fe2808e36e62413de56c0a.html"
+  },
+  {
+    "route": "/runtime/test/mocking/",
+    "title": "/runtime/test/mocking/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c2ca077839d0a7a3537dd6f9fe08f131565e2664bc22326c28e131a8bbe76863.html",
+    "body": "html/runtime/test/mocking.html",
+    "suffix": "templates/fragments/3b1bb18c6dd1d4ad8db8261611ad001a14f2dae8ff792106bfc34dd007a1c86d.html"
+  },
+  {
+    "route": "/runtime/test/migrate_from_jest/",
+    "title": "/runtime/test/migrate_from_jest/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a462c307ab3c7cbb1fe74f02b365743bcd5c908998b8da6071e3761bb0314c6a.html",
+    "body": "html/runtime/test/migrate_from_jest.html",
+    "suffix": "templates/fragments/5dd3a104ea2c5e17c260a7b8c73e7f1f23dfc05f5a8e0726d53af89d38223cd4.html"
+  },
+  {
+    "route": "/runtime/lint_and_format/",
+    "title": "/runtime/lint_and_format/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1a08a9b74e50265013b606acc1cd1f70016d8d84706f6a6c63cb79552b3ec13b.html",
+    "body": "html/runtime/lint_and_format.html",
+    "suffix": "templates/fragments/8f7bddca0dab2f231d9772382ee34e209866ecce2560b96ba7640d5fe1ccf528.html"
+  },
+  {
+    "route": "/sandbox/ssh/",
+    "title": "/sandbox/ssh/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b77afef5e31e351ae582dc94c8a400daa706702b94e25f1ddf20fba5be811824.html",
+    "body": "html/sandbox/ssh.html",
+    "suffix": "templates/fragments/8e147e2b846533d8dd2a9f560554d69325c6079eeaee59bb55371947fd3c086e.html"
+  },
+  {
+    "route": "/sandbox/volumes/",
+    "title": "/sandbox/volumes/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/52cce783e8ede594ced9765c8a299f5179d4a38108b7fb1bc32d1645a35f7c47.html",
+    "body": "html/sandbox/volumes.html",
+    "suffix": "templates/fragments/8eca344b021b3381a19d8c3574739ee2e54fbceb6339fdf5596bb5c8c0e75e08.html"
+  },
+  {
+    "route": "/sandbox/security/",
+    "title": "/sandbox/security/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/59e7ed79e72b8ca8a869bf9a8f2b9fb2af119b0ffd7b14a36b9ff729f64e4bda.html",
+    "body": "html/sandbox/security.html",
+    "suffix": "templates/fragments/4220e61cbcbf5af89b06cf5084d64344be440774009668d1be7ae7755ee63246.html"
+  },
+  {
+    "route": "/sandbox/cli/",
+    "title": "/sandbox/cli/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/0d101b8a1810a18398f4e49cf73bffc524b8cf3d5c32aead796e730cf4c7ad5e.html",
+    "body": "html/sandbox/cli.html",
+    "suffix": "templates/fragments/4dc3da9e31f66ba723f9a7e1373dbf4aefee5c0559f1c3667dfef26783de1ba1.html"
+  },
+  {
+    "route": "/sandbox/timeouts/",
+    "title": "/sandbox/timeouts/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/617daea49f9c04332cf6c543b83cfa97c7ace28af37d925e000cf9fd2825a65f.html",
+    "body": "html/sandbox/timeouts.html",
+    "suffix": "templates/fragments/76d8863bd25d6e885a6d291f837d534682a94849656028b61b789b84728e6e16.html"
+  },
+  {
+    "route": "/sandbox/promote/",
+    "title": "/sandbox/promote/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/8b9fa1f03570699f37c97311aaf34be327c8f57dcda397b2c8e5e20f0814b968.html",
+    "body": "html/sandbox/promote.html",
+    "suffix": "templates/fragments/a70fe75754f576aac575d0da51959317c6e5cebd92e304fa332443c78da3111b.html"
+  },
+  {
+    "route": "/sandbox/expose_http/",
+    "title": "/sandbox/expose_http/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6f714106c551cbc989d5d4a2c30f85e6d8722f3cfb5915c51511272d38724dc4.html",
+    "body": "html/sandbox/expose_http.html",
+    "suffix": "templates/fragments/bb2c88acbd0cb79e72d598620b2cccab1b05010ec1ea4b7baf646c6bdf22e592.html"
+  },
+  {
+    "route": "/sandbox/apps/",
+    "title": "/sandbox/apps/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/fa729b880551b712bcc2f025eda1bb032cfcba41b1eb54cf92f5118cfd9f4970.html",
+    "body": "html/sandbox/apps.html",
+    "suffix": "templates/fragments/e97797435c5984362424fbbec4a42311c2cb54cd501f3309eeedd1bffd6e76a5.html"
+  },
+  {
     "route": "/sandbox/",
     "title": "/sandbox/",
     "source_model": "maintained HTML",
     "prefix": "templates/fragments/022b65f40ae1cc67ba337915db6ab4db70e4f22c2dcbfe6a1ca9bbf53151d8b2.html",
     "body": "html/sandbox.html",
     "suffix": "templates/fragments/28743c3663495e051b0566f3d33747d1924c9b9a8737578d8992475b934f42dc.html"
+  },
+  {
+    "route": "/sandbox/create/",
+    "title": "/sandbox/create/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/bef34f334d923752fd138856432ec52752d7f7bfcfe97182105c0cc5acf61865.html",
+    "body": "html/sandbox/create.html",
+    "suffix": "templates/fragments/7f07fcbb2b65a3df5a84f3dfb1d6dcc98e433d6ae397fca09f785a337c254863.html"
+  },
+  {
+    "route": "/sandbox/getting_started/",
+    "title": "/sandbox/getting_started/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/68c84d45cede3b1f8356acc381019aacc679fa5f9789d854def0e6c5391b7c8b.html",
+    "body": "html/sandbox/getting_started.html",
+    "suffix": "templates/fragments/5a5dbe0c0d82e96a648a7253906f516fb96bdffa0c91e04304005ba2df712b05.html"
+  },
+  {
+    "route": "/orama/README/",
+    "title": "/orama/README/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1783b165554e6ea9e55f4f2ced80d744509bb2099b8a53b443f1696ae7bd0c9b.html",
+    "body": "html/orama/README.html",
+    "suffix": "templates/fragments/ed1170832095adb4e8271087f0ed3ef5ad46f14d8f770f3afa266e4d42662266.html"
+  },
+  {
+    "route": "/ai/",
+    "title": "/ai/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b730b6fdadfd77cbe3ecc5fe5714d849efc08683c4a65102ec331554c50ce31d.html",
+    "body": "html/ai.html",
+    "suffix": "templates/fragments/6819eb378deb8c4f4439916f3d78e607a4c07f38a46d2f3c7ef2bdb401e12dce.html"
+  },
+  {
+    "route": "/styleguide/og/",
+    "title": "/styleguide/og/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/ecede2eab118ce4344f7beff9a85cfc73b8dc2d144683b53e601f82e8cd1d017.html",
+    "body": "html/styleguide/og.html",
+    "suffix": "templates/fragments/49531bdaf7be8ac60b13a565b3eef16be55a39557781b5448bac49a5afb71e5d.html"
+  },
+  {
+    "route": "/styleguide/writing/",
+    "title": "/styleguide/writing/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/77667c91f6383769c25a0b8947116e09da15eb00bd66adb9427eb2a37c9b03df.html",
+    "body": "html/styleguide/writing.html",
+    "suffix": "templates/fragments/7cc2be43231a19392607834645bbe4329ca7b03e6e10922ed0c606e1c2cd8fc3.html"
+  },
+  {
+    "route": "/styleguide/",
+    "title": "/styleguide/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/661e4df6ac2a21016e01b72a9b3825ae01a043956eba046d53d4cf4e5f005bf9.html",
+    "body": "html/styleguide.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
   },
   {
     "route": "/styleguide/components/",
@@ -40,12 +1168,884 @@
     "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
   },
   {
+    "route": "/styleguide/og/cli-commands/",
+    "title": "/styleguide/og/cli-commands/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1b2b75b82c0c2e76a9814a0e3c1f24ec74033514efa07765438c4e364c544447.html",
+    "body": "html/styleguide/og/cli-commands.html",
+    "suffix": "templates/fragments/6224d9d114aa8fab2cadc7f79b6ce25b42abde572918e3244849f03193f0474d.html"
+  },
+  {
+    "route": "/styleguide/og/color-override/",
+    "title": "/styleguide/og/color-override/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/3f9e2ebaf23168093c564fbb8b8050e4dce6fc35a73216dca6fda763136aff11.html",
+    "body": "html/styleguide/og/color-override.html",
+    "suffix": "templates/fragments/6224d9d114aa8fab2cadc7f79b6ce25b42abde572918e3244849f03193f0474d.html"
+  },
+  {
+    "route": "/styleguide/og/title-only/",
+    "title": "/styleguide/og/title-only/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f260f83476cb7886aa218585978bc8dab3be1cf43e9100e70e914edce59c6f5e.html",
+    "body": "html/styleguide/og/title-only.html",
+    "suffix": "templates/fragments/6224d9d114aa8fab2cadc7f79b6ce25b42abde572918e3244849f03193f0474d.html"
+  },
+  {
+    "route": "/styleguide/og/title-and-description-superscript/",
+    "title": "/styleguide/og/title-and-description-superscript/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/393b63c4f6300ea3530b7a1f9375a3fc1033bbf0cdbb1b286fc67296fe63978c.html",
+    "body": "html/styleguide/og/title-and-description-superscript.html",
+    "suffix": "templates/fragments/6224d9d114aa8fab2cadc7f79b6ce25b42abde572918e3244849f03193f0474d.html"
+  },
+  {
+    "route": "/styleguide/og/title-and-description/",
+    "title": "/styleguide/og/title-and-description/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/bc1c348821ac599312cea5886958c2a79932c7826350feb98feded17291e49d2.html",
+    "body": "html/styleguide/og/title-and-description.html",
+    "suffix": "templates/fragments/6224d9d114aa8fab2cadc7f79b6ce25b42abde572918e3244849f03193f0474d.html"
+  },
+  {
+    "route": "/styleguide/og/short-title-and-long-description/",
+    "title": "/styleguide/og/short-title-and-long-description/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1e4793c9f08ea123b7d056b04d8a0d5ff9fd470cc315e4c07c22b9e7c7b86612.html",
+    "body": "html/styleguide/og/short-title-and-long-description.html",
+    "suffix": "templates/fragments/6224d9d114aa8fab2cadc7f79b6ce25b42abde572918e3244849f03193f0474d.html"
+  },
+  {
+    "route": "/styleguide/og/short-title-and-short-description/",
+    "title": "/styleguide/og/short-title-and-short-description/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/49dcc4a8fcb1621fffc0be20c367183c2c9b79bcc6741beaf9c3128409c0d870.html",
+    "body": "html/styleguide/og/short-title-and-short-description.html",
+    "suffix": "templates/fragments/6224d9d114aa8fab2cadc7f79b6ce25b42abde572918e3244849f03193f0474d.html"
+  },
+  {
+    "route": "/examples/sandbox_spawn_subprocess/",
+    "title": "/examples/sandbox_spawn_subprocess/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/83a9d28cbee1f4f6ec6823dd60034f4598ea163238909d04b4e265838ee4e84b.html",
+    "body": "html/examples/sandbox_spawn_subprocess.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_command_cancellation/",
+    "title": "/examples/sandbox_command_cancellation/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/fe4d12c4feb88e73e997612062d789acf347558a98afcc940cdd6372694d4aff.html",
+    "body": "html/examples/sandbox_command_cancellation.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_access_output/",
+    "title": "/examples/sandbox_access_output/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7101882b5a5754bfde68ed401353ee3da3f5783c966d3f87902ef91ef2ee4c74.html",
+    "body": "html/examples/sandbox_access_output.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_timeout_control/",
+    "title": "/examples/sandbox_timeout_control/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/43f07b1f8e6dbed67611d6350472ecaaa0d52fe8a5e64b6500bb93b5ccc6ee00.html",
+    "body": "html/examples/sandbox_timeout_control.html",
+    "suffix": "templates/fragments/0ec9c7154038672e0eba67d624602a8d36d14261fa8e86957f483c8ce96b9aa4.html"
+  },
+  {
+    "route": "/examples/sandbox_environment_variables/",
+    "title": "/examples/sandbox_environment_variables/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9d3b71fe04865913440f19f217a21eeeaef7dc4cfceb14c07138e951b20fe936.html",
+    "body": "html/examples/sandbox_environment_variables.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_stream_output/",
+    "title": "/examples/sandbox_stream_output/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7d49c9243d635fe8420c67203f7130b7b7813b0678f5bae340cd62153f51af56.html",
+    "body": "html/examples/sandbox_stream_output.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_upload_files/",
+    "title": "/examples/sandbox_upload_files/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1ed88e3dad66db73d00b10de0c24bd02d7fe3d131b87c2c709181c2b43497fdd.html",
+    "body": "html/examples/sandbox_upload_files.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_template_literals/",
+    "title": "/examples/sandbox_template_literals/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/eae9ad94b7324a1fc14d16a7cc4ad337b9e3986ce2ececf3774f6d4c4bb2947f.html",
+    "body": "html/examples/sandbox_template_literals.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_vscode_instance/",
+    "title": "/examples/sandbox_vscode_instance/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/eb110f11756024af0dc4af5fa1e549f148e2442c7822c8e692ec273848fe31ca.html",
+    "body": "html/examples/sandbox_vscode_instance.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_javascript_repl/",
+    "title": "/examples/sandbox_javascript_repl/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/288c13e7103062746716aeff5cb401b389aa7cf97165bc9b6ae14595f8c97bf1.html",
+    "body": "html/examples/sandbox_javascript_repl.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_error_handling/",
+    "title": "/examples/sandbox_error_handling/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/858a62e93d1f57ba4e41262dd6b9cd5a7fa1945902b1a4d1d53262d98e9adafc.html",
+    "body": "html/examples/sandbox_error_handling.html",
+    "suffix": "templates/fragments/9540610ce05724b7a0d74854d1f5505f19c33bb893ec1aa555305136652aecf6.html"
+  },
+  {
+    "route": "/examples/sandbox_web_framework/",
+    "title": "/examples/sandbox_web_framework/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1e60be008d4cc65caca7d402e5ef3b0a276ab31821166e495ac626d8e11041b6.html",
+    "body": "html/examples/sandbox_web_framework.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_memory/",
+    "title": "/examples/sandbox_memory/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/42fc5b232ed93bacc3e17227b01ff6e6e18387fdb7175c0f7e560048e86763b7.html",
+    "body": "html/examples/sandbox_memory.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/sandbox_ssh_access/",
+    "title": "/examples/sandbox_ssh_access/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b399da591f322fb1cc10f03f5736697cebd6a209d66b8ff144350c6ed3450aa0.html",
+    "body": "html/examples/sandbox_ssh_access.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/examples/web_testing_tutorial/",
+    "title": "/examples/web_testing_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/2f8bec27d02ff5d0193132c9e10b0b2569dfec4edaa860fb790fd9b77326d817.html",
+    "body": "html/examples/web_testing_tutorial.html",
+    "suffix": "templates/fragments/4e0a4ac563c851d18d77309c2ef6509464db34c90f4d9e029bb3eb3c56a1b333.html"
+  },
+  {
+    "route": "/examples/otel_span_propagation_tutorial/",
+    "title": "/examples/otel_span_propagation_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/fc313acf4c2bb31a46dc3202ceb00aba03e431ecf5d54fb69d5d9fb15c4a353a.html",
+    "body": "html/examples/otel_span_propagation_tutorial.html",
+    "suffix": "templates/fragments/c11c0cebf250e07bc6c5ddcb1791ab1de1080f7c60b9bc3caa2ea5e3f26d34ee.html"
+  },
+  {
+    "route": "/examples/add_remove_dependencies_tutorial/",
+    "title": "/examples/add_remove_dependencies_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/e29457c222d967de7c64375578921d862fc9fae540317f23d1e0abe5eea829d9.html",
+    "body": "html/examples/add_remove_dependencies_tutorial.html",
+    "suffix": "templates/fragments/380cc5f096ed2d8fcdfc829a1f1e31891682d2252f43cfab046c70e1b7a499b2.html"
+  },
+  {
+    "route": "/examples/prisma_tutorial/",
+    "title": "/examples/prisma_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/824fc0d20c928e259a7e242d7cd8d20c03dec5dc6f771a39e0fae952fcce44b7.html",
+    "body": "html/examples/prisma_tutorial.html",
+    "suffix": "templates/fragments/a1307686cee76e72d33fd58d876584a9e0446c63cd61ba20cdf1168e817fd035.html"
+  },
+  {
+    "route": "/examples/svelte_tutorial/",
+    "title": "/examples/svelte_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/44e80addeb2fc64242b26a5ccd5d2505fe432645a0f56b128cd7b3ad81d4d230.html",
+    "body": "html/examples/svelte_tutorial.html",
+    "suffix": "templates/fragments/815adf20e5dffbf7a735b63d3da0ef4011154807c778f76673eb634f71a7c96e.html"
+  },
+  {
+    "route": "/examples/simple_api_tutorial/",
+    "title": "/examples/simple_api_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/0876259034d5d3dc7eac9ae9b7b6b956d52c0138a2a45f36effe934dfcfaab9e.html",
+    "body": "html/examples/simple_api_tutorial.html",
+    "suffix": "templates/fragments/21dfbea50b7348bf8c7b53d7b31e6fba3776b9c468dd4374c160371a1476e611.html"
+  },
+  {
+    "route": "/examples/migrate_custom_domain_tutorial/",
+    "title": "/examples/migrate_custom_domain_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/e9c98a23ce6a872cdcda785a5ef2379220ca7c81a426810920cbf0445a269e2a.html",
+    "body": "html/examples/migrate_custom_domain_tutorial.html",
+    "suffix": "templates/fragments/35b80dc2d1e6bdd004842accdf20c941c3f652182764c9b5dc04dff923d7c61b.html"
+  },
+  {
+    "route": "/examples/subprocess_tutorial/",
+    "title": "/examples/subprocess_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/00b466488ec14dd6c8af948088c4e28b70d175475959638d8e3e563a83c69b43.html",
+    "body": "html/examples/subprocess_tutorial.html",
+    "suffix": "templates/fragments/52b895d39fa7a9a170a98f1762e80aca951fd823ef024f431dcb5ae8c72cdb5f.html"
+  },
+  {
+    "route": "/examples/qwik_tutorial/",
+    "title": "/examples/qwik_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4590d27b26dc1b815da31b61d9c8a7e4b606d043963b95b920207f7f52f6008d.html",
+    "body": "html/examples/qwik_tutorial.html",
+    "suffix": "templates/fragments/0d5483494446e537592536498a6a3c2b4445cfc84dbc4cd690fb0840d916aa6b.html"
+  },
+  {
+    "route": "/examples/vue_tutorial/",
+    "title": "/examples/vue_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f5fe8f023ad72adc2b7549381fb9fba5e4c721f3452cfe5fe752f4f6cf1d9262.html",
+    "body": "html/examples/vue_tutorial.html",
+    "suffix": "templates/fragments/28f3952e3b178ddfb40b89bc8c87ec94468ba3e5c29ba7231da470478d249a9e.html"
+  },
+  {
+    "route": "/examples/cloudflare_workers_tutorial/",
+    "title": "/examples/cloudflare_workers_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/69968fef6814912c7f38ce24a3abd89244f774a21e91430ee2f195686aa4b15b.html",
+    "body": "html/examples/cloudflare_workers_tutorial.html",
+    "suffix": "templates/fragments/af2d2e4357a9826eeb18562c2702909c33af9d567ea26a322e8b644cb558045f.html"
+  },
+  {
+    "route": "/examples/connecting_to_databases_tutorial/",
+    "title": "/examples/connecting_to_databases_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/d6b50c476cebb7091adfe6ee614fa069cac46bed7d0f369d3e042d5ba79e9e45.html",
+    "body": "html/examples/connecting_to_databases_tutorial.html",
+    "suffix": "templates/fragments/9a84e0f41c9c7801a2815d9bb11d1b71e6766589d5c62376acab02397ef98fc6.html"
+  },
+  {
+    "route": "/examples/mongoose_tutorial/",
+    "title": "/examples/mongoose_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/14f8c7a9129e3fd89904e9d241888d06bd5930a9fc0d552a032187590529cde0.html",
+    "body": "html/examples/mongoose_tutorial.html",
+    "suffix": "templates/fragments/bab6ba46f9163a0a06e4e2b82a3702a67de10fbdbcf32984d39098fc223ddf7b.html"
+  },
+  {
+    "route": "/examples/deploy_command_tutorial/",
+    "title": "/examples/deploy_command_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6d8c816d857dea09bea034b028bf7983ee24095694d76cc0cf75b46d0897671d.html",
+    "body": "html/examples/deploy_command_tutorial.html",
+    "suffix": "templates/fragments/4ab66633f875cdb3c55c477a9b6916ec7c9406d397f675532608a009d76672df.html"
+  },
+  {
+    "route": "/examples/chat_app_tutorial/",
+    "title": "/examples/chat_app_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/70ff52ba621fbe5a483e765859fec9e4e045b3610c38a06221aff03d8868ae84.html",
+    "body": "html/examples/chat_app_tutorial.html",
+    "suffix": "templates/fragments/a0ac368d67b57424c16679b7396f67b9e6bdd731844990df8f6957ea1496a867.html"
+  },
+  {
+    "route": "/examples/snapshot_python_tutorial/",
+    "title": "/examples/snapshot_python_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c1f876fc31e367e284ceaf749121ed21fd3f63df002b27d6a0af61fc71e4a592.html",
+    "body": "html/examples/snapshot_python_tutorial.html",
+    "suffix": "templates/fragments/d0e8341142382bfdc1b315333ede695027fe91c611a12993aeff1bfcd4764fd8.html"
+  },
+  {
+    "route": "/examples/grafana_tutorial/",
+    "title": "/examples/grafana_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/ee251fb10dccc03c082431d31ed10b1999ef326faca088d33b2e47f4bcda780a.html",
+    "body": "html/examples/grafana_tutorial.html",
+    "suffix": "templates/fragments/d2464e77c219b874b4fc39409c108924f1da3bdd82bf81549f808b091e10c1b8.html"
+  },
+  {
+    "route": "/examples/google_cloud_run_tutorial/",
+    "title": "/examples/google_cloud_run_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4b46687d5c2ddd9d944900966d155c5d5abbbbfefbcb3e61c0676cd536228f7f.html",
+    "body": "html/examples/google_cloud_run_tutorial.html",
+    "suffix": "templates/fragments/202fa4004c2014e89a1eace144bbef76c1920d918417cc434e7c855fddec9eae.html"
+  },
+  {
+    "route": "/examples/tunnel_database_tutorial/",
+    "title": "/examples/tunnel_database_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/35d5071222264740c368f8cb507eac6312e2641cc71df50141a6a17fccd32a02.html",
+    "body": "html/examples/tunnel_database_tutorial.html",
+    "suffix": "templates/fragments/ba96f65346a21e747f28528441bd687151e1599ad62c1259f423ef3d6ee3814c.html"
+  },
+  {
+    "route": "/examples/digital_ocean_tutorial/",
+    "title": "/examples/digital_ocean_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/823aea580d5973ed565aad26be5785636194d154dbcfd98a58c6195bd189e0d2.html",
+    "body": "html/examples/digital_ocean_tutorial.html",
+    "suffix": "templates/fragments/aa3d4e44d5a90fc771f6c7b078baf67652c0d9ec2716d7a4741ff0fd9e84f307.html"
+  },
+  {
+    "route": "/examples/private_registries_tutorial/",
+    "title": "/examples/private_registries_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/3b6006c40749dd146f4da4502603ce6bcb11f3c322cb8be17969fe09f05e3459.html",
+    "body": "html/examples/private_registries_tutorial.html",
+    "suffix": "templates/fragments/7563d24cde239afcc2443be705e12e54a4b376ed42e48e875bb04a9e376b7529.html"
+  },
+  {
+    "route": "/examples/deno_doc_tutorial/",
+    "title": "/examples/deno_doc_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/030f8cd10cfe8e8a420deab24462e7c15d355ac6d36d720ce5dbbd34f8f23fb7.html",
+    "body": "html/examples/deno_doc_tutorial.html",
+    "suffix": "templates/fragments/e0c2fb0609fa6e08f5e312fd92158236c1d17e31a000c8ba1ff432325a9b87bc.html"
+  },
+  {
+    "route": "/examples/redis_tutorial/",
+    "title": "/examples/redis_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b485b78b9f47ec1e94305fce9fccb45d78c5f3506ad06b1fca3945db85358897.html",
+    "body": "html/examples/redis_tutorial.html",
+    "suffix": "templates/fragments/a4384ed4a8ceaf12babcd48d549fe74581bc9312b913ee200bbccb5dd7df862e.html"
+  },
+  {
+    "route": "/examples/local_unpublished_packages_tutorial/",
+    "title": "/examples/local_unpublished_packages_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/af5e088b75fb02dd128046c128a2c22b573146f073b69ee187b0c65abd708671.html",
+    "body": "html/examples/local_unpublished_packages_tutorial.html",
+    "suffix": "templates/fragments/bce0e1d8b62b2864e28a76d60731df87a41f6f421d20fb0db1d0d45c2c5a0afe.html"
+  },
+  {
+    "route": "/examples/planetscale_tutorial/",
+    "title": "/examples/planetscale_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/dea1f749ccff2dcb5ce7cfda4f280c7cf1eed3a2ae7932263fc87011b97c5840.html",
+    "body": "html/examples/planetscale_tutorial.html",
+    "suffix": "templates/fragments/37328a51b9d6c395fb87b3adfbe2fb40c984a9a0ce952472d945dac1b00dabf4.html"
+  },
+  {
+    "route": "/examples/astro_tutorial/",
+    "title": "/examples/astro_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/cbd771146d9d23d88a4617ae6dafb089438194834c71eb7b3704c6c5f631db64.html",
+    "body": "html/examples/astro_tutorial.html",
+    "suffix": "templates/fragments/53c583d5c84a905fc5ebed7e61ad7f78bb8edb70c5cf3f90e347cae80dedd5a1.html"
+  },
+  {
+    "route": "/examples/cjs_to_esm_tutorial/",
+    "title": "/examples/cjs_to_esm_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a505f703b9fa36622845117bc556ddec9ea6fef94cfd118dc8fc170b721b5080.html",
+    "body": "html/examples/cjs_to_esm_tutorial.html",
+    "suffix": "templates/fragments/1a961fc021da908a4f7562c88438bce0f3482512db8c66b583bbce6c3aff0281.html"
+  },
+  {
+    "route": "/examples/fetch_data_tutorial/",
+    "title": "/examples/fetch_data_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/8a227eabf2bcad29a30094cc9ad6505d40ac0f0634fe7fecd85dcbb79b9f8b97.html",
+    "body": "html/examples/fetch_data_tutorial.html",
+    "suffix": "templates/fragments/1f3e3b9896f854ccc1cc9bba386555842a4b5d718d0318afe4da6dab086293ca.html"
+  },
+  {
+    "route": "/examples/deploy_otel_tutorial/",
+    "title": "/examples/deploy_otel_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/115ba29f07fff3a158c790b73b177b2503ec338c18785bda1eb975fc8fd3a158.html",
+    "body": "html/examples/deploy_otel_tutorial.html",
+    "suffix": "templates/fragments/d866ce47da1028a8063deb5141c2cc81e0ab80ad44690a134a599893be5a330f.html"
+  },
+  {
+    "route": "/examples/deno_deploy_tutorial/",
+    "title": "/examples/deno_deploy_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/0ec6e3d51c6bb796ba48ae786dd5a3152483261fa4120f2209110d656b9155ad.html",
+    "body": "html/examples/deno_deploy_tutorial.html",
+    "suffix": "templates/fragments/4360850ff0b730a270a49e18318a9210c5cb9c0323558cde265642d1bcb92de9.html"
+  },
+  {
+    "route": "/examples/debugging_with_console_tutorial/",
+    "title": "/examples/debugging_with_console_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/cbab510349ec6bfd08fe00e2f1f756c3a7ce41b7daa79ed5b0416343f3fbf1b0.html",
+    "body": "html/examples/debugging_with_console_tutorial.html",
+    "suffix": "templates/fragments/b3d862668926aeb646e437c63c90e83b35e7755529790cfa0c670b9b215d18d1.html"
+  },
+  {
+    "route": "/examples/aws_ecs_fargate_tutorial/",
+    "title": "/examples/aws_ecs_fargate_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c21c4d91417e97e187affe8193721d97d246f998091dace08686b04fa4236fab.html",
+    "body": "html/examples/aws_ecs_fargate_tutorial.html",
+    "suffix": "templates/fragments/f332ce0e1c5c26a2db9870534ab2228e7eef79d94ae86f0ff8988b80b6828e14.html"
+  },
+  {
+    "route": "/examples/testing_library_tutorial/",
+    "title": "/examples/testing_library_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/fe9a7361c167c577c32ce440904ed4d7db10243eac7c45294eb4a9d1c1b27997.html",
+    "body": "html/examples/testing_library_tutorial.html",
+    "suffix": "templates/fragments/77752b639df99b8ceefba6ccaa6978918fbcc690f6a985ffd4b5cf09551f05d8.html"
+  },
+  {
+    "route": "/examples/vite_tutorial/",
+    "title": "/examples/vite_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b6d99a4e51c4d7fc784ae9cbb01462fe9e5083c8c9113de1b2c77dcc7fb7f6cb.html",
+    "body": "html/examples/vite_tutorial.html",
+    "suffix": "templates/fragments/d0646c428d657602cfa0044394e3badc12ee9cd6b549101f8d7d27689eca5f4e.html"
+  },
+  {
+    "route": "/examples/os_signals_tutorial/",
+    "title": "/examples/os_signals_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/5a1163bbc6a595bb9d92cdd3aea7b728c484d502e76f744d294f8c728ab0c480.html",
+    "body": "html/examples/os_signals_tutorial.html",
+    "suffix": "templates/fragments/afbfc8f4ef23319770ad1155898e886a0d5ec092e6334168f4782ef6c3b4f4ad.html"
+  },
+  {
+    "route": "/examples/volumes_tutorial/",
+    "title": "/examples/volumes_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6d0dc6ccae1e370ea57038bba795983d066077562716871d7e6708168e659dbd.html",
+    "body": "html/examples/volumes_tutorial.html",
+    "suffix": "templates/fragments/606a633f4426f3279fe59f1e7a725526f53e9e2a546f1740edc92c02c9fe2c24.html"
+  },
+  {
+    "route": "/examples/cloudflare_workers_wrangler_tutorial/",
+    "title": "/examples/cloudflare_workers_wrangler_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/affa0ffffdec1eea456ac0c415556b8311f644cacf627f730181360b116ae060.html",
+    "body": "html/examples/cloudflare_workers_wrangler_tutorial.html",
+    "suffix": "templates/fragments/0d7fcbbad8215e3c18f8b841cc273c5db7a5f48a75bcc2dbb08c5b5e95e29568.html"
+  },
+  {
+    "route": "/examples/initialize_project_tutorial/",
+    "title": "/examples/initialize_project_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7dd2575438ff849c88ca4ce4eb95bc0eb161d7431f5c19e7af174929c364a0dc.html",
+    "body": "html/examples/initialize_project_tutorial.html",
+    "suffix": "templates/fragments/cbd6a59a49645d264523e2f1610a99cf4dcd33efc895840c221746915e5c6ba8.html"
+  },
+  {
+    "route": "/examples/sveltekit_tutorial/",
+    "title": "/examples/sveltekit_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/3ed8e9e9d90f92968d3354018c653243d5091f19425b8fae844a3386f5781bcd.html",
+    "body": "html/examples/sveltekit_tutorial.html",
+    "suffix": "templates/fragments/fb5a6a285e3ebe33267773dd3c4ee8ed925ac39fc46771f2508182649f6d2d29.html"
+  },
+  {
+    "route": "/examples/word_finder_tutorial/",
+    "title": "/examples/word_finder_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1869d65fb06363a7175278c9936bb6bda209d22bf4fba8d8c14c137d03e9301d.html",
+    "body": "html/examples/word_finder_tutorial.html",
+    "suffix": "templates/fragments/37afd11df439170f008ae27949f22a013e32bdc0bddb89f89f77a21b07f4d98e.html"
+  },
+  {
+    "route": "/examples/dependency_lockfile_tutorial/",
+    "title": "/examples/dependency_lockfile_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c4fac4b4d91343604631be3968f8e4c855a643e9a6882e00e96c9352235776fa.html",
+    "body": "html/examples/dependency_lockfile_tutorial.html",
+    "suffix": "templates/fragments/e0ab1ff1fd4463c50fec432f754980800269025a0821624598004ceee8c5c7f7.html"
+  },
+  {
+    "route": "/examples/hashbang_tutorial/",
+    "title": "/examples/hashbang_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4078bb765d9ab9a4fa573e51b257f699b55c0a0d6a578831478545483c9de91e.html",
+    "body": "html/examples/hashbang_tutorial.html",
+    "suffix": "templates/fragments/bebec321c604bba6f3471a0a2100663173045fa3567877be3d3ab752ab876fdd.html"
+  },
+  {
+    "route": "/examples/honeycomb_tutorial/",
+    "title": "/examples/honeycomb_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/04f93236e4808b46995f38c132ed3606e352923be0e38c6b887c2935280f2517.html",
+    "body": "html/examples/honeycomb_tutorial.html",
+    "suffix": "templates/fragments/d2464e77c219b874b4fc39409c108924f1da3bdd82bf81549f808b091e10c1b8.html"
+  },
+  {
+    "route": "/examples/snapshots_tutorial/",
+    "title": "/examples/snapshots_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/324580399d822af6c83a72b72cee0363f03edc812cce614f8f8826b8b6e16d41.html",
+    "body": "html/examples/snapshots_tutorial.html",
+    "suffix": "templates/fragments/212fd179ac9fecc8517974de60e4e687bcb2c5c0136a7ad117e6bfbfea3ecbef.html"
+  },
+  {
+    "route": "/examples/file_server_tutorial/",
+    "title": "/examples/file_server_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/71595a0aa9addd421c52a6e92dcf07f3e8a54b1b111296c9fded4c61343d025c.html",
+    "body": "html/examples/file_server_tutorial.html",
+    "suffix": "templates/fragments/b6a3cb97a59765a7fc814af811a1fb0557946ac3080aed8a05d2aa0719fd5321.html"
+  },
+  {
+    "route": "/examples/run_script_tutorial/",
+    "title": "/examples/run_script_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/ed0f21ae6f52aefb314e207d0427bad87fff648f07882a819caa743d78a0f5b0.html",
+    "body": "html/examples/run_script_tutorial.html",
+    "suffix": "templates/fragments/57b1c43087e2065d16505633ac2667ec8a76b93d7a73c1e1f65634904acbab0c.html"
+  },
+  {
+    "route": "/examples/import_maps_tutorial/",
+    "title": "/examples/import_maps_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/bc7640ce21913d4421438a7e031340f16f5ea9f668885682afbcc03a3b2029fd.html",
+    "body": "html/examples/import_maps_tutorial.html",
+    "suffix": "templates/fragments/ba3ad538d695ed77ca3e793a6334404002696dc259ae6f46ccc3d8a4b1ea07e2.html"
+  },
+  {
+    "route": "/examples/workspaces_monorepo_tutorial/",
+    "title": "/examples/workspaces_monorepo_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f1f3501b842c8a3148c4e8d5956c21b2fcada942b020cb597994058758f9157d.html",
+    "body": "html/examples/workspaces_monorepo_tutorial.html",
+    "suffix": "templates/fragments/987da33b63cc528668c456e0b13a603714ac8f0c920feae21a03ebc13ea64b99.html"
+  },
+  {
+    "route": "/examples/basic_opentelemetry_tutorial/",
+    "title": "/examples/basic_opentelemetry_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4d609f76820aa0c611eebcfe592629d37dc683a30422e1392d662a57ed5eb6aa.html",
+    "body": "html/examples/basic_opentelemetry_tutorial.html",
+    "suffix": "templates/fragments/91c7a12de4793facafe9ff5aa150ca24c1f6a25c7699664a5bd5f79b4e7ed74e.html"
+  },
+  {
+    "route": "/examples/next_tutorial/",
+    "title": "/examples/next_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b338a2687a6fc2a720dc92816865ac929fb9be38b7249b59fca30d152c06f9ed.html",
+    "body": "html/examples/next_tutorial.html",
+    "suffix": "templates/fragments/70a382d8344e632f9013a2ae8b2da6069d8bee0572a09733b33e8c370f690e56.html"
+  },
+  {
+    "route": "/examples/migrate_node_project_tutorial/",
+    "title": "/examples/migrate_node_project_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/00562eb1fd2485661c98deed14dabd4224247b0217c83b6fe1cb9d009764a210.html",
+    "body": "html/examples/migrate_node_project_tutorial.html",
+    "suffix": "templates/fragments/956935feef1a5e8669a4355be939fb0fb0258067aeff626bff93e7a6b90f1535.html"
+  },
+  {
+    "route": "/examples/file_based_routing_tutorial/",
+    "title": "/examples/file_based_routing_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4d40488abb367a0d0edf2888cbcba9de60de2e612d287fa91cb87b40244a8d00.html",
+    "body": "html/examples/file_based_routing_tutorial.html",
+    "suffix": "templates/fragments/e0fc30974f285bdeb9a7899cfd451b5c6db1c4f4cc517340e4a524b6c676efce.html"
+  },
+  {
+    "route": "/examples/drizzle_tutorial/",
+    "title": "/examples/drizzle_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/10d70eeb83718f18ca88f9eb8990a963a6e71871cb8de627ee2c4e1585b6248f.html",
+    "body": "html/examples/drizzle_tutorial.html",
+    "suffix": "templates/fragments/8dadba86e42e71d77702cb542bbc03b0a760b25797193093459a3baf96b5fe29.html"
+  },
+  {
+    "route": "/examples/nuxt_tutorial/",
+    "title": "/examples/nuxt_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1d704e75d8e00afb7022822c8275dabe8393498bff21a03e0b8cc45c2058897e.html",
+    "body": "html/examples/nuxt_tutorial.html",
+    "suffix": "templates/fragments/ca31fa1e80ff0d0d09cc81b40eddd62c00c64fbecfb1d3796e7d8a7bb4940237.html"
+  },
+  {
+    "route": "/examples/testing_tutorial/",
+    "title": "/examples/testing_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/95fabcd55df28c0b3a532fbc68df508f98726adb5b94949236dddd166c6c8323.html",
+    "body": "html/examples/testing_tutorial.html",
+    "suffix": "templates/fragments/2e1a3151df25905e5266bb6186d99df01ec070ee6cfac3b716ceb0bdd615574b.html"
+  },
+  {
+    "route": "/examples/tunnel_telemetry_tutorial/",
+    "title": "/examples/tunnel_telemetry_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/d20ae57a869872d83b8a88f68eadb808abd5ef83c9cf1befcf8add742b57f332.html",
+    "body": "html/examples/tunnel_telemetry_tutorial.html",
+    "suffix": "templates/fragments/e935d35f1c647bdb6c58fc22269c32a95ea57a2e26951b321b8cb7660ba29b5b.html"
+  },
+  {
+    "route": "/examples/aws_lambda_tutorial/",
+    "title": "/examples/aws_lambda_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c2442d02bc35cd22fa98efbc13d817cf5afcd48895f089e3d5abd7002244612d.html",
+    "body": "html/examples/aws_lambda_tutorial.html",
+    "suffix": "templates/fragments/ee984064e57ae302673abdbbf493b2c011b8d22bd7fb4de4fed0c9d750fa7309.html"
+  },
+  {
+    "route": "/examples/aws_lightsail_tutorial/",
+    "title": "/examples/aws_lightsail_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6ed8047c46dbbb33bed0b2fc25ea7e871f2f41b675dd0472986edb4a065fabae.html",
+    "body": "html/examples/aws_lightsail_tutorial.html",
+    "suffix": "templates/fragments/91a9c403491c0ab43df5bcbd33f1b9ef3586f711cc29a735e7b7dd4e5faebce8.html"
+  },
+  {
+    "route": "/examples/llm_tutorial/",
+    "title": "/examples/llm_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/68bf1dbbe00950d9138e6bcbf1b41057efbcba29d5385477990f86f97a5b9705.html",
+    "body": "html/examples/llm_tutorial.html",
+    "suffix": "templates/fragments/0f84ead3ec852f30d7a7e9b80c0b2c4870abc8acfbbc37f12a19d3e67b426ff3.html"
+  },
+  {
+    "route": "/examples/apollo_tutorial/",
+    "title": "/examples/apollo_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/0c3c9c33dcd3e78922e8d8e9c4922226db23e821c5dbb024b8d7cd243dea068a.html",
+    "body": "html/examples/apollo_tutorial.html",
+    "suffix": "templates/fragments/9c5a800540d88e1276d58fb8b9081f030cc0905e598210b5aa279dabc08dccb7.html"
+  },
+  {
+    "route": "/examples/solidjs_tutorial/",
+    "title": "/examples/solidjs_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/e7cc3bfe51a354989e0b4d7589723ebb790e4fe2bdb88166159b8ad6bd5de579.html",
+    "body": "html/examples/solidjs_tutorial.html",
+    "suffix": "templates/fragments/c1f1db50cabe54c0ce262fc8e661aeebf906cb2f24447e5285fe96be7c79c7dc.html"
+  },
+  {
+    "route": "/examples/mysql2_tutorial/",
+    "title": "/examples/mysql2_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/efd5429e4a0b1d1447aedefa17940274e51d3c913780b52dca3565c9cd6bd993.html",
+    "body": "html/examples/mysql2_tutorial.html",
+    "suffix": "templates/fragments/0dde613951f48f59413f6d81a455abae9663055a01ecd331662c990edb111537.html"
+  },
+  {
+    "route": "/examples/module_metadata_tutorial/",
+    "title": "/examples/module_metadata_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a656d7ee51fbf043c0588e828a4de2bc7a7633c88d7465faf480a73c696ebb9c.html",
+    "body": "html/examples/module_metadata_tutorial.html",
+    "suffix": "templates/fragments/aa3f5d38b26fcd522d18189e611152b199cd81862e445ab9a12ba18c032cfdd3.html"
+  },
+  {
+    "route": "/examples/tanstack_tutorial/",
+    "title": "/examples/tanstack_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1a1d27f91dc1eb3f1360cfe3748e1bb5364e49cd6a82ed796d17fdb0968359eb.html",
+    "body": "html/examples/tanstack_tutorial.html",
+    "suffix": "templates/fragments/2a2158e79d8d657b8f5c81d53d396d463dfe691aeae11d1dd0f4afbaf5df5ac6.html"
+  },
+  {
+    "route": "/examples/kinsta_tutorial/",
+    "title": "/examples/kinsta_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/3166d62149765baa7afc456dc51edeb8e5a88bc7da486546dd34d0ffaa273ae2.html",
+    "body": "html/examples/kinsta_tutorial.html",
+    "suffix": "templates/fragments/0e519897c664699fdbe7dcf8274c1c571589cc57913d7a1a13f4cbd0e2479a0e.html"
+  },
+  {
+    "route": "/examples/file_system_events_tutorial/",
+    "title": "/examples/file_system_events_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/89a55983bc84fe20235d28ae4398eae7e62dbae6bc83fef0fe9c500731e0ec3a.html",
+    "body": "html/examples/file_system_events_tutorial.html",
+    "suffix": "templates/fragments/aa3f5d38b26fcd522d18189e611152b199cd81862e445ab9a12ba18c032cfdd3.html"
+  },
+  {
+    "route": "/examples/fresh_tutorial/",
+    "title": "/examples/fresh_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c4b58c3f42b0114627899aeff7b36a4ea5af637b6aa09768696a556d12aee314.html",
+    "body": "html/examples/fresh_tutorial.html",
+    "suffix": "templates/fragments/09b0a74786674e2bdb4d47bd06dd4c2abbb81027c256b79c8e058fd602c05803.html"
+  },
+  {
+    "route": "/examples/npm_lifecycle_scripts_tutorial/",
+    "title": "/examples/npm_lifecycle_scripts_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/eaae6f8723d3a61c0eaae3d49e23fc4ac385389434fbb73df78659e104a4a670.html",
+    "body": "html/examples/npm_lifecycle_scripts_tutorial.html",
+    "suffix": "templates/fragments/8169a386df305260cc23e8113a062e419f57c28a907a6ca64aa649903f36d856.html"
+  },
+  {
+    "route": "/examples/tunnel_tutorial/",
+    "title": "/examples/tunnel_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/84f86d4504130159461200a88ac7acf6a7479dccc89d6178008499c6542303e9.html",
+    "body": "html/examples/tunnel_tutorial.html",
+    "suffix": "templates/fragments/c65ae8908cd90900fbe754a41a2526630bb2c177f7fa6fda506f61d41736ce7a.html"
+  },
+  {
+    "route": "/examples/express_tutorial/",
+    "title": "/examples/express_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f1041490ea38f019a5b562d4337bf360fa505e4cf2847310f2a1b1626cd6c169.html",
+    "body": "html/examples/express_tutorial.html",
+    "suffix": "templates/fragments/9abf9f703e4a8593df32dbb98e399064a0179963849e285afd83b92bd7d8dc96.html"
+  },
+  {
+    "route": "/examples/bdd_tutorial/",
+    "title": "/examples/bdd_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b38ed4529e913062f0f01abb62edceb06089900cf4d65665f1cc8415e3cfbad8.html",
+    "body": "html/examples/bdd_tutorial.html",
+    "suffix": "templates/fragments/70fa304e2ca985871559178c78ef80411b30e87bbb32bc249d5419f4ce86c3c3.html"
+  },
+  {
+    "route": "/examples/hyperdx_tutorial/",
+    "title": "/examples/hyperdx_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/0261f91b821ff6b9e4d1906c0514b06cd845f41f6d8bc7fcb36b9f7073a577bd.html",
+    "body": "html/examples/hyperdx_tutorial.html",
+    "suffix": "templates/fragments/c39ef717e3753a43bbe600e053da3242829db3283f8645c1308047a3aac77bef.html"
+  },
+  {
+    "route": "/examples/trpc_tutorial/",
+    "title": "/examples/trpc_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/755381b71f44464d7d911765fec3e63635b01c371711ccdf8a6a61c904c666a2.html",
+    "body": "html/examples/trpc_tutorial.html",
+    "suffix": "templates/fragments/fa08d055a099fab390ac0e2c8d069169d9422b28fbf01f2a2eeffa697e41f023.html"
+  },
+  {
+    "route": "/examples/react_tutorial/",
+    "title": "/examples/react_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/567cced213036e94a3ad98736a92b11dc5b96ea483d6825617c84c6c98b024b1.html",
+    "body": "html/examples/react_tutorial.html",
+    "suffix": "templates/fragments/68e010c8cfdb72da0e2ab5fb6a154cd81006ca159fd0d26d5116b895869d90fd.html"
+  },
+  {
+    "route": "/examples/deno_github_actions_tutorial/",
+    "title": "/examples/deno_github_actions_tutorial/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/429d73732cc4384e5109a4aeaa72e5408160782304aaf8fc60e02ad5c6105b8a.html",
+    "body": "html/examples/deno_github_actions_tutorial.html",
+    "suffix": "templates/fragments/d321a7c7b4a4af9384ecf517cfc5b7e8b38c751a9d7b9f4b1c60e5b4731ff4e2.html"
+  },
+  {
+    "route": "/AGENTS/",
+    "title": "/AGENTS/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/033e5533fcfb293ef2c69599c49199b895b4f632bb1bc32fe2069bd170a386a3.html",
+    "body": "html/AGENTS.html",
+    "suffix": "templates/fragments/b8cac311c2120d01935be0239f9570d269fdc59cb50a34727f06071ffd59eead.html"
+  },
+  {
+    "route": "/api/deno/about/",
+    "title": "/api/deno/about/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6982deaa7064695ea5ca6c4d9f0586f42b2346a50a9363e883d7382c3bc1b3f3.html",
+    "body": "html/api/deno/about.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/api/node/about/",
+    "title": "/api/node/about/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/15e373521528411490f5f57e3ed509dcb2317eff6f99a031e532a0116e788d85.html",
+    "body": "html/api/node/about.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/api/web/about/",
+    "title": "/api/web/about/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1e5c73fd10172c5564500b4ecf03b9bc30ce8d7f09fbb583529f26df0ae10cde.html",
+    "body": "html/api/web/about.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/subhosting/api/authentication/",
+    "title": "/subhosting/api/authentication/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c931f186b8dcbb3afc2ba7fda74e9612d7feaf27c7feccbc460ae1ad4c5ad3db.html",
+    "body": "html/subhosting/api/authentication.html",
+    "suffix": "templates/fragments/26eefd5eaaed9d0211fbb8a4318e426ac0268d052dc014dc10382e1624922b4a.html"
+  },
+  {
+    "route": "/subhosting/api/",
+    "title": "/subhosting/api/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/5433efc7aab34cf373306fb4ad1ce535ad0dfb87d8edeff734c1790f79c4b298.html",
+    "body": "html/subhosting/api.html",
+    "suffix": "templates/fragments/00a6048bdffbbfe502ef14b7aa71537bda1639805e71ddc69b1c38f226d74def.html"
+  },
+  {
+    "route": "/subhosting/",
+    "title": "/subhosting/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/97011ce81cb45f8f6e5c0a01de961bcdc7d9e7d22403532c2bcb75f1fd018434.html",
+    "body": "html/subhosting.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/subhosting/manual/quick_start/",
+    "title": "/subhosting/manual/quick_start/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b5a5b0c73a93f4664b0476c6192498e702a0ecc282e2ff43f90592f38ee81c4d.html",
+    "body": "html/subhosting/manual/quick_start.html",
+    "suffix": "templates/fragments/cbb495cce8410aaeaf045aeb2134647585253d49a7daf897e9c1603a823d27a6.html"
+  },
+  {
+    "route": "/subhosting/manual/api_migration_guide/",
+    "title": "/subhosting/manual/api_migration_guide/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/2366edacbc485353631b3182a516b02b031d122f835feec740291f21fbf00141.html",
+    "body": "html/subhosting/manual/api_migration_guide.html",
+    "suffix": "templates/fragments/6430a9546f88a540c8f8b7aa91cf13ba11f37d7ba60e9ad2a3aa2f35cd615246.html"
+  },
+  {
+    "route": "/subhosting/manual/acceptable_use_policy/",
+    "title": "/subhosting/manual/acceptable_use_policy/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9c7a4d436a1ad0347ab10aca9e988c2f4040f1614a7a124e6c9c4f74fc5b13ce.html",
+    "body": "html/subhosting/manual/acceptable_use_policy.html",
+    "suffix": "templates/fragments/2fb4db041649e13fdf9d47b2931e818543085b6b29e405f473c87cd848ad1fe7.html"
+  },
+  {
     "route": "/subhosting/manual/",
     "title": "/subhosting/manual/",
     "source_model": "maintained HTML",
     "prefix": "templates/fragments/93edcc798876205e6d964911b4fb73629b0fa6e777cc8ec8737fe9066370353d.html",
     "body": "html/subhosting/manual.html",
     "suffix": "templates/fragments/29c2db6a8e399e87068746bdca622bd38fbf0c61fdb4330d1a5b33d5271dd067.html"
+  },
+  {
+    "route": "/subhosting/manual/events/",
+    "title": "/subhosting/manual/events/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/80713197170604433ae276e1cf33a3c57557b60ed5df1a797c33919855737dc2.html",
+    "body": "html/subhosting/manual/events.html",
+    "suffix": "templates/fragments/3a5fd0838f3ef853c51c79c2a02093d3fac5e7b4f5bf9c48bf2906d10d94cb57.html"
+  },
+  {
+    "route": "/subhosting/manual/pricing_and_limits/",
+    "title": "/subhosting/manual/pricing_and_limits/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b6e253c3547efad42319a5e2729df70200194e90096be21da2c297d482abdeff.html",
+    "body": "html/subhosting/manual/pricing_and_limits.html",
+    "suffix": "templates/fragments/09d6187ad7996a9ac0bc98fdedc99454998d8351b257fa16e2d54d6cc9d59e8f.html"
+  },
+  {
+    "route": "/subhosting/manual/planning_your_implementation/",
+    "title": "/subhosting/manual/planning_your_implementation/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f0e9e9d9e426afd1fadab419629bef4c514eff1c3bade33a6527feeb7053a901.html",
+    "body": "html/subhosting/manual/planning_your_implementation.html",
+    "suffix": "templates/fragments/c268d10d4b91ab9a9f15ea9b9507d629c2f923c79567e69758454c059d4cbdd8.html"
   },
   {
     "route": "/404/",
@@ -56,6 +2056,398 @@
     "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
   },
   {
+    "route": "/deploy/support/",
+    "title": "/deploy/support/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4b93e3064181f456a6eec54465c8deed5e3d9540d22be5b0dc87f0fb6ecabddb.html",
+    "body": "html/deploy/support.html",
+    "suffix": "templates/fragments/4ce92d0365bb926458a55b1f742de0299c7c55c59b5feff1794c3ff9b0d016a9.html"
+  },
+  {
+    "route": "/deploy/acceptable_use_policy/",
+    "title": "/deploy/acceptable_use_policy/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/8acee36cb8c087febef51009911749a8090b6280b68ccc8bd0c67b548ba9e82b.html",
+    "body": "html/deploy/acceptable_use_policy.html",
+    "suffix": "templates/fragments/2fb4db041649e13fdf9d47b2931e818543085b6b29e405f473c87cd848ad1fe7.html"
+  },
+  {
+    "route": "/deploy/terms_and_conditions/",
+    "title": "/deploy/terms_and_conditions/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a93af27bbefcc08a8ad3958099d5632497997cde22c29b5a7433a71ccd679a2a.html",
+    "body": "html/deploy/terms_and_conditions.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/deploy/security/",
+    "title": "/deploy/security/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b050b433563354e53b15fd892b78742f500e659afc1e9f9f9fc38e01dfe8579e.html",
+    "body": "html/deploy/security.html",
+    "suffix": "templates/fragments/13e903febfa9acd43aa528ad39ca1b7d5c34e3770abab1cea1c1157f6f581293.html"
+  },
+  {
+    "route": "/deploy/fulfillment_policy/",
+    "title": "/deploy/fulfillment_policy/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/90316920fc54ad3722804f9365bfdb728bf61e838c50114d3bea5c1d9de078e0.html",
+    "body": "html/deploy/fulfillment_policy.html",
+    "suffix": "templates/fragments/2b4ac18266be9740a8a30c8261ea70d07595f4defd11b4fee525abb61e9a3a73.html"
+  },
+  {
+    "route": "/deploy/reference/databases/",
+    "title": "/deploy/reference/databases/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/dc53d53ede622e324d0cfd52cd3ba4fd60b4312bc9f3d09deb7f0f75bc0c42a2.html",
+    "body": "html/deploy/reference/databases.html",
+    "suffix": "templates/fragments/b5c5e49609ee008f0e3a6bc875bcfe2d134c530bde2519db9fc0997ad81ed514.html"
+  },
+  {
+    "route": "/deploy/reference/cloud_connections/",
+    "title": "/deploy/reference/cloud_connections/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/2b8a779e7ceb8b3391bcf9cea707cf0156eb4ec5d657dffd68bee3cbe31259a8.html",
+    "body": "html/deploy/reference/cloud_connections.html",
+    "suffix": "templates/fragments/d7dacca91c2e980ce6f22be68162919b86c440c8f34a3fc27b3e9fd45e465f44.html"
+  },
+  {
+    "route": "/deploy/reference/observability/",
+    "title": "/deploy/reference/observability/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7a75bb88f92b09c7922c575da0cd410f55f375af373f1de712496cbab3bcd8b5.html",
+    "body": "html/deploy/reference/observability.html",
+    "suffix": "templates/fragments/9c2034ed6f1d97701016df812653229e7a9edc1c0375ee5396dacba047c7a8f2.html"
+  },
+  {
+    "route": "/deploy/reference/cron/",
+    "title": "/deploy/reference/cron/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7799984772eec0c99213464c79f652def6f0801f5708cc998deebead39c3bb6f.html",
+    "body": "html/deploy/reference/cron.html",
+    "suffix": "templates/fragments/664afa71e87feb325b36d55a9e47f22fbdeb0f8e533d6b48abc2af8880439db2.html"
+  },
+  {
+    "route": "/deploy/reference/deno_kv/",
+    "title": "/deploy/reference/deno_kv/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/99d138a356df8a81cc0f5c6ab999eeed6ac13a724fef3b2e39f20de6765fe4eb.html",
+    "body": "html/deploy/reference/deno_kv.html",
+    "suffix": "templates/fragments/01432667663e05ca7b89785552c56e621fbfe4d211524deaedf9d5b6393f55f8.html"
+  },
+  {
+    "route": "/deploy/reference/playgrounds/",
+    "title": "/deploy/reference/playgrounds/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/30b2ab4db85dadf2c77ed2dba427612a8cf5183bce94457273c11b831cb2e7fd.html",
+    "body": "html/deploy/reference/playgrounds.html",
+    "suffix": "templates/fragments/6f1ac2e22e317930880b6d0f36b1e4ca0e5b21b06966bbd7a346e0d1803d3fea.html"
+  },
+  {
+    "route": "/deploy/reference/builds/",
+    "title": "/deploy/reference/builds/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/21742dd925220463cacab37db58324b5b99de02ed44f9d069b3b81fd8a6971ba.html",
+    "body": "html/deploy/reference/builds.html",
+    "suffix": "templates/fragments/1015b7dffbb5328fbb26feb59d20f571effaaa605bc08c1f03c1c126738f106c.html"
+  },
+  {
+    "route": "/deploy/reference/runtime/",
+    "title": "/deploy/reference/runtime/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/8681f7342caa34737c3510caac8ff218a1720a53b6e4cc76d85c161d3709cc84.html",
+    "body": "html/deploy/reference/runtime.html",
+    "suffix": "templates/fragments/7c8097a8b588eb19687aacfd471f3116528371a55988c42e782eb589341e28d3.html"
+  },
+  {
+    "route": "/deploy/reference/domains/",
+    "title": "/deploy/reference/domains/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6829b65b98b45397c65015371f607f45a78e9264a229237f40c8b629de756c5b.html",
+    "body": "html/deploy/reference/domains.html",
+    "suffix": "templates/fragments/c42f38646ecfc90482537a3cc0a7c5384b3348e26384d990c7266314790afa68.html"
+  },
+  {
+    "route": "/deploy/reference/accounts/",
+    "title": "/deploy/reference/accounts/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/90e453c38b36384ecf319c46cc0a337dfdab5e26ac198b9abdb75c2fe0972a51.html",
+    "body": "html/deploy/reference/accounts.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/deploy/reference/timelines/",
+    "title": "/deploy/reference/timelines/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/3d612ab7ae5ce89b1f41554319f4c07fff8b4df7f0e68897df207d0c763eb5af.html",
+    "body": "html/deploy/reference/timelines.html",
+    "suffix": "templates/fragments/32783732a782dc4a695637bf1513dad356abba6993aed7097e4478e055253e42.html"
+  },
+  {
+    "route": "/deploy/reference/button/",
+    "title": "/deploy/reference/button/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7f51f7f377100afbbec1ba559fed4b75464481b25f5896a2b07d4ead9a22dff5.html",
+    "body": "html/deploy/reference/button.html",
+    "suffix": "templates/fragments/347a8f15dc4e2cefd5e719cd52064279027e41ed1eb74e4e69b2cb65b41f25e3.html"
+  },
+  {
+    "route": "/deploy/reference/apps/",
+    "title": "/deploy/reference/apps/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9c289982955b8128d2662489c47114c25d2bdce6d31c144472fda48f8bf8ecad.html",
+    "body": "html/deploy/reference/apps.html",
+    "suffix": "templates/fragments/66951a878cae5c7e016a86d2f19692afd7e3ef6cb7c28832b73dc5e515b4b5cd.html"
+  },
+  {
+    "route": "/deploy/reference/env_vars_and_contexts/",
+    "title": "/deploy/reference/env_vars_and_contexts/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4deb22e76586853363538664d52b800983ad1dc2c108013e13902cf2a0ab1b44.html",
+    "body": "html/deploy/reference/env_vars_and_contexts.html",
+    "suffix": "templates/fragments/c23f02a02eef7ce6bb329608ab44af10a6542cb28fd62629994d129ccbbe8ee1.html"
+  },
+  {
+    "route": "/deploy/reference/caching/",
+    "title": "/deploy/reference/caching/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/bcd47d847d32046b3c6ae86c23c84f7bfa271c84750dd7b3fad89f512bc50857.html",
+    "body": "html/deploy/reference/caching.html",
+    "suffix": "templates/fragments/099e3d83e18adfddd7a61e5ffaae5cb72fd981b15ef0e0e0ef1c4ffec93455fb.html"
+  },
+  {
+    "route": "/deploy/reference/oidc/",
+    "title": "/deploy/reference/oidc/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/12b0677d4eb0066e074ba25fc5639266aecf964d0c91ecc8985998bbfed815b0.html",
+    "body": "html/deploy/reference/oidc.html",
+    "suffix": "templates/fragments/a9e2aa453a0a32290e1b548b7bd62c5fe3f08efcd5e40fb03a3defe5d392d08e.html"
+  },
+  {
+    "route": "/deploy/reference/frameworks/",
+    "title": "/deploy/reference/frameworks/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/21ef32e70c039aab5b3b9d7e04287a868e8da639b10a322ad22d0ef79b60bfe3.html",
+    "body": "html/deploy/reference/frameworks.html",
+    "suffix": "templates/fragments/54475dee03acc78127add683218799663df44f8eb335b40f1ec0ad9e78ef4be5.html"
+  },
+  {
+    "route": "/deploy/reference/tunnel/",
+    "title": "/deploy/reference/tunnel/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/8c73bab909ee07fe9159d5c75fd05e741435ff864fc60b27b8fddaff2fe7162c.html",
+    "body": "html/deploy/reference/tunnel.html",
+    "suffix": "templates/fragments/fc507156ba0dcfa1836c3f696bb7f36f673c324c311a928cf02e57819acd2096.html"
+  },
+  {
+    "route": "/deploy/reference/organizations/",
+    "title": "/deploy/reference/organizations/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7897c386d313e245c79adcf01f9a1290df2db88d305493f32273c9ba0ec0d06c.html",
+    "body": "html/deploy/reference/organizations.html",
+    "suffix": "templates/fragments/27a588d912c1ce02dad022f1421dbdd8351822be8d0d8ca83031564f08f36c27.html"
+  },
+  {
+    "route": "/deploy/kv/data_modeling_typescript/",
+    "title": "/deploy/kv/data_modeling_typescript/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/0996f709ebbf633a2c2415a9470da92147fd23445d8db2b06ef66852fe097a8f.html",
+    "body": "html/deploy/kv/data_modeling_typescript.html",
+    "suffix": "templates/fragments/adc918f3827610359bfe015084c6fab6b111a174c46d4e10b1d24e355b82e80e.html"
+  },
+  {
+    "route": "/deploy/kv/operations/",
+    "title": "/deploy/kv/operations/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/aabf7729f95bc9d745bfb93ae349cb78e42f7d6f24b73c89e5d06cdd64834bf9.html",
+    "body": "html/deploy/kv/operations.html",
+    "suffix": "templates/fragments/b01883e8f7640117cbbc101a64ce61a36570e513093daf8ee5a54abda7f7e7ba.html"
+  },
+  {
+    "route": "/deploy/kv/key_space/",
+    "title": "/deploy/kv/key_space/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/5902becf7802e2bb9e6b824b4dd14a16bd6b139f55d8c28a8c0be193a1da3a4d.html",
+    "body": "html/deploy/kv/key_space.html",
+    "suffix": "templates/fragments/58ed850dbff63a95f2de29ef16c21863eb0e7773251cee4c2bac83c31b4e79e8.html"
+  },
+  {
+    "route": "/deploy/kv/transactions/",
+    "title": "/deploy/kv/transactions/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6edd7d78744ba3ed921623b84d501fdbbc8c227b1e256995f0de5a129689bdeb.html",
+    "body": "html/deploy/kv/transactions.html",
+    "suffix": "templates/fragments/af11d7dd71585c73a7fee655663e4946546365340206300bd971aadb7d84baea.html"
+  },
+  {
+    "route": "/deploy/kv/backup/",
+    "title": "/deploy/kv/backup/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/79f72e3e3de8e073e6d6bbb94edb9d2d1e5a61d5e250780fa2a28cfb5f15e002.html",
+    "body": "html/deploy/kv/backup.html",
+    "suffix": "templates/fragments/270f65900cdd93d9c108f2a45d0ad5567540a4011b4f34027f52b2eb0a1d5aaf.html"
+  },
+  {
+    "route": "/deploy/kv/key_expiration/",
+    "title": "/deploy/kv/key_expiration/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/69d4e7e60049940cd56af49dfe5045ca4f717c961b10a6dedfb81e450c15e654.html",
+    "body": "html/deploy/kv/key_expiration.html",
+    "suffix": "templates/fragments/94e3eab8c162da62d0ce650ba660d023076ae5e6b9268f0780f5c8e70ddf58e2.html"
+  },
+  {
+    "route": "/deploy/kv/",
+    "title": "/deploy/kv/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/43bdc673d153e0a2ca3bf8c3702768668341788a2296482c704bdb767adddb68.html",
+    "body": "html/deploy/kv.html",
+    "suffix": "templates/fragments/3a1852c38a038a767b6b43fa23edc8c847b66e37f3a2a6ba2b044264688da431.html"
+  },
+  {
+    "route": "/deploy/kv/secondary_indexes/",
+    "title": "/deploy/kv/secondary_indexes/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f971f52457b3584057ed51761d9f0e3bd6a60e1484db451bb1c9535a85e932dc.html",
+    "body": "html/deploy/kv/secondary_indexes.html",
+    "suffix": "templates/fragments/c4b14c4a6cac950b052bb2ebe68b320cc2b9c4ba91aa53271b5e8f5f0502dd1d.html"
+  },
+  {
+    "route": "/deploy/kv/node/",
+    "title": "/deploy/kv/node/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/be4bf9019615d262540b9e58556c5d50a194d9904caa9361dcd07170d2661bf0.html",
+    "body": "html/deploy/kv/node.html",
+    "suffix": "templates/fragments/a7c6229dad5f6bf80d5a608c553cadd4fac619a4ebb6fc328211efead2b830de.html"
+  },
+  {
+    "route": "/deploy/classic/middleware/",
+    "title": "/deploy/classic/middleware/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a6a432c18c0d01a1c45efc1705fb2979c01bf07a855b5ef551bbe570a3d1f264.html",
+    "body": "html/deploy/classic/middleware.html",
+    "suffix": "templates/fragments/dc5f62c932eeb7bfcae050ddaea23ae03605b86107df60aa18b57f0374e948c5.html"
+  },
+  {
+    "route": "/deploy/classic/cron/",
+    "title": "/deploy/classic/cron/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6ffc5497c39de90db328cd689a801efc8772ad94b012a21adde8fc504839ca80.html",
+    "body": "html/deploy/classic/cron.html",
+    "suffix": "templates/fragments/997e9ec25696b7f93e74e0a369efde85de75f02e30c78add6a6517d4cca3fcd0.html"
+  },
+  {
+    "route": "/deploy/classic/playgrounds/",
+    "title": "/deploy/classic/playgrounds/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/1db3b6696c281987c8b355c789df3bff6e647526f88e95597f8e175555d6b684.html",
+    "body": "html/deploy/classic/playgrounds.html",
+    "suffix": "templates/fragments/cb354a20e23e5a4d912eb100fb5acc1a354f261c8c15c1df7f92bf6475be1669.html"
+  },
+  {
+    "route": "/deploy/classic/edge_cache/",
+    "title": "/deploy/classic/edge_cache/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/c739f79300ae1dbce15d98e4c52d2c121be8d7f3826676547d89c5e059291e86.html",
+    "body": "html/deploy/classic/edge_cache.html",
+    "suffix": "templates/fragments/c56254cafd3b42d0294882e122c790893d8158c99c218192ea20665739b73bef.html"
+  },
+  {
+    "route": "/deploy/classic/dynamodb/",
+    "title": "/deploy/classic/dynamodb/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/cd02ffcd1b103dddf286f6381a2bf6ff6a6ddc7e55a14c9d306dc11b025ced95.html",
+    "body": "html/deploy/classic/dynamodb.html",
+    "suffix": "templates/fragments/0240623acd1e8af4028dc00b3f6f3a66416dbaeeededaf8165b2f938f8e0962f.html"
+  },
+  {
+    "route": "/deploy/classic/kv_on_deploy/",
+    "title": "/deploy/classic/kv_on_deploy/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/ed0703a3ceda0e3f5ac1b18f3a483e91897385b815429f8fe3e96aeda94c4212.html",
+    "body": "html/deploy/classic/kv_on_deploy.html",
+    "suffix": "templates/fragments/5fd3a828dfc6c1279d8dc7847fd152ede8b21f44fccc5a872981707c8d1e82f4.html"
+  },
+  {
+    "route": "/deploy/classic/custom-domains/",
+    "title": "/deploy/classic/custom-domains/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/34baef6dab674e1183c1b46287d3a3348d818955a616cdfdeaedc72d2e5cd5ca.html",
+    "body": "html/deploy/classic/custom-domains.html",
+    "suffix": "templates/fragments/0f5c3668677b841eed3d9085c2dd1641ead00be13f755035f6de44254d8c9b33.html"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-fetch/",
+    "title": "/deploy/classic/api/runtime-fetch/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7b13f28956cb85b890e82cb74de96f9d429b70770934c90df7530b0a92f6baa9.html",
+    "body": "html/deploy/classic/api/runtime-fetch.html",
+    "suffix": "templates/fragments/8afa060a1ad7a5b36cd171de7b967b1bee32559bd5eea90b47c5d2b9c79bd9e6.html"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-node/",
+    "title": "/deploy/classic/api/runtime-node/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/d1b8de2bcfcbeea4d52f8f9b361d1e7f62d7dd16ba1b149e6d82530a246b8b80.html",
+    "body": "html/deploy/classic/api/runtime-node.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-broadcast-channel/",
+    "title": "/deploy/classic/api/runtime-broadcast-channel/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/a39617c155e6130a9c506f0ec06150a3f52677a0760de9e19940bf7721c42455.html",
+    "body": "html/deploy/classic/api/runtime-broadcast-channel.html",
+    "suffix": "templates/fragments/36a7745499919e203ac9d8f79f0a5413247170c424eea18da3f3e9267a8f5a64.html"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-headers/",
+    "title": "/deploy/classic/api/runtime-headers/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f204ed53e5721aa26a316ff17b67223b1628d07ab2b966050da7c5cf8639123e.html",
+    "body": "html/deploy/classic/api/runtime-headers.html",
+    "suffix": "templates/fragments/ce25fe9039d13e98cae598a19cfa139112908540dbcf9e8ed7ab27a034cad6f5.html"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-request/",
+    "title": "/deploy/classic/api/runtime-request/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/f381372e5cddf4cfd520c887948e516a93bb0b29f9db5f99c4d5946e530f6b98.html",
+    "body": "html/deploy/classic/api/runtime-request.html",
+    "suffix": "templates/fragments/93c90187e7ee755bf4ca63c1e9d3cccf8814f7a9e56333f4e83c5dae4c431e31.html"
+  },
+  {
+    "route": "/deploy/classic/api/compression/",
+    "title": "/deploy/classic/api/compression/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/00011ba3b31901b09e96bd715570fbfbc8072f00e61c112660473104777c43c9.html",
+    "body": "html/deploy/classic/api/compression.html",
+    "suffix": "templates/fragments/5afa2a52ad3172af41adf0c27fd24f83e68bda9de6ad27f0fa584a27c7b2054b.html"
+  },
+  {
+    "route": "/deploy/classic/api/",
+    "title": "/deploy/classic/api/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/e3f9fe46b388ae557ccab8986bd8f8bd907405f5a3792a1f0e7659d94efa62ea.html",
+    "body": "html/deploy/classic/api.html",
+    "suffix": "templates/fragments/669a075c6ffa7988d490ad6c2bff67d27469aa6d4861c738193bf1083c95c5f4.html"
+  },
+  {
+    "route": "/deploy/classic/api/dynamic-import/",
+    "title": "/deploy/classic/api/dynamic-import/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/53d8cdce037224256025ef4ccf59148ff39a430bea08f06ba75cd51ebad43d5c.html",
+    "body": "html/deploy/classic/api/dynamic-import.html",
+    "suffix": "templates/fragments/1b8bfa0463e13dfcc84d806e53d5bd8f83ecbba3f88f47dd463220b648a010cd.html"
+  },
+  {
+    "route": "/deploy/classic/api/runtime-sockets/",
+    "title": "/deploy/classic/api/runtime-sockets/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/8f2a03f45566eb4e1f4d2690a988f6d5b7e34a7661ddc467429358c9dfaba822.html",
+    "body": "html/deploy/classic/api/runtime-sockets.html",
+    "suffix": "templates/fragments/c87f1147fdc2176cf7bafaed977c52e62dd678ec2d3d3c233e6be7c227ea9470.html"
+  },
+  {
     "route": "/deploy/classic/api/runtime-fs/",
     "title": "/deploy/classic/api/runtime-fs/",
     "source_model": "maintained HTML",
@@ -64,43 +2456,187 @@
     "suffix": "templates/fragments/8d34d823b0cfc1a9396b048b49f99a8799c78570759973d133d437ed49650573.html"
   },
   {
-    "route": "/lint/rules/ban-ts-comment/",
-    "title": "/lint/rules/ban-ts-comment/",
+    "route": "/deploy/classic/api/runtime-response/",
+    "title": "/deploy/classic/api/runtime-response/",
     "source_model": "maintained HTML",
-    "prefix": "templates/fragments/051685b0662f8a45bf119dc1cd5d1d1205e5e1b7ac95a21cd6e95afc6820aad9.html",
-    "body": "html/lint/rules/ban-ts-comment.html",
+    "prefix": "templates/fragments/d83cbca711828829eda14656050256d14c7040f1c2b38b7dbfdb96da0ec5a2ff.html",
+    "body": "html/deploy/classic/api/runtime-response.html",
+    "suffix": "templates/fragments/93c90187e7ee755bf4ca63c1e9d3cccf8814f7a9e56333f4e83c5dae4c431e31.html"
+  },
+  {
+    "route": "/deploy/classic/prisma-postgres/",
+    "title": "/deploy/classic/prisma-postgres/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4a81db1375975d6fd5f3758882dd74452c199fd0331b846970954d38c8fe30b5.html",
+    "body": "html/deploy/classic/prisma-postgres.html",
+    "suffix": "templates/fragments/58a83a3b3e69d20ddcb98020b584b8d05468901a9d6ab490c764aa3380e13af7.html"
+  },
+  {
+    "route": "/deploy/classic/running-scripts-locally/",
+    "title": "/deploy/classic/running-scripts-locally/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9c73864af0b11b53bd566d102a92757dc7997d9fa9e86650021a9cd62687d935.html",
+    "body": "html/deploy/classic/running-scripts-locally.html",
     "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
   },
   {
-    "route": "/examples/hello_world/",
-    "title": "/examples/hello_world/",
+    "route": "/deploy/classic/firebase/",
+    "title": "/deploy/classic/firebase/",
     "source_model": "maintained HTML",
-    "prefix": "templates/fragments/2515c65c2797c6a88b045a156b75a5ef82fe1113d66ac8aded60638ddaf7786e.html",
-    "body": "html/examples/hello_world.html",
+    "prefix": "templates/fragments/80790568d7de1f819f0e5fb007621071a7bf081be71f8e7fa249da9e02665641.html",
+    "body": "html/deploy/classic/firebase.html",
+    "suffix": "templates/fragments/64866e809944ddfdbee708e6262cde461fa94fadd432d7631d1631adb623673c.html"
+  },
+  {
+    "route": "/deploy/classic/neon-postgres/",
+    "title": "/deploy/classic/neon-postgres/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9de8fae21b915a2f746176bfec6eb956c7ac47f82323db592bf0415517d0af2a.html",
+    "body": "html/deploy/classic/neon-postgres.html",
+    "suffix": "templates/fragments/f82ad144c2bd8f05f21f518383cbaca5a3de81c8e525c5c25e14a39ca0f385cf.html"
+  },
+  {
+    "route": "/deploy/classic/postgres/",
+    "title": "/deploy/classic/postgres/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/5120e2e3672aaba1989d2169fdafca594951c7c749de4c0344276c7dadff7573.html",
+    "body": "html/deploy/classic/postgres.html",
+    "suffix": "templates/fragments/4e41b35baa8a6adbb3f952dc9ef59537ccb2d66375dd1941f39dc499afdde04e.html"
+  },
+  {
+    "route": "/deploy/classic/",
+    "title": "/deploy/classic/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/15c49cac767b80c1397dce179588596c90160fadc8bfe31ee11c4a10273b6a03.html",
+    "body": "html/deploy/classic.html",
+    "suffix": "templates/fragments/3b322445cf641cd9a67918a7d90a8a32addb5b138c03e63ce164e642f1f7e38e.html"
+  },
+  {
+    "route": "/deploy/classic/deployments/",
+    "title": "/deploy/classic/deployments/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/b304b17463ef5d1ca82bb47b224f06ff2ab87fe6d26a747e6f893783a8de4618.html",
+    "body": "html/deploy/classic/deployments.html",
+    "suffix": "templates/fragments/58b3bdf0583994e04eddfa397c81ff3c0d95ac02532afd07e445a3fff7afb6a3.html"
+  },
+  {
+    "route": "/deploy/classic/logs/",
+    "title": "/deploy/classic/logs/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/6d2971f889e2a04faaeb8b7bfd34fd8a972d4372bfa3774d2a0d84f6e1e9b372.html",
+    "body": "html/deploy/classic/logs.html",
+    "suffix": "templates/fragments/af11d7dd71585c73a7fee655663e4946546365340206300bd971aadb7d84baea.html"
+  },
+  {
+    "route": "/deploy/classic/queues/",
+    "title": "/deploy/classic/queues/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/4718d3e3cbd1e1ffa5935c22bd5178edb8558ad1edb200916f80a703d489df90.html",
+    "body": "html/deploy/classic/queues.html",
+    "suffix": "templates/fragments/34ef1f894f3b8b0155a81abb9a7c0575a46aa0aa2a51733f9183c1f8cb2a553d.html"
+  },
+  {
+    "route": "/deploy/classic/how-to-deploy/",
+    "title": "/deploy/classic/how-to-deploy/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/5a05d10f98ee90b2f32e3bed027a696e92cbbc2e0b6c2138146178c5e93b249d.html",
+    "body": "html/deploy/classic/how-to-deploy.html",
+    "suffix": "templates/fragments/8497a67f9878d9c345ce05b7abd7ee7f67edbb7768ce0f18ce3512ffbe5c0790.html"
+  },
+  {
+    "route": "/deploy/classic/environment-variables/",
+    "title": "/deploy/classic/environment-variables/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/337ef5176bc418f5d2c4cdb58ccc2ceb113caaede0434d4a390e3cfa0dc25d75.html",
+    "body": "html/deploy/classic/environment-variables.html",
+    "suffix": "templates/fragments/7c4496edc2b969a718bd826f6013a91df393e1a9816799ff8cdc8b97897596aa.html"
+  },
+  {
+    "route": "/deploy/classic/ci_github/",
+    "title": "/deploy/classic/ci_github/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/7114626980c1e84f02649be487ed003648fa5e259dfd1da14757190fd6bfa5d7.html",
+    "body": "html/deploy/classic/ci_github.html",
+    "suffix": "templates/fragments/ed5ff51cd4bcd27ad299cf272c2686ad3a6078426db96e0d85df886e50c7a764.html"
+  },
+  {
+    "route": "/deploy/classic/deployctl/",
+    "title": "/deploy/classic/deployctl/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/12696e6122dcc57ad0117d26b136c89d5c9b92360ab168c293002daf023d0aab.html",
+    "body": "html/deploy/classic/deployctl.html",
+    "suffix": "templates/fragments/287c5fde5d8d3e74ce39525ae23907318cb24bc4f41a17ba24769295f758566a.html"
+  },
+  {
+    "route": "/deploy/classic/organizations/",
+    "title": "/deploy/classic/organizations/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/9e96e70093a63893e1465aaaaa918920bfd1dc097c6af37f65655dbcf814b73f.html",
+    "body": "html/deploy/classic/organizations.html",
+    "suffix": "templates/fragments/0961405a261dcd469f8c1347c8765ae9856a3e35b0d5e66c380a305e87e7e3a8.html"
+  },
+  {
+    "route": "/deploy/classic/regions/",
+    "title": "/deploy/classic/regions/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/221676e62c8202d9ef9119748daae0b91e6a9aea687ed4ea7c61c38698a6f7f5.html",
+    "body": "html/deploy/classic/regions.html",
     "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
   },
   {
-    "route": "/api/deno/http-server/",
-    "title": "/api/deno/http-server/",
+    "route": "/deploy/privacy_policy/",
+    "title": "/deploy/privacy_policy/",
     "source_model": "maintained HTML",
-    "prefix": "templates/fragments/a3467bb35cee7b830468f71c8669e4789c9362ee3af74572f793f665831d3138.html",
-    "body": "html/api/deno/http-server.html",
-    "suffix": "templates/fragments/cac0c3be72e497b716a6348881d243882ee64391b545e8074407b50e5fdfc05c.html"
+    "prefix": "templates/fragments/dbdde1df18f9a695cbafe1aabf2c219716caa30a78c9b73cf8eea6d330096fe6.html",
+    "body": "html/deploy/privacy_policy.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
   },
   {
-    "route": "/api/web/fetch/",
-    "title": "/api/web/fetch/",
+    "route": "/deploy/migration_guide/",
+    "title": "/deploy/migration_guide/",
     "source_model": "maintained HTML",
-    "prefix": "templates/fragments/30bf46faf68e72cf7983d65900b95f7c960fa566eb479e52411d3dbc62f05b31.html",
-    "body": "html/api/web/fetch.html",
-    "suffix": "templates/fragments/cdd4ca0b06988b5e827877f0787143457c5f79ae4670b0a94d2077d4934690ff.html"
+    "prefix": "templates/fragments/4b586f054a104f80755a06881d173904f1f111311dfc012e5cb14096d6f72aaf.html",
+    "body": "html/deploy/migration_guide.html",
+    "suffix": "templates/fragments/452aa455654badc6258204ae7c29e9e0bcbece06bf1b1592b9af5814e41cb5fd.html"
   },
   {
-    "route": "/api/node/assert/",
-    "title": "/api/node/assert/",
+    "route": "/deploy/",
+    "title": "/deploy/",
     "source_model": "maintained HTML",
-    "prefix": "templates/fragments/fdd5ba58d063991b0a36e82c9c791d99854a708d02bd5feb1a0cf715f936062c.html",
-    "body": "html/api/node/assert.html",
-    "suffix": "templates/fragments/d0b44d95d629c55d25375c12cdae3b9035c1bc30c149f1e0fc8bd213d321bc49.html"
+    "prefix": "templates/fragments/629c2e64edc8f75870e006ab8876a41d766058356c880260235e3f85faa28d06.html",
+    "body": "html/deploy.html",
+    "suffix": "templates/fragments/0b42fcd4b833158d4c6471102ea7b47f27c3ce3c354d7c720d4e156c89421d81.html"
+  },
+  {
+    "route": "/deploy/usage/",
+    "title": "/deploy/usage/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/d71097633aa014ca71c52b19a0dcd2df5ed8e07b75279ca37defb702ed13ba15.html",
+    "body": "html/deploy/usage.html",
+    "suffix": "templates/fragments/d96675ac513ba8e781b48f850c2ac594ea37863159c10fb889b3769bc2f96244.html"
+  },
+  {
+    "route": "/deploy/changelog/",
+    "title": "/deploy/changelog/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/d5698f3352a75d13504bce1fae9ad25386c2238ade74225643686a02638ef471.html",
+    "body": "html/deploy/changelog.html",
+    "suffix": "templates/fragments/b78dc9ef160ddfb52b6e7cecd3d7cc87cb0cc096e5b3a4c93391d02c3fbe77f6.html"
+  },
+  {
+    "route": "/deploy/pricing_and_limits/",
+    "title": "/deploy/pricing_and_limits/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/2427822e0c5e3becac52e7cc175b4847c0b51bd916bb56546adb32bc793e4f71.html",
+    "body": "html/deploy/pricing_and_limits.html",
+    "suffix": "templates/fragments/45d3e1f41eed4d21b354c7e0d0278530b18c115a4329b06f8f9c06d9f5ec5469.html"
+  },
+  {
+    "route": "/deploy/getting_started/",
+    "title": "/deploy/getting_started/",
+    "source_model": "maintained HTML",
+    "prefix": "templates/fragments/15ede7145ebd07d11ba0e817b0285f04a1e7fe53a05579878f9acb6040b4327c.html",
+    "body": "html/deploy/getting_started.html",
+    "suffix": "templates/fragments/73dfbbd759c6319c80155a101b0d369318a5f2f6754a4718c5f3c6eedc60bce3.html"
   }
 ]

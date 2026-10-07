@@ -43,3 +43,7 @@ Add generated guidance: "Derive source-to-route accounting from the pinned execu
 ## D3 findings
 
 Proposed generated wording: "For pre-rendered HTML, use an explicitly raw composition path and register every renderer input and transient fragment as a dependency. Include a real-source literal-syntax fixture; rendered content must not become template code." Add a tracked-file example naming template explicitly. Add: "Generated-input ownership must be explicit: distinguish upstream refresh/acquisition from publication and state which prepared inputs are committed. Compare both complete pipeline costs and comparable rendering components." Initialized public output and page build metadata should be disposable; removing the initial placeholder must be included in the ownership ledger. Fresh-checkout guidance should warn that nested upstream ignore rules may omit prepared inputs unless deliberately included.
+
+## D4 findings
+
+Proposed wording: "Keep filesystem inventory paths distinct from renderer runtime source paths; normalization can alter relative links, Markdown alternatives, edit links and feedback bindings." The one Vento expression demonstrates why source compatibility should be corpus driven: an exact source-function expansion suffices without implementing a general template engine. Add real-source whole-family parity before calling a compatibility adapter complete.

@@ -1,8 +1,563 @@
 {
   "tracked": [
     {
+      "name": "runtime/run/index",
+      "title": "/runtime/run/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/run/watch_mode/index",
+      "title": "/runtime/run/watch_mode/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/cli_apps/index",
+      "title": "/runtime/cli_apps/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/packages/publishing/index",
+      "title": "/runtime/packages/publishing/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/packages/peer_dependencies/index",
+      "title": "/runtime/packages/peer_dependencies/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/packages/supply_chain/index",
+      "title": "/runtime/packages/supply_chain/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/packages/index",
+      "title": "/runtime/packages/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/packages/private_repositories/index",
+      "title": "/runtime/packages/private_repositories/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/cron/index",
+      "title": "/runtime/fundamentals/cron/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/stability_and_releases/index",
+      "title": "/runtime/fundamentals/stability_and_releases/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/open_telemetry/index",
+      "title": "/runtime/fundamentals/open_telemetry/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/security/index",
+      "title": "/runtime/fundamentals/security/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/typescript/index",
+      "title": "/runtime/fundamentals/typescript/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/web_dev/index",
+      "title": "/runtime/fundamentals/web_dev/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/modules/index",
+      "title": "/runtime/fundamentals/modules/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/configuration/index",
+      "title": "/runtime/fundamentals/configuration/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/ffi/index",
+      "title": "/runtime/fundamentals/ffi/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/debugging/index",
+      "title": "/runtime/fundamentals/debugging/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/cpu_profiling/index",
+      "title": "/runtime/fundamentals/cpu_profiling/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/http_server/index",
+      "title": "/runtime/fundamentals/http_server/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/node/index",
+      "title": "/runtime/fundamentals/node/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/fundamentals/workspaces/index",
+      "title": "/runtime/fundamentals/workspaces/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/serving/index",
+      "title": "/runtime/desktop/serving/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/hmr/index",
+      "title": "/runtime/desktop/hmr/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/auto_update/index",
+      "title": "/runtime/desktop/auto_update/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/tray_and_dock/index",
+      "title": "/runtime/desktop/tray_and_dock/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/comparison/index",
+      "title": "/runtime/desktop/comparison/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/webgpu/index",
+      "title": "/runtime/desktop/webgpu/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/backends/index",
+      "title": "/runtime/desktop/backends/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/devtools/index",
+      "title": "/runtime/desktop/devtools/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/distribution/index",
+      "title": "/runtime/desktop/distribution/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/dialogs/index",
+      "title": "/runtime/desktop/dialogs/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/notifications/index",
+      "title": "/runtime/desktop/notifications/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/error_reporting/index",
+      "title": "/runtime/desktop/error_reporting/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/index",
+      "title": "/runtime/desktop/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/bindings/index",
+      "title": "/runtime/desktop/bindings/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/configuration/index",
+      "title": "/runtime/desktop/configuration/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/frameworks/index",
+      "title": "/runtime/desktop/frameworks/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/menus/index",
+      "title": "/runtime/desktop/menus/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/desktop/windows/index",
+      "title": "/runtime/desktop/windows/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/jsx/index",
+      "title": "/runtime/reference/jsx/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/env_variables/index",
+      "title": "/runtime/reference/env_variables/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/continuous_integration/index",
+      "title": "/runtime/reference/continuous_integration/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/env_variables/index",
+      "title": "/runtime/reference/cli/env_variables/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/coverage/index",
+      "title": "/runtime/reference/cli/coverage/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/x/index",
+      "title": "/runtime/reference/cli/x/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/lsp/index",
+      "title": "/runtime/reference/cli/lsp/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/bench/index",
+      "title": "/runtime/reference/cli/bench/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/upgrade/index",
+      "title": "/runtime/reference/cli/upgrade/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/clean/index",
+      "title": "/runtime/reference/cli/clean/",
+      "template": "templates/template.html"
+    },
+    {
       "name": "runtime/reference/cli/run/index",
       "title": "/runtime/reference/cli/run/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/bundle/index",
+      "title": "/runtime/reference/cli/bundle/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/info/index",
+      "title": "/runtime/reference/cli/info/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/task/index",
+      "title": "/runtime/reference/cli/task/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/watch/index",
+      "title": "/runtime/reference/cli/watch/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/add/index",
+      "title": "/runtime/reference/cli/add/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/audit/index",
+      "title": "/runtime/reference/cli/audit/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/compile/index",
+      "title": "/runtime/reference/cli/compile/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/uninstall/index",
+      "title": "/runtime/reference/cli/uninstall/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/lint/index",
+      "title": "/runtime/reference/cli/lint/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/sandbox/index",
+      "title": "/runtime/reference/cli/sandbox/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/unlink/index",
+      "title": "/runtime/reference/cli/unlink/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/link/index",
+      "title": "/runtime/reference/cli/link/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/doc/index",
+      "title": "/runtime/reference/cli/doc/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/ci/index",
+      "title": "/runtime/reference/cli/ci/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/update/index",
+      "title": "/runtime/reference/cli/update/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/remove/index",
+      "title": "/runtime/reference/cli/remove/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/jupyter/index",
+      "title": "/runtime/reference/cli/jupyter/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/why/index",
+      "title": "/runtime/reference/cli/why/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/index",
+      "title": "/runtime/reference/cli/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/fmt/index",
+      "title": "/runtime/reference/cli/fmt/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/unstable_flags/index",
+      "title": "/runtime/reference/cli/unstable_flags/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/completions/index",
+      "title": "/runtime/reference/cli/completions/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/repl/index",
+      "title": "/runtime/reference/cli/repl/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/outdated/index",
+      "title": "/runtime/reference/cli/outdated/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/init/index",
+      "title": "/runtime/reference/cli/init/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/create/index",
+      "title": "/runtime/reference/cli/create/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/types/index",
+      "title": "/runtime/reference/cli/types/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/list/index",
+      "title": "/runtime/reference/cli/list/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/serve/index",
+      "title": "/runtime/reference/cli/serve/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/test/index",
+      "title": "/runtime/reference/cli/test/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/desktop/index",
+      "title": "/runtime/reference/cli/desktop/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/deploy/index",
+      "title": "/runtime/reference/cli/deploy/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/check/index",
+      "title": "/runtime/reference/cli/check/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/approve_scripts/index",
+      "title": "/runtime/reference/cli/approve_scripts/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/bump_version/index",
+      "title": "/runtime/reference/cli/bump_version/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/pack/index",
+      "title": "/runtime/reference/cli/pack/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/publish/index",
+      "title": "/runtime/reference/cli/publish/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/transpile/index",
+      "title": "/runtime/reference/cli/transpile/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/eval/index",
+      "title": "/runtime/reference/cli/eval/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/cli/install/index",
+      "title": "/runtime/reference/cli/install/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/ts_config_migration/index",
+      "title": "/runtime/reference/ts_config_migration/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/wasm/index",
+      "title": "/runtime/reference/wasm/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/bundling/index",
+      "title": "/runtime/reference/bundling/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/deno_serve_legacy_abort/index",
+      "title": "/runtime/reference/deno_serve_legacy_abort/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/deno_json/index",
+      "title": "/runtime/reference/deno_json/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/loader_hooks/index",
+      "title": "/runtime/reference/loader_hooks/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/docker/index",
+      "title": "/runtime/reference/docker/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/permissions/index",
+      "title": "/runtime/reference/permissions/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/lsp_integration/index",
+      "title": "/runtime/reference/lsp_integration/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/migration_guide/index",
+      "title": "/runtime/reference/migration_guide/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/index",
+      "title": "/runtime/reference/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/vscode/index",
+      "title": "/runtime/reference/vscode/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/web_platform_apis/index",
+      "title": "/runtime/reference/web_platform_apis/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/lint_plugins/index",
+      "title": "/runtime/reference/lint_plugins/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/reference/node_apis/index",
+      "title": "/runtime/reference/node_apis/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/migrate/migrate_from_npm/index",
+      "title": "/runtime/migrate/migrate_from_npm/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/migrate/migrate_from_yarn/index",
+      "title": "/runtime/migrate/migrate_from_yarn/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/migrate/index",
+      "title": "/runtime/migrate/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/migrate/migrate_from_bun/index",
+      "title": "/runtime/migrate/migrate_from_bun/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/migrate/migrate_from_pnpm/index",
+      "title": "/runtime/migrate/migrate_from_pnpm/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/help/index",
+      "title": "/runtime/help/",
       "template": "templates/template.html"
     },
     {
@@ -11,8 +566,158 @@
       "template": "templates/template.html"
     },
     {
+      "name": "runtime/getting_started/installation/index",
+      "title": "/runtime/getting_started/installation/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/getting_started/setup_your_environment/index",
+      "title": "/runtime/getting_started/setup_your_environment/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/contributing/release_schedule/index",
+      "title": "/runtime/contributing/release_schedule/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/contributing/architecture/index",
+      "title": "/runtime/contributing/architecture/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/contributing/index",
+      "title": "/runtime/contributing/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/contributing/style_guide/index",
+      "title": "/runtime/contributing/style_guide/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/deploy/index",
+      "title": "/runtime/deploy/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/test/coverage/index",
+      "title": "/runtime/test/coverage/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/test/snapshots/index",
+      "title": "/runtime/test/snapshots/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/test/doc_tests/index",
+      "title": "/runtime/test/doc_tests/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/test/index",
+      "title": "/runtime/test/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/test/sanitizers/index",
+      "title": "/runtime/test/sanitizers/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/test/mocking/index",
+      "title": "/runtime/test/mocking/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/test/migrate_from_jest/index",
+      "title": "/runtime/test/migrate_from_jest/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "runtime/lint_and_format/index",
+      "title": "/runtime/lint_and_format/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/ssh/index",
+      "title": "/sandbox/ssh/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/volumes/index",
+      "title": "/sandbox/volumes/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/security/index",
+      "title": "/sandbox/security/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/cli/index",
+      "title": "/sandbox/cli/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/timeouts/index",
+      "title": "/sandbox/timeouts/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/promote/index",
+      "title": "/sandbox/promote/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/expose_http/index",
+      "title": "/sandbox/expose_http/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/apps/index",
+      "title": "/sandbox/apps/",
+      "template": "templates/template.html"
+    },
+    {
       "name": "sandbox/index",
       "title": "/sandbox/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/create/index",
+      "title": "/sandbox/create/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "sandbox/getting_started/index",
+      "title": "/sandbox/getting_started/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "orama/README/index",
+      "title": "/orama/README/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "ai/index",
+      "title": "/ai/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/og/index",
+      "title": "/styleguide/og/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/writing/index",
+      "title": "/styleguide/writing/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/index",
+      "title": "/styleguide/",
       "template": "templates/template.html"
     },
     {
@@ -26,8 +731,553 @@
       "template": "templates/template.html"
     },
     {
+      "name": "styleguide/og/cli-commands/index",
+      "title": "/styleguide/og/cli-commands/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/og/color-override/index",
+      "title": "/styleguide/og/color-override/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/og/title-only/index",
+      "title": "/styleguide/og/title-only/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/og/title-and-description-superscript/index",
+      "title": "/styleguide/og/title-and-description-superscript/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/og/title-and-description/index",
+      "title": "/styleguide/og/title-and-description/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/og/short-title-and-long-description/index",
+      "title": "/styleguide/og/short-title-and-long-description/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "styleguide/og/short-title-and-short-description/index",
+      "title": "/styleguide/og/short-title-and-short-description/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_spawn_subprocess/index",
+      "title": "/examples/sandbox_spawn_subprocess/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_command_cancellation/index",
+      "title": "/examples/sandbox_command_cancellation/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_access_output/index",
+      "title": "/examples/sandbox_access_output/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_timeout_control/index",
+      "title": "/examples/sandbox_timeout_control/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_environment_variables/index",
+      "title": "/examples/sandbox_environment_variables/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_stream_output/index",
+      "title": "/examples/sandbox_stream_output/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_upload_files/index",
+      "title": "/examples/sandbox_upload_files/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_template_literals/index",
+      "title": "/examples/sandbox_template_literals/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_vscode_instance/index",
+      "title": "/examples/sandbox_vscode_instance/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_javascript_repl/index",
+      "title": "/examples/sandbox_javascript_repl/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_error_handling/index",
+      "title": "/examples/sandbox_error_handling/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_web_framework/index",
+      "title": "/examples/sandbox_web_framework/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_memory/index",
+      "title": "/examples/sandbox_memory/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sandbox_ssh_access/index",
+      "title": "/examples/sandbox_ssh_access/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/web_testing_tutorial/index",
+      "title": "/examples/web_testing_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/otel_span_propagation_tutorial/index",
+      "title": "/examples/otel_span_propagation_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/add_remove_dependencies_tutorial/index",
+      "title": "/examples/add_remove_dependencies_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/prisma_tutorial/index",
+      "title": "/examples/prisma_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/svelte_tutorial/index",
+      "title": "/examples/svelte_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/simple_api_tutorial/index",
+      "title": "/examples/simple_api_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/migrate_custom_domain_tutorial/index",
+      "title": "/examples/migrate_custom_domain_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/subprocess_tutorial/index",
+      "title": "/examples/subprocess_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/qwik_tutorial/index",
+      "title": "/examples/qwik_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/vue_tutorial/index",
+      "title": "/examples/vue_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/cloudflare_workers_tutorial/index",
+      "title": "/examples/cloudflare_workers_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/connecting_to_databases_tutorial/index",
+      "title": "/examples/connecting_to_databases_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/mongoose_tutorial/index",
+      "title": "/examples/mongoose_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deploy_command_tutorial/index",
+      "title": "/examples/deploy_command_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/chat_app_tutorial/index",
+      "title": "/examples/chat_app_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/snapshot_python_tutorial/index",
+      "title": "/examples/snapshot_python_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/grafana_tutorial/index",
+      "title": "/examples/grafana_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/google_cloud_run_tutorial/index",
+      "title": "/examples/google_cloud_run_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tunnel_database_tutorial/index",
+      "title": "/examples/tunnel_database_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/digital_ocean_tutorial/index",
+      "title": "/examples/digital_ocean_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/private_registries_tutorial/index",
+      "title": "/examples/private_registries_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deno_doc_tutorial/index",
+      "title": "/examples/deno_doc_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/redis_tutorial/index",
+      "title": "/examples/redis_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/local_unpublished_packages_tutorial/index",
+      "title": "/examples/local_unpublished_packages_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/planetscale_tutorial/index",
+      "title": "/examples/planetscale_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/astro_tutorial/index",
+      "title": "/examples/astro_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/cjs_to_esm_tutorial/index",
+      "title": "/examples/cjs_to_esm_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/fetch_data_tutorial/index",
+      "title": "/examples/fetch_data_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deploy_otel_tutorial/index",
+      "title": "/examples/deploy_otel_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deno_deploy_tutorial/index",
+      "title": "/examples/deno_deploy_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/debugging_with_console_tutorial/index",
+      "title": "/examples/debugging_with_console_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/aws_ecs_fargate_tutorial/index",
+      "title": "/examples/aws_ecs_fargate_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/testing_library_tutorial/index",
+      "title": "/examples/testing_library_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/vite_tutorial/index",
+      "title": "/examples/vite_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/os_signals_tutorial/index",
+      "title": "/examples/os_signals_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/volumes_tutorial/index",
+      "title": "/examples/volumes_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/cloudflare_workers_wrangler_tutorial/index",
+      "title": "/examples/cloudflare_workers_wrangler_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/initialize_project_tutorial/index",
+      "title": "/examples/initialize_project_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/sveltekit_tutorial/index",
+      "title": "/examples/sveltekit_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/word_finder_tutorial/index",
+      "title": "/examples/word_finder_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/dependency_lockfile_tutorial/index",
+      "title": "/examples/dependency_lockfile_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hashbang_tutorial/index",
+      "title": "/examples/hashbang_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/honeycomb_tutorial/index",
+      "title": "/examples/honeycomb_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/snapshots_tutorial/index",
+      "title": "/examples/snapshots_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/file_server_tutorial/index",
+      "title": "/examples/file_server_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/run_script_tutorial/index",
+      "title": "/examples/run_script_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/import_maps_tutorial/index",
+      "title": "/examples/import_maps_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/workspaces_monorepo_tutorial/index",
+      "title": "/examples/workspaces_monorepo_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/basic_opentelemetry_tutorial/index",
+      "title": "/examples/basic_opentelemetry_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/next_tutorial/index",
+      "title": "/examples/next_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/migrate_node_project_tutorial/index",
+      "title": "/examples/migrate_node_project_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/file_based_routing_tutorial/index",
+      "title": "/examples/file_based_routing_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/drizzle_tutorial/index",
+      "title": "/examples/drizzle_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/nuxt_tutorial/index",
+      "title": "/examples/nuxt_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/testing_tutorial/index",
+      "title": "/examples/testing_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tunnel_telemetry_tutorial/index",
+      "title": "/examples/tunnel_telemetry_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/aws_lambda_tutorial/index",
+      "title": "/examples/aws_lambda_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/aws_lightsail_tutorial/index",
+      "title": "/examples/aws_lightsail_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/llm_tutorial/index",
+      "title": "/examples/llm_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/apollo_tutorial/index",
+      "title": "/examples/apollo_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/solidjs_tutorial/index",
+      "title": "/examples/solidjs_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/mysql2_tutorial/index",
+      "title": "/examples/mysql2_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/module_metadata_tutorial/index",
+      "title": "/examples/module_metadata_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tanstack_tutorial/index",
+      "title": "/examples/tanstack_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/kinsta_tutorial/index",
+      "title": "/examples/kinsta_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/file_system_events_tutorial/index",
+      "title": "/examples/file_system_events_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/fresh_tutorial/index",
+      "title": "/examples/fresh_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/npm_lifecycle_scripts_tutorial/index",
+      "title": "/examples/npm_lifecycle_scripts_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/tunnel_tutorial/index",
+      "title": "/examples/tunnel_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/express_tutorial/index",
+      "title": "/examples/express_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/bdd_tutorial/index",
+      "title": "/examples/bdd_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/hyperdx_tutorial/index",
+      "title": "/examples/hyperdx_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/trpc_tutorial/index",
+      "title": "/examples/trpc_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/react_tutorial/index",
+      "title": "/examples/react_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "examples/deno_github_actions_tutorial/index",
+      "title": "/examples/deno_github_actions_tutorial/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "AGENTS/index",
+      "title": "/AGENTS/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/deno/about/index",
+      "title": "/api/deno/about/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/node/about/index",
+      "title": "/api/node/about/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "api/web/about/index",
+      "title": "/api/web/about/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "subhosting/api/authentication/index",
+      "title": "/subhosting/api/authentication/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "subhosting/api/index",
+      "title": "/subhosting/api/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "subhosting/index",
+      "title": "/subhosting/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "subhosting/manual/quick_start/index",
+      "title": "/subhosting/manual/quick_start/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "subhosting/manual/api_migration_guide/index",
+      "title": "/subhosting/manual/api_migration_guide/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "subhosting/manual/acceptable_use_policy/index",
+      "title": "/subhosting/manual/acceptable_use_policy/",
+      "template": "templates/template.html"
+    },
+    {
       "name": "subhosting/manual/index",
       "title": "/subhosting/manual/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "subhosting/manual/events/index",
+      "title": "/subhosting/manual/events/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "subhosting/manual/pricing_and_limits/index",
+      "title": "/subhosting/manual/pricing_and_limits/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "subhosting/manual/planning_your_implementation/index",
+      "title": "/subhosting/manual/planning_your_implementation/",
       "template": "templates/template.html"
     },
     {
@@ -36,33 +1286,368 @@
       "template": "templates/template.html"
     },
     {
+      "name": "deploy/support/index",
+      "title": "/deploy/support/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/acceptable_use_policy/index",
+      "title": "/deploy/acceptable_use_policy/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/terms_and_conditions/index",
+      "title": "/deploy/terms_and_conditions/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/security/index",
+      "title": "/deploy/security/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/fulfillment_policy/index",
+      "title": "/deploy/fulfillment_policy/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/databases/index",
+      "title": "/deploy/reference/databases/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/cloud_connections/index",
+      "title": "/deploy/reference/cloud_connections/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/observability/index",
+      "title": "/deploy/reference/observability/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/cron/index",
+      "title": "/deploy/reference/cron/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/deno_kv/index",
+      "title": "/deploy/reference/deno_kv/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/playgrounds/index",
+      "title": "/deploy/reference/playgrounds/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/builds/index",
+      "title": "/deploy/reference/builds/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/runtime/index",
+      "title": "/deploy/reference/runtime/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/domains/index",
+      "title": "/deploy/reference/domains/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/accounts/index",
+      "title": "/deploy/reference/accounts/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/timelines/index",
+      "title": "/deploy/reference/timelines/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/button/index",
+      "title": "/deploy/reference/button/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/apps/index",
+      "title": "/deploy/reference/apps/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/env_vars_and_contexts/index",
+      "title": "/deploy/reference/env_vars_and_contexts/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/caching/index",
+      "title": "/deploy/reference/caching/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/oidc/index",
+      "title": "/deploy/reference/oidc/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/frameworks/index",
+      "title": "/deploy/reference/frameworks/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/tunnel/index",
+      "title": "/deploy/reference/tunnel/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/reference/organizations/index",
+      "title": "/deploy/reference/organizations/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/kv/data_modeling_typescript/index",
+      "title": "/deploy/kv/data_modeling_typescript/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/kv/operations/index",
+      "title": "/deploy/kv/operations/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/kv/key_space/index",
+      "title": "/deploy/kv/key_space/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/kv/transactions/index",
+      "title": "/deploy/kv/transactions/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/kv/backup/index",
+      "title": "/deploy/kv/backup/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/kv/key_expiration/index",
+      "title": "/deploy/kv/key_expiration/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/kv/index",
+      "title": "/deploy/kv/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/kv/secondary_indexes/index",
+      "title": "/deploy/kv/secondary_indexes/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/kv/node/index",
+      "title": "/deploy/kv/node/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/middleware/index",
+      "title": "/deploy/classic/middleware/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/cron/index",
+      "title": "/deploy/classic/cron/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/playgrounds/index",
+      "title": "/deploy/classic/playgrounds/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/edge_cache/index",
+      "title": "/deploy/classic/edge_cache/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/dynamodb/index",
+      "title": "/deploy/classic/dynamodb/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/kv_on_deploy/index",
+      "title": "/deploy/classic/kv_on_deploy/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/custom-domains/index",
+      "title": "/deploy/classic/custom-domains/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/api/runtime-fetch/index",
+      "title": "/deploy/classic/api/runtime-fetch/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/api/runtime-node/index",
+      "title": "/deploy/classic/api/runtime-node/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/api/runtime-broadcast-channel/index",
+      "title": "/deploy/classic/api/runtime-broadcast-channel/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/api/runtime-headers/index",
+      "title": "/deploy/classic/api/runtime-headers/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/api/runtime-request/index",
+      "title": "/deploy/classic/api/runtime-request/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/api/compression/index",
+      "title": "/deploy/classic/api/compression/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/api/index",
+      "title": "/deploy/classic/api/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/api/dynamic-import/index",
+      "title": "/deploy/classic/api/dynamic-import/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/api/runtime-sockets/index",
+      "title": "/deploy/classic/api/runtime-sockets/",
+      "template": "templates/template.html"
+    },
+    {
       "name": "deploy/classic/api/runtime-fs/index",
       "title": "/deploy/classic/api/runtime-fs/",
       "template": "templates/template.html"
     },
     {
-      "name": "lint/rules/ban-ts-comment/index",
-      "title": "/lint/rules/ban-ts-comment/",
+      "name": "deploy/classic/api/runtime-response/index",
+      "title": "/deploy/classic/api/runtime-response/",
       "template": "templates/template.html"
     },
     {
-      "name": "examples/hello_world/index",
-      "title": "/examples/hello_world/",
+      "name": "deploy/classic/prisma-postgres/index",
+      "title": "/deploy/classic/prisma-postgres/",
       "template": "templates/template.html"
     },
     {
-      "name": "api/deno/http-server/index",
-      "title": "/api/deno/http-server/",
+      "name": "deploy/classic/running-scripts-locally/index",
+      "title": "/deploy/classic/running-scripts-locally/",
       "template": "templates/template.html"
     },
     {
-      "name": "api/web/fetch/index",
-      "title": "/api/web/fetch/",
+      "name": "deploy/classic/firebase/index",
+      "title": "/deploy/classic/firebase/",
       "template": "templates/template.html"
     },
     {
-      "name": "api/node/assert/index",
-      "title": "/api/node/assert/",
+      "name": "deploy/classic/neon-postgres/index",
+      "title": "/deploy/classic/neon-postgres/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/postgres/index",
+      "title": "/deploy/classic/postgres/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/index",
+      "title": "/deploy/classic/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/deployments/index",
+      "title": "/deploy/classic/deployments/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/logs/index",
+      "title": "/deploy/classic/logs/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/queues/index",
+      "title": "/deploy/classic/queues/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/how-to-deploy/index",
+      "title": "/deploy/classic/how-to-deploy/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/environment-variables/index",
+      "title": "/deploy/classic/environment-variables/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/ci_github/index",
+      "title": "/deploy/classic/ci_github/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/deployctl/index",
+      "title": "/deploy/classic/deployctl/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/organizations/index",
+      "title": "/deploy/classic/organizations/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/classic/regions/index",
+      "title": "/deploy/classic/regions/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/privacy_policy/index",
+      "title": "/deploy/privacy_policy/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/migration_guide/index",
+      "title": "/deploy/migration_guide/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/index",
+      "title": "/deploy/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/usage/index",
+      "title": "/deploy/usage/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/changelog/index",
+      "title": "/deploy/changelog/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/pricing_and_limits/index",
+      "title": "/deploy/pricing_and_limits/",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "deploy/getting_started/index",
+      "title": "/deploy/getting_started/",
       "template": "templates/template.html"
     }
   ]
