@@ -1,0 +1,65 @@
+[
+  {
+    "path": "/",
+    "accept": null,
+    "status": 301,
+    "location": "/runtime/",
+    "content_type": null
+  },
+  {
+    "path": "/runtime/",
+    "accept": null,
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=UTF-8"
+  },
+  {
+    "path": "/runtime/index.md",
+    "accept": null,
+    "status": 200,
+    "location": null,
+    "content_type": "text/markdown; charset=utf-8"
+  },
+  {
+    "path": "/api/deno/",
+    "accept": null,
+    "status": 200,
+    "location": null,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/api/deno/~/Deno.serve",
+    "accept": null,
+    "status": 301,
+    "location": "/api/deno/http-server/#Deno.serve",
+    "content_type": null
+  },
+  {
+    "path": "/llms.txt",
+    "accept": null,
+    "status": 200,
+    "location": null,
+    "content_type": "text/plain; charset=utf-8"
+  },
+  {
+    "path": "/_api/health",
+    "accept": null,
+    "status": 200,
+    "location": null,
+    "content_type": "text/plain;charset=UTF-8"
+  },
+  {
+    "path": "/does-not-exist/",
+    "accept": null,
+    "status": 404,
+    "location": null,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/runtime/",
+    "accept": "text/markdown",
+    "status": 200,
+    "location": null,
+    "content_type": "text/markdown; charset=utf-8"
+  }
+]

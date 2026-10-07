@@ -10,5 +10,10 @@
   "lume_version": "3.1.2",
   "production_command": "deno task build",
   "production_output": "_site/",
-  "state": "baseline-not-yet-reproduced"
+  "state": "upstream-production-reproduced; migration not started",
+  "publication_files": 2573,
+  "html_documents": 834,
+  "search_documents": 11567,
+  "prepared_observation_seconds": 171.56,
+  "prepared_peak_process_rss_mib": 3117.102
 }

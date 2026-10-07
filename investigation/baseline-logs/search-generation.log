@@ -1,0 +1,973 @@
+Task generate:search deno run -A orama/generate_orama_index_full.ts
+🔍 Generating comprehensive Orama search index for Deno documentation...
+
+Processing markdown documentation...
+Selected file: runtime/run/index.md markdown
+Indexed document: Run code
+Selected file: runtime/run/watch_mode.md markdown
+Indexed document: Watch mode and HMR
+Selected file: runtime/cli_apps/index.md markdown
+Indexed document: Build CLI apps
+Selected file: runtime/packages/publishing.md markdown
+Indexed document: Publishing packages
+Selected file: runtime/packages/peer_dependencies.md markdown
+Indexed document: Peer dependencies
+Selected file: runtime/packages/supply_chain.md markdown
+Indexed document: Supply chain management
+Selected file: runtime/packages/index.md markdown
+Indexed document: Dependency management
+Selected file: runtime/packages/private_repositories.md markdown
+Indexed document: Private repositories
+Selected file: runtime/fundamentals/cron.md markdown
+Indexed document: Cron
+Selected file: runtime/fundamentals/stability_and_releases.md markdown
+Indexed document: Stability and releases
+Selected file: runtime/fundamentals/open_telemetry.md markdown
+Indexed document: Open Telemetry
+Selected file: runtime/fundamentals/security.md markdown
+Indexed document: Security and permissions
+Selected file: runtime/fundamentals/typescript.md markdown
+Indexed document: TypeScript support
+Selected file: runtime/fundamentals/web_dev.md markdown
+Indexed document: Web development
+Selected file: runtime/fundamentals/modules.md markdown
+Indexed document: Modules
+Selected file: runtime/fundamentals/configuration.md markdown
+Indexed document: Config files
+Selected file: runtime/fundamentals/ffi.md markdown
+Indexed document: Foreign Function Interface (FFI)
+Selected file: runtime/fundamentals/debugging.md markdown
+Indexed document: Debugging
+Selected file: runtime/fundamentals/cpu_profiling.md markdown
+Indexed document: CPU profiling
+Selected file: runtime/fundamentals/http_server.md markdown
+Indexed document: Writing an HTTP Server
+Selected file: runtime/fundamentals/node.md markdown
+Indexed document: Node and npm Compatibility
+Selected file: runtime/fundamentals/workspaces.md markdown
+Indexed document: Workspaces and monorepos
+Selected file: runtime/desktop/serving.md markdown
+Indexed document: HTTP serving
+Selected file: runtime/desktop/hmr.md markdown
+Indexed document: Hot module replacement
+Selected file: runtime/desktop/auto_update.md markdown
+Indexed document: Auto-update
+Selected file: runtime/desktop/tray_and_dock.md markdown
+Indexed document: Tray and dock
+Selected file: runtime/desktop/comparison.md markdown
+Indexed document: Comparison with other tools
+Selected file: runtime/desktop/webgpu.md markdown
+Indexed document: WebGPU rendering
+Selected file: runtime/desktop/backends.md markdown
+Indexed document: Backends
+Selected file: runtime/desktop/devtools.md markdown
+Indexed document: DevTools
+Selected file: runtime/desktop/distribution.md markdown
+Indexed document: Distribution
+Selected file: runtime/desktop/dialogs.md markdown
+Indexed document: Dialogs
+Selected file: runtime/desktop/notifications.md markdown
+Indexed document: Notifications
+Selected file: runtime/desktop/error_reporting.md markdown
+Indexed document: Error reporting
+Selected file: runtime/desktop/index.md markdown
+Indexed document: Desktop apps
+Selected file: runtime/desktop/bindings.md markdown
+Indexed document: Bindings
+Selected file: runtime/desktop/configuration.md markdown
+Indexed document: Configuration
+Selected file: runtime/desktop/frameworks.md markdown
+Indexed document: Frameworks
+Selected file: runtime/desktop/menus.md markdown
+Indexed document: Menus
+Selected file: runtime/desktop/windows.md markdown
+Indexed document: Windows
+Selected file: runtime/reference/jsx.md markdown
+Indexed document: JSX and React
+Selected file: runtime/reference/env_variables.md markdown
+Indexed document: Environment variables
+Selected file: runtime/reference/std/datetime.md markdown
+Indexed document: @std/datetime
+Selected file: runtime/reference/std/csv.md markdown
+Indexed document: @std/csv
+Selected file: runtime/reference/std/async.md markdown
+Indexed document: @std/async
+Selected file: runtime/reference/std/internal.md markdown
+Indexed document: @std/internal
+Selected file: runtime/reference/std/json.md markdown
+Indexed document: @std/json
+Selected file: runtime/reference/std/fs.md markdown
+Indexed document: @std/fs
+Selected file: runtime/reference/std/data-structures.md markdown
+Indexed document: @std/data-structures
+Selected file: runtime/reference/std/cbor.md markdown
+Indexed document: @std/cbor
+Selected file: runtime/reference/std/streams.md markdown
+Indexed document: @std/streams
+Selected file: runtime/reference/std/xml.md markdown
+Indexed document: @std/xml
+Selected file: runtime/reference/std/text.md markdown
+Indexed document: @std/text
+Selected file: runtime/reference/std/webgpu.md markdown
+Indexed document: @std/webgpu
+Selected file: runtime/reference/std/dotenv.md markdown
+Indexed document: @std/dotenv
+Selected file: runtime/reference/std/random.md markdown
+Indexed document: @std/random
+Selected file: runtime/reference/std/collections.md markdown
+Indexed document: @std/collections
+Selected file: runtime/reference/std/ulid.md markdown
+Indexed document: @std/ulid
+Selected file: runtime/reference/std/semver.md markdown
+Indexed document: @std/semver
+Selected file: runtime/reference/std/cache.md markdown
+Indexed document: @std/cache
+Selected file: runtime/reference/std/front-matter.md markdown
+Indexed document: @std/front-matter
+Selected file: runtime/reference/std/ini.md markdown
+Indexed document: @std/ini
+Selected file: runtime/reference/std/http.md markdown
+Indexed document: @std/http
+Selected file: runtime/reference/std/io.md markdown
+Indexed document: @std/io
+Selected file: runtime/reference/std/media-types.md markdown
+Indexed document: @std/media-types
+Selected file: runtime/reference/std/cli.md markdown
+Indexed document: @std/cli
+Selected file: runtime/reference/std/crypto.md markdown
+Indexed document: @std/crypto
+Selected file: runtime/reference/std/index.md markdown
+Indexed document: Deno Standard Library (@std)
+Selected file: runtime/reference/std/fmt.md markdown
+Indexed document: @std/fmt
+Selected file: runtime/reference/std/regexp.md markdown
+Indexed document: @std/regexp
+Selected file: runtime/reference/std/bytes.md markdown
+Indexed document: @std/bytes
+Selected file: runtime/reference/std/msgpack.md markdown
+Indexed document: @std/msgpack
+Selected file: runtime/reference/std/testing.md markdown
+Indexed document: @std/testing
+Selected file: runtime/reference/std/math.md markdown
+Indexed document: @std/math
+Selected file: runtime/reference/std/path.md markdown
+Indexed document: @std/path
+Selected file: runtime/reference/std/assert.md markdown
+Indexed document: Standard Assertions (@std/assert)
+Selected file: runtime/reference/std/log.md markdown
+Indexed document: @std/log
+Selected file: runtime/reference/std/uuid.md markdown
+Indexed document: @std/uuid
+Selected file: runtime/reference/std/encoding.md markdown
+Indexed document: @std/encoding
+Selected file: runtime/reference/std/expect.md markdown
+Indexed document: @std/expect
+Selected file: runtime/reference/std/jsonc.md markdown
+Indexed document: @std/jsonc
+Selected file: runtime/reference/std/toml.md markdown
+Indexed document: @std/toml
+Selected file: runtime/reference/std/net.md markdown
+Indexed document: @std/net
+Selected file: runtime/reference/std/yaml.md markdown
+Indexed document: @std/yaml
+Selected file: runtime/reference/std/tar.md markdown
+Indexed document: @std/tar
+Selected file: runtime/reference/std/html.md markdown
+Indexed document: @std/html
+Selected file: runtime/reference/continuous_integration.md markdown
+Indexed document: Continuous integration
+Selected file: runtime/reference/cli/env_variables.md markdown
+Indexed document: Configuring Deno behavior
+Selected file: runtime/reference/cli/coverage.md markdown
+Indexed document: deno coverage
+Selected file: runtime/reference/cli/x.md markdown
+Indexed document: deno x
+Selected file: runtime/reference/cli/lsp.md markdown
+Indexed document: deno lsp
+Selected file: runtime/reference/cli/bench.md markdown
+Indexed document: deno bench
+Selected file: runtime/reference/cli/upgrade.md markdown
+Indexed document: deno upgrade
+Selected file: runtime/reference/cli/clean.md markdown
+Indexed document: deno clean
+Selected file: runtime/reference/cli/run.md markdown
+Indexed document: deno run
+Selected file: runtime/reference/cli/bundle.md markdown
+Indexed document: deno bundle
+Selected file: runtime/reference/cli/info.md markdown
+Indexed document: deno info
+Selected file: runtime/reference/cli/task.md markdown
+Indexed document: deno task
+Selected file: runtime/reference/cli/watch.md markdown
+Indexed document: deno watch
+Selected file: runtime/reference/cli/add.md markdown
+Indexed document: deno add
+Selected file: runtime/reference/cli/audit.md markdown
+Indexed document: deno audit
+Selected file: runtime/reference/cli/compile.md markdown
+Indexed document: deno compile
+Selected file: runtime/reference/cli/uninstall.md markdown
+Indexed document: deno uninstall
+Selected file: runtime/reference/cli/lint.md markdown
+Indexed document: deno lint
+Selected file: runtime/reference/cli/sandbox.md markdown
+Indexed document: deno sandbox
+Selected file: runtime/reference/cli/unlink.md markdown
+Indexed document: deno unlink
+Selected file: runtime/reference/cli/link.md markdown
+Indexed document: deno link
+Selected file: runtime/reference/cli/doc.md markdown
+Indexed document: deno doc
+Selected file: runtime/reference/cli/ci.md markdown
+Indexed document: deno ci
+Selected file: runtime/reference/cli/update.md markdown
+Indexed document: deno update
+Selected file: runtime/reference/cli/remove.md markdown
+Indexed document: deno remove
+Selected file: runtime/reference/cli/jupyter.md markdown
+Indexed document: Jupyter Kernel for Deno
+Selected file: runtime/reference/cli/why.md markdown
+Indexed document: deno why
+Selected file: runtime/reference/cli/index.md markdown
+Indexed document: Deno CLI Subcommands
+Selected file: runtime/reference/cli/fmt.md markdown
+Indexed document: deno fmt
+Selected file: runtime/reference/cli/unstable_flags.md markdown
+Indexed document: Unstable feature flags
+Selected file: runtime/reference/cli/completions.md markdown
+Indexed document: deno completions
+Selected file: runtime/reference/cli/repl.md markdown
+Indexed document: deno repl
+Selected file: runtime/reference/cli/outdated.md markdown
+Indexed document: deno outdated
+Selected file: runtime/reference/cli/init.md markdown
+Indexed document: deno init
+Selected file: runtime/reference/cli/create.md markdown
+Indexed document: deno create
+Selected file: runtime/reference/cli/types.md markdown
+Indexed document: deno types
+Selected file: runtime/reference/cli/list.md markdown
+Indexed document: deno list
+Selected file: runtime/reference/cli/serve.md markdown
+Indexed document: deno serve
+Selected file: runtime/reference/cli/test.md markdown
+Indexed document: deno test
+Selected file: runtime/reference/cli/desktop.md markdown
+Indexed document: deno desktop
+Selected file: runtime/reference/cli/deploy.md markdown
+Indexed document: deno deploy
+Selected file: runtime/reference/cli/check.md markdown
+Indexed document: deno check
+Selected file: runtime/reference/cli/approve_scripts.md markdown
+Indexed document: deno approve-scripts
+Selected file: runtime/reference/cli/bump_version.md markdown
+Indexed document: deno bump-version
+Selected file: runtime/reference/cli/pack.md markdown
+Indexed document: deno pack
+Selected file: runtime/reference/cli/publish.md markdown
+Indexed document: deno publish
+Selected file: runtime/reference/cli/transpile.md markdown
+Indexed document: deno transpile
+Selected file: runtime/reference/cli/eval.md markdown
+Indexed document: deno eval
+Selected file: runtime/reference/cli/install.md markdown
+Indexed document: deno install
+Selected file: runtime/reference/ts_config_migration.md markdown
+Indexed document: Configuring TypeScript
+Selected file: runtime/reference/wasm.md markdown
+Indexed document: WebAssembly
+Selected file: runtime/reference/bundling.md markdown
+Indexed document: Bundling
+Selected file: runtime/reference/deno_serve_legacy_abort.md markdown
+Indexed document: Deno.serve request abort behavior
+Selected file: runtime/reference/deno_json.md markdown
+Indexed document: Configuration file (deno.json)
+Selected file: runtime/reference/loader_hooks.md markdown
+Indexed document: Loader hooks
+Selected file: runtime/reference/docker.md markdown
+Indexed document: Copy manifests first so the dependency install layer caches across
+Selected file: runtime/reference/permissions.md markdown
+Indexed document: Permissions
+Selected file: runtime/reference/lsp_integration.md markdown
+Indexed document: Language Server Integration
+Selected file: runtime/reference/migration_guide.md markdown
+Indexed document: Deno 1.x to 2.x Migration Guide
+Selected file: runtime/reference/index.md markdown
+Indexed document: Reference
+Selected file: runtime/reference/vscode.md markdown
+Indexed document: Deno & Visual Studio Code
+Selected file: runtime/reference/web_platform_apis.md markdown
+Indexed document: Web Platform APIs
+Selected file: runtime/reference/lint_plugins.md markdown
+Indexed document: Lint Plugins
+Selected file: runtime/reference/node_apis.md markdown
+Indexed document: Node Apis
+Selected file: runtime/migrate/migrate_from_npm.md markdown
+Indexed document: Migrate from npm
+Selected file: runtime/migrate/migrate_from_yarn.md markdown
+Indexed document: Migrate from Yarn
+Selected file: runtime/migrate/index.md markdown
+Indexed document: Migrate from Node.js
+Selected file: runtime/migrate/migrate_from_bun.md markdown
+Indexed document: Migrate from Bun
+Selected file: runtime/migrate/migrate_from_pnpm.md markdown
+Indexed document: Migrate from pnpm
+Selected file: runtime/help.md markdown
+Indexed document: Where to get help
+Selected file: runtime/index.md markdown
+Indexed document: Get started with Deno
+Selected file: runtime/getting_started/installation.md markdown
+Indexed document: Download and install the latest version of Deno
+Selected file: runtime/getting_started/setup_your_environment.md markdown
+Indexed document: Set up your environment
+Selected file: runtime/contributing/release_schedule.md markdown
+Indexed document: Release Schedule
+Selected file: runtime/contributing/architecture.md markdown
+Indexed document: Architecture Overview
+Selected file: runtime/contributing/index.md markdown
+Indexed document: Contributing and support
+Selected file: runtime/contributing/style_guide.md markdown
+Indexed document: Deno Style Guide
+Selected file: runtime/deploy/index.md markdown
+Indexed document: Deploying your app
+Selected file: runtime/test/coverage.md markdown
+Indexed document: Test coverage
+Selected file: runtime/test/snapshots.md markdown
+Indexed document: Snapshot testing
+Selected file: runtime/test/doc_tests.md markdown
+Indexed document: Documentation tests
+Selected file: runtime/test/index.md markdown
+Indexed document: Testing
+Selected file: runtime/test/sanitizers.md markdown
+Indexed document: Test sanitizers
+Selected file: runtime/test/mocking.md markdown
+Indexed document: Mocking and test doubles
+Selected file: runtime/test/migrate_from_jest.md markdown
+Indexed document: Migrating from Jest
+Selected file: runtime/lint_and_format/index.md markdown
+Indexed document: Linting and formatting
+Selected file: deploy/support/index.md markdown
+Indexed document: Index
+Selected file: deploy/acceptable_use_policy.md markdown
+Indexed document: Acceptable use policy
+Selected file: deploy/terms_and_conditions.md markdown
+Indexed document: Terms and Conditions
+Selected file: deploy/security.md markdown
+Indexed document: Security and responsible disclosure
+Selected file: deploy/fulfillment_policy.md markdown
+Indexed document: Fulfillment Policy
+Selected file: deploy/reference/databases.md markdown
+Indexed document: or
+Selected file: deploy/reference/cloud_connections.md markdown
+Indexed document: Create trust policy file for entire app
+Selected file: deploy/reference/observability.md markdown
+Indexed document: Observability
+Selected file: deploy/reference/cron.md markdown
+Indexed document: Cron
+Selected file: deploy/reference/deno_kv.md markdown
+Indexed document: Deno Kv
+Selected file: deploy/reference/playgrounds.md markdown
+Indexed document: Playgrounds
+Selected file: deploy/reference/builds.md markdown
+Indexed document: Builds
+Selected file: deploy/reference/runtime.md markdown
+Indexed document: Runtime
+Selected file: deploy/reference/domains.md markdown
+Indexed document: Domains
+Selected file: deploy/reference/accounts.md markdown
+Indexed document: Accounts
+Selected file: deploy/reference/timelines.md markdown
+Indexed document: Timelines
+Selected file: deploy/reference/button.md markdown
+Indexed document: Button
+Selected file: deploy/reference/apps.md markdown
+Indexed document: Apps
+Selected file: deploy/reference/env_vars_and_contexts.md markdown
+Indexed document: Env Vars And Contexts
+Selected file: deploy/reference/caching.md markdown
+Indexed document: Caching
+Selected file: deploy/reference/oidc.md markdown
+Indexed document: Oidc
+Selected file: deploy/reference/frameworks.md markdown
+Indexed document: or npm install @deno/astro-adapter
+Selected file: deploy/reference/tunnel.md markdown
+Indexed document: Tunnel
+Selected file: deploy/reference/organizations.md markdown
+Indexed document: Organizations
+Selected file: deploy/kv/data_modeling_typescript.md markdown
+Indexed document: Data Modeling in TypeScript
+Selected file: deploy/kv/operations.md markdown
+Indexed document: Operations
+Selected file: deploy/kv/key_space.md markdown
+Indexed document: Key Space
+Selected file: deploy/kv/transactions.md markdown
+Indexed document: Transactions
+Selected file: deploy/kv/backup.md markdown
+Indexed document: Backups
+Selected file: deploy/kv/key_expiration.md markdown
+Indexed document: Key Expiration (TTL for keys)
+Selected file: deploy/kv/index.md markdown
+Indexed document: Deno KV Quick Start
+Selected file: deploy/kv/secondary_indexes.md markdown
+Indexed document: Secondary Indexes
+Selected file: deploy/kv/node.md markdown
+Indexed document: Using KV in Node.js
+Selected file: deploy/classic/middleware.md markdown
+Indexed document: Reverse proxy middleware
+Selected file: deploy/classic/cron.md markdown
+Indexed document: Scheduling cron tasks
+Selected file: deploy/classic/playgrounds.md markdown
+Indexed document: Playgrounds
+Selected file: deploy/classic/edge_cache.md markdown
+Indexed document: Edge Cache
+Selected file: deploy/classic/dynamodb.md markdown
+Indexed document: Connect to DynamoDB
+Selected file: deploy/classic/kv_on_deploy.md markdown
+Indexed document: KV on Deno Deploy
+Selected file: deploy/classic/custom-domains.md markdown
+Indexed document: Custom domains
+Selected file: deploy/classic/api/runtime-fetch.md markdown
+Indexed document: HTTP requests (fetch)
+Selected file: deploy/classic/api/runtime-node.md markdown
+Indexed document: Node.js built-in APIs
+Selected file: deploy/classic/api/runtime-broadcast-channel.md markdown
+Indexed document: BroadcastChannel
+Selected file: deploy/classic/api/runtime-headers.md markdown
+Indexed document: HTTP Headers
+Selected file: deploy/classic/api/runtime-request.md markdown
+Indexed document: HTTP Request
+Selected file: deploy/classic/api/compression.md markdown
+Indexed document: Compressing response bodies
+Selected file: deploy/classic/api/index.md markdown
+Indexed document: API Reference
+Selected file: deploy/classic/api/dynamic-import.md markdown
+Indexed document: Dynamic import
+Selected file: deploy/classic/api/runtime-sockets.md markdown
+Indexed document: TCP sockets and TLS
+Selected file: deploy/classic/api/runtime-fs.md markdown
+Indexed document: File system APIs
+Selected file: deploy/classic/api/runtime-response.md markdown
+Indexed document: HTTP Response
+Selected file: deploy/classic/prisma-postgres.md markdown
+Indexed document: Connect to Prisma Postgres
+Selected file: deploy/classic/running-scripts-locally.md markdown
+Indexed document: Local development
+Selected file: deploy/classic/firebase.md markdown
+Indexed document: Connect to Firebase
+Selected file: deploy/classic/neon-postgres.md markdown
+Indexed document: Connect to Neon Postgres
+Selected file: deploy/classic/postgres.md markdown
+Indexed document: Connect to Postgres
+Selected file: deploy/classic/index.md markdown
+Indexed document: Deploy Classic
+Selected file: deploy/classic/deployments.md markdown
+Indexed document: Deployments
+Selected file: deploy/classic/logs.md markdown
+Indexed document: Application logging
+Selected file: deploy/classic/queues.md markdown
+Indexed document: Using Queues
+Selected file: deploy/classic/how-to-deploy.md markdown
+Indexed document: Deploy with GitHub integration
+Selected file: deploy/classic/environment-variables.md markdown
+Indexed document: Environment variables
+Selected file: deploy/classic/ci_github.md markdown
+Indexed document: CI and GitHub Actions
+Selected file: deploy/classic/deployctl.md markdown
+Indexed document: Using deployctl on the command line
+Selected file: deploy/classic/organizations.md markdown
+Indexed document: Organizations
+Selected file: deploy/classic/regions.md markdown
+Indexed document: Regions
+Selected file: deploy/privacy_policy.md markdown
+Indexed document: Privacy Policy
+Selected file: deploy/migration_guide.md markdown
+Indexed document: Migrating from Deploy Classic to Deno Deploy
+Selected file: deploy/index.md markdown
+Indexed document: About Deno Deploy
+Selected file: deploy/usage.md markdown
+Indexed document: Deno Deploy Usage Guidelines
+Selected file: deploy/changelog.md markdown
+Indexed document: Deno Deploy changelog
+Selected file: deploy/pricing_and_limits.md markdown
+Indexed document: Pricing and limitations
+Selected file: deploy/getting_started.md markdown
+Indexed document: Getting started
+Selected file: examples/sandbox/spawn_subprocess.md markdown
+Indexed document: Spawn a subprocess and get buffered output
+Selected file: examples/sandbox/command_cancellation.md markdown
+Indexed document: Command cancellation
+Selected file: examples/sandbox/access_output.md markdown
+Indexed document: Streaming access string and binary output
+Selected file: examples/sandbox/timeout_control.md markdown
+Indexed document: Control sandbox timeout
+Selected file: examples/sandbox/environment_variables.md markdown
+Indexed document: Set and get environment variables
+Selected file: examples/sandbox/stream_output.md markdown
+Indexed document: Stream output to a local file
+Selected file: examples/sandbox/upload_files.md markdown
+Indexed document: Upload files and directories
+Selected file: examples/sandbox/template_literals.md markdown
+Indexed document: Template literal commands with variable interpolation
+Selected file: examples/sandbox/vscode_instance.md markdown
+Indexed document: Provide a VSCode instance in a sandbox
+Selected file: examples/sandbox/javascript_repl.md markdown
+Indexed document: Interactive JavaScript REPL
+Selected file: examples/sandbox/error_handling.md markdown
+Indexed document: Error handling
+Selected file: examples/sandbox/web_framework.md markdown
+Indexed document: Serve a web framework
+Selected file: examples/sandbox/memory.md markdown
+Indexed document: Configure sandbox memory
+Selected file: examples/sandbox/ssh_access.md markdown
+Indexed document: Provide SSH access to a sandbox
+Selected file: examples/tutorials/web_testing.md markdown
+Indexed document: Testing web apps
+Selected file: examples/tutorials/otel_span_propagation.md markdown
+Indexed document: Distributed Tracing with Context Propagation in Deno
+Selected file: examples/tutorials/add_remove_dependencies.md markdown
+Indexed document: Add and remove dependencies
+Selected file: examples/tutorials/prisma.md markdown
+Indexed document: How to create a RESTful API with Prisma and Oak
+Selected file: examples/tutorials/svelte.md markdown
+Indexed document: Build a SvelteKit App
+Selected file: examples/tutorials/simple_api.md markdown
+Indexed document: Simple API server
+Selected file: examples/tutorials/migrate_custom_domain.md markdown
+Indexed document: Migrating a custom domain from Deploy Classic to Deno Deploy
+Selected file: examples/tutorials/subprocess.md markdown
+Indexed document: Creating a subprocess
+Selected file: examples/tutorials/qwik.md markdown
+Indexed document: Build Qwik with Deno
+Selected file: examples/tutorials/vue.md markdown
+Indexed document: Build a Vue.js App
+Selected file: examples/tutorials/cloudflare_workers.md markdown
+Indexed document: Deploying Deno to Cloudflare Workers
+Selected file: examples/tutorials/connecting_to_databases.md markdown
+Indexed document: Connecting to databases
+Selected file: examples/tutorials/mongoose.md markdown
+Indexed document: How to use Mongoose with Deno
+Selected file: examples/tutorials/deploy_command.md markdown
+Indexed document: Deploy an app with the deno deploy command
+Selected file: examples/tutorials/chat_app.md markdown
+Indexed document: Chat application with WebSockets
+Selected file: examples/tutorials/snapshot_python.md markdown
+Indexed document: Boot a Python environment with snapshots
+Selected file: examples/tutorials/grafana.md markdown
+Indexed document: How to export telemetry data to Grafana
+Selected file: examples/tutorials/google_cloud_run.md markdown
+Indexed document: How to deploy to Google Cloud Run
+Selected file: examples/tutorials/tunnel_database.md markdown
+Indexed document: Connect a Database to your local dev
+Selected file: examples/tutorials/digital_ocean.md markdown
+Indexed document: How to deploy Deno to Digital Ocean
+Selected file: examples/tutorials/private_registries.md markdown
+Indexed document: Use private npm registries
+Selected file: examples/tutorials/deno_doc.md markdown
+Indexed document: Generating documentation with deno doc
+Selected file: examples/tutorials/redis.md markdown
+Indexed document: How to use Redis with Deno
+Selected file: examples/tutorials/local_unpublished_packages.md markdown
+Indexed document: Use local and unpublished packages
+Selected file: examples/tutorials/planetscale.md markdown
+Indexed document: How to use Planetscale with Deno
+Selected file: examples/tutorials/astro.md markdown
+Indexed document: Build Astro with Deno
+Selected file: examples/tutorials/cjs_to_esm.md markdown
+Indexed document: Updating from CommonJS to ESM
+Selected file: examples/tutorials/fetch_data.md markdown
+Indexed document: Fetch and stream data
+Selected file: examples/tutorials/deploy_otel.md markdown
+Indexed document: Monitor your app with OpenTelemetry and Deno Deploy
+Selected file: examples/tutorials/deno_deploy.md markdown
+Indexed document: Deploy an app with Deno Deploy
+Selected file: examples/tutorials/debugging_with_console.md markdown
+Indexed document: Better debugging with the console API
+Selected file: examples/tutorials/aws_ecs_fargate.md markdown
+Indexed document: Deploy Deno to AWS ECS Fargate
+Selected file: examples/tutorials/testing_library.md markdown
+Indexed document: Use Testing Library with Deno
+Selected file: examples/tutorials/vite.md markdown
+Indexed document: Use Vite with Deno
+Selected file: examples/tutorials/os_signals.md markdown
+Indexed document: Handle OS signals
+Selected file: examples/tutorials/volumes.md markdown
+Indexed document: Deno Sandbox Volumes Tutorial
+Selected file: examples/tutorials/cloudflare_workers_wrangler.md markdown
+Indexed document: Deploying Deno to Cloudflare Workers with Wrangler
+Selected file: examples/tutorials/initialize_project.md markdown
+Indexed document: Initialize a project
+Selected file: examples/tutorials/sveltekit.md markdown
+Indexed document: Building a SvelteKit app with sv and Deno
+Selected file: examples/tutorials/word_finder.md markdown
+Indexed document: Building a word finder app with Deno
+Selected file: examples/tutorials/dependency_lockfile.md markdown
+Indexed document: Lock dependencies with deno.lock
+Selected file: examples/tutorials/hashbang.md markdown
+Indexed document: Executable scripts
+Selected file: examples/tutorials/honeycomb.md markdown
+Indexed document: How to export telemetry data to Honeycomb
+Selected file: examples/tutorials/snapshots.md markdown
+Indexed document: Deno Sandbox Snapshots Tutorial
+Selected file: examples/tutorials/file_server.md markdown
+Indexed document: Write a file server
+Selected file: examples/tutorials/run_script.md markdown
+Indexed document: Run a script
+Selected file: examples/tutorials/import_maps.md markdown
+Indexed document: Re-map import paths
+Selected file: examples/tutorials/workspaces_monorepo.md markdown
+Indexed document: Configure a monorepo with workspaces
+Selected file: examples/tutorials/basic_opentelemetry.md markdown
+Indexed document: Getting Started with OpenTelemetry in Deno
+Selected file: examples/tutorials/next.md markdown
+Indexed document: Build a Next.js App
+Selected file: examples/tutorials/migrate_node_project.md markdown
+Indexed document: Use Deno in an existing Node.js project
+Selected file: examples/tutorials/file_based_routing.md markdown
+Indexed document: File Based Routing
+Selected file: examples/tutorials/drizzle.md markdown
+Indexed document: Build a Database App with Drizzle ORM and Deno
+Selected file: examples/tutorials/nuxt.md markdown
+Indexed document: Build a Nuxt app with Deno
+Selected file: examples/tutorials/testing.md markdown
+Indexed document: Writing tests
+Selected file: examples/tutorials/tunnel_telemetry.md markdown
+Indexed document: Local Telemetry with tunnel
+Selected file: examples/tutorials/aws_lambda.md markdown
+Indexed document: How to Deploy Deno to AWS Lambda
+Selected file: examples/tutorials/aws_lightsail.md markdown
+Indexed document: Aws Lightsail
+Selected file: examples/tutorials/llm.md markdown
+Indexed document: Build a Real-time LLM Chat App with Deno
+Selected file: examples/tutorials/apollo.md markdown
+Indexed document: How to use Apollo with Deno
+Selected file: examples/tutorials/solidjs.md markdown
+Indexed document: Build a SolidJS app with Deno
+Selected file: examples/tutorials/mysql2.md markdown
+Indexed document: How to use MySQL2 with Deno
+Selected file: examples/tutorials/module_metadata.md markdown
+Indexed document: Module metadata
+Selected file: examples/tutorials/tanstack.md markdown
+Indexed document: Build an app with Tanstack and Deno
+Selected file: examples/tutorials/kinsta.md markdown
+Indexed document: How to deploy Deno on Kinsta
+Selected file: examples/tutorials/file_system_events.md markdown
+Indexed document: File system events
+Selected file: examples/tutorials/fresh.md markdown
+Indexed document: Build a Fresh App
+Selected file: examples/tutorials/npm_lifecycle_scripts.md markdown
+Indexed document: Run npm lifecycle scripts
+Selected file: examples/tutorials/tunnel.md markdown
+Indexed document: Share your local server with Tunnel
+Selected file: examples/tutorials/express.md markdown
+Indexed document: How to use Express with Deno
+Selected file: examples/tutorials/bdd.md markdown
+Indexed document: Behavior-Driven Development (BDD)
+Selected file: examples/tutorials/hyperdx.md markdown
+Indexed document: How to export telemetry data to HyperDX
+Selected file: examples/tutorials/trpc.md markdown
+Indexed document: Build a Typesafe API with tRPC and Deno
+Selected file: examples/tutorials/react.md markdown
+Indexed document: React app with Vite
+Selected file: examples/tutorials/deno_github_actions.md markdown
+Indexed document: Run Deno in GitHub Actions
+Selected file: subhosting/api/authentication.md markdown
+Indexed document: Authentication
+Selected file: subhosting/api/index.md markdown
+Indexed document: Index
+Selected file: subhosting/index.md markdown
+Skipping subhosting/index.md - content too short
+Indexed document: undefined
+Selected file: subhosting/manual/quick_start.md markdown
+Indexed document: Ignore this file in git
+Selected file: subhosting/manual/api_migration_guide.md markdown
+Indexed document: Migrating from subhosting API v1 to v2
+Selected file: subhosting/manual/acceptable_use_policy.md markdown
+Indexed document: Acceptable Use Policy
+Selected file: subhosting/manual/index.md markdown
+Indexed document: Index
+Selected file: subhosting/manual/events.md markdown
+Indexed document: Events
+Selected file: subhosting/manual/pricing_and_limits.md markdown
+Indexed document: Pricing And Limits
+Selected file: subhosting/manual/planning_your_implementation.md markdown
+Indexed document: Planning Your Implementation
+Selected file: lint/rules/explicit-function-return-type.md markdown
+Indexed document: Explicit Function Return Type
+Selected file: lint/rules/prefer-namespace-keyword.md markdown
+Indexed document: Prefer Namespace Keyword
+Selected file: lint/rules/no-non-null-assertion.md markdown
+Indexed document: No Non Null Assertion
+Selected file: lint/rules/camelcase.md markdown
+Indexed document: Camelcase
+Selected file: lint/rules/no-external-import.md markdown
+Indexed document: No External Import
+Selected file: lint/rules/jsx-no-children-prop.md markdown
+Indexed document: Jsx No Children Prop
+Selected file: lint/rules/no-class-assign.md markdown
+Indexed document: No Class Assign
+Selected file: lint/rules/no-case-declarations.md markdown
+Indexed document: No Case Declarations
+Selected file: lint/rules/no-extra-boolean-cast.md markdown
+Indexed document: No Extra Boolean Cast
+Selected file: lint/rules/no-namespace.md markdown
+Indexed document: No Namespace
+Selected file: lint/rules/no-misused-new.md markdown
+Indexed document: No Misused New
+Selected file: lint/rules/no-invalid-triple-slash-reference.md markdown
+Indexed document: No Invalid Triple Slash Reference
+Selected file: lint/rules/no-delete-var.md markdown
+Indexed document: No Delete Var
+Selected file: lint/rules/explicit-module-boundary-types.md markdown
+Indexed document: Explicit Module Boundary Types
+Selected file: lint/rules/jsx-boolean-value.md markdown
+Indexed document: Jsx Boolean Value
+Selected file: lint/rules/ban-unknown-rule-code.md markdown
+Indexed document: Ban Unknown Rule Code
+Selected file: lint/rules/no-await-in-loop.md markdown
+Indexed document: No Await In Loop
+Selected file: lint/rules/guard-for-in.md markdown
+Indexed document: Guard For In
+Selected file: lint/rules/require-await.md markdown
+Indexed document: Require Await
+Selected file: lint/rules/jsx-key.md markdown
+Indexed document: Jsx Key
+Selected file: lint/rules/ban-ts-comment.md markdown
+Indexed document: Ban Ts Comment
+Selected file: lint/rules/no-this-alias.md markdown
+Indexed document: No This Alias
+Selected file: lint/rules/no-process-global.md markdown
+Indexed document: No Process Global
+Selected file: lint/rules/no-setter-return.md markdown
+Indexed document: No Setter Return
+Selected file: lint/rules/no-duplicate-case.md markdown
+Indexed document: No Duplicate Case
+Selected file: lint/rules/no-console.md markdown
+Indexed document: No Console
+Selected file: lint/rules/no-func-assign.md markdown
+Indexed document: No Func Assign
+Selected file: lint/rules/prefer-ascii.md markdown
+Indexed document: Prefer Ascii
+Selected file: lint/rules/no-dupe-class-members.md markdown
+Indexed document: No Dupe Class Members
+Selected file: lint/rules/no-self-assign.md markdown
+Indexed document: No Self Assign
+Selected file: lint/rules/fresh-server-event-handlers.md markdown
+Indexed document: Fresh Server Event Handlers
+Selected file: lint/rules/no-empty-enum.md markdown
+Indexed document: No Empty Enum
+Selected file: lint/rules/no-unused-vars.md markdown
+Indexed document: No Unused Vars
+Selected file: lint/rules/no-explicit-any.md markdown
+Indexed document: No Explicit Any
+Selected file: lint/rules/no-constant-condition.md markdown
+Indexed document: No Constant Condition
+Selected file: lint/rules/no-undef.md markdown
+Indexed document: No Undef
+Selected file: lint/rules/valid-typeof.md markdown
+Indexed document: Valid Typeof
+Selected file: lint/rules/no-irregular-whitespace.md markdown
+Indexed document: No Irregular Whitespace
+Selected file: lint/rules/no-const-assign.md markdown
+Indexed document: No Const Assign
+Selected file: lint/rules/no-self-compare.md markdown
+Indexed document: No Self Compare
+Selected file: lint/rules/jsx-no-comment-text-nodes.md markdown
+Indexed document: Jsx No Comment Text Nodes
+Selected file: lint/rules/no-sloppy-imports.md markdown
+Indexed document: No Sloppy Imports
+Selected file: lint/rules/no-throw-literal.md markdown
+Indexed document: No Throw Literal
+Selected file: lint/rules/no-sync-fn-in-async-fn.md markdown
+Indexed document: No Sync Fn In Async Fn
+Selected file: lint/rules/no-invalid-regexp.md markdown
+Indexed document: No Invalid Regexp
+Selected file: lint/rules/no-slow-types.md markdown
+Indexed document: No Slow Types
+Selected file: lint/rules/no-cond-assign.md markdown
+Indexed document: No Cond Assign
+Selected file: lint/rules/default-param-last.md markdown
+Indexed document: Default Param Last
+Selected file: lint/rules/no-node-globals.md markdown
+Indexed document: No Node Globals
+Selected file: lint/rules/no-with.md markdown
+Indexed document: No With
+Selected file: lint/rules/no-unsafe-negation.md markdown
+Indexed document: No Unsafe Negation
+Selected file: lint/rules/jsx-void-dom-elements-no-children.md markdown
+Indexed document: Jsx Void Dom Elements No Children
+Selected file: lint/rules/jsx-curly-braces.md markdown
+Indexed document: Jsx Curly Braces
+Selected file: lint/rules/prefer-const.md markdown
+Indexed document: Prefer Const
+Selected file: lint/rules/no-regex-spaces.md markdown
+Indexed document: No Regex Spaces
+Selected file: lint/rules/no-control-regex.md markdown
+Indexed document: No Control Regex
+Selected file: lint/rules/no-new-symbol.md markdown
+Indexed document: No New Symbol
+Selected file: lint/rules/react-no-danger.md markdown
+Indexed document: React No Danger
+Selected file: lint/rules/no-async-promise-executor.md markdown
+Indexed document: No Async Promise Executor
+Selected file: lint/rules/no-empty-character-class.md markdown
+Indexed document: No Empty Character Class
+Selected file: lint/rules/no-boolean-literal-for-arguments.md markdown
+Indexed document: No Boolean Literal For Arguments
+Selected file: lint/rules/prefer-as-const.md markdown
+Indexed document: Prefer As Const
+Selected file: lint/rules/no-sparse-arrays.md markdown
+Indexed document: No Sparse Arrays
+Selected file: lint/rules/no-array-constructor.md markdown
+Indexed document: No Array Constructor
+Selected file: lint/rules/no-compare-neg-zero.md markdown
+Indexed document: No Compare Neg Zero
+Selected file: lint/rules/no-deprecated-deno-api.md markdown
+Indexed document: No Deprecated Deno Api
+Selected file: lint/rules/no-unused-labels.md markdown
+Indexed document: No Unused Labels
+Selected file: lint/rules/no-import-assertions.md markdown
+Indexed document: No Import Assertions
+Selected file: lint/rules/no-import-prefix.md markdown
+Indexed document: No Import Prefix
+Selected file: lint/rules/no-unversioned-import.md markdown
+Indexed document: No Unversioned Import
+Selected file: lint/rules/no-fallthrough.md markdown
+Indexed document: No Fallthrough
+Selected file: lint/rules/no-dupe-keys.md markdown
+Indexed document: No Dupe Keys
+Selected file: lint/rules/ban-untagged-todo.md markdown
+Indexed document: Ban Untagged Todo
+Selected file: lint/rules/ban-types.md markdown
+Indexed document: Ban Types
+Selected file: lint/rules/for-direction.md markdown
+Indexed document: For Direction
+Selected file: lint/rules/no-window.md markdown
+Indexed document: No Window
+Selected file: lint/rules/no-octal.md markdown
+Indexed document: No Octal
+Selected file: lint/rules/require-yield.md markdown
+Indexed document: Require Yield
+Selected file: lint/rules/no-dupe-args.md markdown
+Indexed document: No Dupe Args
+Selected file: lint/rules/no-redeclare.md markdown
+Indexed document: No Redeclare
+Selected file: lint/rules/react-no-danger-with-children.md markdown
+Indexed document: React No Danger With Children
+Selected file: lint/rules/no-obj-calls.md markdown
+Indexed document: No Obj Calls
+Selected file: lint/rules/jsx-no-duplicate-props.md markdown
+Indexed document: Jsx No Duplicate Props
+Selected file: lint/rules/constructor-super.md markdown
+Indexed document: Constructor Super
+Selected file: lint/rules/no-non-null-asserted-optional-chain.md markdown
+Indexed document: No Non Null Asserted Optional Chain
+Selected file: lint/rules/jsx-no-useless-fragment.md markdown
+Indexed document: Jsx No Useless Fragment
+Selected file: lint/rules/no-debugger.md markdown
+Indexed document: No Debugger
+Selected file: lint/rules/ban-unused-ignore.md markdown
+Indexed document: Ban Unused Ignore
+Selected file: lint/rules/no-await-in-sync-fn.md markdown
+Indexed document: No Await In Sync Fn
+Selected file: lint/rules/no-extra-non-null-assertion.md markdown
+Indexed document: No Extra Non Null Assertion
+Selected file: lint/rules/adjacent-overload-signatures.md markdown
+Indexed document: Adjacent Overload Signatures
+Selected file: lint/rules/single-var-declarator.md markdown
+Indexed document: Single Var Declarator
+Selected file: lint/rules/eqeqeq.md markdown
+Indexed document: Eqeqeq
+Selected file: lint/rules/react-rules-of-hooks.md markdown
+Indexed document: React Rules Of Hooks
+Selected file: lint/rules/no-empty-pattern.md markdown
+Indexed document: No Empty Pattern
+Selected file: lint/rules/verbatim-module-syntax.md markdown
+Indexed document: Verbatim Module Syntax
+Selected file: lint/rules/jsx-props-no-spread-multi.md markdown
+Indexed document: Jsx Props No Spread Multi
+Selected file: lint/rules/no-implicit-declare-namespace-export.md markdown
+Indexed document: No Implicit Declare Namespace Export
+Selected file: lint/rules/no-unsafe-finally.md markdown
+Indexed document: No Unsafe Finally
+Selected file: lint/rules/jsx-button-has-type.md markdown
+Indexed document: Jsx Button Has Type
+Selected file: lint/rules/no-window-prefix.md markdown
+Indexed document: No Window Prefix
+Selected file: lint/rules/no-shadow-restricted-names.md markdown
+Indexed document: No Shadow Restricted Names
+Selected file: lint/rules/no-import-assign.md markdown
+Indexed document: No Import Assign
+Selected file: lint/rules/no-prototype-builtins.md markdown
+Indexed document: No Prototype Builtins
+Selected file: lint/rules/no-empty-interface.md markdown
+Indexed document: No Empty Interface
+Selected file: lint/rules/use-isnan.md markdown
+Indexed document: Use Isnan
+Selected file: lint/rules/no-unreachable.md markdown
+Indexed document: No Unreachable
+Selected file: lint/rules/fresh-handler-export.md markdown
+Indexed document: Fresh Handler Export
+Selected file: lint/rules/no-eval.md markdown
+Indexed document: No Eval
+Selected file: lint/rules/no-dupe-else-if.md markdown
+Indexed document: No Dupe Else If
+Selected file: lint/rules/triple-slash-reference.md markdown
+Indexed document: Triple Slash Reference
+Selected file: lint/rules/getter-return.md markdown
+Indexed document: Getter Return
+Selected file: lint/rules/no-var.md markdown
+Indexed document: No Var
+Selected file: lint/rules/no-global-assign.md markdown
+Indexed document: No Global Assign
+Selected file: lint/rules/no-empty.md markdown
+Indexed document: No Empty
+Selected file: lint/rules/no-inner-declarations.md markdown
+Indexed document: No Inner Declarations
+Selected file: lint/rules/ban-untagged-ignore.md markdown
+Indexed document: Ban Untagged Ignore
+Selected file: lint/rules/no-top-level-await.md markdown
+Indexed document: No Top Level Await
+Selected file: lint/rules/no-this-before-super.md markdown
+Indexed document: No This Before Super
+Selected file: lint/rules/no-useless-rename.md markdown
+Indexed document: No Useless Rename
+Selected file: lint/rules/jsx-no-unescaped-entities.md markdown
+Indexed document: Jsx No Unescaped Entities
+Selected file: lint/rules/prefer-primordials.md markdown
+Indexed document: Prefer Primordials
+Selected file: lint/rules/no-ex-assign.md markdown
+Indexed document: No Ex Assign
+Selected file: lint/rules/no-inferrable-types.md markdown
+Indexed document: No Inferrable Types
+✅ Collected 467 markdown documents
+
+🔧 Processing API reference documentation...
+Processing deno API documentation...
+  Processed 2063 deno API symbols (skipped 61)
+Processing web API documentation...
+  Processed 2299 web API symbols (skipped 62)
+Processing node API documentation...
+  Processed 6738 node API symbols (skipped 169)
+  Remapped 11099 API doc URLs to grouped pages.
+✅ Collected 11100 API reference documents
+
+Comprehensive Index Statistics:
+   Total documents: 11,567
+   Markdown documents: 467
+   API reference documents: 11,100
+   Total characters: 2,420,176
+   Average document length: 209 chars
+   Documents with tags: 11,195
+   Documents with descriptions: 283
+✅ Generated comprehensive Orama index: static/orama-index-full.json
+File size: 7,729,779 bytes
+✅ Generated summary index: static/orama-index-summary.json
+File size: 4,224,301 bytes
+
+Next steps:
+1. Upload the orama-index-full.json file to your Orama Cloud index
+2. Or use the Orama REST API to bulk insert the documents
+3. Configure your search client with the proper endpoint and API key
+4. Test searches for both documentation and API references
+
+Done!

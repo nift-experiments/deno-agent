@@ -1,0 +1,2768 @@
+{
+  "source_candidates": 460,
+  "matching_conventional_routes": 365,
+  "matching_frontmatter_routes": 362,
+  "rows": [
+    {
+      "source": "404/index.mdx",
+      "conventional_output": "404/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "AGENTS.md",
+      "conventional_output": "AGENTS/index.html",
+      "exists": true,
+      "frontmatter": false
+    },
+    {
+      "source": "README.md",
+      "conventional_output": "README/index.html",
+      "exists": false,
+      "frontmatter": false
+    },
+    {
+      "source": "ai/index.md",
+      "conventional_output": "ai/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "api/deno/index.md",
+      "conventional_output": "api/deno/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "api/node/index.md",
+      "conventional_output": "api/node/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "api/web/index.md",
+      "conventional_output": "api/web/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/acceptable_use_policy.md",
+      "conventional_output": "deploy/acceptable_use_policy/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/changelog.md",
+      "conventional_output": "deploy/changelog/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/compression.md",
+      "conventional_output": "deploy/classic/api/compression/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/dynamic-import.md",
+      "conventional_output": "deploy/classic/api/dynamic-import/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/index.md",
+      "conventional_output": "deploy/classic/api/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/runtime-broadcast-channel.md",
+      "conventional_output": "deploy/classic/api/runtime-broadcast-channel/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/runtime-fetch.md",
+      "conventional_output": "deploy/classic/api/runtime-fetch/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/runtime-fs.md",
+      "conventional_output": "deploy/classic/api/runtime-fs/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/runtime-headers.md",
+      "conventional_output": "deploy/classic/api/runtime-headers/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/runtime-node.md",
+      "conventional_output": "deploy/classic/api/runtime-node/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/runtime-request.md",
+      "conventional_output": "deploy/classic/api/runtime-request/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/runtime-response.md",
+      "conventional_output": "deploy/classic/api/runtime-response/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/api/runtime-sockets.md",
+      "conventional_output": "deploy/classic/api/runtime-sockets/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/ci_github.md",
+      "conventional_output": "deploy/classic/ci_github/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/cron.md",
+      "conventional_output": "deploy/classic/cron/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/custom-domains.md",
+      "conventional_output": "deploy/classic/custom-domains/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/deployctl.md",
+      "conventional_output": "deploy/classic/deployctl/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/deployments.md",
+      "conventional_output": "deploy/classic/deployments/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/dynamodb.md",
+      "conventional_output": "deploy/classic/dynamodb/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/edge_cache.md",
+      "conventional_output": "deploy/classic/edge_cache/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/environment-variables.md",
+      "conventional_output": "deploy/classic/environment-variables/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/firebase.md",
+      "conventional_output": "deploy/classic/firebase/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/how-to-deploy.md",
+      "conventional_output": "deploy/classic/how-to-deploy/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/index.md",
+      "conventional_output": "deploy/classic/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/kv_on_deploy.md",
+      "conventional_output": "deploy/classic/kv_on_deploy/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/logs.md",
+      "conventional_output": "deploy/classic/logs/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/middleware.md",
+      "conventional_output": "deploy/classic/middleware/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/neon-postgres.md",
+      "conventional_output": "deploy/classic/neon-postgres/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/organizations.md",
+      "conventional_output": "deploy/classic/organizations/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/playgrounds.md",
+      "conventional_output": "deploy/classic/playgrounds/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/postgres.md",
+      "conventional_output": "deploy/classic/postgres/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/prisma-postgres.md",
+      "conventional_output": "deploy/classic/prisma-postgres/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/queues.md",
+      "conventional_output": "deploy/classic/queues/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/regions.md",
+      "conventional_output": "deploy/classic/regions/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/classic/running-scripts-locally.md",
+      "conventional_output": "deploy/classic/running-scripts-locally/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/fulfillment_policy.md",
+      "conventional_output": "deploy/fulfillment_policy/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/getting_started.md",
+      "conventional_output": "deploy/getting_started/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/index.md",
+      "conventional_output": "deploy/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/kv/backup.md",
+      "conventional_output": "deploy/kv/backup/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/kv/data_modeling_typescript.md",
+      "conventional_output": "deploy/kv/data_modeling_typescript/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/kv/index.md",
+      "conventional_output": "deploy/kv/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/kv/key_expiration.md",
+      "conventional_output": "deploy/kv/key_expiration/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/kv/key_space.md",
+      "conventional_output": "deploy/kv/key_space/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/kv/node.md",
+      "conventional_output": "deploy/kv/node/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/kv/operations.md",
+      "conventional_output": "deploy/kv/operations/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/kv/secondary_indexes.md",
+      "conventional_output": "deploy/kv/secondary_indexes/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/kv/transactions.md",
+      "conventional_output": "deploy/kv/transactions/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/migration_guide.md",
+      "conventional_output": "deploy/migration_guide/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/pricing_and_limits.md",
+      "conventional_output": "deploy/pricing_and_limits/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/privacy_policy.md",
+      "conventional_output": "deploy/privacy_policy/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/accounts.md",
+      "conventional_output": "deploy/reference/accounts/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/apps.md",
+      "conventional_output": "deploy/reference/apps/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/builds.md",
+      "conventional_output": "deploy/reference/builds/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/button.md",
+      "conventional_output": "deploy/reference/button/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/caching.md",
+      "conventional_output": "deploy/reference/caching/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/cloud_connections.md",
+      "conventional_output": "deploy/reference/cloud_connections/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/cron.md",
+      "conventional_output": "deploy/reference/cron/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/databases.md",
+      "conventional_output": "deploy/reference/databases/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/deno_kv.md",
+      "conventional_output": "deploy/reference/deno_kv/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/domains.md",
+      "conventional_output": "deploy/reference/domains/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/env_vars_and_contexts.md",
+      "conventional_output": "deploy/reference/env_vars_and_contexts/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/frameworks.md",
+      "conventional_output": "deploy/reference/frameworks/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/observability.md",
+      "conventional_output": "deploy/reference/observability/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/oidc.md",
+      "conventional_output": "deploy/reference/oidc/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/organizations.md",
+      "conventional_output": "deploy/reference/organizations/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/playgrounds.md",
+      "conventional_output": "deploy/reference/playgrounds/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/runtime.md",
+      "conventional_output": "deploy/reference/runtime/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/timelines.md",
+      "conventional_output": "deploy/reference/timelines/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/reference/tunnel.md",
+      "conventional_output": "deploy/reference/tunnel/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/security.md",
+      "conventional_output": "deploy/security/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/support/index.md",
+      "conventional_output": "deploy/support/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/terms_and_conditions.md",
+      "conventional_output": "deploy/terms_and_conditions/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "deploy/usage.md",
+      "conventional_output": "deploy/usage/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/access_output.md",
+      "conventional_output": "examples/sandbox/access_output/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/command_cancellation.md",
+      "conventional_output": "examples/sandbox/command_cancellation/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/environment_variables.md",
+      "conventional_output": "examples/sandbox/environment_variables/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/error_handling.md",
+      "conventional_output": "examples/sandbox/error_handling/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/javascript_repl.md",
+      "conventional_output": "examples/sandbox/javascript_repl/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/memory.md",
+      "conventional_output": "examples/sandbox/memory/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/spawn_subprocess.md",
+      "conventional_output": "examples/sandbox/spawn_subprocess/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/ssh_access.md",
+      "conventional_output": "examples/sandbox/ssh_access/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/stream_output.md",
+      "conventional_output": "examples/sandbox/stream_output/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/template_literals.md",
+      "conventional_output": "examples/sandbox/template_literals/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/timeout_control.md",
+      "conventional_output": "examples/sandbox/timeout_control/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/upload_files.md",
+      "conventional_output": "examples/sandbox/upload_files/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/vscode_instance.md",
+      "conventional_output": "examples/sandbox/vscode_instance/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/sandbox/web_framework.md",
+      "conventional_output": "examples/sandbox/web_framework/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/add_remove_dependencies.md",
+      "conventional_output": "examples/tutorials/add_remove_dependencies/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/apollo.md",
+      "conventional_output": "examples/tutorials/apollo/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/astro.md",
+      "conventional_output": "examples/tutorials/astro/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/aws_ecs_fargate.md",
+      "conventional_output": "examples/tutorials/aws_ecs_fargate/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/aws_lambda.md",
+      "conventional_output": "examples/tutorials/aws_lambda/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/aws_lightsail.md",
+      "conventional_output": "examples/tutorials/aws_lightsail/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/basic_opentelemetry.md",
+      "conventional_output": "examples/tutorials/basic_opentelemetry/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/bdd.md",
+      "conventional_output": "examples/tutorials/bdd/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/chat_app.md",
+      "conventional_output": "examples/tutorials/chat_app/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/cjs_to_esm.md",
+      "conventional_output": "examples/tutorials/cjs_to_esm/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/cloudflare_workers.md",
+      "conventional_output": "examples/tutorials/cloudflare_workers/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/cloudflare_workers_wrangler.md",
+      "conventional_output": "examples/tutorials/cloudflare_workers_wrangler/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/connecting_to_databases.md",
+      "conventional_output": "examples/tutorials/connecting_to_databases/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/debugging_with_console.md",
+      "conventional_output": "examples/tutorials/debugging_with_console/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/deno_deploy.md",
+      "conventional_output": "examples/tutorials/deno_deploy/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/deno_doc.md",
+      "conventional_output": "examples/tutorials/deno_doc/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/deno_github_actions.md",
+      "conventional_output": "examples/tutorials/deno_github_actions/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/dependency_lockfile.md",
+      "conventional_output": "examples/tutorials/dependency_lockfile/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/deploy_command.md",
+      "conventional_output": "examples/tutorials/deploy_command/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/deploy_otel.md",
+      "conventional_output": "examples/tutorials/deploy_otel/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/digital_ocean.md",
+      "conventional_output": "examples/tutorials/digital_ocean/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/drizzle.md",
+      "conventional_output": "examples/tutorials/drizzle/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/express.md",
+      "conventional_output": "examples/tutorials/express/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/fetch_data.md",
+      "conventional_output": "examples/tutorials/fetch_data/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/file_based_routing.md",
+      "conventional_output": "examples/tutorials/file_based_routing/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/file_server.md",
+      "conventional_output": "examples/tutorials/file_server/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/file_system_events.md",
+      "conventional_output": "examples/tutorials/file_system_events/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/fresh.md",
+      "conventional_output": "examples/tutorials/fresh/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/google_cloud_run.md",
+      "conventional_output": "examples/tutorials/google_cloud_run/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/grafana.md",
+      "conventional_output": "examples/tutorials/grafana/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/hashbang.md",
+      "conventional_output": "examples/tutorials/hashbang/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/honeycomb.md",
+      "conventional_output": "examples/tutorials/honeycomb/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/hyperdx.md",
+      "conventional_output": "examples/tutorials/hyperdx/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/import_maps.md",
+      "conventional_output": "examples/tutorials/import_maps/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/initialize_project.md",
+      "conventional_output": "examples/tutorials/initialize_project/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/kinsta.md",
+      "conventional_output": "examples/tutorials/kinsta/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/llm.md",
+      "conventional_output": "examples/tutorials/llm/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/local_unpublished_packages.md",
+      "conventional_output": "examples/tutorials/local_unpublished_packages/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/migrate_custom_domain.md",
+      "conventional_output": "examples/tutorials/migrate_custom_domain/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/migrate_node_project.md",
+      "conventional_output": "examples/tutorials/migrate_node_project/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/module_metadata.md",
+      "conventional_output": "examples/tutorials/module_metadata/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/mongoose.md",
+      "conventional_output": "examples/tutorials/mongoose/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/mysql2.md",
+      "conventional_output": "examples/tutorials/mysql2/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/next.md",
+      "conventional_output": "examples/tutorials/next/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/npm_lifecycle_scripts.md",
+      "conventional_output": "examples/tutorials/npm_lifecycle_scripts/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/nuxt.md",
+      "conventional_output": "examples/tutorials/nuxt/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/os_signals.md",
+      "conventional_output": "examples/tutorials/os_signals/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/otel_span_propagation.md",
+      "conventional_output": "examples/tutorials/otel_span_propagation/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/planetscale.md",
+      "conventional_output": "examples/tutorials/planetscale/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/prisma.md",
+      "conventional_output": "examples/tutorials/prisma/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/private_registries.md",
+      "conventional_output": "examples/tutorials/private_registries/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/qwik.md",
+      "conventional_output": "examples/tutorials/qwik/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/react.md",
+      "conventional_output": "examples/tutorials/react/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/redis.md",
+      "conventional_output": "examples/tutorials/redis/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/run_script.md",
+      "conventional_output": "examples/tutorials/run_script/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/simple_api.md",
+      "conventional_output": "examples/tutorials/simple_api/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/snapshot_python.md",
+      "conventional_output": "examples/tutorials/snapshot_python/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/snapshots.md",
+      "conventional_output": "examples/tutorials/snapshots/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/solidjs.md",
+      "conventional_output": "examples/tutorials/solidjs/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/subprocess.md",
+      "conventional_output": "examples/tutorials/subprocess/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/svelte.md",
+      "conventional_output": "examples/tutorials/svelte/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/sveltekit.md",
+      "conventional_output": "examples/tutorials/sveltekit/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/tanstack.md",
+      "conventional_output": "examples/tutorials/tanstack/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/testing.md",
+      "conventional_output": "examples/tutorials/testing/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/testing_library.md",
+      "conventional_output": "examples/tutorials/testing_library/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/trpc.md",
+      "conventional_output": "examples/tutorials/trpc/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/tunnel.md",
+      "conventional_output": "examples/tutorials/tunnel/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/tunnel_database.md",
+      "conventional_output": "examples/tutorials/tunnel_database/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/tunnel_telemetry.md",
+      "conventional_output": "examples/tutorials/tunnel_telemetry/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/vite.md",
+      "conventional_output": "examples/tutorials/vite/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/volumes.md",
+      "conventional_output": "examples/tutorials/volumes/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/vue.md",
+      "conventional_output": "examples/tutorials/vue/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/web_testing.md",
+      "conventional_output": "examples/tutorials/web_testing/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/word_finder.md",
+      "conventional_output": "examples/tutorials/word_finder/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "examples/tutorials/workspaces_monorepo.md",
+      "conventional_output": "examples/tutorials/workspaces_monorepo/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/adjacent-overload-signatures.md",
+      "conventional_output": "lint/rules/adjacent-overload-signatures/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/ban-ts-comment.md",
+      "conventional_output": "lint/rules/ban-ts-comment/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/ban-types.md",
+      "conventional_output": "lint/rules/ban-types/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/ban-unknown-rule-code.md",
+      "conventional_output": "lint/rules/ban-unknown-rule-code/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/ban-untagged-ignore.md",
+      "conventional_output": "lint/rules/ban-untagged-ignore/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/ban-untagged-todo.md",
+      "conventional_output": "lint/rules/ban-untagged-todo/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/ban-unused-ignore.md",
+      "conventional_output": "lint/rules/ban-unused-ignore/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/camelcase.md",
+      "conventional_output": "lint/rules/camelcase/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/constructor-super.md",
+      "conventional_output": "lint/rules/constructor-super/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/default-param-last.md",
+      "conventional_output": "lint/rules/default-param-last/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/eqeqeq.md",
+      "conventional_output": "lint/rules/eqeqeq/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/explicit-function-return-type.md",
+      "conventional_output": "lint/rules/explicit-function-return-type/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/explicit-module-boundary-types.md",
+      "conventional_output": "lint/rules/explicit-module-boundary-types/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/for-direction.md",
+      "conventional_output": "lint/rules/for-direction/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/fresh-handler-export.md",
+      "conventional_output": "lint/rules/fresh-handler-export/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/fresh-server-event-handlers.md",
+      "conventional_output": "lint/rules/fresh-server-event-handlers/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/getter-return.md",
+      "conventional_output": "lint/rules/getter-return/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/guard-for-in.md",
+      "conventional_output": "lint/rules/guard-for-in/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-boolean-value.md",
+      "conventional_output": "lint/rules/jsx-boolean-value/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-button-has-type.md",
+      "conventional_output": "lint/rules/jsx-button-has-type/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-curly-braces.md",
+      "conventional_output": "lint/rules/jsx-curly-braces/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-key.md",
+      "conventional_output": "lint/rules/jsx-key/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-no-children-prop.md",
+      "conventional_output": "lint/rules/jsx-no-children-prop/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-no-comment-text-nodes.md",
+      "conventional_output": "lint/rules/jsx-no-comment-text-nodes/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-no-duplicate-props.md",
+      "conventional_output": "lint/rules/jsx-no-duplicate-props/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-no-unescaped-entities.md",
+      "conventional_output": "lint/rules/jsx-no-unescaped-entities/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-no-useless-fragment.md",
+      "conventional_output": "lint/rules/jsx-no-useless-fragment/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-props-no-spread-multi.md",
+      "conventional_output": "lint/rules/jsx-props-no-spread-multi/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/jsx-void-dom-elements-no-children.md",
+      "conventional_output": "lint/rules/jsx-void-dom-elements-no-children/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-array-constructor.md",
+      "conventional_output": "lint/rules/no-array-constructor/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-async-promise-executor.md",
+      "conventional_output": "lint/rules/no-async-promise-executor/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-await-in-loop.md",
+      "conventional_output": "lint/rules/no-await-in-loop/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-await-in-sync-fn.md",
+      "conventional_output": "lint/rules/no-await-in-sync-fn/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-boolean-literal-for-arguments.md",
+      "conventional_output": "lint/rules/no-boolean-literal-for-arguments/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-case-declarations.md",
+      "conventional_output": "lint/rules/no-case-declarations/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-class-assign.md",
+      "conventional_output": "lint/rules/no-class-assign/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-compare-neg-zero.md",
+      "conventional_output": "lint/rules/no-compare-neg-zero/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-cond-assign.md",
+      "conventional_output": "lint/rules/no-cond-assign/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-console.md",
+      "conventional_output": "lint/rules/no-console/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-const-assign.md",
+      "conventional_output": "lint/rules/no-const-assign/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-constant-condition.md",
+      "conventional_output": "lint/rules/no-constant-condition/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-control-regex.md",
+      "conventional_output": "lint/rules/no-control-regex/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-debugger.md",
+      "conventional_output": "lint/rules/no-debugger/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-delete-var.md",
+      "conventional_output": "lint/rules/no-delete-var/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-deprecated-deno-api.md",
+      "conventional_output": "lint/rules/no-deprecated-deno-api/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-dupe-args.md",
+      "conventional_output": "lint/rules/no-dupe-args/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-dupe-class-members.md",
+      "conventional_output": "lint/rules/no-dupe-class-members/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-dupe-else-if.md",
+      "conventional_output": "lint/rules/no-dupe-else-if/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-dupe-keys.md",
+      "conventional_output": "lint/rules/no-dupe-keys/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-duplicate-case.md",
+      "conventional_output": "lint/rules/no-duplicate-case/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-empty-character-class.md",
+      "conventional_output": "lint/rules/no-empty-character-class/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-empty-enum.md",
+      "conventional_output": "lint/rules/no-empty-enum/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-empty-interface.md",
+      "conventional_output": "lint/rules/no-empty-interface/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-empty-pattern.md",
+      "conventional_output": "lint/rules/no-empty-pattern/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-empty.md",
+      "conventional_output": "lint/rules/no-empty/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-eval.md",
+      "conventional_output": "lint/rules/no-eval/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-ex-assign.md",
+      "conventional_output": "lint/rules/no-ex-assign/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-explicit-any.md",
+      "conventional_output": "lint/rules/no-explicit-any/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-external-import.md",
+      "conventional_output": "lint/rules/no-external-import/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-extra-boolean-cast.md",
+      "conventional_output": "lint/rules/no-extra-boolean-cast/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-extra-non-null-assertion.md",
+      "conventional_output": "lint/rules/no-extra-non-null-assertion/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-fallthrough.md",
+      "conventional_output": "lint/rules/no-fallthrough/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-func-assign.md",
+      "conventional_output": "lint/rules/no-func-assign/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-global-assign.md",
+      "conventional_output": "lint/rules/no-global-assign/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-implicit-declare-namespace-export.md",
+      "conventional_output": "lint/rules/no-implicit-declare-namespace-export/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-import-assertions.md",
+      "conventional_output": "lint/rules/no-import-assertions/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-import-assign.md",
+      "conventional_output": "lint/rules/no-import-assign/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-import-prefix.md",
+      "conventional_output": "lint/rules/no-import-prefix/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-inferrable-types.md",
+      "conventional_output": "lint/rules/no-inferrable-types/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-inner-declarations.md",
+      "conventional_output": "lint/rules/no-inner-declarations/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-invalid-regexp.md",
+      "conventional_output": "lint/rules/no-invalid-regexp/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-invalid-triple-slash-reference.md",
+      "conventional_output": "lint/rules/no-invalid-triple-slash-reference/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-irregular-whitespace.md",
+      "conventional_output": "lint/rules/no-irregular-whitespace/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-misused-new.md",
+      "conventional_output": "lint/rules/no-misused-new/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-namespace.md",
+      "conventional_output": "lint/rules/no-namespace/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-new-symbol.md",
+      "conventional_output": "lint/rules/no-new-symbol/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-node-globals.md",
+      "conventional_output": "lint/rules/no-node-globals/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-non-null-asserted-optional-chain.md",
+      "conventional_output": "lint/rules/no-non-null-asserted-optional-chain/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-non-null-assertion.md",
+      "conventional_output": "lint/rules/no-non-null-assertion/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-obj-calls.md",
+      "conventional_output": "lint/rules/no-obj-calls/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-octal.md",
+      "conventional_output": "lint/rules/no-octal/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-process-global.md",
+      "conventional_output": "lint/rules/no-process-global/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-prototype-builtins.md",
+      "conventional_output": "lint/rules/no-prototype-builtins/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-redeclare.md",
+      "conventional_output": "lint/rules/no-redeclare/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-regex-spaces.md",
+      "conventional_output": "lint/rules/no-regex-spaces/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-self-assign.md",
+      "conventional_output": "lint/rules/no-self-assign/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-self-compare.md",
+      "conventional_output": "lint/rules/no-self-compare/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-setter-return.md",
+      "conventional_output": "lint/rules/no-setter-return/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-shadow-restricted-names.md",
+      "conventional_output": "lint/rules/no-shadow-restricted-names/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-sloppy-imports.md",
+      "conventional_output": "lint/rules/no-sloppy-imports/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-slow-types.md",
+      "conventional_output": "lint/rules/no-slow-types/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-sparse-arrays.md",
+      "conventional_output": "lint/rules/no-sparse-arrays/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-sync-fn-in-async-fn.md",
+      "conventional_output": "lint/rules/no-sync-fn-in-async-fn/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-this-alias.md",
+      "conventional_output": "lint/rules/no-this-alias/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-this-before-super.md",
+      "conventional_output": "lint/rules/no-this-before-super/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-throw-literal.md",
+      "conventional_output": "lint/rules/no-throw-literal/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-top-level-await.md",
+      "conventional_output": "lint/rules/no-top-level-await/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-undef.md",
+      "conventional_output": "lint/rules/no-undef/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-unreachable.md",
+      "conventional_output": "lint/rules/no-unreachable/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-unsafe-finally.md",
+      "conventional_output": "lint/rules/no-unsafe-finally/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-unsafe-negation.md",
+      "conventional_output": "lint/rules/no-unsafe-negation/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-unused-labels.md",
+      "conventional_output": "lint/rules/no-unused-labels/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-unused-vars.md",
+      "conventional_output": "lint/rules/no-unused-vars/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-unversioned-import.md",
+      "conventional_output": "lint/rules/no-unversioned-import/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-useless-rename.md",
+      "conventional_output": "lint/rules/no-useless-rename/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-var.md",
+      "conventional_output": "lint/rules/no-var/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-window-prefix.md",
+      "conventional_output": "lint/rules/no-window-prefix/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-window.md",
+      "conventional_output": "lint/rules/no-window/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/no-with.md",
+      "conventional_output": "lint/rules/no-with/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/prefer-as-const.md",
+      "conventional_output": "lint/rules/prefer-as-const/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/prefer-ascii.md",
+      "conventional_output": "lint/rules/prefer-ascii/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/prefer-const.md",
+      "conventional_output": "lint/rules/prefer-const/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/prefer-namespace-keyword.md",
+      "conventional_output": "lint/rules/prefer-namespace-keyword/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/prefer-primordials.md",
+      "conventional_output": "lint/rules/prefer-primordials/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/react-no-danger-with-children.md",
+      "conventional_output": "lint/rules/react-no-danger-with-children/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/react-no-danger.md",
+      "conventional_output": "lint/rules/react-no-danger/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/react-rules-of-hooks.md",
+      "conventional_output": "lint/rules/react-rules-of-hooks/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/require-await.md",
+      "conventional_output": "lint/rules/require-await/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/require-yield.md",
+      "conventional_output": "lint/rules/require-yield/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/single-var-declarator.md",
+      "conventional_output": "lint/rules/single-var-declarator/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/triple-slash-reference.md",
+      "conventional_output": "lint/rules/triple-slash-reference/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/use-isnan.md",
+      "conventional_output": "lint/rules/use-isnan/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/valid-typeof.md",
+      "conventional_output": "lint/rules/valid-typeof/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "lint/rules/verbatim-module-syntax.md",
+      "conventional_output": "lint/rules/verbatim-module-syntax/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "orama/README.md",
+      "conventional_output": "orama/README/index.html",
+      "exists": true,
+      "frontmatter": false
+    },
+    {
+      "source": "runtime/cli_apps/index.md",
+      "conventional_output": "runtime/cli_apps/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/contributing/architecture.md",
+      "conventional_output": "runtime/contributing/architecture/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/contributing/index.md",
+      "conventional_output": "runtime/contributing/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/contributing/release_schedule.md",
+      "conventional_output": "runtime/contributing/release_schedule/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/contributing/style_guide.md",
+      "conventional_output": "runtime/contributing/style_guide/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/deploy/index.md",
+      "conventional_output": "runtime/deploy/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/auto_update.md",
+      "conventional_output": "runtime/desktop/auto_update/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/backends.md",
+      "conventional_output": "runtime/desktop/backends/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/bindings.md",
+      "conventional_output": "runtime/desktop/bindings/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/comparison.md",
+      "conventional_output": "runtime/desktop/comparison/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/configuration.md",
+      "conventional_output": "runtime/desktop/configuration/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/devtools.md",
+      "conventional_output": "runtime/desktop/devtools/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/dialogs.md",
+      "conventional_output": "runtime/desktop/dialogs/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/distribution.md",
+      "conventional_output": "runtime/desktop/distribution/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/error_reporting.md",
+      "conventional_output": "runtime/desktop/error_reporting/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/frameworks.md",
+      "conventional_output": "runtime/desktop/frameworks/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/hmr.md",
+      "conventional_output": "runtime/desktop/hmr/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/index.md",
+      "conventional_output": "runtime/desktop/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/menus.md",
+      "conventional_output": "runtime/desktop/menus/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/notifications.md",
+      "conventional_output": "runtime/desktop/notifications/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/serving.md",
+      "conventional_output": "runtime/desktop/serving/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/tray_and_dock.md",
+      "conventional_output": "runtime/desktop/tray_and_dock/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/webgpu.md",
+      "conventional_output": "runtime/desktop/webgpu/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/desktop/windows.md",
+      "conventional_output": "runtime/desktop/windows/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/configuration.md",
+      "conventional_output": "runtime/fundamentals/configuration/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/cpu_profiling.md",
+      "conventional_output": "runtime/fundamentals/cpu_profiling/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/cron.md",
+      "conventional_output": "runtime/fundamentals/cron/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/debugging.md",
+      "conventional_output": "runtime/fundamentals/debugging/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/ffi.md",
+      "conventional_output": "runtime/fundamentals/ffi/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/http_server.md",
+      "conventional_output": "runtime/fundamentals/http_server/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/modules.md",
+      "conventional_output": "runtime/fundamentals/modules/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/node.md",
+      "conventional_output": "runtime/fundamentals/node/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/open_telemetry.md",
+      "conventional_output": "runtime/fundamentals/open_telemetry/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/security.md",
+      "conventional_output": "runtime/fundamentals/security/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/stability_and_releases.md",
+      "conventional_output": "runtime/fundamentals/stability_and_releases/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/typescript.md",
+      "conventional_output": "runtime/fundamentals/typescript/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/web_dev.md",
+      "conventional_output": "runtime/fundamentals/web_dev/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/fundamentals/workspaces.md",
+      "conventional_output": "runtime/fundamentals/workspaces/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/getting_started/installation.md",
+      "conventional_output": "runtime/getting_started/installation/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/getting_started/setup_your_environment.md",
+      "conventional_output": "runtime/getting_started/setup_your_environment/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/help.md",
+      "conventional_output": "runtime/help/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/index.md",
+      "conventional_output": "runtime/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/lint_and_format/index.md",
+      "conventional_output": "runtime/lint_and_format/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/migrate/index.md",
+      "conventional_output": "runtime/migrate/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/migrate/migrate_from_bun.md",
+      "conventional_output": "runtime/migrate/migrate_from_bun/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/migrate/migrate_from_npm.md",
+      "conventional_output": "runtime/migrate/migrate_from_npm/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/migrate/migrate_from_pnpm.md",
+      "conventional_output": "runtime/migrate/migrate_from_pnpm/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/migrate/migrate_from_yarn.md",
+      "conventional_output": "runtime/migrate/migrate_from_yarn/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/packages/index.md",
+      "conventional_output": "runtime/packages/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/packages/peer_dependencies.md",
+      "conventional_output": "runtime/packages/peer_dependencies/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/packages/private_repositories.md",
+      "conventional_output": "runtime/packages/private_repositories/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/packages/publishing.md",
+      "conventional_output": "runtime/packages/publishing/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/packages/supply_chain.md",
+      "conventional_output": "runtime/packages/supply_chain/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/bundling.md",
+      "conventional_output": "runtime/reference/bundling/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/add.md",
+      "conventional_output": "runtime/reference/cli/add/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/approve_scripts.md",
+      "conventional_output": "runtime/reference/cli/approve_scripts/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/audit.md",
+      "conventional_output": "runtime/reference/cli/audit/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/bench.md",
+      "conventional_output": "runtime/reference/cli/bench/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/bump_version.md",
+      "conventional_output": "runtime/reference/cli/bump_version/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/bundle.md",
+      "conventional_output": "runtime/reference/cli/bundle/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/check.md",
+      "conventional_output": "runtime/reference/cli/check/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/ci.md",
+      "conventional_output": "runtime/reference/cli/ci/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/clean.md",
+      "conventional_output": "runtime/reference/cli/clean/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/compile.md",
+      "conventional_output": "runtime/reference/cli/compile/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/completions.md",
+      "conventional_output": "runtime/reference/cli/completions/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/coverage.md",
+      "conventional_output": "runtime/reference/cli/coverage/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/create.md",
+      "conventional_output": "runtime/reference/cli/create/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/deploy.md",
+      "conventional_output": "runtime/reference/cli/deploy/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/desktop.md",
+      "conventional_output": "runtime/reference/cli/desktop/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/doc.md",
+      "conventional_output": "runtime/reference/cli/doc/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/env_variables.md",
+      "conventional_output": "runtime/reference/cli/env_variables/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/eval.md",
+      "conventional_output": "runtime/reference/cli/eval/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/fmt.md",
+      "conventional_output": "runtime/reference/cli/fmt/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/index.md",
+      "conventional_output": "runtime/reference/cli/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/info.md",
+      "conventional_output": "runtime/reference/cli/info/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/init.md",
+      "conventional_output": "runtime/reference/cli/init/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/install.md",
+      "conventional_output": "runtime/reference/cli/install/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/jupyter.md",
+      "conventional_output": "runtime/reference/cli/jupyter/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/link.md",
+      "conventional_output": "runtime/reference/cli/link/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/lint.md",
+      "conventional_output": "runtime/reference/cli/lint/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/list.md",
+      "conventional_output": "runtime/reference/cli/list/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/lsp.md",
+      "conventional_output": "runtime/reference/cli/lsp/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/outdated.md",
+      "conventional_output": "runtime/reference/cli/outdated/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/pack.md",
+      "conventional_output": "runtime/reference/cli/pack/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/publish.md",
+      "conventional_output": "runtime/reference/cli/publish/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/remove.md",
+      "conventional_output": "runtime/reference/cli/remove/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/repl.md",
+      "conventional_output": "runtime/reference/cli/repl/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/run.md",
+      "conventional_output": "runtime/reference/cli/run/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/sandbox.md",
+      "conventional_output": "runtime/reference/cli/sandbox/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/serve.md",
+      "conventional_output": "runtime/reference/cli/serve/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/task.md",
+      "conventional_output": "runtime/reference/cli/task/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/test.md",
+      "conventional_output": "runtime/reference/cli/test/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/transpile.md",
+      "conventional_output": "runtime/reference/cli/transpile/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/types.md",
+      "conventional_output": "runtime/reference/cli/types/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/uninstall.md",
+      "conventional_output": "runtime/reference/cli/uninstall/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/unlink.md",
+      "conventional_output": "runtime/reference/cli/unlink/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/unstable_flags.md",
+      "conventional_output": "runtime/reference/cli/unstable_flags/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/update.md",
+      "conventional_output": "runtime/reference/cli/update/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/upgrade.md",
+      "conventional_output": "runtime/reference/cli/upgrade/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/watch.md",
+      "conventional_output": "runtime/reference/cli/watch/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/why.md",
+      "conventional_output": "runtime/reference/cli/why/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/cli/x.md",
+      "conventional_output": "runtime/reference/cli/x/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/continuous_integration.md",
+      "conventional_output": "runtime/reference/continuous_integration/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/deno_json.md",
+      "conventional_output": "runtime/reference/deno_json/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/deno_serve_legacy_abort.md",
+      "conventional_output": "runtime/reference/deno_serve_legacy_abort/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/docker.md",
+      "conventional_output": "runtime/reference/docker/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/env_variables.md",
+      "conventional_output": "runtime/reference/env_variables/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/index.md",
+      "conventional_output": "runtime/reference/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/jsx.md",
+      "conventional_output": "runtime/reference/jsx/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/lint_plugins.md",
+      "conventional_output": "runtime/reference/lint_plugins/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/loader_hooks.md",
+      "conventional_output": "runtime/reference/loader_hooks/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/lsp_integration.md",
+      "conventional_output": "runtime/reference/lsp_integration/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/migration_guide.md",
+      "conventional_output": "runtime/reference/migration_guide/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/node_apis.md",
+      "conventional_output": "runtime/reference/node_apis/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/permissions.md",
+      "conventional_output": "runtime/reference/permissions/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/std/_overrides/README.md",
+      "conventional_output": "runtime/reference/std/_overrides/README/index.html",
+      "exists": false,
+      "frontmatter": false
+    },
+    {
+      "source": "runtime/reference/std/_overrides/internal.md",
+      "conventional_output": "runtime/reference/std/_overrides/internal/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/std/_overrides/log.md",
+      "conventional_output": "runtime/reference/std/_overrides/log/index.html",
+      "exists": false,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/ts_config_migration.md",
+      "conventional_output": "runtime/reference/ts_config_migration/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/vscode.md",
+      "conventional_output": "runtime/reference/vscode/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/wasm.md",
+      "conventional_output": "runtime/reference/wasm/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/reference/web_platform_apis.md",
+      "conventional_output": "runtime/reference/web_platform_apis/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/run/index.md",
+      "conventional_output": "runtime/run/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/run/watch_mode.md",
+      "conventional_output": "runtime/run/watch_mode/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/test/coverage.md",
+      "conventional_output": "runtime/test/coverage/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/test/doc_tests.md",
+      "conventional_output": "runtime/test/doc_tests/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/test/index.md",
+      "conventional_output": "runtime/test/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/test/migrate_from_jest.md",
+      "conventional_output": "runtime/test/migrate_from_jest/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/test/mocking.md",
+      "conventional_output": "runtime/test/mocking/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/test/sanitizers.md",
+      "conventional_output": "runtime/test/sanitizers/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "runtime/test/snapshots.md",
+      "conventional_output": "runtime/test/snapshots/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/apps.md",
+      "conventional_output": "sandbox/apps/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/cli.md",
+      "conventional_output": "sandbox/cli/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/create.md",
+      "conventional_output": "sandbox/create/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/expose_http.md",
+      "conventional_output": "sandbox/expose_http/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/getting_started.md",
+      "conventional_output": "sandbox/getting_started/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/index.md",
+      "conventional_output": "sandbox/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/promote.md",
+      "conventional_output": "sandbox/promote/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/security.md",
+      "conventional_output": "sandbox/security/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/ssh.md",
+      "conventional_output": "sandbox/ssh/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/timeouts.md",
+      "conventional_output": "sandbox/timeouts/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "sandbox/volumes.md",
+      "conventional_output": "sandbox/volumes/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "static/agents.md",
+      "conventional_output": "static/agents/index.html",
+      "exists": false,
+      "frontmatter": false
+    },
+    {
+      "source": "static/fonts/inter/hacked/README.md",
+      "conventional_output": "static/fonts/inter/hacked/README/index.html",
+      "exists": false,
+      "frontmatter": false
+    },
+    {
+      "source": "styleguide/components.mdx",
+      "conventional_output": "styleguide/components/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/index.md",
+      "conventional_output": "styleguide/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/og.md",
+      "conventional_output": "styleguide/og/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/og/cli-commands.md",
+      "conventional_output": "styleguide/og/cli-commands/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/og/color-override.md",
+      "conventional_output": "styleguide/og/color-override/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/og/short-title-and-long-description.md",
+      "conventional_output": "styleguide/og/short-title-and-long-description/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/og/short-title-and-short-description.md",
+      "conventional_output": "styleguide/og/short-title-and-short-description/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/og/title-and-description-superscript.md",
+      "conventional_output": "styleguide/og/title-and-description-superscript/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/og/title-and-description.md",
+      "conventional_output": "styleguide/og/title-and-description/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/og/title-only.md",
+      "conventional_output": "styleguide/og/title-only/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/typography.mdx",
+      "conventional_output": "styleguide/typography/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "styleguide/writing.md",
+      "conventional_output": "styleguide/writing/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "subhosting/api/authentication.md",
+      "conventional_output": "subhosting/api/authentication/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "subhosting/api/index.md",
+      "conventional_output": "subhosting/api/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "subhosting/index.md",
+      "conventional_output": "subhosting/index.html",
+      "exists": true,
+      "frontmatter": false
+    },
+    {
+      "source": "subhosting/manual/acceptable_use_policy.md",
+      "conventional_output": "subhosting/manual/acceptable_use_policy/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "subhosting/manual/api_migration_guide.md",
+      "conventional_output": "subhosting/manual/api_migration_guide/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "subhosting/manual/events.md",
+      "conventional_output": "subhosting/manual/events/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "subhosting/manual/index.md",
+      "conventional_output": "subhosting/manual/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "subhosting/manual/planning_your_implementation.md",
+      "conventional_output": "subhosting/manual/planning_your_implementation/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "subhosting/manual/pricing_and_limits.md",
+      "conventional_output": "subhosting/manual/pricing_and_limits/index.html",
+      "exists": true,
+      "frontmatter": true
+    },
+    {
+      "source": "subhosting/manual/quick_start.md",
+      "conventional_output": "subhosting/manual/quick_start/index.html",
+      "exists": true,
+      "frontmatter": true
+    }
+  ],
+  "boundary": "Conventional source-path mapping only; lint rules/custom URL/generated TS pages need explicit separate accounting. Not a final content-page count."
+}

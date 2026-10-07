@@ -1,0 +1,33 @@
+{
+  "state": "initial fixtures, D2 comprehensive matrix pending",
+  "source_sha": "9e5dd8d930c8734defe1c3172986e6312353ac1c",
+  "route": "/runtime/",
+  "states": [
+    {
+      "file": "runtime-desktop-default.jpg",
+      "sha256": "27119489cc9c1f9eaeeb5bf34446e7e10608d0786e8598c0c1fd5e3f3f334fa9"
+    },
+    {
+      "file": "runtime-desktop-toggled.jpg",
+      "sha256": "a673e50bd8c681ce26889334752f9b49042641c0cbf10d0444288051dedd68d6"
+    },
+    {
+      "file": "runtime-mobile-dark.jpg",
+      "sha256": "261cfc23ad28da0d600983d134f345fa108e4d520204b40ad4770e250ebb1ffd"
+    },
+    {
+      "file": "runtime-mobile-menu.jpg",
+      "sha256": "8b77421b9405c11a5406553d2bb172de56498dc21ee5ec6caabb724526872816"
+    }
+  ],
+  "observed": [
+    "desktop 1440x1000 starts light",
+    "theme toggle changes to dark",
+    "mobile 390x844",
+    "mobile menu opens and closes"
+  ],
+  "remote_search": "not queried; comprehensive deterministic fixtures pending",
+  "feedback": "not submitted",
+  "snapshot_origin": "initial acquisition tree; prepared HTML byte equality checked below",
+  "runtime_html_unchanged_between_builds": true
+}

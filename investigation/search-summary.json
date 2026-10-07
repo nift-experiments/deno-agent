@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-10-07T14:53:40.920Z",
+  "version": "2.0.0",
+  "baseUrl": "https://docs.deno.com",
+  "totalDocuments": 11567,
+  "includesApiReference": true,
+  "stats": {
+    "totalDocuments": 11567,
+    "totalCharacters": 2420176,
+    "averageDocumentLength": 209,
+    "categoryCounts": {
+      "runtime": 172,
+      "deploy": 73,
+      "examples": 89,
+      "subhosting": 9,
+      "lint": 124,
+      "deno": 2063,
+      "web": 2299,
+      "node": 6738
+    },
+    "documentsWithTags": 11195,
+    "documentsWithDescriptions": 283,
+    "longestDocument": "Terms and Conditions (30,018 chars)",
+    "shortestDocument": "cp - fs/promises - Node documentation (18 chars)",
+    "apiDocuments": 11100,
+    "markdownDocuments": 467
+  }
+}
