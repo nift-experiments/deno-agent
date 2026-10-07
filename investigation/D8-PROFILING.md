@@ -1,0 +1,23 @@
+# Profiling interpretation in progress
+
+Initial corrected observations are retained at investigation/d8-static-og-verification.json (23.3536s / 1.5442s), distinct from historical OG-regenerating medians (134.86s / 144.07s). Do not replace either with optimized results.
+
+The human renderer uses one Deno process, one MDX engine, and process-cached module imports; there is no per-page external-tool startup. Three further Deno invocations perform search generation, clock normalization, and LLM exports. Prism is in-process. Original JSX component inventory was rediscovered per page; a process inventory now removes that repeated filesystem/import work while retaining contextual per-page component closures.
+
+Measured before page-cache reuse: frontmatter about .059s, whole metadata preparation .341s (includes initial frontmatter subset), generated examples .052s, lint rules .089s, grouped references 1.312s, component binding .056s, bodies .967s (MDX .053s subset), shared/per-page layouts 3.758s, DOM normalization 10.237s. Inclusive Markdown .905s includes Prism .251s and overlaps generator/layout helpers. These numbers are one uncached profile, not additive benchmark medians. Instrumented top-level render time 18.951s excludes process startup; complete publication 23.781s includes stage orchestration and publication.
+
+The largest difference is not Markdown parsing. It is reconstructing and normalizing full HTML shells and grouped references, which the agent source model already maintains. Unchanged human outputs can be reused as transient derived artifacts with input hashes and output-byte validation. No maintained Markdown/frontmatter/structured input is replaced by cached HTML. Fresh application state computes these artifacts again.
+
+Cache inputs include all authored/code/data files and the pinned Deno version. Source frontmatter participates globally in cross-page queries; ordinary Markdown body bytes participate in the corresponding page key. Shared code/metadata changes conservatively invalidate every page. Output hashes prevent reuse of missing or corrupted derived pages. Unpublished source inputs currently invalidate conservatively. Generated families run only when a family has a cache miss. Explicit image maintenance bypasses reuse by default. --force recomputes the renderer and forces Nift composition.
+
+Search and LLM exports still regenerate on every build in the first optimized profile; deterministic whole-stage reuse is now implemented with explicit input/output verification. Static OG images remain independently maintained. HTTP content negotiation remains maintained middleware, not a generated stage; MD downloads are published from the maintained source. Original redirect sources are copied; grouped API redirects are generated with references and reused when their inputs have not changed.
+
+Final measurements and lifecycle gates are pending. Do not publish Labs yet.
+
+## Correctness checkpoint
+
+Twenty source-maintenance cases passed across both models: 1/10/100 bodies, shared composition template, navigation, title metadata, structured reference documentation, route addition, rename and deletion. Each changed publication equals forced recomputation. The final ledger carries six completed human cases from the earlier validated run and resumes the remaining cases explicitly; incomplete/failed fixture attempts remain archived. The title fixture preserves upstream quoted-title conventions; upstream search indexes `other` symbol docs but omits function-overload docs, so the structured-input fixture edits the actual Deno.HttpServer docs field used by both HTML and search. Native search URL trailing-slash differences are normalized in semantic assertions. These inherited behaviors were preserved, not repaired.
+
+Seven focused cache checks additionally cover corrupted HTML, corrupted search, corrupted API redirects, malformed cache manifests, a source edit with shared-metadata reuse, source-frontmatter alias addition/removal, and restoration. Full baseline restoration matches every publication byte. Human redirects now derive from maintained frontmatter plus the used lint module export; the existing ordered baseline preserves ambiguous inherited alias ownership. Agent redirects remain maintained structured artifacts. No general Lume router is implemented.
+
+Shared metadata references are now expanded once per process. Original source components read these values; per-page component closures and mutable page data remain distinct. The current whole-site baseline still matches all 2,573 files exactly. Browser rerun and final serialized timings are pending. No Labs page has been made.

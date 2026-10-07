@@ -353,3 +353,7 @@ Read investigation/D6-WHOLE-SITE-PARITY.md. All 834 routes and both fresh commit
 ## Static OG architecture correction
 
 User-directed interruption stopped the OG-heavy D7 lifecycle campaign and queued upstream run. Initial timing evidence and the completed lifecycle case are preserved externally. See investigation/D8-STATIC-OG-ASSETS.md. Both publications retain exact 2,573-file baseline parity. Resume the remaining D7 cases and measurements with explicit OG maintenance outside normal publication; do not restart the obsolete regeneration campaign. Nift core remains untouched.
+
+## Focused profiling checkpoint
+
+Read investigation/D8-PROFILING.md. Repeated component discovery and shared metadata expansion were removed. Human derived pages and search/LLM exports have input/output-verified transient caches; forced and fresh builds recompute. Twenty lifecycle cases and seven focused cache/source-alias checks pass. Initial corrected 23.35s/1.54s observations and original OG-heavy results are retained. Finish the browser rerun and serialized normal/forced/fresh benchmarks, then D9 comparison/init review. Keep Labs unpublished during this campaign.

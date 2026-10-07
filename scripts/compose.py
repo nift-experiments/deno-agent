@@ -40,7 +40,7 @@ def compose(model):
     changed('.generated/owned.json', json.dumps(owned, indent=2) + '\n')
     if not (ROOT / 'templates/template.html').exists():
         changed('templates/template.html', '@script { fn(rawHtml(path)) { f := file(path); f.open(); value := f.read_all(); f.close(); return value; } }@content')
-    phase = run_phase('nift', ['nift', 'build'], cwd=ROOT)
+    phase = run_phase('nift', ['nift', 'build', *(['--all'] if '--force' in __import__('sys').argv else [])], cwd=ROOT)
     changed('.generated/nift-metrics.json', json.dumps(phase, indent=2) + '\n')
 
 
