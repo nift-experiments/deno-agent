@@ -329,3 +329,7 @@ Frozen Nift binary hash is in BASELINE.json. Continue reviewing init guidance wh
 Official complete production build and separate local search generation succeeded. Read investigation/D1-BASELINE.md, D1-ARCHITECTURE.md and exact inventories. Prepared reference is 2,573 files / 834 HTML; single full-task observation 171.56s / 3,117.1 MiB process RSS, not a benchmark median. Source/history/reference and browser fixtures external, archived/hashed. No translated pages or Nift modifications.
 
 Exact next action: D2 source-route accounting and comprehensive parity/remote-service/browser fixtures, then D3 representative-family architecture proof. Report baseline to user before broad migration. Keep human/agent source models distinct. Init review remains running and final re-review is due at D9.
+
+## D2 checkpoint: parity contract frozen
+
+Read investigation/D2-PARITY-CONTRACT.md and source-route-accounting.json. Exact 834-route mapping and 52-state baseline matrix are frozen; inherited semantic defects and remote search transport boundaries are explicit. No migration renderer implemented yet. Next: D3 bounded standalone renderer and raw Nift composition on representative families; proceed through D9 under user authorization without routine approval.
